@@ -17,6 +17,8 @@ Tags: responsive, clean, minimal, black, gold, golden, gate
 @import 'header';
 @import 'search';
 @import 'carousel';
+@import 'article';
+@import 'footer';
 
 #wpadminbar {
 	display: none !important;

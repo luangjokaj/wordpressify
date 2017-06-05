@@ -1,0 +1,10 @@
+article {
+	background: var(--white);
+	box-shadow: 0 2px 4px 0 color(var(--black) alpha(-80%));
+	box-sizing: border-box;
+	padding: 60px;
+
+	@media (--screen-mobile) {
+		padding: 20px;
+	}
+}

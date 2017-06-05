@@ -1,0 +1,7 @@
+footer {
+	clear: both;
+	overflow: hidden;
+	width: 100%;
+	background: var(--black);
+	color: var(--white);
+}

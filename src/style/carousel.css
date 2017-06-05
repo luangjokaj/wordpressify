@@ -1,5 +1,6 @@
 .wpsisac-slick-slider, .wpsisac-slick-carousal {
 	margin-left: -100px;
+	margin-top: -61px;
 	width: calc(100% + 200px);
 }
 
