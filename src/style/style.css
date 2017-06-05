@@ -1,14 +1,18 @@
 /*
 Theme Name: Golden Gate
+Theme URI: https://www.goldengate.me
 Author: Luan Gjokaj
 Author URI: https://www.riangle.com
+Description: Golden Gate theme for WordPress.
 Version: 1.0
+Tags: responsive, clean, minimal, black, gold, golden, gate
 */
 
 @import '../node_modules/normalize.css/normalize.css';
 @import '../node_modules/aos/dist/aos.css';
 @import 'variables';
 @import 'fonts';
+@import 'button';
 @import 'globals';
 @import 'header';
 @import 'search';

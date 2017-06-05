@@ -24,3 +24,23 @@ img {
 	max-width: 100%;
 	height: auto;
 }
+
+.main-column, .side-column {
+	background: var(--white);
+	box-shadow: 0 2px 4px 0 color(var(--black) alpha(-80%));
+	box-sizing: border-box;
+	padding: 60px;
+	float: left;
+
+	@media (--screen-mobile) {
+		padding: 20px;
+	}
+}
+
+.main-column {
+	width: 70%;
+}
+
+.side-column {
+	width: 30%;
+}

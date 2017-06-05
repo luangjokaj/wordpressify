@@ -1,0 +1,18 @@
+:root {
+	--button {
+		font-size: var(--default-font-size);
+		color: var(--white);
+		font-family: var(--futura-medium);
+		display: inline-block;
+		box-sizing: border-box;
+		padding: 15px 30px;
+		background: color(var(--black) alpha(-50%));
+		transition: all 0.5s ease;
+		border: solid 4px var(--primary-color);
+
+		&:hover {
+			background: color(var(--black) alpha(-20%));
+			padding: 15px 35px;
+		}
+	};
+}

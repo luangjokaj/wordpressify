@@ -10,6 +10,10 @@ header {
 	z-index: 50;
 	transition: all 0.5s ease;
 
+	@media (--screen-tablet) {
+		padding: 40px 50px;
+	}
+
 	&.scrolled {
 		padding: 20px 100px;
 		& nav {

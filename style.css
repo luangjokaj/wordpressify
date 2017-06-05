@@ -1,8 +1,11 @@
 /*
 Theme Name: Golden Gate
+Theme URI: https://www.goldengate.me
 Author: Luan Gjokaj
 Author URI: https://www.riangle.com
+Description: Golden Gate theme for WordPress.
 Version: 1.0
+Tags: responsive, clean, minimal, black, gold, golden, gate
 */
 
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
@@ -1024,6 +1027,29 @@ img {
 	height: auto;
 }
 
+.main-column, .side-column {
+	background: #FFFFFF;
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.19999999999999996);
+	box-sizing: border-box;
+	padding: 60px;
+	float: left
+}
+
+@media (max-width: 640px) {
+
+  .main-column, .side-column {
+    padding: 20px;
+  }
+	}
+
+.main-column {
+	width: 70%;
+}
+
+.side-column {
+	width: 30%;
+}
+
 header {
 	background: #000000;
 	color: #FFFFFF;
@@ -1036,6 +1062,13 @@ header {
 	z-index: 50;
 	transition: all 0.5s ease
 }
+
+@media print, (max-width: 1000px) {
+
+  header {
+    padding: 40px 50px;
+  }
+	}
 
 header.scrolled {
   padding: 20px 100px;
@@ -1199,9 +1232,32 @@ header nav div.menu-header-container ul li.current-menu-item a:after {
 	}
 
 .wpsisac-slick.wpsisac-prodesign-1 .wpsisac-slick-image-slide .wpsisac-slide-wrap .wpsisac-slider-short-content {
-	display: block !important;
-	margin-top: 60px;
+	display: block !important
 }
+
+.wpsisac-slick.wpsisac-prodesign-1 .wpsisac-slick-image-slide .wpsisac-slide-wrap .wpsisac-slider-short-content a {
+  font-size: 16px;
+  color: #FFFFFF;
+  font-family: 'Conv_FuturaStd-Medium';
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 15px 30px;
+  background: rgba(0, 0, 0, 0.5);
+  transition: all 0.5s ease;
+  border: solid 4px #FBAF3F;
+}
+
+.wpsisac-slick.wpsisac-prodesign-1 .wpsisac-slick-image-slide .wpsisac-slide-wrap .wpsisac-slider-short-content a:hover {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 15px 35px;
+}
+
+@media (max-width: 640px) {
+
+  .wpsisac-slick.wpsisac-prodesign-1 .wpsisac-slick-image-slide .wpsisac-slide-wrap .wpsisac-slider-short-content {
+    margin-top: 60px;
+  }
+	}
 
 #wpadminbar {
 	display: none !important;

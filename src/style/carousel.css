@@ -53,5 +53,12 @@
 
 .wpsisac-slick.wpsisac-prodesign-1 .wpsisac-slick-image-slide .wpsisac-slide-wrap .wpsisac-slider-short-content {
 	display: block !important;
-	margin-top: 60px;
+
+	& a {
+		@apply --button;
+	}
+
+	@media (--screen-mobile) {
+		margin-top: 60px;
+	}
 }
