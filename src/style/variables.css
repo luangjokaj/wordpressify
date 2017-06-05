@@ -1,0 +1,94 @@
+:root {
+	--primary-color: #FBAF3F;
+	--purple: #D3AAE0;
+	--pink: #FDADAB;
+	--black: #000000;
+	--white: #FFFFFF;
+	--shadow: 0 2px 5px 0 color(var(--primary-color) alpha(-80%));
+
+	--background-grey: #F3F3F3;
+}
+
+@custom-media --screen-tiny (max-width: 320px);
+@custom-media --screen-mobile (max-width: 640px);
+@custom-media --screen-phablet (max-width: 820px);
+@custom-media --screen-tablet print, (max-width: 1000px);
+@custom-media --screen-desktop print, (max-width: 1240px);
+@custom-media --screen-big print, (min-width: 2000px);
+@custom-media --screen-4k (min-width: 3870px);
+
+:root {
+	--smaller-font-size: 10px;
+	--smaller-line-height: 1;
+
+	--small-font-size: 14px;
+	--small-line-height: 1.1;
+
+	--default-font-size: 16px;
+	--default-line-height: 1.2;
+
+	--big-font-size: 24px;
+	--big-line-height: 1.5;
+
+	--bigger-font-size: 68px;
+	--bigger-line-height: 1.5;
+
+	--h1-font-size: 48px;
+	--h1-line-height: 1;
+
+	--h1-font-size-mobile: 36px;
+	--h1-line-height-mobile: 1;
+
+	--h2-font-size: 31.5px;
+	--h2-line-height: 1;
+
+	--h2-font-size-mobile: 31.5px;
+	--h2-line-height-mobile: 1;
+
+	--h3-font-size: 27.5px;
+	--h3-line-height: 1;
+
+	--h3-font-size-mobile: 27.5px;
+	--h3-line-height-mobile: 1;
+
+	--h4-font-size: 24px;
+	--h4-line-height: 1;
+
+	--h4-font-size-mobile: 24px;
+	--h4-line-height-mobile: 1;
+
+	--h5-font-size: 21px;
+	--h5-line-height: 1;
+
+	--h5-font-size-mobile: 21px;
+	--h5-line-height-mobile: 1;
+
+	--h6-font-size: 18.4px;
+	--h6-line-height: 1;
+
+	--h6-font-size-mobile: 18.4px;
+	--h6-line-height-mobile: 1;
+}
+
+:root {
+	--clearfix: {
+		clear: both;
+
+		&:before,
+		&:after {
+			content: "";
+			display: table;
+			clear: both;
+		}
+	};
+
+	--nolist: {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		& li {
+			padding: 0;
+		}
+	};
+}

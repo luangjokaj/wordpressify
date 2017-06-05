@@ -1,0 +1,79 @@
+:root {
+	--futura-heavy: 'Conv_FuturaStd-Heavy';
+	--futura-bold: 'Conv_FuturaStd-Bold';
+	--futura-medium: 'Conv_FuturaStd-Medium';
+	--futura-book: 'Conv_FuturaStd-Book';
+	--futura-light: 'Conv_FuturaStd-Light';
+	--museo: 'museo_slab300';
+	--mueso-700: 'museo_slab700';
+}
+
+@font-face {
+	font-family: var(--futura-heavy);
+	src: url('fonts/FuturaStdHeavy.eot');
+	src: url('fonts/FuturaStdHeavy.eot') format('embedded-opentype'),
+	url('fonts/FuturaStdHeavy.woff2') format('woff2'),
+	url('fonts/FuturaStdHeavy.woff') format('woff'),
+	url('fonts/FuturaStdHeavy.ttf') format('truetype'),
+	url('fonts/FuturaStdHeavy.svg#FuturaStdHeavy') format('svg');
+}
+
+@font-face {
+	font-family: var(--futura-bold);
+	src: url('fonts/FuturaStdBold.eot');
+	src: url('fonts/FuturaStdBold.eot') format('embedded-opentype'),
+	url('fonts/FuturaStdBold.woff2') format('woff2'),
+	url('fonts/FuturaStdBold.woff') format('woff'),
+	url('fonts/FuturaStdBold.ttf') format('truetype'),
+	url('fonts/FuturaStdBold.svg#FuturaStdBold') format('svg');
+}
+
+@font-face {
+	font-family: var(--futura-medium);
+	src: url('fonts/FuturaStdMedium.eot');
+	src: url('fonts/FuturaStdMedium.eot') format('embedded-opentype'),
+	url('fonts/FuturaStdMedium.woff2') format('woff2'),
+	url('fonts/FuturaStdMedium.woff') format('woff'),
+	url('fonts/FuturaStdMedium.ttf') format('truetype'),
+	url('fonts/FuturaStdMedium.svg#FuturaStdMedium') format('svg');
+}
+
+@font-face {
+	font-family: var(--futura-book);
+	src: url('fonts/FuturaStdBook.eot');
+	src: url('fonts/FuturaStdBook.eot') format('embedded-opentype'),
+	url('fonts/FuturaStdBook.woff2') format('woff2'),
+	url('fonts/FuturaStdBook.woff') format('woff'),
+	url('fonts/FuturaStdBook.ttf') format('truetype'),
+	url('fonts/FuturaStdBook.svg#FuturaStdBook') format('svg');
+}
+
+@font-face {
+	font-family: var(--futura-light);
+	src: url('fonts/FuturaStdLight.eot');
+	src: url('fonts/FuturaStdLight.eot') format('embedded-opentype'),
+	url('fonts/FuturaStdLight.woff2') format('woff2'),
+	url('fonts/FuturaStdLight.woff') format('woff'),
+	url('fonts/FuturaStdLight.ttf') format('truetype'),
+	url('fonts/FuturaStdLight.svg#FuturaStdLight') format('svg');
+}
+
+@font-face {
+	font-family: var(--museo);
+	src: url('fonts/MuseoSlab300.eot');
+	src: url('fonts/MuseoSlab300.eot') format('embedded-opentype'),
+	url('fonts/MuseoSlab300.woff2') format('woff2'),
+	url('fonts/MuseoSlab300.woff') format('woff'),
+	url('fonts/MuseoSlab300.ttf') format('truetype'),
+	url('fonts/MuseoSlab300.svg#MuseoSlab300') format('svg');
+}
+
+@font-face {
+	font-family: var(--mueso-700);
+	src: url('fonts/MuseoSlab700.eot');
+	src: url('fonts/MuseoSlab700.eot') format('embedded-opentype'),
+	url('fonts/MuseoSlab700.woff2') format('woff2'),
+	url('fonts/MuseoSlab700.woff') format('woff'),
+	url('fonts/MuseoSlab700.ttf') format('truetype'),
+	url('fonts/MuseoSlab700.svg#MuseoSlab700') format('svg');
+}

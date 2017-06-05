@@ -1,0 +1,35 @@
+{
+	"name": "staticweb",
+	"version": "0.0.2",
+	"description": "",
+	"main": "gulpfile.js",
+	"scripts": {
+		"prod": "gulp build-prod",
+		"dev": "gulp build-dev",
+		"images": "gulp process-images",
+		"lint:css": "stylelint src/**/*.css --config tools/stylelintrc.json"
+	},
+	"author": "Luan Gjokaj",
+	"license": "MIT",
+	"devDependencies": {
+		"aos": "^2.1.1",
+		"babel-preset-env": "^1.5.0",
+		"cssnano": "^3.10.0",
+		"gulp": "^3.9.1",
+		"gulp-babel": "^6.1.2",
+		"gulp-concat": "^2.6.1",
+		"gulp-imagemin": "^3.2.0",
+		"gulp-livereload": "^3.8.1",
+		"gulp-plumber": "^1.1.0",
+		"gulp-postcss": "^6.4.0",
+		"gulp-sourcemaps": "^2.6.0",
+		"gulp-uglify": "^3.0.0",
+		"gulp-util": "^3.0.8",
+		"jquery": "^3.2.1",
+		"normalize.css": "^7.0.0",
+		"postcss-cssnext": "^2.11.0",
+		"postcss-easy-import": "^2.0.0",
+		"stylelint": "^7.10.1",
+		"stylelint-config-standard": "^16.0.0"
+	}
+}

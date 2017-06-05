@@ -1,0 +1,19 @@
+/*
+Theme Name: Golden Gate
+Author: Luan Gjokaj
+Author URI: https://www.riangle.com
+Version: 1.0
+*/
+
+@import '../node_modules/normalize.css/normalize.css';
+@import '../node_modules/aos/dist/aos.css';
+@import 'variables';
+@import 'fonts';
+@import 'globals';
+@import 'header';
+@import 'search';
+@import 'carousel';
+
+#wpadminbar {
+	display: none !important;
+}

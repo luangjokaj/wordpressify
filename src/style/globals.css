@@ -1,0 +1,26 @@
+html, body {
+	background: var(--background-grey);
+	color: var(--black);
+	font-family: var(--futura-book);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+* {
+	outline: none;
+}
+
+a {
+	text-decoration: none;
+	transition: all 0.3s ease;
+}
+
+.container {
+	padding: 65px 100px;
+	box-sizing: border-box;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}

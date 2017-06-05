@@ -1,0 +1,26 @@
+# Distribution Files
+app/**
+
+# IntelliJ IDE
+.idea
+
+# OSX
+*.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+*.lnk
+
+*.iml
+
+node_modules
+
+# Debug log from npm
+npm-debug.log
+
+*.map
