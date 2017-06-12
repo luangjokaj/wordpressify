@@ -40,7 +40,7 @@ header {
 	& nav {
 		float: right;
 
-		& div.menu-header-container {
+		& div.menu-header-container, & .menu {
 			& ul {
 				@apply --nolist;
 				margin-top: 5px;
