@@ -146,7 +146,7 @@ gulp.task('reload-theme', ['copy-theme'], function (done) {
 });
 
 gulp.task('watch', function () {
-	gulp.watch(['style/**/*.css'], ['style-dev']);
+	gulp.watch(['src/style/**/*.css'], ['style-dev']);
 	gulp.watch(['src/js/**'], ['reload-js']);
 	gulp.watch(['src/fonts/**'], ['reload-fonts']);
 	gulp.watch(['src/theme/**'], ['reload-theme']);

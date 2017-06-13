@@ -14,6 +14,10 @@ header {
 		padding: 40px 50px;
 	}
 
+	& a {
+		color: var(--primary-color);
+	}
+
 	&.scrolled {
 		padding: 20px 100px;
 		& nav {
@@ -40,7 +44,7 @@ header {
 	& nav {
 		float: right;
 
-		& div.menu-header-container, & .menu {
+		& div.menu-header-container, & div.menu {
 			& ul {
 				@apply --nolist;
 				margin-top: 5px;
