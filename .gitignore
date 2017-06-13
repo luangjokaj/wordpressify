@@ -1,5 +1,6 @@
 # Distribution Files
 app/**
+dist/**
 
 # IntelliJ IDE
 .idea
