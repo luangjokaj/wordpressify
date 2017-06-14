@@ -46,8 +46,6 @@ var themeName = 'goldengate';
 	Start of Build Tasks
  ------------------------------------------------------------------------------------------------- */
 gulp.task('build-dev', [
-	'download-wordpress',
-	'unzip-wordpress',
 	'copy-theme',
 	'copy-fonts',
 	'style-dev',
@@ -80,6 +78,16 @@ gulp.task('unzip-wordpress', function () {
 		.pipe(unzip())
 		.pipe(gulp.dest('dist/'))
 });
+
+gulp.task('copy-config', function () {
+	gulp.src("src/wp-config.php")
+		.pipe(gulp.dest('dist/wordpress/'))
+});
+
+gulp.task('setup', [
+	'unzip-wordpress',
+	'copy-config'
+]);
 
 gulp.task('copy-theme', function () {
 	gulp.src("src/theme/**")
