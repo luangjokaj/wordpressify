@@ -40,12 +40,6 @@ To build the production files run the `prod` task:
 $ npm run prod
 ```
 
-## Image Optimization 🌅
-For image optimization and SVG compression run:
-```
-$ npm run images
-```
-
 ___
 
 ### Technologies 🚀
