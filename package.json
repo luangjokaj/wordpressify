@@ -5,9 +5,8 @@
 	"main": "gulpfile.js",
 	"scripts": {
 		"prod": "gulp build-prod",
-		"dev": "gulp build-dev",
+		"dev": "gulp download-wordpress && gulp setup && gulp build-dev",
 		"images": "gulp process-images",
-		"init": "gulp download-wordpress && gulp setup",
 		"lint:css": "stylelint src/**/*.css --config tools/stylelintrc.json"
 	},
 	"author": "Luan Gjokaj",
@@ -19,6 +18,7 @@
 		"cssnano": "^3.10.0",
 		"gulp": "^3.9.1",
 		"gulp-babel": "^6.1.2",
+		"gulp-cache-bust": "^1.1.0",
 		"gulp-concat": "^2.6.1",
 		"gulp-connect-php": "^1.0.1",
 		"gulp-imagemin": "^3.2.0",
