@@ -1,14 +1,14 @@
-Download Wordpress
+Download & Install Wordpress
 ``` 
-npm run download:wp
-```
-
-Install Wordpress
-``` 
-npm run install:wp
+npm run init
 ```
 
 Run Dev Server
 ``` 
 npm run dev
+```
+
+Generate Distribution Files
+``` 
+npm run prod
 ```

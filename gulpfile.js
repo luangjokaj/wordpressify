@@ -28,6 +28,11 @@ var pluginsDev = [
 	partialimport,
 	cssnext()
 ];
+var pluginsProd = [
+	partialimport,
+	cssnext({warnForDuplicates: false}),
+	cssnano()
+];
 //--------------------------------------------------------------------------------------------------
 var headerJS = [
 	'node_modules/jquery/dist/jquery.js',
@@ -36,7 +41,6 @@ var headerJS = [
 var footerJS = [
 	'src/js/**'
 ];
-
 /* -------------------------------------------------------------------------------------------------
 	Theme Name
  ------------------------------------------------------------------------------------------------- */
@@ -46,8 +50,9 @@ var themeName = 'goldengate';
 	Start of Build Tasks
  ------------------------------------------------------------------------------------------------- */
 gulp.task('build-dev', [
-	'copy-theme',
-	'copy-fonts',
+	'copy-theme-dev',
+	'copy-fonts-dev',
+	'copy-content',
 	'style-dev',
 	'header-scripts-dev',
 	'footer-scripts-dev',
@@ -63,6 +68,14 @@ gulp.task('build-dev', [
 		});
 	});
 });
+
+gulp.task('build-prod', [
+	'copy-theme-prod',
+	'copy-fonts-prod',
+	'style-prod',
+	'header-scripts-prod',
+	'footer-scripts-prod'
+]);
 
 gulp.task('default');
 
@@ -84,19 +97,34 @@ gulp.task('copy-config', function () {
 		.pipe(gulp.dest('dist/wordpress/'))
 });
 
+gulp.task('copy-content', function () {
+	gulp.src("src/uploads/**")
+		.pipe(gulp.dest('dist/wordpress/wp-content/uploads'))
+});
+
 gulp.task('setup', [
 	'unzip-wordpress',
 	'copy-config'
 ]);
 
-gulp.task('copy-theme', function () {
+gulp.task('copy-theme-dev', function () {
 	gulp.src("src/theme/**")
 		.pipe(gulp.dest('dist/wordpress/wp-content/themes/' + themeName))
 });
 
-gulp.task('copy-fonts', function () {
+gulp.task('copy-theme-prod', function () {
+	gulp.src("src/theme/**")
+		.pipe(gulp.dest('dist/themes/' + themeName))
+});
+
+gulp.task('copy-fonts-dev', function () {
 	gulp.src("src/fonts/**")
 		.pipe(gulp.dest('dist/wordpress/wp-content/themes/' + themeName + '/fonts'))
+});
+
+gulp.task('copy-fonts-prod', function () {
+	gulp.src("src/fonts/**")
+		.pipe(gulp.dest('dist/themes/' + themeName + '/fonts'))
 });
 
 gulp.task('style-dev', function () {
@@ -109,6 +137,13 @@ gulp.task('style-dev', function () {
 		.pipe(browserSync.stream({ match: '**/*.css' }));
 });
 
+gulp.task('style-prod', function () {
+	return gulp.src('src/style/style.css')
+		.pipe(plumber({ errorHandler: onError }))
+		.pipe(postcss(pluginsProd))
+		.pipe(gulp.dest('dist/themes/' + themeName))
+});
+
 gulp.task('header-scripts-dev', function () {
 	return gulp.src(headerJS)
 		.pipe(plumber({ errorHandler: onError }))
@@ -116,6 +151,14 @@ gulp.task('header-scripts-dev', function () {
 		.pipe(concat('header-bundle.js'))
 		.pipe(sourcemaps.write("."))
 		.pipe(gulp.dest('dist/wordpress/wp-content/themes/' + themeName));
+});
+
+gulp.task('header-scripts-prod', function () {
+	return gulp.src(headerJS)
+		.pipe(plumber({ errorHandler: onError }))
+		.pipe(concat('header-bundle.js'))
+		.pipe(uglify())
+		.pipe(gulp.dest('dist/themes/' + themeName));
 });
 
 gulp.task('footer-scripts-dev', function () {
@@ -130,6 +173,17 @@ gulp.task('footer-scripts-dev', function () {
 		.pipe(gulp.dest('dist/wordpress/wp-content/themes/' + themeName));
 });
 
+gulp.task('footer-scripts-prod', function () {
+	return gulp.src(footerJS)
+		.pipe(plumber({ errorHandler: onError }))
+		.pipe(babel({
+			presets: ['env']
+		}))
+		.pipe(concat('footer-bundle.js'))
+		.pipe(uglify())
+		.pipe(gulp.dest('dist/themes/' + themeName));
+});
+
 var onError = function (err) {
 	gutil.beep();
 	console.log(err.toString());
@@ -138,7 +192,7 @@ var onError = function (err) {
 
 var reload = browserSync.reload();
 
-gulp.task('reload-js', ['copy-fonts'], function (done) {
+gulp.task('reload-js', ['copy-fonts-dev'], function (done) {
 	browserSync.reload();
 	done();
 });
@@ -148,7 +202,12 @@ gulp.task('reload-fonts', ['footer-scripts-dev'], function (done) {
 	done();
 });
 
-gulp.task('reload-theme', ['copy-theme'], function (done) {
+gulp.task('reload-theme', ['copy-theme-dev'], function (done) {
+	browserSync.reload();
+	done();
+});
+
+gulp.task('reload-content', ['copy-content'], function (done) {
 	browserSync.reload();
 	done();
 });
@@ -158,6 +217,7 @@ gulp.task('watch', function () {
 	gulp.watch(['src/js/**'], ['reload-js']);
 	gulp.watch(['src/fonts/**'], ['reload-fonts']);
 	gulp.watch(['src/theme/**'], ['reload-theme']);
+	gulp.watch(['src/uploads/**'], ['reload-content']);
 });
 /* -------------------------------------------------------------------------------------------------
 	End of Build Tasks

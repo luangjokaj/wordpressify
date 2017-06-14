@@ -7,8 +7,7 @@
 		"prod": "gulp build-prod",
 		"dev": "gulp build-dev",
 		"images": "gulp process-images",
-		"download:wp": "gulp download-wordpress",
-		"install:wp": "gulp setup",
+		"init": "gulp download-wordpress && gulp setup",
 		"lint:css": "stylelint src/**/*.css --config tools/stylelintrc.json"
 	},
 	"author": "Luan Gjokaj",
