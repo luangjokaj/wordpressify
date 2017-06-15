@@ -20,6 +20,7 @@ var remoteSrc = require('gulp-remote-src');
 var unzip = require('gulp-unzip');
 var connect = require('gulp-connect-php');
 var browserSync = require('browser-sync');
+var del = require('del');
 //--------------------------------------------------------------------------------------------------
 /* -------------------------------------------------------------------------------------------------
 	PostCSS Plugins
@@ -79,6 +80,10 @@ gulp.task('build-prod', [
 
 gulp.task('default');
 
+gulp.task('cleanup', function () {
+	del(['dist/**']);
+});
+
 gulp.task('download-wordpress', function () {
 	remoteSrc(['latest.zip'], {
 		base: 'https://wordpress.org/'
@@ -115,7 +120,7 @@ gulp.task('setup', [
 
 gulp.task('copy-theme-dev', function () {
 	gulp.src("src/theme/**")
-		.pipe(gulp.dest('dist/wordpress/wp-content/themes/' + themeName))
+		.pipe(gulp.dest('dist/wordpress/wp-content/themes/' + themeName));
 });
 
 gulp.task('copy-theme-prod', function () {
