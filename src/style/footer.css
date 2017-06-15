@@ -4,4 +4,19 @@ footer {
 	width: 100%;
 	background: var(--black);
 	color: var(--white);
+	box-sizing: border-box;
+	padding: 20px;
+
+	& div.menu {
+		float: right;
+		& ul {
+			list-style: none;
+
+			& li {
+				& a {
+					color: var(--white);
+				}
+			}
+		}
+	}
 }

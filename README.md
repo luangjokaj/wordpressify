@@ -13,7 +13,7 @@ ___
 * Local development PHP Server running WordPress
 * Live-Reload
 * Style Injection
-* Distribution Files
+* Distribution Files (Theme Only)
 
 ___
 
@@ -50,5 +50,6 @@ ___
 * Babel
 * PostCSS
 * CSSNext
+* WordPress
 
 ___

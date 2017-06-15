@@ -4,7 +4,7 @@
 	"description": "",
 	"main": "gulpfile.js",
 	"scripts": {
-		"prod": "gulp build-prod",
+		"prod": "gulp cleanup && gulp build-prod",
 		"dev": "gulp cleanup && gulp download-wordpress && gulp setup && gulp build-dev",
 		"images": "gulp process-images",
 		"lint:css": "stylelint src/**/*.css --config tools/stylelintrc.json"

@@ -31,8 +31,7 @@ var pluginsDev = [
 ];
 var pluginsProd = [
 	partialimport,
-	cssnext({warnForDuplicates: false}),
-	cssnano()
+	cssnext({warnForDuplicates: false})
 ];
 //--------------------------------------------------------------------------------------------------
 var headerJS = [
