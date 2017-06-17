@@ -1,6 +1,10 @@
-# Wordpress Theme Builder
+# WordPress Theme Builder
 
 A build system for developing WordPress themes using Gulp. The build runs a local PHP Web Server, all you need to run your local development environment is a mysql database, which you can get for free at: [FreeSQLDatabase](http://www.freesqldatabase.com/) 
+
+![Wordpress Theme Builder](http://i.imgur.com/ml9KHWN.png)
+
+The advantage of using the WordPress Theme Builder is the quick setup and no need to worry about setting up a running PHP server. The build takes care of everything.
 
 ___
 
