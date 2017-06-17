@@ -1,6 +1,6 @@
 # WordPress Theme Builder
 
-A build system for developing WordPress themes using Gulp. The build runs a local PHP Web Server, all you need to run your local development environment is a mysql database, which you can get for free at: [FreeSQLDatabase](http://www.freesqldatabase.com/) 
+A build system for developing WordPress themes using Gulp. On the development environment the build runs a local PHP web server, it uses Babel transpiler for JavaScript and it bundles CSS with PostCSS and CSSNext. You will still need a sql database, which you can get for free at: [FreeSQLDatabase](http://www.freesqldatabase.com/) or run it by yourself.
 
 ![Wordpress Theme Builder](http://i.imgur.com/ml9KHWN.png)
 
@@ -15,8 +15,8 @@ ___
 * Image Compression
 * Fetching latest WordPress version
 * Local development PHP Server running WordPress
-* Live-Reload
-* Style Injection
+* Live-Reload (PHP Theme Files)
+* Live-Style Injection (CSS Style Files)
 * Distribution Files (Theme Only)
 
 ___
