@@ -66,7 +66,10 @@ Change theme name in the Gulp configuration file:
 
 ```javascript
 /* -------------------------------------------------------------------------------------------------
-	Theme Name
+Theme Name
  ------------------------------------------------------------------------------------------------- */
 var themeName = 'goldengate';
 ```
+
+# License
+MIT
