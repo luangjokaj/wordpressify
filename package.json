@@ -1,6 +1,6 @@
 {
-	"name": "staticweb",
-	"version": "0.0.2",
+	"name": "wordpressThemeBuilder",
+	"version": "0.0.1",
 	"description": "",
 	"main": "gulpfile.js",
 	"scripts": {
