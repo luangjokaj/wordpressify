@@ -53,3 +53,16 @@ ___
 * WordPress
 
 ___
+
+# Configuration
+
+### Gulpfile.js
+
+Change theme name in the Gulp configuration file:
+
+```javascript
+/* -------------------------------------------------------------------------------------------------
+	Theme Name
+ ------------------------------------------------------------------------------------------------- */
+var themeName = 'goldengate';
+```
