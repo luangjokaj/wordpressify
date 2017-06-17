@@ -1,4 +1,4 @@
-# WordPress Theme Builder
+# WordPress Theme Builder [![Dependencies](https://david-dm.org/luangjokaj/gulp-wordpress-theme-builder/dev-status.svg)](https://david-dm.org/luangjokaj/gulp-wordpress-theme-builder?type=dev)
 
 A build system for developing WordPress themes using Gulp. On the development environment the build runs a local PHP web server, it uses Babel transpiler for JavaScript and it bundles CSS with PostCSS and CSSNext. You will still need a sql database, which you can get for free at: [FreeSQLDatabase](http://www.freesqldatabase.com/) or run it by yourself.
 
