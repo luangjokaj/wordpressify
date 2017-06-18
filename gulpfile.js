@@ -112,6 +112,11 @@ gulp.task('copy-content', function () {
 		.pipe(gulp.dest('dist/wordpress/wp-content/uploads'))
 });
 
+gulp.task('copy-new-content', function () {
+	gulp.src("dist/wordpress/wp-content/uploads/**")
+		.pipe(gulp.dest('scr/uploads'))
+});
+
 gulp.task('setup', [
 	'unzip-wordpress',
 	'copy-config'
@@ -229,6 +234,7 @@ gulp.task('watch', function () {
 	gulp.watch(['src/theme/**'], ['reload-theme']);
 	gulp.watch(['src/uploads/**'], ['reload-content']);
 	gulp.watch(['dist/wordpress/*.php'], ['set-config']);
+	gulp.watch(['dist/wordpress/wp-content/uploads/**'], ['copy-new-content']);
 });
 /* -------------------------------------------------------------------------------------------------
 	End of Build Tasks
