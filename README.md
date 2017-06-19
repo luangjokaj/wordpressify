@@ -71,5 +71,10 @@ Theme Name
 var themeName = 'goldengate';
 ```
 
+# Changelog
+
+v0.0.2
+* Watch and store new content in `wp-content/uploads`.
+
 # License
 MIT
