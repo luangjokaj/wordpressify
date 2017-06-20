@@ -21,6 +21,7 @@ var unzip = require('gulp-unzip');
 var connect = require('gulp-connect-php');
 var browserSync = require('browser-sync');
 var del = require('del');
+var fs = require('fs');
 //--------------------------------------------------------------------------------------------------
 /* -------------------------------------------------------------------------------------------------
 	PostCSS Plugins
@@ -50,6 +51,7 @@ var themeName = 'goldengate';
 	Start of Build Tasks
  ------------------------------------------------------------------------------------------------- */
 gulp.task('build-dev', [
+	'copy-tmp-content',
 	'copy-theme-dev',
 	'copy-fonts-dev',
 	'copy-content',
@@ -70,6 +72,7 @@ gulp.task('build-dev', [
 });
 
 gulp.task('build-prod', [
+	'copy-tmp-content',
 	'copy-theme-prod',
 	'copy-fonts-prod',
 	'style-prod',
@@ -112,9 +115,15 @@ gulp.task('copy-content', function () {
 		.pipe(gulp.dest('dist/wordpress/wp-content/uploads'))
 });
 
+gulp.task('copy-tmp-content', function () {
+	if (fs.existsSync('tmp')) {
+		gulp.src("tmp/**").pipe(gulp.dest('src'));
+	}
+});
+
 gulp.task('copy-new-content', function () {
 	gulp.src("dist/wordpress/wp-content/uploads/**")
-		.pipe(gulp.dest('src/uploads'))
+		.pipe(gulp.dest('tmp/uploads'));
 });
 
 gulp.task('setup', [
@@ -233,7 +242,7 @@ gulp.task('watch', function () {
 	gulp.watch(['src/fonts/**'], ['reload-fonts']);
 	gulp.watch(['src/theme/**'], ['reload-theme']);
 	gulp.watch(['src/uploads/**'], ['reload-content']);
-	gulp.watch(['dist/wordpress/wp-content/**'], ['copy-new-content']);
+	gulp.watch(['dist/wordpress/**/*'], ['copy-new-content']);
 	gulp.watch(['dist/wordpress/*.php'], ['set-config']);
 });
 /* -------------------------------------------------------------------------------------------------

@@ -17,6 +17,7 @@
 		"browser-sync": "^2.18.12",
 		"cssnano": "^3.10.0",
 		"del": "^3.0.0",
+		"fs": "0.0.1-security",
 		"gulp": "^3.9.1",
 		"gulp-babel": "^6.1.2",
 		"gulp-cache-bust": "^1.1.0",
