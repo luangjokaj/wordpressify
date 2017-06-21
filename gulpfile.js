@@ -116,9 +116,11 @@ gulp.task('copy-content', function () {
 });
 
 gulp.task('copy-tmp-content', function () {
-	if (fs.existsSync('tmp')) {
-		gulp.src("tmp/**").pipe(gulp.dest('src'));
-	}
+	gulp.src("tmp/**").pipe(gulp.dest('src'));
+});
+
+gulp.task('clean-tmp', ['copy-tmp-content'], function () {
+	return del(['tmp/**']);
 });
 
 gulp.task('copy-new-content', function () {
@@ -242,7 +244,7 @@ gulp.task('watch', function () {
 	gulp.watch(['src/fonts/**'], ['reload-fonts']);
 	gulp.watch(['src/theme/**'], ['reload-theme']);
 	gulp.watch(['src/uploads/**'], ['reload-content']);
-	gulp.watch(['dist/wordpress/**/*'], ['copy-new-content']);
+	gulp.watch(['dist/wordpress/**'], ['copy-new-content']);
 	gulp.watch(['dist/wordpress/*.php'], ['set-config']);
 });
 /* -------------------------------------------------------------------------------------------------
