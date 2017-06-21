@@ -1,6 +1,6 @@
 # WordPress Theme Builder [![Dependencies](https://david-dm.org/luangjokaj/gulp-wordpress-theme-builder/dev-status.svg)](https://david-dm.org/luangjokaj/gulp-wordpress-theme-builder?type=dev)
 
-A build system for developing WordPress themes using Gulp. On the development environment the build runs a local PHP web server, it uses Babel transpiler for JavaScript and it bundles CSS with PostCSS and CSSNext. You will still need a sql database, which you can get for free at: [FreeSQLDatabase](http://www.freesqldatabase.com/) or run it by yourself.
+A build system for developing WordPress themes using Gulp. On the development environment the build runs a local PHP web server, it uses Babel transpiler for JavaScript and it bundles CSS with PostCSS and CSSNext. You will still need an sql database, get one for free at: [FreeSQLDatabase](http://www.freesqldatabase.com/) or run it by yourself.
 
 ![Wordpress Theme Builder](http://i.imgur.com/ml9KHWN.png)
 
@@ -62,7 +62,7 @@ ___
 
 ### Gulpfile.js
 
-Change theme name in the Gulp configuration file:
+The name of the template has to be changed in the Gulp configuration file:
 
 ```javascript
 /* -------------------------------------------------------------------------------------------------
@@ -74,6 +74,7 @@ var themeName = 'goldengate';
 # Changelog
 
 v0.0.2
+* Bugfixes
 * Watch and store new content in `wp-content/uploads`.
 
 # License
