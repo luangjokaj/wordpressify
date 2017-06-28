@@ -31,6 +31,10 @@ This project requires node version 6. This is the only global dependency.
 ```
 $ npm install
 ```
+Make sure Gulp is installed Globally:
+```
+$ npm install gulp -g
+```
 
 ## Development 👾
 To start the development server just run the `dev` task:
