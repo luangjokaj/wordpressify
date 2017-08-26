@@ -81,6 +81,11 @@ var themeName = 'goldengate';
 
 # Changelog
 
+v.0.0.3
+* Simplified build logic.
+* Install WordPress only once with `npm run install:wordpress`
+* Cleaner distribution task.
+
 v0.0.2
 * Bugfixes
 * Watch and store new content in `wp-content/uploads`.

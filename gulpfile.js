@@ -70,17 +70,18 @@ gulp.task('build-dev', [
 });
 
 gulp.task('build-prod', [
-	'copy-theme-prod',
-	'copy-fonts-prod',
-	'style-prod',
-	'header-scripts-prod',
-	'footer-scripts-prod'
+	'dist'
 ]);
 
 gulp.task('default');
 
 gulp.task('cleanup', function () {
 	del(['build/**']);
+});
+
+gulp.task('dist', function () {
+	gulp.src('build/wordpress/wp-content/themes/' + themeName + '/**')
+		.pipe(gulp.dest('dist/themes/' + themeName))
 });
 
 gulp.task('download-wordpress', function () {
