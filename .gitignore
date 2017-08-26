@@ -1,7 +1,9 @@
 # Distribution Files
 app/**
 dist/**
+build/**
 tmp/**
+wp-config.php
 
 # IntelliJ IDE
 .idea

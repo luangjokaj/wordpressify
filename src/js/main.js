@@ -1,4 +1,4 @@
-const test = 'Babel is doing the job.';
+const test = 'Babel is doing the job. Test';
 
 $(window).on('load', function () {
 	console.log(test);
