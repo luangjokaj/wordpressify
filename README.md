@@ -35,7 +35,11 @@ Make sure Gulp is installed Globally:
 ```
 $ npm install gulp -g
 ```
-
+## Install Wordpress 
+To download and install the latest version of Wordpress just run the `install:wordpress` task:
+```
+$ npm run install:wordpress
+```
 ## Development 👾
 To start the development server just run the `dev` task:
 ```
