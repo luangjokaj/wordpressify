@@ -71,7 +71,6 @@ gulp.task('build-dev', [
 });
 
 gulp.task('build-prod', [
-
 	'copy-theme-prod',
 	'copy-fonts-prod',
 	'style-prod',
