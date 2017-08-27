@@ -32,7 +32,8 @@ var pluginsDev = [
 ];
 var pluginsProd = [
 	partialimport,
-	cssnext({warnForDuplicates: false})
+	cssnext({warnForDuplicates: false}),
+	cssnano
 ];
 //--------------------------------------------------------------------------------------------------
 var headerJS = [
@@ -70,13 +71,19 @@ gulp.task('build-dev', [
 });
 
 gulp.task('build-prod', [
-	'dist'
+
+	'copy-theme-prod',
+	'copy-fonts-prod',
+	'style-prod',
+	'header-scripts-prod',
+	'footer-scripts-prod'
 ]);
 
 gulp.task('default');
 
 gulp.task('cleanup', function () {
 	del(['build/**']);
+	del(['dist/**']);
 });
 
 gulp.task('dist', function () {
@@ -119,7 +126,7 @@ gulp.task('copy-theme-dev', function () {
 
 gulp.task('copy-theme-prod', function () {
 	gulp.src("src/theme/**")
-		.pipe(gulp.dest('build/themes/' + themeName))
+		.pipe(gulp.dest('dist/themes/' + themeName))
 });
 
 gulp.task('copy-fonts-dev', function () {
@@ -129,7 +136,7 @@ gulp.task('copy-fonts-dev', function () {
 
 gulp.task('copy-fonts-prod', function () {
 	gulp.src("src/fonts/**")
-		.pipe(gulp.dest('build/themes/' + themeName + '/fonts'))
+		.pipe(gulp.dest('dist/themes/' + themeName + '/fonts'))
 });
 
 gulp.task('style-dev', function () {
@@ -146,7 +153,7 @@ gulp.task('style-prod', function () {
 	return gulp.src('src/style/style.css')
 		.pipe(plumber({ errorHandler: onError }))
 		.pipe(postcss(pluginsProd))
-		.pipe(gulp.dest('build/themes/' + themeName))
+		.pipe(gulp.dest('dist/themes/' + themeName))
 });
 
 gulp.task('header-scripts-dev', function () {
@@ -186,7 +193,7 @@ gulp.task('footer-scripts-prod', function () {
 		}))
 		.pipe(concat('footer-bundle.js'))
 		.pipe(uglify())
-		.pipe(gulp.dest('build/themes/' + themeName + '/js'));
+		.pipe(gulp.dest('dist/themes/' + themeName + '/js'));
 });
 
 var onError = function (err) {
