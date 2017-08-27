@@ -4,7 +4,6 @@
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta name="viewport" content="width=device-width">
 	<title><?php bloginfo('name'); ?></title>
-	<script src="<?php echo get_template_directory_uri() ?>/header-bundle.js"></script>
 
 	<?php wp_head(); ?>
 </head>

@@ -52,7 +52,6 @@
 	<p><?php bloginfo('name'); ?> - &copy; <?php echo date('Y');?></p>
 
 </footer>
-	<script src="<?php echo get_template_directory_uri() ?>/footer-bundle.js"></script>
 <?php wp_footer(); ?>
 </body>
 </html>

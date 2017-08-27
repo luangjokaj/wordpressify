@@ -155,7 +155,7 @@ gulp.task('header-scripts-dev', function () {
 		.pipe(sourcemaps.init())
 		.pipe(concat('header-bundle.js'))
 		.pipe(sourcemaps.write("."))
-		.pipe(gulp.dest('build/wordpress/wp-content/themes/' + themeName));
+		.pipe(gulp.dest('build/wordpress/wp-content/themes/' + themeName + '/js'));
 });
 
 gulp.task('header-scripts-prod', function () {
@@ -163,7 +163,7 @@ gulp.task('header-scripts-prod', function () {
 		.pipe(plumber({ errorHandler: onError }))
 		.pipe(concat('header-bundle.js'))
 		.pipe(uglify())
-		.pipe(gulp.dest('build/themes/' + themeName));
+		.pipe(gulp.dest('dist/themes/' + themeName + '/js'));
 });
 
 gulp.task('footer-scripts-dev', function () {
@@ -175,7 +175,7 @@ gulp.task('footer-scripts-dev', function () {
 		}))
 		.pipe(concat('footer-bundle.js'))
 		.pipe(sourcemaps.write("."))
-		.pipe(gulp.dest('build/wordpress/wp-content/themes/' + themeName));
+		.pipe(gulp.dest('build/wordpress/wp-content/themes/' + themeName + '/js'));
 });
 
 gulp.task('footer-scripts-prod', function () {
@@ -186,7 +186,7 @@ gulp.task('footer-scripts-prod', function () {
 		}))
 		.pipe(concat('footer-bundle.js'))
 		.pipe(uglify())
-		.pipe(gulp.dest('build/themes/' + themeName));
+		.pipe(gulp.dest('build/themes/' + themeName + '/js'));
 });
 
 var onError = function (err) {
