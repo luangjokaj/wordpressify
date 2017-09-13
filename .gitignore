@@ -5,8 +5,9 @@ build/**
 tmp/**
 wp-config.php
 
-# IntelliJ IDE
+# IDE & Editors
 .idea
+.vscode
 
 # OSX
 *.DS_Store

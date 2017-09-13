@@ -38,7 +38,7 @@
 		"jquery": "^3.2.1",
 		"normalize.css": "^7.0.0",
 		"postcss-cssnext": "^3.0.2",
-		"postcss-easy-import": "^2.1.0",
+		"postcss-easy-import": "^3.0.0",
 		"stylelint": "^8.1.0",
 		"stylelint-config-standard": "^17.0.0"
 	}
