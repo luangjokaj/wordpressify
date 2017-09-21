@@ -32,8 +32,7 @@ var pluginsDev = [
 ];
 var pluginsProd = [
 	partialimport,
-	cssnext({warnForDuplicates: false}),
-	cssnano
+	cssnext({ warnForDuplicates: false })
 ];
 //--------------------------------------------------------------------------------------------------
 var headerJS = [
@@ -63,7 +62,7 @@ gulp.task('build-dev', [
 	connect.server({
 		base: 'build/wordpress',
 		port: '3020'
-	}, function (){
+	}, function () {
 		browserSync({
 			proxy: '127.0.0.1:3020'
 		});
@@ -94,7 +93,7 @@ gulp.task('download-wordpress', function () {
 	remoteSrc(['latest.zip'], {
 		base: 'https://wordpress.org/'
 	})
-	.pipe(gulp.dest('build/'));
+		.pipe(gulp.dest('build/'));
 });
 
 gulp.task('unzip-wordpress', function () {
