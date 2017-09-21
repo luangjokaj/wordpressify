@@ -20,6 +20,7 @@ header {
 
 	&.scrolled {
 		padding: 20px 100px;
+
 		& nav {
 			& div.menu-header-container {
 				& ul {

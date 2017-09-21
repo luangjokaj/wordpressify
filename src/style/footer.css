@@ -9,6 +9,7 @@ footer {
 
 	& div.menu {
 		float: right;
+
 		& ul {
 			list-style: none;
 
