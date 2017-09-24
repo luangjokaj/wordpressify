@@ -92,7 +92,7 @@ gulp.task('dist', function () {
 });
 
 gulp.task('zip-theme', ['copy-theme-prod', 'copy-fonts-prod', 'style-prod', 'header-scripts-prod', 'footer-scripts-prod'], function () {
-	gulp.src('dist/themes/' + themeName + '/*')
+	gulp.src('dist/themes/' + themeName + '/**')
 		.pipe(zip(themeName + '.zip'))
 		.pipe(gulp.dest('dist'))
 });
