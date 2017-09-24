@@ -18,6 +18,7 @@ var plumber = require('gulp-plumber');
 var babel = require("gulp-babel");
 var remoteSrc = require('gulp-remote-src');
 var unzip = require('gulp-unzip');
+var zip = require('gulp-zip');
 var connect = require('gulp-connect-php');
 var browserSync = require('browser-sync');
 var del = require('del');
@@ -74,7 +75,8 @@ gulp.task('build-prod', [
 	'copy-fonts-prod',
 	'style-prod',
 	'header-scripts-prod',
-	'footer-scripts-prod'
+	'footer-scripts-prod',
+	'zip-theme'
 ]);
 
 gulp.task('default');
@@ -87,6 +89,12 @@ gulp.task('cleanup', function () {
 gulp.task('dist', function () {
 	gulp.src('build/wordpress/wp-content/themes/' + themeName + '/**')
 		.pipe(gulp.dest('dist/themes/' + themeName))
+});
+
+gulp.task('zip-theme', ['copy-theme-prod', 'copy-fonts-prod', 'style-prod', 'header-scripts-prod', 'footer-scripts-prod'], function () {
+	gulp.src('dist/themes/' + themeName + '/*')
+		.pipe(zip(themeName + '.zip'))
+		.pipe(gulp.dest('dist'))
 });
 
 gulp.task('download-wordpress', function () {
