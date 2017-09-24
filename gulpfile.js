@@ -29,11 +29,19 @@ var fs = require('fs');
  ------------------------------------------------------------------------------------------------- */
 var pluginsDev = [
 	partialimport,
-	cssnext()
+	cssnext({
+		features: {
+			colorHexAlpha: false
+		}
+	})
 ];
 var pluginsProd = [
 	partialimport,
-	cssnext({ warnForDuplicates: false })
+	cssnext({
+		features: {
+			colorHexAlpha: false
+		}
+	})
 ];
 //--------------------------------------------------------------------------------------------------
 var headerJS = [
