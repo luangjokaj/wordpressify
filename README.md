@@ -2,7 +2,7 @@
 
 A build system for developing WordPress themes using Gulp. On the development environment the build runs a local PHP web server, it uses Babel transpiler for JavaScript and it bundles CSS with PostCSS and CSSNext. However you will still need an sql database.
 
-![Gulp WordPress Boilerplate](http://i.imgur.com/ml9KHWN.png)
+![Gulp WordPress Boilerplate](https://i.imgur.com/iTQAert.png)
 
 The advantage of using the gulp-wordpress-boilerplate is the quick setup and no need to worry about setting up a running PHP server. The build takes care of everything.
 
@@ -28,7 +28,7 @@ This project requires node version 6. This is the only global dependency.
 * NodeJS http://nodejs.org/
 
 ## Installation ⏳
-* Clone Repository: https://github.com/luangjokaj/gulp-wordpress-theme-builder
+* Clone Repository: https://github.com/luangjokaj/gulp-wordpress-boilerplate
 * Install node packages:
 ```
 $ npm install
