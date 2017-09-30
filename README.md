@@ -1,6 +1,6 @@
 # Gulp WordPress Boilerplate [![Dependencies](https://david-dm.org/luangjokaj/gulp-wordpress-theme-builder/dev-status.svg)](https://david-dm.org/luangjokaj/gulp-wordpress-theme-builder?type=dev)
 
-A build system for developing WordPress themes using Gulp. On the development environment the build runs a local PHP web server, it uses Babel transpiler for JavaScript and it bundles CSS with PostCSS and CSSNext. However you will still need an sql database.
+A build system for developing WordPress themes using Gulp. It runs a local PHP web server with auto reload, uses Babel transpiler for JavaScript (ES6) and it bundles CSS with PostCSS and CSSNext. However you will still need an sql database.
 
 ![Gulp WordPress Boilerplate](https://i.imgur.com/iTQAert.png)
 
@@ -53,6 +53,17 @@ To build the production files run the `prod` task:
 ```
 $ npm run prod
 ```
+
+## Working Directories
+* All the files that you will be working with can be found at: `src/`;
+* The `.php` files of the template: `src/theme/`;
+* The main `style.css` with the rest of the css includes: `src/style/`;
+* Your JavaScript files: `src/js`;
+* Fonts are always special: `src/fonts`;
+
+Third party JavaScript libraries can be included in the Gulpfile.js configuration.
+
+All the respective directories (fonts, js, style and theme) have specific watch tasks that run in Gulp.
 
 ___
 
