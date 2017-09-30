@@ -1,5 +1,5 @@
 {
-	"name": "wordpressThemeBuilder",
+	"name": "gulp-wordpress-boilerplate",
 	"version": "0.0.3",
 	"description": "",
 	"main": "gulpfile.js",
@@ -36,8 +36,11 @@
 		"gulp-unzip": "^0.2.0",
 		"gulp-util": "^3.0.8",
 		"gulp-zip": "^4.0.0",
+		"isotope-layout": "^3.0.4",
+		"izimodal": "^1.5.0",
 		"jquery": "^3.2.1",
 		"normalize.css": "^7.0.0",
+		"nprogress": "^0.2.0",
 		"postcss-cssnext": "^3.0.2",
 		"postcss-easy-import": "^3.0.0",
 		"stylelint": "^8.1.1",

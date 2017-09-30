@@ -1,0 +1,81 @@
+.woocommerce {
+	& .location-icon {
+		width: 100%;
+		text-align: center;
+		padding-right: 20px;
+
+		& img {
+			filter: drop-shadow(0 0 25px color(var(--black) alpha(-85%)));
+			margin: 40px 0;
+
+			@media (--screen-phablet) {
+				max-width: 220px;
+			}
+
+			@media (--screen-mobile) {
+				margin: 20px 0 0;
+			}
+		}
+	}
+
+	& .intro-my-addresses {
+		border-bottom: solid 1px var(--light-gray);
+		padding-bottom: 20px;
+		margin: 0;
+	}
+
+	& .my-addresses {
+		display: flex;
+		flex-wrap: wrap;
+
+		@media (--screen-mobile) {
+			display: block;
+		}
+
+		& > p {
+			border-bottom: solid 1px var(--light-gray);
+		}
+
+		& div.woocommerce-Address {
+			flex: 50%;
+			max-width: 50%;
+			box-sizing: border-box;
+
+			&:nth-child(odd) {
+				padding-right: 10px;
+
+				@media (--screen-mobile) {
+					padding-right: 0;
+				}
+			}
+
+			&:nth-child(even) {
+				padding-left: 10px;
+
+				@media (--screen-mobile) {
+					padding-left: 0;
+				}
+			}
+
+			@media (--screen-mobile) {
+				max-width: 100%;
+				width: 100%;
+			}
+
+			& header.title {
+				& a {
+					flex: right;
+					display: inline-block;
+					box-sizing: border-box;
+					padding: 20px 0;
+				}
+			}
+		}
+	}
+
+	& .woocommerce-address-fields {
+		& input[type='submit'] {
+			margin: 10px 0 0;
+		}
+	}
+}

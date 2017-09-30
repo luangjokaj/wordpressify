@@ -1,28 +1,81 @@
 html, body {
-	background: var(--background-grey);
+	background: var(--white);
 	color: var(--black);
-	font-family: var(--futura-book);
+	font-family: var(--font-roman);
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	height: 100%;
 }
 
 * {
 	outline: none;
+
+	&::selection {
+		color: var(--white);
+		background: var(--secondary-color);
+	}
+}
+
+a, button {
+	text-decoration: none;
+	transition: all 0.3s ease;
+	color: var(--primary-color);
+
+	&:hover {
+		color: var(--secondary-color);
+	}
 }
 
 a {
-	text-decoration: none;
-	transition: all 0.3s ease;
+	& span {
+		color: var(--black);
+	}
+}
+
+button {
+	appearance: none;
+	background: none;
+	border: none;
+	cursor: pointer;
 }
 
 .container {
-	padding: 143px 100px 60px;
+	padding: 150px 100px 60px;
 	box-sizing: border-box;
+	min-height: calc(100% - 146px);
+	display: flex;
+	width: 100%;
+
+	@media (--screen-tablet) {
+		padding: 150px 20px 20px;
+	}
+
+	@media (--screen-phablet) {
+		padding: 150px 40px 40px;
+	}
+
+	@media (--screen-mobile) {
+		padding: 150px 20px 20px;
+	}
+}
+
+#container {
+	width: 100%;
+}
+
+.site-content {
+	width: 100%;
+	margin: auto;
 }
 
 img {
 	max-width: 100%;
 	height: auto;
+}
+
+p {
+	font-size: var(--default-font-size);
+	line-height: var(--default-line-height);
 }
 
 .main-column, .side-column {
@@ -38,4 +91,57 @@ img {
 	box-shadow: 0 2px 4px 0 color(var(--black) alpha(-80%));
 	box-sizing: border-box;
 	width: 30%;
+}
+
+.pagination {
+	text-align: center;
+	margin: 40px 0 0;
+
+	&.side {
+		padding-top: 45px;
+
+		@media (--screen-mobile) {
+			padding-top: 20px;
+		}
+	}
+
+	& span, & a {
+		margin: 5px;
+		display: inline-block;
+		padding: 10px 15px;
+		border: solid 1px var(--light-gray);
+		border-radius: 5px;
+	}
+}
+
+ins {
+	text-decoration: none;
+}
+
+label {
+	display: inline-block;
+	width: 100%;
+	color: var(--dark-gray);
+	width: auto;
+}
+
+.no-margins {
+	margin: 0;
+}
+
+h1, h2, h3 , h4, h5 , h6 {
+	font-family: var(--font-bold);
+	font-weight: bold;
+}
+
+#content div.sharedaddy, #main div.sharedaddy, div.sharedaddy {
+	margin-top: 20px;
+}
+
+div.sd-content ul {
+	margin: 0 !important;
+
+	& li {
+		margin: 0 10px 0px 0;
+	}
 }

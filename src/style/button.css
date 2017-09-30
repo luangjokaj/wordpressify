@@ -1,18 +1,40 @@
 :root {
 	--button {
-		font-size: var(--default-font-size);
+		cursor: pointer;
+		font-size: var(--small-font-size);
+		font-family: var(--font-medium);
+		text-transform: uppercase;
 		color: var(--white);
-		font-family: var(--futura-medium);
 		display: inline-block;
 		box-sizing: border-box;
-		padding: 15px 30px;
-		background: color(var(--black) alpha(-50%));
-		transition: all 0.5s ease;
-		border: solid 4px var(--primary-color);
+		padding: 18px 30px !important;
+		background: var(--primary-color);
+		text-align: center;
+		transition: all 0.3s ease;
+		margin: 0;
+
+		@media (--screen-mobile) {
+			padding: 18px 15px !important;
+		}
 
 		&:hover {
-			background: color(var(--black) alpha(-20%));
-			padding: 15px 35px;
+			background: var(--secondary-color);
+			color: var(--white);
+		}
+
+		&:disabled {
+			color: var(--dark-gray);
+			background: var(--disabled-gray);
+
+			&:hover {
+				color: inherit;
+				background-color: #ebe9eb;
+				cursor: not-allowed;
+			}
 		}
 	};
+}
+
+input[type='submit'] {
+	@apply --button;
 }

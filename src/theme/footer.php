@@ -1,4 +1,5 @@
-</div><!-- container -->
+</div>
+<!-- container -->
 <footer>
 	<!-- footer-widgets -->
 	<div class="footer-widgets clearfix">
@@ -35,21 +36,13 @@
 
 		<?php endif; ?>
 
-	</div><!-- /footer-widgets -->
+	</div>
+	<!-- /footer-widgets -->
 
-	<nav class="site-nav">
-		<?php
-
-		$args = array(
-			'theme_location' => 'footer'
-		);
-
-		?>
-
-		<?php wp_nav_menu(  $args ); ?>
-	</nav>
-
-	<p><?php bloginfo('name'); ?> - &copy; <?php echo date('Y');?></p>
+	<p>
+		<em><?php bloginfo('name'); ?></em> - &copy; <?php echo date('Y');?></p>
+		<?php echo lk_theme_output_socials(); ?>
+	</p>
 
 </footer>
 <?php wp_footer(); ?>

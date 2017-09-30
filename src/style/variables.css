@@ -1,12 +1,19 @@
 :root {
-	--primary-color: #FBAF3F;
-	--purple: #D3AAE0;
-	--pink: #FDADAB;
+	--primary-color: #8EC5FC;
+	--secondary-color: #E0C3FC;
 	--black: #000000;
 	--white: #FFFFFF;
-	--shadow: 0 2px 5px 0 color(var(--primary-color) alpha(-80%));
+	--success-color: #2ecc71;
+	--error-color: #e74c3c;
+	--pending-color: #FFFFCC;
 
 	--background-grey: #F3F3F3;
+
+	--light-gray: #E5E5E5;
+	--medium-gray: #B5B1B1;
+	--dark-gray: #4A4A4A;
+	--disabled-gray: #ebe9eb;
+	--gradient: linear-gradient(var(--primary-color), var(--secondary-color));
 }
 
 @custom-media --screen-tiny (max-width: 320px);
@@ -25,7 +32,10 @@
 	--small-line-height: 1.1;
 
 	--default-font-size: 16px;
-	--default-line-height: 1.2;
+	--default-line-height: 1.4;
+
+	--medium-font-size: 20px;
+	--medium-line-height: 1.3;
 
 	--big-font-size: 24px;
 	--big-line-height: 1.5;

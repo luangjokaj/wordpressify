@@ -2,20 +2,44 @@ footer {
 	clear: both;
 	overflow: hidden;
 	width: 100%;
-	background: var(--black);
+	background: var(--gradient);
 	color: var(--white);
 	box-sizing: border-box;
 	padding: 20px;
+	text-align: center;
 
-	& div.menu {
-		float: right;
+	& em {
+		font-style: normal;
+		font-family: var(--font-medium);
+	}
 
-		& ul {
-			list-style: none;
+	& ul {
+		list-style: none;
+		display: flex;
+		flex-wrap: wrap;
+		width: 100%;
+		text-align: center;
+		max-width: 186px;
+		margin: auto;
+		padding: 0;
 
-			& li {
-				& a {
-					color: var(--white);
+		& li {
+			flex: 1;
+
+			& a {
+				box-sizing: border-box;
+				padding: 0 5px;
+
+				&:hover {
+					& img {
+						opacity: 0.5;
+					}
+				}
+
+				& img {
+					width: 32px;
+					height: 32px;
+					transition: all 0.4s ease;
 				}
 			}
 		}

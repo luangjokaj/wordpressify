@@ -1,32 +1,27 @@
-<?php
-
-get_header(); ?>
-	
+<?php get_header(); ?>
 	<!-- site-content -->
-	<div class="site-content clearfix">
-		
+	<div class="site-content no-margins">
+
 		<!-- main-column -->
-		<div class="main-column">
-
+		<div class="main-column grid">
 			<?php if (have_posts()) :
-				while (have_posts()) : the_post();
+				while (have_posts()) :
+					the_post();
+					get_template_part('content', get_post_format());
+				endwhile; ?>
+		</div>
+		<!-- /main-column -->
 
-				get_template_part('content', get_post_format());
+		<?php else :
+			get_template_part( 'content', 'none' );
+		endif; ?>
 
-				endwhile;
+		<div class="pagination side">
+			<?php echo paginate_links(); ?>
+		</div> 
+	</div>
+	<!-- /site-content -->
 
-				else :
-					echo '<p>No content found</p>';
+	<?php get_sidebar(); ?>
 
-				endif;
-				?>
-
-		</div><!-- /main-column -->
-
-		<?php get_sidebar(); ?>
-		
-	</div><!-- /site-content -->
-	
-	<?php get_footer();
-
-?>
+<?php get_footer(); ?>
