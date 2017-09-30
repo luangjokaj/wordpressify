@@ -239,7 +239,6 @@ gulp.task('watch', function () {
 	gulp.watch(['src/js/**'], ['reload-js']);
 	gulp.watch(['src/fonts/**'], ['reload-fonts']);
 	gulp.watch(['src/theme/**'], ['reload-theme']);
-	gulp.watch(['build/wordpress/*.php'], ['set-config']);
 });
 /* -------------------------------------------------------------------------------------------------
 	End of Build Tasks
