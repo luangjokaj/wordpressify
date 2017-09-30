@@ -107,6 +107,9 @@ var footerJS = [
 ];
 ```
 
+# Quick Setup
+https://www.youtube.com/watch?v=SoLbiHSglSs
+
 # Changelog
 
 v.0.0.3
