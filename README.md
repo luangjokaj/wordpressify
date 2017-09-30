@@ -2,6 +2,9 @@
 
 A build system for developing WordPress themes using Gulp. It runs a local PHP web server with auto reload, uses Babel transpiler for JavaScript (ES6) and it bundles CSS with PostCSS and CSSNext. However you will still need an sql database.
 
+# Quick Setup
+https://www.youtube.com/watch?v=SoLbiHSglSs
+
 ![Gulp WordPress Boilerplate](https://i.imgur.com/iTQAert.png)
 
 The advantage of using the gulp-wordpress-boilerplate is the quick setup and no need to worry about setting up a running PHP server. The build takes care of everything.
@@ -106,9 +109,6 @@ var footerJS = [
 	'src/js/**'
 ];
 ```
-
-# Quick Setup
-https://www.youtube.com/watch?v=SoLbiHSglSs
 
 # Changelog
 
