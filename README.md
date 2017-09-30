@@ -1,10 +1,10 @@
-# WordPress Theme Builder [![Dependencies](https://david-dm.org/luangjokaj/gulp-wordpress-theme-builder/dev-status.svg)](https://david-dm.org/luangjokaj/gulp-wordpress-theme-builder?type=dev)
+# Gulp WordPress Boilerplate [![Dependencies](https://david-dm.org/luangjokaj/gulp-wordpress-theme-builder/dev-status.svg)](https://david-dm.org/luangjokaj/gulp-wordpress-theme-builder?type=dev)
 
-A build system for developing WordPress themes using Gulp. On the development environment the build runs a local PHP web server, it uses Babel transpiler for JavaScript and it bundles CSS with PostCSS and CSSNext. You will still need an sql database, get one for free at: [FreeSQLDatabase](http://www.freesqldatabase.com/) or run it by yourself.
+A build system for developing WordPress themes using Gulp. On the development environment the build runs a local PHP web server, it uses Babel transpiler for JavaScript and it bundles CSS with PostCSS and CSSNext. However you will still need an sql database.
 
-![Wordpress Theme Builder](http://i.imgur.com/ml9KHWN.png)
+![Gulp WordPress Boilerplate](http://i.imgur.com/ml9KHWN.png)
 
-The advantage of using the WordPress Theme Builder is the quick setup and no need to worry about setting up a running PHP server. The build takes care of everything.
+The advantage of using the gulp-wordpress-boilerplate is the quick setup and no need to worry about setting up a running PHP server. The build takes care of everything.
 
 ___
 
@@ -12,12 +12,14 @@ ___
 * Processing styles using PostCSS with CSSNext
 * Babel Transpiler for JavaScript (ES6)
 * JavaScript Concatenating and Minification
+* Easy import for fhird party JavaScript libraries
 * Image Compression
 * Fetching latest WordPress version
-* Local development PHP Server running WordPress
-* Live-Reload (PHP Theme Files)
-* Live-Style Injection (CSS Style Files)
-* Distribution Files (Theme Only)
+* Local PHP development server running WordPress
+* Live Reload for PHP Theme Files
+* Live CSS Style Injection
+* Included free sample template with Woocommerce support
+* Distribution Files - ZIP Ready to be Shipped 🚀
 
 ___
 
@@ -76,7 +78,22 @@ The name of the template has to be changed in the Gulp configuration file:
 /* -------------------------------------------------------------------------------------------------
 Theme Name
  ------------------------------------------------------------------------------------------------- */
-var themeName = 'goldengate';
+var themeName = 'lk-website';
+```
+
+Adding third party JavaScript libraries is as simple as installing them with NPM Node Package Manager and including the source files in the configuration:
+
+```javascript
+var headerJS = [
+	'node_modules/jquery/dist/jquery.js',
+	'node_modules/nprogress/nprogress.js',
+	'node_modules/aos/dist/aos.js',
+	'node_modules/isotope-layout/dist/isotope.pkgd.js'
+];
+var footerJS = [
+	'node_modules/izimodal/js/iziModal.js',
+	'src/js/**'
+];
 ```
 
 # Changelog
