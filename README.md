@@ -15,7 +15,7 @@ ___
 * Processing styles using PostCSS with CSSNext
 * Babel Transpiler for JavaScript (ES6)
 * JavaScript Concatenating and Minification
-* Easy import for fhird party JavaScript libraries
+* Easy import for third party JavaScript libraries
 * Image Compression
 * Fetching latest WordPress version
 * Local PHP development server running WordPress
