@@ -468,4 +468,10 @@
 	& .woocommerce-verification-required {
 		margin-bottom: 0;
 	}
+
+	& .up-sells {
+		clear: both;
+		overflow: hidden;
+		margin-bottom: -10px;
+	}
 }
