@@ -143,12 +143,13 @@
 				height: 100%;
 				background: color(var(--white) alpha(-10%));
 				text-align: center;
-				font-size: var(--default-font-size);
+				font-size: var(--h1-font-size);
 				box-shadow: 0 0 20px color(var(--black) alpha(-80%));
 				font-family: var(--font-thin);
 				font-weight: light;
 
 				@media (--screen-mobile) {
+					font-size: var(--default-font-size);
 					background: color(var(--white) alpha(-20%));
 				}
 			}
