@@ -64,39 +64,18 @@ article {
 	}
 
 	&:nth-child(4) {
-		transition-delay: 0.4s;
-	}
-
-	&:nth-child(5) {
-		transition-delay: 0.5s;
-	}
-
-	&:nth-child(6) {
-		transition-delay: 0.6s;
-	}
-
-	&:nth-child(7) {
-		transition-delay: 0.7s;
-	}
-
-	&:nth-child(8) {
-		transition-delay: 0.8s;
-	}
-
-	&:nth-child(9) {
-		transition-delay: 0.1s;
-	}
-
-	&:nth-child(10) {
-		transition-delay: 0.2s;
-	}
-
-	&:nth-child(11) {
 		transition-delay: 0.3s;
 	}
 
+	&:nth-child(5),
+	&:nth-child(6),
+	&:nth-child(7),
+	&:nth-child(8),
+	&:nth-child(9),
+	&:nth-child(10),
+	&:nth-child(11),
 	&:nth-child(12) {
-		transition-delay: 0.4s;
+		transition-delay: 0.3s;
 	}
 
 	&:nth-child(1),
