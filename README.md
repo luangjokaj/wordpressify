@@ -5,6 +5,9 @@ A build system for developing WordPress themes using Gulp. It runs a local PHP w
 # Quick Setup
 https://www.youtube.com/watch?v=SoLbiHSglSs
 
+# Sample Theme
+http://www.lifes-kool.design/
+
 ![Gulp WordPress Boilerplate](https://i.imgur.com/iTQAert.png)
 
 The advantage of using the gulp-wordpress-boilerplate is the quick setup and no need to worry about setting up a running PHP server. The build takes care of everything.
