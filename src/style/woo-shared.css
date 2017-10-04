@@ -140,4 +140,5 @@ span.woocommerce-Price-amount {
 	font-weight: normal;
 	font-family: var(--font-medium);
 	font-weight: bold;
+	color: var(--black);
 }

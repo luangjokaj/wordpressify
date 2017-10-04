@@ -4,6 +4,18 @@
 
 		& form.cart {
 			margin-bottom: 25px;
+
+			& .woocommerce-variation-price {
+				margin-bottom: 20px;
+			}
+
+			& .variations {
+				margin-bottom: 20px;
+
+				& select {
+					min-width: 0;
+				}
+			}
 		}
 
 		& .remove {
@@ -106,7 +118,7 @@
 			}
 		}
 
-		& p.price.single, & div.product span.price.single {
+		& p.price.single, & div.product span.price.single, & div.product span.price {
 			color: var(--black);
 			font-family: var(--font-roman);
 			font-weight: normal;
