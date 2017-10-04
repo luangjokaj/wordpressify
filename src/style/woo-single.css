@@ -45,6 +45,11 @@
 				border-bottom: solid 1px var(--light-gray);
 			}
 
+			@media (--screen-mobile) {
+				margin-bottom: 0;
+				border-bottom: none;
+			}
+
 			& figure {
 				padding: 0;
 				margin: 0;
@@ -92,6 +97,7 @@
 			}
 
 			& .single_add_to_cart_button {
+				@apply --button;
 				@media (--screen-mobile) {
 					width: calc(50% - 10px);
 				}
