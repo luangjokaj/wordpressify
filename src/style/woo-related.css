@@ -1,3 +1,18 @@
-.woocommerce .related {
-	clear: both;
+.woocommerce {
+	& .related, & .up-sells {
+		clear: both;
+
+		& .grid {
+			& article {
+				&:nth-child(n+4) {
+					display: none;
+				}
+			}
+		}
+	}
+
+	& .up-sells {
+		overflow: hidden;
+		margin-bottom: -10px;
+	}
 }

@@ -494,12 +494,6 @@
 	& .woocommerce-verification-required {
 		margin-bottom: 0;
 	}
-
-	& .up-sells {
-		clear: both;
-		overflow: hidden;
-		margin-bottom: -10px;
-	}
 }
 
 .tagged_as {
@@ -509,4 +503,8 @@
 	& a {
 		@apply --tags;
 	}
+}
+
+.sku_wrapper {
+	display: none;
 }
