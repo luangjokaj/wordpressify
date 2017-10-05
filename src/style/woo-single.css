@@ -11,9 +11,17 @@
 
 			& .variations {
 				margin-bottom: 20px;
+				position: relative;
 
 				& select {
 					min-width: 0;
+					width: 100%;
+				}
+
+				& a.reset_variations {
+					position: absolute;
+					top: 8px;
+					right: 45px;
 				}
 			}
 		}
