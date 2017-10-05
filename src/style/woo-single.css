@@ -196,6 +196,7 @@
 					@media (--screen-mobile) {
 						max-width: 100%;
 						width: 100%;
+						border-right: none;
 						border-bottom: solid 1px var(--light-gray);
 
 						&:last-child {
