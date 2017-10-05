@@ -17,7 +17,7 @@ $(function () {
 			history: false,
 			iframe: false,
 			fullscreen: false,
-			group: 'group1',
+			group: 'group2',
 			width: '100vh',
 			iframeHeight: '90vh',
 			closeButton: true,
