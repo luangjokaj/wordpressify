@@ -215,7 +215,7 @@ function lk_theme_custom_logo($wp_customize)
 
 	$wp_customize->add_setting('lk-header-logo-image');
 
-	$wp_customize->add_control( new WP_Customize_Cropped_Image_Control($wp_customize, 'wpb-footer-callout-image-control', array(
+	$wp_customize->add_control( new WP_Customize_Cropped_Image_Control($wp_customize, 'lk-footer-callout-image-control', array(
 			'label' => 'Image',
 			'section' => 'lk-header-logo-section',
 			'settings' => 'lk-header-logo-image',
