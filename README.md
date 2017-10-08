@@ -39,10 +39,6 @@ This project requires node version 6. This is the only global dependency.
 ```
 $ npm install
 ```
-Make sure Gulp is installed Globally:
-```
-$ npm install gulp -g
-```
 ## Install Wordpress 
 To download and install the latest version of Wordpress just run the `install:wordpress` task:
 ```
