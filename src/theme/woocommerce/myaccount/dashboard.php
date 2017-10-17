@@ -31,7 +31,7 @@ if (! defined( 'ABSPATH' )) {
 			/* translators: 1: user display name 2: logout url */
 			printf(
 				__( '👋 Hello, %1$s.', 'woocommerce' ),
-				'<strong class="name">' . esc_html( $current_user->display_name ) . '</strong>'
+				'<strong class="name">' . esc_html( $current_user->user_firstname ) . '</strong>'
 			);
 		?></p>
 
