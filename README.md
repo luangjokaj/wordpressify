@@ -1,12 +1,11 @@
 # Gulp WordPress Boilerplate [![Dependencies](https://david-dm.org/luangjokaj/gulp-wordpress-theme-builder/dev-status.svg)](https://david-dm.org/luangjokaj/gulp-wordpress-theme-builder?type=dev)
 
-A build system for developing WordPress themes using Gulp. It runs a local PHP web server with auto reload, uses Babel transpiler for JavaScript (ES6) and it bundles CSS with PostCSS and CSSNext. However you will still need an sql database.
+Gulp WordPress Boilerplate is a build system designed to automate the development workflow for WordPress themes. It runs a local PHP web server with auto reload, uses Babel transpiler for JavaScript (ES6) and it bundles CSS with PostCSS and CSSNext.
 
 # Quick Setup
-https://www.youtube.com/watch?v=SoLbiHSglSs
-
-# Sample Theme
-http://www.lifes-kool.design/
+* [Screencasts Quick Installation](https://www.youtube.com/watch?v=SoLbiHSglSs)
+* [Medium Article](https://medium.com/@luangjokaj/771a5f16fd3a)
+* [Implemented theme using Gulp WordPress Boilerplate](https://lifes-kool.design/)
 
 ![Gulp WordPress Boilerplate](https://i.imgur.com/iTQAert.png)
 
@@ -15,17 +14,14 @@ The advantage of using the gulp-wordpress-boilerplate is the quick setup and no 
 ___
 
 ### Features ⚡️
-* Processing styles using PostCSS with CSSNext
-* Babel Transpiler for JavaScript (ES6)
-* JavaScript Concatenating and Minification
-* Easy import for third party JavaScript libraries
-* Image Compression
-* Fetching latest WordPress version
-* Local PHP development server running WordPress
-* Live Reload for PHP Theme Files
-* Live CSS Style Injection
-* Included free sample template with Woocommerce support
-* Distribution Files - ZIP Ready to be Shipped 🚀
+* Local PHP Server out of the box, with live reloads using [BrowserSync](https://www.browsersync.io/).
+* Processing styles using [PostCSS](http://postcss.org/) with [CSSNext](http://cssnext.io/), sourcemaps supported.
+* [Babel](https://babeljs.io/) Transpiler for JavaScript (ES6).
+* JavaScript concatenation and minification.
+* Easy import for third party JavaScript libraries.
+* Automated local WordPress installation.
+* Free sample template with WooCommerce support ([Live Demo](https://lifes-kool.design/)).
+* Distribution Files — ZIP Ready to be Shipped 🚀
 
 ___
 
