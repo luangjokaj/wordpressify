@@ -1,6 +1,6 @@
 .woocommerce {
-	& .my-woocommerce-order {
-		& ul.woocommerce-order-overview {
+	& .woocommerce-order {
+		& ul.order_details {
 			box-sizing: border-box;
 			padding: 0;
 			margin: 0;
@@ -12,6 +12,12 @@
 				box-sizing: border-box;
 				padding: 20px;
 				margin: 0;
+				font-family: var(--font-medium);
+				color: var(--medium-gray);
+
+				& strong {
+					color: var(--black);
+				}
 				
 				@media (--screen-mobile) {
 					width: 100%;
@@ -30,6 +36,7 @@
 			& img {
 				filter: drop-shadow(0 0 25px color(var(--black) alpha(-85%)));
 				margin: 40px 0;
+				display: inline-block;
 
 				@media (--screen-mobile) {
 					max-width: 220px;

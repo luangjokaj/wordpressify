@@ -13,10 +13,10 @@
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 2.6.0
+ * @version 3.2.0
  */
 
-if (! defined( 'ABSPATH' )) {
+if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
@@ -26,14 +26,15 @@ if (! defined( 'ABSPATH' )) {
 
 <?php do_action( 'woocommerce_before_customer_login_form' ); ?>
 
-<?php if (get_option( 'woocommerce_enable_myaccount_registration' ) === 'yes') : ?>
+<?php if ( get_option( 'woocommerce_enable_myaccount_registration' ) === 'yes' ) : ?>
 
 <div class="u-columns col2-set" id="customer_login">
 
 	<div class="u-column1 col-1">
 
 <?php endif; ?>
-		<form class="woocomerce-form woocommerce-form-login login single" method="post">
+
+		<form class="woocommerce-form woocommerce-form-login login single" method="post">
 
 			<?php do_action( 'woocommerce_login_form_start' ); ?>
 			<div class="secure-icon">
@@ -54,8 +55,8 @@ if (! defined( 'ABSPATH' )) {
 				<?php wp_nonce_field( 'woocommerce-login', 'woocommerce-login-nonce' ); ?>
 				<input type="submit" class="woocommerce-Button button" name="login" value="<?php esc_attr_e( 'Login', 'woocommerce' ); ?>" />
 				<div class="additional">
-					<label class="woocommerce-form__label woocommerce-form__label-for-checkbox inline" for="rememberme">
-					<input class="woocommerce-form__input woocommerce-form__input-checkbox" name="rememberme" type="checkbox" id="rememberme" value="forever" /> <span><?php _e( 'Remember me', 'woocommerce' ); ?></span>
+					<label class="woocommerce-form__label woocommerce-form__label-for-checkbox inline">
+						<input class="woocommerce-form__input woocommerce-form__input-checkbox" name="rememberme" type="checkbox" id="rememberme" value="forever" /> <span><?php _e( 'Remember me', 'woocommerce' ); ?></span>
 					</label>
 					<p class="woocommerce-LostPassword lost_password">
 						<a href="<?php echo esc_url( wp_lostpassword_url() ); ?>"><?php _e( 'Lost your password?', 'woocommerce' ); ?></a>
@@ -67,7 +68,7 @@ if (! defined( 'ABSPATH' )) {
 
 		</form>
 
-<?php if (get_option( 'woocommerce_enable_myaccount_registration' ) === 'yes') : ?>
+<?php if ( get_option( 'woocommerce_enable_myaccount_registration' ) === 'yes' ) : ?>
 
 	</div>
 
@@ -79,7 +80,7 @@ if (! defined( 'ABSPATH' )) {
 
 			<?php do_action( 'woocommerce_register_form_start' ); ?>
 
-			<?php if ('no' === get_option( 'woocommerce_registration_generate_username' )) : ?>
+			<?php if ( 'no' === get_option( 'woocommerce_registration_generate_username' ) ) : ?>
 
 				<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
 					<label for="reg_username"><?php _e( 'Username', 'woocommerce' ); ?> <span class="required">*</span></label>
@@ -93,7 +94,7 @@ if (! defined( 'ABSPATH' )) {
 				<input type="email" class="woocommerce-Input woocommerce-Input--text input-text" name="email" id="reg_email" value="<?php echo ( ! empty( $_POST['email'] ) ) ? esc_attr( $_POST['email'] ) : ''; ?>" />
 			</p>
 
-			<?php if ('no' === get_option( 'woocommerce_registration_generate_password' )) : ?>
+			<?php if ( 'no' === get_option( 'woocommerce_registration_generate_password' ) ) : ?>
 
 				<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
 					<label for="reg_password"><?php _e( 'Password', 'woocommerce' ); ?> <span class="required">*</span></label>
@@ -102,12 +103,9 @@ if (! defined( 'ABSPATH' )) {
 
 			<?php endif; ?>
 
-			<!-- Spam Trap -->
-			<div style="<?php echo ( ( is_rtl() ) ? 'right' : 'left' ); ?>: -999em; position: absolute;"><label for="trap"><?php _e( 'Anti-spam', 'woocommerce' ); ?></label><input type="text" name="email_2" id="trap" tabindex="-1" autocomplete="off" /></div>
-
 			<?php do_action( 'woocommerce_register_form' ); ?>
 
-			<p class="woocomerce-FormRow form-row">
+			<p class="woocommerce-FormRow form-row">
 				<?php wp_nonce_field( 'woocommerce-register', 'woocommerce-register-nonce' ); ?>
 				<input type="submit" class="woocommerce-Button button" name="register" value="<?php esc_attr_e( 'Register', 'woocommerce' ); ?>" />
 			</p>

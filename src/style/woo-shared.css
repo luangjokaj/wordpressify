@@ -90,7 +90,6 @@
 	margin: 0;
 	box-sizing: border-box;
 	padding: 20px 20px 20px 60px;
-	margin-bottom: 20px;
 	text-align: left;
 
 	&:before {
@@ -115,18 +114,6 @@
 		}
 	}
 
-}
-
-address {
-	font-style: normal;
-	border: dashed 1px var(--secondary-color);
-	border-radius: 5px;
-	background: color(var(--secondary-color) alpha(-90%));
-	box-sizing: border-box;
-	padding: 20px;
-	font-size: var(--default-font-size);
-	line-height: var(--default-line-height);
-	color: var(--dark-gray);
 }
 
 span.woocommerce-Price-currencySymbol {	
