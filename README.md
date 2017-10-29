@@ -4,7 +4,7 @@ Gulp WordPress Boilerplate is a build system designed to automate the developmen
 
 # Quick Setup
 * [Screencasts Quick Installation](https://www.youtube.com/watch?v=SoLbiHSglSs)
-* [Medium Article](https://medium.com/@luangjokaj/771a5f16fd3a)
+* [Medium Article](https://medium.com/@luangjokaj/gulp-wordpress-boilerplate-simple-and-fast-workflow-for-theme-development-771a5f16fd3a)
 * [Implemented theme using Gulp WordPress Boilerplate](https://lifes-kool.design/)
 
 ![Gulp WordPress Boilerplate](https://i.imgur.com/iTQAert.png)
