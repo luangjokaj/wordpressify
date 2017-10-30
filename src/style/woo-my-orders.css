@@ -29,7 +29,6 @@
 					}
 
 					& a {
-						@apply --button-smaller;
 						margin: 0 10px 0 0;
 						flex: 1;
 
