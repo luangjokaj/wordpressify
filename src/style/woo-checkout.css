@@ -9,7 +9,7 @@
 		box-sizing: border-box;
 
 		& label {
-			font-size: var(--secondary-font-size);
+			font-size: var(--default-font-size);
 		}
 
 		@media (--screen-mobile) {

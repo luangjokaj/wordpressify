@@ -59,7 +59,7 @@
 
 				&.woocommerce-orders-table__cell-order-number {
 					& a {
-						font-size: var(--secondary-font-size);
+						font-size: var(--default-font-size);
 					}
 				}
 			}
