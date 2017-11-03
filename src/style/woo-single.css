@@ -1,5 +1,5 @@
 .woocommerce {
-	& .remove {
+	& a.remove {
 		color: var(--secondary-color) !important;
 		line-height: 0.8;
 		padding: 5px;
