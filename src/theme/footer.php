@@ -41,7 +41,7 @@
 
 	<p>
 		<em><?php bloginfo('name'); ?></em> - &copy; <?php echo date('Y');?></p>
-		<?php echo lk_theme_output_socials(); ?>
+		<?php echo wordpressify_output_socials(); ?>
 	</p>
 
 </footer>

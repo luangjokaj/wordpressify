@@ -6,7 +6,7 @@
 		border-radius: 5px;
 		box-sizing: border-box;
 		padding: 15px;
-		font-family: var(--font-roman);
+		font-family: var(--font-text);
 		font-size: var(--default-font-size);
 		transition: all 0.3s ease;
 
@@ -18,7 +18,7 @@
 	--input-select {
 		appearance: none;
 		font-size: var(--small-font-size);
-		font-family: var(--font-roman);
+		font-family: var(--font-text);
 		text-transform: uppercase;
 		color: var(--dark-gray);
 		display: inline-block;

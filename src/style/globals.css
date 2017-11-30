@@ -1,7 +1,7 @@
 html, body {
 	background: var(--white);
 	color: var(--black);
-	font-family: var(--font-roman);
+	font-family: var(--font-text);
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	height: 100%;

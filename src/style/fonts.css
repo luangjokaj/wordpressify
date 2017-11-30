@@ -1,9 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900');
+
 :root {
-	--font-thin: 'Helvetica Neue Thin';
-	--font-light: 'Helvetica Neue Light';
-	--font-roman: 'Helvetica Neue Roman';
-	--font-medium: 'Helvetica Neue Medium';
-	--font-bold: 'Helvetica Neue Bold';
-	--font-heavy: 'Helvetica Neue Heavy';
-	--font-black: 'Helvetica Neue Black';
+	--font-text: 'Roboto', sans-serif;
 }
