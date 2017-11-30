@@ -24,8 +24,8 @@
 @custom-media --screen-mobile (max-width: 640px);
 @custom-media --screen-phablet (max-width: 820px);
 @custom-media --screen-tablet print, (max-width: 1000px);
-@custom-media --screen-desktop print, (max-width: 1240px);
-@custom-media --screen-big print, (min-width: 2000px);
+@custom-media --screen-desktop print, (max-width: 1300px);
+@custom-media --screen-wide (min-width: 2000px);
 @custom-media --screen-4k (min-width: 3870px);
 
 :root {
@@ -96,7 +96,7 @@
 		}
 	};
 
-	--nolist: {
+	--noList: {
 		list-style: none;
 		margin: 0;
 		padding: 0;
@@ -105,4 +105,10 @@
 			padding: 0;
 		}
 	};
+
+	--maxWidth: {
+		max-width: 1300px;
+		margin: auto;
+		box-sizing: border-box;
+	}
 }

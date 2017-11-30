@@ -1,3 +1,15 @@
 .header {
 	background: var(--dark-blue);
+	overflow: hidden;
+
+	& .inner-content {
+		@apply --maxWidth;
+	}
+
+	& .navigation {
+		& ul.menu {
+			@apply --noList;
+			float: right;
+		}
+	}
 }

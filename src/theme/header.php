@@ -8,7 +8,7 @@
 
 <body <?php body_class(); ?>>
 <header id="header" class="header">
-	<div class="siteInfo">
+	<div class="inner-content">
 		<?php if (get_theme_mod('wordpressify-logo-section')) { ?>
 			<a href="<?php echo home_url(); ?>" class="logo">
 				<img src="<?php echo wp_get_attachment_url(get_theme_mod('wordpressify-logo-section')); ?>"
@@ -20,8 +20,7 @@
 			</a>
 		<?php } ?>
 
-		<nav>
-			<button id="menu"><span></span></button>
+		<nav class="navigation">
 			<?php $args = array(
 				'theme_location' => 'primary'
 			); ?>

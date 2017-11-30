@@ -134,8 +134,8 @@ function wordpressify_custom_logo($wp_customize) {
 			'label' => 'Image',
 			'section' => 'wordpressify-logo-section',
 			'settings' => 'wordpressify-header-logo-image',
-			'width' => 284,
-			'height' => 100
+			'width' => 245,
+			'height' => 24
 		)));
 }
 
