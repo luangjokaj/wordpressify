@@ -7,7 +7,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-<header id="header" class="lk-header">
+<header id="header" class="header">
 	<div class="siteInfo">
 		<?php if (get_theme_mod('wordpressify-logo-section')) { ?>
 			<a href="<?php echo home_url(); ?>" class="logo">
