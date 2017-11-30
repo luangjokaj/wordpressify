@@ -1,11 +1,11 @@
 /*
-Theme Name: Lifes Kool
-Theme URI: https://www.lifes-kool.design/
+Theme Name: WordPressify
+Theme URI: https://www.wordpressify.co
 Author: Luan Gjokaj
 Author URI: https://www.riangle.com
-Description: Lifes Kool theme for WordPress.
+Description: WordPressify official theme.
 Version: 1.0
-Tags: responsive, clean, minimal, bright, blue, violet, woocommerce
+Tags: responsive, clean, minimal, modern, documentation
 */
 
 @import '../../node_modules/normalize.css/normalize.css';
@@ -18,9 +18,9 @@ Tags: responsive, clean, minimal, bright, blue, violet, woocommerce
 @import 'inputs';
 @import 'globals';
 @import 'header';
-@import 'search';
 @import 'grid';
 @import 'menu';
+@import 'search';
 @import 'sidebar';
 @import 'not-found';
 @import 'footer';

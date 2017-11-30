@@ -9,9 +9,9 @@
 <body <?php body_class(); ?>>
 <header id="header" class="lk-header">
 	<div class="siteInfo">
-		<?php if (get_theme_mod('lk-header-logo-section')) { ?>
+		<?php if (get_theme_mod('wordpressify-logo-section')) { ?>
 			<a href="<?php echo home_url(); ?>" class="logo">
-				<img src="<?php echo wp_get_attachment_url(get_theme_mod('lk-header-logo-section')); ?>"
+				<img src="<?php echo wp_get_attachment_url(get_theme_mod('wordpressify-logo-section')); ?>"
 				alt="Logo 🌈">
 			</a>
 		<?php } else { ?>
