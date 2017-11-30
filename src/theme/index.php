@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 	<!-- site-content -->
-	<div class="site-content no-margins">
+	<div class="site-content">
 
 		<!-- main-column -->
 		<div class="main-column grid">

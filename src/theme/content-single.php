@@ -1,5 +1,5 @@
 <article class="single">
-	<h2 class="single-title"><?php the_title(); ?></h2>
+	<h1 class="single-title"><?php the_title(); ?></h1>
 
 	<p class="post-info">
 		<span class="date">

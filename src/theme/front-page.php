@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 	<!-- site-content -->
-	<div class="site-content no-margins">
+	<div class="site-content">
 		<!-- gird -->
 		<div class="grid">
 			<?php if (have_posts()) :

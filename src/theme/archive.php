@@ -1,9 +1,9 @@
 <?php get_header(); ?>
 	<!-- site-content -->
-	<div class="site-content no-margins archive">
+	<div class="site-content">
 
 		<?php if (have_posts()) : ?>
-		<h2 class="side-title">
+		<h1 class="side-title">
 		<?php if (is_category()) {
 				single_cat_title();
 			} elseif (is_tag()) {
@@ -21,7 +21,7 @@
 			} else {
 				echo 'Archives:';
 			}?>
-		</h2>
+		</h1>
 		<!-- main-column -->
 		<div class="main-column grid <?php if(!is_search_has_results()) { echo 'no-result'; } ?>">
 			<?php while (have_posts()) :

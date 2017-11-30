@@ -1,4 +1,4 @@
-<section class="no-results not-found none">
+<section class="no-results">
 	<h1 class="page-title"><?php _e( 'Nothing Found', 'lk-wordpress-theme' ); ?></h1>
 	<img src="<?php echo get_template_directory_uri(); ?>/img/sad.svg" alt="Nothing Found 😔" class="sad-icon">
 	<div class="page-content">

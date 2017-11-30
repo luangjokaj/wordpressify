@@ -43,10 +43,6 @@ input[type='text'], input[type='password'], input[type='number'], input[type='te
 	@apply --input-type;
 }
 
-select {
-	@apply --input-select;
-}
-
 input[type='checkbox'] {
 	appearance: none;
 	cursor: pointer;
@@ -81,6 +77,11 @@ input[type='checkbox'] {
 			background: var(--secondary-color);
 		}
 	}
+}
+
+
+select {
+	@apply --input-select;
 }
 
 textarea {

@@ -5,8 +5,8 @@
 			<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('small-thumbnail'); ?></a>
 		</div><!-- /post-thumbnail -->
 
-		<!-- postInnerContent -->
-		<div class="postInnerContent">
+		<!-- inner-content -->
+		<div class="inner-content">
 			<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 			<p class="post-info">
 				<?php echo get_the_excerpt(); ?>
@@ -30,7 +30,7 @@
 			</p>
 
 			<?php if ( is_search() OR is_archive() ) { ?>
-				<p class="excerpt search archive">
+				<p class="excerpt content">
 					<a href="<?php the_permalink(); ?>">Read More</a>
 				</p>
 			<?php } else {
@@ -42,6 +42,6 @@
 				<?php } else {}
 			} ?>
 		</div>
-		<!-- /postInnerContent -->
+		<!-- /inner-content -->
 
 	</article>

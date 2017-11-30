@@ -2,7 +2,7 @@
 	<!-- site-content -->
 	<div class="site-content no-margins">
 
-		<h2 class="side-title">Search results for: <?php the_search_query(); ?></h2>
+		<h2 class="page-title">Search results for: <?php the_search_query(); ?></h2>
 		<!-- main-column -->
 		<div class="main-column grid <?php if(!is_search_has_results()) { echo 'no-result'; } ?>">
 			<?php if (have_posts()) :
