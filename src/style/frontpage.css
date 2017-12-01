@@ -1,4 +1,4 @@
-.headings {
+section.headings {
 	background: var(--dark-blue);
 
 	& main {
@@ -11,10 +11,13 @@
 			text-align: center;
 			color: var(--white);
 			font-weight: 100;
-			transition: all .5s ease;
-			transition-delay: .4s;
-			transform: translateY(-60px);
-			opacity: 0;
+
+			&[data-aos='slow-title'] {
+				transition: all 1s ease;
+				transition-delay: .6s;
+				transform: translateY(-60px);
+				opacity: 0;
+			}
 
 			&.aos-animate {
 				transform: translateY(0);
@@ -29,10 +32,13 @@
 		& .codecolorer-container.javascript.solarized-dark {
 			&.home {
 				margin-bottom: 120px;
-				transform: scale(1.1) translateY(180px);
 				box-shadow: 0 5px 25px 0 color(var(--black) alpha(20%));
-				transition: all 1s ease;
-				transition-delay: .2s;
+
+				&[data-aos='slow-up'] {
+					transition: all 1s ease;
+					transition-delay: .2s;
+					transform: scale(1.1) translateY(180px);
+				}
 
 				&.aos-animate {
 					transform: scale(1) translateY(120px);
