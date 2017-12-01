@@ -17,6 +17,7 @@
 		<?php } else { ?>
 			<a href="<?php echo home_url(); ?>" class="logo">
 				<img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" alt="Logo 🌈">
+				<img src="<?php echo get_template_directory_uri(); ?>/img/logo-bright.svg" alt="Logo 🌈" class="bright">
 			</a>
 		<?php } ?>
 
@@ -27,6 +28,7 @@
 			<?php wp_nav_menu($args); ?>
 			<a href="#" class="github">
 				<img src="<?php echo get_template_directory_uri(); ?>/img/github.svg" alt="GitHub 🝓">
+				<img src="<?php echo get_template_directory_uri(); ?>/img/github-bright.svg" alt="GitHub 🝓" class="bright">
 			</a>
 		</nav>
 	</div>

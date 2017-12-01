@@ -21,13 +21,27 @@
 		& .github {
 			display: flex;
 			margin-left: 20px;
+			position: relative;
+			width: 32px;
+			height: 32px;
+			top: 50%;
+			transform: translateY(-50%);
 
 			& img {
+				position: absolute;
+				left: 0;
+				right: 0;
 				margin: auto;
 				opacity: 1;
 				transition: all .3s ease;
 				width: 32px;
 				height: 32px;
+				transition: all .5s ease;
+				transform: translateY(0);
+
+				&.bright {
+					transform: translateY(300%);
+				}
 				
 				&:hover {
 					opacity: .5;
@@ -66,6 +80,20 @@
 		& .navigation {
 			transform: translateY(0);
 			opacity: 1;
+		}
+
+		&.scrolled {
+			& .navigation {
+				& .github {
+					& img {
+						transform: translateY(-300%);
+
+						&.bright {
+							transform: translateY(0);
+						}
+					}
+				}
+			}
 		}
 	}
 }

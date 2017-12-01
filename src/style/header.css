@@ -24,9 +24,20 @@
 			transform: translate(-50%, -50%);
 			transition: all 1s;
 			transition-delay: 1s;
+			width: 245px;
+			height: 24px;
 
 			& img {
 				display: flex;
+				position: absolute;
+				top: 0;
+				left: 0;
+				transition: all .5s ease;
+				transform: translateY(0);
+
+				&.bright {
+					transform: translateY(-300%);
+				}
 			}
 		}
 	}
@@ -54,7 +65,19 @@
 		}
 
 		&.scrolled {
+			background: var(--white);
+			border-color: var(--light-gray);
 			height: 80px;
+
+			& .logo {
+				& img {
+					transform: translateY(300%);
+
+					&.bright {
+						transform: translateY(0);
+					}
+				}
+			}
 		}
 	}
 }
