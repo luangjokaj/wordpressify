@@ -1,15 +1,47 @@
 .header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
 	background: var(--dark-blue);
 	overflow: hidden;
+	border-bottom: solid 1px var(--medium-blue);
+	z-index: 100;
+	height: var(--push-top-desktop);
+	transition: all .3s ease;
+
+	@media (--screen-tablet) {
+		height: var(--push-top-tablet);
+	}
+
+	@media (--screen-mobile) {
+		height: var(--push-top-mobile);
+	}
+
+	&.scrolled {
+		height: 80px;
+	}
 
 	& .inner-content {
 		@apply --maxWidth;
-	}
+		position: relative;
+		height: 100%;
 
-	& .navigation {
-		& ul.menu {
-			@apply --noList;
-			float: right;
+		& .logo {
+			display: inline-block;
+			box-sizing: border-box;
+			position: absolute;
+			left: 0;
+			top: 50%;
+			transform: translateY(-50%);
+
+			@media (--screen-desktop) {
+				left: 20px;
+			}
+
+			& img {
+				display: flex;
+			}
 		}
 	}
 }

@@ -1,0 +1,50 @@
+.headings {
+	background: var(--dark-blue);
+
+	& main {
+		@apply --maxWidth;
+
+		& h1 {
+			max-width: 860px;
+			margin: auto;
+			padding: 120px 0 0 0;
+			text-align: center;
+			color: var(--white);
+			font-weight: 100;
+
+			@media (--screen-mobile) {
+				padding: 40px 20px 0 20px;
+			}
+		}
+
+		& .codecolorer-container.javascript.solarized-dark {
+			&.home {
+				margin-bottom: 120px;
+				transform: translateY(120px);
+				box-shadow: 0 5px 25px 0 color(var(--black) alpha(20%));
+
+				@media (--screen-mobile) {
+					margin-bottom: 40px;
+					transform: translateY(40px);
+				}
+
+				& .mockup {
+					margin: -20px -20px 20px;
+					width: calc(100% + 40px);
+				}
+
+				& .javascript.codecolorer {
+					color: var(--primary-color);
+
+					& i {
+						color: var(--white);
+					}
+
+					& em {
+						color: color(var(--white) alpha(70%));
+					}
+				}
+			}
+		}
+	}
+}

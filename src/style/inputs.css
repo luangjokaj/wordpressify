@@ -46,7 +46,7 @@ input[type='text'], input[type='password'], input[type='number'], input[type='te
 input[type='checkbox'] {
 	appearance: none;
 	cursor: pointer;
-	background: color(var(--secondary-color) alpha(-90%));
+	background: color(var(--dark-blue) alpha(-90%));
 	border: solid 1px var(--light-gray);
 	width: 18px;
 	height: 18px;
@@ -74,7 +74,7 @@ input[type='checkbox'] {
 			border-radius: 3px;
 			width: 10px;
 			height: 10px;
-			background: var(--secondary-color);
+			background: var(--dark-blue);
 		}
 	}
 }

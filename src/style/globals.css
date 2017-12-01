@@ -7,12 +7,24 @@ html, body {
 	height: 100%;
 }
 
+body {
+	padding-top: var(--push-top-desktop);
+
+	@media (--screen-tablet) {
+		padding-top: var(--push-top-tablet);
+	}
+
+	@media (--screen-mobile) {
+		padding-top: var(--push-top-mobile);
+	}
+}
+
 * {
 	outline: none;
 
 	&::selection {
 		color: var(--white);
-		background: var(--secondary-color);
+		background: var(--medium-blue);
 	}
 }
 
@@ -22,16 +34,45 @@ a, button {
 	color: var(--primary-color);
 
 	&:hover {
-		color: var(--secondary-color);
+		color: var(--dark-blue);
 	}
-}
-
-img {
-	max-width: 100%;
-	height: auto;
 }
 
 p {
 	font-size: var(--default-font-size);
 	line-height: var(--default-line-height);
+}
+
+h1, h2, h3 {
+	box-sizing: border-box;
+}
+
+h1 {
+	font-size: var(--h1-font-size);
+	line-height: var(--h1-line-height);
+
+	@media (--screen-mobile) {
+		font-size: var(--h1-font-size-mobile);
+		line-height: var(--h1-line-height-mobile);
+	}
+}
+
+h2 {
+	font-size: var(--h2-font-size);
+	line-height: var(--h2-line-height);
+
+	@media (--screen-mobile) {
+		font-size: var(--h2-font-size-mobile);
+		line-height: var(--h2-line-height-mobile);
+	}
+}
+
+h3 {
+	font-size: var(--h3-font-size);
+	line-height: var(--h3-line-height);
+
+	@media (--screen-mobile) {
+		font-size: var(--h3-font-size-mobile);
+		line-height: var(--h3-line-height-mobile);
+	}
 }

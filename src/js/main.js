@@ -1,11 +1,13 @@
 const header = $('.header');
+const mockup = $('#mockup');
+const mockupPosition = mockup.position().top + mockup.height();
 
 $(window).on('load', function () {
 	$(window).scrollTop(0);
 	setTimeout(function () {
 		$(window).scroll(function () {
 			let scroll = $(window).scrollTop();
-			if (scroll >= 50) {
+			if (scroll >= mockupPosition) {
 				header.addClass('scrolled');
 			} else {
 				header.removeClass('scrolled');
@@ -23,3 +25,4 @@ $(window).on('load', function () {
 $(window).resize(function () {
 	AOS.refresh;
 });
+

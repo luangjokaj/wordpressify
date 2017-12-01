@@ -25,6 +25,9 @@
 				'theme_location' => 'primary'
 			); ?>
 			<?php wp_nav_menu($args); ?>
+			<a href="#" class="github">
+				<img src="<?php echo get_template_directory_uri(); ?>/img/github.svg" alt="GitHub 🝓">
+			</a>
 		</nav>
 	</div>
 </header>

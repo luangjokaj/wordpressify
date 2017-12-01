@@ -1,3 +1,60 @@
-* {
-	clear: both;
+.header {
+	& .navigation {
+		float: right;
+		box-sizing: border-box;
+		height: 100%;
+		display: flex;
+		
+		@media (--screen-mobile) {
+			display: none;
+		}
+
+		& div {
+			display: flex;
+			height: 100%;
+		}
+
+		& .github {
+			display: flex;
+			margin-left: 20px;
+
+			& img {
+				margin: auto;
+				opacity: 1;
+				transition: all .3s ease;
+				width: 32px;
+				height: 32px;
+				
+				&:hover {
+					opacity: .5;
+				}
+			}
+		}
+
+		& ul.menu {
+			@apply --noList;
+			padding: 5px 0;
+			margin: auto;
+			display: flex;
+			align-items: center;
+
+			& li {
+				display: inline-block;
+				margin-right: 20px;
+
+				&:last-child {
+					margin-right: 0;
+				}
+
+				& a {
+					text-transform: uppercase;
+
+					&:hover {
+						color: color(var(--primary-color) lightness(40%));
+					}
+				}
+			}
+			
+		}
+	}
 }

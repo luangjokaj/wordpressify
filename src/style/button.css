@@ -2,7 +2,7 @@
 	--button {
 		cursor: pointer;
 		font-size: var(--small-font-size);
-		font-family: var(--font-medium);
+		font-family: var(--font-text);
 		text-transform: uppercase;
 		color: var(--white);
 		display: inline-block;
@@ -18,7 +18,7 @@
 		}
 
 		&:hover {
-			background: var(--secondary-color);
+			background: var(--dark-blue);
 			color: var(--white);
 		}
 
