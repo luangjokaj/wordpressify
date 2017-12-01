@@ -1,51 +1,6 @@
 .site-content {
 	@apply --maxWidth;
 
-	& .tech {
-		& ul {
-			@apply --noList;
-			text-align: center;
-			padding: 60px 0;
-
-			@media (--screen-mobile) {
-				padding: 20px 0;
-			}
-
-			& li {
-				display: inline-block;
-				margin: 0 20px;
-
-				@media (--screen-mobile) {
-					margin: 20px 0;
-					width: 100%;
-				}
-
-				&[data-aos='flying-icons'] {
-					transition: all 1s ease;
-					transform: translateY(60px);
-					opacity: 0;
-				}
-
-				&.aos-animate {
-					transform: translateY(0);
-					opacity: 1;
-				}
-
-				&:nth-child(1) {
-					&[data-aos='flying-icons'] {
-						transition-delay: .5s;
-					}
-				}
-
-				&:nth-child(2) {
-					&[data-aos='flying-icons'] {
-						transition-delay: .7s;
-					}
-				}
-			}
-		}
-	}
-
 	& .center {
 		text-align: center;
 	}

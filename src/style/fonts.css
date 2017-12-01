@@ -2,4 +2,5 @@
 
 :root {
 	--font-text: 'Roboto', sans-serif;
+	--font-code: Monaco, Lucida Console, monospace;
 }

@@ -41,6 +41,52 @@
 			</ul>
 		</section>
 		<h1 class="center fixed" data-aos="fade-up-slow">A modern workflow for your WordPress development, with integrated web server and auto-reload. Modern style pre-processors and ES6 ready.</h1>
+		<section class="features">
+			<ul>
+				<li data-aos="slow-list">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/features/devserver.svg" alt="Nodejs 💻">
+					<h3>Dev Server</h3>
+					<p>
+						A development server for PHP based in Node. Powered by BrowserSync. 
+					</p>
+				</li>
+				<li data-aos="slow-list">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/features/autoreload.svg" alt="Auto Reload 🔄">
+					<h3>Dev Server</h3>
+					<p>
+						A development server for PHP based in Node. Powered by BrowserSync. 
+					</p>
+				</li>
+				<li data-aos="slow-list">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/features/styles.svg" alt="Auto Reload 🔄">
+					<h3>Styles</h3>
+					<p>
+						Optional styles pre-processors: PostCSS and Scss with sourcemaps.
+					</p>
+				</li>
+				<li data-aos="slow-list">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/features/javascript.svg" alt="JavaScript (ES6) 🤓">
+					<h3>JavaScript ES6</h3>
+					<p>
+						Babel compiler for writing next generation JavaScript.
+					</p>
+				</li>
+				<li data-aos="slow-list">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/features/libraries.svg" alt="Libraries 📚">
+					<h3>External Libraries</h3>
+					<p>
+						Easy import for external JavaScript libraries and npm scripts.
+					</p>
+				</li>
+				<li data-aos="slow-list">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/features/customizable.svg" alt="Customizable ✅">
+					<h3>Customizable</h3>
+					<p>
+						Flexible build customization, managed by Gulp tasks.
+					</p>
+				</li>
+			</ul>
+		</section>
 		<br>
 		<br>
 		<br>

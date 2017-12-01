@@ -76,3 +76,124 @@ section.headings {
 		}
 	}
 }
+
+.front-page {
+	& .tech {
+		& ul {
+			@apply --noList;
+			text-align: center;
+			padding: 60px 0;
+
+			@media (--screen-mobile) {
+				padding: 20px 0;
+			}
+
+			& li {
+				display: inline-block;
+				margin: 0 20px;
+
+				@media (--screen-mobile) {
+					margin: 20px 0;
+					width: 100%;
+				}
+
+				&[data-aos='flying-icons'] {
+					transition: all 1s ease;
+					transform: translateY(60px);
+					opacity: 0;
+				}
+
+				&.aos-animate {
+					transform: translateY(0);
+					opacity: 1;
+				}
+
+				&:nth-child(1) {
+					&[data-aos='flying-icons'] {
+						transition-delay: .5s;
+					}
+				}
+
+				&:nth-child(2) {
+					&[data-aos='flying-icons'] {
+						transition-delay: .7s;
+					}
+				}
+			}
+		}
+	}
+
+	& .features {
+		& ul {
+			@apply --noList;
+			text-align: center;
+			padding: 60px 0;
+			width: 100%;
+			box-sizing: border-box;
+			display: flex;
+			align-items: center;
+			flex-wrap: wrap;
+
+			@media (--screen-mobile) {
+				padding: 20px 0;
+				display: block;
+			}
+
+			& li {
+				flex: 33.333%;
+				width: 33.333%;
+				box-sizing: border-box;
+				display: inline-block;
+				padding: 20px;
+
+				@media (--screen-mobile) {
+					width: 100%;
+				}
+
+				&[data-aos='slow-list'] {
+					transition: all 1s ease;
+					transform: scale(1.2) translateY(60px);
+
+					&:nth-child(3n+1) {
+						transition-delay: 0.1s;
+
+						@media (--screen-mobile) {
+							transition-delay: 0s;
+						}
+					}
+
+					&:nth-child(3n+2) {
+						transition-delay: 0.2s;
+
+						@media (--screen-mobile) {
+							transition-delay: 0s;
+						}
+					}
+
+					&:nth-child(3n+3) {
+						transition-delay: 0.3s;
+
+						@media (--screen-mobile) {
+							transition-delay: 0s;
+						}
+					}
+				}
+
+				&.aos-animate {
+					transform: scale(1) translateY(0);
+				}
+
+				& h3 {
+					font-size: var(--default-font-size);
+					font-weight: 800;
+					color: var(--medium-blue);
+				}
+
+				& p {
+					font-family: var(--font-code);
+					color: var(--medium-gray);
+				}
+			}
+		}
+	}
+}
