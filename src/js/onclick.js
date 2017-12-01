@@ -15,6 +15,6 @@ $('a').click(function (event) {
 		const newLocation = this.href;
 		setTimeout(function () {
 			window.location = newLocation;
-		}, 600);
+		}, 1000);
 	}
 });
