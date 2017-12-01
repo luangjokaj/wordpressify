@@ -3,6 +3,7 @@ app/**
 dist/**
 build/**
 tmp/**
+backups/**
 wp-config.php
 
 # IDE & Editors
