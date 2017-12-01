@@ -21,6 +21,7 @@ var unzip = require('gulp-unzip');
 var zip = require('gulp-zip');
 var connect = require('gulp-connect-php');
 var browserSync = require('browser-sync');
+var inject = require('gulp-inject-string');
 var del = require('del');
 var fs = require('fs');
 //--------------------------------------------------------------------------------------------------
@@ -123,12 +124,13 @@ gulp.task('unzip-wordpress', function () {
 
 gulp.task('copy-config', function () {
 	gulp.src("wp-config.php")
-		.pipe(gulp.dest('build/wordpress/'))
+		.pipe(gulp.dest('build/wordpress'));
 });
 
-gulp.task('set-config', function () {
-	gulp.src("build/wordpress/wp-config.php")
-		.pipe(gulp.dest('/'))
+gulp.task('disable-cron', function () {
+	gulp.src('build/wordpress/wp-config.php')
+	.pipe(inject.append('\ndefine("DISABLE_WP_CRON", true);'))
+	.pipe(gulp.dest('build/wordpress'));
 });
 
 gulp.task('setup', [

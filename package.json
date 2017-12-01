@@ -5,7 +5,7 @@
 	"main": "gulpfile.js",
 	"scripts": {
 		"cleanup": "gulp cleanup",
-		"install:wordpress": "gulp cleanup && gulp download-wordpress && gulp setup",
+		"install:wordpress": "gulp cleanup && gulp download-wordpress && gulp setup && gulp disable-cron",
 		"prod": "gulp build-prod",
 		"dev": "gulp build-dev",
 		"lint:css": "stylelint src/**/*.css --config tools/stylelintrc.json"
@@ -25,6 +25,7 @@
 		"gulp-cache-bust": "^1.1.0",
 		"gulp-concat": "^2.6.1",
 		"gulp-connect-php": "^1.0.1",
+		"gulp-inject-string": "^1.1.0",
 		"gulp-livereload": "^3.8.1",
 		"gulp-plumber": "^1.1.0",
 		"gulp-postcss": "^7.0.0",
