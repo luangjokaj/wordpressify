@@ -1,6 +1,7 @@
 const header = $('.header');
 const mockup = $('#mockup');
-const mockupPosition = mockup.position().top + mockup.height();
+let mockupPosition = 100;
+mockup.length ? mockupPosition = mockup.position().top + mockup.height() : mockupPosition = 100;
 
 $(window).on('load', function () {
 	$(window).scrollTop(0);
@@ -20,6 +21,8 @@ $(window).on('load', function () {
 	$(window).resize(function () {
 		AOS.refresh();
 	});
+
+	header.addClass('loaded');
 });
 
 $(window).resize(function () {

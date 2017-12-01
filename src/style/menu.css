@@ -4,6 +4,10 @@
 		box-sizing: border-box;
 		height: 100%;
 		display: flex;
+		transform: translateY(-100%);
+		opacity: 0;
+		transition: all 1s ease;
+		transition-delay: 1s;
 		
 		@media (--screen-mobile) {
 			display: none;
@@ -55,6 +59,13 @@
 				}
 			}
 			
+		}
+	}
+
+	&.loaded {
+		& .navigation {
+			transform: translateY(0);
+			opacity: 1;
 		}
 	}
 }
