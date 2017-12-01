@@ -10,7 +10,7 @@
 		padding: 18px 30px !important;
 		background: var(--primary-color);
 		text-align: center;
-		transition: all 0.3s ease;
+		transition: all .3s ease;
 		margin: 0;
 
 		@media (--screen-mobile) {

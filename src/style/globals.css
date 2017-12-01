@@ -30,7 +30,7 @@ body {
 
 a, button {
 	text-decoration: none;
-	transition: all 0.3s ease;
+	transition: all .3s ease;
 	color: var(--primary-color);
 
 	&:hover {

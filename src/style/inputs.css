@@ -8,7 +8,7 @@
 		padding: 15px;
 		font-family: var(--font-text);
 		font-size: var(--default-font-size);
-		transition: all 0.3s ease;
+		transition: all .3s ease;
 
 		&:focus {
 			border-color: var(--primary-color);
@@ -27,7 +27,7 @@
 		background: url('img/arrow.svg') no-repeat var(--white);
 		background-position: calc(100% - 15px);
 		text-align: center;
-		transition: all 0.3s ease;
+		transition: all .3s ease;
 		border: solid 1px var(--light-gray);
 		cursor: pointer;
 		padding-right: 45px;
@@ -51,7 +51,7 @@ input[type='checkbox'] {
 	width: 18px;
 	height: 18px;
 	position: relative;
-	transition: all 0.4s ease;
+	transition: all .4s ease;
 	border-radius: 5px;
 
 	&:before {
@@ -66,7 +66,7 @@ input[type='checkbox'] {
 		background: transparent;
 		box-sizing: border-box;
 		border-radius: 3px;
-		transition: all 0.4s ease;
+		transition: all .4s ease;
 	}
 
 	&:checked {

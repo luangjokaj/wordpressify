@@ -46,10 +46,13 @@ section.headings {
 
 				@media (--screen-mobile) {
 					margin-bottom: 40px;
-					transform: scale(1.1) translateY(80px);
+
+					&[data-aos='slow-up'] {
+						transform: scale(1.1) translateY(80px);
+					}
 
 					&.aos-animate {
-						transform: scale(1.) translateY(40px);
+						transform: scale(1) translateY(40px);
 					}
 				}
 

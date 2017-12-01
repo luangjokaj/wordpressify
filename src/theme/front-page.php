@@ -29,7 +29,18 @@
 			</div>
 		</main>
 	</section>
-	<div class="site-content">
+	<div class="site-content front-page">
+		<section class="tech">
+			<ul>
+				<li data-aos="flying-icons">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/node.svg" alt="Nodejs ⚙️">
+				</li>
+				<li data-aos="flying-icons">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/gulp.svg" alt="Gulp 🚀">
+				</li>
+			</ul>
+		</section>
+		<h1 class="center fixed" data-aos="fade-up-slow">A modern workflow for your WordPress development, with integrated web server and auto-reload. Modern style pre-processors and ES6 ready.</h1>
 		<br>
 		<br>
 		<br>
