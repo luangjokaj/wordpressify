@@ -6,6 +6,9 @@ mockup.length ? mockupPosition = mockup.position().top + mockup.height() : mocku
 $(window).on('load', function () {
 	$(window).scrollTop(0);
 	setTimeout(function () {
+		header.addClass('reset-delay');
+		$('.navigation').addClass('reset-delay');
+		$('.logo').addClass('reset-delay');
 		$(window).scroll(function () {
 			let scroll = $(window).scrollTop();
 			if (scroll >= mockupPosition) {

@@ -58,3 +58,7 @@
 		}
 	}
 }
+
+.reset-delay {
+	transition-delay: 0s !important;
+}
