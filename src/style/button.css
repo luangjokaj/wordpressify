@@ -1,20 +1,48 @@
 :root {
 	--button {
 		cursor: pointer;
-		font-size: var(--small-font-size);
-		font-family: var(--font-text);
-		text-transform: uppercase;
-		color: var(--white);
+		font-size: var(--default-font-size);
+		color: var(--light-blue);
 		display: inline-block;
 		box-sizing: border-box;
-		padding: 18px 30px !important;
-		background: var(--primary-color);
+		padding: 15px 60px;
+		background: transparent;
 		text-align: center;
-		transition: all .3s ease;
 		margin: 0;
+		transition: all .3s ease;
+		border: solid 1px var(--light-gray);
+		border-radius: 30px;
 
 		@media (--screen-mobile) {
-			padding: 18px 15px !important;
+			padding: 15px 20px;
+		}
+
+		&.icon {
+			position: relative;
+			padding-left: 85px;
+
+			&:before {
+				content: '';
+				display: block;
+				width: 16px;
+				height: 16px;
+				position: absolute;
+				top: 50%;
+				transform: translateY(calc(-50% - 2px));
+				left: 60px;
+			}
+
+			&.github {
+				&:before {
+					background: url('./img/github-bright.svg') no-repeat center center / 16px;
+				}
+
+				&:hover {
+					&:before {
+						background: url('./img/github.svg') no-repeat center center / 16px;
+					}
+				}
+			}
 		}
 
 		&:hover {
@@ -36,5 +64,9 @@
 }
 
 input[type='submit'] {
+	@apply --button;
+}
+
+.button {
 	@apply --button;
 }
