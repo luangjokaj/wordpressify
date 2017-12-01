@@ -15,7 +15,7 @@ var partialimport = require('postcss-easy-import');
 var sourcemaps = require('gulp-sourcemaps');
 var cssnano = require('cssnano');
 var plumber = require('gulp-plumber');
-var babel = require("gulp-babel");
+var babel = require('gulp-babel');
 var remoteSrc = require('gulp-remote-src');
 var unzip = require('gulp-unzip');
 var zip = require('gulp-zip');
@@ -117,13 +117,13 @@ gulp.task('download-wordpress', function () {
 });
 
 gulp.task('unzip-wordpress', function () {
-	gulp.src("build/latest.zip")
+	gulp.src('build/latest.zip')
 		.pipe(unzip())
 		.pipe(gulp.dest('build/'))
 });
 
 gulp.task('copy-config', function () {
-	gulp.src("wp-config.php")
+	gulp.src('wp-config.php')
 		.pipe(gulp.dest('build/wordpress'));
 });
 
@@ -139,22 +139,22 @@ gulp.task('setup', [
 ]);
 
 gulp.task('copy-theme-dev', function () {
-	gulp.src("src/theme/**")
+	gulp.src('src/theme/**')
 		.pipe(gulp.dest('build/wordpress/wp-content/themes/' + themeName));
 });
 
 gulp.task('copy-theme-prod', function () {
-	gulp.src("src/theme/**")
+	gulp.src('src/theme/**')
 		.pipe(gulp.dest('dist/themes/' + themeName))
 });
 
 gulp.task('copy-fonts-dev', function () {
-	gulp.src("src/fonts/**")
+	gulp.src('src/fonts/**')
 		.pipe(gulp.dest('build/wordpress/wp-content/themes/' + themeName + '/fonts'))
 });
 
 gulp.task('copy-fonts-prod', function () {
-	gulp.src("src/fonts/**")
+	gulp.src('src/fonts/**')
 		.pipe(gulp.dest('dist/themes/' + themeName + '/fonts'))
 });
 
@@ -180,7 +180,7 @@ gulp.task('header-scripts-dev', function () {
 		.pipe(plumber({ errorHandler: onError }))
 		.pipe(sourcemaps.init())
 		.pipe(concat('header-bundle.js'))
-		.pipe(sourcemaps.write("."))
+		.pipe(sourcemaps.write('.'))
 		.pipe(gulp.dest('build/wordpress/wp-content/themes/' + themeName + '/js'));
 });
 
@@ -200,7 +200,7 @@ gulp.task('footer-scripts-dev', function () {
 			presets: ['env']
 		}))
 		.pipe(concat('footer-bundle.js'))
-		.pipe(sourcemaps.write("."))
+		.pipe(sourcemaps.write('.'))
 		.pipe(gulp.dest('build/wordpress/wp-content/themes/' + themeName + '/js'));
 });
 
