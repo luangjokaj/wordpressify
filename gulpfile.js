@@ -138,6 +138,14 @@ gulp.task('setup', [
 	'copy-config'
 ]);
 
+var date = new Date().toLocaleDateString('en-GB').replace(/\//g, '.');
+
+gulp.task('backup', function () {
+	gulp.src('build/wordpress/**')
+		.pipe(zip(date + '.zip'))
+		.pipe(gulp.dest('backups'));
+});
+
 gulp.task('copy-theme-dev', function () {
 	gulp.src('src/theme/**')
 		.pipe(gulp.dest('build/wordpress/wp-content/themes/' + themeName));

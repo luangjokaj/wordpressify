@@ -10,4 +10,7 @@ Evolve your WordPress development.
 - Renamed classes
 - Refactored css structure)
 - Meet WordPressify
+
+**0.0.5**
 - Activated `DISABLE_WP_CRON` to prevent Node freezing.
+- Backup your build files with all `wp-content` uploads.
