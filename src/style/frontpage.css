@@ -11,6 +11,15 @@
 			text-align: center;
 			color: var(--white);
 			font-weight: 100;
+			transition: all .5s ease;
+			transition-delay: .4s;
+			transform: translateY(-60px);
+			opacity: 0;
+
+			&.aos-animate {
+				transform: translateY(0);
+				opacity: 1;
+			}
 
 			@media (--screen-mobile) {
 				padding: 40px 20px 0 20px;
@@ -20,12 +29,22 @@
 		& .codecolorer-container.javascript.solarized-dark {
 			&.home {
 				margin-bottom: 120px;
-				transform: translateY(120px);
+				transform: scale(1.1) translateY(180px);
 				box-shadow: 0 5px 25px 0 color(var(--black) alpha(20%));
+				transition: all 1s ease;
+				transition-delay: .2s;
+
+				&.aos-animate {
+					transform: scale(1) translateY(120px);
+				}
 
 				@media (--screen-mobile) {
 					margin-bottom: 40px;
-					transform: translateY(40px);
+					transform: scale(1.1) translateY(80px);
+
+					&.aos-animate {
+						transform: scale(1.) translateY(40px);
+					}
 				}
 
 				& .mockup {
