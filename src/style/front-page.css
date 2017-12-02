@@ -202,7 +202,7 @@ section.headings {
 		text-align: center;
 		
 		& .button {
-			margin-bottom: 140px;
+			margin-bottom: 100px;
 
 			@media (--screen-mobile) {
 				margin: 40px 0 70px;

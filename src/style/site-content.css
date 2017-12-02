@@ -12,6 +12,43 @@
 	}
 }
 
+.documentation {
+	display: flex;
+	clear: both;
+	width: 100%;
+
+	@media (--screen-mobile) {
+		width: 100%;
+	}
+
+	& .site-content {
+		width: 80%;
+		flex: 80%;
+		box-sizing: border-box;
+		padding-right: 40px;
+		padding-left: 40px;
+
+		@media (--screen-desktop) {
+			padding-right: 20px;
+			padding-left: 20px;
+		}
+
+		@media (--screen-mobile) {
+			width: 100%;
+		}
+	}
+
+	& .side-navigation {
+		width: 20%;
+		flex: 20%;
+		border-right: solid 1px var(--light-gray);
+
+		@media (--screen-mobile) {
+			display: none;
+		}
+	}
+}
+
 .site-content {
 	width: 70%;
 	flex: 70%;
@@ -62,6 +99,10 @@
 
 	& p {
 		color: var(--medium-gray);
+	}
+
+	& img {
+		max-width: 100%;
 	}
 
 	&.front-page {

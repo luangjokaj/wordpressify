@@ -5,8 +5,8 @@
 		<span class="date">
 			<?php the_time('F j, Y g:i a'); ?>
 		</span>
-		<span class="author"
-			><a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>">
+		<span class="author">
+			<a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>">
 				<?php the_author(); ?>
 			</a>
 		</span>
@@ -29,5 +29,7 @@
 
 	<?php the_post_thumbnail('banner-image'); ?>
 
-	<?php the_content(); ?>
+	<div class="post-inner-content">
+		<?php the_content(); ?>
+	</div>
 </article>
