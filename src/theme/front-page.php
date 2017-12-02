@@ -28,7 +28,7 @@
 	</main>
 </section>
 <!-- container -->
-<div class="container">	
+<div class="container">
 	<!-- site-content -->
 	<div class="site-content front-page">
 		<section class="tech">
@@ -94,5 +94,5 @@
 	</div>
 	<!-- /site-content -->
 </div>
-<!-- container -->
+<!-- /container -->
 <?php get_footer(); ?>
