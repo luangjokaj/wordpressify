@@ -2,9 +2,10 @@
 <!-- container -->
 <div class="documentation">
 	<div class="side-navigation">
-		<ul>
-			<li>Hello World</li>
-		</ul>
+		<nav>
+			<?php get_search_form(); ?>
+			<h6>Quick Navigation</h6>
+		</nav>
 	</div>
 
 	<!-- site-content -->

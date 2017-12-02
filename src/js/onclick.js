@@ -1,10 +1,10 @@
 $('a').click(function (event) {
-	let scrollOffset = 0;
+	let scrollOffset = 100;
 
 	if ($(this).is('a[href^="#"]') && $(this).attr('href').length >= 2 && !$(this).hasClass('menu-click')) {
 		$('html, body').animate({
-			scrollTop: $($.attr(this, 'href')).offset().top + scrollOffset
-		}, 1500);
+			scrollTop: $($.attr(this, 'href')).offset().top - scrollOffset
+		}, 1000);
 		return false;
 	}
 
