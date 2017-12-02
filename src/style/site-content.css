@@ -5,7 +5,7 @@
 	display: flex;
 	align-content: center;
 	flex-wrap: wrap;
-	height: 100%;
+	min-height: 100%;
 
 	@media (--screen-mobile) {
 		display: block;
