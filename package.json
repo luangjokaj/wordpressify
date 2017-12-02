@@ -41,7 +41,7 @@
 		"nprogress": "^0.2.0",
 		"postcss-cssnext": "^3.0.2",
 		"postcss-easy-import": "^3.0.0",
-		"stylelint": "^8.2.0",
-		"stylelint-config-standard": "^17.0.0"
+		"stylelint": "^8.3.1",
+		"stylelint-config-standard": "^18.0.0"
 	}
 }
