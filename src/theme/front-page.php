@@ -87,8 +87,8 @@
 				</li>
 			</ul>
 		</section>
-		<section class="github">
-			<a href="#" class="button icon github" data-aos="slow-button" data-aos-offset="100">GitHub</a>
+		<section class="github" data-aos="slow-button" data-aos-offset="100">
+			<a href="#" class="button icon github">GitHub</a>
 		</section>
 	</div>
 	<!-- /site-content -->
