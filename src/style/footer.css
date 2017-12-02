@@ -8,4 +8,14 @@
 	& ul {
 		@apply --noList;
 	}
+
+	& section {
+		box-sizing: border-box;
+		padding: 20px;
+
+		&.riangle {
+			width: 100%;
+			background: var(--medium-blue);
+		}
+	}
 }
