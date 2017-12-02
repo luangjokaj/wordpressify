@@ -10,4 +10,35 @@
 		font-weight: 100;
 		color: var(--medium-gray);
 	}
+
+	& h1 {
+		font-size: var(--medium-font-size);
+	}
+
+	& ul {
+		@apply --noList;
+
+		li {
+			display: inline-block;
+			widows: 100%;
+			padding: 15px 0;
+		}
+	}
+
+	& .widget-item {
+		color: var(--medium-gray);
+
+		& h1, & h2, & h3, & h4, & h5 {
+			padding-bottom: 0;
+			margin-bottom: 0;
+		}
+
+		& ul {
+			margin: 20px 0;
+
+			& li {
+				padding: 5px 0;
+			}
+		}
+	}
 }

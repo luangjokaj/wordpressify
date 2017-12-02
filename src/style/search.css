@@ -1,3 +1,15 @@
-* {
-	clear: both;
+.search-form {
+	& .inner-content {
+		display: flex;
+
+		& input {
+			flex: 2;
+
+			&[type='submit'] {
+				padding: 15px 20px;
+				margin-left: 10px;
+				flex: 1;
+			}
+		}
+	}
 }

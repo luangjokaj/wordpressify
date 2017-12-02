@@ -31,13 +31,13 @@
 
 			<?php if ( is_search() OR is_archive() ) { ?>
 				<p class="excerpt content">
-					<a href="<?php the_permalink(); ?>">Read More</a>
+					<a href="<?php the_permalink(); ?>" class="button">Read More</a>
 				</p>
 			<?php } else {
 				if ($post->post_excerpt) { ?>
 				<p class="excerpt">
 					<?php echo get_the_excerpt(); ?>
-					<a href="<?php the_permalink(); ?>">Read More</a>
+					<a href="<?php the_permalink(); ?>" class="button">Read More</a>
 				</p>
 				<?php } else {}
 			} ?>
