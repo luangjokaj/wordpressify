@@ -8,10 +8,6 @@
 		opacity: 0;
 		transition: all 1s ease;
 		transition-delay: 1s;
-		
-		@media (--screen-mobile) {
-			display: none;
-		}
 
 		& div {
 			display: flex;
