@@ -1,6 +1,6 @@
 </div>
 <!-- container -->
-<footer>
+<footer class="footer">
 	<!-- footer-widgets -->
 	<div class="footer-widgets clearfix">
 

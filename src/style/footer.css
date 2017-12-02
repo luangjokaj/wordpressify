@@ -1,3 +1,11 @@
-* {
-	clear: both;
+.footer {
+	background: var(--dark-blue);
+	width: 100%;
+	overflow: hidden;
+	text-align: center;
+	color: var(--white);
+
+	& ul {
+		@apply --noList;
+	}
 }

@@ -78,7 +78,7 @@ section.headings {
 }
 
 .front-page {
-	& .tech {
+	& section.tech {
 		& ul {
 			@apply --noList;
 			text-align: center;
@@ -123,7 +123,7 @@ section.headings {
 		}
 	}
 
-	& .features {
+	& section.features {
 		& ul {
 			@apply --noList;
 			text-align: center;
@@ -197,8 +197,18 @@ section.headings {
 		}
 	}
 
-	& .github {
+	& section.github {
+		box-sizing: border-box;
 		text-align: center;
+		
+		& .button {
+			margin-bottom: 140px;
+
+			@media (--screen-mobile) {
+				margin: 40px 0 70px;
+			}
+		}
+
 
 		& .button {
 			&[data-aos="slow-button"] {

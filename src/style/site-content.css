@@ -1,5 +1,7 @@
 .site-content {
 	@apply --maxWidth;
+	clear: both;
+	overflow: hidden;
 
 	& .center {
 		text-align: center;

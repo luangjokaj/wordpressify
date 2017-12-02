@@ -41,6 +41,7 @@
 
 				&.bright {
 					transform: translateY(300%);
+					opacity: 0;
 				}
 				
 				&:hover {
@@ -90,6 +91,7 @@
 
 						&.bright {
 							transform: translateY(0);
+							opacity: 1;
 						}
 					}
 				}
