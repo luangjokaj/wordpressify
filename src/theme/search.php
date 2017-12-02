@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 	<!-- site-content -->
-	<div class="site-content no-margins">
+	<div class="site-content">
 
 		<h2 class="page-title">Search results for: <?php the_search_query(); ?></h2>
 		<!-- main-column -->

@@ -1,7 +1,23 @@
-.site-content {
+.container {
 	@apply --maxWidth;
 	clear: both;
 	overflow: hidden;
+	display: flex;
+	align-content: center;
+	flex-wrap: wrap;
+
+	@media (--screen-mobile) {
+		display: block;
+	}
+}
+
+.site-content {
+	width: 70%;
+	flex: 70%;
+
+	@media (--screen-mobile) {
+		width: 100%;
+	}
 
 	& .center {
 		text-align: center;

@@ -1,3 +1,13 @@
-* {
-	clear: both;
+.side-column {
+	width: 30%;
+	flex: 30%;
+
+	@media (--screen-mobile) {
+		width: 100%;
+	}
+
+	& h1, & h2, & h3 {
+		font-weight: 100;
+		color: var(--medium-gray);
+	}
 }
