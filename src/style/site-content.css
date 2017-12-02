@@ -35,4 +35,22 @@
 			}
 		}
 	}
+
+	&.single {
+		& h1, & h2, & h3 {
+			font-weight: 800;
+			color: var(--dark-blue);
+			text-transform: uppercase;
+		}
+	}
+
+	& .codecolorer-container.solarized-dark, & .codecolorer-container {
+		width: 100% !important;
+		max-width: 100% !important;
+		box-sizing: border-box;
+		border-radius: 5px;
+		padding: 20px;
+		overflow: hidden;
+		border: none;
+	}
 }

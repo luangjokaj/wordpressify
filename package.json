@@ -8,7 +8,8 @@
 		"install:wordpress": "gulp cleanup && gulp download-wordpress && gulp setup && gulp disable-cron",
 		"prod": "gulp build-prod",
 		"dev": "gulp build-dev",
-		"lint:css": "stylelint src/**/*.css --config tools/stylelintrc.json"
+		"lint:css": "stylelint src/**/*.css --config tools/stylelintrc.json",
+		"backup": "gulp backup"
 	},
 	"author": "Luan Gjokaj",
 	"license": "MIT",

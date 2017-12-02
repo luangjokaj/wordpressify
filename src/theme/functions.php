@@ -35,3 +35,17 @@ show_admin_bar(false);
 function is_search_has_results() {
 	return 0 != $GLOBALS['wp_query']->found_posts;
 }
+
+// Add Widget Areas
+function wordpressify_widgets() {
+	register_sidebar( array(
+		'name' => 'Sidebar',
+		'id' => 'sidebar1',
+		'before_widget' => '<div class="widget-item">',
+		'after_widget' => '</div>',
+		'before_title' => '<h2 class="widget-title">',
+		'after_title' => '</h2>',
+	));
+}
+
+add_action('widgets_init', 'wordpressify_widgets');
