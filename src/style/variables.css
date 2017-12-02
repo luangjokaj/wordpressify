@@ -17,9 +17,9 @@
 	--medium-blue: #002B36;
 	--dark-blue: #00212B;
 
-	--push-top-desktop: 99px;
-	--push-top-mobile: 99px;
-	--push-top-tablet: 99px;
+	--push-top-desktop: 100px;
+	--push-top-mobile: 100px;
+	--push-top-tablet: 100px;
 
 	--gradient: linear-gradient(var(--primary-color), var(--dark-blue));
 }
@@ -28,6 +28,7 @@
 @custom-media --screen-mobile (max-width: 640px);
 @custom-media --screen-phablet (max-width: 820px);
 @custom-media --screen-tablet print, (max-width: 1000px);
+@custom-media --screen-medium (max-width: 1200px);
 @custom-media --screen-desktop print, (max-width: 1300px);
 @custom-media --screen-wide (min-width: 2000px);
 @custom-media --screen-4k (min-width: 3870px);

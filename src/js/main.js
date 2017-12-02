@@ -13,8 +13,10 @@ $(window).on('load', function () {
 			let scroll = $(window).scrollTop();
 			if (scroll >= mockupPosition) {
 				header.addClass('scrolled');
+				sideHeadings.length && sideHeadings.addClass('scrolled');
 			} else {
 				header.removeClass('scrolled');
+				sideHeadings.length && sideHeadings.removeClass('scrolled');
 			}
 		});
 

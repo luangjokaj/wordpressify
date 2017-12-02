@@ -5,6 +5,11 @@
 		& input {
 			flex: 2;
 
+			&[type='text'] {
+				background: url('./img/search.svg') no-repeat 15px center / 16px;
+				padding-left: 40px;
+			}
+
 			&[type='submit'] {
 				padding: 15px 20px;
 				margin-left: 10px;
