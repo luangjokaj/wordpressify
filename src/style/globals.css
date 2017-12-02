@@ -8,6 +8,7 @@ html, body {
 }
 
 body {
+	box-sizing: border-box;
 	padding-top: var(--push-top-desktop);
 
 	@media (--screen-tablet) {

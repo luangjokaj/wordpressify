@@ -31,6 +31,7 @@
 @custom-media --screen-desktop print, (max-width: 1300px);
 @custom-media --screen-wide (min-width: 2000px);
 @custom-media --screen-4k (min-width: 3870px);
+@custom-media --screen-desktop-only (min-width: 640px);
 
 :root {
 	--smaller-font-size: 10px;

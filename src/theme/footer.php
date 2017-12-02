@@ -92,10 +92,12 @@
 	<!-- /footer-widgets -->
 
 	<section class="riangle">
+		<a href="https://www.riangle.com/" target="_blank">
+			<img src="<?php echo get_template_directory_uri(); ?>/img/riangle.svg" alt="Riangle 🔺">
+		</a>
 		<p>
-			<span><?php bloginfo('name'); ?></span> - &copy; <?php echo date('Y');?></p>
+			<span>Powered by <strong><a href="https://www.riangle.com/" target="_blank">Riangle</a href=""></strong>. <?php bloginfo('name'); ?></span> - &copy; <?php echo date('Y');?></p>
 		</p>
-		<img src="<?php echo get_template_directory_uri(); ?>/img/riangle.svg" alt="Riangle 🔺">
 	</section>
 
 </footer>
