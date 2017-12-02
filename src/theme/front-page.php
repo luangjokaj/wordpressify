@@ -33,10 +33,10 @@
 	<div class="site-content front-page">
 		<section class="tech">
 			<ul>
-				<li data-aos="flying-icons">
+				<li data-aos="flying-icons" data-aos-offset="0">
 					<img src="<?php echo get_template_directory_uri(); ?>/img/node.svg" alt="Nodejs ⚙️">
 				</li>
-				<li data-aos="flying-icons">
+				<li data-aos="flying-icons" data-aos-offset="0">
 					<img src="<?php echo get_template_directory_uri(); ?>/img/gulp.svg" alt="Gulp 🚀">
 				</li>
 			</ul>

@@ -17,45 +17,10 @@
 			padding: 15px 30px;
 		}
 
-		&.icon {
-			position: relative;
-			padding-left: 85px;
-
-			@media (--screen-mobile) {
-				padding-left: 55px;
-			}
-
-			&:before {
-				content: '';
-				display: block;
-				width: 16px;
-				height: 16px;
-				position: absolute;
-				top: 50%;
-				transform: translateY(calc(-50% - 2px));
-				left: 60px;
-
-				@media (--screen-mobile) {
-					left: 30px
-				}
-			}
-
-			&.github {
-				&:before {
-					background: url('./img/github-bright.svg') no-repeat center center / 16px;
-				}
-
-				&:hover {
-					&:before {
-						background: url('./img/github.svg') no-repeat center center / 16px;
-					}
-				}
-			}
-		}
-
 		&:hover {
 			background: var(--dark-blue);
 			color: var(--white);
+			border-color: var(--dark-blue);
 		}
 
 		&:disabled {
@@ -66,6 +31,33 @@
 				color: inherit;
 				background-color: #ebe9eb;
 				cursor: not-allowed;
+			}
+		}
+
+		&.icon {
+			position: relative;
+			padding-left: 85px;
+
+			@media (--screen-mobile) {
+				padding-left: 55px;
+			}
+
+			&.github {
+				background: url('./img/github-bright.svg') no-repeat 60px 15px / 16px;
+
+				&:hover {
+					background: url('./img/github.svg') no-repeat 60px 15px / 16px var(--dark-blue);
+					border-color: var(--dark-blue);
+				}
+
+				@media (--screen-mobile) {
+					background: url('./img/github-bright.svg') no-repeat 30px 15px / 16px;
+
+					&:hover {
+						background: url('./img/github.svg') no-repeat 30px 15px / 16px var(--dark-blue);
+						border-color: var(--dark-blue);
+					}	
+				}
 			}
 		}
 	};

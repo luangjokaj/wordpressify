@@ -24,6 +24,7 @@
 	& .site-content {
 		width: 80%;
 		flex: 80%;
+		max-width: 80%;
 		box-sizing: border-box;
 		padding-right: 40px;
 		padding-left: 40px;
@@ -36,16 +37,19 @@
 		@media (--screen-medium) {
 			width: 70%;
 			flex: 70%;
+			max-width: 70%;
 		}
 
 		@media (--screen-mobile) {
 			width: 100%;
+			max-width: 100%;
 		}
 	}
 
 	& .side-navigation {
 		width: 20%;
 		flex: 20%;
+		max-width: 20%;
 		border-right: solid 1px var(--light-gray);
 		position: relative;
 
@@ -136,6 +140,7 @@
 
 	@media (--screen-phablet) {
 		width: 100%;
+		max-width: 100%;
 		padding-bottom: 10px;
 		padding-right: 0;
 	}
