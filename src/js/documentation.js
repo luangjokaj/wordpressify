@@ -6,6 +6,6 @@ headings.each(function () {
 	let titleText = $(this).text();
 	let txt2 = $('<a href="#'+ current + '"></a>').text(titleText);
 	
-	txt2.appendTo( sideHeadings );
-	$( this ).attr('id', current.toString());
+	txt2.appendTo(sideHeadings);
+	$(this).attr('id', current.toString());
 });

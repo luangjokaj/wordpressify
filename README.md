@@ -14,3 +14,7 @@ Evolve your WordPress development.
 **0.0.5**
 - Activated `DISABLE_WP_CRON` to prevent Node freezing.
 - Backup your build files with all `wp-content` uploads.
+
+**0.1.0**
+- Theme clenup.
+- Consistent code styles.
