@@ -10,7 +10,7 @@ $('a').click(function (event) {
 
 	if ($(this).is('a:not([href^="#"], [href^="mailto"])') && $(this).attr('target') != '_blank') {
 		event.preventDefault();
-		header.removeClass('loaded');
+		header.removeClass('loaded', 'bright');
 
 		const newLocation = this.href;
 		setTimeout(function () {

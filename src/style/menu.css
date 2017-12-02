@@ -88,6 +88,23 @@
 				& .github {
 					& img {
 						transform: translateY(-300%);
+						opacity: 0;
+
+						&.bright {
+							transform: translateY(0);
+							opacity: 1;
+						}
+					}
+				}
+			}
+		}
+
+		&.bright {
+			& .navigation {
+				& .github {
+					& img {
+						transform: translateY(-300%);
+						opacity: 0;
 
 						&.bright {
 							transform: translateY(0);

@@ -18,6 +18,8 @@ $(window).on('load', function () {
 			}
 		});
 
+		!mockup.length ? header.addClass('bright') : header.removeClass('brith');
+
 	}, 2000);
 	AOS.init();
 

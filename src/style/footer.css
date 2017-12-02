@@ -13,6 +13,60 @@
 		box-sizing: border-box;
 		padding: 20px;
 
+		&.categories {
+			& ul {
+				@apply --maxWidth;
+				display: flex;
+				align-items: center;
+				flex-wrap: wrap;
+
+				& li {
+					display: inline-block;
+					width: 33.333%;
+					flex: 33.333%;
+
+					& h2 {
+						font-weight: 100;
+						text-align: left;
+						margin: 20px 0 40px;
+					}
+				}
+
+				& ul.post-title {
+					text-align: left;
+
+					& li {
+						box-sizing: border-box;
+						padding-left: 15px;
+						line-height: 1.5;
+						position: relative;
+
+						&:before {
+							content: '';
+							display: block;
+							width: 5px;
+							height: 5px;
+							border-radius: 100%;
+							background: color(var(--white) alpha(50%));
+							position: absolute;
+							left: 0;
+							top: 8px;
+						}
+
+						& a {
+							color: color(var(--white) alpha(50%));
+						}
+
+						&:hover {
+							& a {
+								color: var(--white);
+							}
+						}
+					}
+				}
+			}
+		}
+
 		&.riangle {
 			width: 100%;
 			background: var(--medium-blue);

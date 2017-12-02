@@ -34,6 +34,7 @@
 				left: 0;
 				transition: all .5s ease;
 				transform: translateY(0);
+				opacity: 1;
 
 				&.bright {
 					transform: translateY(-300%);
@@ -73,6 +74,25 @@
 			& .logo {
 				& img {
 					transform: translateY(300%);
+					opacity: 0;
+
+					&.bright {
+						transform: translateY(0);
+						opacity: 1;
+					}
+				}
+			}
+		}
+
+		&.bright {
+			background: var(--white);
+			border-color: var(--light-gray);
+
+			& .logo {
+				& img {
+					transform: translateY(300%);
+					background: transparent;
+					opacity: 0;
 
 					&.bright {
 						transform: translateY(0);
