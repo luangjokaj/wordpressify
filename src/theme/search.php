@@ -26,6 +26,6 @@
 	<!-- /site-content -->
 	<?php get_sidebar(); ?>
 </div>
-<!-- container -->
+<!-- /container -->
 
 <?php get_footer(); ?>

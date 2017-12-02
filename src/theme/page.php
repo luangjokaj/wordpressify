@@ -14,5 +14,5 @@
 	</div>
 	<!-- /site-content -->
 </div>
-<!-- container -->
+<!-- /container -->
 <?php get_footer(); ?>
