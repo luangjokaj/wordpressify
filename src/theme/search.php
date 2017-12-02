@@ -3,8 +3,8 @@
 <div class="container">	
 	<!-- site-content -->
 	<div class="site-content">
-
 		<h2 class="page-title">Search results for: <?php the_search_query(); ?></h2>
+
 		<!-- main-column -->
 		<div class="main-column grid <?php if(!is_search_has_results()) { echo 'no-result'; } ?>">
 			<?php if (have_posts()) :
@@ -24,8 +24,8 @@
 		</div>
 	</div>
 	<!-- /site-content -->
+
 	<?php get_sidebar(); ?>
 </div>
 <!-- /container -->
-
 <?php get_footer(); ?>

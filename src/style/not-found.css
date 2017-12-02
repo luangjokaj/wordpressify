@@ -1,3 +1,5 @@
-* {
-	clear: both;
+.no-results {
+	& .inner-content {
+		margin-top: 40px;
+	}
 }
