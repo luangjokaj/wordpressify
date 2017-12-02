@@ -127,7 +127,7 @@ section.headings {
 		& ul {
 			@apply --noList;
 			text-align: center;
-			padding: 60px 0;
+			padding: 100px 0;
 			width: 100%;
 			box-sizing: border-box;
 			display: flex;
@@ -206,7 +206,7 @@ section.headings {
 			}
 
 			&.aos-animate {
-				transform: translateY();
+				transform: scale(1.2) translateY(0);
 			}
 		}
 	}

@@ -14,12 +14,16 @@
 		border-radius: 30px;
 
 		@media (--screen-mobile) {
-			padding: 15px 20px;
+			padding: 15px 30px;
 		}
 
 		&.icon {
 			position: relative;
 			padding-left: 85px;
+
+			@media (--screen-mobile) {
+				padding-left: 55px;
+			}
 
 			&:before {
 				content: '';
@@ -30,6 +34,10 @@
 				top: 50%;
 				transform: translateY(calc(-50% - 2px));
 				left: 60px;
+
+				@media (--screen-mobile) {
+					left: 30px
+				}
 			}
 
 			&.github {
