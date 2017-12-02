@@ -23,5 +23,3 @@
 		</nav>
 	</div>
 </header>
-<!-- container -->
-<div class="container">

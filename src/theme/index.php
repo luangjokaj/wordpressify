@@ -1,4 +1,6 @@
 <?php get_header(); ?>
+<!-- container -->
+<div class="container">	
 	<!-- site-content -->
 	<div class="site-content">
 
@@ -23,5 +25,7 @@
 	<!-- /site-content -->
 
 	<?php get_sidebar(); ?>
+</div>
+<!-- container -->
 
 <?php get_footer(); ?>

@@ -1,5 +1,3 @@
-</div>
-<!-- container -->
 <footer class="footer">
 	<section class="categories">
 		<ul>
