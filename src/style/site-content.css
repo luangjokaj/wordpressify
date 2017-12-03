@@ -23,9 +23,9 @@
 	}
 
 	& .site-content {
-		width: 80%;
-		flex: 80%;
-		max-width: 80%;
+		width: 70%;
+		flex: 70%;
+		max-width: 70%;
 		box-sizing: border-box;
 		padding-right: 40px;
 		padding-left: 40px;
@@ -35,12 +35,6 @@
 			padding-left: 20px;
 		}
 
-		@media (--screen-medium) {
-			width: 70%;
-			flex: 70%;
-			max-width: 70%;
-		}
-
 		@media (--screen-mobile) {
 			width: 100%;
 			max-width: 100%;
@@ -48,16 +42,11 @@
 	}
 
 	& .side-navigation {
-		width: 20%;
-		flex: 20%;
-		max-width: 20%;
+		width: 30%;
+		flex: 30%;
+		max-width: 30%;
 		border-right: solid 1px var(--light-gray);
 		position: relative;
-
-		@media (--screen-medium) {
-			width: 30%;
-			flex: 30%;
-		}
 
 		@media (--screen-phablet) {
 			display: none;
@@ -65,17 +54,13 @@
 
 		& nav {
 			position: fixed;
-			width: 20%;
+			width: 30%;
 			height: 100%;
 			overflow-y: auto;
 			box-sizing: border-box;
 			padding: 40px;
 			transition: all 1s ease;
 			top: var(--push-top-desktop);
-
-			@media (--screen-medium) {
-				width: 30%;
-			}
 
 			@media (--screen-tablet) {
 				top: var(--push-top-tablet);
