@@ -33,7 +33,7 @@ Node.js is a JavaScript runtime built on Chrome’s V8 JavaScript engine. Node.j
 # 2. Setup Project
 To install WordPressify you need to clone the repository from GitHub:
 ```
-git clone https://github.com/luangjokaj/gulp-wordpress-boilerplate
+git clone https://github.com/luangjokaj/wordpressify
 ```
 This will clone the repostiry on your local machine. Navigate to the newly created folder and install the dependencies:
 
