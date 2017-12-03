@@ -1,14 +1,15 @@
 {
-	"name": "gulp-wordpress-boilerplate",
-	"version": "0.0.3",
+	"name": "wordpressify",
+	"version": "0.0.9",
 	"description": "",
 	"main": "gulpfile.js",
 	"scripts": {
 		"cleanup": "gulp cleanup",
-		"install:wordpress": "gulp cleanup && gulp download-wordpress && gulp setup",
+		"install:wordpress": "gulp cleanup && gulp download-wordpress && gulp setup && gulp disable-cron",
 		"prod": "gulp build-prod",
 		"dev": "gulp build-dev",
-		"lint:css": "stylelint src/**/*.css --config tools/stylelintrc.json"
+		"lint:css": "stylelint src/**/*.css --config tools/stylelintrc.json",
+		"backup": "gulp backup"
 	},
 	"author": "Luan Gjokaj",
 	"license": "MIT",
@@ -25,6 +26,7 @@
 		"gulp-cache-bust": "^1.1.0",
 		"gulp-concat": "^2.6.1",
 		"gulp-connect-php": "^1.0.1",
+		"gulp-inject-string": "^1.1.0",
 		"gulp-livereload": "^3.8.1",
 		"gulp-plumber": "^1.1.0",
 		"gulp-postcss": "^7.0.0",
@@ -35,7 +37,6 @@
 		"gulp-util": "^3.0.8",
 		"gulp-zip": "^4.0.0",
 		"isotope-layout": "^3.0.4",
-		"izimodal": "^1.5.1",
 		"jquery": "^3.2.1",
 		"normalize.css": "^7.0.0",
 		"nprogress": "^0.2.0",

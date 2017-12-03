@@ -1,6 +1,8 @@
 <?php get_header(); ?>
+<!-- container -->
+<div class="container">	
 	<!-- site-content -->
-	<div class="site-content no-margins">
+	<div class="site-content">
 
 		<!-- main-column -->
 		<div class="main-column grid">
@@ -23,5 +25,7 @@
 	<!-- /site-content -->
 
 	<?php get_sidebar(); ?>
+</div>
+<!-- /container -->
 
 <?php get_footer(); ?>

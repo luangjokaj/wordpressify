@@ -1,7 +1,8 @@
 <?php get_header(); ?>
-
+<!-- container -->
+<div class="container">	
 	<!-- site-content -->
-	<div class="site-content page <?php if (is_account_page()) { echo 'account-page'; }; ?>">
+	<div class="site-content page">
 		<?php if (have_posts()) :
 			while (have_posts()) :
 				the_post();
@@ -12,5 +13,6 @@
 			endif;?>
 	</div>
 	<!-- /site-content -->
-
+</div>
+<!-- /container -->
 <?php get_footer(); ?>

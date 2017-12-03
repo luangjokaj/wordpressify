@@ -1,0 +1,264 @@
+.codecolorer-container.javascript.solarized-dark {
+	border-radius: 5px;
+	border: none;
+	box-sizing: border-box;
+	padding: 20px;
+	width: 100%;
+	max-width: 1000px;
+	margin: auto;
+}
+
+/* Layout */
+
+.codecolorer {
+	padding: 5px;
+	text-align: left;
+}
+
+code.codecolorer {
+	padding: 2px;
+}
+
+.codecolorer-container {
+	margin-bottom: 10px;
+	text-align: left;
+}
+
+.codecolorer,
+.codecolorer *,
+.codecolorer-container,
+.codecolorer-container * {
+	font: 13px/1.4em Monaco, Lucida Console, monospace
+}
+
+.codecolorer-container table {
+	border: 0px;
+	margin: 0px;
+	width: 100%;
+	direction: ltr;
+}
+
+.codecolorer-container table td {
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	width: auto;
+}
+
+.codecolorer-container table td.line-numbers {
+	padding: 5px;
+	text-align: right;
+	width: 1%;
+	direction: ltr;
+}
+
+.codecolorer-container table td.line-numbers div {
+	min-width: 23px;
+}
+
+/* Layout styles */
+
+.codecolorer-container {
+	border: 1px solid #9F9F9F;
+}
+
+.codecolorer-container table td.line-numbers {
+	color: #888888;
+	background-color: #EEEEEE;
+	border-right: 1px solid #9F9F9F;
+}
+
+.codecolorer-noborder,
+.codecolorer-noborder table td.line-numbers {
+	border: 0px;
+}
+
+/* "Slush & Poppies" color scheme (default) */
+
+.codecolorer-container,
+.codecolorer {
+	color: #000000;
+	background-color: #F1F1F1;
+}
+
+/* Comment */
+
+.codecolorer .co0,
+.codecolorer .co1,
+.codecolorer .co2,
+.codecolorer .co3,
+.codecolorer .co4,
+.codecolorer .coMULTI {
+	color: #406040;
+	font-style: italic;
+}
+
+/* Constant */
+
+.codecolorer .nu0,
+.codecolorer .re3 {
+	color: #0080A0;
+}
+
+/* String */
+
+.codecolorer .st0,
+.codecolorer .st_h,
+.codecolorer .es0,
+.codecolorer .es1 {
+	color: #C03030;
+}
+
+/* Entity */
+
+.codecolorer .me1,
+.codecolorer .me2 {
+	color: #0080FF;
+}
+
+/* Keyword */
+
+.codecolorer .kw1,
+.codecolorer .kw2,
+.codecolorer .sy1 {
+	color: #2060A0;
+}
+
+/* Storage */
+
+.codecolorer .kw3,
+.codecolorer .kw4,
+.codecolorer .kw5,
+.codecolorer .re2 {
+	color: #008080;
+}
+
+/* Variable */
+
+.codecolorer .re0,
+.codecolorer .re1 {
+	color: #A08000;
+}
+
+/* Global color */
+
+.codecolorer .br0,
+.codecolorer .sy0 {
+	color: #000000;
+}
+
+/* XML tag */
+
+.codecolorer.xml .re1,
+.codecolorer.xsl .re1,
+.codecolorer.xml .re2,
+.codecolorer.xsl .re2 {
+	color: #008080;
+}
+
+/* XML attribute */
+
+.codecolorer.xml .re0 {
+	color: #2060A0;
+}
+
+/* Highlight lines */
+
+.codecolorer .ln-xtra {
+	background-color: #ffff66;
+	display: block;
+}
+
+/* Solarized (Dark) */
+
+.solarized-dark,
+.solarized-dark .codecolorer {
+	color: #839496;
+	background-color: #002b36;
+}
+
+.solarized-dark ::selection,
+.solarized-dark .codecolorer ::selection {
+	background: #073642;
+}
+
+.solarized-dark ::-moz-selection,
+.solarized-dark .codecolorer ::-moz-selection {
+	background: #073642;
+}
+
+.solarized-dark .codecolorer .co0,
+.solarized-dark .codecolorer .co1,
+.solarized-dark .codecolorer .co2,
+.solarized-dark .codecolorer .co3,
+.solarized-dark .codecolorer .co4,
+.solarized-dark .codecolorer .coMULTI {
+	color: #586E75;
+	font-style: normal;
+}
+
+.solarized-dark .codecolorer .nu0,
+.solarized-dark .codecolorer .re3 {
+	color: #269186;
+}
+
+.solarized-dark .codecolorer .st0,
+.solarized-dark .codecolorer .st_h,
+.solarized-dark .codecolorer .es0,
+.solarized-dark .codecolorer .es1 {
+	color: #269186;
+}
+
+.solarized-dark .codecolorer .me1,
+.solarized-dark .codecolorer .me2 {
+	color: #748B00;
+}
+
+.solarized-dark .codecolorer .kw1,
+.solarized-dark .codecolorer .kw2,
+.solarized-dark .codecolorer .sy1 {
+	color: #859900;
+}
+
+.solarized-dark .codecolorer .kw3,
+.solarized-dark .codecolorer .kw4,
+.solarized-dark .codecolorer .kw5,
+.solarized-dark .codecolorer .re2 {
+	color: #A57800;
+}
+
+.solarized-dark .codecolorer .solarized-dark .re0,
+.solarized-dark .codecolorer .re1 {
+	color: #268BD2;
+}
+
+.solarized-dark .codecolorer .br0,
+.solarized-dark .codecolorer .sy0 {
+	color: #D01F1E;
+}
+
+.solarized-dark .codecolorer.xml .re1,
+.solarized-dark .codecolorer.xsl .re1,
+.solarized-dark .codecolorer.xml .re2,
+.solarized-dark .codecolorer.xsl .re2,
+code.solarized-dark.xml .re1,
+code.solarized-dark.xsl .re1,
+code.solarized-dark.xml .re2,
+code.solarized-dark.xsl .re2 {
+	color: #A57800;
+}
+
+.solarized-dark .codecolorer.xml .re0,
+code.solarized-dark.xml .re0 {
+	color: #859900;
+}
+
+.solarized-dark .codecolorer .ln-xtra {
+	background-color: #FDF6E3;
+}
+
+.codecolorer-container.solarized-dark table td.line-numbers {
+	color: #839496;
+	background-color: #073642;
+	border-right-color: #001B26;
+}

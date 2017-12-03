@@ -3,10 +3,11 @@
 		<!-- post-thumbnail -->
 		<div class="post-thumbnail">
 			<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('small-thumbnail'); ?></a>
-		</div><!-- /post-thumbnail -->
+		</div>
+		<!-- /post-thumbnail -->
 
-		<!-- postInnerContent -->
-		<div class="postInnerContent">
+		<!-- inner-content -->
+		<div class="inner-content">
 			<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 			<p class="post-info">
 				<?php echo get_the_excerpt(); ?>
@@ -30,18 +31,18 @@
 			</p>
 
 			<?php if ( is_search() OR is_archive() ) { ?>
-				<p class="excerpt search archive">
-					<a href="<?php the_permalink(); ?>">Read More</a>
+				<p class="excerpt content">
+					<a href="<?php the_permalink(); ?>" class="button">Read More</a>
 				</p>
 			<?php } else {
 				if ($post->post_excerpt) { ?>
 				<p class="excerpt">
 					<?php echo get_the_excerpt(); ?>
-					<a href="<?php the_permalink(); ?>">Read More</a>
+					<a href="<?php the_permalink(); ?>" class="button">Read More</a>
 				</p>
 				<?php } else {}
 			} ?>
 		</div>
-		<!-- /postInnerContent -->
+		<!-- /inner-content -->
 
 	</article>
