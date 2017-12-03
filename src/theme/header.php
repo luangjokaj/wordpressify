@@ -23,3 +23,4 @@
 		</nav>
 	</div>
 </header>
+<?php edit_post_link('Edit', '<p class="edit-button">', '</p>'); ?>
