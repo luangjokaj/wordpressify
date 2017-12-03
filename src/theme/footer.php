@@ -15,7 +15,7 @@
 					echo '<li data-aos="slow-categories" data-aos-offset="0"><h2>' . $single_category->name . '</h2>'; //category name & link
 						echo '<ul class="post-title">';
 
-					$query = new WP_Query( array( 'cat'=> $catID, 'posts_per_page'=>-1 ) );
+					$query = new WP_Query( array( 'cat'=> $catID, 'posts_per_page'=>-1, 'orderby' => 'publish_date' ) );
 					while( $query->have_posts() ):$query->the_post();
 						echo '<li data-aos="slow-categories" data-aos-offset="0"><a href="'.get_the_permalink().'">'.get_the_title().'</a></li>';
 					endwhile;
@@ -37,7 +37,7 @@
 
 								echo '<ul class="post-title">';
 
-							$query = new WP_Query( array( 'cat'=> $childID, 'posts_per_page'=>-1 ) );
+							$query = new WP_Query( array( 'cat'=> $childID, 'posts_per_page'=>-1, 'orderby' => 'publish_date' ) );
 							while( $query->have_posts() ):$query->the_post();
 								echo '<li data-aos="slow-categories" data-aos-offset="0"><a href="'.get_the_permalink().'">'.get_the_title().'</a></li>';
 							endwhile;
