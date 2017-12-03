@@ -245,6 +245,7 @@
 		& i {
 			transition: all .3s ease;
 			opacity: 1;
+			margin-right: 10px;
 
 			&:hover {
 				opacity: .5;
