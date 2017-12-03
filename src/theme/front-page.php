@@ -62,7 +62,7 @@
 					<img src="<?php echo get_template_directory_uri(); ?>/img/features/styles.svg" alt="Styles 🎨">
 					<h3>Styles</h3>
 					<p>
-						Optional styles pre-processors: PostCSS and Scss with sourcemaps.
+						Styles pre-processors: PostCSS or Scss with sourcemaps.
 					</p>
 				</li>
 				<li data-aos="slow-list">
