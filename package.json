@@ -1,6 +1,6 @@
 {
-	"name": "gulp-wordpress-boilerplate",
-	"version": "0.0.7",
+	"name": "wordpressify",
+	"version": "0.0.9",
 	"description": "",
 	"main": "gulpfile.js",
 	"scripts": {
