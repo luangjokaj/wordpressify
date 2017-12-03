@@ -8,7 +8,6 @@ let interval = setInterval(function () { NProgress.inc(); }, 1000);
 $(window).on('load', function () {
 	clearInterval(interval);
 	NProgress.done();
-	console.log('Yuuppy');
 });
 
 // Trigger bar when exiting the page
