@@ -18,3 +18,6 @@ Evolve your WordPress development.
 **0.1.0**
 - Theme clenup.
 - Consistent code styles.
+
+**0.1.1**
+- Fix placemente of `DISABLE_WP_CRON`.

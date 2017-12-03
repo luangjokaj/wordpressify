@@ -16,6 +16,7 @@
 	display: flex;
 	clear: both;
 	width: 100%;
+	min-height: 100%;
 
 	@media (--screen-mobile) {
 		width: 100%;
