@@ -222,6 +222,12 @@
 		padding: 20px;
 		overflow: hidden;
 		border: none;
+
+		& a {
+			&:hover {
+				color: color(var(--primary-color) lightness(40%));
+			}
+		}
 	}
 
 	& .heateor_sss_sharing_container {
