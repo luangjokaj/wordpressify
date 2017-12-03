@@ -28,6 +28,14 @@
 	& .widget-item {
 		color: var(--medium-gray);
 
+		& .search-form {
+			margin-top: 40px;
+
+			@media (--screen-mobile) {
+				margin-bottom: 40px;
+			}
+		}
+
 		& h1, & h2, & h3, & h4, & h5 {
 			padding-bottom: 0;
 			margin-bottom: 0;
