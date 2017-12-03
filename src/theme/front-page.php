@@ -41,7 +41,7 @@
 				</li>
 			</ul>
 		</section>
-		<h1 class="center fixed" data-aos="fade-up-slow">A modern workflow for your WordPress development, with integrated web server and auto-reload. Modern style pre-processors and ES6 ready.</h1>
+		<h2 class="center fixed" data-aos="fade-up-slow">WordPressify is a modern workflow for your WordPress development, with integrated web server and auto-reload. Style pre-processors and ES6 ready.</h2>
 		<section class="features">
 			<ul>
 				<li data-aos="slow-list">
