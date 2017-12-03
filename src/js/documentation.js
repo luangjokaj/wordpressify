@@ -9,3 +9,7 @@ headings.each(function () {
 	txt2.appendTo(sideHeadings);
 	$(this).attr('id', current.toString());
 });
+
+if (!headings.length) {
+	$('.documentation nav h6').remove()
+};

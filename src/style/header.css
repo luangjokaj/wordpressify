@@ -119,12 +119,13 @@
 	text-indent: -9999px;
 	background: url('./img/edit.svg') no-repeat center center / 16px var(--primary-color);
 	z-index: 100;
+	transform: scale(1.1);
 	transition: all .3s ease;
-	box-shadow: 0 5px 35px 0 color(var(--black) alpha(40%));
+	box-shadow: 0 5px 35px 0 color(var(--black) alpha(30%));
 
 	&:hover {
-		box-shadow: 0 0 25px 0 color(var(--black) alpha(20%));
-		transform: scale(1.2);
+		box-shadow: 0 0 15px 0 color(var(--black) alpha(20%));
+		transform: scale(1);
 	}
 
 	& a {

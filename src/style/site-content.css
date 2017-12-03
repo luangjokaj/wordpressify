@@ -214,4 +214,17 @@
 		overflow: hidden;
 		border: none;
 	}
+
+	& .heateor_sss_sharing_container {
+		margin: 0;
+
+		& i {
+			transition: all .3s ease;
+			opacity: 1;
+
+			&:hover {
+				opacity: .5;
+			}
+		}
+	}
 }
