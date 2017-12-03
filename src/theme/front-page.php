@@ -89,7 +89,7 @@
 			</ul>
 		</section>
 		<section class="github" data-aos="slow-button" data-aos-offset="100">
-			<a href="https://github.com/luangjokaj/gulp-wordpress-boilerplate" target="_blank" class="button icon github">GitHub</a>
+			<a href="https://github.com/luangjokaj/wordpressify" target="_blank" class="button icon github">GitHub</a>
 		</section>
 	</div>
 	<!-- /site-content -->

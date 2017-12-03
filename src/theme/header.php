@@ -16,7 +16,7 @@
 		</a>
 
 		<nav class="navigation">
-			<a href="https://github.com/luangjokaj/gulp-wordpress-boilerplate" target="_blank" class="github">
+			<a href="https://github.com/luangjokaj/wordpressify" target="_blank" class="github">
 				<img src="<?php echo get_template_directory_uri(); ?>/img/github.svg" alt="GitHub 🝓">
 				<img src="<?php echo get_template_directory_uri(); ?>/img/github-bright.svg" alt="GitHub 🝓" class="bright">
 			</a>

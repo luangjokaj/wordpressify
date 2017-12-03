@@ -1,7 +1,7 @@
 
-[![logo](https://i.imgur.com/5dVJS70.png)](http://www.wordpressify.co/)
+[![WordPressify Logo](https://i.imgur.com/5dVJS70.png)](http://www.wordpressify.co/)
 
-# WordPressify
+# WordPressify ![Dependencies](https://david-dm.org/luangjokaj/wordpressify/dev-status.svg)
 A build system designed to automate your WordPress development workflow.
 
 http://www.wordpressify.co/ 
@@ -33,7 +33,7 @@ Node.js is a JavaScript runtime built on Chrome’s V8 JavaScript engine. Node.j
 # 2. Setup Project
 To install WordPressify you need to clone the repository from GitHub:
 ```
-git clone https://github.com/luangjokaj/gulp-wordpress-boilerplate
+git clone https://github.com/luangjokaj/wordpressify
 ```
 This will clone the repostiry on your local machine. Navigate to the newly created folder and install the dependencies:
 
