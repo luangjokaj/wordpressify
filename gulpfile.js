@@ -49,8 +49,7 @@ var headerJS = [
 	'node_modules/jquery/dist/jquery.js',
 	'node_modules/nprogress/nprogress.js',
 	'node_modules/aos/dist/aos.js',
-	'node_modules/isotope-layout/dist/isotope.pkgd.js',
-	'node_modules/izimodal/js/iziModal.js',
+	'node_modules/isotope-layout/dist/isotope.pkgd.js'
 ];
 var footerJS = [
 	'src/js/**'
