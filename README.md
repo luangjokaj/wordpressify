@@ -5,10 +5,10 @@ Evolve your WordPress development.
 
 ### Changelog
 
-**0.1.1**
+**0.0.7**
 - Fix placemente of `DISABLE_WP_CRON`.
 
-**0.1.0**
+**0.0.6**
 - Theme clenup.
 - Consistent code styles.
 
