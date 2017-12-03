@@ -192,6 +192,10 @@
 
 	& p {
 		color: var(--medium-gray);
+
+		& strong {
+			color: var(--dark-blue);
+		}
 	}
 
 	& img {
