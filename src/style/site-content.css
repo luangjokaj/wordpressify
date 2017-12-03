@@ -146,6 +146,34 @@
 		padding-right: 0;
 	}
 
+	& .post-info {
+		& span {
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+		& .date {
+			clear: both;
+		}
+
+		& .author {
+			text-transform: uppercase;
+			font-weight: 500;
+
+			&:before {
+				content: '-';
+			}
+
+			&:after {
+				content: '-';
+			}
+		}
+
+		& .tags {
+			
+		}
+	}
+
 	& .center {
 		text-align: center;
 	}
