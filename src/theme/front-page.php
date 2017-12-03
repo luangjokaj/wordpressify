@@ -53,13 +53,13 @@
 				</li>
 				<li data-aos="slow-list">
 					<img src="<?php echo get_template_directory_uri(); ?>/img/features/autoreload.svg" alt="Auto Reload 🔄">
-					<h3>Dev Server</h3>
+					<h3>Auto-Reload</h3>
 					<p>
-						A development server for PHP based in Node. Powered by BrowserSync. 
+						Watches for all your changes and reloads in real-time.
 					</p>
 				</li>
 				<li data-aos="slow-list">
-					<img src="<?php echo get_template_directory_uri(); ?>/img/features/styles.svg" alt="Auto Reload 🔄">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/features/styles.svg" alt="Styles 🎨">
 					<h3>Styles</h3>
 					<p>
 						Optional styles pre-processors: PostCSS and Scss with sourcemaps.
