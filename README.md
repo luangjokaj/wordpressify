@@ -193,7 +193,7 @@ gulp.task('watch', function () {
 });
 ```
 
-# Fonts and Images
+# 4. Fonts and Images
 ## Images
 You template image assets are recommended to be stored in your theme directory:
 
@@ -224,7 +224,7 @@ src/fonts/
 }
 ```
 
-# JavaScript ES6
+# 5. JavaScript ES6
 
 WordPressify supports ES6 JavaScript with [Babel](https://babeljs.io/). Babel has support for the latest version of JavaScript through syntax transformers. These plugins allow you to use new syntax, right now without waiting for browser support.
 
@@ -242,7 +242,7 @@ footer-bundle.js
 ```
 Check the Gulp configuration to learn more about how JavaScript is generated.
 
-# External Libraries
+# 6. External Libraries
 
 Including external JavaScript libraries is as simple as installing the npm script and include it in the **gulpfile.js**
 
