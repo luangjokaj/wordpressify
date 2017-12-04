@@ -55,7 +55,7 @@ var themeName = 'wordpressify';
 //--------------------------------------------------------------------------------------------------
 ```
 
-**INSALL WORDPRESS**
+**INSTALL WORDPRESS**
 
 - Let’s begin, on the first run we need to install WordPress, we do this once by running the command:
 
