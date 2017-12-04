@@ -151,13 +151,13 @@ WordPressify is super flexible. You can install Sass and use it as a main style 
 npm install gulp-sass --save-dev
 ````
 
- - Then you need to include sass in the gulpfile.js
+Then you need to include sass in the gulpfile.js
 
 ```javascript
 var sass = require('gulp-sass');
 ````
 
-- Change the gulp tasks style-dev to:
+Change the gulp tasks style-dev to:
 
 ```javascript
 gulp.task('style-dev', function () {
@@ -171,7 +171,7 @@ gulp.task('style-dev', function () {
 });
 ```
 
-- Change the gulp tasks style-prod to:
+Change the gulp tasks style-prod to:
 
 
 ```javascript
@@ -182,7 +182,7 @@ gulp.task('style-prod', function () {
 });
 ```
 
-- Also the watch task has to be changed in order to watch for .scss filetypes:
+Also the watch task has to be changed in order to watch for .scss filetypes:
 
 ```javascript
 gulp.task('watch', function () {
@@ -201,7 +201,7 @@ You template image assets are recommended to be stored in your theme directory:
 src/theme/img/
 ```
 
-- Ideally all the heavy bitmaps should be managed through the [Media Library](https://codex.wordpress.org/Media_Library_Screen) of WordPress. So in your theme directory keep always svg or minimal assets to keep the template as light as possible.
+Ideally all the heavy bitmaps should be managed through the [Media Library](https://codex.wordpress.org/Media_Library_Screen) of WordPress. So in your theme directory keep always svg or minimal assets to keep the template as light as possible.
 
 ## Fonts
 Fonts are always special. Your fonts should be places in:
@@ -210,7 +210,7 @@ Fonts are always special. Your fonts should be places in:
 src/fonts/
 ```
 
-- Then you can include them in your **CSS**:
+Then you can include them in your **CSS**:
 
 ```
 @font-face {
