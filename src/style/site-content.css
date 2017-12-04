@@ -218,6 +218,15 @@
 		}
 	}
 
+	& iframe {
+		width: 100%;
+		height: 630px;
+
+		@media (--screen-mobile) {
+			height: 315px;
+		}
+	}
+
 	& .codecolorer-container.solarized-dark, & .codecolorer-container {
 		width: 100% !important;
 		max-width: 100% !important;
