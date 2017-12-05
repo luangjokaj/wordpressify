@@ -265,14 +265,14 @@ var onError = function (err) {
 };
 
 var date = new Date().toLocaleDateString('en-GB').replace(/\//g, '.');
+var errorMsg = '\x1b[41mError\x1b[0m';
 var devServerReady = 'Your development server is ready, start the workflow with the command: $ \x1b[1mnpm run dev\x1b[0m';
-var buildNotFound = '⚠️　- You need to install WordPress first. Run the command: $ \x1b[1mnpm run install:wordpress\x1b[0m';
+var buildNotFound = errorMsg + ' ⚠️　- You need to install WordPress first. Run the command: $ \x1b[1mnpm run install:wordpress\x1b[0m';
 var filesGenerated = 'Your ZIP template file was generated in: \x1b[1m' + __dirname + '/dist/' + themeName + '.zip\x1b[0m - ✅';
 var backupsGenerated = 'Your backup was generated in: \x1b[1m' + __dirname + '/backups/' + date + '.zip\x1b[0m - ✅';
 var wpFy = '\x1b[42m\x1b[1mWordPressify\x1b[0m';
 var wpFyUrl = '\x1b[2m - http://www.wordpressify.co/\x1b[0m';
 var thankYou = 'Thank you for using ' + wpFy + wpFyUrl;
-var errorMsg = '\x1b[41mError\x1b[0m';
 
 gulp.task('backup', function () {
 	if (!fs.existsSync('./build')) {
