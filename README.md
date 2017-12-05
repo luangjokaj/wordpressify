@@ -265,6 +265,9 @@ A build restart is required for changes to take effect.
 
 # Changelog
 
+**v0.1.0**
+- Code readability.
+
 **v0.0.9**
 - Update documentation.
 
