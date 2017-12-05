@@ -292,7 +292,7 @@ tools/IntelliJ.xml
 
 ## Lint CSS
 
-Before pushing changes make sure you have clean and consistent styles, run Stylelint with the command:
+Before pushing changes make sure you have clean and consistent styles, run [Stylelint](https://stylelint.io/) with the command:
 ```
 $ npm run lint:css
 ```
