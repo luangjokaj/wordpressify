@@ -267,6 +267,36 @@ Or in the footer of the page after the DOM is loaded in the array **footerJS**. 
 
 A build restart is required for changes to take effect.
 
+
+# 7. Build Backups
+
+While coding you will find yourself uploading dummy content in the WordPress build server. These might be images or other media stored in **wp-content**. WordPressify allows you to backup the current state of the build which will include all server files. To backup your build run the command:
+
+```
+$ npm run backup
+```
+
+Files will be compressed in a ZIP and stored in the directory:
+
+```
+backups/
+```
+
+# 8. Code Styles
+
+WordPressify comes with its own set of code style rules that can be imported into IntelliJ. The codestyle file can be found in the directory:
+
+```
+tools/IntelliJ.xml
+```
+
+## Lint CSS
+
+Before pushing changes make sure you have clean and consistent styles, run Stylelint with the command:
+```
+$ npm run lint:css
+```
+
 # Changelog
 
 **v0.1.0**
