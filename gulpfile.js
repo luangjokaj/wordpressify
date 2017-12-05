@@ -99,7 +99,11 @@ gulp.task('copy-config', function () {
 gulp.task('disable-cron', function () {
 	gulp.src('build/wordpress/wp-config.php')
 		.pipe(inject.after('define(\'DB_COLLATE\', \'\');', '\ndefine(\'DISABLE_WP_CRON\', true);'))
-		.pipe(gulp.dest('build/wordpress'));
+		.pipe(gulp.dest('build/wordpress'))
+		.on('end', function () {
+			console.log(devServerReady);
+			console.log(thankYou);
+		});
 });
 //--------------------------------------------------------------------------------------------------
 /* -------------------------------------------------------------------------------------------------
@@ -126,7 +130,7 @@ gulp.task('build-dev', [
 
 gulp.task('copy-theme-dev', function () {
 	if (!fs.existsSync('./build')) {
-		console.log('⚠️　- You need to install WordPress first. Run the command: $ npm run install:wordpress');
+		console.log(buildNotFound);
 		process.exit(1);
 	} else {
 		gulp.src('src/theme/**')
@@ -202,7 +206,10 @@ gulp.task('build-prod', [
 	'header-scripts-prod',
 	'footer-scripts-prod',
 	'zip-theme'
-]);
+], function () {
+	console.log(filesGenerated);
+	console.log(thankYou);
+});
 
 gulp.task('copy-theme-prod', function () {
 	gulp.src('src/theme/**')
@@ -256,15 +263,24 @@ var onError = function (err) {
 };
 
 var date = new Date().toLocaleDateString('en-GB').replace(/\//g, '.');
+var devServerReady = 'Your development server is ready, start the workflow with the command: $ \x1b[1m npm run dev\x1b[0m';
+var buildNotFound = '⚠️　- You need to install WordPress first. Run the command: $ \x1b[1mnpm run install:wordpress\x1b[0m';
+var fileGenerated = 'Your ZIP template file was generated in: \x1b[1m' + __dirname + '/dist/' + themeName + '.zip\x1b[0m - ✅';
+var thankYou = 'Thank you for using \x1b[42m\x1b[1mWordPressify\x1b[0m';
 
 gulp.task('backup', function () {
-	gulp.src('build/wordpress/**')
-		.pipe(zip(date + '.zip'))
-		.pipe(gulp.dest('backups'))
-		.on('end', function () {
-			console.log('Your backup was generated in backups/' + date + '.zip - ✅');
-		});
+	if (!fs.existsSync('./build')) {
+		console.log(buildNotFound);
+		process.exit(1);
+	} else {
+		gulp.src('build/wordpress/**')
+			.pipe(zip(date + '.zip'))
+			.pipe(gulp.dest('backups'))
+			.on('end', function () {
+				console.log('Your backup was generated in: \x1b[1m' + __dirname + '/dist/backups/' + date + '.zip\x1b[0m - ✅');
+			});
+	}
 });
 /* -------------------------------------------------------------------------------------------------
-	End of all Tasks
+End of all Tasks
 -------------------------------------------------------------------------------------------------- */

@@ -99,7 +99,7 @@ By default we support [PostCSS](http://postcss.org/), it is a similar preprocess
 ```javascript
 //--------------------------------------------------------------------------------------------------
 /* -------------------------------------------------------------------------------------------------
-	PostCSS Plugins
+PostCSS Plugins
  ------------------------------------------------------------------------------------------------- */
 var pluginsDev = [
 	partialimport,
@@ -247,6 +247,9 @@ Check the Gulp configuration to learn more about how JavaScript is generated.
 Including external JavaScript libraries is as simple as installing the npm script and include it in the **gulpfile.js**
 
 ```javascript
+/* -------------------------------------------------------------------------------------------------
+Header & Footer JavaScript Boundles
+-------------------------------------------------------------------------------------------------- */
 var headerJS = [
 	'node_modules/jquery/dist/jquery.js',
 	'node_modules/nprogress/nprogress.js',
@@ -256,10 +259,11 @@ var headerJS = [
 var footerJS = [
 	'src/js/**'
 ];
+//--------------------------------------------------------------------------------------------------
 ```
 
 You can include the scripts in the head of the page before the DOM is loaded by placing them in the **headerJS** array.
-Or in the footer of the page after the DOM is loaded in the array **footerJS**.
+Or in the footer of the page after the DOM is loaded in the array **footerJS**. Only footer scripts are processed with Babel thus supporting ES6, however you can change this in the configuration if you want to run both header and footer scripts with Babel.
 
 A build restart is required for changes to take effect.
 
@@ -267,6 +271,8 @@ A build restart is required for changes to take effect.
 
 **v0.1.0**
 - Code readability.
+- Removed unused packages.
+- Build success & error messages.
 
 **v0.0.9**
 - Update documentation.
