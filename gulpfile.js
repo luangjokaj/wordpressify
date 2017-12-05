@@ -277,7 +277,7 @@ gulp.task('backup', function () {
 			.pipe(zip(date + '.zip'))
 			.pipe(gulp.dest('backups'))
 			.on('end', function () {
-				console.log('Your backup was generated in: \x1b[1m' + __dirname + '/dist/backups/' + date + '.zip\x1b[0m - ✅');
+				console.log('Your backup was generated in: \x1b[1m' + __dirname + '/backups/' + date + '.zip\x1b[0m - ✅');
 			});
 	}
 });
