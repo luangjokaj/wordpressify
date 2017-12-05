@@ -35,4 +35,3 @@ $(window).on('load', function () {
 $(window).resize(function () {
 	AOS.refresh;
 });
-

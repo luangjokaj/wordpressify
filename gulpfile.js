@@ -101,6 +101,7 @@ gulp.task('disable-cron', function () {
 		.pipe(inject.after('define(\'DB_COLLATE\', \'\');', '\ndefine(\'DISABLE_WP_CRON\', true);'))
 		.pipe(gulp.dest('build/wordpress'))
 		.on('end', function () {
+			gutil.beep();
 			console.log(devServerReady);
 			console.log(thankYou);
 		});
@@ -207,6 +208,7 @@ gulp.task('build-prod', [
 	'footer-scripts-prod',
 	'zip-theme'
 ], function () {
+	gutil.beep();
 	console.log(filesGenerated);
 	console.log(thankYou);
 });
@@ -258,15 +260,19 @@ Utilitie Tasks
  ------------------------------------------------------------------------------------------------- */
 var onError = function (err) {
 	gutil.beep();
-	console.log(err.toString());
+	console.log(wpFy + ' - ' + errorMsg + ' ' + err.toString());
 	this.emit('end');
 };
 
 var date = new Date().toLocaleDateString('en-GB').replace(/\//g, '.');
-var devServerReady = 'Your development server is ready, start the workflow with the command: $ \x1b[1m npm run dev\x1b[0m';
+var devServerReady = 'Your development server is ready, start the workflow with the command: $ \x1b[1mnpm run dev\x1b[0m';
 var buildNotFound = '⚠️　- You need to install WordPress first. Run the command: $ \x1b[1mnpm run install:wordpress\x1b[0m';
 var filesGenerated = 'Your ZIP template file was generated in: \x1b[1m' + __dirname + '/dist/' + themeName + '.zip\x1b[0m - ✅';
-var thankYou = 'Thank you for using \x1b[42m\x1b[1mWordPressify\x1b[0m';
+var backupsGenerated = 'Your backup was generated in: \x1b[1m' + __dirname + '/backups/' + date + '.zip\x1b[0m - ✅';
+var wpFy = '\x1b[42m\x1b[1mWordPressify\x1b[0m';
+var wpFyUrl = '\x1b[2m - http://www.wordpressify.co/\x1b[0m';
+var thankYou = 'Thank you for using ' + wpFy + wpFyUrl;
+var errorMsg = '\x1b[41mError\x1b[0m';
 
 gulp.task('backup', function () {
 	if (!fs.existsSync('./build')) {
@@ -277,7 +283,9 @@ gulp.task('backup', function () {
 			.pipe(zip(date + '.zip'))
 			.pipe(gulp.dest('backups'))
 			.on('end', function () {
-				console.log('Your backup was generated in: \x1b[1m' + __dirname + '/backups/' + date + '.zip\x1b[0m - ✅');
+				gutil.beep();
+				console.log(backupsGenerated);
+				console.log(thankYou);
 			});
 	}
 });
