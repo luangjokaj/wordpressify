@@ -26,7 +26,7 @@ Flexible build customization, managed by Gulp tasks.
 
 # 1. Installing Node
 
-WordPressify requires Node 6+. This is the only global dependency. You can download Node **[here](https://nodejs.org/)**.
+WordPressify requires Node v7.5+. This is the only global dependency. You can download Node **[here](https://nodejs.org/)**.
 
 Node.js is a JavaScript runtime built on Chrome’s V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. Node.js’ package ecosystem, npm, is the largest ecosystem of open source libraries in the world.
 
