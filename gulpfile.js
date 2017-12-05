@@ -265,7 +265,7 @@ var onError = function (err) {
 var date = new Date().toLocaleDateString('en-GB').replace(/\//g, '.');
 var devServerReady = 'Your development server is ready, start the workflow with the command: $ \x1b[1m npm run dev\x1b[0m';
 var buildNotFound = '⚠️　- You need to install WordPress first. Run the command: $ \x1b[1mnpm run install:wordpress\x1b[0m';
-var fileGenerated = 'Your ZIP template file was generated in: \x1b[1m' + __dirname + '/dist/' + themeName + '.zip\x1b[0m - ✅';
+var filesGenerated = 'Your ZIP template file was generated in: \x1b[1m' + __dirname + '/dist/' + themeName + '.zip\x1b[0m - ✅';
 var thankYou = 'Thank you for using \x1b[42m\x1b[1mWordPressify\x1b[0m';
 
 gulp.task('backup', function () {
