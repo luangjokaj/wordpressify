@@ -206,7 +206,11 @@ gulp.task('watch', function () {
 	gulp.watch(['src/js/**'], ['reload-js']);
 	gulp.watch(['src/fonts/**'], ['reload-fonts']);
 	gulp.watch(['src/theme/**'], ['reload-theme']);
-	gulp.watch(['build/wordpress/wp-config*.php'], ['disable-cron']);
+	gulp.watch('build/wordpress/wp-config*.php', function(event){
+		if(event.type === 'added') { 
+			gulp.start('disable-cron');
+		}
+	});
 });
 //--------------------------------------------------------------------------------------------------
 /* -------------------------------------------------------------------------------------------------
