@@ -93,19 +93,29 @@ gulp.task('unzip-wordpress', function () {
 
 gulp.task('copy-config', function () {
 	gulp.src('wp-config.php')
-		.pipe(gulp.dest('build/wordpress'));
+		.pipe(inject.after('define(\'DB_COLLATE\', \'\');', '\ndefine(\'DISABLE_WP_CRON\', true);'))
+		.pipe(gulp.dest('build/wordpress'))
+		.on('end', function () {
+				gutil.beep();
+				gutil.log(devServerReady);
+				gutil.log(thankYou);
+			});
 });
 
 gulp.task('disable-cron', function () {
-	gulp.src('build/wordpress/wp-config.php')
-		.pipe(inject.after('define(\'DB_COLLATE\', \'\');', '\ndefine(\'DISABLE_WP_CRON\', true);'))
-		.pipe(gulp.dest('build/wordpress'));
-});
-
-gulp.task('ready', function () {
-	gutil.beep();
-	console.log(devServerReady);
-	console.log(thankYou);
+	fs.readFile('build/wordpress/wp-config.php', function (err, data) {
+		if (err) {
+			gutil.log(wpFy + ' - ' + errorMsg + ' Something went wrong, WP_CRON was not disabled!');
+			process.exit(1);
+		};
+		if (data.indexOf('DISABLE_WP_CRON') >= 0){
+			gutil.log('WP_CRON is already disabled!');
+		} else {
+			gulp.src('build/wordpress/wp-config.php')
+			.pipe(inject.after('define(\'DB_COLLATE\', \'\');', '\ndefine(\'DISABLE_WP_CRON\', true);'))
+			.pipe(gulp.dest('build/wordpress'));
+		}
+	});
 });
 //--------------------------------------------------------------------------------------------------
 /* -------------------------------------------------------------------------------------------------
@@ -132,7 +142,7 @@ gulp.task('build-dev', [
 
 gulp.task('copy-theme-dev', function () {
 	if (!fs.existsSync('./build')) {
-		console.log(buildNotFound);
+		gutil.log(buildNotFound);
 		process.exit(1);
 	} else {
 		gulp.src('src/theme/**')
@@ -209,11 +219,7 @@ gulp.task('build-prod', [
 	'header-scripts-prod',
 	'footer-scripts-prod',
 	'zip-theme'
-], function () {
-	gutil.beep();
-	console.log(filesGenerated);
-	console.log(thankYou);
-});
+]);
 
 gulp.task('copy-theme-prod', function () {
 	gulp.src('src/theme/**')
@@ -255,6 +261,11 @@ gulp.task('zip-theme', ['copy-theme-prod', 'copy-fonts-prod', 'style-prod', 'hea
 	gulp.src('dist/themes/' + themeName + '/**')
 		.pipe(zip(themeName + '.zip'))
 		.pipe(gulp.dest('dist'))
+		.on('end', function () {
+			gutil.beep();
+			gutil.log(filesGenerated);
+			gutil.log(thankYou);
+		});
 });
 //--------------------------------------------------------------------------------------------------
 /* -------------------------------------------------------------------------------------------------
@@ -262,7 +273,7 @@ Utilitie Tasks
  ------------------------------------------------------------------------------------------------- */
 var onError = function (err) {
 	gutil.beep();
-	console.log(wpFy + ' - ' + errorMsg + ' ' + err.toString());
+	gutil.log(wpFy + ' - ' + errorMsg + ' ' + err.toString());
 	this.emit('end');
 };
 
@@ -278,7 +289,7 @@ var thankYou = 'Thank you for using ' + wpFy + wpFyUrl;
 
 gulp.task('backup', function () {
 	if (!fs.existsSync('./build')) {
-		console.log(buildNotFound);
+		gutil.log(buildNotFound);
 		process.exit(1);
 	} else {
 		gulp.src('build/wordpress/**')
@@ -286,8 +297,8 @@ gulp.task('backup', function () {
 			.pipe(gulp.dest('backups'))
 			.on('end', function () {
 				gutil.beep();
-				console.log(backupsGenerated);
-				console.log(thankYou);
+				gutil.log(backupsGenerated);
+				gutil.log(thankYou);
 			});
 	}
 });

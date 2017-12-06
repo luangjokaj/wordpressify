@@ -312,6 +312,7 @@ You are free to use remote databases, please note that this will affect the spee
 - Code readability.
 - Removed unused packages.
 - Build success & error messages.
+- Tasks cleanup.
 
 **v0.0.9**
 - Update documentation.
