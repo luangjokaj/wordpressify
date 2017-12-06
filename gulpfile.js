@@ -99,7 +99,7 @@ gulp.task('copy-config', function () {
 gulp.task('disable-cron', function () {
 	gulp.src('build/wordpress/wp-config.php')
 		.pipe(inject.after('define(\'DB_COLLATE\', \'\');', '\ndefine(\'DISABLE_WP_CRON\', true);'))
-		.pipe(gulp.dest('build/wordpress'))
+		.pipe(gulp.dest('build/wordpress'));
 });
 
 gulp.task('ready', function () {
