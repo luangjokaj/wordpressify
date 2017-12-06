@@ -90,6 +90,10 @@ npm run prod
 dist/wordpressify.zip
 ```
 
+**WINDOWS USERS**
+
+- If you are running Windows, PHP has to be installed and configured. Check the [gulp-connect-php](https://www.npmjs.com/package/gulp-connect-php) documentation.
+
 # 3. Styles, PostCSS and Scss
 ## PostCSS
 By default we support [PostCSS](http://postcss.org/), it is a similar preprocessor like Sass, Less or other preprocessors but it can do much more. On top of that is 3x faster than Sass or 4x faster than Less. These features come in the shape of PostCSS plugins. Think of these like using lego, where each piece is a different feature that can transform your CSS in some way. PostCSS lets you stick together these pieces so that you can build up your own feature set, adding and removing plugins as and when you need them. [CSSNext](http://cssnext.io/) is installed by default. Read more about PostCSS [here](https://ashleynolan.co.uk/blog/postcss-a-review).
