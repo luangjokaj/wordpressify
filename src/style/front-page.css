@@ -63,6 +63,7 @@ section.headings {
 
 				& .javascript.codecolorer {
 					color: var(--primary-color);
+					overflow-y: auto;
 
 					& i {
 						color: var(--white);
