@@ -100,11 +100,12 @@ gulp.task('disable-cron', function () {
 	gulp.src('build/wordpress/wp-config.php')
 		.pipe(inject.after('define(\'DB_COLLATE\', \'\');', '\ndefine(\'DISABLE_WP_CRON\', true);'))
 		.pipe(gulp.dest('build/wordpress'))
-		.on('end', function () {
-			gutil.beep();
-			console.log(devServerReady);
-			console.log(thankYou);
-		});
+});
+
+gulp.task('ready', function () {
+	gutil.beep();
+	console.log(devServerReady);
+	console.log(thankYou);
 });
 //--------------------------------------------------------------------------------------------------
 /* -------------------------------------------------------------------------------------------------
@@ -195,6 +196,7 @@ gulp.task('watch', function () {
 	gulp.watch(['src/js/**'], ['reload-js']);
 	gulp.watch(['src/fonts/**'], ['reload-fonts']);
 	gulp.watch(['src/theme/**'], ['reload-theme']);
+	gulp.watch(['build/wordpress/wp-config*.php'], ['disable-cron']);
 });
 //--------------------------------------------------------------------------------------------------
 /* -------------------------------------------------------------------------------------------------

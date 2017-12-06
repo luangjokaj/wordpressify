@@ -202,6 +202,22 @@
 		max-width: 100%;
 	}
 
+	& .button {
+		@apply --button;
+
+		&.mt-20 {
+			margin-top: 20px;
+		}
+
+		&.mb-20 {
+			margin-bottom: 20px;
+		}
+
+		&.m-20 {
+			margin: 20px;
+		}
+	}
+
 	&.front-page {
 		& h1 {
 			@media (--screen-mobile) {

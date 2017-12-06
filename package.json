@@ -5,7 +5,7 @@
 	"main": "gulpfile.js",
 	"scripts": {
 		"cleanup": "gulp cleanup",
-		"install:wordpress": "gulp cleanup && gulp download-wordpress && gulp setup && gulp disable-cron",
+		"install:wordpress": "gulp cleanup && gulp download-wordpress && gulp setup && gulp disable-cron && gulp ready",
 		"prod": "gulp build-prod",
 		"dev": "gulp build-dev",
 		"backup": "gulp backup",
