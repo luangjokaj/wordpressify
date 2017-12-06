@@ -35,7 +35,7 @@ To install WordPressify you need to clone the repository from GitHub:
 ```
 git clone https://github.com/luangjokaj/wordpressify
 ```
-This will clone the repostiry on your local machine. Navigate to the newly created folder and install the dependencies:
+- This will clone the repostiry on your local machine. Navigate to the newly created folder and install the dependencies:
 
 **INSTALL DEPENDENCIES**
 
@@ -63,7 +63,7 @@ var themeName = 'wordpressify';
 npm run install:wordpress
 ```
 
-It will fetch the latest WordPress version which the build we use for the development server.
+- It will fetch the latest WordPress version which the build we use for the development server.
 
 **START WORKFLOW**
 
@@ -120,17 +120,17 @@ var pluginsProd = [
 //--------------------------------------------------------------------------------------------------
 ```
 
-- As you can see from the code below we have 2 different sets of plugins. One for the development environment (pluginsDev) and one for the production task (pluginsProd).
+As you can notice from the code below we have 2 different sets of plugins. One for the development environment (pluginsDev) and one for the production task (pluginsProd).
 
 **WRITING STYLES**
 
-- The starting point for styles is the file:
+The starting point for styles is the file:
 
 ```
 src/styles/styles.css
 ```
 
-- The template definitions are located here too. It is also where all other imports are included in the stylesheets.
+The template definitions are located here too. It is also where all other imports are included in the stylesheets.
 
 ```
 /*
@@ -296,6 +296,15 @@ Before pushing changes make sure you have clean and consistent styles, run [Styl
 ```
 $ npm run lint:css
 ```
+
+# 9. Database
+## MySQL Server
+After installing WordPressify you will still need a database to connect with. The recommended solution is to install [MySQL](https://dev.mysql.com/downloads/mysql/) on your local machine and follow the [installation instructions](https://dev.mysql.com/doc/refman/5.7/en/installing.html).
+
+## Remote Database
+You are free to use remote databases, please note that this will affect the speed depending on the connection.
+
+
 
 # Changelog
 
