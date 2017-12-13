@@ -1,7 +1,7 @@
 
 [![WordPressify Logo](https://i.imgur.com/5dVJS70.png)](http://www.wordpressify.co/)
 
-# WordPressify [![Dependencies](https://david-dm.org/luangjokaj/wordpressify/dev-status.svg)](https://david-dm.org/luangjokaj/wordpressify?type=dev)
+# WordPressify v0.1.1 [![Dependencies](https://david-dm.org/luangjokaj/wordpressify/dev-status.svg)](https://david-dm.org/luangjokaj/wordpressify?type=dev)
 A build system designed to automate your WordPress development workflow.
 
 http://www.wordpressify.co/ 
@@ -75,6 +75,14 @@ npm run dev
 
 - If you are running a fresh installation, you will have to setup the general informations for the WordPress wizard (site name, description, database etc…).
 - You are ready to go! Happy coding!
+
+**WORDPRESS PLUGINS**
+
+- If you want to build WordPress plugins, you can do that from the directory:
+
+```
+src/plugins
+```
 
 **PRODUCTION TEMPLETE**
 
@@ -311,6 +319,9 @@ You are free to use remote databases, please note that this will affect the spee
 
 
 # Changelog
+
+**v0.1.1**
+- Added support for `src/plugins`
 
 **v0.1.0**
 - Code readability.

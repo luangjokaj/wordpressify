@@ -127,6 +127,7 @@ gulp.task('build-dev', [
 	'style-dev',
 	'header-scripts-dev',
 	'footer-scripts-dev',
+	'plugins-dev',
 	'watch'
 
 ], function () {
@@ -186,6 +187,11 @@ gulp.task('footer-scripts-dev', function () {
 		.pipe(gulp.dest('build/wordpress/wp-content/themes/' + themeName + '/js'));
 });
 
+gulp.task('plugins-dev', function () {
+	return gulp.src('src/plugins/**')
+		.pipe(gulp.dest('build/wordpress/wp-content/plugins'));
+});
+
 gulp.task('reload-js', ['footer-scripts-dev', 'header-scripts-dev'], function (done) {
 	browserSync.reload();
 	done();
@@ -201,16 +207,22 @@ gulp.task('reload-theme', ['copy-theme-dev'], function (done) {
 	done();
 });
 
+gulp.task('reload-plugins', ['plugins-dev'], function (done) {
+	browserSync.reload();
+	done();
+});
+
 gulp.task('watch', function () {
 	gulp.watch(['src/style/**/*.css'], ['style-dev']);
 	gulp.watch(['src/js/**'], ['reload-js']);
 	gulp.watch(['src/fonts/**'], ['reload-fonts']);
 	gulp.watch(['src/theme/**'], ['reload-theme']);
+	gulp.watch(['src/plugins/**'], ['reload-plugins']);
 	gulp.watch('build/wordpress/wp-config*.php', function(event){
 		if(event.type === 'added') { 
 			gulp.start('disable-cron');
 		}
-	});
+	})
 });
 //--------------------------------------------------------------------------------------------------
 /* -------------------------------------------------------------------------------------------------
@@ -222,6 +234,7 @@ gulp.task('build-prod', [
 	'style-prod',
 	'header-scripts-prod',
 	'footer-scripts-prod',
+	'plugins-prod',
 	'zip-theme'
 ]);
 
@@ -261,12 +274,18 @@ gulp.task('footer-scripts-prod', function () {
 		.pipe(gulp.dest('dist/themes/' + themeName + '/js'));
 });
 
-gulp.task('zip-theme', ['copy-theme-prod', 'copy-fonts-prod', 'style-prod', 'header-scripts-prod', 'footer-scripts-prod'], function () {
+gulp.task('plugins-prod', function () {
+	return gulp.src('src/plugins/**')
+		.pipe(gulp.dest('dist/plugins'));
+});
+
+gulp.task('zip-theme', ['copy-theme-prod', 'copy-fonts-prod', 'style-prod', 'header-scripts-prod', 'footer-scripts-prod', 'plugins-prod'], function () {
 	gulp.src('dist/themes/' + themeName + '/**')
 		.pipe(zip(themeName + '.zip'))
 		.pipe(gulp.dest('dist'))
 		.on('end', function () {
 			gutil.beep();
+			gutil.log(pluginsGenerated);
 			gutil.log(filesGenerated);
 			gutil.log(thankYou);
 		});
@@ -286,6 +305,7 @@ var errorMsg = '\x1b[41mError\x1b[0m';
 var devServerReady = 'Your development server is ready, start the workflow with the command: $ \x1b[1mnpm run dev\x1b[0m';
 var buildNotFound = errorMsg + ' ⚠️　- You need to install WordPress first. Run the command: $ \x1b[1mnpm run install:wordpress\x1b[0m';
 var filesGenerated = 'Your ZIP template file was generated in: \x1b[1m' + __dirname + '/dist/' + themeName + '.zip\x1b[0m - ✅';
+var pluginsGenerated = 'Plugins are generated in: \x1b[1m' + __dirname + '/dist/plugins/\x1b[0m - ✅';
 var backupsGenerated = 'Your backup was generated in: \x1b[1m' + __dirname + '/backups/' + date + '.zip\x1b[0m - ✅';
 var wpFy = '\x1b[42m\x1b[1mWordPressify\x1b[0m';
 var wpFyUrl = '\x1b[2m - http://www.wordpressify.co/\x1b[0m';
