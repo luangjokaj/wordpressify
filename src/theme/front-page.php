@@ -6,7 +6,7 @@
 			<img src="<?php echo get_template_directory_uri(); ?>/img/browser.svg" alt="Browser 🌍" class="mockup">
 			<div class="javascript codecolorer">
 				<span class="co1">// <em>Step 1</em>: Clone repository from GitHub *</span><br>
-				<i>$</i> git clone https<span class="sy0">:</span>//github.com/luangjokaj/wordpressify<br>
+				<i>$</i> git clone https<span class="sy0">:</span>//github.com/luangjokaj/wordpressify && cd wordpressify<br>
 				<br>
 				<span class="co1">// <em>Step 2</em>: Install dependencies *</span><br>
 				<i>$</i> npm install<br>
