@@ -4,31 +4,35 @@ Build Configuration
 Contributors: Luan Gjokaj
 
 -------------------------------------------------------------------------------------------------- */
-'use strict';
-var babel = require('gulp-babel');
-var browserSync = require('browser-sync');
-var concat = require('gulp-concat');
-var connect = require('gulp-connect-php');
-var cssnano = require('cssnano');
-var cssnext = require('postcss-cssnext');
-var del = require('del');
-var fs = require('fs');
-var gulp = require('gulp');
-var gutil = require('gulp-util');
-var inject = require('gulp-inject-string');
-var partialimport = require('postcss-easy-import');
-var plumber = require('gulp-plumber');
-var postcss = require('gulp-postcss');
-var remoteSrc = require('gulp-remote-src');
-var sourcemaps = require('gulp-sourcemaps');
-var uglify = require('gulp-uglify');
-var unzip = require('gulp-unzip');
-var zip = require('gulp-zip');
-//--------------------------------------------------------------------------------------------------
+const babel = require('gulp-babel');
+const browserSync = require('browser-sync');
+const concat = require('gulp-concat');
+const connect = require('gulp-connect-php');
+const cssnano = require('cssnano');
+const cssnext = require('postcss-cssnext');
+const del = require('del');
+const fs = require('fs');
+const gulp = require('gulp');
+const gutil = require('gulp-util');
+const inject = require('gulp-inject-string');
+const partialimport = require('postcss-easy-import');
+const plumber = require('gulp-plumber');
+const postcss = require('gulp-postcss');
+const remoteSrc = require('gulp-remote-src');
+const sourcemaps = require('gulp-sourcemaps');
+const uglify = require('gulp-uglify');
+const unzip = require('gulp-unzip');
+const zip = require('gulp-zip');
+
+/* -------------------------------------------------------------------------------------------------
+Theme Name
+-------------------------------------------------------------------------------------------------- */
+const themeName = 'wordpressify';
+
 /* -------------------------------------------------------------------------------------------------
 PostCSS Plugins
 -------------------------------------------------------------------------------------------------- */
-var pluginsDev = [
+const pluginsDev = [
 	partialimport,
 	cssnext({
 		features: {
@@ -36,7 +40,7 @@ var pluginsDev = [
 		}
 	})
 ];
-var pluginsProd = [
+const pluginsProd = [
 	partialimport,
 	cssnext({
 		features: {
@@ -44,36 +48,31 @@ var pluginsProd = [
 		}
 	})
 ];
-//--------------------------------------------------------------------------------------------------
+
 /* -------------------------------------------------------------------------------------------------
 Header & Footer JavaScript Boundles
 -------------------------------------------------------------------------------------------------- */
-var headerJS = [
+const headerJS = [
 	'node_modules/jquery/dist/jquery.js',
 	'node_modules/nprogress/nprogress.js',
 	'node_modules/aos/dist/aos.js',
 	'node_modules/isotope-layout/dist/isotope.pkgd.js'
 ];
-var footerJS = [
+const footerJS = [
 	'src/js/**'
 ];
-//--------------------------------------------------------------------------------------------------
-/* -------------------------------------------------------------------------------------------------
-Theme Name
--------------------------------------------------------------------------------------------------- */
-var themeName = 'wordpressify';
-//--------------------------------------------------------------------------------------------------
+
 /* -------------------------------------------------------------------------------------------------
 Installation Tasks
 -------------------------------------------------------------------------------------------------- */
 gulp.task('default');
 
-gulp.task('cleanup', function () {
+gulp.task('cleanup', () => {
 	del(['build/**']);
 	del(['dist/**']);
 });
 
-gulp.task('download-wordpress', function () {
+gulp.task('download-wordpress', () => {
 	remoteSrc(['latest.zip'], {
 		base: 'https://wordpress.org/'
 	})
@@ -85,39 +84,39 @@ gulp.task('setup', [
 	'copy-config'
 ]);
 
-gulp.task('unzip-wordpress', function () {
+gulp.task('unzip-wordpress', () => {
 	gulp.src('build/latest.zip')
 		.pipe(unzip())
 		.pipe(gulp.dest('build/'))
 });
 
-gulp.task('copy-config', function () {
+gulp.task('copy-config', () => {
 	gulp.src('wp-config.php')
 		.pipe(inject.after('define(\'DB_COLLATE\', \'\');', '\ndefine(\'DISABLE_WP_CRON\', true);'))
 		.pipe(gulp.dest('build/wordpress'))
-		.on('end', function () {
+		.on('end', () => {
 				gutil.beep();
 				gutil.log(devServerReady);
 				gutil.log(thankYou);
 			});
 });
 
-gulp.task('disable-cron', function () {
-	fs.readFile('build/wordpress/wp-config.php', function (err, data) {
+gulp.task('disable-cron', () => {
+	fs.readFile('build/wordpress/wp-config.php', (err, data) => {
 		if (err) {
 			gutil.log(wpFy + ' - ' + errorMsg + ' Something went wrong, WP_CRON was not disabled!');
 			process.exit(1);
-		};
-		if (data.indexOf('DISABLE_WP_CRON') >= 0){
+		}
+		if (data.indexOf('DISABLE_WP_CRON') >= 0) {
 			gutil.log('WP_CRON is already disabled!');
 		} else {
 			gulp.src('build/wordpress/wp-config.php')
-			.pipe(inject.after('define(\'DB_COLLATE\', \'\');', '\ndefine(\'DISABLE_WP_CRON\', true);'))
-			.pipe(gulp.dest('build/wordpress'));
+				.pipe(inject.after('define(\'DB_COLLATE\', \'\');', '\ndefine(\'DISABLE_WP_CRON\', true);'))
+				.pipe(gulp.dest('build/wordpress'));
 		}
 	});
 });
-//--------------------------------------------------------------------------------------------------
+
 /* -------------------------------------------------------------------------------------------------
 Development Tasks
 -------------------------------------------------------------------------------------------------- */
@@ -130,18 +129,18 @@ gulp.task('build-dev', [
 	'plugins-dev',
 	'watch'
 
-], function () {
+], () => {
 	connect.server({
 		base: 'build/wordpress',
 		port: '3020'
-	}, function () {
+	}, () => {
 		browserSync({
 			proxy: '127.0.0.1:3020'
 		});
 	});
 });
 
-gulp.task('copy-theme-dev', function () {
+gulp.task('copy-theme-dev', () => {
 	if (!fs.existsSync('./build')) {
 		gutil.log(buildNotFound);
 		process.exit(1);
@@ -151,12 +150,12 @@ gulp.task('copy-theme-dev', function () {
 	}
 });
 
-gulp.task('copy-fonts-dev', function () {
+gulp.task('copy-fonts-dev', () => {
 	gulp.src('src/fonts/**')
 		.pipe(gulp.dest('build/wordpress/wp-content/themes/' + themeName + '/fonts'))
 });
 
-gulp.task('style-dev', function () {
+gulp.task('style-dev', () => {
 	return gulp.src('src/style/style.css')
 		.pipe(plumber({ errorHandler: onError }))
 		.pipe(sourcemaps.init())
@@ -166,7 +165,7 @@ gulp.task('style-dev', function () {
 		.pipe(browserSync.stream({ match: '**/*.css' }));
 });
 
-gulp.task('header-scripts-dev', function () {
+gulp.task('header-scripts-dev', () => {
 	return gulp.src(headerJS)
 		.pipe(plumber({ errorHandler: onError }))
 		.pipe(sourcemaps.init())
@@ -175,7 +174,7 @@ gulp.task('header-scripts-dev', function () {
 		.pipe(gulp.dest('build/wordpress/wp-content/themes/' + themeName + '/js'));
 });
 
-gulp.task('footer-scripts-dev', function () {
+gulp.task('footer-scripts-dev', () => {
 	return gulp.src(footerJS)
 		.pipe(plumber({ errorHandler: onError }))
 		.pipe(sourcemaps.init())
@@ -187,44 +186,44 @@ gulp.task('footer-scripts-dev', function () {
 		.pipe(gulp.dest('build/wordpress/wp-content/themes/' + themeName + '/js'));
 });
 
-gulp.task('plugins-dev', function () {
+gulp.task('plugins-dev', () => {
 	return gulp.src('src/plugins/**')
 		.pipe(gulp.dest('build/wordpress/wp-content/plugins'));
 });
 
-gulp.task('reload-js', ['footer-scripts-dev', 'header-scripts-dev'], function (done) {
+gulp.task('reload-js', ['footer-scripts-dev', 'header-scripts-dev'], (done) => {
 	browserSync.reload();
 	done();
 });
 
-gulp.task('reload-fonts', ['copy-fonts-dev'], function (done) {
+gulp.task('reload-fonts', ['copy-fonts-dev'], (done) => {
 	browserSync.reload();
 	done();
 });
 
-gulp.task('reload-theme', ['copy-theme-dev'], function (done) {
+gulp.task('reload-theme', ['copy-theme-dev'], (done) => {
 	browserSync.reload();
 	done();
 });
 
-gulp.task('reload-plugins', ['plugins-dev'], function (done) {
+gulp.task('reload-plugins', ['plugins-dev'], (done) => {
 	browserSync.reload();
 	done();
 });
 
-gulp.task('watch', function () {
+gulp.task('watch', () => {
 	gulp.watch(['src/style/**/*.css'], ['style-dev']);
 	gulp.watch(['src/js/**'], ['reload-js']);
 	gulp.watch(['src/fonts/**'], ['reload-fonts']);
 	gulp.watch(['src/theme/**'], ['reload-theme']);
 	gulp.watch(['src/plugins/**'], ['reload-plugins']);
-	gulp.watch('build/wordpress/wp-config*.php', function(event){
-		if(event.type === 'added') { 
+	gulp.watch('build/wordpress/wp-config*.php', (event) => {
+		if (event.type === 'added') { 
 			gulp.start('disable-cron');
 		}
 	})
 });
-//--------------------------------------------------------------------------------------------------
+
 /* -------------------------------------------------------------------------------------------------
 Production Tasks
 -------------------------------------------------------------------------------------------------- */
@@ -238,24 +237,24 @@ gulp.task('build-prod', [
 	'zip-theme'
 ]);
 
-gulp.task('copy-theme-prod', function () {
+gulp.task('copy-theme-prod', () => {
 	gulp.src('src/theme/**')
 		.pipe(gulp.dest('dist/themes/' + themeName))
 });
 
-gulp.task('copy-fonts-prod', function () {
+gulp.task('copy-fonts-prod', () => {
 	gulp.src('src/fonts/**')
 		.pipe(gulp.dest('dist/themes/' + themeName + '/fonts'))
 });
 
-gulp.task('style-prod', function () {
+gulp.task('style-prod', () => {
 	return gulp.src('src/style/style.css')
 		.pipe(plumber({ errorHandler: onError }))
 		.pipe(postcss(pluginsProd))
 		.pipe(gulp.dest('dist/themes/' + themeName))
 });
 
-gulp.task('header-scripts-prod', function () {
+gulp.task('header-scripts-prod', () => {
 	return gulp.src(headerJS)
 		.pipe(plumber({ errorHandler: onError }))
 		.pipe(concat('header-bundle.js'))
@@ -263,7 +262,7 @@ gulp.task('header-scripts-prod', function () {
 		.pipe(gulp.dest('dist/themes/' + themeName + '/js'));
 });
 
-gulp.task('footer-scripts-prod', function () {
+gulp.task('footer-scripts-prod', () => {
 	return gulp.src(footerJS)
 		.pipe(plumber({ errorHandler: onError }))
 		.pipe(babel({
@@ -274,44 +273,44 @@ gulp.task('footer-scripts-prod', function () {
 		.pipe(gulp.dest('dist/themes/' + themeName + '/js'));
 });
 
-gulp.task('plugins-prod', function () {
+gulp.task('plugins-prod', () => {
 	return gulp.src('src/plugins/**')
 		.pipe(gulp.dest('dist/plugins'));
 });
 
-gulp.task('zip-theme', ['copy-theme-prod', 'copy-fonts-prod', 'style-prod', 'header-scripts-prod', 'footer-scripts-prod', 'plugins-prod'], function () {
+gulp.task('zip-theme', ['copy-theme-prod', 'copy-fonts-prod', 'style-prod', 'header-scripts-prod', 'footer-scripts-prod', 'plugins-prod'], () => {
 	gulp.src('dist/themes/' + themeName + '/**')
 		.pipe(zip(themeName + '.zip'))
 		.pipe(gulp.dest('dist'))
-		.on('end', function () {
+		.on('end', () => {
 			gutil.beep();
 			gutil.log(pluginsGenerated);
 			gutil.log(filesGenerated);
 			gutil.log(thankYou);
 		});
 });
-//--------------------------------------------------------------------------------------------------
+
 /* -------------------------------------------------------------------------------------------------
-Utilitie Tasks
+Utility Tasks
 -------------------------------------------------------------------------------------------------- */
-var onError = function (err) {
+const onError = (err) => {
 	gutil.beep();
 	gutil.log(wpFy + ' - ' + errorMsg + ' ' + err.toString());
 	this.emit('end');
 };
 
-var date = new Date().toLocaleDateString('en-GB').replace(/\//g, '.');
-var errorMsg = '\x1b[41mError\x1b[0m';
-var devServerReady = 'Your development server is ready, start the workflow with the command: $ \x1b[1mnpm run dev\x1b[0m';
-var buildNotFound = errorMsg + ' ⚠️　- You need to install WordPress first. Run the command: $ \x1b[1mnpm run install:wordpress\x1b[0m';
-var filesGenerated = 'Your ZIP template file was generated in: \x1b[1m' + __dirname + '/dist/' + themeName + '.zip\x1b[0m - ✅';
-var pluginsGenerated = 'Plugins are generated in: \x1b[1m' + __dirname + '/dist/plugins/\x1b[0m - ✅';
-var backupsGenerated = 'Your backup was generated in: \x1b[1m' + __dirname + '/backups/' + date + '.zip\x1b[0m - ✅';
-var wpFy = '\x1b[42m\x1b[1mWordPressify\x1b[0m';
-var wpFyUrl = '\x1b[2m - http://www.wordpressify.co/\x1b[0m';
-var thankYou = 'Thank you for using ' + wpFy + wpFyUrl;
+const date = new Date().toLocaleDateString('en-GB').replace(/\//g, '.');
+const errorMsg = '\x1b[41mError\x1b[0m';
+const devServerReady = 'Your development server is ready, start the workflow with the command: $ \x1b[1mnpm run dev\x1b[0m';
+const buildNotFound = errorMsg + ' ⚠️　- You need to install WordPress first. Run the command: $ \x1b[1mnpm run install:wordpress\x1b[0m';
+const filesGenerated = 'Your ZIP template file was generated in: \x1b[1m' + __dirname + '/dist/' + themeName + '.zip\x1b[0m - ✅';
+const pluginsGenerated = 'Plugins are generated in: \x1b[1m' + __dirname + '/dist/plugins/\x1b[0m - ✅';
+const backupsGenerated = 'Your backup was generated in: \x1b[1m' + __dirname + '/backups/' + date + '.zip\x1b[0m - ✅';
+const wpFy = '\x1b[42m\x1b[1mWordPressify\x1b[0m';
+const wpFyUrl = '\x1b[2m - http://www.wordpressify.co/\x1b[0m';
+const thankYou = 'Thank you for using ' + wpFy + wpFyUrl;
 
-gulp.task('backup', function () {
+gulp.task('backup', () => {
 	if (!fs.existsSync('./build')) {
 		gutil.log(buildNotFound);
 		process.exit(1);
@@ -319,13 +318,14 @@ gulp.task('backup', function () {
 		gulp.src('build/wordpress/**')
 			.pipe(zip(date + '.zip'))
 			.pipe(gulp.dest('backups'))
-			.on('end', function () {
+			.on('end', () => {
 				gutil.beep();
 				gutil.log(backupsGenerated);
 				gutil.log(thankYou);
 			});
 	}
 });
+
 /* -------------------------------------------------------------------------------------------------
 End of all Tasks
 -------------------------------------------------------------------------------------------------- */
