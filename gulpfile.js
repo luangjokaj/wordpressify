@@ -1,7 +1,7 @@
 /* -------------------------------------------------------------------------------------------------
 
 Build Configuration
-Contributors: Luan Gjokaj
+Contributors: Luan Gjokaj, Adam McKenna, Mehdi Rezaei, Sören Wrede, Saneef Ansari
 
 -------------------------------------------------------------------------------------------------- */
 const babel = require('gulp-babel');

@@ -1,7 +1,7 @@
 
 [![WordPressify Logo](https://i.imgur.com/5dVJS70.png)](http://www.wordpressify.co/)
 
-# WordPressify v0.1.1 [![Dependencies](https://david-dm.org/luangjokaj/wordpressify/dev-status.svg)](https://david-dm.org/luangjokaj/wordpressify?type=dev)
+# WordPressify v0.1.2 [![Dependencies](https://david-dm.org/luangjokaj/wordpressify/dev-status.svg)](https://david-dm.org/luangjokaj/wordpressify?type=dev)
 A build system designed to automate your WordPress development workflow.
 
 http://www.wordpressify.co/ 
@@ -51,7 +51,7 @@ npm install
 /* -------------------------------------------------------------------------------------------------
 Theme Name
  ------------------------------------------------------------------------------------------------- */
-var themeName = 'wordpressify';
+const themeName = 'wordpressify';
 //--------------------------------------------------------------------------------------------------
 ```
 
@@ -113,7 +113,7 @@ By default we support [PostCSS](http://postcss.org/), it is a similar preprocess
 /* -------------------------------------------------------------------------------------------------
 PostCSS Plugins
  ------------------------------------------------------------------------------------------------- */
-var pluginsDev = [
+const pluginsDev = [
 	partialimport,
 	cssnext({
 		features: {
@@ -121,7 +121,7 @@ var pluginsDev = [
 		}
 	})
 ];
-var pluginsProd = [
+const pluginsProd = [
 	partialimport,
 	cssnext({
 		features: {
@@ -166,13 +166,13 @@ npm install gulp-sass --save-dev
 Then you need to include sass in the gulpfile.js
 
 ```javascript
-var sass = require('gulp-sass');
+const sass = require('gulp-sass');
 ````
 
 Change the gulp tasks style-dev to:
 
 ```javascript
-gulp.task('style-dev', function () {
+gulp.task('style-dev', () => {
 	return gulp
 	.src("src/style/style.scss")
 		.pipe(sourcemaps.init())
@@ -187,7 +187,7 @@ Change the gulp tasks style-prod to:
 
 
 ```javascript
-gulp.task('style-prod', function () {
+gulp.task('style-prod', () => {
 	return gulp.src('src/style/style.scss')
 		.pipe(sass().on("error", sass.logError))
 		.pipe(gulp.dest('dist/themes/' + themeName))
@@ -197,7 +197,7 @@ gulp.task('style-prod', function () {
 Also the watch task has to be changed in order to watch for .scss filetypes:
 
 ```javascript
-gulp.task('watch', function () {
+gulp.task('watch', () => {
 	gulp.watch(['src/style/**/*.scss'], ['style-dev']);
 	gulp.watch(['src/js/**'], ['reload-js']);
 	gulp.watch(['src/fonts/**'], ['reload-fonts']);
@@ -262,13 +262,13 @@ Including external JavaScript libraries is as simple as installing the npm scrip
 /* -------------------------------------------------------------------------------------------------
 Header & Footer JavaScript Boundles
 -------------------------------------------------------------------------------------------------- */
-var headerJS = [
+const headerJS = [
 	'node_modules/jquery/dist/jquery.js',
 	'node_modules/nprogress/nprogress.js',
 	'node_modules/aos/dist/aos.js',
 	'node_modules/isotope-layout/dist/isotope.pkgd.js'
 ];
-var footerJS = [
+const footerJS = [
 	'src/js/**'
 ];
 //--------------------------------------------------------------------------------------------------
@@ -316,9 +316,13 @@ After installing WordPressify you will still need a database to connect with. Th
 ## Remote Database
 You are free to use remote databases, please note that this will affect the speed depending on the connection.
 
-
-
 # Changelog
+
+**v0.1.2**
+- Converted all variables from 'var' to 'const'.
+- Replaced long anonymous function with ES6 arrow syntax.
+- Fixed spelling errors.
+- Added support for `src/plugins`
 
 **v0.1.1**
 - Added support for `src/plugins`
