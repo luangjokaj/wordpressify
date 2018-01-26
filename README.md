@@ -322,7 +322,6 @@ You are free to use remote databases, please note that this will affect the spee
 - Converted all variables from 'var' to 'const'.
 - Replaced long anonymous function with ES6 arrow syntax.
 - Fixed spelling errors.
-- Added support for `src/plugins`
 
 **v0.1.1**
 - Added support for `src/plugins`
