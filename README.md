@@ -7,7 +7,7 @@ A build system designed to automate your WordPress development workflow.
 http://www.wordpressify.co/ 
 
 ### Introduction
-WordPressify is a modern workflow for your WordPress development, with integrated web server and auto-reload. Style pre-processors and ES6 ready.
+WordPressify is a modern workflow for your WordPress development, with an integrated web server and auto-reload. Style pre-processors and ES6 ready.
 
 ## Features
 
@@ -45,7 +45,7 @@ npm install
 
 **CHANGE TEMPLATE NAME**
 
-- At this point WordPressify is installed and ready to be used for the first time. Before starting open **gulpfile.js** and edit your template name:
+- At this point WordPressify is installed and ready to be used for the first time. Before starting, open **gulpfile.js** and edit your template name:
 
 ```javascript
 /* -------------------------------------------------------------------------------------------------
@@ -63,7 +63,7 @@ const themeName = 'wordpressify';
 npm run install:wordpress
 ```
 
-- It will fetch the latest WordPress version which the build we use for the development server.
+- It will fetch the latest WordPress version, which is the build we use for the development server.
 
 **START WORKFLOW**
 
@@ -73,12 +73,12 @@ npm run install:wordpress
 npm run dev
 ```
 
-- If you are running a fresh installation, you will have to setup the general informations for the WordPress wizard (site name, description, database etc…).
+- If you are running a fresh installation, you will have to setup the general information for the WordPress wizard (site name, description, database etc…).
 - You are ready to go! Happy coding!
 
 **WORDPRESS PLUGINS**
 
-- If you want to build WordPress plugins, you can do that from the directory:
+- If you want to add or build WordPress plugins, you can do that from the directory:
 
 ```
 src/plugins
@@ -207,16 +207,16 @@ gulp.task('watch', () => {
 
 # 4. Fonts and Images
 ## Images
-You template image assets are recommended to be stored in your theme directory:
+Your template image assets are recommended to be stored in your theme directory:
 
 ```
 src/theme/img/
 ```
 
-Ideally all the heavy bitmaps should be managed through the [Media Library](https://codex.wordpress.org/Media_Library_Screen) of WordPress. So in your theme directory keep always svg or minimal assets to keep the template as light as possible.
+Ideally all the heavy bitmaps should be managed through the [Media Library](https://codex.wordpress.org/Media_Library_Screen) of WordPress. So try and only store SVG or minimal assets in your theme directory to keep the template as light as possible.
 
 ## Fonts
-Fonts are always special. Your fonts should be places in:
+Fonts are always special. Your fonts should be stored in:
 
 ```
 src/fonts/
@@ -256,7 +256,7 @@ Check the Gulp configuration to learn more about how JavaScript is generated.
 
 # 6. External Libraries
 
-Including external JavaScript libraries is as simple as installing the npm script and include it in the **gulpfile.js**
+Including external JavaScript libraries is as simple as installing the npm script and including it in the **gulpfile.js**
 
 ```javascript
 /* -------------------------------------------------------------------------------------------------
@@ -274,8 +274,7 @@ const footerJS = [
 //--------------------------------------------------------------------------------------------------
 ```
 
-You can include the scripts in the head of the page before the DOM is loaded by placing them in the **headerJS** array.
-Or in the footer of the page after the DOM is loaded in the array **footerJS**. Only footer scripts are processed with Babel thus supporting ES6, however you can change this in the configuration if you want to run both header and footer scripts with Babel.
+You can include the scripts in the head of the page before the DOM is loaded by placing them in the **headerJS** array or in the footer of the page after the DOM is loaded in the array **footerJS**. Only footer scripts are processed with Babel thus supporting ES6, however you can change this in the configuration if you want to run both header and footer scripts with Babel.
 
 A build restart is required for changes to take effect.
 
