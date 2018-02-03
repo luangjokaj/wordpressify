@@ -215,6 +215,8 @@ src/theme/img/
 
 Ideally all the heavy bitmaps should be managed through the [Media Library](https://codex.wordpress.org/Media_Library_Screen) of WordPress. So try and only store SVG or minimal assets in your theme directory to keep the template as light as possible.
 
+In the production build the bitmaps and SVG's will go thrugh a **minification** process.
+
 ## Fonts
 Fonts are always special. Your fonts should be stored in:
 
