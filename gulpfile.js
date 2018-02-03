@@ -248,7 +248,7 @@ gulp.task('copy-fonts-prod', () => {
 		.pipe(gulp.dest('dist/themes/' + themeName + '/fonts'))
 });
 
-gulp.task('process-images', ['copy-theme-prod'], function () {
+gulp.task('process-images', ['copy-theme-prod'], () => {
 	return gulp.src('src/theme/img/**')
 		.pipe(plumber({ errorHandler: onError }))
 		.pipe(imagemin([
