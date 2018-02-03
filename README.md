@@ -1,7 +1,7 @@
 
 [![WordPressify Logo](https://i.imgur.com/5dVJS70.png)](http://www.wordpressify.co/)
 
-# WordPressify v0.1.2 [![Dependencies](https://david-dm.org/luangjokaj/wordpressify/dev-status.svg)](https://david-dm.org/luangjokaj/wordpressify?type=dev)
+# WordPressify v0.1.3 [![Dependencies](https://david-dm.org/luangjokaj/wordpressify/dev-status.svg)](https://david-dm.org/luangjokaj/wordpressify?type=dev)
 A build system designed to automate your WordPress development workflow.
 
 http://www.wordpressify.co/ 
@@ -316,6 +316,9 @@ After installing WordPressify you will still need a database to connect with. Th
 You are free to use remote databases, please note that this will affect the speed depending on the connection.
 
 # Changelog
+
+**v0.1.3**
+- Added support for bitmap and svg minification, in the production build.
 
 **v0.1.2**
 - Converted all variables from 'var' to 'const'.
