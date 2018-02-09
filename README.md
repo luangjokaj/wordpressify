@@ -35,7 +35,7 @@ To install WordPressify you need to clone the repository from GitHub:
 ```
 git clone https://github.com/luangjokaj/wordpressify
 ```
-- This will clone the repostiry on your local machine. Navigate to the newly created folder and install the dependencies:
+- This will clone the repository on your local machine. Navigate to the newly created folder and install the dependencies:
 
 **INSTALL DEPENDENCIES**
 
