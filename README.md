@@ -13,7 +13,7 @@ http://www.wordpressify.co/
 - [3. CSS, PostCSS and Sass](#3-css-postcss-and-sass)
 	- [PostCSS](#postcss)
 	- [Sass](#sass)
-- [4. Fonts and Images](#4-fonts-and-images)
+- [4. Images and Fonts](#4-images-and-fonts)
 	- [Images](#images)
 	- [Fonts](#fonts)
 - [5. JavaScript ES6](#5-javascript-es6)
@@ -23,12 +23,12 @@ http://www.wordpressify.co/
 - [8. Code Style Rules](#8-code-style-rules)
 	- [Lint CSS](#lint-css)
 - [9. Database](#9-database)
-	- [MySQL Server](#mysql-server)
+	- [MySQL/MariaDB Server](#mysqlmariadb-server)
 	- [Remote Database](#remote-database)
 - [Changelog](#changelog)
 - [License](#license)
 
-### Introduction
+## Introduction
 WordPressify is a modern workflow for your WordPress development, with an integrated web server and auto-reload. CSS preprocessors and ES6 ready.
 
 ## Features
@@ -95,7 +95,7 @@ npm run install:wordpress
 npm run dev
 ```
 
-- If you are running a fresh installation, you will have to set up the general information for the WordPress wizard (site name, description, database etc…).
+- If you are running a fresh instance of WordPress, the installation wizard will set up a **wp-config.php** file containing database credentials, site name etc.
 - You are ready to go! Happy coding!
 
 **WORDPRESS PLUGINS**
@@ -103,10 +103,10 @@ npm run dev
 - If you want to add or build WordPress plugins, you can do that from the directory:
 
 ```
-src/plugins
+src/plugins/
 ```
 
-**PRODUCTION TEMPLETE**
+**PRODUCTION TEMPLATE**
 
 - To generate your distribution files run the command:
 
@@ -129,6 +129,8 @@ dist/wordpressify.zip
 By default WordPressify supports [PostCSS](http://postcss.org/), a similar preprocessor to Sass, Less and others but with more functionality. On top of that PostCSS is 3x faster than Sass and 4x faster than Less. Features come in the shape of PostCSS plugins. Think of these like using Lego, where each piece is a different feature that can transform your CSS in some way. PostCSS lets you stick these pieces together so that you can build up your own feature set, adding and removing plugins as and when you need them. [cssnext](http://cssnext.io/) is installed by default. Read more about PostCSS [here](https://ashleynolan.co.uk/blog/postcss-a-review).
 
 **POSTCSS PLUGINS**
+
+WordPressify has two different sets of PostCSS plugins - one for the development environment (pluginsDev) and one for the production task (pluginsProd).
 
 ```javascript
 //--------------------------------------------------------------------------------------------------
@@ -154,8 +156,6 @@ const pluginsProd = [
 //--------------------------------------------------------------------------------------------------
 ```
 
-The code above shows that we have two different sets of PostCSS plugins - one for the development environment (pluginsDev) and one for the production task (pluginsProd).
-
 **WRITING CSS**
 
 The starting point for CSS is the file:
@@ -179,7 +179,7 @@ Tags: responsive, clean, minimal, modern, documentation
 ```
 
 ## Sass
-WordPressify is super flexible. You can install Sass and use it as a main CSS preprocessor:
+WordPressify is super flexible. You can install Sass and use it as the main CSS preprocessor:
 
 ```
 npm install gulp-sass --save-dev
@@ -227,7 +227,7 @@ gulp.task('watch', () => {
 });
 ```
 
-# 4. Fonts and Images
+# 4. Images and Fonts
 ## Images
 It is recommended to store template image assets in your theme directory:
 
@@ -235,9 +235,9 @@ It is recommended to store template image assets in your theme directory:
 src/theme/img/
 ```
 
-Ideally all heavy bitmaps should be managed through the [Media Library](https://codex.wordpress.org/Media_Library_Screen) of WordPress. Try to only store SVG or minimal assets in your theme directory to keep the template as light as possible.
+Ideally other images should be managed through the [Media Library](https://codex.wordpress.org/Media_Library_Screen) of WordPress. Try to only store SVG or minimal assets in your theme directory to keep the template as light as possible.
 
-In the production build the bitmaps and SVGs will go through a **minification** process.
+In the production build SVGs and other image assets will go through a **minification** process.
 
 ## Fonts
 Fonts are always special. Your fonts should be stored in:
@@ -327,14 +327,14 @@ tools/IntelliJ.xml
 
 ## Lint CSS
 
-Before pushing changes make sure you have clean and consistent CSS. Run [Stylelint](https://stylelint.io/) with the command:
+Before pushing changes make sure you have clean and consistent CSS. Run [stylelint](https://stylelint.io/) with the command:
 ```
 $ npm run lint:css
 ```
 
 # 9. Database
-## MySQL Server
-After installing WordPressify you will still need a database to store WordPress content. The recommended solution is to install [MySQL](https://dev.mysql.com/downloads/mysql/) on your local machine ([installation instructions](https://dev.mysql.com/doc/refman/5.7/en/installing.html)).
+## MySQL/MariaDB Server
+After installing WordPressify you will still need a database to store WordPress content. The recommended solution is to install either [MySQL](https://dev.mysql.com/downloads/mysql/) ([installation instructions](https://dev.mysql.com/doc/refman/5.7/en/installing.html)) or [MariaDB](https://mariadb.com/downloads/mariadb-tx) ([installation instructions](https://mariadb.com/products/get-started)) on your local machine.
 
 ## Remote Database
 You are free to use remote databases. Please note that this will affect the speed depending on the connection.
