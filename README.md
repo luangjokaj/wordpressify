@@ -126,7 +126,7 @@ dist/wordpressify.zip
 
 # 3. CSS, PostCSS and Sass
 ## PostCSS
-By default WordPressify supports [PostCSS](http://postcss.org/), a similar preprocessor to Sass, Less and others but with more functionality. On top of that PostCSS is 3x faster than Sass and 4x faster than Less. Features come in the shape of PostCSS plugins. Think of these like using Lego, where each piece is a different feature that can transform your CSS in some way. PostCSS lets you stick these pieces together so that you can build up your own feature set, adding and removing plugins as and when you need them. [CSSNext](http://cssnext.io/) is installed by default. Read more about PostCSS [here](https://ashleynolan.co.uk/blog/postcss-a-review).
+By default WordPressify supports [PostCSS](http://postcss.org/), a similar preprocessor to Sass, Less and others but with more functionality. On top of that PostCSS is 3x faster than Sass and 4x faster than Less. Features come in the shape of PostCSS plugins. Think of these like using Lego, where each piece is a different feature that can transform your CSS in some way. PostCSS lets you stick these pieces together so that you can build up your own feature set, adding and removing plugins as and when you need them. [cssnext](http://cssnext.io/) is installed by default. Read more about PostCSS [here](https://ashleynolan.co.uk/blog/postcss-a-review).
 
 **POSTCSS PLUGINS**
 
@@ -305,7 +305,7 @@ A build restart is required for changes to take effect.
 
 # 7. Build Backups
 
-While coding you will find yourself uploading dummy content in the WordPress build server. This might be images or other media stored in **wp-content**. WordPressify allows you to back up the current state of the build which will include all server files. To back up your build run the command:
+While coding you will find yourself uploading dummy content to the WordPress build server, e.g. images or other media stored in **wp-content**. WordPressify allows you to back up the current state of the build which will include all server files. To back up your build run the command:
 
 ```
 $ npm run backup
