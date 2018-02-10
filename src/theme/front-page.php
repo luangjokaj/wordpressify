@@ -41,7 +41,7 @@
 				</li>
 			</ul>
 		</section>
-		<h2 class="center fixed" data-aos="fade-up-slow">WordPressify is a modern workflow for your WordPress development, with an integrated web server and auto-reload. Style pre-processors and ES6 ready.</h2>
+		<h2 class="center fixed" data-aos="fade-up-slow">WordPressify is a modern workflow for your WordPress development, with an integrated web server and auto-reload. CSS preprocessors and ES6 ready.</h2>
 		<section class="features">
 			<ul>
 				<li data-aos="slow-list">
@@ -60,9 +60,9 @@
 				</li>
 				<li data-aos="slow-list">
 					<img src="<?php echo get_template_directory_uri(); ?>/img/features/styles.svg" alt="Styles 🎨">
-					<h3>Styles</h3>
+					<h3>CSS</h3>
 					<p>
-						Styles pre-processors: PostCSS or Scss with sourcemaps.
+						Preprocessors: PostCSS or Sass with sourcemaps.
 					</p>
 				</li>
 				<li data-aos="slow-list">
@@ -83,7 +83,7 @@
 					<img src="<?php echo get_template_directory_uri(); ?>/img/features/customizable.svg" alt="Customizable ✅">
 					<h3>Customizable</h3>
 					<p>
-						Flexible build customization, managed by Gulp tasks.
+						Flexible build customization, managed by gulp tasks.
 					</p>
 				</li>
 			</ul>
