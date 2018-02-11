@@ -4,7 +4,7 @@
 		<h1 data-aos="slow-title">A build system designed to automate your WordPress development workflow.</h1>
 		<div class="codecolorer-container javascript solarized-dark home" data-aos="slow-up">
 			<img src="<?php echo get_template_directory_uri(); ?>/img/browser.svg" alt="Browser 🌍" class="mockup">
-			<div class="javascript codecolorer">
+			<code class="javascript codecolorer">
 				<span class="co1">// <em>Step 1</em>: Clone repository from GitHub *</span><br>
 				<i>$</i> git clone https<span class="sy0">:</span>//github.com/luangjokaj/wordpressify && cd wordpressify<br>
 				<br>
@@ -23,12 +23,12 @@
 				<img draggable="false" class="emoji" alt="🚀" src="https://s.w.org/images/core/emoji/2.3/svg/1f680.svg"><br>
 				<br>
 				<span class="co1">// * Step 1,2 and 3 are part of the installation process.</span>
-			</div>
+			</code>
 		</div>
 	</main>
 </section>
 <!-- container -->
-<div class="container">
+<section class="container">
 	<!-- site-content -->
 	<div class="site-content front-page">
 		<section class="tech">
@@ -91,8 +91,11 @@
 		<section class="github" data-aos="slow-button" data-aos-offset="100">
 			<a href="https://github.com/luangjokaj/wordpressify" target="_blank" class="button icon github">GitHub</a>
 		</section>
+		<section class="center">
+			<h3 data-aos="fade-up-slow" data-aos-offset="0">Free and Open Source</h3>
+		</section>
 	</div>
 	<!-- /site-content -->
-</div>
+</section>
 <!-- /container -->
 <?php get_footer(); ?>

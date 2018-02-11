@@ -220,4 +220,12 @@ section.headings {
 			transform: scale(1.2) translateY(0);
 		}
 	}
+
+	& section.center {
+		text-align: center;
+
+		& h3 {
+			margin-top: 0;
+		}
+	}
 }
