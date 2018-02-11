@@ -35,3 +35,7 @@ $(window).on('load', function () {
 $(window).resize(function () {
 	AOS.refresh;
 });
+
+githubStars("luangjokaj/wordpressify", function(stars) {
+	$('.github').attr('data-counter', stars);
+});

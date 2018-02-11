@@ -23,6 +23,19 @@
 			top: 50%;
 			transform: translateY(-50%);
 
+			&:after {
+				content: attr(data-counter);
+				display: block;
+				position: absolute;
+				right: 45px;
+				top: 50%;
+				transform: translateY(-50%);
+				width: 100px;
+				text-align: right;
+				font-family: var(--font-code);
+				font-size: var(--small-font-size);
+			}
+
 			& img {
 				position: absolute;
 				left: 0;
@@ -34,6 +47,7 @@
 				height: 32px;
 				transition: all .5s ease;
 				transform: translateY(0);
+				z-index: 5;
 
 				&.bright {
 					transform: translateY(300%);
