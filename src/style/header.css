@@ -26,6 +26,7 @@
 			transition-delay: 1s;
 			width: 245px;
 			height: 24px;
+			z-index: 10;
 
 			& img {
 				display: flex;
