@@ -38,7 +38,7 @@ A development server for PHP based in Node. Powered by BrowserSync.
 - **AUTO-RELOAD**
 Watches for all your changes and reloads in real-time.
 - **CSS**
-Preprocessors: PostCSS or Sass with sourcemaps.
+Preprocessors: PostCSS or Sass with source maps.
 - **JAVASCRIPT ES6**
 Babel compiler for writing next generation JavaScript.
 - **EXTERNAL LIBRARIES**
