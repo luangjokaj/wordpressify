@@ -34,6 +34,11 @@
 				text-align: right;
 				font-family: var(--font-code);
 				font-size: var(--small-font-size);
+
+				@media (--screen-mobile) {
+					display: none;
+					content: none;
+				}
 			}
 
 			& img {
