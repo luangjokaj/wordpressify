@@ -23,7 +23,7 @@
 		"fs": "0.0.2",
 		"gulp-babel": "^7.0.0",
 		"gulp-concat": "^2.6.1",
-		"gulp-connect-php": "^1.0.1",
+		"gulp-connect-php": "^1.0.3",
 		"gulp-inject-string": "^1.1.1",
 		"gulp-plumber": "^1.2.0",
 		"gulp-postcss": "^7.0.1",
