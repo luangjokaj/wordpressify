@@ -23,7 +23,7 @@
 		"fs": "0.0.2",
 		"gulp-babel": "^7.0.1",
 		"gulp-concat": "^2.6.1",
-		"gulp-connect-php": "^1.0.1",
+		"gulp-connect-php": "^1.0.3",
 		"gulp-imagemin": "^4.1.0",
 		"gulp-inject-string": "^1.1.1",
 		"gulp-plumber": "^1.2.0",
@@ -41,7 +41,7 @@
 		"nprogress": "^0.2.0",
 		"postcss-cssnext": "^3.1.0",
 		"postcss-easy-import": "^3.0.0",
-		"stylelint-config-standard": "^18.0.0",
-		"stylelint": "^9.0.0"
+		"stylelint-config-standard": "^18.2.0",
+		"stylelint": "^9.1.1"
 	}
 }
