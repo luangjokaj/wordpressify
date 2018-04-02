@@ -123,7 +123,7 @@ gulp.task('fresh-install', ['fresh-theme', 'fresh-styles', 'fresh-gulp']);
 gulp.task('fresh-clean', () => {
 	del(['./src/theme/**']);
 	del(['./src/js/**']);
-	del(['./src/styles/**']);
+	del(['./src/style/**']);
 });
 gulp.task('fresh-theme', () => {
 	gulp.src('tools/fresh-theme/theme/**')
