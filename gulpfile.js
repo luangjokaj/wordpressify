@@ -118,7 +118,7 @@ gulp.task('disable-cron', () => {
 	});
 });
 
-gulp.task('fresh-install', ['fresh-theme', 'fresh-styles', 'fresh-gulp']);
+gulp.task('fresh-install', ['fresh-clean', 'fresh-theme', 'fresh-styles', 'fresh-gulp']);
 
 gulp.task('fresh-clean', () => {
 	del(['./src/theme/**']);
