@@ -25,6 +25,8 @@ http://www.wordpressify.co/
 - [9. Database](#9-database)
 	- [MySQL/MariaDB Server](#mysqlmariadb-server)
 	- [Remote Database](#remote-database)
+- [10. Deployment](#10-deployment)
+	- [Automated Deployments](#automated-deployments)
 - [Changelog](#changelog)
 - [License](#license)
 
@@ -339,10 +341,46 @@ After installing WordPressify you will still need a database to store WordPress 
 ## Remote Database
 You are free to use remote databases. Please note that this will affect the speed depending on the connection.
 
+# 10. Deployment
+The recommended solution is to go with [WP Pusher](https://wppusher.com/). It is easy and quick to deploy automatically from GitHub or other services. The first step is to download the WordPress plugin from: https://wppusher.com/
+
+Then navigate to your WordPress administration on your live site and install the downloaded plugin: Plugins -> Add New -> Upload Plugin -> Install Now.
+
+Activate the plugin and navigate to the plugin page **WP Pusher**. Click on the GitHub or any other tab and obtain a token by pressing the button on the page, then copy and save the token.
+
+At this point go to your terminal, navigate to your WordPressify project and generate your distribution files with the command:
+```
+npm run prod
+```
+
+Navigate to your theme distribution files on: 
+```
+dist/theme/<themeName>
+```
+Create a git repository and push all the files on GitHub. This repositroy will have only the theme distribution files.
+
+Once the files are on GitHub you can get back to the WordPress administration on the WP Pusher plugin page and follow the **Next Steps**, click on **Install a theme**.
+
+On Repository host we choose GitHub, then click on **Pick from GitHub** and choose the newly created repository with the distribution files. Then install & activate the theme.
+
+## Automated Deployments
+
+**Push-to-Deploy** if you want automatic deployments to happen when you do a push to the distribution repository.
+In this case you have to create a Webhook from your GitHub's repository page. 
+
+First navigate to the WP Pusher plugin page and click on **Themes**, it will show you the list of the templates you have installed through the plugin itself. Click on **Show Push-to-Deploy URL** to get the Payload URL. 
+
+Now get back to GitHub and navigate to your distribution repository and click on: Settings -> Webhooks -> Add webhook. Now past the URL and click **Add webhook**. 
+
+This should enable automatic deployment on any push to the chosen GitHub repository.
+
+**Note:** WP Pusher if **free** only with **public** repositories.
+
 # Changelog
 
 **v0.1.3**
 - Added support for bitmap and SVG minification, in the production build.
+- Added documentation for deployment process.
 
 **v0.1.2**
 - Converted all variables from 'var' to 'const'.
