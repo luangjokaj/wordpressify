@@ -7,6 +7,7 @@ Contributors: Luan Gjokaj, Adam McKenna, Mehdi Rezaei, Sören Wrede, Saneef Ansa
 const babel = require('gulp-babel');
 const browserSync = require('browser-sync');
 const concat = require('gulp-concat');
+const confirm = require('gulp-confirm');
 const connect = require('gulp-connect-php');
 const cssnano = require('cssnano');
 const cssnext = require('postcss-cssnext');
@@ -55,8 +56,6 @@ Header & Footer JavaScript Boundles
 -------------------------------------------------------------------------------------------------- */
 const headerJS = [
 	'node_modules/jquery/dist/jquery.js',
-	'node_modules/nprogress/nprogress.js',
-	'node_modules/aos/dist/aos.js',
 	'node_modules/isotope-layout/dist/isotope.pkgd.js'
 ];
 const footerJS = [
@@ -118,13 +117,14 @@ gulp.task('disable-cron', () => {
 	});
 });
 
-gulp.task('fresh-install', ['fresh-theme', 'fresh-styles', 'fresh-gulp']);
-
 gulp.task('fresh-clean', () => {
 	del(['./src/theme/**']);
 	del(['./src/js/**']);
-	del(['./src/styles/**']);
+	del(['./src/style/**']);
 });
+
+gulp.task('fresh-install', ['fresh-theme', 'fresh-styles', 'fresh-gulp']);
+
 gulp.task('fresh-theme', () => {
 	gulp.src('tools/fresh-theme/theme/**')
 		.pipe(gulp.dest('src/theme'))
@@ -132,7 +132,7 @@ gulp.task('fresh-theme', () => {
 
 gulp.task('fresh-styles', () => {
 	gulp.src('tools/fresh-theme/style/**')
-		.pipe(gulp.dest('src/styles'))
+		.pipe(gulp.dest('src/style'))
 });
 
 gulp.task('fresh-gulp', () => {
