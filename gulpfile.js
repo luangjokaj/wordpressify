@@ -118,7 +118,7 @@ gulp.task('disable-cron', () => {
 	});
 });
 
-gulp.task('fresh-install', ['fresh-clean', 'fresh-theme', 'fresh-styles', 'fresh-gulp']);
+gulp.task('fresh-install', ['fresh-clean', 'fresh-theme', 'fresh-styles']);
 
 gulp.task('fresh-clean', () => {
 	del(['./src/theme/**']);
@@ -134,12 +134,6 @@ gulp.task('fresh-styles', () => {
 	gulp.src('tools/fresh-theme/style/**')
 		.pipe(gulp.dest('src/style'))
 });
-
-gulp.task('fresh-gulp', () => {
-	gulp.src('tools/fresh-theme/gulpfile.js')
-		.pipe(gulp.dest('./'))
-});
-
 /* -------------------------------------------------------------------------------------------------
 Development Tasks
 -------------------------------------------------------------------------------------------------- */
