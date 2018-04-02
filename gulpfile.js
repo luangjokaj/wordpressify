@@ -132,7 +132,7 @@ gulp.task('fresh-theme', () => {
 
 gulp.task('fresh-styles', () => {
 	gulp.src('tools/fresh-theme/style/**')
-		.pipe(gulp.dest('src/styles'))
+		.pipe(gulp.dest('src/style'))
 });
 
 gulp.task('fresh-gulp', () => {
