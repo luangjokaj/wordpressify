@@ -7,6 +7,7 @@
 		"cleanup": "gulp cleanup",
 		"install:wordpress": "gulp cleanup && gulp download-wordpress && gulp setup",
 		"dev": "gulp build-dev",
+		"fresh-start": "gulp fresh-install",
 		"prod": "gulp build-prod",
 		"backup": "gulp backup",
 		"lint:css": "stylelint src/**/*.css --config tools/stylelintrc.json"
