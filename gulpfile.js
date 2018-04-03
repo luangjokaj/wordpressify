@@ -14,6 +14,7 @@ const del = require('del');
 const fs = require('fs');
 const gulp = require('gulp');
 const gutil = require('gulp-util');
+const imagemin = require('gulp-imagemin');
 const inject = require('gulp-inject-string');
 const partialimport = require('postcss-easy-import');
 const plumber = require('gulp-plumber');
@@ -23,7 +24,6 @@ const sourcemaps = require('gulp-sourcemaps');
 const uglify = require('gulp-uglify');
 const unzip = require('gulp-unzip');
 const zip = require('gulp-zip');
-const imagemin = require('gulp-imagemin');
 
 /* -------------------------------------------------------------------------------------------------
 Theme Name
@@ -115,6 +115,13 @@ gulp.task('disable-cron', () => {
 				.pipe(inject.after('define(\'DB_COLLATE\', \'\');', '\ndefine(\'DISABLE_WP_CRON\', true);'))
 				.pipe(gulp.dest('build/wordpress'));
 		}
+	});
+});
+
+gulp.task('fresh-install', () => {
+	del(['src/**']).then(() => {
+		gulp.src('tools/fresh-theme/**')
+		.pipe(gulp.dest('src'))
 	});
 });
 

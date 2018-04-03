@@ -1,7 +1,6 @@
-
 [![WordPressify Logo](https://i.imgur.com/5dVJS70.png)](http://www.wordpressify.co/)
 
-# WordPressify v0.1.3 [![Dependencies](https://david-dm.org/luangjokaj/wordpressify/dev-status.svg)](https://david-dm.org/luangjokaj/wordpressify?type=dev)
+# WordPressify v0.1.4 [![Dependencies](https://david-dm.org/luangjokaj/wordpressify/dev-status.svg)](https://david-dm.org/luangjokaj/wordpressify?type=dev)
 A build system designed to automate your WordPress development workflow.
 
 http://www.wordpressify.co/
@@ -27,6 +26,7 @@ http://www.wordpressify.co/
 	- [Remote Database](#remote-database)
 - [10. Deployment](#10-deployment)
 	- [Automated Deployments](#automated-deployments)
+- [11. Cleanup Default Theme](#11-cleanup-default-theme)
 - [Changelog](#changelog)
 - [License](#license)
 
@@ -376,7 +376,16 @@ This should enable automatic deployment on any push to the chosen GitHub reposit
 
 **Note:** WP Pusher if **free** only with **public** repositories.
 
+# 11. Cleanup Default Theme
+The default theme comes as a theme sample to show how WordPressify combines everything together. If you want to remove the default theme type the command:
+```
+$ npm run fresh-start
+```
+This will **immediately** remove the default styles and leave a minimal viable theme with basic PHP WordPress loops and other useful features.
+
 # Changelog
+**v0.1.4**
+- Added cleanup command to flush the default theme and have a fresh start.
 
 **v0.1.3**
 - Added support for bitmap and SVG minification, in the production build.
