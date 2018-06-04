@@ -15,9 +15,9 @@
 	"author": "Luan Gjokaj",
 	"license": "MIT",
 	"devDependencies": {
-		"aos": "^2.2.0",
+		"aos": "^2.3.0",
 		"babel-core": "^6.26.3",
-		"babel-preset-env": "^1.6.1",
+		"babel-preset-env": "^1.7.0",
 		"browser-sync": "^2.24.4",
 		"cssnano": "^3.10.0",
 		"del": "^3.0.0",
@@ -43,6 +43,6 @@
 		"postcss-cssnext": "^3.1.0",
 		"postcss-easy-import": "^3.0.0",
 		"stylelint-config-standard": "^18.2.0",
-		"stylelint": "^9.2.0"
+		"stylelint": "^9.2.1"
 	}
 }
