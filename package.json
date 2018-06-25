@@ -15,10 +15,10 @@
 	"author": "Luan Gjokaj",
 	"license": "MIT",
 	"devDependencies": {
-		"aos": "^2.3.0",
+		"aos": "^2.3.2",
 		"babel-core": "^6.26.3",
 		"babel-preset-env": "^1.7.0",
-		"browser-sync": "^2.24.4",
+		"browser-sync": "^2.24.5",
 		"cssnano": "^3.10.0",
 		"del": "^3.0.0",
 		"fs": "0.0.2",
