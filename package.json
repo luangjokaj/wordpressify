@@ -15,11 +15,11 @@
 	"author": "Luan Gjokaj",
 	"license": "MIT",
 	"devDependencies": {
-		"aos": "^2.3.2",
+		"aos": "^2.3.3",
 		"babel-core": "^6.26.3",
 		"babel-preset-env": "^1.7.0",
 		"browser-sync": "^2.24.5",
-		"cssnano": "^3.10.0",
+		"cssnano": "^4.0.2",
 		"del": "^3.0.0",
 		"fs": "0.0.2",
 		"gulp-babel": "^7.0.1",
