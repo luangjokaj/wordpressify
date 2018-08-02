@@ -19,7 +19,7 @@
 		"babel-core": "^6.26.3",
 		"babel-preset-env": "^1.7.0",
 		"browser-sync": "^2.24.6",
-		"cssnano": "^4.0.4",
+		"cssnano": "^4.0.5",
 		"del": "^3.0.0",
 		"fs": "0.0.2",
 		"gulp-babel": "^7.0.1",
