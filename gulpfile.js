@@ -187,7 +187,7 @@ gulp.task('footer-scripts-dev', () => {
 		.pipe(plumber({ errorHandler: onError }))
 		.pipe(sourcemaps.init())
 		.pipe(babel({
-			presets: ['env']
+			presets: ['@babel/preset-env']
 		}))
 		.pipe(concat('footer-bundle.js'))
 		.pipe(sourcemaps.write('.'))
@@ -285,7 +285,7 @@ gulp.task('footer-scripts-prod', () => {
 	return gulp.src(footerJS)
 		.pipe(plumber({ errorHandler: onError }))
 		.pipe(babel({
-			presets: ['env']
+			presets: ['@babel/preset-env']
 		}))
 		.pipe(concat('footer-bundle.js'))
 		.pipe(uglify())
