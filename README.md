@@ -140,20 +140,20 @@ WordPressify has two different sets of PostCSS plugins - one for the development
 PostCSS Plugins
  ------------------------------------------------------------------------------------------------- */
 const pluginsDev = [
-	partialimport,
-	cssnext({
-		features: {
-			colorHexAlpha: false
-		}
-	})
+    partialimport, 
+    cssnext({
+    	features: {
+	    colorHexAlpha: false
+	}
+    })
 ];
 const pluginsProd = [
-	partialimport,
-	cssnext({
-		features: {
-			colorHexAlpha: false
-		}
-	})
+    partialimport,
+    cssnext({
+        features: {
+	    colorHexAlpha: false
+	}
+    })
 ];
 //--------------------------------------------------------------------------------------------------
 ```
@@ -197,13 +197,13 @@ Change the gulp tasks style-dev to:
 
 ```javascript
 gulp.task('style-dev', () => {
-	return gulp
+    return gulp
 	.src("src/style/style.scss")
-		.pipe(sourcemaps.init())
-		.pipe(sass().on("error", sass.logError))
-		.pipe(sourcemaps.write("."))
-		.pipe(gulp.dest("build/wordpress/wp-content/themes/" + themeName))
-		.pipe(browserSync.stream({ match: "**/*.css" }));
+	    .pipe(sourcemaps.init())
+	    .pipe(sass().on("error", sass.logError))
+	    .pipe(sourcemaps.write("."))
+	    .pipe(gulp.dest("build/wordpress/wp-content/themes/" + themeName))
+	    .pipe(browserSync.stream({ match: "**/*.css" }));
 });
 ```
 
@@ -212,9 +212,9 @@ Change the gulp tasks style-prod to:
 
 ```javascript
 gulp.task('style-prod', () => {
-	return gulp.src('src/style/style.scss')
-		.pipe(sass().on("error", sass.logError))
-		.pipe(gulp.dest('dist/themes/' + themeName))
+    return gulp.src('src/style/style.scss')
+	.pipe(sass().on("error", sass.logError))
+	.pipe(gulp.dest('dist/themes/' + themeName))
 });
 ```
 
@@ -222,10 +222,10 @@ Also the watch task has to be changed in order to watch for .scss filetypes:
 
 ```javascript
 gulp.task('watch', () => {
-	gulp.watch(['src/style/**/*.scss'], ['style-dev']);
-	gulp.watch(['src/js/**'], ['reload-js']);
-	gulp.watch(['src/fonts/**'], ['reload-fonts']);
-	gulp.watch(['src/theme/**'], ['reload-theme']);
+    gulp.watch(['src/style/**/*.scss'], ['style-dev']);
+    gulp.watch(['src/js/**'], ['reload-js']);
+    gulp.watch(['src/fonts/**'], ['reload-fonts']);
+    gulp.watch(['src/theme/**'], ['reload-theme']);
 });
 ```
 
@@ -252,13 +252,13 @@ Then you can include them in your **CSS**:
 
 ```
 @font-face {
-	font-family: 'Helvetica Neue Thin';
-	src: url('fonts/Helvetica-Neue-Thin.eot?#iefix');
-	src: url('fonts/Helvetica-Neue-Thin.eot?#iefix') format('eot'),
-	url('fonts/Helvetica-Neue-Thin.woff2') format('woff2'),
-	url('fonts/Helvetica-Neue-Thin.woff') format('woff'),
-	url('fonts/Helvetica-Neue-Thin.ttf') format('truetype'),
-	url('fonts/Helvetica-Neue-Thin.svg#e3b7d1e7c160') format('svg');
+    font-family: 'Helvetica Neue Thin';
+    src: url('fonts/Helvetica-Neue-Thin.eot?#iefix');
+    src: url('fonts/Helvetica-Neue-Thin.eot?#iefix') format('eot'),
+    url('fonts/Helvetica-Neue-Thin.woff2') format('woff2'),
+    url('fonts/Helvetica-Neue-Thin.woff') format('woff'),
+    url('fonts/Helvetica-Neue-Thin.ttf') format('truetype'),
+    url('fonts/Helvetica-Neue-Thin.svg#e3b7d1e7c160') format('svg');
 }
 ```
 
@@ -289,13 +289,13 @@ Including external JavaScript libraries is as simple as installing the npm scrip
 Header & Footer JavaScript Boundles
 -------------------------------------------------------------------------------------------------- */
 const headerJS = [
-	'node_modules/jquery/dist/jquery.js',
-	'node_modules/nprogress/nprogress.js',
-	'node_modules/aos/dist/aos.js',
-	'node_modules/isotope-layout/dist/isotope.pkgd.js'
+    'node_modules/jquery/dist/jquery.js',  
+    'node_modules/nprogress/nprogress.js',
+    'node_modules/aos/dist/aos.js',
+    'node_modules/isotope-layout/dist/isotope.pkgd.js'
 ];
 const footerJS = [
-	'src/js/**'
+    'src/js/**'
 ];
 //--------------------------------------------------------------------------------------------------
 ```
