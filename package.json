@@ -16,7 +16,7 @@
 	"license": "MIT",
 	"devDependencies": {
 		"aos": "^2.3.3",
-		"@babel/core": "^7.0.0",
+		"@babel/core": "^7.0.1",
 		"@babel/preset-env": "^7.0.0",
 		"browser-sync": "^2.24.7",
 		"cssnano": "^4.1.0",
