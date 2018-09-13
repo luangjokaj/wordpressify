@@ -8,7 +8,7 @@
 	color: var(--white);
 
 	& ul {
-		@apply --noList;
+		@mixin noList;
 	}
 
 	& section {
@@ -22,7 +22,7 @@
 			}
 
 			& ul {
-				@apply --maxWidth;
+				@mixin maxWidth;
 				display: flex;
 				align-items: center;
 				flex-wrap: wrap;
@@ -101,7 +101,7 @@
 							width: 3px;
 							height: 3px;
 							border-radius: 100%;
-							background: color(var(--white) alpha(50%));
+							background: color-mod(var(--white) alpha(50%));
 							position: absolute;
 							left: 0;
 							top: 10px;
@@ -163,7 +163,7 @@
 				line-height: 1;
 				box-sizing: border-box;
 				font-size: var(--small-font-size);
-				color: color(var(--white) alpha(50%));
+				color: color-mod(var(--white) alpha(50%));
 				transition: all .5s ease;
 				vertical-align: middle;
 				overflow: hidden;

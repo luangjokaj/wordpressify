@@ -1,52 +1,50 @@
-:root {
-	--input-type: {
-		appearance: none;
-		background: var(--white);
-		border: solid 1px var(--light-gray);
-		border-radius: 5px;
-		box-sizing: border-box;
-		padding: 15px;
-		font-family: var(--font-text);
-		font-size: var(--default-font-size);
-		transition: all .3s ease;
+@define-mixin input-type {
+	appearance: none;
+	background: var(--white);
+	border: solid 1px var(--light-gray);
+	border-radius: 5px;
+	box-sizing: border-box;
+	padding: 15px;
+	font-family: var(--font-text);
+	font-size: var(--default-font-size);
+	transition: all .3s ease;
 
-		&:focus {
-			border-color: var(--primary-color);
-		}
-	};
+	&:focus {
+		border-color: var(--primary-color);
+	}
+}
 
-	--input-select {
-		appearance: none;
-		font-size: var(--small-font-size);
-		font-family: var(--font-text);
-		text-transform: uppercase;
-		color: var(--dark-gray);
-		display: inline-block;
-		box-sizing: border-box;
-		padding: 15px 15px;
-		background: url('img/arrow.svg') no-repeat var(--white);
+@define-mixin input-select {
+	appearance: none;
+	font-size: var(--small-font-size);
+	font-family: var(--font-text);
+	text-transform: uppercase;
+	color: var(--dark-gray);
+	display: inline-block;
+	box-sizing: border-box;
+	padding: 15px 15px;
+	background: url('img/arrow.svg') no-repeat var(--white);
+	background-position: calc(100% - 15px);
+	text-align: center;
+	transition: all .3s ease;
+	border: solid 1px var(--light-gray);
+	cursor: pointer;
+	padding-right: 45px;
+
+	&:hover {
+		background: url('img/arrow.svg') no-repeat color-mod(var(--primary-color) alpha(-95%));
 		background-position: calc(100% - 15px);
-		text-align: center;
-		transition: all .3s ease;
-		border: solid 1px var(--light-gray);
-		cursor: pointer;
-		padding-right: 45px;
-
-		&:hover {
-			background: url('img/arrow.svg') no-repeat color(var(--primary-color) alpha(-95%));
-			background-position: calc(100% - 15px);
-		}
-	};
+	}
 }
 
 input[type='text'], input[type='password'], input[type='number'], input[type='tel'], input[type='email'], input[type='email'], textarea {
-	@apply --input-type;
+	@mixin input-type;
 }
 
 input[type='checkbox'] {
 	appearance: none;
 	cursor: pointer;
-	background: color(var(--dark-blue) alpha(-90%));
+	background: color-mod(var(--dark-blue) alpha(-90%));
 	border: solid 1px var(--light-gray);
 	width: 18px;
 	height: 18px;
@@ -81,7 +79,7 @@ input[type='checkbox'] {
 
 
 select {
-	@apply --input-select;
+	@mixin input-select;
 }
 
 textarea {

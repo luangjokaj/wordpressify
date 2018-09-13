@@ -1,6 +1,6 @@
 [![WordPressify Logo](https://i.imgur.com/5dVJS70.png)](http://www.wordpressify.co/)
 
-# WordPressify v0.1.4 [![Dependencies](https://david-dm.org/luangjokaj/wordpressify/dev-status.svg)](https://david-dm.org/luangjokaj/wordpressify?type=dev)
+# WordPressify v0.1.5 [![Dependencies](https://david-dm.org/luangjokaj/wordpressify/dev-status.svg)](https://david-dm.org/luangjokaj/wordpressify?type=dev)
 A build system designed to automate your WordPress development workflow.
 
 http://www.wordpressify.co/
@@ -128,7 +128,7 @@ dist/wordpressify.zip
 
 # 3. CSS, PostCSS and Sass
 ## PostCSS
-By default WordPressify supports [PostCSS](http://postcss.org/), a similar preprocessor to Sass, Less and others but with more functionality. On top of that PostCSS is 3x faster than Sass and 4x faster than Less. Features come in the shape of PostCSS plugins. Think of these like using Lego, where each piece is a different feature that can transform your CSS in some way. PostCSS lets you stick these pieces together so that you can build up your own feature set, adding and removing plugins as and when you need them. [cssnext](http://cssnext.io/) is installed by default. Read more about PostCSS [here](https://ashleynolan.co.uk/blog/postcss-a-review).
+By default WordPressify supports [PostCSS](http://postcss.org/), a similar preprocessor to Sass, Less and others but with more functionality. On top of that PostCSS is 3x faster than Sass and 4x faster than Less. Features come in the shape of PostCSS plugins. Think of these like using Lego, where each piece is a different feature that can transform your CSS in some way. PostCSS lets you stick these pieces together so that you can build up your own feature set, adding and removing plugins as and when you need them. [postcss-preset-env](https://preset-env.cssdb.org//) is installed by default. Read more about PostCSS [here](https://ashleynolan.co.uk/blog/postcss-a-review).
 
 **POSTCSS PLUGINS**
 
@@ -141,19 +141,30 @@ PostCSS Plugins
  ------------------------------------------------------------------------------------------------- */
 const pluginsDev = [
 	partialimport,
-	cssnext({
+	postCSSMixins,
+	postcssPresetEnv({
+		stage: 0,
 		features: {
-			colorHexAlpha: false
-		}
-	})
+			'nesting-rules': true,
+			'color-mod-function': true,
+			'custom-media': true,
+		},
+	}),
 ];
 const pluginsProd = [
 	partialimport,
-	cssnext({
+	postCSSMixins,
+	postcssPresetEnv({
+		stage: 0,
 		features: {
-			colorHexAlpha: false
-		}
-	})
+			'nesting-rules': true,
+			'color-mod-function': true,
+			'custom-media': true,
+		},
+	}),
+	cssnano({
+		reduceIdents: false,
+	}),
 ];
 //--------------------------------------------------------------------------------------------------
 ```
@@ -384,6 +395,11 @@ $ npm run fresh-start
 This will **immediately** remove the default styles and leave a minimal viable theme with basic PHP WordPress loops and other useful features.
 
 # Changelog
+**v0.1.5**
+- Upgrade to Babel 7
+- Removed deprecated `postcss-cssnext` in favor of `postcss-preset-env`.
+
+
 **v0.1.4**
 - Added cleanup command to flush the default theme and have a fresh start.
 

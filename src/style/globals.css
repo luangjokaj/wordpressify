@@ -35,7 +35,7 @@ a, button {
 	color: var(--primary-color);
 
 	&:hover {
-		color: color(var(--primary-color) lightness(40%));
+		color: color-mod(var(--primary-color) lightness(40%));
 	}
 }
 
