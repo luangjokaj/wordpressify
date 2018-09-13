@@ -141,19 +141,30 @@ PostCSS Plugins
  ------------------------------------------------------------------------------------------------- */
 const pluginsDev = [
 	partialimport,
-	cssnext({
+	postCSSMixins,
+	postcssPresetEnv({
+		stage: 0,
 		features: {
-			colorHexAlpha: false
-		}
-	})
+			'nesting-rules': true,
+			'color-mod-function': true,
+			'custom-media': true,
+		},
+	}),
 ];
 const pluginsProd = [
 	partialimport,
-	cssnext({
+	postCSSMixins,
+	postcssPresetEnv({
+		stage: 0,
 		features: {
-			colorHexAlpha: false
-		}
-	})
+			'nesting-rules': true,
+			'color-mod-function': true,
+			'custom-media': true,
+		},
+	}),
+	cssnano({
+		reduceIdents: false,
+	}),
 ];
 //--------------------------------------------------------------------------------------------------
 ```
