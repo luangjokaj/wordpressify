@@ -19,6 +19,8 @@ const inject = require('gulp-inject-string');
 const partialimport = require('postcss-easy-import');
 const plumber = require('gulp-plumber');
 const postcss = require('gulp-postcss');
+const postCSSMixins = require('postcss-mixins');
+const postcssPresetEnv = require('postcss-preset-env');
 const remoteSrc = require('gulp-remote-src');
 const sourcemaps = require('gulp-sourcemaps');
 const uglify = require('gulp-uglify');
@@ -35,19 +37,30 @@ PostCSS Plugins
 -------------------------------------------------------------------------------------------------- */
 const pluginsDev = [
 	partialimport,
-	cssnext({
+	postCSSMixins,
+	postcssPresetEnv({
+		stage: 0,
 		features: {
-			colorHexAlpha: false
-		}
-	})
+			'nesting-rules': true,
+			'color-mod-function': true,
+			'custom-media': true,
+		},
+	}),
 ];
 const pluginsProd = [
 	partialimport,
-	cssnext({
+	postCSSMixins,
+	postcssPresetEnv({
+		stage: 0,
 		features: {
-			colorHexAlpha: false
-		}
-	})
+			'nesting-rules': true,
+			'color-mod-function': true,
+			'custom-media': true,
+		},
+	}),
+	cssnano({
+		reduceIdents: false,
+	}),
 ];
 
 /* -------------------------------------------------------------------------------------------------
@@ -57,11 +70,9 @@ const headerJS = [
 	'node_modules/jquery/dist/jquery.js',
 	'node_modules/nprogress/nprogress.js',
 	'node_modules/aos/dist/aos.js',
-	'node_modules/isotope-layout/dist/isotope.pkgd.js'
+	'node_modules/isotope-layout/dist/isotope.pkgd.js',
 ];
-const footerJS = [
-	'src/js/**'
-];
+const footerJS = ['src/js/**'];
 
 /* -------------------------------------------------------------------------------------------------
 Installation Tasks
@@ -75,31 +86,29 @@ gulp.task('cleanup', () => {
 
 gulp.task('download-wordpress', () => {
 	remoteSrc(['latest.zip'], {
-		base: 'https://wordpress.org/'
-	})
+		base: 'https://wordpress.org/',
+	}).pipe(gulp.dest('build/'));
+});
+
+gulp.task('setup', ['unzip-wordpress', 'copy-config']);
+
+gulp.task('unzip-wordpress', () => {
+	gulp
+		.src('build/latest.zip')
+		.pipe(unzip())
 		.pipe(gulp.dest('build/'));
 });
 
-gulp.task('setup', [
-	'unzip-wordpress',
-	'copy-config'
-]);
-
-gulp.task('unzip-wordpress', () => {
-	gulp.src('build/latest.zip')
-		.pipe(unzip())
-		.pipe(gulp.dest('build/'))
-});
-
 gulp.task('copy-config', () => {
-	gulp.src('wp-config.php')
-		.pipe(inject.after('define(\'DB_COLLATE\', \'\');', '\ndefine(\'DISABLE_WP_CRON\', true);'))
+	gulp
+		.src('wp-config.php')
+		.pipe(inject.after("define('DB_COLLATE', '');", "\ndefine('DISABLE_WP_CRON', true);"))
 		.pipe(gulp.dest('build/wordpress'))
 		.on('end', () => {
-				gutil.beep();
-				gutil.log(devServerReady);
-				gutil.log(thankYou);
-			});
+			gutil.beep();
+			gutil.log(devServerReady);
+			gutil.log(thankYou);
+		});
 });
 
 gulp.task('disable-cron', () => {
@@ -111,8 +120,9 @@ gulp.task('disable-cron', () => {
 		if (data.indexOf('DISABLE_WP_CRON') >= 0) {
 			gutil.log('WP_CRON is already disabled!');
 		} else {
-			gulp.src('build/wordpress/wp-config.php')
-				.pipe(inject.after('define(\'DB_COLLATE\', \'\');', '\ndefine(\'DISABLE_WP_CRON\', true);'))
+			gulp
+				.src('build/wordpress/wp-config.php')
+				.pipe(inject.after("define('DB_COLLATE', '');", "\ndefine('DISABLE_WP_CRON', true);"))
 				.pipe(gulp.dest('build/wordpress'));
 		}
 	});
@@ -120,51 +130,57 @@ gulp.task('disable-cron', () => {
 
 gulp.task('fresh-install', () => {
 	del(['src/**']).then(() => {
-		gulp.src('tools/fresh-theme/**')
-		.pipe(gulp.dest('src'))
+		gulp.src('tools/fresh-theme/**').pipe(gulp.dest('src'));
 	});
 });
 
 /* -------------------------------------------------------------------------------------------------
 Development Tasks
 -------------------------------------------------------------------------------------------------- */
-gulp.task('build-dev', [
-	'copy-theme-dev',
-	'copy-fonts-dev',
-	'style-dev',
-	'header-scripts-dev',
-	'footer-scripts-dev',
-	'plugins-dev',
-	'watch'
-
-], () => {
-	connect.server({
-		base: 'build/wordpress',
-		port: '3020'
-	}, () => {
-		browserSync({
-			proxy: '127.0.0.1:3020'
-		});
-	});
-});
+gulp.task(
+	'build-dev',
+	[
+		'copy-theme-dev',
+		'copy-fonts-dev',
+		'style-dev',
+		'header-scripts-dev',
+		'footer-scripts-dev',
+		'plugins-dev',
+		'watch',
+	],
+	() => {
+		connect.server(
+			{
+				base: 'build/wordpress',
+				port: '3020',
+			},
+			() => {
+				browserSync({
+					proxy: '127.0.0.1:3020',
+				});
+			},
+		);
+	},
+);
 
 gulp.task('copy-theme-dev', () => {
 	if (!fs.existsSync('./build')) {
 		gutil.log(buildNotFound);
 		process.exit(1);
 	} else {
-		gulp.src('src/theme/**')
-			.pipe(gulp.dest('build/wordpress/wp-content/themes/' + themeName));
+		gulp.src('src/theme/**').pipe(gulp.dest('build/wordpress/wp-content/themes/' + themeName));
 	}
 });
 
 gulp.task('copy-fonts-dev', () => {
-	gulp.src('src/fonts/**')
-		.pipe(gulp.dest('build/wordpress/wp-content/themes/' + themeName + '/fonts'))
+	gulp
+		.src('src/fonts/**')
+		.pipe(gulp.dest('build/wordpress/wp-content/themes/' + themeName + '/fonts'));
 });
 
 gulp.task('style-dev', () => {
-	return gulp.src('src/style/style.css')
+	return gulp
+		.src('src/style/style.css')
 		.pipe(plumber({ errorHandler: onError }))
 		.pipe(sourcemaps.init())
 		.pipe(postcss(pluginsDev))
@@ -174,7 +190,8 @@ gulp.task('style-dev', () => {
 });
 
 gulp.task('header-scripts-dev', () => {
-	return gulp.src(headerJS)
+	return gulp
+		.src(headerJS)
 		.pipe(plumber({ errorHandler: onError }))
 		.pipe(sourcemaps.init())
 		.pipe(concat('header-bundle.js'))
@@ -183,38 +200,40 @@ gulp.task('header-scripts-dev', () => {
 });
 
 gulp.task('footer-scripts-dev', () => {
-	return gulp.src(footerJS)
+	return gulp
+		.src(footerJS)
 		.pipe(plumber({ errorHandler: onError }))
 		.pipe(sourcemaps.init())
-		.pipe(babel({
-			presets: ['@babel/preset-env']
-		}))
+		.pipe(
+			babel({
+				presets: ['@babel/preset-env'],
+			}),
+		)
 		.pipe(concat('footer-bundle.js'))
 		.pipe(sourcemaps.write('.'))
 		.pipe(gulp.dest('build/wordpress/wp-content/themes/' + themeName + '/js'));
 });
 
 gulp.task('plugins-dev', () => {
-	return gulp.src('src/plugins/**')
-		.pipe(gulp.dest('build/wordpress/wp-content/plugins'));
+	return gulp.src('src/plugins/**').pipe(gulp.dest('build/wordpress/wp-content/plugins'));
 });
 
-gulp.task('reload-js', ['footer-scripts-dev', 'header-scripts-dev'], (done) => {
+gulp.task('reload-js', ['footer-scripts-dev', 'header-scripts-dev'], done => {
 	browserSync.reload();
 	done();
 });
 
-gulp.task('reload-fonts', ['copy-fonts-dev'], (done) => {
+gulp.task('reload-fonts', ['copy-fonts-dev'], done => {
 	browserSync.reload();
 	done();
 });
 
-gulp.task('reload-theme', ['copy-theme-dev'], (done) => {
+gulp.task('reload-theme', ['copy-theme-dev'], done => {
 	browserSync.reload();
 	done();
 });
 
-gulp.task('reload-plugins', ['plugins-dev'], (done) => {
+gulp.task('reload-plugins', ['plugins-dev'], done => {
 	browserSync.reload();
 	done();
 });
@@ -225,11 +244,11 @@ gulp.task('watch', () => {
 	gulp.watch(['src/fonts/**'], ['reload-fonts']);
 	gulp.watch(['src/theme/**'], ['reload-theme']);
 	gulp.watch(['src/plugins/**'], ['reload-plugins']);
-	gulp.watch('build/wordpress/wp-config*.php', (event) => {
-		if (event.type === 'added') { 
+	gulp.watch('build/wordpress/wp-config*.php', event => {
+		if (event.type === 'added') {
 			gulp.start('disable-cron');
 		}
-	})
+	});
 });
 
 /* -------------------------------------------------------------------------------------------------
@@ -242,39 +261,40 @@ gulp.task('build-prod', [
 	'header-scripts-prod',
 	'footer-scripts-prod',
 	'plugins-prod',
-	'zip-theme'
+	'zip-theme',
 ]);
 
 gulp.task('copy-theme-prod', () => {
-	gulp.src(['src/theme/**', '!src/theme/img/**'])
-		.pipe(gulp.dest('dist/themes/' + themeName))
+	gulp.src(['src/theme/**', '!src/theme/img/**']).pipe(gulp.dest('dist/themes/' + themeName));
 });
 
 gulp.task('copy-fonts-prod', () => {
-	gulp.src('src/fonts/**')
-		.pipe(gulp.dest('dist/themes/' + themeName + '/fonts'))
+	gulp.src('src/fonts/**').pipe(gulp.dest('dist/themes/' + themeName + '/fonts'));
 });
 
 gulp.task('process-images', ['copy-theme-prod'], () => {
-	return gulp.src('src/theme/img/**')
+	return gulp
+		.src('src/theme/img/**')
 		.pipe(plumber({ errorHandler: onError }))
-		.pipe(imagemin([
-			imagemin.svgo({ plugins: [{ removeViewBox: true }] })
-		], {
-			verbose: true
-		}))
+		.pipe(
+			imagemin([imagemin.svgo({ plugins: [{ removeViewBox: true }] })], {
+				verbose: true,
+			}),
+		)
 		.pipe(gulp.dest('dist/themes/' + themeName + '/img'));
 });
 
 gulp.task('style-prod', () => {
-	return gulp.src('src/style/style.css')
+	return gulp
+		.src('src/style/style.css')
 		.pipe(plumber({ errorHandler: onError }))
 		.pipe(postcss(pluginsProd))
-		.pipe(gulp.dest('dist/themes/' + themeName))
+		.pipe(gulp.dest('dist/themes/' + themeName));
 });
 
 gulp.task('header-scripts-prod', () => {
-	return gulp.src(headerJS)
+	return gulp
+		.src(headerJS)
 		.pipe(plumber({ errorHandler: onError }))
 		.pipe(concat('header-bundle.js'))
 		.pipe(uglify())
@@ -282,37 +302,52 @@ gulp.task('header-scripts-prod', () => {
 });
 
 gulp.task('footer-scripts-prod', () => {
-	return gulp.src(footerJS)
+	return gulp
+		.src(footerJS)
 		.pipe(plumber({ errorHandler: onError }))
-		.pipe(babel({
-			presets: ['@babel/preset-env']
-		}))
+		.pipe(
+			babel({
+				presets: ['@babel/preset-env'],
+			}),
+		)
 		.pipe(concat('footer-bundle.js'))
 		.pipe(uglify())
 		.pipe(gulp.dest('dist/themes/' + themeName + '/js'));
 });
 
 gulp.task('plugins-prod', () => {
-	return gulp.src('src/plugins/**')
-		.pipe(gulp.dest('dist/plugins'));
+	return gulp.src('src/plugins/**').pipe(gulp.dest('dist/plugins'));
 });
 
-gulp.task('zip-theme', ['copy-theme-prod', 'copy-fonts-prod', 'process-images', 'style-prod', 'header-scripts-prod', 'footer-scripts-prod', 'plugins-prod'], () => {
-	gulp.src('dist/themes/' + themeName + '/**')
-		.pipe(zip(themeName + '.zip'))
-		.pipe(gulp.dest('dist'))
-		.on('end', () => {
-			gutil.beep();
-			gutil.log(pluginsGenerated);
-			gutil.log(filesGenerated);
-			gutil.log(thankYou);
-		});
-});
+gulp.task(
+	'zip-theme',
+	[
+		'copy-theme-prod',
+		'copy-fonts-prod',
+		'process-images',
+		'style-prod',
+		'header-scripts-prod',
+		'footer-scripts-prod',
+		'plugins-prod',
+	],
+	() => {
+		gulp
+			.src('dist/themes/' + themeName + '/**')
+			.pipe(zip(themeName + '.zip'))
+			.pipe(gulp.dest('dist'))
+			.on('end', () => {
+				gutil.beep();
+				gutil.log(pluginsGenerated);
+				gutil.log(filesGenerated);
+				gutil.log(thankYou);
+			});
+	},
+);
 
 /* -------------------------------------------------------------------------------------------------
 Utility Tasks
 -------------------------------------------------------------------------------------------------- */
-const onError = (err) => {
+const onError = err => {
 	gutil.beep();
 	gutil.log(wpFy + ' - ' + errorMsg + ' ' + err.toString());
 	this.emit('end');
@@ -320,11 +355,21 @@ const onError = (err) => {
 
 const date = new Date().toLocaleDateString('en-GB').replace(/\//g, '.');
 const errorMsg = '\x1b[41mError\x1b[0m';
-const devServerReady = 'Your development server is ready, start the workflow with the command: $ \x1b[1mnpm run dev\x1b[0m';
-const buildNotFound = errorMsg + ' ⚠️　- You need to install WordPress first. Run the command: $ \x1b[1mnpm run install:wordpress\x1b[0m';
-const filesGenerated = 'Your ZIP template file was generated in: \x1b[1m' + __dirname + '/dist/' + themeName + '.zip\x1b[0m - ✅';
-const pluginsGenerated = 'Plugins are generated in: \x1b[1m' + __dirname + '/dist/plugins/\x1b[0m - ✅';
-const backupsGenerated = 'Your backup was generated in: \x1b[1m' + __dirname + '/backups/' + date + '.zip\x1b[0m - ✅';
+const devServerReady =
+	'Your development server is ready, start the workflow with the command: $ \x1b[1mnpm run dev\x1b[0m';
+const buildNotFound =
+	errorMsg +
+	' ⚠️　- You need to install WordPress first. Run the command: $ \x1b[1mnpm run install:wordpress\x1b[0m';
+const filesGenerated =
+	'Your ZIP template file was generated in: \x1b[1m' +
+	__dirname +
+	'/dist/' +
+	themeName +
+	'.zip\x1b[0m - ✅';
+const pluginsGenerated =
+	'Plugins are generated in: \x1b[1m' + __dirname + '/dist/plugins/\x1b[0m - ✅';
+const backupsGenerated =
+	'Your backup was generated in: \x1b[1m' + __dirname + '/backups/' + date + '.zip\x1b[0m - ✅';
 const wpFy = '\x1b[42m\x1b[1mWordPressify\x1b[0m';
 const wpFyUrl = '\x1b[2m - http://www.wordpressify.co/\x1b[0m';
 const thankYou = 'Thank you for using ' + wpFy + wpFyUrl;
@@ -334,7 +379,8 @@ gulp.task('backup', () => {
 		gutil.log(buildNotFound);
 		process.exit(1);
 	} else {
-		gulp.src('build/wordpress/**')
+		gulp
+			.src('build/wordpress/**')
 			.pipe(zip(date + '.zip'))
 			.pipe(gulp.dest('backups'))
 			.on('end', () => {

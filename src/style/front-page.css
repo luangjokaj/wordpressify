@@ -2,7 +2,7 @@ section.headings {
 	background: var(--dark-blue);
 
 	& main {
-		@apply --maxWidth;
+		@mixin maxWidth;
 
 		& h1 {
 			max-width: 860px;
@@ -32,7 +32,7 @@ section.headings {
 		& .codecolorer-container.javascript.solarized-dark {
 			&.home {
 				margin-bottom: 120px;
-				box-shadow: 0 5px 25px 0 color(var(--black) alpha(20%));
+				box-shadow: 0 5px 25px 0 color-mod(var(--black) alpha(20%));
 
 				&[data-aos='slow-up'] {
 					transition: all 1s ease;
@@ -70,7 +70,7 @@ section.headings {
 					}
 
 					& em {
-						color: color(var(--white) alpha(70%));
+						color: color-mod(var(--white) alpha(70%));
 					}
 				}
 			}
@@ -81,7 +81,7 @@ section.headings {
 .front-page {
 	& section.tech {
 		& ul {
-			@apply --noList;
+			@mixin noList;
 			text-align: center;
 			padding: 60px 0;
 
@@ -126,7 +126,7 @@ section.headings {
 
 	& section.features {
 		& ul {
-			@apply --noList;
+			@mixin noList;
 			text-align: center;
 			padding: 100px 0;
 			width: 100%;
