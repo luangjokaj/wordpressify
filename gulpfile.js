@@ -9,7 +9,6 @@ const browserSync = require('browser-sync');
 const concat = require('gulp-concat');
 const connect = require('gulp-connect-php');
 const cssnano = require('cssnano');
-const cssnext = require('postcss-cssnext');
 const del = require('del');
 const fs = require('fs');
 const gulp = require('gulp');
