@@ -15,8 +15,8 @@
 	"author": "Luan Gjokaj",
 	"license": "MIT",
 	"devDependencies": {
-		"@babel/core": "^7.0.1",
-		"@babel/preset-env": "^7.0.0",
+		"@babel/core": "^7.1.0",
+		"@babel/preset-env": "^7.1.0",
 		"aos": "^2.3.3",
 		"browser-sync": "^2.24.7",
 		"browserslist": "^4.1.1",
