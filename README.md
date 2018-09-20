@@ -124,7 +124,7 @@ dist/wordpressify.zip
 
 **WINDOWS USERS**
 
-- If you are running Windows, PHP has to be installed and configured. Check the [gulp-connect-php](https://www.npmjs.com/package/gulp-connect-php) documentation.
+- If you are running Windows, PHP has to be installed and configured. Check the [gulp-connect-php](https://www.npmjs.com/package/gulp-connect-php) documentation. Or check out this tutorial on [Medium](https://medium.com/@marcus.supernova/how-to-install-wordpressify-on-windows-4b78a801165b).
 
 # 3. CSS, PostCSS and Sass
 ## PostCSS
