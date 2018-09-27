@@ -20,7 +20,7 @@
 		"aos": "^2.3.3",
 		"browser-sync": "^2.24.7",
 		"browserslist": "^4.1.1",
-		"cssnano": "^4.1.0",
+		"cssnano": "^4.1.4",
 		"del": "^3.0.0",
 		"fs": "0.0.2",
 		"gulp-babel": "^8.0.0",
@@ -43,8 +43,8 @@
 		"nprogress": "^0.2.0",
 		"postcss-easy-import": "^3.0.0",
 		"postcss-mixins": "^6.2.0",
-		"postcss-preset-env": "^6.0.5",
+		"postcss-preset-env": "^6.0.7",
 		"stylelint-config-standard": "^18.2.0",
-		"stylelint": "^9.5.0"
+		"stylelint": "^9.6.0"
 	}
 }
