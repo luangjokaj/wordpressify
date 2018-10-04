@@ -8,7 +8,6 @@ const babel = require('gulp-babel');
 const browserSync = require('browser-sync');
 const concat = require('gulp-concat');
 const connect = require('gulp-connect-php');
-const cssnano = require('cssnano');
 const del = require('del');
 const fs = require('fs');
 const gulp = require('gulp');
@@ -56,9 +55,6 @@ const pluginsProd = [
 			'color-mod-function': true,
 			'custom-media': true,
 		},
-	}),
-	cssnano({
-		reduceIdents: false,
 	}),
 ];
 
