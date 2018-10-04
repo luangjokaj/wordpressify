@@ -1,9 +1,9 @@
 # Distribution Files
-app/**
-dist/**
-build/**
-tmp/**
-backups/**
+app
+dist
+build
+tmp
+backups
 wp-config.php
 
 # IDE & Editors
