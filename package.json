@@ -18,8 +18,8 @@
 		"@babel/core": "^7.1.2",
 		"@babel/preset-env": "^7.1.0",
 		"aos": "^2.3.4",
-		"browser-sync": "^2.26.0",
-		"browserslist": "^4.2.0",
+		"browser-sync": "^2.26.3",
+		"browserslist": "^4.2.1",
 		"cssnano": "^4.1.4",
 		"del": "^3.0.0",
 		"fs": "0.0.2",
@@ -43,7 +43,7 @@
 		"nprogress": "^0.2.0",
 		"postcss-easy-import": "^3.0.0",
 		"postcss-mixins": "^6.2.0",
-		"postcss-preset-env": "^6.1.0",
+		"postcss-preset-env": "^6.1.1",
 		"stylelint-config-standard": "^18.2.0",
 		"stylelint": "^9.6.0"
 	}
