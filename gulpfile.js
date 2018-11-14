@@ -107,18 +107,21 @@ gulp.task('copy-config', () => {
 });
 
 gulp.task('disable-cron', () => {
-	fs.readFile('build/wordpress/wp-config.php', (err, data) => {
+	fs.readFile('./build/wordpress/wp-config.php', (err, data) => {
 		if (err) {
-			gutil.log(wpFy + ' - ' + errorMsg + ' Something went wrong, WP_CRON was not disabled!');
-			process.exit(1);
+			gutil.log(
+				wpFy + ' - ' + errorMsg + ' wp-config.php still missing... WP_CRON was not disabled!',
+			);
 		}
-		if (data.indexOf('DISABLE_WP_CRON') >= 0) {
-			gutil.log('WP_CRON is already disabled!');
-		} else {
-			gulp
-				.src('build/wordpress/wp-config.php')
-				.pipe(inject.after("define('DB_COLLATE', '');", "\ndefine('DISABLE_WP_CRON', true);"))
-				.pipe(gulp.dest('build/wordpress'));
+		if (data) {
+			if (data.indexOf('DISABLE_WP_CRON') >= 0) {
+				gutil.log('WP_CRON is already disabled!');
+			} else {
+				gulp
+					.src('build/wordpress/wp-config.php')
+					.pipe(inject.after("define('DB_COLLATE', '');", "\ndefine('DISABLE_WP_CRON', true);"))
+					.pipe(gulp.dest('build/wordpress'));
+			}
 		}
 	});
 });
