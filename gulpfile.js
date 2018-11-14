@@ -110,7 +110,7 @@ gulp.task('disable-cron', () => {
 	fs.readFile('./build/wordpress/wp-config.php', (err, data) => {
 		if (err) {
 			gutil.log(
-				wpFy + ' - ' + errorMsg + ' wp-config.php still missing... WP_CRON was not disabled!',
+				wpFy + ' - ' + warning + ' wp-config.php still missing... WP_CRON was not disabled!',
 			);
 		}
 		if (data) {
@@ -353,6 +353,7 @@ const onError = err => {
 
 const date = new Date().toLocaleDateString('en-GB').replace(/\//g, '.');
 const errorMsg = '\x1b[41mError\x1b[0m';
+const warning = '\x1b[43mWarning\x1b[0m';
 const devServerReady =
 	'Your development server is ready, start the workflow with the command: $ \x1b[1mnpm run dev\x1b[0m';
 const buildNotFound =
