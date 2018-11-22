@@ -398,7 +398,7 @@ npm run fresh-start
 This will **immediately** remove the default styles and leave a minimal viable theme with basic PHP WordPress loops and other useful features.
 
 # 12. Windows Installation
-**[How to install WordPressify on Windows?](https://www.youtube.com/embed/J8ZNzKSeTSE)**
+**[How to install WordPressify on Windows?](https://www.youtube.com/watch?v=J8ZNzKSeTSE)**
 
 Assuming that you are using the latest version of Windows, and you have activated Windows Subsystem for Linux. Follow the instructions:
 
