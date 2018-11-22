@@ -27,6 +27,7 @@ http://www.wordpressify.co/
 - [10. Deployment](#10-deployment)
 	- [Automated Deployments](#automated-deployments)
 - [11. Cleanup Default Theme](#11-cleanup-default-theme)
+- [12. Windows Installation](#12-windows-installation)
 - [Changelog](#changelog)
 - [License](#license)
 
@@ -323,7 +324,7 @@ A build restart is required for changes to take effect.
 While coding you will find yourself uploading dummy content to the WordPress build server, e.g. images or other media stored in **wp-content**. WordPressify allows you to back up the current state of the build which will include all server files. To back up your build run the command:
 
 ```
-$ npm run backup
+npm run backup
 ```
 
 Files will be compressed in a zip file and stored in the directory:
@@ -344,7 +345,7 @@ tools/IntelliJ.xml
 
 Before pushing changes make sure you have clean and consistent CSS. Run [stylelint](https://stylelint.io/) with the command:
 ```
-$ npm run lint:css
+npm run lint:css
 ```
 
 # 9. Database
@@ -392,9 +393,53 @@ This should enable automatic deployment on any push to the chosen GitHub reposit
 # 11. Cleanup Default Theme
 The default theme comes as a theme sample to show how WordPressify combines everything together. If you want to remove the default theme type the command:
 ```
-$ npm run fresh-start
+npm run fresh-start
 ```
 This will **immediately** remove the default styles and leave a minimal viable theme with basic PHP WordPress loops and other useful features.
+
+# 12. Windows Installation
+**[How to install WordPressify on Windows?](https://www.youtube.com/embed/J8ZNzKSeTSE)**
+
+Assuming that you are using the latest version of Windows, and you have activated Windows Subsystem for Linux. Follow the instructions:
+
+### Install lamp for PHP and MySQL
+First refresh your package index:
+```
+sudo apt-get update
+```
+
+Then install the LAMP stack:
+```
+sudo apt-get install lamp-server^
+```
+For more informations check out: https://help.ubuntu.com/community/ApacheMySQLPHP
+
+### Start MySQL
+```
+sudo service mysql start
+```
+Now let's connect to the MySQL Server:
+```
+sudo mysql
+```
+Change the **root** password to "123456789":
+```
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '123456789'
+```
+Reload privileges:
+```
+FLUSH PRIVILEGES;
+```
+
+### Install Node
+```
+curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
+```
+```
+sudo apt-get install -y nodejs
+```
+
+That's it. Now just follow the WordPressify installation instructions.
 
 # Changelog
 **v0.1.5**
