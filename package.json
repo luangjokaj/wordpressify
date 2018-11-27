@@ -31,7 +31,7 @@
 		"gulp-inject-string": "^1.1.1",
 		"gulp-plumber": "^1.2.0",
 		"gulp-postcss": "^8.0.0",
-		"gulp-remote-src": "^0.4.3",
+		"gulp-remote-src": "^0.4.4",
 		"gulp-sourcemaps": "^2.6.4",
 		"gulp-uglify": "^3.0.1",
 		"gulp-unzip": "^1.0.0",
