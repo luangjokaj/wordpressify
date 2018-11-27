@@ -155,7 +155,9 @@ gulp.task(
 			() => {
 				browserSync({
 					logPrefix: wpFy,
-					proxy: '127.0.0.1:3020',
+					proxy: '127.0.0.1',
+					
+					',
 					host: '127.0.0.1',
 					port: '3000',
 					open: 'external'
