@@ -29,7 +29,7 @@
 		"gulp-connect-php": "^1.0.3",
 		"gulp-imagemin": "^5.0.3",
 		"gulp-inject-string": "^1.1.1",
-		"gulp-plumber": "^1.2.0",
+		"gulp-plumber": "^1.2.1",
 		"gulp-postcss": "^8.0.0",
 		"gulp-remote-src": "^0.4.4",
 		"gulp-sourcemaps": "^2.6.4",
@@ -44,7 +44,7 @@
 		"postcss-easy-import": "^3.0.0",
 		"postcss-mixins": "^6.2.0",
 		"postcss-preset-env": "^6.4.0",
-		"stylelint": "^9.8.0",
+		"stylelint": "^9.9.0",
 		"stylelint-config-standard": "^18.2.0"
 	}
 }
