@@ -1,6 +1,6 @@
 [![WordPressify Logo](https://i.imgur.com/5dVJS70.png)](http://www.wordpressify.co/)
 
-# WordPressify v0.1.5 [![Dependencies](https://david-dm.org/luangjokaj/wordpressify/dev-status.svg)](https://david-dm.org/luangjokaj/wordpressify?type=dev)
+# WordPressify v0.1.6 [![Dependencies](https://david-dm.org/luangjokaj/wordpressify/dev-status.svg)](https://david-dm.org/luangjokaj/wordpressify?type=dev)
 A build system designed to automate your WordPress development workflow.
 
 http://www.wordpressify.co/
@@ -207,40 +207,34 @@ Include Sass in gulpfile.js:
 const sass = require('gulp-sass');
 ````
 
-Change the gulp tasks style-dev to:
+Change the gulp tasks stylesDev to:
 
 ```javascript
-gulp.task('style-dev', () => {
-	return gulp
-	.src("src/style/style.scss")
+function stylesDev() {
+	return src('./src/style/style.scss')
 		.pipe(sourcemaps.init())
 		.pipe(sass().on("error", sass.logError))
-		.pipe(sourcemaps.write("."))
-		.pipe(gulp.dest("build/wordpress/wp-content/themes/" + themeName))
-		.pipe(browserSync.stream({ match: "**/*.css" }));
-});
-```
-
-Change the gulp tasks style-prod to:
-
-
-```javascript
-gulp.task('style-prod', () => {
-	return gulp.src('src/style/style.scss')
-		.pipe(sass().on("error", sass.logError))
-		.pipe(gulp.dest('dist/themes/' + themeName))
-});
+		.pipe(sourcemaps.write('.'))
+		.pipe(dest('./build/wordpress/wp-content/themes/' + themeName))
+		.pipe(browserSync.stream({ match: '**/*.css' }));
+}
 ```
 
 Also the watch task has to be changed in order to watch for .scss filetypes:
 
 ```javascript
-gulp.task('watch', () => {
-	gulp.watch(['src/style/**/*.scss'], ['style-dev']);
-	gulp.watch(['src/js/**'], ['reload-js']);
-	gulp.watch(['src/fonts/**'], ['reload-fonts']);
-	gulp.watch(['src/theme/**'], ['reload-theme']);
-});
+watch('./src/style/**/*.scss', stylesDev);
+```
+
+Change the gulp tasks styleProd to:
+
+
+```javascript
+function stylesProd() {
+	return src('./src/style/style.scss')
+		.pipe(sass().on("error", sass.logError))
+		.pipe(dest('./build/wordpress/wp-content/themes/' + themeName));
+}
 ```
 
 # 4. Images and Fonts
@@ -442,6 +436,10 @@ sudo apt-get install -y nodejs
 That's it. Now just follow the WordPressify installation instructions.
 
 # Changelog
+**v0.1.5**
+- Upgrade to Gulp 4.
+- Rewrote all tasks into functions.
+
 **v0.1.5**
 - Upgrade to Babel 7
 - Removed deprecated `postcss-cssnext` in favor of `postcss-preset-env`.
