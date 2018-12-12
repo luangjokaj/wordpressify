@@ -66,8 +66,8 @@ const footerJS = ['src/js/**'];
 Installation Tasks
 -------------------------------------------------------------------------------------------------- */
 async function cleanup() {
-	await del(['./build/**/*']);
-	await del(['./dist/**/*']);
+	await del(['./build/**']);
+	await del(['./dist/**']);
 }
 
 async function downloadWordPress() {
@@ -195,7 +195,7 @@ exports.start = series(
 Production Tasks
 -------------------------------------------------------------------------------------------------- */
 async function cleanProd() {
-	await del(['./dist/**/*']);
+	await del(['./dist/**']);
 }
 
 function copyThemeProd() {
