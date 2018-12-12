@@ -135,14 +135,14 @@ By default WordPressify supports [PostCSS](http://postcss.org/), a similar prepr
 
 **POSTCSS PLUGINS**
 
-WordPressify has two different sets of PostCSS plugins - one for the development environment (pluginsDev) and one for the production task (pluginsProd).
+WordPressify has two different sets of PostCSS plugins - one for the development environment (pluginsListDev) and one for the production task (pluginsListProd).
 
 ```javascript
 //--------------------------------------------------------------------------------------------------
 /* -------------------------------------------------------------------------------------------------
 PostCSS Plugins
  ------------------------------------------------------------------------------------------------- */
-const pluginsDev = [
+const pluginsListDev = [
 	partialimport,
 	postCSSMixins,
 	postcssPresetEnv({
@@ -154,7 +154,7 @@ const pluginsDev = [
 		},
 	}),
 ];
-const pluginsProd = [
+const pluginsListProd = [
 	partialimport,
 	postCSSMixins,
 	postcssPresetEnv({
