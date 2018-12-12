@@ -1,16 +1,10 @@
-/* -------------------------------------------------------------------------------------------------
-
-Build Configuration
-Contributors: Luan Gjokaj, Adam McKenna, Mehdi Rezaei, Sören Wrede, Saneef Ansari
-
--------------------------------------------------------------------------------------------------- */
+const { gulp, series, parallel, dest, src, watch } = require('gulp');
 const babel = require('gulp-babel');
 const browserSync = require('browser-sync');
 const concat = require('gulp-concat');
 const connect = require('gulp-connect-php');
 const del = require('del');
 const fs = require('fs');
-const gulp = require('gulp');
 const gutil = require('gulp-util');
 const imagemin = require('gulp-imagemin');
 const inject = require('gulp-inject-string');
@@ -22,8 +16,7 @@ const postcssPresetEnv = require('postcss-preset-env');
 const remoteSrc = require('gulp-remote-src');
 const sourcemaps = require('gulp-sourcemaps');
 const uglify = require('gulp-uglify');
-const unzip = require('gulp-unzip');
-const zip = require('gulp-zip');
+const zip = require('gulp-vinyl-zip');
 
 /* -------------------------------------------------------------------------------------------------
 Theme Name
@@ -33,7 +26,7 @@ const themeName = 'wordpressify';
 /* -------------------------------------------------------------------------------------------------
 PostCSS Plugins
 -------------------------------------------------------------------------------------------------- */
-const pluginsDev = [
+const pluginsListDev = [
 	partialimport,
 	postCSSMixins,
 	postcssPresetEnv({
@@ -45,7 +38,7 @@ const pluginsDev = [
 		},
 	}),
 ];
-const pluginsProd = [
+const pluginsListProd = [
 	partialimport,
 	postCSSMixins,
 	postcssPresetEnv({
@@ -72,138 +65,107 @@ const footerJS = ['src/js/**'];
 /* -------------------------------------------------------------------------------------------------
 Installation Tasks
 -------------------------------------------------------------------------------------------------- */
-gulp.task('default');
+async function cleanup() {
+	await del(['./build/**/*']);
+	await del(['./dist/**/*']);
+}
 
-gulp.task('cleanup', () => {
-	del(['build/**']);
-	del(['dist/**']);
-});
-
-gulp.task('download-wordpress', () => {
-	remoteSrc(['latest.zip'], {
+async function downloadWordPress() {
+	await remoteSrc(['latest.zip'], {
 		base: 'https://wordpress.org/',
-	}).pipe(gulp.dest('build/'));
-});
+	}).pipe(dest('./build/'));
+}
 
-gulp.task('setup', ['unzip-wordpress', 'copy-config']);
+async function unzipWordPress() {
+	return await zip.src('./build/latest.zip').pipe(dest('./build/'));
+}
 
-gulp.task('unzip-wordpress', () => {
-	gulp
-		.src('build/latest.zip')
-		.pipe(unzip())
-		.pipe(gulp.dest('build/'));
-});
+async function copyConfig() {
+	if (await fs.existsSync('./wp-config.php')) {
+		return src('./wp-config.php')
+			.pipe(inject.after("define('DB_COLLATE', '');", "\ndefine('DISABLE_WP_CRON', true);"))
+			.pipe(dest('./build/wordpress'))
+	}
+}
 
-gulp.task('copy-config', () => {
-	gulp
-		.src('wp-config.php')
-		.pipe(inject.after("define('DB_COLLATE', '');", "\ndefine('DISABLE_WP_CRON', true);"))
-		.pipe(gulp.dest('build/wordpress'))
-		.on('end', () => {
-			gutil.beep();
-			gutil.log(devServerReady);
-			gutil.log(thankYou);
-		});
-});
+async function installationDone() {
+	await gutil.beep();
+	await gutil.log(devServerReady);
+	await gutil.log(thankYou);
+}
 
-gulp.task('disable-cron', () => {
-	fs.readFile('./build/wordpress/wp-config.php', (err, data) => {
-		if (err) {
-			gutil.log(
-				wpFy + ' - ' + warning + ' wp-config.php still missing... WP_CRON was not disabled!',
-			);
-		}
-		if (data) {
-			if (data.indexOf('DISABLE_WP_CRON') >= 0) {
-				gutil.log('WP_CRON is already disabled!');
-			} else {
-				gulp
-					.src('build/wordpress/wp-config.php')
-					.pipe(inject.after("define('DB_COLLATE', '');", "\ndefine('DISABLE_WP_CRON', true);"))
-					.pipe(gulp.dest('build/wordpress'));
-			}
-		}
-	});
-});
-
-gulp.task('fresh-install', () => {
-	del(['src/**']).then(() => {
-		gulp.src('tools/fresh-theme/**').pipe(gulp.dest('src'));
-	});
-});
+exports.setup = series(cleanup, downloadWordPress);
+exports.install = series(unzipWordPress, copyConfig, installationDone);
 
 /* -------------------------------------------------------------------------------------------------
 Development Tasks
 -------------------------------------------------------------------------------------------------- */
-gulp.task(
-	'build-dev',
-	[
-		'copy-theme-dev',
-		'copy-fonts-dev',
-		'style-dev',
-		'header-scripts-dev',
-		'footer-scripts-dev',
-		'plugins-dev',
-		'watch',
-	],
-	() => {
-		connect.server(
-			{
-				base: 'build/wordpress',
-				port: '3020',
-			},
-			() => {
-				browserSync({
-					logPrefix: 'WordPressify',
-					proxy: '127.0.0.1:3020',
-					host: '127.0.0.1',
-					port: '3010',
-					open: 'external'
-				});
-			},
-		);
-	},
-);
+function devServer() {
+	connect.server(
+		{
+			base: './build/wordpress',
+			port: '3020',
+		},
+		() => {
+			browserSync({
+				logPrefix: 'WordPressify',
+				proxy: '127.0.0.1:3020',
+				host: '127.0.0.1',
+				port: '3010',
+				open: 'external',
+			});
+		},
+	);
 
-gulp.task('copy-theme-dev', () => {
+	watch('./src/style/**/*.css', stylesDev);
+	watch('./src/js/**', series(footerScriptsDev, Reload));
+	watch('./src/fonts/**', series(copyFontsDev, Reload));
+	watch('./src/theme/**', series(copyThemeDev, Reload));
+	watch('./src/plugins/**', series(pluginsDev, Reload));
+	watch('./build/wordpress/wp-config.php', { events: 'add' }, series(disableCron));
+}
+
+function Reload(done) {
+	browserSync.reload();
+	done();
+}
+
+function copyThemeDev() {
 	if (!fs.existsSync('./build')) {
 		gutil.log(buildNotFound);
 		process.exit(1);
 	} else {
-		gulp.src('src/theme/**').pipe(gulp.dest('build/wordpress/wp-content/themes/' + themeName));
+		return src('./src/theme/**').pipe(dest('./build/wordpress/wp-content/themes/' + themeName));
 	}
-});
+}
 
-gulp.task('copy-fonts-dev', () => {
-	gulp
-		.src('src/fonts/**')
-		.pipe(gulp.dest('build/wordpress/wp-content/themes/' + themeName + '/fonts'));
-});
+function copyFontsDev() {
+	return src('./src/fonts/**').pipe(
+		dest('./build/wordpress/wp-content/themes/' + themeName + '/fonts'),
+	);
+}
 
-gulp.task('style-dev', () => {
-	return gulp
-		.src('src/style/style.css')
+function stylesDev() {
+	return src('./src/style/style.css')
 		.pipe(plumber({ errorHandler: onError }))
 		.pipe(sourcemaps.init())
-		.pipe(postcss(pluginsDev))
+		.pipe(postcss(pluginsListDev))
 		.pipe(sourcemaps.write('.'))
-		.pipe(gulp.dest('build/wordpress/wp-content/themes/' + themeName))
+		.pipe(dest('./build/wordpress/wp-content/themes/' + themeName))
 		.pipe(browserSync.stream({ match: '**/*.css' }));
-});
+}
 
-gulp.task('header-scripts-dev', () => {
-	return gulp
-		.src(headerJS)
+function headerScriptsDev() {
+	return src(headerJS)
 		.pipe(plumber({ errorHandler: onError }))
 		.pipe(sourcemaps.init())
 		.pipe(concat('header-bundle.js'))
 		.pipe(sourcemaps.write('.'))
-		.pipe(gulp.dest('build/wordpress/wp-content/themes/' + themeName + '/js'));
-});
+		.pipe(dest('./build/wordpress/wp-content/themes/' + themeName + '/js'));
+}
 
-gulp.task('footer-scripts-dev', () => {
-	return gulp
-		.src(footerJS)
+function footerScriptsDev() {
+	return src(footerJS)
 		.pipe(plumber({ errorHandler: onError }))
 		.pipe(sourcemaps.init())
 		.pipe(
@@ -213,137 +175,101 @@ gulp.task('footer-scripts-dev', () => {
 		)
 		.pipe(concat('footer-bundle.js'))
 		.pipe(sourcemaps.write('.'))
-		.pipe(gulp.dest('build/wordpress/wp-content/themes/' + themeName + '/js'));
-});
+		.pipe(dest('./build/wordpress/wp-content/themes/' + themeName + '/js'));
+}
 
-gulp.task('plugins-dev', () => {
-	return gulp.src('src/plugins/**').pipe(gulp.dest('build/wordpress/wp-content/plugins'));
-});
+function pluginsDev() {
+	return src('./src/plugins/**').pipe(gulp.dest('./build/wordpress/wp-content/plugins'));
+}
 
-gulp.task('reload-js', ['footer-scripts-dev', 'header-scripts-dev'], done => {
-	browserSync.reload();
-	done();
-});
-
-gulp.task('reload-fonts', ['copy-fonts-dev'], done => {
-	browserSync.reload();
-	done();
-});
-
-gulp.task('reload-theme', ['copy-theme-dev'], done => {
-	browserSync.reload();
-	done();
-});
-
-gulp.task('reload-plugins', ['plugins-dev'], done => {
-	browserSync.reload();
-	done();
-});
-
-gulp.task('watch', () => {
-	gulp.watch(['src/style/**/*.css'], ['style-dev']);
-	gulp.watch(['src/js/**'], ['reload-js']);
-	gulp.watch(['src/fonts/**'], ['reload-fonts']);
-	gulp.watch(['src/theme/**'], ['reload-theme']);
-	gulp.watch(['src/plugins/**'], ['reload-plugins']);
-	gulp.watch('build/wordpress/wp-config*.php', event => {
-		if (event.type === 'added') {
-			gulp.start('disable-cron');
-		}
-	});
-});
+exports.start = series(
+	copyThemeDev,
+	copyFontsDev,
+	stylesDev,
+	headerScriptsDev,
+	footerScriptsDev,
+	devServer,
+);
 
 /* -------------------------------------------------------------------------------------------------
 Production Tasks
 -------------------------------------------------------------------------------------------------- */
-gulp.task('build-prod', [
-	'copy-theme-prod',
-	'copy-fonts-prod',
-	'style-prod',
-	'header-scripts-prod',
-	'footer-scripts-prod',
-	'plugins-prod',
-	'zip-theme',
-]);
+async function cleanProd() {
+	await del(['./dist/**/*']);
+}
 
-gulp.task('copy-theme-prod', () => {
-	gulp.src(['src/theme/**', '!src/theme/img/**']).pipe(gulp.dest('dist/themes/' + themeName));
-});
+function copyThemeProd() {
+	return src(['./src/theme/**', '!./src/theme/img/**']).pipe(dest('./dist/themes/' + themeName));
+}
 
-gulp.task('copy-fonts-prod', () => {
-	gulp.src('src/fonts/**').pipe(gulp.dest('dist/themes/' + themeName + '/fonts'));
-});
+function copyFontsProd() {
+	return src('./src/fonts/**').pipe(dest('./dist/themes/' + themeName + '/fonts'));
+}
 
-gulp.task('process-images', ['copy-theme-prod'], () => {
-	return gulp
-		.src('src/theme/img/**')
+function stylesProd() {
+	return src('./src/style/style.css')
+		.pipe(plumber({ errorHandler: onError }))
+		.pipe(postcss(pluginsListProd))
+		.pipe(dest('./build/wordpress/wp-content/themes/' + themeName));
+}
+
+function headerScriptsProd() {
+	return src(headerJS)
+		.pipe(plumber({ errorHandler: onError }))
+		.pipe(concat('header-bundle.js'))
+		.pipe(uglify())
+		.pipe(dest('./build/wordpress/wp-content/themes/' + themeName + '/js'));
+}
+
+function footerScriptsProd() {
+	return src(footerJS)
+		.pipe(plumber({ errorHandler: onError }))
+		.pipe(
+			babel({
+				presets: ['@babel/preset-env'],
+			}),
+		)
+		.pipe(concat('footer-bundle.js'))
+		.pipe(uglify())
+		.pipe(dest('./build/wordpress/wp-content/themes/' + themeName + '/js'));
+}
+
+function pluginsProd() {
+	return src(['./src/plugins/**', '!./src/plugins/**/*.md']).pipe(dest('./dist/plugins'));
+}
+
+function processImages() {
+	return src(['./src/theme/img/**', '!./src/theme/img/**/*.ico'])
 		.pipe(plumber({ errorHandler: onError }))
 		.pipe(
 			imagemin([imagemin.svgo({ plugins: [{ removeViewBox: true }] })], {
 				verbose: true,
 			}),
 		)
-		.pipe(gulp.dest('dist/themes/' + themeName + '/img'));
-});
+		.pipe(dest('./dist/themes/' + themeName + '/img'));
+}
 
-gulp.task('style-prod', () => {
-	return gulp
-		.src('src/style/style.css')
-		.pipe(plumber({ errorHandler: onError }))
-		.pipe(postcss(pluginsProd))
-		.pipe(gulp.dest('dist/themes/' + themeName));
-});
+function zipProd() {
+	return src('./dist/themes/' + themeName + '/**/*')
+		.pipe(zip.dest('./dist/' + themeName + '.zip'))
+		.on('end', () => {
+			gutil.beep();
+			gutil.log(pluginsGenerated);
+			gutil.log(filesGenerated);
+			gutil.log(thankYou);
+		});
+}
 
-gulp.task('header-scripts-prod', () => {
-	return gulp
-		.src(headerJS)
-		.pipe(plumber({ errorHandler: onError }))
-		.pipe(concat('header-bundle.js'))
-		.pipe(uglify())
-		.pipe(gulp.dest('dist/themes/' + themeName + '/js'));
-});
-
-gulp.task('footer-scripts-prod', () => {
-	return gulp
-		.src(footerJS)
-		.pipe(plumber({ errorHandler: onError }))
-		.pipe(
-			babel({
-				presets: ['@babel/preset-env'],
-			}),
-		)
-		.pipe(concat('footer-bundle.js'))
-		.pipe(uglify())
-		.pipe(gulp.dest('dist/themes/' + themeName + '/js'));
-});
-
-gulp.task('plugins-prod', () => {
-	return gulp.src('src/plugins/**').pipe(gulp.dest('dist/plugins'));
-});
-
-gulp.task(
-	'zip-theme',
-	[
-		'copy-theme-prod',
-		'copy-fonts-prod',
-		'process-images',
-		'style-prod',
-		'header-scripts-prod',
-		'footer-scripts-prod',
-		'plugins-prod',
-	],
-	() => {
-		gulp
-			.src('dist/themes/' + themeName + '/**')
-			.pipe(zip(themeName + '.zip'))
-			.pipe(gulp.dest('dist'))
-			.on('end', () => {
-				gutil.beep();
-				gutil.log(pluginsGenerated);
-				gutil.log(filesGenerated);
-				gutil.log(thankYou);
-			});
-	},
+exports.prod = series(
+	cleanProd,
+	copyThemeProd,
+	copyFontsProd,
+	stylesProd,
+	headerScriptsProd,
+	footerScriptsProd,
+	pluginsProd,
+	processImages,
+	zipProd,
 );
 
 /* -------------------------------------------------------------------------------------------------
@@ -377,22 +303,49 @@ const wpFy = '\x1b[42m\x1b[1mWordPressify\x1b[0m';
 const wpFyUrl = '\x1b[2m - http://www.wordpressify.co/\x1b[0m';
 const thankYou = 'Thank you for using ' + wpFy + wpFyUrl;
 
-gulp.task('backup', () => {
+async function disableCron() {
+	if (fs.existsSync('./build/wordpress/wp-config.php')) {
+		await fs.readFile('./build/wordpress/wp-config.php', (err, data) => {
+			if (err) {
+				gutil.log(wpFy + ' - ' + warning + ' WP_CRON was not disabled!');
+			}
+			if (data) {
+				if (data.indexOf('DISABLE_WP_CRON') >= 0) {
+					gutil.log('WP_CRON is already disabled!');
+				} else {
+					return src('./build/wordpress/wp-config.php')
+						.pipe(inject.after("define('DB_COLLATE', '');", "\ndefine('DISABLE_WP_CRON', true);"))
+						.pipe(dest('./build/wordpress'));
+				}
+			}
+		});
+	}
+}
+
+async function freshInstall() {
+	await del(['./src/**']).then(() => {
+		return src('./tools/fresh-theme/**').pipe(dest('./src'));
+	});
+}
+
+exports.fresh = series(freshInstall);
+
+function Backup() {
 	if (!fs.existsSync('./build')) {
 		gutil.log(buildNotFound);
 		process.exit(1);
 	} else {
-		gulp
-			.src('build/wordpress/**')
-			.pipe(zip(date + '.zip'))
-			.pipe(gulp.dest('backups'))
+		return src('./build/**/*')
+			.pipe(zip.dest('./backups/' + date + '.zip'))
 			.on('end', () => {
 				gutil.beep();
 				gutil.log(backupsGenerated);
 				gutil.log(thankYou);
 			});
 	}
-});
+}
+
+exports.backup = series(Backup);
 
 /* -------------------------------------------------------------------------------------------------
 End of all Tasks

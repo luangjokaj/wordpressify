@@ -1,16 +1,15 @@
 {
 	"name": "wordpressify",
-	"version": "0.1.5",
+	"version": "0.1.6",
 	"description": "",
 	"main": "gulpfile.js",
 	"scripts": {
-		"cleanup": "gulp cleanup",
-		"install:wordpress": "gulp cleanup && gulp download-wordpress && gulp setup",
-		"dev": "gulp build-dev",
-		"fresh-start": "gulp fresh-install",
-		"prod": "gulp build-prod",
+		"install:wordpress": "gulp setup && gulp install",
+		"dev": "gulp start",
+		"prod": "gulp prod",
+		"fresh-start": "gulp fresh",
 		"backup": "gulp backup",
-		"lint:css": "stylelint src/**/*.css --config tools/stylelintrc.json"
+		"lint:css": "stylelint ./src/**/*.css --config ./tools/stylelintrc.json"
 	},
 	"author": "Luan Gjokaj",
 	"license": "MIT",
@@ -23,7 +22,6 @@
 		"cssnano": "^4.1.7",
 		"del": "^3.0.0",
 		"fs": "0.0.2",
-		"gulp": "^3.9.1",
 		"gulp-babel": "^8.0.0",
 		"gulp-concat": "^2.6.1",
 		"gulp-connect-php": "^1.0.3",
@@ -36,15 +34,17 @@
 		"gulp-uglify": "^3.0.1",
 		"gulp-unzip": "^1.0.0",
 		"gulp-util": "^3.0.8",
+		"gulp-vinyl-zip": "^2.1.2",
 		"gulp-zip": "^4.2.0",
+		"gulp": "^4.0.0",
 		"isotope-layout": "^3.0.6",
 		"jquery": "^3.3.1",
 		"normalize.css": "^8.0.1",
 		"nprogress": "^0.2.0",
 		"postcss-easy-import": "^3.0.0",
-		"postcss-mixins": "^6.2.0",
+		"postcss-mixins": "^6.2.1",
 		"postcss-preset-env": "^6.4.0",
-		"stylelint": "^9.9.0",
-		"stylelint-config-standard": "^18.2.0"
+		"stylelint-config-standard": "^18.2.0",
+		"stylelint": "^9.9.0"
 	}
 }
