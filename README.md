@@ -436,7 +436,7 @@ sudo apt-get install -y nodejs
 That's it. Now just follow the WordPressify installation instructions.
 
 # Changelog
-**v0.1.5**
+**v0.1.6**
 - Upgrade to Gulp 4.
 - Rewrote all tasks into functions.
 
