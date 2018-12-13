@@ -261,12 +261,12 @@ Then you can include them in your **CSS**:
 ```
 @font-face {
 	font-family: 'Helvetica Neue Thin';
-	src: url('fonts/Helvetica-Neue-Thin.eot?#iefix');
-	src: url('fonts/Helvetica-Neue-Thin.eot?#iefix') format('eot'),
-	url('fonts/Helvetica-Neue-Thin.woff2') format('woff2'),
-	url('fonts/Helvetica-Neue-Thin.woff') format('woff'),
-	url('fonts/Helvetica-Neue-Thin.ttf') format('truetype'),
-	url('fonts/Helvetica-Neue-Thin.svg#e3b7d1e7c160') format('svg');
+	src: url('./fonts/Helvetica-Neue-Thin.eot?#iefix');
+	src: url('./fonts/Helvetica-Neue-Thin.eot?#iefix') format('eot'),
+	url('./fonts/Helvetica-Neue-Thin.woff2') format('woff2'),
+	url('./fonts/Helvetica-Neue-Thin.woff') format('woff'),
+	url('./fonts/Helvetica-Neue-Thin.ttf') format('truetype'),
+	url('./fonts/Helvetica-Neue-Thin.svg#e3b7d1e7c160') format('svg');
 }
 ```
 
@@ -297,13 +297,13 @@ Including external JavaScript libraries is as simple as installing the npm scrip
 Header & Footer JavaScript Boundles
 -------------------------------------------------------------------------------------------------- */
 const headerJS = [
-	'node_modules/jquery/dist/jquery.js',
-	'node_modules/nprogress/nprogress.js',
-	'node_modules/aos/dist/aos.js',
-	'node_modules/isotope-layout/dist/isotope.pkgd.js'
+	'./node_modules/jquery/dist/jquery.js',
+	'./node_modules/nprogress/nprogress.js',
+	'./node_modules/aos/dist/aos.js',
+	'./node_modules/isotope-layout/dist/isotope.pkgd.js'
 ];
 const footerJS = [
-	'src/js/**'
+	'./src/js/**'
 ];
 //--------------------------------------------------------------------------------------------------
 ```
