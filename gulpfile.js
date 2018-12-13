@@ -38,6 +38,7 @@ const pluginsListDev = [
 		},
 	}),
 ];
+
 const pluginsListProd = [
 	partialimport,
 	postCSSMixins,
@@ -63,6 +64,7 @@ const headerJS = [
 	'./node_modules/aos/dist/aos.js',
 	'./node_modules/isotope-layout/dist/isotope.pkgd.js',
 ];
+
 const footerJS = ['./src/js/**'];
 
 /* -------------------------------------------------------------------------------------------------
@@ -87,7 +89,7 @@ async function copyConfig() {
 	if (await fs.existsSync('./wp-config.php')) {
 		return src('./wp-config.php')
 			.pipe(inject.after("define('DB_COLLATE', '');", "\ndefine('DISABLE_WP_CRON', true);"))
-			.pipe(dest('./build/wordpress'))
+			.pipe(dest('./build/wordpress'));
 	}
 }
 
@@ -284,28 +286,6 @@ const onError = err => {
 	this.emit('end');
 };
 
-const date = new Date().toLocaleDateString('en-GB').replace(/\//g, '.');
-const errorMsg = '\x1b[41mError\x1b[0m';
-const warning = '\x1b[43mWarning\x1b[0m';
-const devServerReady =
-	'Your development server is ready, start the workflow with the command: $ \x1b[1mnpm run dev\x1b[0m';
-const buildNotFound =
-	errorMsg +
-	' ⚠️　- You need to install WordPress first. Run the command: $ \x1b[1mnpm run install:wordpress\x1b[0m';
-const filesGenerated =
-	'Your ZIP template file was generated in: \x1b[1m' +
-	__dirname +
-	'/dist/' +
-	themeName +
-	'.zip\x1b[0m - ✅';
-const pluginsGenerated =
-	'Plugins are generated in: \x1b[1m' + __dirname + '/dist/plugins/\x1b[0m - ✅';
-const backupsGenerated =
-	'Your backup was generated in: \x1b[1m' + __dirname + '/backups/' + date + '.zip\x1b[0m - ✅';
-const wpFy = '\x1b[42m\x1b[1mWordPressify\x1b[0m';
-const wpFyUrl = '\x1b[2m - http://www.wordpressify.co/\x1b[0m';
-const thankYou = 'Thank you for using ' + wpFy + wpFyUrl;
-
 async function disableCron() {
 	if (fs.existsSync('./build/wordpress/wp-config.php')) {
 		await fs.readFile('./build/wordpress/wp-config.php', (err, data) => {
@@ -349,6 +329,31 @@ function Backup() {
 }
 
 exports.backup = series(Backup);
+
+/* -------------------------------------------------------------------------------------------------
+Messages
+-------------------------------------------------------------------------------------------------- */
+const date = new Date().toLocaleDateString('en-GB').replace(/\//g, '.');
+const errorMsg = '\x1b[41mError\x1b[0m';
+const warning = '\x1b[43mWarning\x1b[0m';
+const devServerReady =
+	'Your development server is ready, start the workflow with the command: $ \x1b[1mnpm run dev\x1b[0m';
+const buildNotFound =
+	errorMsg +
+	' ⚠️　- You need to install WordPress first. Run the command: $ \x1b[1mnpm run install:wordpress\x1b[0m';
+const filesGenerated =
+	'Your ZIP template file was generated in: \x1b[1m' +
+	__dirname +
+	'/dist/' +
+	themeName +
+	'.zip\x1b[0m - ✅';
+const pluginsGenerated =
+	'Plugins are generated in: \x1b[1m' + __dirname + '/dist/plugins/\x1b[0m - ✅';
+const backupsGenerated =
+	'Your backup was generated in: \x1b[1m' + __dirname + '/backups/' + date + '.zip\x1b[0m - ✅';
+const wpFy = '\x1b[42m\x1b[1mWordPressify\x1b[0m';
+const wpFyUrl = '\x1b[2m - http://www.wordpressify.co/\x1b[0m';
+const thankYou = 'Thank you for using ' + wpFy + wpFyUrl;
 
 /* -------------------------------------------------------------------------------------------------
 End of all Tasks
