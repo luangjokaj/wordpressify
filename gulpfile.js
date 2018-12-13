@@ -49,6 +49,9 @@ const pluginsListProd = [
 			'custom-media': true,
 		},
 	}),
+	require('cssnano')({
+		preset: 'default',
+	}),
 ];
 
 /* -------------------------------------------------------------------------------------------------
@@ -210,7 +213,7 @@ function stylesProd() {
 	return src('./src/style/style.css')
 		.pipe(plumber({ errorHandler: onError }))
 		.pipe(postcss(pluginsListProd))
-		.pipe(dest('./build/wordpress/wp-content/themes/' + themeName));
+		.pipe(dest('./dist/themes/' + themeName));
 }
 
 function headerScriptsProd() {
@@ -218,7 +221,7 @@ function headerScriptsProd() {
 		.pipe(plumber({ errorHandler: onError }))
 		.pipe(concat('header-bundle.js'))
 		.pipe(uglify())
-		.pipe(dest('./build/wordpress/wp-content/themes/' + themeName + '/js'));
+		.pipe(dest('./dist/themes/' + themeName + '/js'));
 }
 
 function footerScriptsProd() {
@@ -231,7 +234,7 @@ function footerScriptsProd() {
 		)
 		.pipe(concat('footer-bundle.js'))
 		.pipe(uglify())
-		.pipe(dest('./build/wordpress/wp-content/themes/' + themeName + '/js'));
+		.pipe(dest('./dist/themes/' + themeName + '/js'));
 }
 
 function pluginsProd() {
