@@ -1,0 +1,127 @@
+/*********************************************************************
+**********************************************************************
+Cherry 0.0.1 - Design System
+Variables & Mixins
+**********************************************************************
+*********************************************************************/
+
+@custom-media --screen-xs (min-width: 0);
+@custom-media --screen-sm (min-width: 576px);
+@custom-media --screen-md (min-width: 768px);
+@custom-media --screen-lg (min-width: 992px);
+@custom-media --screen-xl (min-width: 1200px);
+@custom-media --screen-xxl (min-width: 1440px);
+@custom-media --screen-xxxl (min-width: 1920px);
+
+:root {
+
+	/* Colors --------------------------------------------------------- */
+	--color-primary: #f16521;
+	--color-secondary: #d85a1d;
+	--color-tertiary: #c0501a;
+
+	--color-dark: #000;
+	--color-light: #fff;
+
+	--color-gray-light: #E5E5E5;
+	--color-gray-medium: #666666;
+	--color-gray-dark: #4a4a4a;
+
+	--color-success: #28a745;
+	--color-error: #dc3545;
+	--color-warning: #ffc107;
+	--color-info: #17a2b8;
+
+	/* Fonts ---------------------------------------------------------- */
+	--font-text: 'Fira Sans', sans-serif;
+	--font-head: 'Roboto', sans-serif;
+	--font-special: var(--font-text);
+	--font-mono: 'Roboto Mono', monospace;
+
+	/* Font Sizes ----------------------------------------------------- */
+	/* --> Hero ------------------------------------------------------- */
+	--size-mobile-hero1: 44px;
+	--lineheight-mobile-hero1: 1.35;
+	--size-desktop-hero1: 54px;
+	--lineheight-desktop-hero1: 1.15;
+
+	--size-mobile-hero2: 34px;
+	--lineheight-mobile-hero2: 1.5;
+	--size-desktop-hero2: 44px;
+	--lineheight-desktop-hero2: 1.35;
+
+	--size-mobile-hero3: 24px;
+	--lineheight-mobile-hero3: 1.8;
+	--size-desktop-hero3: 34px;
+	--lineheight-desktop-hero3: 1.5;
+
+	/* --> Eyebrow ---------------------------------------------------- */
+	--size-mobile-eyebrow: 14px;
+	--lineheight-mobile-eyebrow: 1.5;
+	--size-desktop-eyebrow: 16px;
+	--lineheight-desktop-eyebrow: 1.5;
+
+	/* --> Heading ---------------------------------------------------- */
+	--size-mobile-h1: 28px;
+	--lineheight-mobile-h1: 1.35;
+	--size-desktop-h1: 44px;
+	--lineheight-desktop-h1: 1.35;
+
+	--size-mobile-h2: 23px;
+	--lineheight-mobile-h2: 1.4;
+	--size-desktop-h2: 34px;
+	--lineheight-desktop-h2: 1.25;
+
+	--size-mobile-h3: 19px;
+	--lineheight-mobile-h3: 1.35;
+	--size-desktop-h3: 21px;
+	--lineheight-desktop-h3: 1.35;
+
+	--size-mobile-h4: 16px;
+	--lineheight-mobile-h4: 1.5;
+	--size-desktop-h4: 18px;
+	--lineheight-desktop-h4: 1.75;
+
+	--size-mobile-h5: 12px;
+	--size-mobile-h5: 1.2;
+	--size-desktop-h5: 16px;
+	--lineheight-desktop-h5: 1.75;
+
+	--size-mobile-h6: 10px;
+	--lineheight-mobile-h6: 1.2;
+	--size-desktop-h6: 12px;
+	--lineheight-desktop-h6: 1.2;
+
+	/* --> Subtitle --------------------------------------------------- */
+	--size-mobile-subtitle: 18px;
+	--lineheight-mobile-subtitle: 1.75;
+	--size-desktop-subtitle: 20px;
+	--lineheight-desktop-subtitle: 1.75;
+	
+	/* --> Lead ------------------------------------------------------- */
+	--size-mobile-lead: 16px;
+	--lineheight-mobile-lead: 1.5;
+	--size-desktop-lead: 18px;
+	--lineheight-desktop-lead: 1.75;
+
+	/* --> Text ------------------------------------------------------- */
+	--size-mobile-text: 16px;
+	--lineheight-mobile-text: 1.5;
+	--size-desktop-text: 16px;
+	--lineheight-desktop-text: 1.5;
+
+	/* --> Small ------------------------------------------------------ */
+	--size-mobile-small: 12px;
+	--lineheight-mobile-small: 1.2;
+	--size-desktop-small: 12px;
+	--lineheight-desktop-small: 1.2;
+
+	/* --> Blockquote ------------------------------------------------- */
+	--size-mobile-blockquote: var(--size-mobile-h3);
+	--size-desktop-blockquote: var(--size-desktop-h3);
+
+	/* --> List ------------------------------------------------------- */
+	--size-mobile-list: var(--size-mobile-text);
+	--size-desktop-list: var(--size-desktop-text);
+
+}
