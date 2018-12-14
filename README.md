@@ -56,6 +56,27 @@ WordPressify requires Node v7.5+. This is the only global dependency. You can do
 Node.js is a JavaScript runtime built on Chrome’s V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. Node.js’ package ecosystem, npm, is the largest ecosystem of open source libraries in the world.
 
 # 2. Set Up Project
+## File Structure
+    
+    ├── build/                   # Build files
+    ├── dist/                    # Distribution files
+    ├── src/                     # Source files
+    │   ├── assets/              # Assets directory
+    │       ├── fonts/           # Fonts directory
+    │       ├── img/             # Image directory
+    │       ├── js/              # JavaScript files
+    │       ├── styles/          # CSS files
+    │   ├── plugins/             # WordPress plugins
+    │   ├── theme/               # PHP Template files
+    ├── tools/                   # Tools and utilities
+    │   ├── stylelintrc.json     # Stylelint configuration file
+    │   ├── IntelliJ.xml         # IntelliJ code style
+    └── .babelrc                 # Babel configuration
+    └── .gitignore               # Git ignored files
+    └── LICENSE                  # License agreements
+    └── README.md                # You are reading this
+    └── gulpfile.js              # Gulp configuration
+    └── package.json             # Node packages
 To install WordPressify you need to clone the repository from GitHub:
 ```
 git clone https://github.com/luangjokaj/wordpressify
@@ -177,7 +198,7 @@ const pluginsListProd = [
 The starting point for CSS is the file:
 
 ```
-src/styles/styles.css
+src/assets/styles/styles.css
 ```
 
 The template definitions are located here too. It is also where all other imports are included in the stylesheets.
@@ -211,7 +232,7 @@ Change the gulp tasks stylesDev to:
 
 ```javascript
 function stylesDev() {
-	return src('./src/style/style.scss')
+	return src('./src/assets/styles/style.scss')
 		.pipe(sourcemaps.init())
 		.pipe(sass().on("error", sass.logError))
 		.pipe(sourcemaps.write('.'))
@@ -223,7 +244,7 @@ function stylesDev() {
 Also the watch task has to be changed in order to watch for .scss filetypes:
 
 ```javascript
-watch('./src/style/**/*.scss', stylesDev);
+watch('./src/assets/styles/**/*.scss', stylesDev);
 ```
 
 Change the gulp tasks styleProd to:
@@ -231,7 +252,7 @@ Change the gulp tasks styleProd to:
 
 ```javascript
 function stylesProd() {
-	return src('./src/style/style.scss')
+	return src('./src/assets/styles/style.scss')
 		.pipe(sass().on("error", sass.logError))
 		.pipe(dest('./build/wordpress/wp-content/themes/' + themeName));
 }
@@ -242,7 +263,7 @@ function stylesProd() {
 It is recommended to store template image assets in your theme directory:
 
 ```
-src/theme/img/
+src/assets/img/
 ```
 
 Ideally other images should be managed through the [Media Library](https://codex.wordpress.org/Media_Library_Screen) of WordPress. Try to only store SVG or minimal assets in your theme directory to keep the template as light as possible.
@@ -253,7 +274,7 @@ In the production build SVGs and other image assets will go through a **minifica
 Fonts are always special. Your fonts should be stored in:
 
 ```
-src/fonts/
+src/assets/fonts/
 ```
 
 Then you can include them in your **CSS**:
@@ -278,7 +299,7 @@ WordPressify supports ES6 JavaScript with [Babel](https://babeljs.io/). Babel ha
 Your JavaScript code should be located in:
 
 ```
-src/js/
+src/assets/js/
 ```
 
 WordPressify will watch for changes under the js directory and bundle the code in a single file, which will be included in the footer of the page as:
@@ -303,7 +324,7 @@ const headerJS = [
 	'./node_modules/isotope-layout/dist/isotope.pkgd.js'
 ];
 const footerJS = [
-	'./src/js/**'
+	'./src/assets/js/**'
 ];
 //--------------------------------------------------------------------------------------------------
 ```
@@ -439,6 +460,7 @@ That's it. Now just follow the WordPressify installation instructions.
 **v0.1.6**
 - Upgrade to Gulp 4.
 - Rewrote all tasks into functions.
+- Updated file structure.
 
 **v0.1.5**
 - Upgrade to Babel 7

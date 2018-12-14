@@ -65,7 +65,7 @@ const headerJS = [
 	'./node_modules/isotope-layout/dist/isotope.pkgd.js',
 ];
 
-const footerJS = ['./src/js/**'];
+const footerJS = ['./src/assets/js/**'];
 
 /* -------------------------------------------------------------------------------------------------
 Installation Tasks
@@ -122,9 +122,10 @@ function devServer() {
 		},
 	);
 
-	watch('./src/style/**/*.css', stylesDev);
-	watch('./src/js/**', series(footerScriptsDev, Reload));
-	watch('./src/fonts/**', series(copyFontsDev, Reload));
+	watch('./src/assets/styles/**/*.css', stylesDev);
+	watch('./src/assets/js/**', series(footerScriptsDev, Reload));
+	watch('./src/assets/img/**', series(copyImagesDev, Reload));
+	watch('./src/assets/fonts/**', series(copyFontsDev, Reload));
 	watch('./src/theme/**', series(copyThemeDev, Reload));
 	watch('./src/plugins/**', series(pluginsDev, Reload));
 	watch('./build/wordpress/wp-config.php', { events: 'add' }, series(disableCron));
@@ -144,14 +145,20 @@ function copyThemeDev() {
 	}
 }
 
+function copyImagesDev() {
+	return src('./src/assets/img/**').pipe(
+		dest('./build/wordpress/wp-content/themes/' + themeName + '/img'),
+	);
+}
+
 function copyFontsDev() {
-	return src('./src/fonts/**').pipe(
+	return src('./src/assets/fonts/**').pipe(
 		dest('./build/wordpress/wp-content/themes/' + themeName + '/fonts'),
 	);
 }
 
 function stylesDev() {
-	return src('./src/style/style.css')
+	return src('./src/assets/styles/style.css')
 		.pipe(plumber({ errorHandler: onError }))
 		.pipe(sourcemaps.init())
 		.pipe(postcss(pluginsListDev))
@@ -184,11 +191,14 @@ function footerScriptsDev() {
 }
 
 function pluginsDev() {
-	return src('./src/plugins/**').pipe(gulp.dest('./build/wordpress/wp-content/plugins'));
+	return src(['./src/plugins/**', '!./src/plugins/README.md']).pipe(
+		gulp.dest('./build/wordpress/wp-content/plugins'),
+	);
 }
 
 exports.start = series(
 	copyThemeDev,
+	copyImagesDev,
 	copyFontsDev,
 	stylesDev,
 	headerScriptsDev,
@@ -204,15 +214,15 @@ async function cleanProd() {
 }
 
 function copyThemeProd() {
-	return src(['./src/theme/**', '!./src/theme/img/**']).pipe(dest('./dist/themes/' + themeName));
+	return src('./src/theme/**').pipe(dest('./dist/themes/' + themeName));
 }
 
 function copyFontsProd() {
-	return src('./src/fonts/**').pipe(dest('./dist/themes/' + themeName + '/fonts'));
+	return src('./src/assets/fonts/**').pipe(dest('./dist/themes/' + themeName + '/fonts'));
 }
 
 function stylesProd() {
-	return src('./src/style/style.css')
+	return src('./src/assets/styles/style.css')
 		.pipe(plumber({ errorHandler: onError }))
 		.pipe(postcss(pluginsListProd))
 		.pipe(dest('./dist/themes/' + themeName));
@@ -244,7 +254,7 @@ function pluginsProd() {
 }
 
 function processImages() {
-	return src(['./src/theme/img/**', '!./src/theme/img/**/*.ico'])
+	return src(['./src/assets/img/**', '!./src/assets/img/**/*.ico'])
 		.pipe(plumber({ errorHandler: onError }))
 		.pipe(
 			imagemin([imagemin.svgo({ plugins: [{ removeViewBox: true }] })], {
