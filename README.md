@@ -386,7 +386,7 @@ Navigate to your theme distribution files on:
 ```
 dist/theme/<themeName>
 ```
-Create a git repository and push all the files on GitHub. This repositroy will have only the theme distribution files.
+Create a git repository and push all the files on GitHub. This repository will have only the theme distribution files.
 
 Once the files are on GitHub you can get back to the WordPress administration on the WP Pusher plugin page and follow the **Next Steps**, click on **Install a theme**.
 
