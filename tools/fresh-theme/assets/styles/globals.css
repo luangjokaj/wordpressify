@@ -1,0 +1,149 @@
+/*********************************************************************
+**********************************************************************
+Cherry 0.0.1 - Design System
+Global Styles
+**********************************************************************
+*********************************************************************/
+
+@import './variables.css';
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,700');
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+body {
+	font-size-adjust: none;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-text-size-adjust: none;
+	font-family: var(--font-text);
+	font-size: var(--size-mobile-text);
+	line-height: var(--lineheight-mobile-text);
+
+	@media (--screen-lg) {
+		font-size: var(--size-desktop-text);
+		line-height: var(--lineheight-desktop-text);
+	}
+}
+
+* {
+	box-sizing: border-box;
+
+	&::selection {
+		background: var(--color-dark);
+		color: var(--color-light);
+	}
+}
+
+a, button {
+	outline: none;
+	text-decoration: none;
+	transition: all 0.3s ease;
+}
+
+figure {
+	margin: 0;
+}
+
+svg {
+	transition: all 0.3s ease;
+
+	& * {
+		transition: all 0.3s ease;
+	}
+}
+
+strong,
+b {
+	font-weight: 700;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--font-head);
+	font-weight: 700;
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	font-size: var(--size-mobile-h1);
+	line-height: var(--lineheight-mobile-h1);
+
+	@media (--screen-lg) {
+		font-size: var(--size-desktop-h1);
+		line-height: var(--lineheight-desktop-h1);
+	}
+}
+
+h2 {
+	font-size: var(--size-mobile-h2);
+	line-height: var(--lineheight-mobile-h2);
+
+	@media (--screen-lg) {
+		font-size: var(--size-desktop-h2);
+		line-height: var(--lineheight-desktop-h2);
+	}
+}
+
+h3 {
+	font-size: var(--size-mobile-h3);
+	line-height: var(--lineheight-mobile-h3);
+
+	@media (--screen-lg) {
+		font-size: var(--size-desktop-h3);
+		line-height: var(--lineheight-desktop-h3);
+	}
+}
+
+h4 {
+	font-size: var(--size-mobile-h4);
+	line-height: var(--lineheight-mobile-h4);
+
+	@media (--screen-lg) {
+		font-size: var(--size-desktop-h4);
+		line-height: var(--lineheight-desktop-h4);
+	}
+}
+
+h5 {
+	font-size: var(--size-mobile-h5);
+	line-height: var(--lineheight-mobile-h5);
+
+	@media (--screen-lg) {
+		font-size: var(--size-desktop-h5);
+		line-height: var(--lineheight-desktop-h5);
+	}
+}
+
+h6 {
+	font-size: var(--size-mobile-h6);
+	line-height: var(--lineheight-mobile-h6);
+
+	@media (--screen-lg) {
+		font-size: var(--size-desktop-h6);
+		line-height: var(--lineheight-desktop-h6);
+	}
+}
+
+p {
+	color: var(--medium-gray);
+	font-size: var(--size-mobile-text);
+	line-height: var(--lineheight-mobile-text);
+
+	@media (--screen-lg) {
+		font-size: var(--size-desktop-text);
+		line-height: var(--lineheight-desktop-text);
+	}
+}
+
+footer {
+	text-align: center;
+}

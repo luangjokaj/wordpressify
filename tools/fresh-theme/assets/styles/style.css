@@ -9,4 +9,5 @@ Tags: responsive, clean, minimal, modern, documentation
 */
 
 @import '../../../node_modules/normalize.css/normalize.css';
-@import 'variables';
+@import './variables';
+@import 'globals';
