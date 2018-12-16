@@ -517,7 +517,7 @@ That's it. Now just follow the WordPressify installation instructions.
 
 **v.0.0.3**
 - Simplified build logic.
-- Install WordPress only once with `npm run install:wordpress`
+- Install WordPress only once with `npm run install:wordpress`.
 - Cleaner distribution task.
 
 **v0.0.2**
