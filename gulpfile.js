@@ -208,6 +208,7 @@ exports.start = series(
 	stylesDev,
 	headerScriptsDev,
 	footerScriptsDev,
+	pluginsDev,
 	devServer,
 );
 
