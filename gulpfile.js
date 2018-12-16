@@ -197,7 +197,7 @@ function footerScriptsDev() {
 
 function pluginsDev() {
 	return src(['./src/plugins/**', '!./src/plugins/README.md']).pipe(
-		gulp.dest('./build/wordpress/wp-content/plugins'),
+		dest('./build/wordpress/wp-content/plugins'),
 	);
 }
 
