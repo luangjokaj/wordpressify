@@ -23,6 +23,24 @@
 			top: 50%;
 			transform: translateY(-50%);
 
+			&:after {
+				content: attr(data-counter);
+				display: block;
+				position: absolute;
+				right: 45px;
+				top: 50%;
+				transform: translateY(-50%);
+				width: 100px;
+				text-align: right;
+				font-family: var(--font-code);
+				font-size: var(--small-font-size);
+
+				@media (--screen-mobile) {
+					display: none;
+					content: none;
+				}
+			}
+
 			& img {
 				position: absolute;
 				left: 0;
@@ -34,6 +52,7 @@
 				height: 32px;
 				transition: all .5s ease;
 				transform: translateY(0);
+				z-index: 5;
 
 				&.bright {
 					transform: translateY(300%);
@@ -47,7 +66,7 @@
 		}
 
 		& ul.menu {
-			@apply --noList;
+			@mixin noList;
 			padding: 5px 0;
 			margin: auto;
 			display: flex;
@@ -65,7 +84,7 @@
 					text-transform: uppercase;
 
 					&:hover {
-						color: color(var(--primary-color) lightness(40%));
+						color: color-mod(var(--primary-color) lightness(40%));
 					}
 				}
 			}

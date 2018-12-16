@@ -1,9 +1,9 @@
 # Distribution Files
-app/**
-dist/**
-build/**
-tmp/**
-backups/**
+app
+dist
+build
+tmp
+backups
 wp-config.php
 
 # IDE & Editors
@@ -25,7 +25,6 @@ Desktop.ini
 *.iml
 
 node_modules
-package-lock.json
 
 # Debug log from npm
 npm-debug.log

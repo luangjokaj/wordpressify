@@ -1,5 +1,5 @@
 .container {
-	@apply --maxWidth;
+	@mixin maxWidth;
 	clear: both;
 	overflow: hidden;
 	display: flex;
@@ -160,7 +160,7 @@
 	}
 
 	& .fixed {
-		max-width: 900px;
+		max-width: 915px;
 		margin: auto;
 	}
 
@@ -203,7 +203,7 @@
 	}
 
 	& .button {
-		@apply --button;
+		@mixin button;
 
 		&.mt-20 {
 			margin-top: 20px;
@@ -254,7 +254,7 @@
 
 		& a {
 			&:hover {
-				color: color(var(--primary-color) lightness(40%));
+				color: color-mod(var(--primary-color) lightness(40%));
 			}
 		}
 	}

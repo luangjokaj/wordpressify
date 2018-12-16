@@ -16,7 +16,7 @@
 	}
 
 	& ul {
-		@apply --noList;
+		@mixin noList;
 
 		li {
 			display: inline-block;

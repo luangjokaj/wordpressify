@@ -11,7 +11,7 @@
 	height: 100vh;
 
 	& .inner-content {
-		@apply --maxWidth;
+		@mixin maxWidth;
 		position: relative;
 		height: 100%;
 
@@ -26,6 +26,7 @@
 			transition-delay: 1s;
 			width: 245px;
 			height: 24px;
+			z-index: 10;
 
 			& img {
 				display: flex;
@@ -121,10 +122,10 @@
 	z-index: 100;
 	transform: scale(1.1);
 	transition: all .3s ease;
-	box-shadow: 0 5px 35px 0 color(var(--black) alpha(30%));
+	box-shadow: 0 5px 35px 0 color-mod(var(--black) alpha(30%));
 
 	&:hover {
-		box-shadow: 0 0 15px 0 color(var(--black) alpha(20%));
+		box-shadow: 0 0 15px 0 color-mod(var(--black) alpha(20%));
 		transform: scale(1);
 	}
 

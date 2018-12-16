@@ -1,0 +1,13 @@
+/*
+Theme Name: WordPressify
+Theme URI: https://www.wordpressify.co
+Author: Luan Gjokaj
+Author URI: https://www.riangle.com
+Description: WordPressify official theme.
+Version: 1.0
+Tags: responsive, clean, minimal, modern, documentation
+*/
+
+@import '../../../node_modules/normalize.css/normalize.css';
+@import './variables';
+@import 'globals';

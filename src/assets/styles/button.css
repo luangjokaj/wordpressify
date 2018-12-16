@@ -1,0 +1,70 @@
+@define-mixin button {
+	cursor: pointer;
+	font-size: var(--default-font-size);
+	color: var(--light-blue);
+	display: inline-block;
+	box-sizing: border-box;
+	padding: 15px 60px;
+	background: transparent;
+	text-align: center;
+	margin: 0;
+	transition: all .3s ease;
+	border: solid 1px var(--light-gray);
+	border-radius: 30px;
+
+	@media (--screen-mobile) {
+		padding: 15px 30px;
+	}
+
+	&:hover {
+		background: var(--dark-blue);
+		color: var(--white);
+		border-color: var(--dark-blue);
+	}
+
+	&:disabled {
+		color: var(--dark-gray);
+		background: var(--disabled-gray);
+
+		&:hover {
+			color: inherit;
+			background-color: #ebe9eb;
+			cursor: not-allowed;
+		}
+	}
+
+	&.icon {
+		position: relative;
+		padding-left: 85px;
+
+		@media (--screen-mobile) {
+			padding-left: 55px;
+		}
+
+		&.github {
+			background: url('./img/github-bright.svg') no-repeat 60px 15px / 16px;
+
+			&:hover {
+				background: url('./img/github.svg') no-repeat 60px 15px / 16px var(--dark-blue);
+				border-color: var(--dark-blue);
+			}
+
+			@media (--screen-mobile) {
+				background: url('./img/github-bright.svg') no-repeat 30px 15px / 16px;
+
+				&:hover {
+					background: url('./img/github.svg') no-repeat 30px 15px / 16px var(--dark-blue);
+					border-color: var(--dark-blue);
+				}	
+			}
+		}
+	}
+}
+
+input[type='submit'] {
+	@mixin button;
+}
+
+.button {
+	@mixin button;
+}
