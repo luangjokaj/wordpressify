@@ -254,7 +254,7 @@ Change the gulp tasks styleProd to:
 function stylesProd() {
 	return src('./src/assets/styles/style.scss')
 		.pipe(sass().on("error", sass.logError))
-		.pipe(dest('./build/wordpress/wp-content/themes/' + themeName));
+		.pipe(dest('./dist/themes/' + themeName));
 }
 ```
 
