@@ -175,6 +175,7 @@ const pluginsListDev = [
 		},
 	}),
 ];
+
 const pluginsListProd = [
 	partialimport,
 	postCSSMixins,
@@ -186,8 +187,10 @@ const pluginsListProd = [
 			'custom-media': true,
 		},
 	}),
-	cssnano({
-		reduceIdents: false,
+	require('cssnano')({
+		preset: ['default', {
+			discardComments: false,
+		}]
 	}),
 ];
 //--------------------------------------------------------------------------------------------------

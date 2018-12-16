@@ -51,7 +51,9 @@ const pluginsListProd = [
 		},
 	}),
 	require('cssnano')({
-		preset: 'default',
+		preset: ['default', {
+			discardComments: false,
+		}]
 	}),
 ];
 
