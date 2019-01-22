@@ -15,7 +15,7 @@
 	"license": "MIT",
 	"devDependencies": {
 		"@babel/core": "^7.2.2",
-		"@babel/preset-env": "^7.2.3",
+		"@babel/preset-env": "^7.3.1",
 		"aos": "^2.3.4",
 		"browser-sync": "^2.26.3",
 		"browserslist": "^4.4.1",
@@ -43,6 +43,6 @@
 		"postcss-mixins": "^6.2.1",
 		"postcss-preset-env": "^6.5.0",
 		"stylelint-config-standard": "^18.2.0",
-		"stylelint": "^9.10.0"
+		"stylelint": "^9.10.1"
 	}
 }
