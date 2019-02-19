@@ -30,7 +30,7 @@
 		"gulp-plumber": "^1.2.1",
 		"gulp-postcss": "^8.0.0",
 		"gulp-remote-src": "^0.4.4",
-		"gulp-sourcemaps": "^2.6.4",
+		"gulp-sourcemaps": "^2.6.5",
 		"gulp-uglify": "^3.0.1",
 		"gulp-util": "^3.0.8",
 		"gulp-vinyl-zip": "^2.1.2",
