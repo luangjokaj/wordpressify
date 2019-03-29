@@ -5,7 +5,7 @@
 	"main": "gulpfile.js",
 	"scripts": {
 		"install:wordpress": "gulp setup && gulp install",
-		"dev": "gulp start",
+		"dev": "gulp dev",
 		"prod": "gulp prod",
 		"fresh-start": "gulp fresh",
 		"backup": "gulp backup",
