@@ -201,7 +201,7 @@ function pluginsDev() {
 	);
 }
 
-exports.prod = series(
+exports.dev = series(
 	copyThemeDev,
 	copyImagesDev,
 	copyFontsDev,
