@@ -220,7 +220,9 @@ async function cleanProd() {
 }
 
 function copyThemeProd() {
-	return src('./src/theme/**').pipe(dest('./dist/themes/' + themeName));
+	return src(['./src/theme/**', '!./src/theme/**/node_modules/**']).pipe(
+		dest('./dist/themes/' + themeName),
+	);
 }
 
 function copyFontsProd() {
