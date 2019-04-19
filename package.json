@@ -18,7 +18,7 @@
 		"@babel/preset-env": "^7.4.3",
 		"aos": "^2.3.4",
 		"browser-sync": "^2.26.3",
-		"browserslist": "^4.5.4",
+		"browserslist": "^4.5.5",
 		"cssnano": "^4.1.10",
 		"del": "^4.1.0",
 		"fs": "0.0.2",
@@ -43,6 +43,6 @@
 		"postcss-mixins": "^6.2.1",
 		"postcss-preset-env": "^6.6.0",
 		"stylelint-config-standard": "^18.3.0",
-		"stylelint": "^10.0.0"
+		"stylelint": "^10.0.1"
 	}
 }
