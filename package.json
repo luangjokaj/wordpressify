@@ -34,7 +34,7 @@
 		"gulp-uglify": "^3.0.2",
 		"gulp-util": "^3.0.8",
 		"gulp-vinyl-zip": "^2.1.2",
-		"gulp": "^4.0.0",
+		"gulp": "^4.0.1",
 		"isotope-layout": "^3.0.6",
 		"jquery": "^3.4.0",
 		"normalize.css": "^8.0.1",
