@@ -17,7 +17,7 @@
 		"@babel/core": "^7.4.3",
 		"@babel/preset-env": "^7.4.3",
 		"aos": "^2.3.4",
-		"browser-sync": "^2.26.3",
+		"browser-sync": "^2.26.4",
 		"browserslist": "^4.5.5",
 		"cssnano": "^4.1.10",
 		"del": "^4.1.0",
