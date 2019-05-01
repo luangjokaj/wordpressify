@@ -37,7 +37,7 @@
 		"gulp-vinyl-zip": "^2.1.2",
 		"gulp": "^4.0.1",
 		"isotope-layout": "^3.0.6",
-		"jquery": "^3.4.0",
+		"jquery": "^3.4.1",
 		"normalize.css": "^8.0.1",
 		"nprogress": "^0.2.0",
 		"postcss-easy-import": "^3.0.0",
