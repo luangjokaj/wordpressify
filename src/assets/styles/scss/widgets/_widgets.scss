@@ -1,0 +1,19 @@
+.widget{
+  @include make-col-ready();
+}
+
+// arbitrary widget style
+
+.widget-title{
+  font-size: 1.5rem;
+}
+
+@import "archives";
+@import "calendar";
+@import "categories";
+@import "pages";
+@import "meta";
+@import "recent-comments";
+@import "recent-posts";
+@import "rss";
+@import "nav-menu";

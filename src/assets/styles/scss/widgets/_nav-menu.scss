@@ -1,0 +1,80 @@
+.widget_nav_menu{
+  .sub-menu{
+    padding-left: $spacer;
+    list-style: none;
+  }
+  .nav-link:hover{
+    background-color: $light;
+  }
+
+  .page_item{
+    width: auto;
+  }
+}
+
+aside.widget-area{
+  .widget_nav_menu{
+    .nav{
+      flex-direction: column;
+    }
+  }
+}
+
+// primary menu styles for screens larger than the md breakpoint (or change to whatever you want)
+@include media-breakpoint-up('md'){
+
+  #header-widgets{
+    .widget_nav_menu{
+
+      .sub-menu{
+        display: none;
+        padding-left: 0;
+      }
+    }
+
+    .widget_nav_menu{
+      ul{
+        ul {
+          background-color: $white;
+    			box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    			float: left;
+    			position: absolute;
+    			top: 100%;
+    			left: -999em;
+    			z-index: 99999;
+
+    			ul {
+    				left: -999em;
+    				top: 0;
+    			}
+
+    			li {
+    				&:hover > ul,
+    				&.focus > ul {
+    					left: 100%;
+    				}
+    			}
+
+    			a {
+    				width: 200px;
+    			}
+
+    			:hover > a,
+    			.focus > a {
+    			}
+
+    			a:hover,
+    			a.focus {
+    			}
+    		}
+
+    		li:hover > ul,
+    		li.focus > ul {
+    			left: auto;
+          display: flex;
+          flex-direction: column;
+    		}
+      }
+    }
+  }
+}

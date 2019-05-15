@@ -1,0 +1,41 @@
+
+h1{
+  font-size: $h1-font-size;
+}
+h2{
+  font-size: $h2-font-size;
+}
+h3{
+  font-size: $h3-font-size;
+}
+h4{
+  font-size: $h4-font-size;
+}
+h5{
+  font-size: $h5-font-size;
+}
+h6{
+  font-size: $h6-font-size;
+}
+
+//site title in the header, front-page and home page use <h1>, all others a <p>
+
+h1,p{
+  &.site-title{
+    font-size: $h1-font-size;
+    font-weight: $headings-font-weight;
+    margin-bottom: $headings-margin-bottom;
+    line-height: $headings-line-height;
+    a{
+      color: inherit;
+    }
+  }
+}
+
+
+.entry-title{
+  text-transform: uppercase;
+  word-break: break-all;
+} // archives, tags, categories etc. use <h2>, single pages/posts use <h1>
+
+.widget-title{} // <h2>

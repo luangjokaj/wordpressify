@@ -1,0 +1,116 @@
+.site-branding{
+  @include make-col-ready();
+}
+
+.main-navigation{
+  @include make-col-ready();
+}
+
+// mobile menu styles
+#primary-menu{
+  height: auto;
+  max-height: 0;
+  overflow: hidden;
+
+  .main-navigation.toggled & { // when the menu button is clicked
+    max-height: 10000px; //arbitrary max-height
+    transition: max-height 2s ease-out;
+  }
+}
+
+// pages menu styles (if no menu is created)
+
+#primary-menu{
+  > ul {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+#primary-menu{
+  li:hover{
+    background-color: $light;
+  }
+}
+
+// primary menu styles for screens larger than the md breakpoint (or change to whatever you want)
+@include media-breakpoint-up('md'){
+  .menu-toggle{
+    display: none;
+  }
+
+  .main-navigation{
+    padding: 0;
+  }
+
+  #primary-menu{
+    max-height: none;
+
+    > ul{
+      flex-direction: row;
+    }
+
+    li{
+      display: inline-flex;
+      width: auto;
+    }
+
+  }
+
+  .main-navigation{
+    .children{
+      display: none;
+      padding-left: 0;
+    }
+  }
+
+  .main-navigation{
+    ul{
+      ul {
+        background-color: $white;
+  			box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  			float: left;
+  			position: absolute;
+  			top: 100%;
+  			left: -999em;
+  			z-index: 99999;
+
+  			ul {
+  				left: -999em;
+  				top: 0;
+  			}
+
+  			li {
+  				&:hover > ul,
+  				&.focus > ul {
+  					left: 100%;
+  				}
+  			}
+
+  			a {
+  				width: 200px;
+  			}
+
+  			:hover > a,
+  			.focus > a {
+  			}
+
+  			a:hover,
+  			a.focus {
+  			}
+  		}
+
+  		li:hover > ul,
+  		li.focus > ul {
+  			left: auto;
+        display: flex;
+        flex-direction: column;
+  		}
+    }
+  }
+}

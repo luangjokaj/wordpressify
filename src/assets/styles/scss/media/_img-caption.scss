@@ -1,0 +1,20 @@
+.wp-caption {
+	margin-bottom: $spacer;
+	max-width: 100%;
+
+	// img[class*="wp-image-"] {
+	// 	@include center-block();
+	// }
+
+	.wp-caption-text {
+    border: 1px solid $dark;
+    border-top-width: 0;
+		margin: 0 0 $spacer;
+    padding-top: $spacer / 2;
+    padding-bottom: $spacer / 2;
+	}
+}
+
+.wp-caption-text {
+	text-align: center;
+}

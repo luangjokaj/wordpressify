@@ -1,0 +1,5 @@
+body.no-sidebar{
+  .content-area{
+    @include make-col(1,1);
+  }
+}

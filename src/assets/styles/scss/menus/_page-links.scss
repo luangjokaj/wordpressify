@@ -1,0 +1,9 @@
+.page-links{
+  clear: both;
+  display: flex;
+  padding-top: $spacer;
+
+  .post-page-numbers{
+    padding: 0 .5rem;
+  }
+}

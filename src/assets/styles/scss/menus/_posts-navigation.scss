@@ -1,0 +1,13 @@
+.posts-navigation, .post-navigation{
+  padding-top: $spacer / 2;
+  padding-bottom: $spacer / 2;
+}
+
+.posts-navigation, .post-navigation{
+  .nav-links{
+    border-top: 1px solid $dark;
+    border-bottom: 1px solid $dark;
+    display: flex;
+    justify-content: space-between;
+  }
+}

@@ -1,0 +1,23 @@
+img {
+	height: auto; /* Make sure images are scaled correctly. */
+	max-width: 100%; /* Adhere to container width. */
+}
+
+figure {
+	margin: $spacer 0; /* Extra wide images within figure tags don't overflow the content area. */
+  max-width: 100%; /* Adhere to container width. */
+}
+
+.wp-post-image{
+	margin-bottom: $spacer;
+}
+
+.alignleft{
+	margin-right: $spacer;
+	float: left;
+}
+
+.alignright{
+	margin-left: $spacer;
+	float: right;
+}

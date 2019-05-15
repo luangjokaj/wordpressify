@@ -1,0 +1,24 @@
+.sticky{
+  border: 3px solid $primary;
+}
+
+.sticky{
+  .entry-header, .entry-footer{
+    padding-left: $spacer;
+    padding-right: $spacer;
+  }
+
+  .entry-content{
+    padding: $spacer;
+  }
+}
+
+.sticky{
+  .entry-header{
+    background-color: $primary;
+    color: $white;
+    a{
+      color: inherit;
+    }
+  }
+}

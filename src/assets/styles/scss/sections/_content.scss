@@ -1,0 +1,14 @@
+.entry-header{
+  margin-bottom: $spacer;
+}
+
+.entry-meta{
+  time{
+    display: inline-block;
+    padding: 0 5px;
+  }
+}
+
+.entry-footer{
+  clear: both;
+}

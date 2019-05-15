@@ -1,0 +1,27 @@
+.comment-list{
+  list-style: none;
+}
+
+.comment{
+  padding-bottom: $spacer;
+  border-bottom: 1px solid $dark;
+}
+
+.reply{
+  text-align: right;
+}
+
+.comment{
+
+  .children{
+    padding-left: $spacer;
+  }
+}
+
+.comment{
+  .children{
+    .comment{
+      border-top: 1px solid $dark;
+    }
+  }
+}

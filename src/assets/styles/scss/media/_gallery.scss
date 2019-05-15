@@ -1,0 +1,33 @@
+.gallery{
+  @include make-row();
+}
+
+.gallery-item{
+  @include make-col-ready();
+}
+
+.gallery-icon{
+  a{
+    display: block;
+  }
+
+  img{
+    width: 100%;
+  }
+}
+
+.gallery-caption{
+  background-color: $light;
+  color: $dark;
+  padding: $spacer / 2;
+}
+
+@for $i from 1 through 12 {
+
+  .gallery-columns-#{$i}{
+    .gallery-item{
+      @include make-col(1, $i);
+    }
+  }
+
+}

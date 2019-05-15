@@ -1,0 +1,23 @@
+.widget_recent_entries{
+
+  // posts list
+  ul{
+    list-style: none;
+    padding-left: 0;
+  }
+
+  // post list item
+  li{
+    padding: $spacer/2;
+    position: relative;
+    
+    &:hover{
+      background-color: $light;
+    }
+
+    a{
+      @extend .stretched-link;
+    }
+  }
+
+}

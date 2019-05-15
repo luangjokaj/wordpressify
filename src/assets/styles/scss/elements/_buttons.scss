@@ -1,0 +1,21 @@
+// use BS mixin to create your own button styles.
+// button-variant($background, $border, $hover-background: darken($background, 7.5%), $hover-border: darken($border, 10%), $active-background: darken($background, 10%), $active-border: darken($border, 12.5%))
+// button-outline-variant($color, $color-hover: color-yiq($color), $active-background: $color, $active-border: $color)
+// button-size($padding-y, $padding-x, $font-size, $line-height, $border-radius)
+
+// mobile menu toggle
+.menu-toggle, .submit{
+  @include button-variant(theme-color('light'), theme-color('dark'), theme-color('dark'));
+  @include button-size($btn-padding-y, $btn-padding-x, inherit, inherit, 1rem);
+}
+
+.search-submit, .more-link{
+  @include button-variant(theme-color('primary'), theme-color('primary'), theme-color('primary'));
+  @include button-size($btn-padding-y, $btn-padding-x, inherit, inherit, 0);
+}
+
+a.more-link{
+  &:visited{
+    color: $white;
+  }
+}

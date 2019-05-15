@@ -1,0 +1,18 @@
+.widget_recent_comments{
+
+  // comment list
+  #recentcomments{
+    list-style: none;
+    padding-left: 0;
+    word-break: break-all;
+  }
+
+  // comment list item
+  .recentcomments{
+    padding: $spacer/2;
+    &:hover{
+      background-color: $light;
+    }
+  }
+
+}

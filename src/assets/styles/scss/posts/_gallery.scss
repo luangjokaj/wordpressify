@@ -1,0 +1,11 @@
+@include media-breakpoint-down('lg'){
+  @for $i from 5 through 12 {
+
+    .gallery-columns-#{$i}{
+      .gallery-item{
+        @include make-col(1, 3);
+      }
+    }
+
+  }
+}

@@ -1,0 +1,32 @@
+a{
+	color: $link-color;
+  text-decoration: $link-decoration;
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: $link-hover-color;
+	}
+
+	&:focus {
+		outline: thin dotted;
+	}
+
+	&:hover,
+	&:active {
+		outline: 0;
+	}
+
+	&:visited {
+		text-decoration: underline;
+	}
+
+}
+
+.cat-links{
+	display: block;
+}
+
+.tags-links{
+	display: block;
+}

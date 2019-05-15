@@ -1,0 +1,13 @@
+// default layout
+// main content to the left, sidebar to the right
+// both break to full width at screen size: sm
+
+@include media-breakpoint-up('sm'){
+  .content-area{
+    @include make-col(8, $grid-columns);
+  }
+
+  aside.widget-area{
+    @include make-col(4, $grid-columns);
+  }
+}

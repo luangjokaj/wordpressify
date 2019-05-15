@@ -1,0 +1,29 @@
+.widget_rss{
+  ul{
+    list-style: none;
+    padding-left: 0;
+
+    li{
+      margin-bottom: $spacer;
+    }
+
+    // rss item title
+    .rsswidget{
+      font-size: $h6-font-size;
+      font-weight: $headings-font-weight;
+      display: block;
+    }
+
+    .rss-date{
+      display: inline-block;
+      margin-bottom: $spacer;
+    }
+
+    cite{
+      display: block;
+      text-align: right;
+      border-bottom: 1px solid $light;
+      padding-bottom: $spacer/2;
+    }
+  }
+}

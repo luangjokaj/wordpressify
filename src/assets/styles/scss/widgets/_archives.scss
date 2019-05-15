@@ -1,0 +1,19 @@
+.widget_archive{
+  ul{
+    list-style: none;
+    padding-left: 0;
+
+    li{
+      padding: $spacer / 2 $spacer;
+      position: relative;
+
+      &:hover{
+        background-color: $light;
+      }
+
+      a{
+        @extend .stretched-link;
+      }
+    }
+  }
+}

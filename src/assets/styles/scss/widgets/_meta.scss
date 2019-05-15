@@ -1,0 +1,16 @@
+.widget_meta{
+  ul{
+    list-style: none;
+    padding-left: 0;
+    li{
+      position: relative;
+      padding: $spacer/2;
+      &:hover{
+        background-color: $light;
+      }
+      a{
+        @extend .stretched-link;
+      }
+    }
+  }
+}

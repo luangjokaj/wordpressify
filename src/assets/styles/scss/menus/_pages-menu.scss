@@ -1,0 +1,18 @@
+// This is the default menu if no menu has been created. It usually lists all pages.
+// More info: https://developer.wordpress.org/reference/functions/wp_page_menu/
+
+.page_item{
+
+  display: block;
+  width: 100%;
+
+  a{
+    @extend .nav-link;
+  }
+
+  &.current_page_item{
+    a{
+      text-decoration: underline;
+    }
+  }
+}
