@@ -14,6 +14,7 @@ const plumber = require('gulp-plumber');
 const postcss = require('gulp-postcss');
 const postCSSMixins = require('postcss-mixins');
 const postcssPresetEnv = require('postcss-preset-env');
+const sass = require('gulp-sass');
 const remoteSrc = require('gulp-remote-src');
 const sourcemaps = require('gulp-sourcemaps');
 const uglify = require('gulp-uglify');
@@ -128,7 +129,7 @@ function devServer() {
 		},
 	);
 
-	watch('./src/assets/styles/**/*.css', stylesDev);
+	watch('./src/assets/styles/**/*.scss', stylesDev);
 	watch('./src/assets/js/**', series(footerScriptsDev, Reload));
 	watch('./src/assets/img/**', series(copyImagesDev, Reload));
 	watch('./src/assets/fonts/**', series(copyFontsDev, Reload));
@@ -164,10 +165,9 @@ function copyFontsDev() {
 }
 
 function stylesDev() {
-	return src('./src/assets/styles/style.css')
-		.pipe(plumber({ errorHandler: onError }))
+	return src('./src/assets/styles/style.scss')
 		.pipe(sourcemaps.init())
-		.pipe(postcss(pluginsListDev))
+		.pipe(sass().on("error", sass.logError))
 		.pipe(sourcemaps.write('.'))
 		.pipe(dest('./build/wordpress/wp-content/themes/' + themeName))
 		.pipe(browserSync.stream({ match: '**/*.css' }));
@@ -231,9 +231,8 @@ function copyFontsProd() {
 }
 
 function stylesProd() {
-	return src('./src/assets/styles/style.css')
-		.pipe(plumber({ errorHandler: onError }))
-		.pipe(postcss(pluginsListProd))
+	return src('./src/assets/styles/style.scss')
+		.pipe(sass().on("error", sass.logError))
 		.pipe(dest('./dist/themes/' + themeName));
 }
 
