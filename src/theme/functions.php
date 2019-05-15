@@ -186,15 +186,17 @@ if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
 
-/**
- * Load Advanced Custom Fields plugin
- */
-require get_template_directory() . '/inc/advanced-custom-fields.php';
+if( class_exists('acf') ) {
+	/**
+	 * Load Advanced Custom Fields plugin
+	 */
+	require get_template_directory() . '/inc/advanced-custom-fields.php';
 
-/**
- * Load Advanced Custom Fields filters
- */
-require get_template_directory() . '/inc/acf-filters.php';
+	/**
+	 * Load Advanced Custom Fields filters
+	 */
+	require get_template_directory() . '/inc/acf-filters.php';
+}
 
 // add the BS nav class to all menus
 
