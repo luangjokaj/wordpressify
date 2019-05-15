@@ -35,7 +35,7 @@
 	<wp:base_site_url>https://demo.asp-theme.dev</wp:base_site_url>
 	<wp:base_blog_url>https://demo.asp-theme.dev</wp:base_blog_url>
 
-		<wp:author><wp:author_id>1</wp:author_id><wp:author_login><![CDATA[cresenciocantu_ahch46u7]]></wp:author_login><wp:author_email><![CDATA[cresenciocantu@gmail.com]]></wp:author_email><wp:author_display_name><![CDATA[Cresencio]]></wp:author_display_name><wp:author_first_name><![CDATA[]]></wp:author_first_name><wp:author_last_name><![CDATA[]]></wp:author_last_name></wp:author>
+		<wp:author><wp:author_id>1</wp:author_id><wp:author_login><![CDATA[@cresencio]]></wp:author_login><wp:author_email><![CDATA[cresenciocantu@gmail.com]]></wp:author_email><wp:author_display_name><![CDATA[Cresencio]]></wp:author_display_name><wp:author_first_name><![CDATA[]]></wp:author_first_name><wp:author_last_name><![CDATA[]]></wp:author_last_name></wp:author>
 	<wp:author><wp:author_id>2</wp:author_id><wp:author_login><![CDATA[manovotny]]></wp:author_login><wp:author_email><![CDATA[manovotny@gmail.com]]></wp:author_email><wp:author_display_name><![CDATA[Michael Novotny]]></wp:author_display_name><wp:author_first_name><![CDATA[Michael]]></wp:author_first_name><wp:author_last_name><![CDATA[Novotny]]></wp:author_last_name></wp:author>
 	<wp:author><wp:author_id>3</wp:author_id><wp:author_login><![CDATA[dewde]]></wp:author_login><wp:author_email><![CDATA[yo@chrisam.es]]></wp:author_email><wp:author_display_name><![CDATA[Chris Ames]]></wp:author_display_name><wp:author_first_name><![CDATA[Chris]]></wp:author_first_name><wp:author_last_name><![CDATA[Ames]]></wp:author_last_name></wp:author>
 	<wp:author><wp:author_id>4</wp:author_id><wp:author_login><![CDATA[tommcfarlin]]></wp:author_login><wp:author_email><![CDATA[tom@tommcfarlin.com]]></wp:author_email><wp:author_display_name><![CDATA[Tom McFarlin]]></wp:author_display_name><wp:author_first_name><![CDATA[Tom]]></wp:author_first_name><wp:author_last_name><![CDATA[McFarlin]]></wp:author_last_name></wp:author>
@@ -1106,7 +1106,7 @@
 		<title>Menu Items</title>
 		<link>https://demo.asp-theme.dev/?post_type=acf-field-group&#038;p=37</link>
 		<pubDate>Wed, 17 Apr 2019 23:40:31 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/?p=37</guid>
 		<description></description>
 		<content:encoded><![CDATA[a:9:{s:8:"location";a:1:{i:0;a:1:{i:0;a:3:{s:5:"param";s:13:"nav_menu_item";s:8:"operator";s:2:"==";s:5:"value";s:3:"all";}}}s:8:"position";s:6:"normal";s:5:"style";s:7:"default";s:15:"label_placement";s:3:"top";s:21:"instruction_placement";s:5:"label";s:14:"hide_on_screen";s:0:"";s:11:"description";s:0:"";s:8:"modified";i:1553443891;s:5:"local";s:4:"json";}]]></content:encoded>
@@ -1128,7 +1128,7 @@
 		<title>Icon</title>
 		<link>https://demo.asp-theme.dev/?post_type=acf-field&#038;p=38</link>
 		<pubDate>Wed, 17 Apr 2019 23:40:31 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/?post_type=acf-field&#038;p=38</guid>
 		<description></description>
 		<content:encoded><![CDATA[a:10:{s:4:"type";s:4:"text";s:12:"instructions";s:75:"Search Font Awesome for a full list of icons. https://fontawesome.com/icons";s:8:"required";i:0;s:17:"conditional_logic";i:0;s:7:"wrapper";a:3:{s:5:"width";s:0:"";s:5:"class";s:0:"";s:2:"id";s:0:"";}s:13:"default_value";s:0:"";s:11:"placeholder";s:0:"";s:7:"prepend";s:0:"";s:6:"append";s:0:"";s:9:"maxlength";s:0:"";}]]></content:encoded>
@@ -1150,7 +1150,7 @@
 		<title>Hide text?</title>
 		<link>https://demo.asp-theme.dev/?post_type=acf-field&#038;p=39</link>
 		<pubDate>Wed, 17 Apr 2019 23:40:31 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/?post_type=acf-field&#038;p=39</guid>
 		<description></description>
 		<content:encoded><![CDATA[a:10:{s:4:"type";s:10:"true_false";s:12:"instructions";s:0:"";s:8:"required";i:0;s:17:"conditional_logic";a:1:{i:0;a:1:{i:0;a:2:{s:5:"field";s:19:"field_5c97a8bdd4546";s:8:"operator";s:7:"!=empty";}}}s:7:"wrapper";a:3:{s:5:"width";s:0:"";s:5:"class";s:0:"";s:2:"id";s:0:"";}s:7:"message";s:0:"";s:13:"default_value";i:0;s:2:"ui";i:1;s:10:"ui_on_text";s:0:"";s:11:"ui_off_text";s:0:"";}]]></content:encoded>
@@ -1172,7 +1172,7 @@
 		<title>Menus</title>
 		<link>https://demo.asp-theme.dev/?post_type=acf-field-group&#038;p=40</link>
 		<pubDate>Wed, 17 Apr 2019 23:40:31 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/?p=40</guid>
 		<description></description>
 		<content:encoded><![CDATA[a:9:{s:8:"location";a:1:{i:0;a:1:{i:0;a:3:{s:5:"param";s:8:"nav_menu";s:8:"operator";s:2:"==";s:5:"value";s:3:"all";}}}s:8:"position";s:6:"normal";s:5:"style";s:7:"default";s:15:"label_placement";s:3:"top";s:21:"instruction_placement";s:5:"label";s:14:"hide_on_screen";s:0:"";s:11:"description";s:0:"";s:8:"modified";i:1553213702;s:5:"local";s:4:"json";}]]></content:encoded>
@@ -1194,7 +1194,7 @@
 		<title>Custom CSS Class Name</title>
 		<link>https://demo.asp-theme.dev/?post_type=acf-field&#038;p=41</link>
 		<pubDate>Wed, 17 Apr 2019 23:40:31 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/?post_type=acf-field&#038;p=41</guid>
 		<description></description>
 		<content:encoded><![CDATA[a:10:{s:4:"type";s:4:"text";s:12:"instructions";s:0:"";s:8:"required";i:0;s:17:"conditional_logic";i:0;s:7:"wrapper";a:3:{s:5:"width";s:0:"";s:5:"class";s:0:"";s:2:"id";s:0:"";}s:13:"default_value";s:0:"";s:11:"placeholder";s:0:"";s:7:"prepend";s:0:"";s:6:"append";s:0:"";s:9:"maxlength";s:0:"";}]]></content:encoded>
@@ -1216,7 +1216,7 @@
 		<title>Widgets</title>
 		<link>https://demo.asp-theme.dev/?post_type=acf-field-group&#038;p=42</link>
 		<pubDate>Wed, 17 Apr 2019 23:40:31 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/?p=42</guid>
 		<description></description>
 		<content:encoded><![CDATA[a:9:{s:8:"location";a:1:{i:0;a:1:{i:0;a:3:{s:5:"param";s:6:"widget";s:8:"operator";s:2:"==";s:5:"value";s:3:"all";}}}s:8:"position";s:6:"normal";s:5:"style";s:7:"default";s:15:"label_placement";s:3:"top";s:21:"instruction_placement";s:5:"label";s:14:"hide_on_screen";s:0:"";s:11:"description";s:0:"";s:8:"modified";i:1553211676;s:5:"local";s:4:"json";}]]></content:encoded>
@@ -1238,7 +1238,7 @@
 		<title>Custom CSS Class Name</title>
 		<link>https://demo.asp-theme.dev/?post_type=acf-field&#038;p=43</link>
 		<pubDate>Wed, 17 Apr 2019 23:40:31 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/?post_type=acf-field&#038;p=43</guid>
 		<description></description>
 		<content:encoded><![CDATA[a:10:{s:4:"type";s:4:"text";s:12:"instructions";s:0:"";s:8:"required";i:0;s:17:"conditional_logic";i:0;s:7:"wrapper";a:3:{s:5:"width";s:0:"";s:5:"class";s:0:"";s:2:"id";s:0:"";}s:13:"default_value";s:0:"";s:11:"placeholder";s:0:"";s:7:"prepend";s:0:"";s:6:"append";s:0:"";s:9:"maxlength";s:0:"";}]]></content:encoded>
@@ -2407,7 +2407,7 @@
 		<title>adventure-blue-sky-boat-2115578</title>
 		<link>https://demo.asp-theme.dev/cover__trashed/adventure-blue-sky-boat-2115578/</link>
 		<pubDate>Wed, 17 Apr 2019 18:06:24 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/wp-content/uploads/2019/04/adventure-blue-sky-boat-2115578.jpg</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -2438,7 +2438,7 @@
 		<title>animals-baby-monkey-gibraltar-1741665</title>
 		<link>https://demo.asp-theme.dev/__trashed/animals-baby-monkey-gibraltar-1741665/</link>
 		<pubDate>Wed, 17 Apr 2019 18:36:59 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/wp-content/uploads/2019/04/animals-baby-monkey-gibraltar-1741665.jpg</guid>
 		<description></description>
 		<content:encoded><![CDATA[What's the difference between a monkey and a chimp?]]></content:encoded>
@@ -2473,7 +2473,7 @@
 		<title>cloudy-folies-green-2007420</title>
 		<link>https://demo.asp-theme.dev/__trashed/cloudy-folies-green-2007420/</link>
 		<pubDate>Wed, 17 Apr 2019 18:38:23 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/wp-content/uploads/2019/04/cloudy-folies-green-2007420.jpg</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -2504,7 +2504,7 @@
 		<title>classic-block-features</title>
 		<link>https://demo.asp-theme.dev/classic-editor/classic-block-features/</link>
 		<pubDate>Sun, 21 Apr 2019 16:20:23 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/wp-content/uploads/2019/04/classic-block-features.png</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -2535,7 +2535,7 @@
 		<title>class-block-options</title>
 		<link>https://demo.asp-theme.dev/classic-editor/class-block-options/</link>
 		<pubDate>Sun, 21 Apr 2019 16:26:02 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/wp-content/uploads/2019/04/class-block-options.png</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -2570,7 +2570,7 @@
 		<title>paragraph-block-with-cursor</title>
 		<link>https://demo.asp-theme.dev/paragraph/paragraph-block-with-cursor/</link>
 		<pubDate>Tue, 23 Apr 2019 23:03:35 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/wp-content/uploads/2019/04/paragraph-block-with-cursor.png</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -2601,7 +2601,7 @@
 		<title>paragraph-block-options</title>
 		<link>https://demo.asp-theme.dev/paragraph/paragraph-block-options/</link>
 		<pubDate>Tue, 23 Apr 2019 23:22:16 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/wp-content/uploads/2019/04/paragraph-block-options.png</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -2632,7 +2632,7 @@
 		<title>paragraph-block-options</title>
 		<link>https://demo.asp-theme.dev/paragraph/paragraph-block-options-2/</link>
 		<pubDate>Tue, 23 Apr 2019 23:25:46 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/wp-content/uploads/2019/04/paragraph-block-options-1.png</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -2663,7 +2663,7 @@
 		<title>image-block-transitions</title>
 		<link>https://demo.asp-theme.dev/image/image-block-transitions/</link>
 		<pubDate>Wed, 24 Apr 2019 00:02:45 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/wp-content/uploads/2019/04/image-block-transitions.png</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -3079,7 +3079,7 @@
 		<title>GitHub</title>
 		<link>https://demo.asp-theme.dev/github/</link>
 		<pubDate>Wed, 17 Apr 2019 17:33:17 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/?p=10</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -3142,7 +3142,7 @@
 		<title>asp-theme</title>
 		<link>https://demo.asp-theme.dev/asp-theme/</link>
 		<pubDate>Sun, 21 Apr 2019 16:36:54 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/asp-theme/</guid>
 		<description></description>
 		<content:encoded><![CDATA[a.more-link:visited {
@@ -3179,7 +3179,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/66/</link>
 		<pubDate>Tue, 23 Apr 2019 23:05:07 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/?p=66</guid>
 		<description></description>
 		<content:encoded><![CDATA[The Gutenberg editor became part of WordPress core as of version 5.0. The ASP WordPress theme works well with most blocks.]]></content:encoded>
@@ -3242,7 +3242,7 @@
 		<title>image-block-settings</title>
 		<link>https://demo.asp-theme.dev/image/image-block-settings/</link>
 		<pubDate>Wed, 24 Apr 2019 00:06:02 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/wp-content/uploads/2019/04/image-block-settings.png</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -3273,7 +3273,7 @@
 		<title>close-up-cultivation-environment-6427</title>
 		<link>https://demo.asp-theme.dev/media-text/close-up-cultivation-environment-6427/</link>
 		<pubDate>Thu, 25 Apr 2019 23:22:44 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/wp-content/uploads/2019/04/close-up-cultivation-environment-6427.jpg</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -3304,7 +3304,7 @@
 		<title>berry-close-up-color-298696</title>
 		<link>https://demo.asp-theme.dev/media-text/berry-close-up-color-298696/</link>
 		<pubDate>Thu, 25 Apr 2019 23:26:48 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/wp-content/uploads/2019/04/berry-close-up-color-298696.jpg</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -3335,7 +3335,7 @@
 		<title>Screen-Shot-2019-04-25-at-6.31.43-PM</title>
 		<link>https://demo.asp-theme.dev/media-text/screen-shot-2019-04-25-at-6-31-43-pm/</link>
 		<pubDate>Thu, 25 Apr 2019 23:33:16 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/wp-content/uploads/2019/04/Screen-Shot-2019-04-25-at-6.31.43-PM.png</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -3374,7 +3374,7 @@
 		<title>Screen-Shot-2019-04-25-at-7.46.15-PM</title>
 		<link>https://demo.asp-theme.dev/more/screen-shot-2019-04-25-at-7-46-15-pm/</link>
 		<pubDate>Fri, 26 Apr 2019 00:47:08 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/wp-content/uploads/2019/04/Screen-Shot-2019-04-25-at-7.46.15-PM.png</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -3405,7 +3405,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/977/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:16 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/977/</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -3440,7 +3440,7 @@
 		<title>Home</title>
 		<link>https://demo.asp-theme.dev/home/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:20 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/home/</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -3495,7 +3495,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1262/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:20 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Posts in this category test image and text alignment.]]></content:encoded>
@@ -3550,7 +3550,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1263/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:20 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Posts in this category test the aside post format.]]></content:encoded>
@@ -3605,7 +3605,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1264/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:20 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Posts in this category test the audio post format.]]></content:encoded>
@@ -3660,7 +3660,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1265/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:20 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Posts in this category test image captions.]]></content:encoded>
@@ -3715,7 +3715,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1266/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:20 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Posts in this category test the chat post format.]]></content:encoded>
@@ -3770,7 +3770,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1267/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:20 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Posts in this category contain Codex references.]]></content:encoded>
@@ -3825,7 +3825,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1268/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:20 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Posts in this category test comments.]]></content:encoded>
@@ -3880,7 +3880,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1269/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:20 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Posts in this category test post content.]]></content:encoded>
@@ -3935,7 +3935,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1270/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:20 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Posts in this category test odd corner cases, using uncovered by rare user workflows.]]></content:encoded>
@@ -3990,7 +3990,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1271/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:21 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Posts in this category test various embed codes.]]></content:encoded>
@@ -4045,7 +4045,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1272/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:21 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Posts in this category test post excerpts.]]></content:encoded>
@@ -4100,7 +4100,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1273/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:21 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Posts in this category test featured images.]]></content:encoded>
@@ -4155,7 +4155,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1274/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:21 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Posts in this category test various formatting scenarios.]]></content:encoded>
@@ -4210,7 +4210,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1275/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:21 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Posts in this category test the gallery post format.]]></content:encoded>
@@ -4265,7 +4265,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1276/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:21 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Posts in this category test images in various ways.]]></content:encoded>
@@ -4320,7 +4320,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1277/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:21 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Posts in this category test Jetpack features.]]></content:encoded>
@@ -4375,7 +4375,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1278/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:21 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Posts in this category test the link post format.]]></content:encoded>
@@ -4430,7 +4430,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1279/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:21 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Posts in this category test various list scenarios.]]></content:encoded>
@@ -4485,7 +4485,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1280/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:21 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Posts in this category test markup tags and styles.]]></content:encoded>
@@ -4540,7 +4540,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1281/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:21 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Posts in this category test the more tag feature.]]></content:encoded>
@@ -4595,7 +4595,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1282/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:21 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/</guid>
 		<description></description>
 		<content:encoded><![CDATA[This is a parent category. It will contain child categories]]></content:encoded>
@@ -4650,7 +4650,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1283/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:21 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/</guid>
 		<description></description>
 		<content:encoded><![CDATA[This is a description for the Child Category 01.]]></content:encoded>
@@ -4705,7 +4705,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1284/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:21 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/</guid>
 		<description></description>
 		<content:encoded><![CDATA[This is a description for the Child Category 02.]]></content:encoded>
@@ -4760,7 +4760,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1285/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:21 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/</guid>
 		<description></description>
 		<content:encoded><![CDATA[This is a description for the Child Category 03.]]></content:encoded>
@@ -4815,7 +4815,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1286/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:21 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/</guid>
 		<description></description>
 		<content:encoded><![CDATA[This is a description for the Grandchild Category.]]></content:encoded>
@@ -4870,7 +4870,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1287/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:21 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/</guid>
 		<description></description>
 		<content:encoded><![CDATA[This is a description for the Child Category 04.]]></content:encoded>
@@ -4925,7 +4925,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1288/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:21 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/</guid>
 		<description></description>
 		<content:encoded><![CDATA[This is a description for the Child Category 05.]]></content:encoded>
@@ -4980,7 +4980,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1289/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:21 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Posts in this category test the post password feature.]]></content:encoded>
@@ -5035,7 +5035,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1290/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:21 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Posts in this category test pingbacks.]]></content:encoded>
@@ -5090,7 +5090,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1291/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:21 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Posts in this category test post formats.]]></content:encoded>
@@ -5145,7 +5145,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1292/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:21 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Posts in this category test the quote post format.]]></content:encoded>
@@ -5200,7 +5200,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1293/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:21 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Posts in this category test various shortcodes.]]></content:encoded>
@@ -5255,7 +5255,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1294/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:21 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Posts in this category test the standard post format.]]></content:encoded>
@@ -5310,7 +5310,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1295/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:21 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Posts in this category test the status post format.]]></content:encoded>
@@ -5365,7 +5365,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1296/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:21 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Posts in this category test post title scenarios.]]></content:encoded>
@@ -5420,7 +5420,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1297/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:21 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Posts in this category test trackbacks.]]></content:encoded>
@@ -5475,7 +5475,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1298/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:21 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Posts in this category test various Twitter features.]]></content:encoded>
@@ -5530,7 +5530,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1299/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:21 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/</guid>
 		<description></description>
 		<content:encoded><![CDATA[ ]]></content:encoded>
@@ -5585,7 +5585,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1300/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:21 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Posts in this category test unpublished posts.]]></content:encoded>
@@ -5640,7 +5640,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1301/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:21 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Posts in this category test the video post format.]]></content:encoded>
@@ -5695,7 +5695,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1302/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:22 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Posts in this category test VideoPress features.]]></content:encoded>
@@ -5750,7 +5750,7 @@
 		<title>Pages</title>
 		<link>https://demo.asp-theme.dev/pages/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:22 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/pages/</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -5813,7 +5813,7 @@
 		<title>Categories</title>
 		<link>https://demo.asp-theme.dev/categories/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:22 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/categories/</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -5876,7 +5876,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1305/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:22 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Posts in this category test image and text alignment.]]></content:encoded>
@@ -5939,7 +5939,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1306/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:22 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Posts in this category test comments.]]></content:encoded>
@@ -6002,7 +6002,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1307/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:22 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Posts in this category test odd corner cases, using uncovered by rare user workflows.]]></content:encoded>
@@ -6065,7 +6065,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1308/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:22 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Posts in this category test various embed codes.]]></content:encoded>
@@ -6128,7 +6128,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1309/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:22 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Posts in this category test post excerpts.]]></content:encoded>
@@ -6191,7 +6191,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1310/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:22 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Posts in this category test featured images.]]></content:encoded>
@@ -6254,7 +6254,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1311/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:22 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Posts in this category test various formatting scenarios.]]></content:encoded>
@@ -6317,7 +6317,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1312/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:22 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Posts in this category test images in various ways.]]></content:encoded>
@@ -6380,7 +6380,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1313/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:22 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Posts in this category test Jetpack features.]]></content:encoded>
@@ -6443,7 +6443,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1314/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:22 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Posts in this category test various list scenarios.]]></content:encoded>
@@ -6506,7 +6506,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1315/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:22 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Posts in this category test markup tags and styles.]]></content:encoded>
@@ -6569,7 +6569,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1316/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:22 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Posts in this category test the more tag feature.]]></content:encoded>
@@ -6632,7 +6632,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1317/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:22 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Posts in this category test the post password feature.]]></content:encoded>
@@ -6695,7 +6695,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1318/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:22 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Posts in this category test post formats.]]></content:encoded>
@@ -6758,7 +6758,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1319/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:22 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Posts in this category test various shortcodes.]]></content:encoded>
@@ -6821,7 +6821,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1320/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:22 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Posts in this category test post title scenarios.]]></content:encoded>
@@ -6884,7 +6884,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1321/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:22 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Posts in this category test unpublished posts.]]></content:encoded>
@@ -6947,7 +6947,7 @@
 		<title>Depth</title>
 		<link>https://demo.asp-theme.dev/depth/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:22 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/depth/</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -7010,7 +7010,7 @@
 		<title>Level 01</title>
 		<link>https://demo.asp-theme.dev/level-01/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:22 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/level-01/</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -7073,7 +7073,7 @@
 		<title>Level 02</title>
 		<link>https://demo.asp-theme.dev/level-02/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:22 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/level-02/</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -7136,7 +7136,7 @@
 		<title>Level 03</title>
 		<link>https://demo.asp-theme.dev/level-03/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:22 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/level-03/</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -7199,7 +7199,7 @@
 		<title>Level 04</title>
 		<link>https://demo.asp-theme.dev/level-04/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:22 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/level-04/</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -7262,7 +7262,7 @@
 		<title>Level 05</title>
 		<link>https://demo.asp-theme.dev/level-05/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:22 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/level-05/</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -7325,7 +7325,7 @@
 		<title>Level 06</title>
 		<link>https://demo.asp-theme.dev/level-06/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:22 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/level-06/</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -7388,7 +7388,7 @@
 		<title>Level 07</title>
 		<link>https://demo.asp-theme.dev/level-07/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:22 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/level-07/</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -7451,7 +7451,7 @@
 		<title>Level 08</title>
 		<link>https://demo.asp-theme.dev/level-08/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:22 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/level-08/</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -7514,7 +7514,7 @@
 		<title>Level 09</title>
 		<link>https://demo.asp-theme.dev/level-09/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:23 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/level-09/</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -7577,7 +7577,7 @@
 		<title>Level 10</title>
 		<link>https://demo.asp-theme.dev/level-10/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:23 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/level-10/</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -7640,7 +7640,7 @@
 		<title>Advanced</title>
 		<link>https://demo.asp-theme.dev/advanced/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:23 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/advanced/</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -7703,7 +7703,7 @@
 		<title>Menu Description</title>
 		<link>https://demo.asp-theme.dev/menu-description/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:23 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/menu-description/</guid>
 		<description></description>
 		<content:encoded><![CDATA[Custom Menu Description]]></content:encoded>
@@ -7766,7 +7766,7 @@
 		<title>Menu Title Attribute</title>
 		<link>https://demo.asp-theme.dev/menu-title-attribute/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:23 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/menu-title-attribute/</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -7829,7 +7829,7 @@
 		<title>Menu CSS Class</title>
 		<link>https://demo.asp-theme.dev/menu-css-class/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:23 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/menu-css-class/</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -7892,7 +7892,7 @@
 		<title>New Window / Tab</title>
 		<link>https://demo.asp-theme.dev/new-window-tab/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:23 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/new-window-tab/</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
@@ -7955,7 +7955,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1338/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:23 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/</guid>
 		<description></description>
 		<content:encoded><![CDATA[ ]]></content:encoded>
@@ -8010,7 +8010,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1339/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:23 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/</guid>
 		<description></description>
 		<content:encoded><![CDATA[ ]]></content:encoded>
@@ -8073,7 +8073,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1341/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:27 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/1341/</guid>
 		<description></description>
 		<content:encoded><![CDATA[ ]]></content:encoded>
@@ -8128,7 +8128,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1342/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:27 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/1342/</guid>
 		<description></description>
 		<content:encoded><![CDATA[ ]]></content:encoded>
@@ -8183,7 +8183,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1343/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:27 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/1343/</guid>
 		<description></description>
 		<content:encoded><![CDATA[ ]]></content:encoded>
@@ -8238,7 +8238,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1344/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:27 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/1344/</guid>
 		<description></description>
 		<content:encoded><![CDATA[ ]]></content:encoded>
@@ -8293,7 +8293,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1345/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:27 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/1345/</guid>
 		<description></description>
 		<content:encoded><![CDATA[ ]]></content:encoded>
@@ -8348,7 +8348,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1346/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:27 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/1346/</guid>
 		<description></description>
 		<content:encoded><![CDATA[ ]]></content:encoded>
@@ -8403,7 +8403,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1347/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:27 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/1347/</guid>
 		<description></description>
 		<content:encoded><![CDATA[ ]]></content:encoded>
@@ -8458,7 +8458,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1348/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:27 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/1348/</guid>
 		<description></description>
 		<content:encoded><![CDATA[ ]]></content:encoded>
@@ -8513,7 +8513,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1349/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:27 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/1349/</guid>
 		<description></description>
 		<content:encoded><![CDATA[ ]]></content:encoded>
@@ -8568,7 +8568,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1350/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:27 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/1350/</guid>
 		<description></description>
 		<content:encoded><![CDATA[ ]]></content:encoded>
@@ -8623,7 +8623,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1351/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:27 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/1351/</guid>
 		<description></description>
 		<content:encoded><![CDATA[ ]]></content:encoded>
@@ -8678,7 +8678,7 @@
 		<title></title>
 		<link>https://demo.asp-theme.dev/1352/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:27 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/1352/</guid>
 		<description></description>
 		<content:encoded><![CDATA[ ]]></content:encoded>
@@ -9246,7 +9246,7 @@ It contains child pages.]]></content:encoded>
 		<title></title>
 		<link>https://demo.asp-theme.dev/1353/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:28 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/1353/</guid>
 		<description></description>
 		<content:encoded><![CDATA[ ]]></content:encoded>
@@ -9301,7 +9301,7 @@ It contains child pages.]]></content:encoded>
 		<title></title>
 		<link>https://demo.asp-theme.dev/1354/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:28 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/1354/</guid>
 		<description></description>
 		<content:encoded><![CDATA[ ]]></content:encoded>
@@ -9356,7 +9356,7 @@ It contains child pages.]]></content:encoded>
 		<title></title>
 		<link>https://demo.asp-theme.dev/1355/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:28 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/1355/</guid>
 		<description></description>
 		<content:encoded><![CDATA[ ]]></content:encoded>
@@ -9411,7 +9411,7 @@ It contains child pages.]]></content:encoded>
 		<title></title>
 		<link>https://demo.asp-theme.dev/1356/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:28 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/1356/</guid>
 		<description></description>
 		<content:encoded><![CDATA[ ]]></content:encoded>
@@ -9474,7 +9474,7 @@ It contains child pages.]]></content:encoded>
 		<title></title>
 		<link>https://demo.asp-theme.dev/1358/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:28 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/1358/</guid>
 		<description></description>
 		<content:encoded><![CDATA[ ]]></content:encoded>
@@ -9537,7 +9537,7 @@ It contains child pages.]]></content:encoded>
 		<title></title>
 		<link>https://demo.asp-theme.dev/1359/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:28 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/1359/</guid>
 		<description></description>
 		<content:encoded><![CDATA[ ]]></content:encoded>
@@ -9600,7 +9600,7 @@ It contains child pages.]]></content:encoded>
 		<title></title>
 		<link>https://demo.asp-theme.dev/1360/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:28 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/1360/</guid>
 		<description></description>
 		<content:encoded><![CDATA[ ]]></content:encoded>
@@ -9663,7 +9663,7 @@ It contains child pages.]]></content:encoded>
 		<title></title>
 		<link>https://demo.asp-theme.dev/1361/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:28 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/1361/</guid>
 		<description></description>
 		<content:encoded><![CDATA[ ]]></content:encoded>
@@ -9726,7 +9726,7 @@ It contains child pages.]]></content:encoded>
 		<title></title>
 		<link>https://demo.asp-theme.dev/1362/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:28 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/1362/</guid>
 		<description></description>
 		<content:encoded><![CDATA[ ]]></content:encoded>
@@ -9789,7 +9789,7 @@ It contains child pages.]]></content:encoded>
 		<title></title>
 		<link>https://demo.asp-theme.dev/1363/</link>
 		<pubDate>Mon, 29 Apr 2019 23:57:28 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/1363/</guid>
 		<description></description>
 		<content:encoded><![CDATA[ ]]></content:encoded>
@@ -9852,7 +9852,7 @@ It contains child pages.]]></content:encoded>
 		<title></title>
 		<link>https://demo.asp-theme.dev/1365/</link>
 		<pubDate>Tue, 30 Apr 2019 00:03:34 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/?p=1365</guid>
 		<description></description>
 		<content:encoded><![CDATA[ ]]></content:encoded>
@@ -9915,7 +9915,7 @@ It contains child pages.]]></content:encoded>
 		<title></title>
 		<link>https://demo.asp-theme.dev/1368/</link>
 		<pubDate>Wed, 08 May 2019 17:58:48 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/?p=1368</guid>
 		<description></description>
 		<content:encoded><![CDATA[The Gutenberg editor became part of WordPress core as of version 5.0. The ASP WordPress theme works well with most blocks. See the posts below for examples.]]></content:encoded>
@@ -9978,7 +9978,7 @@ It contains child pages.]]></content:encoded>
 		<title>Sample Page</title>
 		<link>https://demo.asp-theme.dev/sample-page__trashed/</link>
 		<pubDate>Tue, 16 Apr 2019 23:13:49 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/?page_id=2</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:paragraph -->
@@ -10034,7 +10034,7 @@ It contains child pages.]]></content:encoded>
 		<title>Privacy Policy</title>
 		<link>https://demo.asp-theme.dev/privacy-policy/</link>
 		<pubDate>Tue, 16 Apr 2019 23:13:49 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/?page_id=3</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:heading --><h2>Who we are</h2><!-- /wp:heading --><!-- wp:paragraph --><p>Our website address is: https://demo.asp-theme.dev.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>What personal data we collect and why we collect it</h2><!-- /wp:heading --><!-- wp:heading {"level":3} --><h3>Comments</h3><!-- /wp:heading --><!-- wp:paragraph --><p>When visitors leave comments on the site we collect the data shown in the comments form, and also the visitor&#8217;s IP address and browser user agent string to help spam detection.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>An anonymized string created from your email address (also called a hash) may be provided to the Gravatar service to see if you are using it. The Gravatar service privacy policy is available here: https://automattic.com/privacy/. After approval of your comment, your profile picture is visible to the public in the context of your comment.</p><!-- /wp:paragraph --><!-- wp:heading {"level":3} --><h3>Media</h3><!-- /wp:heading --><!-- wp:paragraph --><p>If you upload images to the website, you should avoid uploading images with embedded location data (EXIF GPS) included. Visitors to the website can download and extract any location data from images on the website.</p><!-- /wp:paragraph --><!-- wp:heading {"level":3} --><h3>Contact forms</h3><!-- /wp:heading --><!-- wp:heading {"level":3} --><h3>Cookies</h3><!-- /wp:heading --><!-- wp:paragraph --><p>If you leave a comment on our site you may opt-in to saving your name, email address and website in cookies. These are for your convenience so that you do not have to fill in your details again when you leave another comment. These cookies will last for one year.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>If you have an account and you log in to this site, we will set a temporary cookie to determine if your browser accepts cookies. This cookie contains no personal data and is discarded when you close your browser.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>When you log in, we will also set up several cookies to save your login information and your screen display choices. Login cookies last for two days, and screen options cookies last for a year. If you select &quot;Remember Me&quot;, your login will persist for two weeks. If you log out of your account, the login cookies will be removed.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>If you edit or publish an article, an additional cookie will be saved in your browser. This cookie includes no personal data and simply indicates the post ID of the article you just edited. It expires after 1 day.</p><!-- /wp:paragraph --><!-- wp:heading {"level":3} --><h3>Embedded content from other websites</h3><!-- /wp:heading --><!-- wp:paragraph --><p>Articles on this site may include embedded content (e.g. videos, images, articles, etc.). Embedded content from other websites behaves in the exact same way as if the visitor has visited the other website.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>These websites may collect data about you, use cookies, embed additional third-party tracking, and monitor your interaction with that embedded content, including tracking your interaction with the embedded content if you have an account and are logged in to that website.</p><!-- /wp:paragraph --><!-- wp:heading {"level":3} --><h3>Analytics</h3><!-- /wp:heading --><!-- wp:heading --><h2>Who we share your data with</h2><!-- /wp:heading --><!-- wp:heading --><h2>How long we retain your data</h2><!-- /wp:heading --><!-- wp:paragraph --><p>If you leave a comment, the comment and its metadata are retained indefinitely. This is so we can recognize and approve any follow-up comments automatically instead of holding them in a moderation queue.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>For users that register on our website (if any), we also store the personal information they provide in their user profile. All users can see, edit, or delete their personal information at any time (except they cannot change their username). Website administrators can also see and edit that information.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>What rights you have over your data</h2><!-- /wp:heading --><!-- wp:paragraph --><p>If you have an account on this site, or have left comments, you can request to receive an exported file of the personal data we hold about you, including any data you have provided to us. You can also request that we erase any personal data we hold about you. This does not include any data we are obliged to keep for administrative, legal, or security purposes.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>Where we send your data</h2><!-- /wp:heading --><!-- wp:paragraph --><p>Visitor comments may be checked through an automated spam detection service.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>Your contact information</h2><!-- /wp:heading --><!-- wp:heading --><h2>Additional information</h2><!-- /wp:heading --><!-- wp:heading {"level":3} --><h3>How we protect your data</h3><!-- /wp:heading --><!-- wp:heading {"level":3} --><h3>What data breach procedures we have in place</h3><!-- /wp:heading --><!-- wp:heading {"level":3} --><h3>What third parties we receive data from</h3><!-- /wp:heading --><!-- wp:heading {"level":3} --><h3>What automated decision making and/or profiling we do with user data</h3><!-- /wp:heading --><!-- wp:heading {"level":3} --><h3>Industry regulatory disclosure requirements</h3><!-- /wp:heading -->]]></content:encoded>
@@ -10064,7 +10064,7 @@ It contains child pages.]]></content:encoded>
 		<title>Blocks</title>
 		<link>https://demo.asp-theme.dev/blocks__trashed/</link>
 		<pubDate>Wed, 17 Apr 2019 17:59:57 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/?page_id=12</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:paragraph -->
@@ -10108,7 +10108,7 @@ It contains child pages.]]></content:encoded>
 		<title>Cover</title>
 		<link>https://demo.asp-theme.dev/cover__trashed/</link>
 		<pubDate>Wed, 17 Apr 2019 18:10:07 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/?page_id=14</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:cover {"url":"https://demo.asp-theme.dev/wp-content/uploads/2019/04/adventure-blue-sky-boat-2115578.jpg","id":15} -->
@@ -10160,7 +10160,7 @@ It contains child pages.]]></content:encoded>
 		<title>Block Unit Test</title>
 		<link>https://demo.asp-theme.dev/block-unit-test/</link>
 		<pubDate>Mon, 29 Apr 2019 23:52:36 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/?page_id=129</guid>
 		<description></description>
 		<content:encoded><![CDATA[
@@ -12979,7 +12979,7 @@ There are a few things to verify:
 		<title>Hello world!</title>
 		<link>https://demo.asp-theme.dev/hello-world__trashed/</link>
 		<pubDate>Tue, 16 Apr 2019 23:13:49 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/?p=1</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:paragraph -->
@@ -13153,7 +13153,7 @@ This e-mail was sent from a contact form on ASP Theme Demo (https://demo.asp-the
 		<title>Cover</title>
 		<link>https://demo.asp-theme.dev/__trashed/</link>
 		<pubDate>Sun, 21 Apr 2019 16:13:18 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/?p=19</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:heading -->
@@ -13257,7 +13257,7 @@ This e-mail was sent from a contact form on ASP Theme Demo (https://demo.asp-the
 		<title>Classic Editor</title>
 		<link>https://demo.asp-theme.dev/classic-editor/</link>
 		<pubDate>Sun, 21 Apr 2019 16:30:40 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/?p=52</guid>
 		<description></description>
 		<content:encoded><![CDATA[Believe it or not, you don't need to install the <a href="https://wordpress.org/plugins/classic-editor/">Classic Editor Plugin</a> in order to use the classic editor. It's available as a Gutenberg block.
@@ -13335,7 +13335,7 @@ If you click the block settings you can see the standard block options. You can 
 		<title>Paragraph</title>
 		<link>https://demo.asp-theme.dev/paragraph/</link>
 		<pubDate>Tue, 23 Apr 2019 23:30:20 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/?p=61</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:paragraph -->
@@ -13429,7 +13429,7 @@ If you click the block settings you can see the standard block options. You can 
 		<title>Image</title>
 		<link>https://demo.asp-theme.dev/image/</link>
 		<pubDate>Wed, 24 Apr 2019 00:14:50 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/?p=77</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:paragraph -->
@@ -13525,7 +13525,7 @@ If you click the block settings you can see the standard block options. You can 
 		<title>Custom HTML</title>
 		<link>https://demo.asp-theme.dev/custom-html/</link>
 		<pubDate>Thu, 25 Apr 2019 23:18:53 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/?p=86</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:paragraph -->
@@ -13619,7 +13619,7 @@ If you click the block settings you can see the standard block options. You can 
 		<title>Media &amp; Text</title>
 		<link>https://demo.asp-theme.dev/media-text/</link>
 		<pubDate>Fri, 26 Apr 2019 00:38:52 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/?p=99</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:media-text {"mediaId":100,"mediaType":"image"} -->
@@ -13697,7 +13697,7 @@ If you click the block settings you can see the standard block options. You can 
 		<title>More</title>
 		<link>https://demo.asp-theme.dev/more/</link>
 		<pubDate>Fri, 26 Apr 2019 00:45:37 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/?p=116</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:paragraph -->
@@ -13754,7 +13754,7 @@ If you click the block settings you can see the standard block options. You can 
 		<title>Heading</title>
 		<link>https://demo.asp-theme.dev/heading/</link>
 		<pubDate>Mon, 29 Apr 2019 23:46:04 +0000</pubDate>
-		<dc:creator><![CDATA[cresenciocantu_ahch46u7]]></dc:creator>
+		<dc:creator><![CDATA[@cresencio]]></dc:creator>
 		<guid isPermaLink="false">https://demo.asp-theme.dev/?p=124</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:heading -->
