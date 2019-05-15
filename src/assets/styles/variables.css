@@ -1,122 +1,127 @@
-:root {
-	--primary-color: #859A00;
-	--black: #000000;
-	--white: #FFFFFF;
-	--success-color: #2ecc71;
-	--error-color: #e74c3c;
-	--pending-color: #FFFFCC;
+/*********************************************************************
+**********************************************************************
+Cherry 0.0.1 - Design System
+Variables & Mixins
+**********************************************************************
+*********************************************************************/
 
-	--background-grey: #F3F3F3;
-	--disabled-gray: #ebe9eb;
-
-	--light-gray: #E5E5E5;
-	--medium-gray: #BBBBBB;
-	--dark-gray: #4A4A4A;
-
-	--light-blue: #647B84;
-	--medium-blue: #002B36;
-	--dark-blue: #00212B;
-
-	--push-top-desktop: 100px;
-	--push-top-mobile: 100px;
-	--push-top-tablet: 100px;
-
-	--gradient: linear-gradient(var(--primary-color), var(--dark-blue));
-}
-
-@custom-media --screen-tiny (max-width: 320px);
-@custom-media --screen-mobile (max-width: 640px);
-@custom-media --screen-phablet (max-width: 820px);
-@custom-media --screen-tablet print, (max-width: 1000px);
-@custom-media --screen-medium (max-width: 1200px);
-@custom-media --screen-desktop print, (max-width: 1300px);
-@custom-media --screen-wide (min-width: 2000px);
-@custom-media --screen-4k (min-width: 3870px);
-@custom-media --screen-desktop-only (min-width: 640px);
+@custom-media --screen-xs (min-width: 0);
+@custom-media --screen-sm (min-width: 576px);
+@custom-media --screen-md (min-width: 768px);
+@custom-media --screen-lg (min-width: 992px);
+@custom-media --screen-xl (min-width: 1200px);
+@custom-media --screen-xxl (min-width: 1440px);
+@custom-media --screen-xxxl (min-width: 1920px);
 
 :root {
-	--smaller-font-size: 10px;
-	--smaller-line-height: 1;
 
-	--small-font-size: 14px;
-	--small-line-height: 1.1;
+	/* Colors --------------------------------------------------------- */
+	--color-primary: #f16521;
+	--color-secondary: #d85a1d;
+	--color-tertiary: #c0501a;
 
-	--default-font-size: 16px;
-	--default-line-height: 1.4;
+	--color-dark: #000;
+	--color-light: #fff;
 
-	--medium-font-size: 20px;
-	--medium-line-height: 1.3;
+	--color-gray-light: #E5E5E5;
+	--color-gray-medium: #666666;
+	--color-gray-dark: #4a4a4a;
 
-	--big-font-size: 24px;
-	--big-line-height: 1.5;
+	--color-success: #28a745;
+	--color-error: #dc3545;
+	--color-warning: #ffc107;
+	--color-info: #17a2b8;
 
-	--bigger-font-size: 68px;
-	--bigger-line-height: 1.5;
+	/* Fonts ---------------------------------------------------------- */
+	--font-text: 'Fira Sans', sans-serif;
+	--font-head: 'Roboto', sans-serif;
+	--font-special: var(--font-text);
+	--font-mono: 'Roboto Mono', monospace;
 
-	--h1-font-size: 48px;
-	--h1-line-height: 1.3;
+	/* Font Sizes ----------------------------------------------------- */
+	/* --> Hero ------------------------------------------------------- */
+	--size-mobile-hero1: 44px;
+	--lineheight-mobile-hero1: 1.35;
+	--size-desktop-hero1: 54px;
+	--lineheight-desktop-hero1: 1.15;
 
-	--h1-font-size-mobile: 8vw;
-	--h1-line-height-mobile: 1.3;
+	--size-mobile-hero2: 34px;
+	--lineheight-mobile-hero2: 1.5;
+	--size-desktop-hero2: 44px;
+	--lineheight-desktop-hero2: 1.35;
 
-	--h2-font-size: 38px;
-	--h2-line-height: 1.2;
+	--size-mobile-hero3: 24px;
+	--lineheight-mobile-hero3: 1.8;
+	--size-desktop-hero3: 34px;
+	--lineheight-desktop-hero3: 1.5;
 
-	--h2-font-size-mobile: 6vw;
-	--h2-line-height-mobile: 1.2;
+	/* --> Eyebrow ---------------------------------------------------- */
+	--size-mobile-eyebrow: 14px;
+	--lineheight-mobile-eyebrow: 1.5;
+	--size-desktop-eyebrow: 16px;
+	--lineheight-desktop-eyebrow: 1.5;
 
-	--h3-font-size: 27.5px;
-	--h3-line-height: 1;
+	/* --> Heading ---------------------------------------------------- */
+	--size-mobile-h1: 28px;
+	--lineheight-mobile-h1: 1.35;
+	--size-desktop-h1: 44px;
+	--lineheight-desktop-h1: 1.35;
 
-	--h3-font-size-mobile: 4vw;
-	--h3-line-height-mobile: 1;
+	--size-mobile-h2: 23px;
+	--lineheight-mobile-h2: 1.4;
+	--size-desktop-h2: 34px;
+	--lineheight-desktop-h2: 1.25;
 
-	--h4-font-size: 24px;
-	--h4-line-height: 1;
+	--size-mobile-h3: 19px;
+	--lineheight-mobile-h3: 1.35;
+	--size-desktop-h3: 21px;
+	--lineheight-desktop-h3: 1.35;
 
-	--h4-font-size-mobile: 24px;
-	--h4-line-height-mobile: 1;
+	--size-mobile-h4: 16px;
+	--lineheight-mobile-h4: 1.5;
+	--size-desktop-h4: 18px;
+	--lineheight-desktop-h4: 1.75;
 
-	--h5-font-size: 21px;
-	--h5-line-height: 1;
+	--size-mobile-h5: 12px;
+	--size-mobile-h5: 1.2;
+	--size-desktop-h5: 16px;
+	--lineheight-desktop-h5: 1.75;
 
-	--h5-font-size-mobile: 21px;
-	--h5-line-height-mobile: 1;
+	--size-mobile-h6: 10px;
+	--lineheight-mobile-h6: 1.2;
+	--size-desktop-h6: 12px;
+	--lineheight-desktop-h6: 1.2;
 
-	--h6-font-size: 18.4px;
-	--h6-line-height: 1;
+	/* --> Subtitle --------------------------------------------------- */
+	--size-mobile-subtitle: 18px;
+	--lineheight-mobile-subtitle: 1.75;
+	--size-desktop-subtitle: 20px;
+	--lineheight-desktop-subtitle: 1.75;
+	
+	/* --> Lead ------------------------------------------------------- */
+	--size-mobile-lead: 16px;
+	--lineheight-mobile-lead: 1.5;
+	--size-desktop-lead: 18px;
+	--lineheight-desktop-lead: 1.75;
 
-	--h6-font-size-mobile: 18.4px;
-	--h6-line-height-mobile: 1;
-}
+	/* --> Text ------------------------------------------------------- */
+	--size-mobile-text: 16px;
+	--lineheight-mobile-text: 1.5;
+	--size-desktop-text: 16px;
+	--lineheight-desktop-text: 1.5;
 
-@define-mixin clearfix {
-	clear: both;
+	/* --> Small ------------------------------------------------------ */
+	--size-mobile-small: 12px;
+	--lineheight-mobile-small: 1.2;
+	--size-desktop-small: 12px;
+	--lineheight-desktop-small: 1.2;
 
-	&:before,
-	&:after {
-		content: "";
-		display: table;
-		clear: both;
-	}
-}
+	/* --> Blockquote ------------------------------------------------- */
+	--size-mobile-blockquote: var(--size-mobile-h3);
+	--size-desktop-blockquote: var(--size-desktop-h3);
 
-@define-mixin noList {
-	list-style: none;
-	margin: 0;
-	padding: 0;
+	/* --> List ------------------------------------------------------- */
+	--size-mobile-list: var(--size-mobile-text);
+	--size-desktop-list: var(--size-desktop-text);
 
-	& li {
-		padding: 0;
-	}
-}
-
-@define-mixin maxWidth {
-	max-width: 1300px;
-	margin: auto;
-	box-sizing: border-box;
-
-	@media (--screen-desktop) {
-		padding: 0 20px;
-	}
 }
