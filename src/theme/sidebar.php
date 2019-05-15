@@ -1,7 +1,19 @@
-<!-- side-column -->
-<div class="side-column">
-	<?php if ( is_active_sidebar( 'sidebar1' ) ) : ?>
-		<?php dynamic_sidebar( 'sidebar1' ); ?>
-	<?php endif; ?>
-</div>
-<!-- /side-column -->
+<?php
+/**
+ * The sidebar containing the main widget area
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package ASP_Theme
+ */
+
+if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+	return;
+}
+?>
+
+<aside id="secondary" class="widget-area">
+	<div class="row">
+		<?php dynamic_sidebar( 'sidebar-1' ); ?>
+	</div>
+</aside><!-- #secondary -->
