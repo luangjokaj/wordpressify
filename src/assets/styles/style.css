@@ -1,9 +1,30 @@
 /*
-Theme Name: WordPressify
-Theme URI: https://www.wordpressify.co
-Author: Luan Gjokaj
-Author URI: https://www.riangle.com
-Description: WordPressify official theme.
-Version: 1.0
-Tags: responsive, clean, minimal, modern, documentation
+Theme Name: ASP Theme
+Theme URI: https://asp-theme.dev
+Author: @Cresencio
+Author URI: https://cresenc.io
+Description: A starter theme for WordPress development.
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: asp-theme
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+ASP Theme is based on Underscores https://underscores.me/ and modified by @Cresencio, (C) 2012-2017 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Modifications:
+
+- additional widget areas
+- integration with ACF (Advanced Custom Fields) - https://www.advancedcustomfields.com/
+- integration with Bootstrap
+- restructured stylesheets (SCSS)
+
+ASP Theme also uses Bootstrap:
+Bootstrap v4.3.1 (https://getbootstrap.com/)
+Copyright 2011-2019 The Bootstrap Authors
+Copyright 2011-2019 Twitter, Inc.
+Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
 */
