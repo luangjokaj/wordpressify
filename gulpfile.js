@@ -71,7 +71,7 @@ const headerJS = [
 	'./node_modules/bootstrap/dist/js/bootstrap.js',
 ];
 
-const footerJS = ['./src/assets/js/**'];
+const footerJS = ['./src/assets/js/**', '!./src/assets/js/customizer.js'];
 
 /* -------------------------------------------------------------------------------------------------
 Installation Tasks
