@@ -222,14 +222,18 @@ function add_bs_nav_link_class_to_menu_links($atts) {
 }
 add_filter( 'nav_menu_link_attributes', 'add_bs_nav_link_class_to_menu_links');
 
-// Add wp_body_open() action
-
-if ( ! function_exists( 'wp_body_open' ) ) {
-
+if ( ! function_exists( 'wp_body_open' ) ) :
+	/**
+	 * Fire the wp_body_open action.
+	 *
+	 * Added for backwards compatibility to support pre 5.2.0 WordPress versions.
+	 *
+	 */
 	function wp_body_open() {
-
+		/**
+		 * Triggered after the opening <body> tag.
+		 *
+		 */
 		do_action( 'wp_body_open' );
-
 	}
-
-}
+endif;
