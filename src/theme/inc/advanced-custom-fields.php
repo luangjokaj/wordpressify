@@ -26,11 +26,3 @@ function asp_theme_json_load_point( $paths ) {
     return $paths;
 
 }
-
-
-// 4. Hide ACF field group menu item
-//add_filter('acf/settings/show_admin', '__return_false');
-
-// 5. Include ACF
-
-?>
