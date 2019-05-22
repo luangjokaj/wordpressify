@@ -1,3 +1,14 @@
+.site-footer{
+  background-color: $site-footer-bg-color;
+  color: $site-footer-text-color;
+
+  a{
+    color: $site-footer-link-color;
+  }
+}
+
 .site-info{
   @include make-col-ready();
+  text-align: center;
+  padding: $spacer;
 }

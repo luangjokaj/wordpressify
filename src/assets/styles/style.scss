@@ -52,6 +52,11 @@ Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
 @import "scss/custom";
 
 /*--------------------------------------------------------------
+# Theme Settings
+--------------------------------------------------------------*/
+@import "scss/settings";
+
+/*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
 @import "scss/elements/elements";

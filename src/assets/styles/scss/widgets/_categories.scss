@@ -1,7 +1,7 @@
 .widget_categories{
 
   ul{
-
+    padding: 0;
     list-style: none;
     &.children{
       .cat-item{
@@ -18,7 +18,7 @@
     padding: $spacer/2 0;
 
     a{
-      padding: 0 $spacer/2;
+      padding: $spacer/2;
       @extend .stretched-link;
 
     }

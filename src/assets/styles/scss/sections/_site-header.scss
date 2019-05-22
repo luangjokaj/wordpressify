@@ -1,3 +1,20 @@
+.site-header{
+  background-color: $site-header-bg-color;
+  color: $site-header-text-color;
+}
+
+#masthead{
+  margin-bottom: $spacer;
+}
+
+#site-navigation{
+  background-color: $site-nav-bg-color;
+
+  a{
+    color: $site-nav-primary-color;
+  }
+}
+
 .site-branding{
   @include make-col-ready();
 }
