@@ -30,7 +30,7 @@ if ( ! function_exists( 'asp_theme_posted_on' ) ) :
 			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 
-		echo '<span class="posted-on">' . esc_html( $posted_on ) . '</span>'; // WPCS: XSS OK.
+		echo '<span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
 
 	}
 endif;
@@ -46,7 +46,7 @@ if ( ! function_exists( 'asp_theme_posted_by' ) ) :
 			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 
-		echo '<span class="byline"> ' . esc_html( $byline ) . '</span>'; // WPCS: XSS OK.
+		echo '<span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
 
 	}
 endif;
@@ -62,14 +62,14 @@ if ( ! function_exists( 'asp_theme_entry_footer' ) ) :
 			$categories_list = get_the_category_list( esc_html__( ', ', 'asp-theme' ) );
 			if ( $categories_list ) {
 				/* translators: 1: list of categories. */
-				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'asp-theme' ) . '</span>', esc_html( $categories_list ) ); // WPCS: XSS OK.
+				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'asp-theme' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 			}
 
 			/* translators: used between list items, there is a space after the comma */
 			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'asp-theme' ) );
 			if ( $tags_list ) {
 				/* translators: 1: list of tags. */
-				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'asp-theme' ) . '</span>', esc_html( $tags_list ) ); // WPCS: XSS OK.
+				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'asp-theme' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 			}
 		}
 

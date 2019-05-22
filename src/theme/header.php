@@ -53,7 +53,7 @@
 
 						if ( $asp_theme_description || is_customize_preview() ) : ?>
 
-							<p class="site-description"><?php echo esc_html( $asp_theme_description ); /* WPCS: xss ok. */ ?></p>
+<p class="site-description"><?php echo $asp_theme_description; /* WPCS: xss ok. */ ?></p>
 
 						<?php endif; ?>
 
