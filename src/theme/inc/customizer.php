@@ -26,6 +26,16 @@ function asp_theme_customize_register( $wp_customize ) {
 		) );
 	}
 
+	$wp_customize->add_setting( 'asp_main_content_background_color' , array(
+		'default'     => 'FFFFFF',
+		'transport'   => 'refresh',
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'asp_main_content_background_color', array(
+		'label'        => 'Main Content Background Color',
+		'section'    => 'colors',
+		'settings'   => 'asp_main_content_background_color',
+	)));
+
 }
 add_action( 'customize_register', 'asp_theme_customize_register' );
 
@@ -54,3 +64,17 @@ function asp_theme_customize_preview_js() {
 	wp_enqueue_script( 'asp-theme-customizer', get_template_directory_uri() . '/customizer.js', array( 'customize-preview' ), '20151215', true );
 }
 add_action( 'customize_preview_init', 'asp_theme_customize_preview_js' );
+
+// hook the styles onto the head
+
+add_action( 'wp_head', 'asp_customizer_css');
+function asp_customizer_css(){
+		?>
+				 <style type="text/css">
+						 #page { background-color: <?php echo get_theme_mod('asp_main_content_background_color', 'FFFFFF'); ?>; }
+						 
+				 </style>
+
+
+		<?php
+}

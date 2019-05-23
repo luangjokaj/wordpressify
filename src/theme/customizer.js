@@ -39,4 +39,11 @@
 			}
 		} );
 	} );
+
+	// main content background color
+	wp.customize( 'asp_main_content_background_color', function( value ) {
+		value.bind( function( newval ) {
+			$( '#page' ).css( 'background-color', newval );
+		} );
+	} );
 } )( jQuery );
