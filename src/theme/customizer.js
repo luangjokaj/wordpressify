@@ -46,4 +46,11 @@
 			$( '#page' ).css( 'background-color', newval );
 		} );
 	} );
+
+	// Site title and description.
+	wp.customize( 'asp_content_max_width', function( value ) {
+		value.bind( function( to ) {
+			$( '#page' ).css( 'max-width', to );
+		} );
+	} );
 } )( jQuery );
