@@ -23,7 +23,7 @@
 	<?php wp_body_open(); ?>
 <div id="page" class="site">
 
-	<a class="skip-link screen-reader-text sr-only" href="#content"><?php esc_html_e( 'Skip to content', 'asp-theme' ); ?></a>
+	<a class="skip-link screen-reader-text sr-only" href="#content"><?php esc_html_e( 'Skip to content', 'a-starting-point' ); ?></a>
 
 	<header id="masthead" class="site-header">
 
@@ -61,7 +61,7 @@
 
 					<nav id="site-navigation" class="main-navigation">
 
-						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'menu toggle', 'asp-theme' ); ?></button>
+						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'menu toggle', 'a-starting-point' ); ?></button>
 						<?php
 
 						wp_nav_menu( array(

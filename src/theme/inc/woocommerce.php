@@ -224,11 +224,11 @@ if ( ! function_exists( 'asp_theme_woocommerce_cart_link' ) ) {
 	 */
 	function asp_theme_woocommerce_cart_link() {
 		?>
-		<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'asp-theme' ); ?>">
+		<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'a-starting-point' ); ?>">
 			<?php
 			$item_count_text = sprintf(
 				/* translators: number of items in the mini cart. */
-				_n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'asp-theme' ),
+				_n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'a-starting-point' ),
 				WC()->cart->get_cart_contents_count()
 			);
 			?>

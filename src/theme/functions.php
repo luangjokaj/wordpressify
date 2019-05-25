@@ -20,9 +20,9 @@ if ( ! function_exists( 'asp_theme_setup' ) ) :
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
 		 * If you're building a theme based on ASP Theme, use a find and replace
-		 * to change 'asp-theme' to the name of your theme in all the template files.
+		 * to change 'a-starting-point' to the name of your theme in all the template files.
 		 */
-		load_theme_textdomain( 'asp-theme', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'a-starting-point', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -44,7 +44,7 @@ if ( ! function_exists( 'asp_theme_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'asp-theme' ),
+			'menu-1' => esc_html__( 'Primary', 'a-starting-point' ),
 		) );
 
 		/*
@@ -105,27 +105,27 @@ add_action( 'after_setup_theme', 'asp_theme_content_width', 0 );
  */
 function asp_theme_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Header', 'asp-theme' ),
+		'name'          => esc_html__( 'Header', 'a-starting-point' ),
 		'id'            => 'sidebar-header',
-		'description'   => esc_html__( 'Add header widgets here.', 'asp-theme' ),
+		'description'   => esc_html__( 'Add header widgets here.', 'a-starting-point' ),
 		'before_widget' => '<section id="%1$s" class="widget asp-theme-acf %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
 	register_sidebar( array(
-		'name'          => esc_html__( 'Footer', 'asp-theme' ),
+		'name'          => esc_html__( 'Footer', 'a-starting-point' ),
 		'id'            => 'sidebar-footer',
-		'description'   => esc_html__( 'Add footer widgets here.', 'asp-theme' ),
+		'description'   => esc_html__( 'Add footer widgets here.', 'a-starting-point' ),
 		'before_widget' => '<section id="%1$s" class="widget asp-theme-acf %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'asp-theme' ),
+		'name'          => esc_html__( 'Sidebar', 'a-starting-point' ),
 		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'asp-theme' ),
+		'description'   => esc_html__( 'Add widgets here.', 'a-starting-point' ),
 		'before_widget' => '<section id="%1$s" class="widget asp-theme-acf %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
