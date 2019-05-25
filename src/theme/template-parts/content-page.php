@@ -14,7 +14,7 @@
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 
-	<?php asp_theme_post_thumbnail(); ?>
+	<?php a_starting_point_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php

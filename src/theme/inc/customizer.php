@@ -10,7 +10,7 @@
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
-function asp_theme_customize_register( $wp_customize ) {
+function a_starting_point_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
@@ -18,18 +18,33 @@ function asp_theme_customize_register( $wp_customize ) {
 	if ( isset( $wp_customize->selective_refresh ) ) {
 		$wp_customize->selective_refresh->add_partial( 'blogname', array(
 			'selector'        => '.site-title a',
-			'render_callback' => 'asp_theme_customize_partial_blogname',
+			'render_callback' => 'a_starting_point_customize_partial_blogname',
 		) );
 		$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
 			'selector'        => '.site-description',
-			'render_callback' => 'asp_theme_customize_partial_blogdescription',
+			'render_callback' => 'a_starting_point_customize_partial_blogdescription',
 		) );
 	}
 
 	$wp_customize->add_setting( 'asp_main_content_background_color' , array(
 		'default'     => 'FFFFFF',
 		'transport'   => 'refresh',
+		'sanitize_callback' => 'a_starting_point_sanitize_main_content_background_color'
 	));
+
+	//https://developer.wordpress.org/reference/functions/sanitize_hex_color/
+
+	function a_starting_point_sanitize_main_content_background_color($input){
+		if ( '' === $input ) {
+			return '';
+		}
+	 
+		// 3 or 6 hex digits, or the empty string.
+		if ( preg_match( '|^#([A-Fa-f0-9]{3}){1,2}$|', $input ) ) {
+			return $input;
+		}
+	}
+
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'asp_main_content_background_color', array(
 		'label'        => 'Main Content Background Color',
 		'section'    => 'colors',
@@ -47,10 +62,10 @@ function asp_theme_customize_register( $wp_customize ) {
 		'default'     				=> 'none',
 		'transport'   				=> 'refresh',
 		'type'			  		=> 'theme_mod',
-		'sanitize_callback' => 'asp_sanitize_content_max_width'
+		'sanitize_callback' => 'a_starting_point_sanitize_content_max_width'
 		));
 
-	function asp_sanitize_content_max_width( $input, $setting ){
+	function a_starting_point_sanitize_content_max_width( $input, $setting ){
 		//input must be a slug: lowercase alphanumeric characters, dashes and underscores are allowed only
 		$input = sanitize_key($input);
 		//return input if valid or return default option
@@ -69,14 +84,14 @@ function asp_theme_customize_register( $wp_customize ) {
 	);
 
 }
-add_action( 'customize_register', 'asp_theme_customize_register' );
+add_action( 'customize_register', 'a_starting_point_customize_register' );
 
 /**
  * Render the site title for the selective refresh partial.
  *
  * @return void
  */
-function asp_theme_customize_partial_blogname() {
+function a_starting_point_customize_partial_blogname() {
 	bloginfo( 'name' );
 }
 
@@ -85,17 +100,17 @@ function asp_theme_customize_partial_blogname() {
  *
  * @return void
  */
-function asp_theme_customize_partial_blogdescription() {
+function a_starting_point_customize_partial_blogdescription() {
 	bloginfo( 'description' );
 }
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
-function asp_theme_customize_preview_js() {
+function a_starting_point_customize_preview_js() {
 	wp_enqueue_script( 'asp-theme-customizer', get_template_directory_uri() . '/customizer.js', array( 'customize-preview' ), '20151215', true );
 }
-add_action( 'customize_preview_init', 'asp_theme_customize_preview_js' );
+add_action( 'customize_preview_init', 'a_starting_point_customize_preview_js' );
 
 // hook the styles onto the head
 
