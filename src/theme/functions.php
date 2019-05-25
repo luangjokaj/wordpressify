@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package ASP_Theme
+ * @package a_starting_point
  */
 
 if ( ! function_exists( 'asp_theme_setup' ) ) :

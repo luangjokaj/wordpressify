@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package ASP_Theme
+ * @package a_starting_point
  */
 
 if ( ! is_active_sidebar( 'sidebar-header' ) ) {

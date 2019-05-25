@@ -7,7 +7,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package ASP_Theme
+ * @package a_starting_point
  */
 
 /*
@@ -40,7 +40,7 @@ if ( post_password_required() ) {
 				printf( // WPCS: XSS OK.
 					/* translators: 1: comment count number, 2: title. */
 					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $asp_theme_comment_count, 'comments title', 'asp-theme' ) ),
-					number_formati18n( $asp_theme_comment_count ),
+					number_format_i18n( $asp_theme_comment_count ),
 					'<span>' . get_the_title() . '</span>'
 				);
 			}

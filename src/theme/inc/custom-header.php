@@ -7,7 +7,7 @@
  *
  * @link https://developer.wordpress.org/themes/functionality/custom-headers/
  *
- * @package ASP_Theme
+ * @package a_starting_point
  */
 
 /**

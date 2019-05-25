@@ -2,7 +2,7 @@
 /**
  * ASP Theme Theme Customizer
  *
- * @package ASP_Theme
+ * @package a_starting_point
  */
 
 /**

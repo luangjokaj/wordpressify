@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package ASP_Theme
+ * @package a_starting_point
  */
 
 if ( ! function_exists( 'asp_theme_posted_on' ) ) :

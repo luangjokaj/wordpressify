@@ -4,7 +4,7 @@
  *
  * @link https://woocommerce.com/
  *
- * @package ASP_Theme
+ * @package a_starting_point
  */
 
 /**

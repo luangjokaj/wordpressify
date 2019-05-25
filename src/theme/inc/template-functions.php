@@ -2,7 +2,7 @@
 /**
  * Functions which enhance the theme by hooking into WordPress
  *
- * @package ASP_Theme
+ * @package a_starting_point
  */
 
 /**
