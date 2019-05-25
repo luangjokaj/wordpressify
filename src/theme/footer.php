@@ -30,7 +30,7 @@
 						<span class="sep"> | </span>
 							<?php
 							/* translators: 1: Theme name, 2: Theme author. */
-							printf( esc_html__( 'Theme: %1$s available on %2$s.', 'asp-theme' ), 'asp-theme', '<a href="https://github.com/cresencio/asp-theme">GitHub</a>' );
+							printf( esc_html__( 'Theme: %1$s available on %2$s.', 'asp-theme' ), 'A Starting Point', '<a href="https://github.com/cresencio/asp-theme">GitHub</a>' );
 							?>
 					</div><!-- .site-info -->
 			</div>
