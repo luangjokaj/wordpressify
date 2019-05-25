@@ -49,11 +49,11 @@
 							<?php
 						endif;
 
-						$asp_theme_description = get_bloginfo( 'description', 'display' );
+						$a_starting_point_description = get_bloginfo( 'description', 'display' );
 
-						if ( $asp_theme_description || is_customize_preview() ) : ?>
+						if ( $a_starting_point_description || is_customize_preview() ) : ?>
 
-<p class="site-description"><?php echo $asp_theme_description; /* WPCS: xss ok. */ ?></p>
+<p class="site-description"><?php echo $a_starting_point_description; /* WPCS: xss ok. */ ?></p>
 
 						<?php endif; ?>
 

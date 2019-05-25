@@ -64,7 +64,7 @@ function asp_theme_customize_register( $wp_customize ) {
 				'section'     => 'asp_content_max_width',
 				'settings'    => 'content_max_width',
 				'type'        => 'number',
-				'description' => __( 'Modifies the max width of the website\'s content (pixels).', 'asp' ),
+				'description' => __( 'Modifies the max width of the website\'s content (pixels).', 'a-starting-point' ),
 			)
 	);
 
