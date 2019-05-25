@@ -1,0 +1,321 @@
+@define-mixin resetButton {
+	appearance: none;
+	background: none;
+	border: none;
+	border-radius: 0;
+	cursor: pointer;
+}
+
+@define-mixin noList {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	& li {
+		padding: 0;
+		margin: 0;
+	}
+}
+
+@define-mixin heading {
+	font-family: var(--font-head);
+	font-weight: 300;
+	margin: 0;
+	padding: 0;
+}
+
+@define-mixin hero1 {
+	font-size: var(--size-hero1-mobile);
+	line-height: var(--lineheight-hero1-mobile);
+
+	@media (--screen-lg) {
+		font-size: var(--size-hero1-desktop);
+		line-height: var(--lineheight-hero1-desktop);
+	}
+}
+
+@define-mixin hero2 {
+	font-size: var(--size-hero2-mobile);
+	line-height: var(--lineheight-hero2-mobile);
+
+	@media (--screen-lg) {
+		font-size: var(--size-hero2-desktop);
+		line-height: var(--lineheight-hero2-desktop);
+	}
+}
+
+@define-mixin hero3 {
+	font-size: var(--size-hero3-mobile);
+	line-height: var(--lineheight-hero3-mobile);
+
+	@media (--screen-lg) {
+		font-size: var(--size-hero3-desktop);
+		line-height: var(--lineheight-hero3-desktop);
+	}
+}
+
+@define-mixin eyebrow {
+	position: relative;
+	font-size: var(--size-eyebrow-mobile);
+	line-height: var(--lineheight-eyebrow-mobile);
+	margin: 10px 0;
+
+	&:before {
+		content: '';
+		display: block;
+		width: 60px;
+		border-top: solid 2px var(--color-primary);
+		margin-bottom: 20px;
+	}
+
+	@media (--screen-lg) {
+		font-size: var(--size-eyebrow-desktop);
+		line-height: var(--size-eyebrow-desktop);
+	}
+}
+
+@define-mixin h1 {
+	font-size: var(--size-h1-mobile);
+	line-height: var(--lineheight-h1-mobile);
+
+	@media (--screen-lg) {
+		font-size: var(--size-h1-desktop);
+		line-height: var(--lineheight-h1-desktop);
+	}
+}
+
+@define-mixin h2 {
+	font-size: var(--size-h2-mobile);
+	line-height: var(--lineheight-h2-mobile);
+
+	@media (--screen-lg) {
+		font-size: var(--size-h2-desktop);
+		line-height: var(--lineheight-h2-desktop);
+	}
+}
+
+@define-mixin h3 {
+	font-size: var(--size-h3-mobile);
+	line-height: var(--lineheight-h3-mobile);
+
+	@media (--screen-lg) {
+		font-size: var(--size-h3-desktop);
+		line-height: var(--lineheight-h3-desktop);
+	}
+}
+
+@define-mixin h4 {
+	font-size: var(--size-h4-mobile);
+	line-height: var(--lineheight-h4-mobile);
+
+	@media (--screen-lg) {
+		font-size: var(--size-h4-desktop);
+		line-height: var(--lineheight-h4-desktop);
+	}
+}
+
+@define-mixin h5 {
+	font-size: var(--size-h5-mobile);
+	line-height: var(--lineheight-h5-mobile);
+
+	@media (--screen-lg) {
+		font-size: var(--size-h5-desktop);
+		line-height: var(--lineheight-h5-desktop);
+	}
+}
+
+@define-mixin h6 {
+	font-size: var(--size-h6-mobile);
+	line-height: var(--lineheight-h6-mobile);
+
+	@media (--screen-lg) {
+		font-size: var(--size-h6-desktop);
+		line-height: var(--lineheight-h6-desktop);
+	}
+}
+
+
+@define-mixin subtitle {
+	font-size: var(--size-subtitle-mobile);
+	line-height: var(--lineheight-subtitle-mobile);
+
+	@media (--screen-lg) {
+		font-size: var(--size-subtitle-desktop);
+		line-height: var(--lineheight-subtitle-desktop);
+	}
+}
+
+@define-mixin lead {
+	font-size: var(--size-lead-mobile);
+	line-height: var(--lineheight-lead-mobile);
+
+	@media (--screen-lg) {
+		font-size: var(--size-lead-desktop);
+		line-height: var(--lineheight-lead-desktop);
+	}
+}
+
+@define-mixin strong {
+	font-weight: 700;
+}
+
+@define-mixin text {
+	color: var(--color-secondary);
+	font-size: var(--size-text-mobile);
+	line-height: var(--lineheight-text-mobile);
+
+	@media (--screen-lg) {
+		font-size: var(--size-text-desktop);
+		line-height: var(--lineheight-text-desktop);
+	}
+}
+
+@define-mixin small {
+	display: inline-block;
+	font-size: var(--size-small-mobile);
+	line-height: var(--lineheight-small-mobile);
+
+	@media (--screen-lg) {
+		font-size: var(--size-small-desktop);
+		line-height: var(--lineheight-small-desktop);
+	}
+}
+
+@define-mixin blockquote {
+	font-size: var(--size-text-mobile);
+	line-height: var(--lineheight-text-mobile);
+	position: relative;
+	display: block;
+	margin: 0;
+	padding: 0;
+
+	@media (--screen-lg) {
+		font-size: var(--size-text-desktop);
+		line-height: var(--lineheight-text-desktop);
+	}
+}
+
+@define-mixin unorderedList {
+	@mixin noList;
+	display: block;
+
+	& li {
+		display: inline-block;
+		width: 100%;
+		position: relative;
+		padding: 0 0 0 15px;
+		color: var(--color-secondary);
+
+		& p {
+			margin: 0;
+			padding: 0;
+		}
+
+		&:before {
+			content: '';
+			display: block;
+			position: absolute;
+			width: 8px;
+			height: 8px;
+			border-radius: 50%;
+			background: var(--color-primary);
+			top: 10px;
+			left: 0;
+		}
+	}
+}
+
+@define-mixin orderedList {
+	@mixin noList;
+	display: block;
+
+	& li {
+		display: inline-block;
+		width: 100%;
+		position: relative;
+		padding: 0 0 0 20px;
+		color: var(--color-secondary);
+
+		& p {
+			margin: 0;
+			padding: 0;
+		}
+
+		&:first-child {
+			counter-reset: section;
+		}
+
+		&:before {
+			content: '';
+			display: block;
+			position: absolute;
+			border-radius: 50%;
+			top: 0;
+			left: 0;
+			counter-increment: section;
+			content: counters(section, '.') '.';
+			font-weight: bold;
+			color: var(--color-primary);
+		}
+	}
+}
+
+@define-mixin specialList {
+	@mixin noList;
+	display: block;
+
+	& li {
+		display: inline-block;
+		width: 100%;
+		position: relative;
+		padding: 0 0 0 25px;
+		color: var(--color-secondary);
+
+		& p {
+			margin: 0;
+			padding: 0;
+		}
+
+		&:before {
+			content: '🍒';
+			display: block;
+			position: absolute;
+			width: 8px;
+			height: 8px;
+			border-radius: 50%;
+			background: var(--color-primary);
+			top: 3px;
+			left: 0;
+		}
+	}
+}
+
+@define-mixin container {
+	margin: auto;
+	max-width: var(--max-width);
+	padding-right: var(--margin-container-mobile);
+	padding-left: var(--margin-container-mobile);
+
+	@media (--screen-lg) {
+		padding-right: var(--margin-container-desktop);
+		padding-left: var(--margin-container-desktop);
+	}
+
+	@media (--screen-xxxl) {
+		max-width: 1704px;
+	}
+}
+
+@define-mixin containerFluid {
+	width: 100%;
+	max-width: initial;
+	padding-right: var(--margin-container-mobile);
+	padding-left: var(--margin-container-mobile);
+	margin-right: auto;
+	margin-left: auto;
+
+	@media (--screen-lg) {
+		padding-right: var(--margin-container-desktop);
+		padding-left: var(--margin-container-desktop);
+	}
+}

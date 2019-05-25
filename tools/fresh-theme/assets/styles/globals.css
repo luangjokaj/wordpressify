@@ -6,7 +6,6 @@ Global Styles
 *********************************************************************/
 
 @import './variables.css';
-@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,700');
 
 html,
 body {
@@ -19,13 +18,16 @@ body {
 	font-size-adjust: none;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-text-size-adjust: none;
+	-webkit-font-smoothing: antialiased;
 	font-family: var(--font-text);
-	font-size: var(--size-mobile-text);
-	line-height: var(--lineheight-mobile-text);
+	font-size: var(--size-text-mobile);
+	line-height: var(--lineheight-text-mobile);
+	padding-top: var(--padding-top-body-mobile);
 
 	@media (--screen-lg) {
-		font-size: var(--size-desktop-text);
-		line-height: var(--lineheight-desktop-text);
+		font-size: var(--size-text-desktop);
+		line-height: var(--lineheight-text-desktop);
+		padding-top: var(--padding-top-body-desktop);
 	}
 }
 
@@ -38,16 +40,38 @@ body {
 	}
 }
 
-a, button {
+a,
+button {
 	outline: none;
 	text-decoration: none;
 	transition: all 0.3s ease;
+}
+
+a {
+	color: var(--color-primary);
+
+	@media (hover: hover) {
+		&:hover {
+			color: var(--color-secondary);
+		}
+	}
 }
 
 figure {
 	margin: 0;
 }
 
+hr {
+	border: none;
+	border-bottom: solid 1px var(--color-gray-light);
+}
+
+fieldset {
+	appearance: none;
+	border: none;
+}
+
+img,
 svg {
 	transition: all 0.3s ease;
 
@@ -56,9 +80,20 @@ svg {
 	}
 }
 
+img {
+	display: block;
+	max-width: 100%;
+	width: 100%;
+}
+
 strong,
 b {
 	font-weight: 700;
+	color: var(--color-primary);
+}
+
+small {
+	@mixin small;
 }
 
 h1,
@@ -67,83 +102,33 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: var(--font-head);
-	font-weight: 700;
-	margin: 0;
-	padding: 0;
+	@mixin heading;
 }
 
 h1 {
-	font-size: var(--size-mobile-h1);
-	line-height: var(--lineheight-mobile-h1);
-
-	@media (--screen-lg) {
-		font-size: var(--size-desktop-h1);
-		line-height: var(--lineheight-desktop-h1);
-	}
+	@mixin h1;
 }
 
 h2 {
-	font-size: var(--size-mobile-h2);
-	line-height: var(--lineheight-mobile-h2);
-
-	@media (--screen-lg) {
-		font-size: var(--size-desktop-h2);
-		line-height: var(--lineheight-desktop-h2);
-	}
+	@mixin h2;
 }
 
 h3 {
-	font-size: var(--size-mobile-h3);
-	line-height: var(--lineheight-mobile-h3);
-
-	@media (--screen-lg) {
-		font-size: var(--size-desktop-h3);
-		line-height: var(--lineheight-desktop-h3);
-	}
+	@mixin h3;
 }
 
 h4 {
-	font-size: var(--size-mobile-h4);
-	line-height: var(--lineheight-mobile-h4);
-
-	@media (--screen-lg) {
-		font-size: var(--size-desktop-h4);
-		line-height: var(--lineheight-desktop-h4);
-	}
+	@mixin h4;
 }
 
 h5 {
-	font-size: var(--size-mobile-h5);
-	line-height: var(--lineheight-mobile-h5);
-
-	@media (--screen-lg) {
-		font-size: var(--size-desktop-h5);
-		line-height: var(--lineheight-desktop-h5);
-	}
+	@mixin h5;
 }
 
 h6 {
-	font-size: var(--size-mobile-h6);
-	line-height: var(--lineheight-mobile-h6);
-
-	@media (--screen-lg) {
-		font-size: var(--size-desktop-h6);
-		line-height: var(--lineheight-desktop-h6);
-	}
+	@mixin h6;
 }
 
 p {
-	color: var(--medium-gray);
-	font-size: var(--size-mobile-text);
-	line-height: var(--lineheight-mobile-text);
-
-	@media (--screen-lg) {
-		font-size: var(--size-desktop-text);
-		line-height: var(--lineheight-desktop-text);
-	}
-}
-
-footer {
-	text-align: center;
+	@mixin text;
 }
