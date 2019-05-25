@@ -31,7 +31,7 @@
 
 		<div class="container-fluid">
 			<div class="row">
-				<!-- <div class="col"> -->
+
 					<div class="site-branding">
 						<?php
 
@@ -73,7 +73,8 @@
 
 					</nav><!-- #site-navigation -->
 
-				<!-- </div> -->
+					<?php the_header_image_tag(); ?>
+
 			</div>
 		</div>
 	</header><!-- #masthead -->
