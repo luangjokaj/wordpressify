@@ -197,7 +197,7 @@ if( class_exists('acf') ) {
 
 // add the BS nav class to all menus
 
-function add_bs_nav_class_to_menus( $args )
+function a_starting_point_add_bs_nav_class_to_menus( $args )
 {
 	$args['menu_class'] .= ' nav';
 	return $args;
@@ -206,14 +206,14 @@ function add_bs_nav_class_to_menus( $args )
 add_filter( 'wp_nav_menu_args', 'add_bs_nav_class_to_menus' );
 
 // add BS nav-item class to all li tags
-function add_bs_link_item_class_to_list_items($classes, $item, $args) {
+function a_starting_point_add_bs_link_item_class_to_list_items($classes, $item, $args) {
   $classes[] = 'nav-item';
   return $classes;
 }
 add_filter('nav_menu_css_class', 'add_bs_link_item_class_to_list_items', 1, 3);
 
 // add the BS nav-link class to all menu links
-function add_bs_nav_link_class_to_menu_links($atts) {
+function a_starting_point_add_bs_nav_link_class_to_menu_links($atts) {
   $atts['class'] = "nav-link";
   return $atts;
 }
