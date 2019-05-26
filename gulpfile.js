@@ -65,13 +65,13 @@ const pluginsListProd = [
 /* -------------------------------------------------------------------------------------------------
 Header & Footer JavaScript Boundles
 -------------------------------------------------------------------------------------------------- */
-const headerJS = [
-	'./node_modules/jquery/dist/jquery.js',
-	'./node_modules/popper.js/dist/umd/popper.js',
-	'./node_modules/bootstrap/dist/js/bootstrap.js',
-];
+// const headerJS = [
+// 	'./node_modules/jquery/dist/jquery.js',
+// 	'./node_modules/popper.js/dist/umd/popper.js',
+// 	'./node_modules/bootstrap/dist/js/bootstrap.js',
+// ];
 
-const footerJS = ['./src/assets/js/**', '!./src/assets/js/customizer.js'];
+// const footerJS = ['./src/assets/js/**', '!./src/assets/js/customizer.js'];
 
 /* -------------------------------------------------------------------------------------------------
 Installation Tasks
@@ -129,7 +129,7 @@ function devServer() {
 	);
 
 	watch('./src/assets/styles/**/*.scss', stylesDev);
-	watch('./src/assets/js/**', series(footerScriptsDev, Reload));
+	//watch('./src/assets/js/**', series(footerScriptsDev, Reload));
 	watch('./src/assets/img/**', series(copyImagesDev, Reload));
 	watch('./src/assets/fonts/**', series(copyFontsDev, Reload));
 	watch('./src/theme/**', series(copyThemeDev, Reload));
@@ -172,28 +172,28 @@ function stylesDev() {
 		.pipe(browserSync.stream({ match: '**/*.css' }));
 }
 
-function headerScriptsDev() {
-	return src(headerJS)
-		.pipe(plumber({ errorHandler: onError }))
-		.pipe(sourcemaps.init())
-		.pipe(concat('header-bundle.js'))
-		.pipe(sourcemaps.write('.'))
-		.pipe(dest('./build/wordpress/wp-content/themes/' + themeName + '/js'));
-}
+// function headerScriptsDev() {
+// 	return src(headerJS)
+// 		.pipe(plumber({ errorHandler: onError }))
+// 		.pipe(sourcemaps.init())
+// 		// .pipe(concat('header-bundle.js'))
+// 		// .pipe(sourcemaps.write('.'))
+// 		.pipe(dest('./build/wordpress/wp-content/themes/' + themeName + '/js'));
+// }
 
-function footerScriptsDev() {
-	return src(footerJS)
-		.pipe(plumber({ errorHandler: onError }))
-		.pipe(sourcemaps.init())
-		.pipe(
-			babel({
-				presets: ['@babel/preset-env'],
-			}),
-		)
-		.pipe(concat('footer-bundle.js'))
-		.pipe(sourcemaps.write('.'))
-		.pipe(dest('./build/wordpress/wp-content/themes/' + themeName + '/js'));
-}
+// function footerScriptsDev() {
+// 	return src(footerJS)
+// 		.pipe(plumber({ errorHandler: onError }))
+// 		.pipe(sourcemaps.init())
+// 		.pipe(
+// 			babel({
+// 				presets: ['@babel/preset-env'],
+// 			}),
+// 		)
+// 		// .pipe(concat('footer-bundle.js'))
+// 		// .pipe(sourcemaps.write('.'))
+// 		.pipe(dest('./build/wordpress/wp-content/themes/' + themeName + '/js'));
+// }
 
 function pluginsDev() {
 	return src(['./src/plugins/**', '!./src/plugins/README.md']).pipe(
@@ -206,8 +206,8 @@ exports.dev = series(
 	copyImagesDev,
 	copyFontsDev,
 	stylesDev,
-	headerScriptsDev,
-	footerScriptsDev,
+	//headerScriptsDev,
+	//footerScriptsDev,
 	pluginsDev,
 	devServer,
 );
@@ -235,26 +235,26 @@ function stylesProd() {
 		.pipe(dest('./dist/themes/' + themeName));
 }
 
-function headerScriptsProd() {
-	return src(headerJS)
-		.pipe(plumber({ errorHandler: onError }))
-		.pipe(concat('header-bundle.js'))
-		.pipe(uglify())
-		.pipe(dest('./dist/themes/' + themeName + '/js'));
-}
+// function headerScriptsProd() {
+// 	return src(headerJS)
+// 		.pipe(plumber({ errorHandler: onError }))
+// 		// .pipe(concat('header-bundle.js'))
+// 		// .pipe(uglify())
+// 		.pipe(dest('./dist/themes/' + themeName + '/js'));
+// }
 
-function footerScriptsProd() {
-	return src(footerJS)
-		.pipe(plumber({ errorHandler: onError }))
-		.pipe(
-			babel({
-				presets: ['@babel/preset-env'],
-			}),
-		)
-		.pipe(concat('footer-bundle.js'))
-		.pipe(uglify())
-		.pipe(dest('./dist/themes/' + themeName + '/js'));
-}
+// function footerScriptsProd() {
+// 	return src(footerJS)
+// 		.pipe(plumber({ errorHandler: onError }))
+// 		.pipe(
+// 			babel({
+// 				presets: ['@babel/preset-env'],
+// 			}),
+// 		)
+// 		// .pipe(concat('footer-bundle.js'))
+// 		// .pipe(uglify())
+// 		.pipe(dest('./dist/themes/' + themeName + '/js'));
+// }
 
 function pluginsProd() {
 	return src(['./src/plugins/**', '!./src/plugins/**/*.md']).pipe(dest('./dist/plugins'));
@@ -287,8 +287,8 @@ exports.prod = series(
 	copyThemeProd,
 	copyFontsProd,
 	stylesProd,
-	headerScriptsProd,
-	footerScriptsProd,
+	//headerScriptsProd,
+	//footerScriptsProd,
 	pluginsProd,
 	processImages,
 	zipProd,

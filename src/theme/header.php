@@ -61,7 +61,7 @@
 
 					<nav id="site-navigation" class="main-navigation">
 
-						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'menu toggle', 'a-starting-point' ); ?></button>
+						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'menu', 'a-starting-point' ); ?></button>
 						<?php
 
 						wp_nav_menu( array(
