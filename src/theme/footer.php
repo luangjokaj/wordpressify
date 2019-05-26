@@ -27,11 +27,6 @@
 							printf( esc_html__( 'Proudly powered by %s', 'a-starting-point' ), 'WordPress' );
 							?>
 						</a>
-						<span class="sep"> | </span>
-							<?php
-							/* translators: 1: Theme name, 2: Theme author. */
-							printf( esc_html__( 'Theme: %1$s available on %2$s.', 'a-starting-point' ), 'A Starting Point', '<a href="https://github.com/cresencio/asp-theme">GitHub</a>' );
-							?>
 					</div><!-- .site-info -->
 			</div>
 		</div>
