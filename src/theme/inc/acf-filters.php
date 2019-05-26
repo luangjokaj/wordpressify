@@ -26,7 +26,7 @@ function a_starting_point_acf_widget_custom_class( $params ) {
 }
 add_filter('dynamic_sidebar_params', 'a_starting_point_acf_widget_custom_class');
 
-// add custom field value to menu class if it exists, also add icon for menu items
+// add custom field value to menu class if it exists
 
 function a_starting_point_wp_nav_menu_objects( $items, $args ) {
 
@@ -36,23 +36,6 @@ function a_starting_point_wp_nav_menu_objects( $items, $args ) {
 
 	if($a_starting_point_custom_menu_class){
 			$args->menu_class .= ' '. a_starting_point_clean_acf_text_fields($a_starting_point_custom_menu_class);
-	}
-
-  // loop
-	foreach( $items as &$item ) {
-
-		// vars
-		$icon = get_field('icon', $item);
-		$hide_text = get_field('hide_text', $item);
-
-
-		// append icon
-		if( $icon ) {
-
-      ( $hide_text ) ? $item->title = '<i class="'.$icon.'"></i>' : $item->title = '<i class="fas fa-'.$icon.'"></i> '. $item->title;
-
-		}
-
 	}
 
 	return $items;
