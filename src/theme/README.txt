@@ -26,6 +26,14 @@ Yes, this theme supports the following plugins:
 
 == Changelog ==
 
+= 1.1.0 =
+* don't bundle js
+* prefix various functions and output
+* fix screenshot
+* remove the theme url
+* remove footer link
+* use core jquery
+
 = 1.0.0 =
 * Initial release.
 
