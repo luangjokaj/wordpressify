@@ -26,6 +26,13 @@ Yes, this theme supports the following plugins:
 
 == Changelog ==
 
+= 1.3.0 =
+* escape theme mod options before output
+
+
+= 1.2.0 =
+* add theme URI
+
 = 1.1.0 =
 * don't bundle js
 * prefix various functions and output
@@ -42,3 +49,37 @@ Yes, this theme supports the following plugins:
 * _s - http://underscores.me/
 * Bootstrap - https://getbootstrap.com/
 * Advanced Custom Fields - http://advancedcustomfields.com/
+
+== Credits ==
+
+* Based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+* Bootstrap: http://getbootstrap.com, License: MIT License
+
+== Copyright Information ==
+
+A Starting Point, Copyright 2019 Cresencio Cantu
+A Starting Point is distributed under the terms of the GNU GPL
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see .
+
+A Starting Point WordPress Theme is derived from Underscores WordPress Theme, Copyright 2012-2016 Automattic, Inc.
+Underscores WordPress Theme is distributed under the terms of the GNU GPL
+
+A Starting Point WordPress Theme bundles the following third-party resources:
+
+Bootstrap, 2011-2019 the Bootstrap Authors and Twitter, Inc.
+Code released under the MIT License. Docs released under Creative Commons.
+
+Popper.js, Code and documentation copyright 2016 Federico Zivolo
+Code released under the MIT license. Docs released under Creative Commons.
