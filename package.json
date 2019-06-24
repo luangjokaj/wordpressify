@@ -41,7 +41,6 @@
 		"postcss-easy-import": "^3.0.0",
 		"postcss-mixins": "^6.2.1",
 		"postcss-preset-env": "^6.6.0",
-		"stylelint": "^10.1.0",
-		"stylelint-config-standard": "^18.3.0"
+		"stylelint": "^10.1.0"
 	}
 }
