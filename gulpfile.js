@@ -164,7 +164,7 @@ function copyFontsDev() {
 }
 
 function stylesDev() {
-	return src('./src/assets/styles/style.scss')
+	return src('./src/assets/styles/*.scss')
 		.pipe(sourcemaps.init())
 		.pipe(sass().on("error", sass.logError))
 		.pipe(sourcemaps.write('.'))
