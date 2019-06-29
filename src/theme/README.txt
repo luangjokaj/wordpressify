@@ -26,6 +26,9 @@ Yes, this theme supports the following plugins:
 
 == Changelog ==
 
+= 1.4.0 =
+* add editor style support
+
 = 1.3.0 =
 * escape theme mod options before output
 
