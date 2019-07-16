@@ -230,7 +230,7 @@ function copyFontsProd() {
 }
 
 function stylesProd() {
-	return src('./src/assets/styles/style.scss')
+	return src('./src/assets/styles/*.scss')
 		.pipe(sass().on("error", sass.logError))
 		.pipe(dest('./dist/themes/' + themeName));
 }
