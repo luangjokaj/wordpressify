@@ -19,7 +19,7 @@ function a_starting_point_acf_widget_custom_class( $params ) {
 	$a_starting_point_custom_css_class_value = a_starting_point_clean_acf_text_fields(get_field('asp_custom_widget_class', 'widget_' . $widget_id));
 
 	if( $a_starting_point_custom_css_class_value ) {
-		$params[0]['before_widget'] = str_replace( 'asp-theme-acf', esc_html( $a_starting_point_custom_css_class_value ), $params[0]['before_widget'] );
+		$params[0]['before_widget'] = str_replace( 'a-starting-point-acf', esc_html( $a_starting_point_custom_css_class_value ), $params[0]['before_widget'] );
 	}
 	// return
 	return $params;
