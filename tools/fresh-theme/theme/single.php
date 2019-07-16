@@ -1,13 +1,6 @@
 <?php get_header(); ?>
 <!-- container -->
-<div class="documentation">
-	<div class="side-navigation">
-		<nav>
-			<?php get_search_form(); ?>
-			<h6>Quick Navigation</h6>
-		</nav>
-	</div>
-
+<div class="container">
 	<!-- site-content -->
 	<div class="site-content single">
 		<?php
