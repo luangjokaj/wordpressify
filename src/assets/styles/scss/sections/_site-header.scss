@@ -105,7 +105,8 @@
   			li {
   				&:hover > ul,
   				&.focus > ul {
-  					left: 100%;
+            left: 100%;
+            top: auto;
   				}
   			}
 
