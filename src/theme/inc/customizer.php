@@ -1,6 +1,6 @@
 <?php
 /**
- * ASP Theme Theme Customizer
+ * A Starting Point Customizer
  *
  * @package a_starting_point
  */
