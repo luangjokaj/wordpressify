@@ -33,9 +33,10 @@ function a_starting_point_customize_register( $wp_customize ) {
 	));
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'a_starting_point_main_content_background_color', array(
-		'label'        => 'Main Content Background Color',
-		'section'    => 'colors',
-		'settings'   => 'a_starting_point_main_content_background_color',
+		'label' => __( 'Main Content Background Color', 'a-starting-
+		point' ),
+		'title' => __( 'Website Layout', 'a-starting-point' ),
+		'label' => __( 'Content Max Width', 'a-starting-point' ),
 	)));
 
 	// add a section, this will not show in the panel until a control is added to it.
@@ -49,15 +50,9 @@ function a_starting_point_customize_register( $wp_customize ) {
 		'default'     				=> 'none',
 		'transport'   				=> 'refresh',
 		'type'			  		=> 'theme_mod',
-		'sanitize_callback' => 'a_starting_point_sanitize_content_max_width'
+		'sanitize_callback' => 'absint'
 		));
 
-	function a_starting_point_sanitize_content_max_width( $input, $setting ){
-		//input must be a slug: lowercase alphanumeric characters, dashes and underscores are allowed only
-		$input = sanitize_key($input);
-		//return input if valid or return default option
-		return ( intval($input) ? $input.'px' : $setting->default );
-	}
 	// create the control
 	$wp_customize->add_control(
 		'content_max_width',
@@ -107,7 +102,7 @@ function a_starting_point_customizer_css(){
 		<style type="text/css">
 			#page { 
 				background-color: <?php echo esc_html(get_theme_mod('a_starting_point_main_content_background_color', 'FFFFFF')); ?>; 
-				max-width: <?php echo esc_html(get_theme_mod('content_max_width', 'none')); ?>;
+				max-width: <?php echo esc_html( get_theme_mod('content_max_width','960') ).'px'; ?>;
 			}
 				
 		</style>
