@@ -27,7 +27,24 @@ Yes, this theme supports the following plugins:
 == Changelog ==
 
 = 1.5.0 =
-* add editor style support
+
+* add some space between posts and widgets
+* add max-width to select elements
+* use the provided sanatize function for colors
+* use jquery the correct way (as dependecy argument)
+* update screenshot size dimensions
+* fix issue where sub-menus were impossible to use
+* update selector for headings color so that custom color works
+* change strings in customizor for better translation
+* change all occruance of ASP to A Starting Point
+* replace asp with text domain
+* change ASP Theme to text domain
+* change "Theme Name: ASP Theme" correct text domain
+* update woocommerce assets with correct text domain
+* update reference for jetpack styles with text domain
+* change theme customizer file to match text domain
+* rename pot file to match text domain
+* change custom css class token name to match text domain
 
 = 1.4.0 =
 * add editor style support
