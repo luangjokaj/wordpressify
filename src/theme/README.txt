@@ -26,6 +26,12 @@ Yes, this theme supports the following plugins:
 
 == Changelog ==
 
+= 1.6.0 =
+
+* correctly translate customizer.php
+* remove unneccesary sanitize functions
+* fix issue where some input elements are still breaking outside of the main content area
+
 = 1.5.0 =
 
 * add some space between posts and widgets
