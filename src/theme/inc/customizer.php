@@ -29,21 +29,8 @@ function a_starting_point_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'a_starting_point_main_content_background_color' , array(
 		'default'     => 'FFFFFF',
 		'transport'   => 'refresh',
-		'sanitize_callback' => 'a_starting_point_sanitize_main_content_background_color'
+		'sanitize_callback' => 'sanitize_hex_color'
 	));
-
-	//https://developer.wordpress.org/reference/functions/sanitize_hex_color/
-
-	function a_starting_point_sanitize_main_content_background_color($input){
-		if ( '' === $input ) {
-			return '';
-		}
-	 
-		// 3 or 6 hex digits, or the empty string.
-		if ( preg_match( '|^#([A-Fa-f0-9]{3}){1,2}$|', $input ) ) {
-			return $input;
-		}
-	}
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'a_starting_point_main_content_background_color', array(
 		'label'        => 'Main Content Background Color',
