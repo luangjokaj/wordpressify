@@ -5,7 +5,7 @@
         {
             "key": "field_5c9420cb64cb9",
             "label": "Custom CSS Class Name",
-            "name": "asp_custom_menu_class",
+            "name": "a_starting_point_custom_menu_class",
             "type": "text",
             "instructions": "",
             "required": 0,

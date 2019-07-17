@@ -5,7 +5,7 @@
         {
             "key": "field_5c941c70ebf67",
             "label": "Custom CSS Class Name",
-            "name": "asp_custom_widget_class",
+            "name": "a_starting_point_custom_widget_class",
             "type": "text",
             "instructions": "",
             "required": 0,
