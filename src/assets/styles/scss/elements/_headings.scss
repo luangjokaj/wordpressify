@@ -20,8 +20,7 @@ h6{
 
 //site title in the header, front-page and home page use <h1>, all others a <p>
 
-h1,p{
-  &.site-title{
+.site-title{
     font-size: $h1-font-size;
     font-weight: $headings-font-weight;
     margin-bottom: $headings-margin-bottom;
@@ -30,7 +29,6 @@ h1,p{
       color: inherit;
     }
   }
-}
 
 
 .entry-title{
