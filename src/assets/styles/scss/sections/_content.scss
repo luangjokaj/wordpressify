@@ -12,3 +12,16 @@
 .entry-footer{
   clear: both;
 }
+
+.hfeed{
+  .post{
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .entry-footer{
+    border-bottom: 3px solid #e3e3e3;
+    padding-top: 30px;
+    padding-bottom: 10px;
+  }
+}

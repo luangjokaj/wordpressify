@@ -1,3 +1,8 @@
 #secondary{
   @include make-col-ready();
+
+  .widget{
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
 }
