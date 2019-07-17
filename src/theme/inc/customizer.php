@@ -53,7 +53,7 @@ function a_starting_point_customize_register( $wp_customize ) {
 
 	// add a section, this will not show in the panel until a control is added to it.
 	$wp_customize->add_section( 'a_starting_point_content_max_width' , array(
-		'title'      => 'Site Layout',
+		'title'      => 'Website Layout',
 		'priority'   => 30
 	));
 
@@ -79,7 +79,7 @@ function a_starting_point_customize_register( $wp_customize ) {
 				'section'     => 'a_starting_point_content_max_width',
 				'settings'    => 'content_max_width',
 				'type'        => 'number',
-				'description' => __( 'Modifies the max width of the website\'s content (pixels).', 'a-starting-point' ),
+				'description' => __( 'Modifies the max width of the website\'s content.', 'a-starting-point' ),
 			)
 	);
 
