@@ -33,15 +33,14 @@ function a_starting_point_customize_register( $wp_customize ) {
 	));
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'a_starting_point_main_content_background_color', array(
-		'label' => __( 'Main Content Background Color', 'a-starting-
-		point' ),
-		'title' => __( 'Website Layout', 'a-starting-point' ),
-		'label' => __( 'Content Max Width', 'a-starting-point' ),
+		'label' => __( 'Main Content Background Color', 'a-starting-point' ),
+		'section'    => 'colors',
+		'settings'   => 'a_starting_point_main_content_background_color',
 	)));
 
 	// add a section, this will not show in the panel until a control is added to it.
 	$wp_customize->add_section( 'a_starting_point_content_max_width' , array(
-		'title'      => 'Website Layout',
+		'title' => __( 'Website Layout', 'a-starting-point' ),
 		'priority'   => 30
 	));
 
@@ -57,7 +56,7 @@ function a_starting_point_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'content_max_width',
 			array(
-				'label'       => 'Content Max Width',
+				'label'       => __( 'Content Max Width', 'a-starting-point' ),
 				'section'     => 'a_starting_point_content_max_width',
 				'settings'    => 'content_max_width',
 				'type'        => 'number',
