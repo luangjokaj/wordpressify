@@ -26,6 +26,11 @@ Yes, this theme supports the following plugins:
 
 == Changelog ==
 
+= 1.6.1 =
+
+* fix error caused by unnecessary line breaks in customizer.php
+* correctly translate customizer.php but for real this time (hopefully)
+
 = 1.6.0 =
 
 * correctly translate customizer.php
