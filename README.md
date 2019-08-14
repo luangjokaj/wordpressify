@@ -57,7 +57,7 @@ Node.js is a JavaScript runtime built on Chrome’s V8 JavaScript engine. Node.j
 
 # 2. Set Up Project
 ## File Structure
-    
+```
     ├── build/                   # Build files
     ├── dist/                    # Distribution files
     ├── src/                     # Source files
@@ -70,14 +70,17 @@ Node.js is a JavaScript runtime built on Chrome’s V8 JavaScript engine. Node.j
     │   ├── theme/               # PHP Template files
     └── .babelrc                 # Babel configuration
     └── .gitignore               # Git ignored files
-│   ├── .stylelintrc             # Stylelint configuration file
+    └── .stylelintrc             # Stylelint configuration file
     └── gulpfile.js              # Gulp configuration
     └── LICENSE                  # License agreements
     └── package-lock.json        # Packages lock file
     └── package.json             # Node packages
     └── README.md                # You are reading this
+```
+
 To install WordPressify you need to clone the repository from GitHub:
-```
+
+```
 git clone https://github.com/luangjokaj/wordpressify
 ```
 - This will clone the repository on your local machine. Navigate to the newly created folder and install the dependencies:
