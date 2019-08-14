@@ -36,18 +36,19 @@ WordPressify is a modern workflow for your WordPress development, with an integr
 
 ## Features
 
-- **DEV SERVER**
-A development server for PHP based in Node. Powered by BrowserSync.
-- **AUTO-RELOAD**
-Watches for all your changes and reloads in real-time.
-- **CSS**
-Preprocessors: PostCSS or Sass with source maps.
-- **JAVASCRIPT ES6**
-Babel compiler for writing next generation JavaScript.
-- **EXTERNAL LIBRARIES**
-Easy import for external JavaScript libraries and npm scripts.
-- **CUSTOMIZABLE**
-Flexible build customization, managed by gulp tasks.
+|👇|Includes|
+|:-:|:---|
+|📦| Dev Server|
+|🔥| Hot Reload & CSS Injection|
+|🎨| PostCSS & Next Generation CSS|
+|⚙| Babel 7 - ES6 JavaScript|
+|✂️| Source Maps|
+|🎒| Code Minification|
+|🌈| Image Compression|
+|🤖| External Libraries|
+|🛎| Production ready ZIP theme|
+
+WordPressify comes with a development server for PHP running under a proxy with BrowserSync. Watches for all your changes and reloads the webpage in real-time. Style are preprocessors with PostCSS or Sass. Babel compiler for writing next-generation JavaScript. Source maps are supported for both CSS and JavaScript. WordPressify allows easy import of external JavaScript libraries and npm scripts, it has a flexible build and can be easily customized with gulp tasks.
 
 # 1. Installing Node
 
