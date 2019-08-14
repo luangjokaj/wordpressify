@@ -4,7 +4,7 @@ html,
 body {
 	margin: 0;
 	padding: 0;
-	height: 100%;
+	min-height: 100%;
 }
 
 body {
@@ -16,6 +16,7 @@ body {
 	font-size: var(--size-text-mobile);
 	line-height: var(--lineheight-text-mobile);
 	padding-top: var(--padding-top-body-mobile);
+	color: var(--color-dark);
 
 	@media (--screen-lg) {
 		font-size: var(--size-text-desktop);
@@ -74,9 +75,10 @@ svg {
 }
 
 img {
-	display: block;
+	display: inline-block;
 	max-width: 100%;
-	width: 100%;
+	width: auto;
+	height: auto;
 }
 
 strong,

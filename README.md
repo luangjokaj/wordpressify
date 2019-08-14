@@ -201,7 +201,7 @@ const pluginsListProd = [
 The starting point for CSS is the file:
 
 ```
-src/assets/styles/styles.css
+src/assets/css/style.css
 ```
 
 The template definitions are located here too. It is also where all other imports are included in the stylesheets.
@@ -235,7 +235,7 @@ Change the gulp tasks stylesDev to:
 
 ```javascript
 function stylesDev() {
-	return src('./src/assets/styles/style.scss')
+	return src('./src/assets/css/style.scss')
 		.pipe(sourcemaps.init())
 		.pipe(sass().on("error", sass.logError))
 		.pipe(sourcemaps.write('.'))
@@ -247,7 +247,7 @@ function stylesDev() {
 Also the watch task has to be changed in order to watch for .scss filetypes:
 
 ```javascript
-watch('./src/assets/styles/**/*.scss', stylesDev);
+watch('./src/assets/css/**/*.scss', stylesDev);
 ```
 
 Change the gulp tasks styleProd to:
@@ -255,7 +255,7 @@ Change the gulp tasks styleProd to:
 
 ```javascript
 function stylesProd() {
-	return src('./src/assets/styles/style.scss')
+	return src('./src/assets/css/style.scss')
 		.pipe(sass().on("error", sass.logError))
 		.pipe(dest('./dist/themes/' + themeName));
 }
@@ -353,10 +353,10 @@ backups/
 
 # 8. Code Style Rules
 
-WordPressify comes with its own set of code style rules that can be imported into IntelliJ. The code style file can be found in the directory:
+WordPressify comes with its own set of code style rules:
 
 ```
-tools/IntelliJ.xml
+.stylelintrc
 ```
 
 ## Lint CSS
@@ -460,6 +460,10 @@ sudo apt-get install -y nodejs
 That's it. Now just follow the WordPressify installation instructions.
 
 # Changelog
+**v0.1.7**
+- Remove WordPressify template from main repository.
+- Simple & unstyled boilerplate code. Stay fresh!
+
 **v0.1.6**
 - Upgrade to Gulp 4.
 - Rewrote all tasks into functions.
