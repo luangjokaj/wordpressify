@@ -62,21 +62,20 @@ Node.js is a JavaScript runtime built on Chrome’s V8 JavaScript engine. Node.j
     ├── dist/                    # Distribution files
     ├── src/                     # Source files
     │   ├── assets/              # Assets directory
+    │       ├── css/             # CSS files
     │       ├── fonts/           # Fonts directory
     │       ├── img/             # Image directory
     │       ├── js/              # JavaScript files
-    │       ├── styles/          # CSS files
     │   ├── plugins/             # WordPress plugins
     │   ├── theme/               # PHP Template files
-    ├── tools/                   # Tools and utilities
-    │   ├── stylelintrc.json     # Stylelint configuration file
-    │   ├── IntelliJ.xml         # IntelliJ code style
     └── .babelrc                 # Babel configuration
     └── .gitignore               # Git ignored files
-    └── LICENSE                  # License agreements
-    └── README.md                # You are reading this
+│   ├── .stylelintrc             # Stylelint configuration file
     └── gulpfile.js              # Gulp configuration
+    └── LICENSE                  # License agreements
+    └── package-lock.json        # Packages lock file
     └── package.json             # Node packages
+    └── README.md                # You are reading this
 To install WordPressify you need to clone the repository from GitHub:
 ```
 git clone https://github.com/luangjokaj/wordpressify
