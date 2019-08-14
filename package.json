@@ -1,9 +1,9 @@
 {
 	"name": "wordpressify",
-	"version": "0.1.6",
-	"description": "",
+	"version": "0.1.7",
+	"description": "A build system designed to automate your WordPress development workflow.",
 	"homepage": "https://www.wordpressify.co",
-	"repository": "https://github.com/luangjokaj/wordpressify",
+	"repository": "https://github.com/luangjokaj/fuzzymail",
 	"main": "gulpfile.js",
 	"scripts": {
 		"install:wordpress": "gulp setup && gulp install",
