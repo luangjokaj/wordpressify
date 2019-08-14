@@ -16,6 +16,8 @@
 	--padding-top-body-desktop: 0;
 	--margin-container-mobile: 20px;
 	--margin-container-desktop: 20px;
+	--margin-container-child-mobile: 10px;
+	--margin-container-child-desktop: 10px;
 	--margin-row-mobile: -10px;
 	--margin-row-desktop: -10px;
 	--gutter-col-mobile: 10px;

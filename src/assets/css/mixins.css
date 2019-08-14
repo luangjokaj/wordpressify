@@ -134,7 +134,6 @@
 	}
 }
 
-
 @define-mixin subtitle {
 	font-size: var(--size-subtitle-mobile);
 	line-height: var(--lineheight-subtitle-mobile);
@@ -219,8 +218,12 @@
 			height: 8px;
 			border-radius: 50%;
 			background: var(--color-primary);
-			top: 10px;
+			top: 8px;
 			left: 0;
+
+			@media (--screen-lg) {
+				top: 10px;
+			}
 		}
 	}
 }
@@ -317,5 +320,16 @@
 	@media (--screen-lg) {
 		padding-right: var(--margin-container-desktop);
 		padding-left: var(--margin-container-desktop);
+	}
+}
+
+
+@define-mixin containerChild {
+	padding-right: var(--margin-container-child-mobile);
+	padding-left: var(--margin-container-child-mobile);
+
+	@media (--screen-lg) {
+		padding-right: var(--margin-container-child-desktop);
+		padding-left: var(--margin-container-child-desktop);
 	}
 }

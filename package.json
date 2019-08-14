@@ -2,6 +2,8 @@
 	"name": "wordpressify",
 	"version": "0.1.6",
 	"description": "",
+	"homepage": "https://www.wordpressify.co",
+	"repository": "https://github.com/luangjokaj/wordpressify",
 	"main": "gulpfile.js",
 	"scripts": {
 		"install:wordpress": "gulp setup && gulp install",
@@ -9,7 +11,7 @@
 		"prod": "gulp prod",
 		"fresh-start": "gulp fresh",
 		"backup": "gulp backup",
-		"lint:css": "stylelint ./src/**/*.css --config ./tools/stylelintrc.json"
+		"lint:css": "stylelint src/**/*.css"
 	},
 	"author": "Luan Gjokaj <luan@riangle.com>",
 	"license": "MIT",
@@ -34,13 +36,13 @@
 		"gulp-sourcemaps": "^2.6.5",
 		"gulp-uglify": "^3.0.2",
 		"gulp-vinyl-zip": "^2.1.2",
-		"isotope-layout": "^3.0.6",
 		"jquery": "^3.4.1",
-		"normalize.css": "^8.0.1",
-		"nprogress": "^0.2.0",
 		"postcss-easy-import": "^3.0.0",
 		"postcss-mixins": "^6.2.2",
 		"postcss-preset-env": "^6.7.0",
 		"stylelint": "^10.1.0"
+	},
+	"dependencies": {
+		"cherry-design": "^1.0.2"
 	}
 }

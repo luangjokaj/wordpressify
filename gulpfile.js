@@ -64,12 +64,7 @@ const pluginsListProd = [
 /* -------------------------------------------------------------------------------------------------
 Header & Footer JavaScript Boundles
 -------------------------------------------------------------------------------------------------- */
-const headerJS = [
-	'./node_modules/jquery/dist/jquery.js',
-	'./node_modules/nprogress/nprogress.js',
-	'./node_modules/aos/dist/aos.js',
-	'./node_modules/isotope-layout/dist/isotope.pkgd.js',
-];
+const headerJS = ['./node_modules/jquery/dist/jquery.js', './node_modules/aos/dist/aos.js'];
 
 const footerJS = ['./src/assets/js/**'];
 
@@ -119,7 +114,7 @@ function devServer() {
 		},
 		() => {
 			browserSync({
-				logPrefix: 'WordPressify',
+				logPrefix: '🎈 WordPressify',
 				proxy: '127.0.0.1:3020',
 				host: '127.0.0.1',
 				port: '3010',
@@ -164,7 +159,7 @@ function copyFontsDev() {
 }
 
 function stylesDev() {
-	return src('./src/assets/styles/style.css')
+	return src('./src/assets/css/style.css')
 		.pipe(plumber({ errorHandler: onError }))
 		.pipe(sourcemaps.init())
 		.pipe(postcss(pluginsListDev))
@@ -231,7 +226,7 @@ function copyFontsProd() {
 }
 
 function stylesProd() {
-	return src('./src/assets/styles/style.css')
+	return src('./src/assets/css/style.css')
 		.pipe(plumber({ errorHandler: onError }))
 		.pipe(postcss(pluginsListProd))
 		.pipe(dest('./dist/themes/' + themeName));

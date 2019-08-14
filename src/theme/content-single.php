@@ -1,6 +1,7 @@
 <article class="single">
 	<h1 class="single-title"><?php the_title(); ?></h1>
 
+	<?php if (!is_product()) : ?>
 	<p class="post-info">
 		<span class="date">
 			<?php the_time( 'F j, Y g:i a' ); ?>
@@ -27,7 +28,7 @@
 		</span>
 	</p>
 
-	<?php the_post_thumbnail( 'banner-image' ); ?>
+		<?php endif; the_post_thumbnail(); ?>
 
 	<div class="post-inner-content">
 		<?php the_content(); ?>
