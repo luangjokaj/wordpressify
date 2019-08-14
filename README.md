@@ -255,7 +255,6 @@ watch('./src/assets/css/**/*.scss', stylesDev);
 
 Change the gulp tasks styleProd to:
 
-
 ```javascript
 function stylesProd() {
 	return src('./src/assets/css/style.scss')
@@ -285,15 +284,15 @@ src/assets/fonts/
 
 Then you can include them in your **CSS**:
 
-```
+```css
 @font-face {
 	font-family: 'Helvetica Neue Thin';
-	src: url('./fonts/Helvetica-Neue-Thin.eot?#iefix');
-	src: url('./fonts/Helvetica-Neue-Thin.eot?#iefix') format('eot'),
+	src: url('./fonts/Helvetica-Neue-Thin.eot');
+	src: url('./fonts/Helvetica-Neue-Thin.eot') format('eot'),
 	url('./fonts/Helvetica-Neue-Thin.woff2') format('woff2'),
 	url('./fonts/Helvetica-Neue-Thin.woff') format('woff'),
 	url('./fonts/Helvetica-Neue-Thin.ttf') format('truetype'),
-	url('./fonts/Helvetica-Neue-Thin.svg#e3b7d1e7c160') format('svg');
+	url('./fonts/Helvetica-Neue-Thin.svg') format('svg');
 }
 ```
 
