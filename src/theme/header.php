@@ -53,7 +53,7 @@
 
 						if ( $a_starting_point_description || is_customize_preview() ) : ?>
 
-<p class="site-description"><?php echo $a_starting_point_description; /* WPCS: xss ok. */ ?></p>
+<p class="site-description"><?php echo $a_starting_point_description; /* phpcs:ignore Standard.Category.SniffName.ErrorCode */ ?></p>
 
 						<?php endif; ?>
 

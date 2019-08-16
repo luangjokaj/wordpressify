@@ -37,7 +37,7 @@ if ( post_password_required() ) {
 					'<span>' . esc_html( get_the_title() ) . '</span>'
 				);
 			} else {
-				printf( // WPCS: XSS OK.
+				printf( // phpcs:ignore Standard.Category.SniffName.ErrorCode
 					/* translators: 1: comment count number, 2: title. */
 					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $a_starting_point_comment_count, 'comments title', 'a-starting-point' ) ),
 					number_format_i18n( $a_starting_point_comment_count ),
