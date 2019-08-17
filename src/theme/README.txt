@@ -26,6 +26,15 @@ Yes, this theme supports the following plugins:
 
 == Changelog ==
 
+= 1.6.2 =
+
+* fixed issue where "recent post" widget links were not breaking correctly
+* add new tags to style.css (blog, right-sidebar, custom-header, editor-style)
+* prefixed the wp_body_open() function
+* updated header.php with new prefixed body open function, a_starting_point_wp_body_open();
+* updated screenshot
+* updated README.txt
+
 = 1.6.1 =
 
 * fix error caused by unnecessary line breaks in customizer.php
@@ -109,6 +118,10 @@ along with this program.  If not, see .
 
 A Starting Point WordPress Theme is derived from Underscores WordPress Theme, Copyright 2012-2016 Automattic, Inc.
 Underscores WordPress Theme is distributed under the terms of the GNU GPL
+
+= Images bundled with the theme =
+* screenshot.png - Theme screenshot by Cresencio Cantu
+  Images for the screenshot were taken by the Theme Author and are released under CC0 license.
 
 A Starting Point WordPress Theme bundles the following third-party resources:
 

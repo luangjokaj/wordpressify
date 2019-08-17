@@ -237,7 +237,7 @@ if ( ! function_exists( 'wp_body_open' ) ) :
 	 * Added for backwards compatibility to support pre 5.2.0 WordPress versions.
 	 *
 	 */
-	function wp_body_open() {
+	function a_starting_point_wp_body_open() {
 		/**
 		 * Triggered after the opening <body> tag.
 		 *
