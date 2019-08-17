@@ -28,7 +28,7 @@ if ( ! function_exists( 'a_starting_point_posted_on' ) ) :
 			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 
-		echo '<span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
+		echo '<span class="posted-on">' . $posted_on . '</span>'; // phpcs:ignore Standard.Category.SniffName.ErrorCode
 
 	}
 endif;
@@ -44,7 +44,7 @@ if ( ! function_exists( 'a_starting_point_posted_by' ) ) :
 			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 
-		echo '<span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
+		echo '<span class="byline"> ' . $byline . '</span>'; // phpcs:ignore Standard.Category.SniffName.ErrorCode
 
 	}
 endif;
@@ -60,14 +60,14 @@ if ( ! function_exists( 'a_starting_point_entry_footer' ) ) :
 			$categories_list = get_the_category_list( esc_html__( ', ', 'a-starting-point' ) );
 			if ( $categories_list ) {
 				/* translators: 1: list of categories. */
-				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'a-starting-point' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'a-starting-point' ) . '</span>', $categories_list ); // phpcs:ignore Standard.Category.SniffName.ErrorCode
 			}
 
 			/* translators: used between list items, there is a space after the comma */
 			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'a-starting-point' ) );
 			if ( $tags_list ) {
 				/* translators: 1: list of tags. */
-				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'a-starting-point' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'a-starting-point' ) . '</span>', $tags_list ); // phpcs:ignore Standard.Category.SniffName.ErrorCode
 			}
 		}
 
