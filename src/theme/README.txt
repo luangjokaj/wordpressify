@@ -26,6 +26,12 @@ Yes, this theme supports the following plugins:
 
 == Changelog ==
 
+= 1.6.3 =
+
+* remove prefixes from the popper and bootstrap wp_enqueue_script() functions
+* add correct license URL
+* update README.txt with correct license description
+
 = 1.6.2 =
 
 * fixed issue where "recent post" widget links were not breaking correctly
@@ -101,6 +107,7 @@ Yes, this theme supports the following plugins:
 == Copyright Information ==
 
 A Starting Point, Copyright 2019 Cresencio Cantu
+
 A Starting Point is distributed under the terms of the GNU GPL
 
 This program is free software; you can redistribute it and/or
