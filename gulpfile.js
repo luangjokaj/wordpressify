@@ -123,7 +123,7 @@ function devServer() {
 		},
 	);
 
-	watch('./src/assets/styles/**/*.css', stylesDev);
+	watch('./src/assets/css/**/*.css', stylesDev);
 	watch('./src/assets/js/**', series(footerScriptsDev, Reload));
 	watch('./src/assets/img/**', series(copyImagesDev, Reload));
 	watch('./src/assets/fonts/**', series(copyFontsDev, Reload));
