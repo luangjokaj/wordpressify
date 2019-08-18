@@ -258,7 +258,7 @@ function pluginsProd() {
 }
 
 function processImages() {
-	return src(['./src/assets/img/**', '!./src/assets/img/**/*.ico'])
+	return src('./src/assets/img/**')
 		.pipe(plumber({ errorHandler: onError }))
 		.pipe(
 			imagemin([imagemin.svgo({ plugins: [{ removeViewBox: true }] })], {
