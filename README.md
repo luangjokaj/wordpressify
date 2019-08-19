@@ -505,3 +505,4 @@ That's it. Now just follow the WordPressify installation instructions.
 
 # License
 MIT
+
