@@ -18,7 +18,7 @@
 	},
 	"author": "Luan Gjokaj <luan@riangle.com>",
 	"license": "MIT",
-	"devDependencies": {
+	"dependencies": {
 		"@babel/core": "^7.5.5",
 		"@babel/preset-env": "^7.5.5",
 		"aos": "^2.3.4",
