@@ -1,10 +1,13 @@
 {
 	"name": "wordpressify",
-	"version": "0.1.7",
+	"version": "0.1.8",
 	"description": "A build system designed to automate your WordPress development workflow.",
 	"homepage": "https://www.wordpressify.co",
 	"repository": "https://github.com/luangjokaj/wordpressify",
-	"main": "gulpfile.js",
+	"main": "./installer/index.js",
+	"bin": {
+		"wordpressify": "./installer/index.js"
+	},
 	"scripts": {
 		"install:wordpress": "gulp setup && gulp install",
 		"dev": "gulp dev",
@@ -21,10 +24,13 @@
 		"aos": "^2.3.4",
 		"beeper": "^2.0.0",
 		"browser-sync": "^2.26.7",
+		"chalk": "^2.4.2",
 		"cherry-design": "^1.0.2",
 		"cssnano": "^4.1.10",
 		"del": "^5.0.0",
+		"download": "^7.1.0",
 		"fancy-log": "^1.3.3",
+		"gulp": "^4.0.2",
 		"gulp-babel": "^8.0.0",
 		"gulp-concat": "^2.6.1",
 		"gulp-connect-php": "^1.0.3",
@@ -36,11 +42,12 @@
 		"gulp-sourcemaps": "^2.6.5",
 		"gulp-uglify": "^3.0.2",
 		"gulp-vinyl-zip": "^2.1.2",
-		"gulp": "^4.0.2",
 		"jquery": "^3.4.1",
+		"ora": "^3.4.0",
 		"postcss-easy-import": "^3.0.0",
 		"postcss-mixins": "^6.2.2",
 		"postcss-preset-env": "^6.7.0",
+		"prompts": "^2.2.1",
 		"stylelint": "^10.1.0"
 	}
 }

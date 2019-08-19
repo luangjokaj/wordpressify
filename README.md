@@ -9,6 +9,8 @@ http://www.wordpressify.co/
 	- [Features](#features)
 - [1. Installing Node](#1-installing-node)
 - [2. Set Up Project](#2-set-up-project)
+	- [Install WordPressify from NPM](#install-wordpressify-from-npm)
+	- [Install WordPressify from Repository](#install-wordpressify-from-repository)
 - [3. CSS, PostCSS and Sass](#3-css-postcss-and-sass)
 	- [PostCSS](#postcss)
 	- [Sass](#sass)
@@ -77,6 +79,20 @@ Node.js is a JavaScript runtime built on Chrome’s V8 JavaScript engine. Node.j
     └── README.md                # You are reading this
 ```
 
+## Install WordPressify from NPM
+To install WordPressify from NPM, run the command:
+```
+sudo npm i wordpressify -g
+```
+
+**START WORDPRESSIFY**
+
+- Create a directory for the new WordPress website and from there run WordPressify to generate the file structure:
+```
+wordpressify
+```
+
+## Install WordPressify from Repository
 To install WordPressify you need to clone the repository from GitHub:
 ```
 git clone https://github.com/luangjokaj/wordpressify
@@ -437,6 +453,9 @@ sudo apt-get install -y nodejs
 That's it. Now just follow the WordPressify installation instructions.
 
 # Changelog
+**v0.1.8**
+- 📦 NEW: Run WordPressify globally from NPM.
+
 **v0.1.7**
 - 🚀 RELEASE: Remove WordPressify template from main repository.
 - 👌 IMPROVE: Simple & unstyled boilerplate code. Stay fresh!
