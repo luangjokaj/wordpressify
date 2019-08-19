@@ -132,7 +132,7 @@ module.exports = () => {
 		spinner.succeed();
 
 		// Installing WordPress files
-		spinner.start(`2. Installing WordPress files from ${chalk.green('https://wordpress.org/')} ...`);
+		spinner.start(`3. Installing WordPress files from ${chalk.green('https://wordpress.org/')} ...`);
 		await execa('npm', ['run', 'install:wordpress']);
 		spinner.succeed();
 
