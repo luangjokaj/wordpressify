@@ -1,6 +1,6 @@
 {
 	"name": "wordpressify",
-	"version": "0.1.8",
+	"version": "0.1.9",
 	"description": "A build system designed to automate your WordPress development workflow.",
 	"homepage": "https://www.wordpressify.co",
 	"repository": "https://github.com/luangjokaj/wordpressify",

@@ -453,6 +453,9 @@ sudo apt-get install -y nodejs
 That's it. Now just follow the WordPressify installation instructions.
 
 # Changelog
+**v0.1.9**
+- 🐛 FIX: Dependencies.
+
 **v0.1.8**
 - 📦 NEW: Run WordPressify globally from NPM.
 
