@@ -35,7 +35,6 @@ http://www.wordpressify.co/
 WordPressify is a modern workflow for your WordPress development, with an integrated web server and auto-reload. CSS preprocessors and ES6 ready.
 
 ## Features
-
 |👇|Includes|
 |:-:|:---|
 |📦| Dev Server|
@@ -51,7 +50,6 @@ WordPressify is a modern workflow for your WordPress development, with an integr
 WordPressify comes with a development server for PHP running under a proxy with BrowserSync. Watches for all your changes and reloads the webpage in real-time. Style are preprocessors with PostCSS or Sass. Babel compiler for writing next-generation JavaScript. Source maps are supported for both CSS and JavaScript. WordPressify allows easy import of external JavaScript libraries and npm scripts, it has a flexible build and can be easily customized with gulp tasks.
 
 # 1. Installing Node
-
 WordPressify requires Node v7.5+. This is the only global dependency. You can download Node **[here](https://nodejs.org/)**.
 
 Node.js is a JavaScript runtime built on Chrome’s V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. Node.js’ package ecosystem, npm, is the largest ecosystem of open source libraries in the world.
@@ -80,7 +78,6 @@ Node.js is a JavaScript runtime built on Chrome’s V8 JavaScript engine. Node.j
 ```
 
 To install WordPressify you need to clone the repository from GitHub:
-
 ```
 git clone https://github.com/luangjokaj/wordpressify
 ```
@@ -95,7 +92,6 @@ npm install
 **CHANGE TEMPLATE NAME**
 
 - At this point WordPressify is installed and ready to be used for the first time. Before starting, open **gulpfile.js** and edit your template name:
-
 ```javascript
 /* -------------------------------------------------------------------------------------------------
 Theme Name
@@ -107,7 +103,6 @@ const themeName = 'wordpressify';
 **INSTALL WORDPRESS**
 
 - On the first run we need to install WordPress, we do this once by running the command:
-
 ```
 npm run install:wordpress
 ```
@@ -117,7 +112,6 @@ npm run install:wordpress
 **START WORKFLOW**
 
 - We are ready to start our development server with the command:
-
 ```
 npm run dev
 ```
@@ -128,7 +122,6 @@ npm run dev
 **WORDPRESS PLUGINS**
 
 - If you want to add or build WordPress plugins, you can do that from the directory:
-
 ```
 src/plugins/
 ```
@@ -136,13 +129,11 @@ src/plugins/
 **PRODUCTION TEMPLATE**
 
 - To generate your distribution files run the command:
-
 ```
 npm run prod
 ```
 
 - The template will be saved as a zip file in:
-
 ```
 dist/wordpressify.zip
 ```
@@ -160,7 +151,6 @@ By default WordPressify supports [PostCSS](http://postcss.org/), a similar prepr
 **POSTCSS PLUGINS**
 
 WordPressify has two different sets of PostCSS plugins - one for the development environment (pluginsListDev) and one for the production task (pluginsListProd).
-
 ```javascript
 //--------------------------------------------------------------------------------------------------
 /* -------------------------------------------------------------------------------------------------
@@ -202,13 +192,11 @@ const pluginsListProd = [
 **WRITING CSS**
 
 The starting point for CSS is the file:
-
 ```
 src/assets/css/style.css
 ```
 
 The template definitions are located here too. It is also where all other imports are included in the stylesheets.
-
 ```
 /*
 Theme Name: WordPressify
@@ -223,19 +211,16 @@ Tags: responsive, clean, minimal, modern, documentation
 
 ## Sass
 WordPressify is super flexible. You can install Sass and use it as the main CSS preprocessor:
-
 ```
 npm install gulp-sass --save-dev
 ````
 
 Include Sass in gulpfile.js:
-
 ```javascript
 const sass = require('gulp-sass');
 ````
 
 Change the gulp tasks stylesDev to:
-
 ```javascript
 function stylesDev() {
 	return src('./src/assets/css/style.scss')
@@ -248,13 +233,11 @@ function stylesDev() {
 ```
 
 Also the watch task has to be changed in order to watch for .scss filetypes:
-
 ```javascript
 watch('./src/assets/css/**/*.scss', stylesDev);
 ```
 
 Change the gulp tasks styleProd to:
-
 ```javascript
 function stylesProd() {
 	return src('./src/assets/css/style.scss')
@@ -266,7 +249,6 @@ function stylesProd() {
 # 4. Images and Fonts
 ## Images
 It is recommended to store template image assets in your theme directory:
-
 ```
 src/assets/img/
 ```
@@ -277,13 +259,11 @@ In the production build SVGs and other image assets will go through a **minifica
 
 ## Fonts
 Fonts are always special. Your fonts should be stored in:
-
 ```
 src/assets/fonts/
 ```
 
 Then you can include them in your **CSS**:
-
 ```css
 @font-face {
 	font-family: 'Helvetica Neue Thin';
@@ -297,27 +277,23 @@ Then you can include them in your **CSS**:
 ```
 
 # 5. JavaScript ES6
-
 WordPressify supports ES6 JavaScript with [Babel](https://babeljs.io/). Babel has support for the latest version of JavaScript through syntax transformers. These plugins allow you to use new syntax, right now without waiting for browser support.
 
 ## Write ES6 JavaScript
 Your JavaScript code should be located in:
-
 ```
 src/assets/js/
 ```
 
 WordPressify will watch for changes under the js directory and bundle the code in a single file, which will be included in the footer of the page as:
-
 ```
 footer-bundle.js
 ```
+
 Check the gulp configuration to learn more about how JavaScript is generated.
 
 # 6. External Libraries
-
 Including external JavaScript libraries is as simple as installing the npm script and including it in the **gulpfile.js**
-
 ```javascript
 /* -------------------------------------------------------------------------------------------------
 Header & Footer JavaScript Boundles
@@ -338,31 +314,24 @@ You can include the scripts in the head of the page before the DOM is loaded by 
 
 A build restart is required for changes to take effect.
 
-
 # 7. Build Backups
-
 While coding you will find yourself uploading dummy content to the WordPress build server, e.g. images or other media stored in **wp-content**. WordPressify allows you to back up the current state of the build which will include all server files. To back up your build run the command:
-
 ```
 npm run backup
 ```
 
 Files will be compressed in a zip file and stored in the directory:
-
 ```
 backups/
 ```
 
 # 8. Code Style Rules
-
 WordPressify comes with its own set of code style rules:
-
 ```
 .stylelintrc
 ```
 
 ## Lint CSS
-
 Before pushing changes make sure you have clean and consistent CSS. Run [stylelint](https://stylelint.io/) with the command:
 ```
 npm run lint:css
@@ -391,6 +360,7 @@ Navigate to your theme distribution files on:
 ```
 dist/theme/<themeName>
 ```
+
 Create a git repository and push all the files on GitHub. This repository will have only the theme distribution files.
 
 Once the files are on GitHub you can get back to the WordPress administration on the WP Pusher plugin page and follow the **Next Steps**, click on **Install a theme**.
@@ -398,7 +368,6 @@ Once the files are on GitHub you can get back to the WordPress administration on
 On Repository host we choose GitHub, then click on **Pick from GitHub** and choose the newly created repository with the distribution files. Then install & activate the theme.
 
 ## Automated Deployments
-
 **Push-to-Deploy** if you want automatic deployments to happen when you do a push to the distribution repository.
 In this case you have to create a Webhook from your GitHub's repository page. 
 
@@ -415,6 +384,7 @@ The default theme comes as a theme sample to show how WordPressify combines ever
 ```
 npm run fresh-start
 ```
+
 This will **immediately** remove the default styles and leave a minimal viable theme with basic PHP WordPress loops and other useful features.
 
 # 12. Windows Installation
@@ -432,20 +402,24 @@ Then install the LAMP stack:
 ```
 sudo apt-get install lamp-server^
 ```
+
 For more informations check out: https://help.ubuntu.com/community/ApacheMySQLPHP
 
 ### Start MySQL
 ```
 sudo service mysql start
 ```
+
 Now let's connect to the MySQL Server:
 ```
 sudo mysql
 ```
+
 Change the **root** password to "123456789":
 ```
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '123456789';
 ```
+
 Reload privileges:
 ```
 FLUSH PRIVILEGES;
@@ -455,6 +429,7 @@ FLUSH PRIVILEGES;
 ```
 curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
 ```
+
 ```
 sudo apt-get install -y nodejs
 ```
@@ -463,72 +438,70 @@ That's it. Now just follow the WordPressify installation instructions.
 
 # Changelog
 **v0.1.7**
-- Remove WordPressify template from main repository.
-- Simple & unstyled boilerplate code. Stay fresh!
+- 🚀 RELEASE: Remove WordPressify template from main repository.
+- 👌 IMPROVE: Simple & unstyled boilerplate code. Stay fresh!
 
 **v0.1.6**
-- Upgrade to Gulp 4.
-- Rewrote all tasks into functions.
-- Updated file structure.
+- 📦 NEW: Upgrade to Gulp 4.
+- 📦 NEW: Rewrote all tasks into functions.
+- 👌 IMPROVE: Updated file structure.
 
 **v0.1.5**
-- Upgrade to Babel 7
-- Removed deprecated `postcss-cssnext` in favor of `postcss-preset-env`.
-
+- 📦 NEW: Upgrade to Babel 7
+- 🐛 FIX: Removed deprecated `postcss-cssnext` in favor of `postcss-preset-env`.
 
 **v0.1.4**
-- Added cleanup command to flush the default theme and have a fresh start.
+- 👌 IMPROVE: Added cleanup command to flush the default theme and have a fresh start.
 
 **v0.1.3**
-- Added support for bitmap and SVG minification, in the production build.
-- Added documentation for deployment process.
+- 👌 IMPROVE: Added support for bitmap and SVG minification, in the production build.
+- 📖 DOC: Added documentation for deployment process.
 
 **v0.1.2**
-- Converted all variables from 'var' to 'const'.
-- Replaced long anonymous function with ES6 arrow syntax.
-- Fixed spelling errors.
+- 👌 IMPROVE: Converted all variables from 'var' to 'const'.
+- 👌 IMPROVE: Replaced long anonymous function with ES6 arrow syntax.
+- 🐛 FIX: Spelling errors.
 
 **v0.1.1**
-- Added support for `src/plugins`.
+- 📦 NEW: Added support for `src/plugins`.
 
 **v0.1.0**
-- Code readability.
-- Removed unused packages.
-- Build success and error messages.
-- Tasks cleanup.
+- 👌 IMPROVE: Code readability.
+- 👌 IMPROVE: Removed unused packages.
+- 📦 NEW: Build success and error messages.
+- 👌 IMPROVE: Tasks cleanup.
 
 **v0.0.9**
-- Update documentation.
+- 📖 DOC: Update documentation.
 
 **v0.0.8**
-- Name change.
+- 👌 IMPROVE: Name change.
 
 **v0.0.7**
-- Fix placemente of `DISABLE_WP_CRON`.
+- 🐛 FIX: Fix placemente of `DISABLE_WP_CRON`.
 
 **v0.0.6**
-- Theme cleanup.
-- Consistent code styles.
+- 👌 IMPROVE: Theme cleanup.
+- 👌 IMPROVE: Consistent code styles.
 
 **v0.0.5**
-- Activated `DISABLE_WP_CRON` to prevent Node freezing.
-- Back up your build files with all `wp-content` uploads.
+- 🐛 FIX: Activated `DISABLE_WP_CRON` to prevent Node freezing.
+- 🚀 RELEASE: Back up your build files with all `wp-content` uploads.
 
 **v0.0.4**
-- Whitelabel template.
-- Renamed classes.
-- Refactored CSS structure.
-- Meet WordPressify.
-
+- 🐛 FIX: Whitelabel template.
+- 🐛 FIX: Renamed classes.
+- 👌 IMPROVE: Refactored CSS structure.
+- 📦 NEW: Meet WordPressify.
 
 **v.0.0.3**
-- Simplified build logic.
-- Install WordPress only once with `npm run install:wordpress`.
-- Cleaner distribution task.
+- 👌 IMPROVE: Simplified build logic.
+- 👌 IMPROVE: Install WordPress only once with `npm run install:wordpress`.
+- 👌 IMPROVE: Cleaner distribution task.
 
 **v0.0.2**
-- Bugfixes.
-- Watch and store new content in `wp-content/uploads`.
+- 🐛 FIX: Bugfixes.
+- 📦 NEW: Watch and store new content in `wp-content/uploads`.
 
 # License
 MIT
