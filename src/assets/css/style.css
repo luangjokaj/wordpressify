@@ -8,7 +8,7 @@ Version: 1.0
 Tags: responsive, clean, minimal, modern, documentation
 */
 
-@import '../../../node_modules/cherry-design/lib/build/css/styles.css';
+@import '../../../node_modules/cherry-grid/dist/css/styles.css';
 @import './globals.css';
 
 @import './wordpressify.css';
