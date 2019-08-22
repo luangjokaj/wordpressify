@@ -455,11 +455,11 @@ sudo apt-get install -y nodejs
 That's it. Now just follow the WordPressify installation instructions.
 
 # Changelog
-**v0.2.2**
+**v0.2.3**
 - 🚀 RELEASE: Improved installation speed for global dependencies.
 - BREAKING CHANGE: It is required to update GoPablo: `sudo npm install wordpressify -g`.
 
-**v0.2.1**
+**v0.2.2**
 - 👌 IMPROVE: Meta.
 
 **v0.2.1**
