@@ -26,8 +26,7 @@ module.exports = () => {
 		'https://raw.githubusercontent.com/luangjokaj/wordpressify/master/LICENSE',
 		'https://raw.githubusercontent.com/luangjokaj/wordpressify/master/README.md',
 		'https://raw.githubusercontent.com/luangjokaj/wordpressify/master/gulpfile.js',
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/master/package-lock.json',
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/master/package.json',
+		'https://raw.githubusercontent.com/luangjokaj/wordpressify/master/installer/package.json',
 
 		'https://raw.githubusercontent.com/luangjokaj/wordpressify/master/src/assets/css/globals.css',
 		'https://raw.githubusercontent.com/luangjokaj/wordpressify/master/src/assets/css/mixins.css',

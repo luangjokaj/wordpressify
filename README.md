@@ -97,7 +97,9 @@ To install WordPressify you need to clone the repository from GitHub:
 ```
 git clone https://github.com/luangjokaj/wordpressify
 ```
-- This will clone the repository on your local machine. Navigate to the newly created folder and install the dependencies:
+- This will clone the repository on your local machine. Navigate to the newly created folder.
+
+- Replace the file: `./package.json` with `./installer/package.json` and continue with the dependency installation.
 
 **INSTALL DEPENDENCIES**
 
@@ -453,6 +455,10 @@ sudo apt-get install -y nodejs
 That's it. Now just follow the WordPressify installation instructions.
 
 # Changelog
+**v0.2.2**
+- 🚀 RELEASE: Improved installation speed for global dependencies.
+- BREAKING CHANGE: It is required to update GoPablo: `sudo npm install wordpressify -g`.
+
 **v0.2.1**
 - 👌 IMPROVE: Meta.
 
