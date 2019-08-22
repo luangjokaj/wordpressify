@@ -457,7 +457,7 @@ That's it. Now just follow the WordPressify installation instructions.
 # Changelog
 **v0.2.3**
 - 🚀 RELEASE: Improved installation speed for global dependencies.
-- BREAKING CHANGE: It is required to update GoPablo: `sudo npm install wordpressify -g`.
+- BREAKING CHANGE: It is required to update WordPressify: `sudo npm install wordpressify -g`.
 
 **v0.2.2**
 - 👌 IMPROVE: Meta.
