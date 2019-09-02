@@ -38,7 +38,7 @@
 	"license": "MIT",
 	"dependencies": {
 		"chalk": "^2.4.2",
-		"commander": "^3.0.0",
+		"commander": "^3.0.1",
 		"download": "^7.1.0",
 		"execa": "^2.0.4",
 		"ora": "^3.4.0",
