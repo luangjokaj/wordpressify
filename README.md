@@ -244,7 +244,7 @@ Change the gulp tasks stylesDev to:
 function stylesDev() {
 	return src('./src/assets/css/style.scss')
 		.pipe(sourcemaps.init())
-		.pipe(sass().on("error", sass.logError))
+		.pipe(sass({includePaths: 'node_modules'}).on("error", sass.logError))
 		.pipe(sourcemaps.write('.'))
 		.pipe(dest('./build/wordpress/wp-content/themes/' + themeName))
 		.pipe(browserSync.stream({ match: '**/*.css' }));
@@ -260,7 +260,7 @@ Change the gulp tasks styleProd to:
 ```javascript
 function stylesProd() {
 	return src('./src/assets/css/style.scss')
-		.pipe(sass().on("error", sass.logError))
+		.pipe({includePaths: 'node_modules'}).on("error", sass.logError))
 		.pipe(dest('./dist/themes/' + themeName));
 }
 ```
