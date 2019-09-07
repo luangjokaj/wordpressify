@@ -26,6 +26,15 @@ Yes, this theme supports the following plugins:
 
 == Changelog ==
 
+= 1.6.5 =
+
+* Hide acf json folder from public
+
+= 1.6.4 =
+
+* remove prefixes from the wp_body_open() function
+* update theme URI
+
 = 1.6.3 =
 
 * remove prefixes from the popper and bootstrap wp_enqueue_script() functions
