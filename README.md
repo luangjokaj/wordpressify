@@ -1,6 +1,6 @@
 [![WordPressify Logo](https://i.imgur.com/5dVJS70.png)](http://www.wordpressify.co/)
 
-[![Dependencies](https://david-dm.org/luangjokaj/wordpressify/status.svg)](https://david-dm.org/luangjokaj/wordpressify)
+![Version](https://img.shields.io/github/package-json/v/luangjokaj/wordpressify) [![Dependencies](https://david-dm.org/luangjokaj/wordpressify/status.svg)](https://david-dm.org/luangjokaj/wordpressify)
 
 A build system designed to automate your WordPress development workflow.
 
