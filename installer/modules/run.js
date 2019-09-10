@@ -1,5 +1,5 @@
 /**
- * Install WPGulp
+ * Installation
  */
 
 const fs = require('fs');
