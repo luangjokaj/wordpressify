@@ -100,7 +100,7 @@ function a_starting_point_customizer_css(){
 		?>
 		<style type="text/css">
 			#page { 
-				background-color: <?php echo esc_html(get_theme_mod('a_starting_point_main_content_background_color', 'FFFFFF')); ?>; 
+				background-color: <?php echo esc_html(get_theme_mod('a_starting_point_main_content_background_color', '#FFFFFF')); ?>; 
 				max-width: <?php echo esc_html( get_theme_mod('content_max_width','960') ).'px'; ?>;
 			}
 				
