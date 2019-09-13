@@ -1,7 +1,7 @@
 === A Starting Point ===
 Contributors: can2
 Requires at least: 5.0
-Tested up to: 5.2
+Tested up to: WordPress 5.2.3
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -25,6 +25,12 @@ Yes, this theme supports the following plugins:
 - WooCommerce
 
 == Changelog ==
+
+= 1.6.6 =
+
+* Fixed issue where the Customizer was rendering invalid css to the #page element
+* Make the #page element `max-width: none` by default
+* Import the _type.scss styles into Bootstrap
 
 = 1.6.5 =
 
