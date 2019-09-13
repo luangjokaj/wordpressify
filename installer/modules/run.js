@@ -36,8 +36,6 @@ module.exports = () => {
 
 		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.6/src/assets/js/main.js',
 
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.6/src/plugins/README.md',
-
 		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.6/src/theme/404.php',
 		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.6/src/theme/archive.php',
 		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.6/src/theme/comments.php',
@@ -115,9 +113,6 @@ module.exports = () => {
 		);
 		jsFiles.map(x =>
 			fs.rename(`${theCWD}/${x}`, `${theCWD}/src/assets/js/${x}`, err => handleError(err)),
-		);
-		pluginFiles.map(x =>
-			fs.rename(`${theCWD}/${x}`, `${theCWD}/src/plugins/${x}`, err => handleError(err)),
 		);
 		themeFiles.map(x =>
 			fs.rename(`${theCWD}/${x}`, `${theCWD}/src/theme/${x}`, err => handleError(err)),
