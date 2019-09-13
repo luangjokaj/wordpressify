@@ -457,6 +457,7 @@ That's it. Now just follow the WordPressify installation instructions.
 
 # Changelog
 **v0.2.7**
+- 🚀 RELEASE: Update version.
 - 🐛 FIX: Readme documentation on install.
 
 **v0.2.6**
@@ -556,4 +557,3 @@ That's it. Now just follow the WordPressify installation instructions.
 
 # License
 MIT
-
