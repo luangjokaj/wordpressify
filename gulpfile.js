@@ -89,7 +89,7 @@ async function unzipWordPress() {
 async function copyConfig() {
 	if (await fs.existsSync('./wp-config.php')) {
 		return src('./wp-config.php')
-			.pipe(inject.after("define('DB_COLLATE', '');", "\ndefine('DISABLE_WP_CRON', true);"))
+			.pipe(inject.after("define( 'DB_COLLATE', '' );", "\ndefine( 'DISABLE_WP_CRON', true );"))
 			.pipe(dest('./build/wordpress'));
 	}
 }
@@ -311,7 +311,7 @@ async function disableCron() {
 					log('WP_CRON is already disabled!');
 				} else {
 					return src('./build/wordpress/wp-config.php')
-						.pipe(inject.after("define('DB_COLLATE', '');", "\ndefine('DISABLE_WP_CRON', true);"))
+						.pipe(inject.after("define( 'DB_COLLATE', '' );", "\ndefine( 'DISABLE_WP_CRON', true );"))
 						.pipe(dest('./build/wordpress'));
 				}
 			}

@@ -459,6 +459,7 @@ That's it. Now just follow the WordPressify installation instructions.
 **v0.2.7**
 - 🚀 RELEASE: Update version.
 - 🐛 FIX: Readme documentation on install.
+- 🐛 FIX: Cron jobs new formatting.
 
 **v0.2.6**
 - 🚀 RELEASE: Install files from versioned release instead of `master` branch.
