@@ -1,20 +1,19 @@
 {
-    "env": {
-        "browser": true,
-        "es6": true,
-        "commonjs": true
-    },
-    "extends": [
-        "plugin:@wordpress/eslint-plugin/esnext",
-        "plugin:@wordpress/eslint-plugin/jsdoc"
-    ],
-    "globals": {
-        
-    },
-    "parserOptions": {
-        "ecmaVersion": 6
-    },
-    "rules": {
-
-    }
+	"env": {
+		"browser": true,
+		"es6": true,
+		"commonjs": true
+	},
+	"extends": [
+		"plugin:@wordpress/eslint-plugin/esnext",
+		"plugin:@wordpress/eslint-plugin/jsdoc"
+	],
+	"globals": {
+		
+	},
+	"parserOptions": {
+		"ecmaVersion": 6
+	},
+	"rules": {
+	}
 }

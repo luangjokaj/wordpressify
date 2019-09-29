@@ -456,6 +456,9 @@ sudo apt-get install -y nodejs
 That's it. Now just follow the WordPressify installation instructions.
 
 # Changelog
+**v0.2.8**
+- 🚀 RELEASE: Add ESLint with WordPress code standards rules.
+
 **v0.2.7**
 - 🚀 RELEASE: Update version.
 - 🐛 FIX: Readme documentation on install.
