@@ -23,6 +23,7 @@ module.exports = () => {
 		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.7-3/.babelrc',
 		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.7-3/.gitignore',
 		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.7-3/.stylelintrc',
+		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.7-3/.eslintrc',
 		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.7-3/LICENSE',
 		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.7-3/README.md',
 		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.7-3/gulpfile.js',
@@ -56,7 +57,7 @@ module.exports = () => {
 	];
 
 	// Organise file structure
-	const dotFiles = ['.babelrc', '.gitignore', '.stylelintrc'];
+	const dotFiles = ['.babelrc', '.gitignore', '.stylelintrc', '.eslintrc'];
 	const cssFiles = ['globals.css', 'mixins.css', 'style.css', 'variables.css', 'wordpressify.css'];
 	const jsFiles = ['main.js'];
 	const pluginFiles = ['README.md'];
