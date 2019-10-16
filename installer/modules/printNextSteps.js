@@ -57,4 +57,5 @@ module.exports = () => {
 		`	${chalk.dim('Set your new theme name:')} ${chalk.green('const themeName = "')}${chalk.red('wordpressify')}${chalk.green('";')} `,
 	);
 	console.log(` ${chalk.dim('2.')} Running: ${chalk.green('npm')} run dev`, '\n\n');
+	process.exit();
 };
