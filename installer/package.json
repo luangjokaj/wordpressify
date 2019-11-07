@@ -37,7 +37,7 @@
 	"author": "Luan Gjokaj <luan@riangle.com>",
 	"license": "MIT",
 	"dependencies": {
-		"@babel/core": "^7.7.0",
+		"@babel/core": "^7.7.2",
 		"@babel/preset-env": "^7.7.1",
 		"@wordpress/eslint-plugin": "^3.1.0",
 		"aos": "^2.3.4",
