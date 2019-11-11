@@ -260,7 +260,7 @@ Change the gulp tasks styleProd to:
 ```javascript
 function stylesProd() {
 	return src('./src/assets/css/style.scss')
-		.pipe({includePaths: 'node_modules'}).on("error", sass.logError))
+		.pipe({includePaths: 'node_modules'}).on("error", sass.logError)
 		.pipe(dest('./dist/themes/' + themeName));
 }
 ```
