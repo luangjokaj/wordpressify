@@ -39,7 +39,7 @@
 	"dependencies": {
 		"@babel/core": "^7.7.2",
 		"@babel/preset-env": "^7.7.1",
-		"@wordpress/eslint-plugin": "^3.1.0",
+		"@wordpress/eslint-plugin": "^3.2.0",
 		"aos": "^2.3.4",
 		"beeper": "^2.0.0",
 		"browser-sync": "^2.26.7",
@@ -64,6 +64,6 @@
 		"postcss-easy-import": "^3.0.0",
 		"postcss-mixins": "^6.2.3",
 		"postcss-preset-env": "^6.7.0",
-		"stylelint": "^11.1.1"
+		"stylelint": "^12.0.0"
 	}
 }
