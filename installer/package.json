@@ -59,7 +59,7 @@
 		"gulp-remote-src": "^0.4.4",
 		"gulp-sourcemaps": "^2.6.5",
 		"gulp-uglify": "^3.0.2",
-		"gulp-vinyl-zip": "^2.1.3",
+		"gulp-vinyl-zip": "^2.2.0",
 		"jquery": "^3.4.1",
 		"postcss-easy-import": "^3.0.0",
 		"postcss-mixins": "^6.2.3",
