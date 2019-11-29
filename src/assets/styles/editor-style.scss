@@ -1,3 +1,11 @@
+@import "../../../node_modules/bootstrap/scss/functions";
+@import "../../../node_modules/bootstrap/scss/variables";
+@import "../../../node_modules/bootstrap/scss/mixins";
+
 .wp-block{
     max-width: none;
+}
+
+.wp-block-group.jumbotron{
+    background-color: $jumbotron-bg;
 }
