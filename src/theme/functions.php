@@ -79,6 +79,13 @@ if ( ! function_exists( 'a_starting_point_setup' ) ) :
 			'flex-width'  => true,
 			'flex-height' => true,
 		) );
+
+		/**
+		 * Add support for editor styles
+		 *
+		 * @link https://developer.wordpress.org/reference/functions/add_editor_style/
+		 */
+		add_theme_support( 'editor-styles' );
 	}
 endif;
 add_action( 'after_setup_theme', 'a_starting_point_setup' );
@@ -155,10 +162,10 @@ add_action( 'wp_enqueue_scripts', 'a_starting_point_scripts' );
 /**
  * Registers an editor stylesheet for the theme.
  */
-
- add_editor_style( 'editor-style.css' );
-
-
+function a_starting_point_add_editor_styles() {
+    add_editor_style();
+}
+add_action( 'admin_init', 'a_starting_point_add_editor_styles' );
 
 /**
  * Implement the Custom Header feature.
