@@ -38,7 +38,7 @@
 	"license": "MIT",
 	"dependencies": {
 		"@babel/core": "^7.7.5",
-		"@babel/preset-env": "^7.7.5",
+		"@babel/preset-env": "^7.7.6",
 		"@wordpress/eslint-plugin": "^3.2.0",
 		"aos": "^2.3.4",
 		"beeper": "^2.0.0",
