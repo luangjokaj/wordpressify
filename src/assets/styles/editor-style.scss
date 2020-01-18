@@ -1,6 +1,7 @@
 @import "../../../node_modules/bootstrap/scss/functions";
 @import "../../../node_modules/bootstrap/scss/variables";
 @import "../../../node_modules/bootstrap/scss/mixins";
+@import "../../../node_modules/bootstrap/scss/utilities";
 
 .wp-block{
     max-width: none;
@@ -24,12 +25,20 @@
     @include border-radius(0);
 }
 
+.wp-block-group.card {
+  max-width: none;
+
+  img, .components-resizable-box__container{
+    width: 100%!important;
+    max-width: 100%!important;
+    height: auto!important;
+  }
+}
+
 .wp-block-paragraph.lead{
     @include font-size($lead-font-size);
     font-weight: $lead-font-weight;
 }
-
-// stylelint-disable declaration-no-important, selector-list-comma-newline-after
 
 //
 // Headings
