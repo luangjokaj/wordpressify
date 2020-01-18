@@ -1,7 +1,7 @@
 === A Starting Point ===
 Contributors: can2
 Requires at least: 5.0
-Tested up to: WordPress 5.2.3
+Tested up to: WordPress 5.3.2
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -25,6 +25,13 @@ Yes, this theme supports the following plugins:
 - WooCommerce
 
 == Changelog ==
+
+= 1.7.1 =
+
+* Update bootstrap and its dependecies (popper.js)
+* add card and jumbotron styles for group block when used with bootstrap utility classes
+* fix issue where editor styles were not loading
+* include bootstrap utility styles into editor stylesheet
 
 = 1.6.6 =
 
