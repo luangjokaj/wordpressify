@@ -73,7 +73,7 @@
 
 					</nav><!-- #site-navigation -->
 
-					<?php the_header_image_tag(); ?>
+					<?php the_header_image_tag(array( 'class' => 'site-header-img' )); ?>
 
 			</div>
 		</div>
