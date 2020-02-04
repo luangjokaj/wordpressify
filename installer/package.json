@@ -39,7 +39,7 @@
 	"dependencies": {
 		"@babel/core": "^7.8.4",
 		"@babel/preset-env": "^7.8.4",
-		"@wordpress/eslint-plugin": "^3.4.0",
+		"@wordpress/eslint-plugin": "^3.4.1",
 		"aos": "^2.3.4",
 		"beeper": "^2.0.0",
 		"browser-sync": "^2.26.7",
