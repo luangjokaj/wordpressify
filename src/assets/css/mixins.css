@@ -294,8 +294,8 @@
 }
 
 @define-mixin container {
-	margin: auto;
 	max-width: var(--max-width);
+	margin: auto;
 	padding-right: var(--margin-container-mobile);
 	padding-left: var(--margin-container-mobile);
 
@@ -311,7 +311,7 @@
 
 @define-mixin containerFluid {
 	width: 100%;
-	max-width: initial;
+	max-width: 100%;
 	padding-right: var(--margin-container-mobile);
 	padding-left: var(--margin-container-mobile);
 	margin-right: auto;
@@ -323,13 +323,58 @@
 	}
 }
 
-
 @define-mixin containerChild {
-	padding-right: var(--margin-container-child-mobile);
-	padding-left: var(--margin-container-child-mobile);
+	padding-right: 0;
+	padding-left: 0;
 
 	@media (--screen-lg) {
-		padding-right: var(--margin-container-child-desktop);
-		padding-left: var(--margin-container-child-desktop);
+		padding-right: 0;
+		padding-left: 0;
+	}
+}
+
+@define-mixin row {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: 0 var(--margin-row-mobile);
+
+	@media (--screen-lg) {
+		margin: 0 var(--margin-row-desktop);
+	}
+}
+
+@define-mixin col {
+	position: relative;
+	min-height: 1px;
+	padding-right: var(--gutter-col-mobile);
+	padding-left: var(--gutter-col-mobile);
+	box-sizing: border-box;
+
+	@media (--screen-lg) {
+		padding-right: var(--gutter-col-desktop);
+		padding-left: var(--gutter-col-desktop);
+	}
+}
+
+:global {
+	& div[data-container] {
+		@mixin container;
+	}
+
+	& div[data-fluid="true"] {
+		@mixin containerFluid;
+	}
+
+	& div[data-child="true"] {
+		@mixin containerChild;
+	}
+
+	& div[data-row] {
+		@mixin row;
+	}
+
+	& div[data-col] {
+		@mixin col;
 	}
 }

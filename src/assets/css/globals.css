@@ -17,6 +17,7 @@ body {
 	line-height: var(--lineheight-text-mobile);
 	padding-top: var(--padding-top-body-mobile);
 	color: var(--color-dark);
+	box-sizing: border-box;
 
 	@media (--screen-lg) {
 		font-size: var(--size-text-desktop);
@@ -28,6 +29,11 @@ body {
 * {
 	box-sizing: border-box;
 
+	&:before,
+	&:after {
+		box-sizing: border-box;
+	}
+
 	&::selection {
 		background: var(--color-dark);
 		color: var(--color-light);
@@ -36,6 +42,7 @@ body {
 
 a,
 button {
+	cursor: pointer;
 	outline: none;
 	text-decoration: none;
 	transition: all 0.3s ease;
