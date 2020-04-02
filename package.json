@@ -37,9 +37,9 @@
 	"author": "Luan Gjokaj <luan@riangle.com>",
 	"license": "MIT",
 	"dependencies": {
-		"chalk": "^3.0.0",
+		"chalk": "^4.0.0",
 		"commander": "^5.0.0",
-		"download": "^7.1.0",
+		"download": "^8.0.0",
 		"execa": "^4.0.0",
 		"ora": "^4.0.3",
 		"prompts": "^2.3.2"
