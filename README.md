@@ -29,8 +29,7 @@ http://www.wordpressify.co/
 	- [Remote Database](#remote-database)
 - [10. Deployment](#10-deployment)
 	- [Automated Deployments](#automated-deployments)
-- [11. Cleanup Default Theme](#11-cleanup-default-theme)
-- [12. Windows Installation](#12-windows-installation)
+- [11. Windows Installation](#11-windows-installation)
 - [Changelog](#changelog)
 - [License](#license)
 
