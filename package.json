@@ -1,6 +1,6 @@
 {
 	"name": "wordpressify",
-	"version": "0.2.8-7",
+	"version": "0.2.8-8",
 	"description": "A build system designed to automate your WordPress development workflow.",
 	"keywords": [
 		"babel",
@@ -30,7 +30,6 @@
 		"install:wordpress": "gulp setup && gulp install",
 		"dev": "gulp dev",
 		"prod": "gulp prod",
-		"fresh-start": "gulp fresh",
 		"backup": "gulp backup",
 		"lint:css": "stylelint src/**/*.css"
 	},

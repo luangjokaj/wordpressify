@@ -319,14 +319,6 @@ async function disableCron() {
 	}
 }
 
-async function freshInstall() {
-	await del(['./src/**']).then(() => {
-		return src('./tools/fresh-theme/**').pipe(dest('./src'));
-	});
-}
-
-exports.fresh = series(freshInstall);
-
 function Backup() {
 	if (!fs.existsSync('./build')) {
 		log(buildNotFound);

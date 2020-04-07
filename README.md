@@ -398,15 +398,9 @@ This should enable automatic deployment on any push to the chosen GitHub reposit
 
 **Note:** WP Pusher if **free** only with **public** repositories.
 
-# 11. Cleanup Default Theme
-The default theme comes as a theme sample to show how WordPressify combines everything together. If you want to remove the default theme type the command:
-```
-npm run fresh-start
-```
-
 This will **immediately** remove the default styles and leave a minimal viable theme with basic PHP WordPress loops and other useful features.
 
-# 12. Windows Installation
+# 11. Windows Installation
 **[How to install WordPressify on Windows?](https://www.youtube.com/watch?v=J8ZNzKSeTSE)**
 
 Assuming that you are using the latest version of Windows, and you have activated Windows Subsystem for Linux. Follow the instructions:
