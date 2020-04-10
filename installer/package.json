@@ -38,7 +38,7 @@
 	"license": "MIT",
 	"dependencies": {
 		"@babel/core": "^7.9.0",
-		"@babel/preset-env": "^7.9.0",
+		"@babel/preset-env": "^7.9.5",
 		"@wordpress/eslint-plugin": "^4.1.0",
 		"aos": "^2.3.4",
 		"beeper": "^2.0.0",
@@ -60,10 +60,10 @@
 		"gulp-sourcemaps": "^2.6.5",
 		"gulp-uglify": "^3.0.2",
 		"gulp-vinyl-zip": "^2.2.0",
-		"jquery": "^3.4.1",
+		"jquery": "^3.5.0",
 		"postcss-easy-import": "^3.0.0",
 		"postcss-mixins": "^6.2.3",
 		"postcss-preset-env": "^6.7.0",
-		"stylelint": "^13.3.0"
+		"stylelint": "^13.3.1"
 	}
 }
