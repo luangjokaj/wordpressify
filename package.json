@@ -1,6 +1,6 @@
 {
 	"name": "wordpressify",
-	"version": "0.2.8-9",
+	"version": "0.2.8-10",
 	"description": "A build system designed to automate your WordPress development workflow.",
 	"keywords": [
 		"babel",
@@ -37,6 +37,7 @@
 	"license": "MIT",
 	"dependencies": {
 		"chalk": "^4.0.0",
+		"cherry-grid": "^0.1.24",
 		"commander": "^5.1.0",
 		"download": "^8.0.0",
 		"execa": "^4.0.0",

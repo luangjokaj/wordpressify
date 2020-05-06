@@ -14,14 +14,20 @@
 	--max-width: 1440px;
 	--padding-top-body-mobile: 70px;
 	--padding-top-body-desktop: 0;
+
 	--margin-container-mobile: 20px;
 	--margin-container-desktop: 20px;
 	--margin-container-child-mobile: 10px;
 	--margin-container-child-desktop: 10px;
-	--margin-row-mobile: -10px;
-	--margin-row-desktop: -10px;
-	--gutter-col-mobile: 10px;
-	--gutter-col-desktop: 10px;
+
+	--margin-row-none: 0;
+	--margin-row-default: -10px;
+	--margin-row-medium: -30px;
+	--margin-row-big: -50px;
+	--gutter-col-none: 0;
+	--gutter-col-default: 10px;
+	--gutter-col-medium: 30px;
+	--gutter-col-big: 50px;
 
 	/* Colors ----------------------------------------------------- */
 	--color-primary: #1F2D3D;
@@ -33,7 +39,7 @@
 
 	--color-gray-light: #E5E5E5;
 	--color-gray-medium: #666666;
-	--color-gray-dark: #4a4a4a;
+	--color-gray-dark: #3c4858;
 
 	--color-success: #28a745;
 	--color-error: #dc3545;
@@ -88,7 +94,7 @@
 	--size-h4-mobile: 22px;
 	--lineheight-h4-mobile: 1.35;
 	--size-h4-desktop: 24px;
-	--lineheight-h4-desktop: 1.15;
+	--lineheight-h4-desktop: 1.40;
 
 	--size-h5-mobile: 18px;
 	--lineheight-h5-mobile: 1.35;
@@ -127,9 +133,24 @@
 
 	/* --> Blockquote --------------------------------------------- */
 	--size-blockquote-mobile: var(--size-h3-mobile);
+	--lineheight-blockquote-mobile: var(--lineheight-h3-mobile);
 	--size-blockquote-desktop: var(--size-h3-desktop);
+	--lineheight-blockquote-desktop: var(--lineheight-h3-desktop);
 
 	/* --> List --------------------------------------------------- */
 	--size-list-mobile: var(--size-text-mobile);
+	--lineheight-list-mobile: var(--lineheight-text-mobile);
 	--size-list-desktop: var(--size-text-desktop);
+	--lineheight-list-desktop: var(--lineheight-text-desktop);
+
+	/* --> Buttons ------------------------------------------------ */
+	--size-button-regular-mobile: var(--size-text-mobile);
+	--lineheight-button-regular-mobile: var(--lineheight-text-mobile);
+	--size-button-regular-desktop: var(--size-text-desktop);
+	--lineheight-button-regular-desktop: var(--lineheight-text-desktop);
+
+	--size-button-big-mobile: var(--size-subtitle-mobile);
+	--lineheight-button-big-mobile: var(--lineheight-subtitle-mobile);
+	--size-button-big-desktop: var(--size-subtitle-desktop);
+	--lineheight-button-big-desktop: var(--lineheight-subtitle-desktop);
 }

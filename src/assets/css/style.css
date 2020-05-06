@@ -7,7 +7,10 @@ Description: WordPressify official theme.
 Version: 1.0
 Tags: responsive, clean, minimal, modern, documentation
 */
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
 
+@import '../../../node_modules/normalize.css/normalize.css';
 @import '../../../node_modules/cherry-grid/dist/css/styles.css';
 @import './globals.css';
 

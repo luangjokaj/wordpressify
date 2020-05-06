@@ -19,7 +19,7 @@
 
 @define-mixin heading {
 	font-family: var(--font-head);
-	font-weight: 300;
+	font-weight: 700;
 	margin: 0;
 	padding: 0;
 }
@@ -159,7 +159,7 @@
 }
 
 @define-mixin text {
-	color: var(--color-secondary);
+	color: var(--color-gray-medium);
 	font-size: var(--size-text-mobile);
 	line-height: var(--lineheight-text-mobile);
 
@@ -337,24 +337,12 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	margin: 0 var(--margin-row-mobile);
-
-	@media (--screen-lg) {
-		margin: 0 var(--margin-row-desktop);
-	}
 }
 
 @define-mixin col {
 	position: relative;
 	min-height: 1px;
-	padding-right: var(--gutter-col-mobile);
-	padding-left: var(--gutter-col-mobile);
 	box-sizing: border-box;
-
-	@media (--screen-lg) {
-		padding-right: var(--gutter-col-desktop);
-		padding-left: var(--gutter-col-desktop);
-	}
 }
 
 :global {
@@ -372,6 +360,258 @@
 
 	& div[data-row] {
 		@mixin row;
+	}
+
+	& div[xs-gaps="none"] {
+		@media (--screen-xs) {
+			margin-right: var(--margin-row-none);
+			margin-left: var(--margin-row-none);
+
+			& [data-col] {
+				padding-right: var(--gutter-col-none);
+				padding-left: var(--gutter-col-none);
+			}
+		}
+	}
+
+	& div[xs-gaps="default"] {
+		@media (--screen-xs) {
+			margin-right: var(--margin-row-default);
+			margin-left: var(--margin-row-default);
+
+			& [data-col] {
+				padding-right: var(--gutter-col-default);
+				padding-left: var(--gutter-col-default);
+			}
+		}
+	}
+
+	& div[xs-gaps="big"] {
+		@media (--screen-xs) {
+			margin-right: var(--margin-row-big);
+			margin-left: var(--margin-row-big);
+
+			& [data-col] {
+				padding-right: var(--gutter-col-big);
+				padding-left: var(--gutter-col-big);
+			}
+		}
+	}
+
+	& div[sm-gaps="none"] {
+		@media (--screen-sm) {
+			margin-right: var(--margin-row-none);
+			margin-left: var(--margin-row-none);
+
+			& [data-col] {
+				padding-right: var(--gutter-col-none);
+				padding-left: var(--gutter-col-none);
+			}
+		}
+	}
+
+	& div[sm-gaps="default"] {
+		@media (--screen-sm) {
+			margin-right: var(--margin-row-default);
+			margin-left: var(--margin-row-default);
+
+			& [data-col] {
+				padding-right: var(--gutter-col-default);
+				padding-left: var(--gutter-col-default);
+			}
+		}
+	}
+
+	& div[sm-gaps="big"] {
+		@media (--screen-sm) {
+			margin-right: var(--margin-row-big);
+			margin-left: var(--margin-row-big);
+
+			& [data-col] {
+				padding-right: var(--gutter-col-big);
+				padding-left: var(--gutter-col-big);
+			}
+		}
+	}
+
+	& div[md-gaps="none"] {
+		@media (--screen-md) {
+			margin-right: var(--margin-row-none);
+			margin-left: var(--margin-row-none);
+
+			& [data-col] {
+				padding-right: var(--gutter-col-none);
+				padding-left: var(--gutter-col-none);
+			}
+		}
+	}
+
+	& div[md-gaps="default"] {
+		@media (--screen-md) {
+			margin-right: var(--margin-row-default);
+			margin-left: var(--margin-row-default);
+
+			& [data-col] {
+				padding-right: var(--gutter-col-default);
+				padding-left: var(--gutter-col-default);
+			}
+		}
+	}
+
+	& div[md-gaps="big"] {
+		@media (--screen-md) {
+			margin-right: var(--margin-row-big);
+			margin-left: var(--margin-row-big);
+
+			& [data-col] {
+				padding-right: var(--gutter-col-big);
+				padding-left: var(--gutter-col-big);
+			}
+		}
+	}
+
+	& div[lg-gaps="none"] {
+		@media (--screen-lg) {
+			margin-right: var(--margin-row-none);
+			margin-left: var(--margin-row-none);
+
+			& [data-col] {
+				padding-right: var(--gutter-col-none);
+				padding-left: var(--gutter-col-none);
+			}
+		}
+	}
+
+	& div[lg-gaps="default"] {
+		@media (--screen-lg) {
+			margin-right: var(--margin-row-default);
+			margin-left: var(--margin-row-default);
+
+			& [data-col] {
+				padding-right: var(--gutter-col-default);
+				padding-left: var(--gutter-col-default);
+			}
+		}
+	}
+
+	& div[lg-gaps="big"] {
+		@media (--screen-lg) {
+			margin-right: var(--margin-row-big);
+			margin-left: var(--margin-row-big);
+
+			& [data-col] {
+				padding-right: var(--gutter-col-big);
+				padding-left: var(--gutter-col-big);
+			}
+		}
+	}
+
+	& div[xl-gaps="none"] {
+		@media (--screen-xl) {
+			margin-right: var(--margin-row-none);
+			margin-left: var(--margin-row-none);
+
+			& [data-col] {
+				padding-right: var(--gutter-col-none);
+				padding-left: var(--gutter-col-none);
+			}
+		}
+	}
+
+	& div[xl-gaps="default"] {
+		@media (--screen-xl) {
+			margin-right: var(--margin-row-default);
+			margin-left: var(--margin-row-default);
+
+			& [data-col] {
+				padding-right: var(--gutter-col-default);
+				padding-left: var(--gutter-col-default);
+			}
+		}
+	}
+
+	& div[xl-gaps="big"] {
+		@media (--screen-xl) {
+			margin-right: var(--margin-row-big);
+			margin-left: var(--margin-row-big);
+
+			& [data-col] {
+				padding-right: var(--gutter-col-big);
+				padding-left: var(--gutter-col-big);
+			}
+		}
+	}
+
+	& div[xxl-gaps="none"] {
+		@media (--screen-xxl) {
+			margin-right: var(--margin-row-none);
+			margin-left: var(--margin-row-none);
+
+			& [data-col] {
+				padding-right: var(--gutter-col-none);
+				padding-left: var(--gutter-col-none);
+			}
+		}
+	}
+
+	& div[xxl-gaps="default"] {
+		@media (--screen-xxl) {
+			margin-right: var(--margin-row-default);
+			margin-left: var(--margin-row-default);
+
+			& [data-col] {
+				padding-right: var(--gutter-col-default);
+				padding-left: var(--gutter-col-default);
+			}
+		}
+	}
+
+	& div[xxl-gaps="big"] {
+		@media (--screen-xxl) {
+			margin-right: var(--margin-row-big);
+			margin-left: var(--margin-row-big);
+
+			& [data-col] {
+				padding-right: var(--gutter-col-big);
+				padding-left: var(--gutter-col-big);
+			}
+		}
+	}
+
+	& div[xxxl-gaps="none"] {
+		@media (--screen-xxxl) {
+			margin-right: var(--margin-row-none);
+			margin-left: var(--margin-row-none);
+
+			& [data-col] {
+				padding-right: var(--gutter-col-none);
+				padding-left: var(--gutter-col-none);
+			}
+		}
+	}
+
+	& div[xxxl-gaps="default"] {
+		@media (--screen-xxxl) {
+			margin-right: var(--margin-row-default);
+			margin-left: var(--margin-row-default);
+
+			& [data-col] {
+				padding-right: var(--gutter-col-default);
+				padding-left: var(--gutter-col-default);
+			}
+		}
+	}
+
+	& div[xxxl-gaps="big"] {
+		@media (--screen-xxxl) {
+			margin-right: var(--margin-row-big);
+			margin-left: var(--margin-row-big);
+
+			& [data-col] {
+				padding-right: var(--gutter-col-big);
+				padding-left: var(--gutter-col-big);
+			}
+		}
 	}
 
 	& div[data-col] {
