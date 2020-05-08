@@ -20,44 +20,43 @@ module.exports = () => {
 
 	// Files.
 	const filesToDownload = [
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-10/.babelrc',
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-10/.gitignore',
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-10/.stylelintrc',
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-10/.eslintrc',
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-10/LICENSE',
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-10/README.md',
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-10/gulpfile.js',
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-10/installer/package.json',
+		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-11/.babelrc',
+		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-11/.gitignore',
+		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-11/.stylelintrc',
+		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-11/LICENSE',
+		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-11/README.md',
+		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-11/gulpfile.js',
+		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-11/installer/package.json',
 
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-10/src/assets/css/globals.css',
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-10/src/assets/css/mixins.css',
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-10/src/assets/css/style.css',
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-10/src/assets/css/variables.css',
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-10/src/assets/css/wordpressify.css',
+		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-11/src/assets/css/globals.css',
+		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-11/src/assets/css/mixins.css',
+		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-11/src/assets/css/style.css',
+		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-11/src/assets/css/variables.css',
+		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-11/src/assets/css/wordpressify.css',
 
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-10/src/assets/js/main.js',
+		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-11/src/assets/js/main.js',
 
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-10/src/theme/404.php',
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-10/src/theme/archive.php',
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-10/src/theme/comments.php',
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-10/src/theme/content-none.php',
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-10/src/theme/content-page.php',
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-10/src/theme/content-single.php',
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-10/src/theme/content.php',
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-10/src/theme/footer.php',
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-10/src/theme/functions.php',
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-10/src/theme/header.php',
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-10/src/theme/index.php',
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-10/src/theme/page.php',
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-10/src/theme/screenshot.png',
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-10/src/theme/search.php',
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-10/src/theme/searchform.php',
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-10/src/theme/sidebar.php',
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-10/src/theme/single.php',
+		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-11/src/theme/404.php',
+		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-11/src/theme/archive.php',
+		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-11/src/theme/comments.php',
+		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-11/src/theme/content-none.php',
+		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-11/src/theme/content-page.php',
+		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-11/src/theme/content-single.php',
+		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-11/src/theme/content.php',
+		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-11/src/theme/footer.php',
+		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-11/src/theme/functions.php',
+		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-11/src/theme/header.php',
+		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-11/src/theme/index.php',
+		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-11/src/theme/page.php',
+		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-11/src/theme/screenshot.png',
+		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-11/src/theme/search.php',
+		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-11/src/theme/searchform.php',
+		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-11/src/theme/sidebar.php',
+		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-11/src/theme/single.php',
 	];
 
 	// Organise file structure
-	const dotFiles = ['.babelrc', '.gitignore', '.stylelintrc', '.eslintrc'];
+	const dotFiles = ['.babelrc', '.gitignore', '.stylelintrc'];
 	const cssFiles = ['globals.css', 'mixins.css', 'style.css', 'variables.css', 'wordpressify.css'];
 	const jsFiles = ['main.js'];
 	const pluginFiles = ['README.md'];
