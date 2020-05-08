@@ -37,10 +37,10 @@
 	"license": "MIT",
 	"dependencies": {
 		"chalk": "^4.0.0",
-		"cherry-grid": "^0.1.24",
+		"cherry-grid": "^0.1.25",
 		"commander": "^5.1.0",
 		"download": "^8.0.0",
-		"execa": "^4.0.0",
+		"execa": "^4.0.1",
 		"ora": "^4.0.4",
 		"prompts": "^2.3.2"
 	}
