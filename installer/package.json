@@ -42,7 +42,7 @@
 		"aos": "^2.3.4",
 		"beeper": "^2.0.0",
 		"browser-sync": "^2.26.7",
-		"cherry-grid": "0.1.25",
+		"cherry-grid": "0.1.28",
 		"cssnano": "^4.1.10",
 		"del": "^5.1.0",
 		"fancy-log": "^1.3.3",

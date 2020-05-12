@@ -37,7 +37,7 @@
 	"license": "MIT",
 	"dependencies": {
 		"chalk": "^4.0.0",
-		"cherry-grid": "^0.1.25",
+		"cherry-grid": "^0.1.28",
 		"commander": "^5.1.0",
 		"download": "^8.0.0",
 		"execa": "^4.0.1",
