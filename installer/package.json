@@ -57,12 +57,12 @@
 		"gulp-remote-src": "^0.4.4",
 		"gulp-sourcemaps": "^2.6.5",
 		"gulp-uglify": "^3.0.2",
-		"gulp-vinyl-zip": "^2.2.0",
+		"gulp-vinyl-zip": "^2.2.1",
 		"jquery": "^3.5.1",
 		"normalize.css": "^8.0.1",
 		"postcss-easy-import": "^3.0.0",
 		"postcss-mixins": "^6.2.3",
 		"postcss-preset-env": "^6.7.0",
-		"stylelint": "^13.4.0"
+		"stylelint": "^13.5.0"
 	}
 }
