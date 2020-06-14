@@ -36,7 +36,7 @@
 	"author": "Luan Gjokaj <luan@riangle.com>",
 	"license": "MIT",
 	"dependencies": {
-		"chalk": "^4.0.0",
+		"chalk": "^4.1.0",
 		"cherry-grid": "^0.1.28",
 		"commander": "^5.1.0",
 		"download": "^8.0.0",
