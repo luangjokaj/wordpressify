@@ -21,7 +21,7 @@ const program = require('commander');
 const version = require('../package.json').version;
 
 program
-	.version(version)
+	.version(version, '-v, --vers', 'output the current version')
 	.parse(process.argv);
 
 (async () => {
