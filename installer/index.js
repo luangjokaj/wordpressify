@@ -22,7 +22,6 @@ const version = require('../package.json').version;
 
 program
 	.version(version)
-	.option('-v, --version', 'version')
 	.parse(process.argv);
 
 (async () => {
