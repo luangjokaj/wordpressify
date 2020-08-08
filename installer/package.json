@@ -37,7 +37,7 @@
 	"author": "Luan Gjokaj <luan@riangle.com>",
 	"license": "MIT",
 	"dependencies": {
-		"@babel/core": "^7.11.0",
+		"@babel/core": "^7.11.1",
 		"@babel/preset-env": "^7.11.0",
 		"aos": "^2.3.4",
 		"beeper": "^2.0.0",
