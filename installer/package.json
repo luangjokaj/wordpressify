@@ -37,8 +37,8 @@
 	"author": "Luan Gjokaj <luan@riangle.com>",
 	"license": "MIT",
 	"dependencies": {
-		"@babel/core": "^7.11.4",
-		"@babel/preset-env": "^7.11.0",
+		"@babel/core": "^7.11.6",
+		"@babel/preset-env": "^7.11.5",
 		"aos": "^2.3.4",
 		"beeper": "^2.0.0",
 		"browser-sync": "^2.26.12",
@@ -63,6 +63,6 @@
 		"postcss-easy-import": "^3.0.0",
 		"postcss-mixins": "^6.2.3",
 		"postcss-preset-env": "^6.7.0",
-		"stylelint": "^13.6.1"
+		"stylelint": "^13.7.0"
 	}
 }
