@@ -1,6 +1,6 @@
 {
 	"name": "wordpressify",
-	"version": "0.2.8-15",
+	"version": "0.2.8-16",
 	"description": "A build system designed to automate your WordPress development workflow.",
 	"keywords": [
 		"babel",
@@ -55,12 +55,12 @@
 		"gulp-plumber": "^1.2.1",
 		"gulp-postcss": "^9.0.0",
 		"gulp-remote-src": "^0.4.4",
-		"gulp-sourcemaps": "^2.6.5",
+		"gulp-sourcemaps": "^3.0.0",
 		"gulp-uglify": "^3.0.2",
 		"gulp-vinyl-zip": "^2.2.1",
 		"jquery": "^3.5.1",
 		"normalize.css": "^8.0.1",
-		"postcss": "^8.1.4",
+		"postcss": "^8.1.7",
 		"postcss-easy-import": "^3.0.0",
 		"postcss-mixins": "^7.0.1",
 		"postcss-preset-env": "^6.7.0",
