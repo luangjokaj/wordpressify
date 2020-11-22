@@ -87,7 +87,7 @@ async function unzipWordPress() {
 }
 
 async function copyConfig() {
-	if (await fs.existsSync('./wp-config.php')) {
+	if (fs.existsSync('./wp-config.php')) {
 		return src('./wp-config.php')
 			.pipe(inject.after("define( 'DB_COLLATE', '' );", "\ndefine( 'DISABLE_WP_CRON', true );"))
 			.pipe(dest('./build/wordpress'));
