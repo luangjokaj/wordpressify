@@ -1,6 +1,6 @@
 {
 	"name": "wordpressify",
-	"version": "0.2.8-17",
+	"version": "0.2.8-18",
 	"description": "A build system designed to automate your WordPress development workflow.",
 	"keywords": [
 		"babel",
@@ -37,7 +37,7 @@
 	"author": "Luan Gjokaj <luan@riangle.com>",
 	"license": "MIT",
 	"dependencies": {
-		"@babel/core": "^7.12.7",
+		"@babel/core": "^7.12.9",
 		"@babel/preset-env": "^7.12.7",
 		"aos": "^2.3.4",
 		"beeper": "^2.0.0",
@@ -60,7 +60,7 @@
 		"gulp-vinyl-zip": "^2.2.1",
 		"jquery": "^3.5.1",
 		"normalize.css": "^8.0.1",
-		"postcss": "^8.1.9",
+		"postcss": "^8.1.10",
 		"postcss-easy-import": "^3.0.0",
 		"postcss-mixins": "^7.0.1",
 		"postcss-preset-env": "^6.7.0",
