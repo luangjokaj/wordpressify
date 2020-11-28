@@ -18,6 +18,9 @@ const remoteSrc = require('gulp-remote-src');
 const sourcemaps = require('gulp-sourcemaps');
 const uglify = require('gulp-uglify');
 const zip = require('gulp-vinyl-zip');
+const batchReplace = require('gulp-batch-replace');
+const dotenv = require('dotenv');
+const path = require('path');
 
 /* -------------------------------------------------------------------------------------------------
 Theme Name
@@ -88,7 +91,14 @@ async function unzipWordPress() {
 
 async function copyConfig() {
 	if (fs.existsSync('./wp-config.php')) {
+		const env = fs.readFileSync(path.join(__dirname, '.env'));
+		const data = dotenv.parse(env);
+		const replacements = []
+		for (const key of Object.keys(data)){
+				replacements.push([`{{${key}}}`, data[key]])
+			}
 		return src('./wp-config.php')
+			.pipe(batchReplace(replacements))
 			.pipe(inject.after("define( 'DB_COLLATE', '' );", "\ndefine( 'DISABLE_WP_CRON', true );"))
 			.pipe(dest('./build/wordpress'));
 	}

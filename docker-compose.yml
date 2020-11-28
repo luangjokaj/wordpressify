@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+  db:
+    image: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: "${DB_PASSWORD}"
+      MYSQL_DATABASE: "${DB_NAME}"
+    ports:
+      - "${DB_PORT}:3306"
+    expose:
+      - "3306"
