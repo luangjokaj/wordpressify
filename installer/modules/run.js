@@ -33,13 +33,20 @@ module.exports = () => {
 		`${upstreamUrl}/.babelrc`,
 		`${upstreamUrl}/.gitignore`,
 		`${upstreamUrl}/.stylelintrc`,
-		`${upstreamUrl}/.env`,
+		`${upstreamUrl}/.env.in`,
 		`${upstreamUrl}/LICENSE`,
 		`${upstreamUrl}/README.md`,
 		`${upstreamUrl}/gulpfile.js`,
 		`${upstreamUrl}/docker-compose.yml`,
-		`${upstreamUrl}/wp-config.php`,
+		`${upstreamUrl}/Dockerfile.in`,
 		`${upstreamUrl}/installer/package.json`,
+
+		`${upstreamUrl}/config/php.ini.in`,
+		`${upstreamUrl}/config/nginx/fastcgi.conf`,
+		`${upstreamUrl}/config/nginx/mime.types`,
+		`${upstreamUrl}/config/nginx/nginx.conf`,
+		`${upstreamUrl}/config/nginx/sites-enabled/wordpress`,
+		`${upstreamUrl}/config/nginx/snippets/fastcgi-php.conf`,
 
 		`${upstreamUrl}/src/assets/css/globals.css`,
 		`${upstreamUrl}/src/assets/css/mixins.css`,
@@ -69,7 +76,7 @@ module.exports = () => {
 	];
 
 	// Organise file structure
-	const dotFiles = ['.babelrc', '.gitignore', '.stylelintrc', '.env'];
+	const dotFiles = ['.babelrc', '.gitignore', '.stylelintrc', '.env.in'];
 	const cssFiles = ['globals.css', 'mixins.css', 'style.css', 'variables.css', 'wordpressify.css'];
 	const jsFiles = ['main.js'];
 	const pluginFiles = ['README.md'];
@@ -138,9 +145,8 @@ module.exports = () => {
 		await execa('npm', ['install']);
 		spinner.succeed();
 
-		// Installing WordPress files
-		spinner.start(`3. Installing WordPress files from ${chalk.green('https://wordpress.org/')} ...`);
-		await execa('npm', ['run', 'install:wordpress']);
+		spinner.start('3. Installing WordPress and building containers...');
+		await execa('npm', ['run', 'env:start']);
 		spinner.succeed();
 
 		// Done.

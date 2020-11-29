@@ -3,24 +3,23 @@ const babel = require('gulp-babel');
 const beeper = require('beeper');
 const browserSync = require('browser-sync');
 const concat = require('gulp-concat');
-const connect = require('gulp-connect-php');
 const del = require('del');
 const log = require('fancy-log');
 const fs = require('fs');
 const imagemin = require('gulp-imagemin');
-const inject = require('gulp-inject-string');
 const partialimport = require('postcss-easy-import');
 const plumber = require('gulp-plumber');
 const postcss = require('gulp-postcss');
 const postCSSMixins = require('postcss-mixins');
 const postcssPresetEnv = require('postcss-preset-env');
-const remoteSrc = require('gulp-remote-src');
 const sourcemaps = require('gulp-sourcemaps');
 const uglify = require('gulp-uglify');
 const zip = require('gulp-vinyl-zip');
-const batchReplace = require('gulp-batch-replace');
 const dotenv = require('dotenv');
 const path = require('path');
+const { execSync } = require('child_process');
+
+dotenv.config();
 
 /* -------------------------------------------------------------------------------------------------
 Theme Name
@@ -72,66 +71,82 @@ const headerJS = ['./node_modules/jquery/dist/jquery.js'];
 const footerJS = ['./src/assets/js/**'];
 
 /* -------------------------------------------------------------------------------------------------
-Installation Tasks
+Environment Tasks
 -------------------------------------------------------------------------------------------------- */
-async function cleanup() {
-	await del(['./build']);
-	await del(['./dist']);
+function setupEnvironment(done) {
+	if (!fs.existsSync('./build')) {
+		fs.mkdirSync('./build');
+		fs.mkdirSync('./build/wordpress');
+	}
+	if (!fs.existsSync('./xdebug')) {
+		fs.mkdirSync('./xdebug');
+	}
+	if (!fs.existsSync('./Dockerfile')) {
+		let contents = fs.readFileSync('./Dockerfile.in', {encoding: 'utf8'});
+		contents = contents.replace(/\{\{UID\}\}/g, process.getuid());
+		contents = contents.replace(/\{\{GID\}\}/g, process.getgid());
+		fs.writeFileSync('./Dockerfile', contents);
+	}
+	if (!fs.existsSync('./config/php.ini')) {
+		let contents = fs.readFileSync('./config/php.ini.in', {encoding: 'utf8'});
+		// If you're on Linux, you might have to modify the IP address 172.29.0.1 - See README
+		let replacement =  process.platform === 'win32' || process.platform === 'darwin' ? 'host.docker.internal' : '172.29.0.1';
+		contents = contents.replace(/\{\{XDEBUG_CLIENT_HOST\}\}/g, replacement);
+		fs.writeFileSync('./config/php.ini', contents);
+	}
+	if (!fs.existsSync('./.env')) {
+		let contents = fs.readFileSync('./.env.in', {encoding: 'utf8'});
+		contents = contents.replace(/\{\{WPFY_UID\}\}/g, process.getuid());
+		contents = contents.replace(/\{\{WPFY_GID\}\}/g, process.getgid());
+		fs.writeFileSync('./.env', contents);
+	}
+	done();
 }
 
-async function downloadWordPress() {
-	await remoteSrc(['latest.zip'], {
-		base: 'https://wordpress.org/',
-	}).pipe(dest('./build/'));
+function startContainers(done) {
+	execSync('docker-compose up -d', {stdio: 'inherit'});
+	done();
 }
 
-async function unzipWordPress() {
-	return await zip.src('./build/latest.zip').pipe(dest('./build/'));
-}
-
-async function copyConfig() {
-	if (fs.existsSync('./wp-config.php')) {
-		const env = fs.readFileSync(path.join(__dirname, '.env'));
-		const data = dotenv.parse(env);
-		const replacements = []
-		for (const key of Object.keys(data)){
-				replacements.push([`{{${key}}}`, data[key]])
-			}
-		return src('./wp-config.php')
-			.pipe(batchReplace(replacements))
-			.pipe(inject.after("define( 'DB_COLLATE', '' );", "\ndefine( 'DISABLE_WP_CRON', true );"))
-			.pipe(dest('./build/wordpress'));
+function stopContainers(done) {
+	execSync('docker-compose down', {stdio: 'inherit'});
+	if (typeof done === 'function') {
+		done();
 	}
 }
 
-async function installationDone() {
-	await beeper();
-	await log(devServerReady);
-	await log(thankYou);
+async function cleanEnvironment(done) {
+	execSync('docker-compose down', {stdio: 'inherit'});
+	await del(['build', 'Dockerfile', 'xdebug', 'config/php.ini', '.env']);
+	done();
 }
 
-exports.setup = series(cleanup, downloadWordPress);
-exports.install = series(unzipWordPress, copyConfig, installationDone);
+function rebuildContainers(done) {
+	execSync('docker-compose up -d --build --force-recreate', {stdio: 'inherit'});
+	done();
+}
+
+function restartWordPress(done) {
+	execSync('docker-compose restart wordpress');
+	done();
+}
+
+exports['env:start'] = series(setupEnvironment, startContainers);
+exports['env:stop'] = stopContainers;
+exports['env:rebuild'] = series(cleanEnvironment, setupEnvironment, rebuildContainers);
+exports['env:restart'] = restartWordPress;
 
 /* -------------------------------------------------------------------------------------------------
 Development Tasks
 -------------------------------------------------------------------------------------------------- */
 function devServer() {
-	connect.server(
-		{
-			base: './build/wordpress',
-			port: '3020',
-		},
-		() => {
-			browserSync({
-				logPrefix: '🎈 WordPressify',
-				proxy: '127.0.0.1:3020',
-				host: '127.0.0.1',
-				port: '3010',
-				open: 'external',
-			});
-		},
-	);
+	browserSync({
+		logPrefix: '🎈 WordPressify',
+		proxy: `127.0.0.1:${process.env.SERVER_PORT}`,
+		host: '127.0.0.1',
+		port: `${process.env.PROXY_PORT}`,
+		open: 'external',
+	});
 
 	watch('./src/assets/css/**/*.css', stylesDev);
 	watch('./src/assets/js/**', series(footerScriptsDev, Reload));
@@ -139,7 +154,6 @@ function devServer() {
 	watch('./src/assets/fonts/**', series(copyFontsDev, Reload));
 	watch('./src/theme/**', series(copyThemeDev, Reload));
 	watch('./src/plugins/**', series(pluginsDev, Reload));
-	watch('./build/wordpress/wp-config.php', { events: 'add' }, series(disableCron));
 }
 
 function Reload(done) {
@@ -208,6 +222,7 @@ function pluginsDev() {
 }
 
 exports.dev = series(
+	startContainers,
 	copyThemeDev,
 	copyImagesDev,
 	copyFontsDev,
@@ -310,25 +325,6 @@ const onError = err => {
 	this.emit('end');
 };
 
-async function disableCron() {
-	if (fs.existsSync('./build/wordpress/wp-config.php')) {
-		await fs.readFile('./build/wordpress/wp-config.php', (err, data) => {
-			if (err) {
-				log(wpFy + ' - ' + warning + ' WP_CRON was not disabled!');
-			}
-			if (data) {
-				if (data.indexOf('DISABLE_WP_CRON') >= 0) {
-					log('WP_CRON is already disabled!');
-				} else {
-					return src('./build/wordpress/wp-config.php')
-						.pipe(inject.after("define( 'DB_COLLATE', '' );", "\ndefine( 'DISABLE_WP_CRON', true );"))
-						.pipe(dest('./build/wordpress'));
-				}
-			}
-		});
-	}
-}
-
 function Backup() {
 	if (!fs.existsSync('./build')) {
 		log(buildNotFound);
@@ -344,7 +340,7 @@ function Backup() {
 	}
 }
 
-exports.backup = series(Backup);
+exports.backup = Backup;
 
 /* -------------------------------------------------------------------------------------------------
 Messages
@@ -356,7 +352,7 @@ const devServerReady =
 	'Your development server is ready, start the workflow with the command: $ \x1b[1mnpm run dev\x1b[0m';
 const buildNotFound =
 	errorMsg +
-	' ⚠️　- You need to install WordPress first. Run the command: $ \x1b[1mnpm run install:wordpress\x1b[0m';
+	' ⚠️　- You need to build the project first. Run the command: $ \x1b[1mnpm run env:start\x1b[0m';
 const filesGenerated =
 	'Your ZIP template file was generated in: \x1b[1m' +
 	__dirname +

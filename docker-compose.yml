@@ -5,7 +5,42 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: "${DB_PASSWORD}"
       MYSQL_DATABASE: "${DB_NAME}"
-    ports:
-      - "${DB_PORT}:3306"
     expose:
       - "3306"
+    networks:
+      - "default-network"
+  wordpress:
+    user: "${WPFY_UID}:${WPFY_GID}"
+    build: .
+    expose:
+      - "9000"
+    environment:
+      WORDPRESS_DB_HOST: "${DB_HOST}:${DB_PORT}"
+      WORDPRESS_DB_USER: "${DB_USER}"
+      WORDPRESS_DB_PASSWORD: "${DB_PASSWORD}"
+      WORDPRESS_DB_NAME: "${DB_NAME}"
+      WORDPRESS_DEBUG: 1
+      WORDPRESS_CONFIG_EXTRA: "define( 'DISABLE_WP_CRON', true );"
+    networks:
+      - "default-network"
+    volumes:
+      - "./build/wordpress:/var/www/html"
+      - "./xdebug:/var/xdebug"
+      - "./config/php.ini:/usr/local/etc/php/conf.d/overrides.ini"
+    depends_on:
+      - db
+  server:
+    image: nginx:latest
+    networks:
+      - "default-network"
+    ports:
+      - "${SERVER_PORT}:80"
+    volumes:
+      - "./build/wordpress:/var/www/html"
+      - "./config/nginx:/etc/nginx"
+    depends_on:
+      - "wordpress"
+      - "db"
+networks:
+  default-network:
+    driver: bridge
