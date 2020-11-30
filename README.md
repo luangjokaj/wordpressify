@@ -30,7 +30,7 @@ http://www.wordpressify.co/
 - [11. Deployment](#11-deployment)
 	- [Automated Deployments](#automated-deployments)
 - [Changelog](CHANGELOG.md)
-- [License](#license)
+- [License](LICENSE)
 
 ## Introduction
 
