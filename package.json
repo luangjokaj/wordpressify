@@ -1,6 +1,6 @@
 {
 	"name": "wordpressify",
-	"version": "0.2.8-18",
+	"version": "0.2.9",
 	"description": "A build system designed to automate your WordPress development workflow.",
 	"keywords": [
 		"babel",
