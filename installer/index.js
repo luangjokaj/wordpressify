@@ -22,18 +22,22 @@ const version = require('../package.json').version;
 
 program
 	.version(version, '-v, --vers', 'output the current version')
+	.option('-y, --non-interactive', 'do not prompt for user input')
 	.parse(process.argv);
 
 (async () => {
-	const response = await prompts({
-		type: 'confirm',
-		name: 'value',
-		message: `Do you want to install ${chalk.white.bgGreen(
-			'🎈 WordPressify',
-		)} in the current directory?\n${chalk.red(process.cwd())}`,
-	});
+	let response = {};
+	if (!program.nonInteractive) {
+			response = await prompts({
+			type: 'confirm',
+			name: 'value',
+			message: `Do you want to install ${chalk.white.bgGreen(
+				'🎈 WordPressify',
+			)} in the current directory?\n${chalk.red(process.cwd())}`,
+		});
+	}
 
-	if (response.value) {
+	if (program.nonInteractive || response.value) {
 		// If below Node 8.
 		if (8 > major) {
 			console.error(

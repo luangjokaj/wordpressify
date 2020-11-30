@@ -18,6 +18,16 @@ module.exports = () => {
 	// Init.
 	clearConsole();
 
+	let upstreamUrl = '';
+	// When running GitHub actions, make sure the files from current repo are downloaded
+	if (process.env.WPFY_GH_REPO) {
+  	let refname = process.env.WPFY_GH_REF.split('/');
+    refname = refname[refname.length-1];
+		upstreamUrl = `https://raw.githubusercontent.com/${process.env.WPFY_GH_REPO}/${refname}`;
+	} else {
+		upstreamUrl = 'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-18';
+	}
+
 	// Files.
 	const filesToDownload = [
 		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-18/.babelrc',
