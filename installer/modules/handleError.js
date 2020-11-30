@@ -3,7 +3,7 @@
  */
 'use strict';
 
-module.exports = err => {
+module.exports = (err) => {
 	if (err) {
 		console.log('ERROR: ' + err); // eslint-disable-line no-console
 	}

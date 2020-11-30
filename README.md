@@ -29,8 +29,7 @@ http://www.wordpressify.co/
 - [10. Changing PHP and Docker settings](#10-changing-php-and-docker-settings)
 - [11. Deployment](#11-deployment)
 	- [Automated Deployments](#automated-deployments)
-- [12. Windows Installation](#12-windows-installation)
-- [Changelog](#changelog)
+- [Changelog](CHANGELOGS.md)
 - [License](#license)
 
 ## Introduction
@@ -169,11 +168,6 @@ npm run prod
 ```
 dist/wordpressify.zip
 ```
-
-**WINDOWS USERS**
-
-We prepared a video screencast **demonstrating the installation processs using a Windows** operating system, you can find it here: [How to install WordPressify on Windows?](https://www.wordpressify.co/windows-installation/)
-Or check out this tutorial on [Medium](https://medium.com/@marcus.supernova/how-to-install-wordpressify-on-windows-4b78a801165b).
 
 # 3. CSS, PostCSS and Sass
 ## PostCSS
@@ -460,161 +454,7 @@ This should enable automatic deployment on any push to the chosen GitHub reposit
 
 This will **immediately** remove the default styles and leave a minimal viable theme with basic PHP WordPress loops and other useful features.
 
-# 12. Windows Installation
-**[How to install WordPressify on Windows?](https://www.youtube.com/watch?v=J8ZNzKSeTSE)**
-
-Assuming that you are using the latest version of Windows, and you have activated Windows Subsystem for Linux. Follow the instructions:
-
-### Install lamp for PHP and MySQL
-First refresh your package index:
-```
-sudo apt-get update
-```
-
-Then install the LAMP stack:
-```
-sudo apt-get install lamp-server^
-```
-
-For more informations check out: https://help.ubuntu.com/community/ApacheMySQLPHP
-
-### Start MySQL
-```
-sudo service mysql start
-```
-
-Now let's connect to the MySQL Server:
-```
-sudo mysql
-```
-
-Change the **root** password to "123456789":
-```
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '123456789';
-```
-
-Reload privileges:
-```
-FLUSH PRIVILEGES;
-```
-
-### Install Node
-```
-curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
-```
-
-```
-sudo apt-get install -y nodejs
-```
-
-That's it. Now just follow the WordPressify installation instructions.
-
-# Changelog
-**0.2.8-11**
-- 🚀 RELEASE: Remove eslintrc.
-
-**v0.2.8**
-- 🚀 RELEASE: Add ESLint with WordPress code standards rules.
-
-**v0.2.7**
-- 🚀 RELEASE: Update version.
-- 🐛 FIX: Readme documentation on install.
-- 🐛 FIX: Cron jobs new formatting.
-
-**v0.2.6**
-- 🚀 RELEASE: Install files from versioned release instead of `master` branch.
-
-**v0.2.5**
-- 👌 IMPROVE: Install only required dependencies.
-- 🚀 RELEASE: Update dependencies.
-
-**v0.2.4**
-- 📖 DOC: Improve documentation.
-
-**v0.2.3**
-- 🚀 RELEASE: Improved installation speed for global dependencies.
-- BREAKING CHANGE: It is required to update WordPressify: `sudo npm install wordpressify -g`.
-
-**v0.2.2**
-- 👌 IMPROVE: Meta.
-
-**v0.2.1**
-- 🚀 RELEASE: Update dependencies.
-
-**v0.2.0**
-- 🐛 FIX: Typo.
-
-**v0.1.9**
-- 🐛 FIX: Dependencies.
-
-**v0.1.8**
-- 📦 NEW: Run WordPressify globally from NPM.
-
-**v0.1.7**
-- 🚀 RELEASE: Remove WordPressify template from main repository.
-- 👌 IMPROVE: Simple & unstyled boilerplate code. Stay fresh!
-
-**v0.1.6**
-- 📦 NEW: Upgrade to Gulp 4.
-- 📦 NEW: Rewrote all tasks into functions.
-- 👌 IMPROVE: Updated file structure.
-
-**v0.1.5**
-- 📦 NEW: Upgrade to Babel 7
-- 🐛 FIX: Removed deprecated `postcss-cssnext` in favor of `postcss-preset-env`.
-
-**v0.1.4**
-- 👌 IMPROVE: Added cleanup command to flush the default theme and have a fresh start.
-
-**v0.1.3**
-- 👌 IMPROVE: Added support for bitmap and SVG minification, in the production build.
-- 📖 DOC: Added documentation for deployment process.
-
-**v0.1.2**
-- 👌 IMPROVE: Converted all variables from 'var' to 'const'.
-- 👌 IMPROVE: Replaced long anonymous function with ES6 arrow syntax.
-- 🐛 FIX: Spelling errors.
-
-**v0.1.1**
-- 📦 NEW: Added support for `src/plugins`.
-
-**v0.1.0**
-- 👌 IMPROVE: Code readability.
-- 👌 IMPROVE: Removed unused packages.
-- 📦 NEW: Build success and error messages.
-- 👌 IMPROVE: Tasks cleanup.
-
-**v0.0.9**
-- 📖 DOC: Update documentation.
-
-**v0.0.8**
-- 👌 IMPROVE: Name change.
-
-**v0.0.7**
-- 🐛 FIX: Fix placemente of `DISABLE_WP_CRON`.
-
-**v0.0.6**
-- 👌 IMPROVE: Theme cleanup.
-- 👌 IMPROVE: Consistent code styles.
-
-**v0.0.5**
-- 🐛 FIX: Activated `DISABLE_WP_CRON` to prevent Node freezing.
-- 🚀 RELEASE: Back up your build files with all `wp-content` uploads.
-
-**v0.0.4**
-- 🐛 FIX: Whitelabel template.
-- 🐛 FIX: Renamed classes.
-- 👌 IMPROVE: Refactored CSS structure.
-- 📦 NEW: Meet WordPressify.
-
-**v.0.0.3**
-- 👌 IMPROVE: Simplified build logic.
-- 👌 IMPROVE: Install WordPress only once with `npm run install:wordpress`.
-- 👌 IMPROVE: Cleaner distribution task.
-
-**v0.0.2**
-- 🐛 FIX: Bugfixes.
-- 📦 NEW: Watch and store new content in `wp-content/uploads`.
-
-# License
-MIT
+---
+- [Changelog](CHANGELOG.md)
+- License: [MIT](LICENSE)
+- WordPressify [Documentation Website](https://www.wordpressify.co/)

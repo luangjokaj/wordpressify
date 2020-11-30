@@ -82,20 +82,23 @@ function setupEnvironment(done) {
 		fs.mkdirSync('./xdebug');
 	}
 	if (!fs.existsSync('./Dockerfile')) {
-		let contents = fs.readFileSync('./Dockerfile.in', {encoding: 'utf8'});
+		let contents = fs.readFileSync('./Dockerfile.in', { encoding: 'utf8' });
 		contents = contents.replace(/\{\{UID\}\}/g, process.getuid());
 		contents = contents.replace(/\{\{GID\}\}/g, process.getgid());
 		fs.writeFileSync('./Dockerfile', contents);
 	}
 	if (!fs.existsSync('./config/php.ini')) {
-		let contents = fs.readFileSync('./config/php.ini.in', {encoding: 'utf8'});
+		let contents = fs.readFileSync('./config/php.ini.in', { encoding: 'utf8' });
 		// If you're on Linux, you might have to modify the IP address 172.29.0.1 - See README
-		let replacement =  process.platform === 'win32' || process.platform === 'darwin' ? 'host.docker.internal' : '172.29.0.1';
+		let replacement =
+			process.platform === 'win32' || process.platform === 'darwin'
+				? 'host.docker.internal'
+				: '172.29.0.1';
 		contents = contents.replace(/\{\{XDEBUG_CLIENT_HOST\}\}/g, replacement);
 		fs.writeFileSync('./config/php.ini', contents);
 	}
 	if (!fs.existsSync('./.env')) {
-		let contents = fs.readFileSync('./.env.in', {encoding: 'utf8'});
+		let contents = fs.readFileSync('./.env.in', { encoding: 'utf8' });
 		contents = contents.replace(/\{\{WPFY_UID\}\}/g, process.getuid());
 		contents = contents.replace(/\{\{WPFY_GID\}\}/g, process.getgid());
 		fs.writeFileSync('./.env', contents);
@@ -104,25 +107,27 @@ function setupEnvironment(done) {
 }
 
 function startContainers(done) {
-	execSync('docker-compose up -d', {stdio: 'inherit'});
+	execSync('docker-compose up -d', { stdio: 'inherit' });
 	done();
 }
 
 function stopContainers(done) {
-	execSync('docker-compose down', {stdio: 'inherit'});
+	execSync('docker-compose down', { stdio: 'inherit' });
 	if (typeof done === 'function') {
 		done();
 	}
 }
 
 async function cleanEnvironment(done) {
-	execSync('docker-compose down', {stdio: 'inherit'});
+	execSync('docker-compose down', { stdio: 'inherit' });
 	await del(['build', 'Dockerfile', 'xdebug', 'config/php.ini', '.env']);
 	done();
 }
 
 function rebuildContainers(done) {
-	execSync('docker-compose up -d --build --force-recreate', {stdio: 'inherit'});
+	execSync('docker-compose up -d --build --force-recreate', {
+		stdio: 'inherit',
+	});
 	done();
 }
 
@@ -133,7 +138,11 @@ function restartWordPress(done) {
 
 exports['env:start'] = series(setupEnvironment, startContainers);
 exports['env:stop'] = stopContainers;
-exports['env:rebuild'] = series(cleanEnvironment, setupEnvironment, rebuildContainers);
+exports['env:rebuild'] = series(
+	cleanEnvironment,
+	setupEnvironment,
+	rebuildContainers
+);
 exports['env:restart'] = restartWordPress;
 
 /* -------------------------------------------------------------------------------------------------
@@ -166,19 +175,21 @@ function copyThemeDev() {
 		log(buildNotFound);
 		process.exit(1);
 	} else {
-		return src('./src/theme/**').pipe(dest('./build/wordpress/wp-content/themes/' + themeName));
+		return src('./src/theme/**').pipe(
+			dest('./build/wordpress/wp-content/themes/' + themeName)
+		);
 	}
 }
 
 function copyImagesDev() {
 	return src('./src/assets/img/**').pipe(
-		dest('./build/wordpress/wp-content/themes/' + themeName + '/img'),
+		dest('./build/wordpress/wp-content/themes/' + themeName + '/img')
 	);
 }
 
 function copyFontsDev() {
 	return src('./src/assets/fonts/**').pipe(
-		dest('./build/wordpress/wp-content/themes/' + themeName + '/fonts'),
+		dest('./build/wordpress/wp-content/themes/' + themeName + '/fonts')
 	);
 }
 
@@ -208,7 +219,7 @@ function footerScriptsDev() {
 		.pipe(
 			babel({
 				presets: ['@babel/preset-env'],
-			}),
+			})
 		)
 		.pipe(concat('footer-bundle.js'))
 		.pipe(sourcemaps.write('.'))
@@ -217,7 +228,7 @@ function footerScriptsDev() {
 
 function pluginsDev() {
 	return src(['./src/plugins/**', '!./src/plugins/README.md']).pipe(
-		dest('./build/wordpress/wp-content/plugins'),
+		dest('./build/wordpress/wp-content/plugins')
 	);
 }
 
@@ -230,7 +241,7 @@ exports.dev = series(
 	headerScriptsDev,
 	footerScriptsDev,
 	pluginsDev,
-	devServer,
+	devServer
 );
 
 /* -------------------------------------------------------------------------------------------------
@@ -242,12 +253,14 @@ async function cleanProd() {
 
 function copyThemeProd() {
 	return src(['./src/theme/**', '!./src/theme/**/node_modules/**']).pipe(
-		dest('./dist/themes/' + themeName),
+		dest('./dist/themes/' + themeName)
 	);
 }
 
 function copyFontsProd() {
-	return src('./src/assets/fonts/**').pipe(dest('./dist/themes/' + themeName + '/fonts'));
+	return src('./src/assets/fonts/**').pipe(
+		dest('./dist/themes/' + themeName + '/fonts')
+	);
 }
 
 function stylesProd() {
@@ -271,7 +284,7 @@ function footerScriptsProd() {
 		.pipe(
 			babel({
 				presets: ['@babel/preset-env'],
-			}),
+			})
 		)
 		.pipe(concat('footer-bundle.js'))
 		.pipe(uglify())
@@ -279,7 +292,9 @@ function footerScriptsProd() {
 }
 
 function pluginsProd() {
-	return src(['./src/plugins/**', '!./src/plugins/**/*.md']).pipe(dest('./dist/plugins'));
+	return src(['./src/plugins/**', '!./src/plugins/**/*.md']).pipe(
+		dest('./dist/plugins')
+	);
 }
 
 function processImages() {
@@ -288,7 +303,7 @@ function processImages() {
 		.pipe(
 			imagemin([imagemin.svgo({ plugins: [{ removeViewBox: true }] })], {
 				verbose: true,
-			}),
+			})
 		)
 		.pipe(dest('./dist/themes/' + themeName + '/img'));
 }
@@ -313,13 +328,13 @@ exports.prod = series(
 	footerScriptsProd,
 	pluginsProd,
 	processImages,
-	zipProd,
+	zipProd
 );
 
 /* -------------------------------------------------------------------------------------------------
 Utility Tasks
 -------------------------------------------------------------------------------------------------- */
-const onError = err => {
+const onError = (err) => {
 	beeper();
 	log(wpFy + ' - ' + errorMsg + ' ' + err.toString());
 	this.emit('end');
@@ -362,7 +377,11 @@ const filesGenerated =
 const pluginsGenerated =
 	'Plugins are generated in: \x1b[1m' + __dirname + '/dist/plugins/\x1b[0m - ✅';
 const backupsGenerated =
-	'Your backup was generated in: \x1b[1m' + __dirname + '/backups/' + date + '.zip\x1b[0m - ✅';
+	'Your backup was generated in: \x1b[1m' +
+	__dirname +
+	'/backups/' +
+	date +
+	'.zip\x1b[0m - ✅';
 const wpFy = '\x1b[42m\x1b[1mWordPressify\x1b[0m';
 const wpFyUrl = '\x1b[2m - http://www.wordpressify.co/\x1b[0m';
 const thankYou = 'Thank you for using ' + wpFy + wpFyUrl;

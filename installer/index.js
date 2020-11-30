@@ -28,11 +28,11 @@ program
 (async () => {
 	let response = {};
 	if (!program.nonInteractive) {
-			response = await prompts({
+		response = await prompts({
 			type: 'confirm',
 			name: 'value',
 			message: `Do you want to install ${chalk.white.bgGreen(
-				'🎈 WordPressify',
+				'🎈 WordPressify'
 			)} in the current directory?\n${chalk.red(process.cwd())}`,
 		});
 	}
@@ -46,8 +46,8 @@ program
 						currentNodeVersion +
 						'.\n' +
 						'Install WordPressify requires Node 8 or higher. \n' +
-						'Kindly, update your version of Node.',
-				),
+						'Kindly, update your version of Node.'
+				)
 			);
 			process.exit(1);
 		}
@@ -55,7 +55,7 @@ program
 		// Makes the script crash on unhandled rejections instead of silently
 		// ignoring them. In the future, promise rejections that are not handled will
 		// terminate the Node.js process with a non-zero exit code.
-		process.on('unhandledRejection', err => {
+		process.on('unhandledRejection', (err) => {
 			throw err;
 		});
 

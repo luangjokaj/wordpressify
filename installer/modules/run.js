@@ -21,11 +21,12 @@ module.exports = () => {
 	let upstreamUrl = '';
 	// When running GitHub actions, make sure the files from current repo are downloaded
 	if (process.env.WPFY_GH_REPO) {
-  	let refname = process.env.WPFY_GH_REF.split('/');
-    refname = refname[refname.length-1];
+		let refname = process.env.WPFY_GH_REF.split('/');
+		refname = refname[refname.length - 1];
 		upstreamUrl = `https://raw.githubusercontent.com/${process.env.WPFY_GH_REPO}/${refname}`;
 	} else {
-		upstreamUrl = 'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-18';
+		upstreamUrl =
+			'https://raw.githubusercontent.com/luangjokaj/wordpressify/develop/';
 	}
 
 	// Files.
@@ -77,7 +78,13 @@ module.exports = () => {
 
 	// Organise file structure
 	const dotFiles = ['.babelrc', '.gitignore', '.stylelintrc', '.env.in'];
-	const cssFiles = ['globals.css', 'mixins.css', 'style.css', 'variables.css', 'wordpressify.css'];
+	const cssFiles = [
+		'globals.css',
+		'mixins.css',
+		'style.css',
+		'variables.css',
+		'wordpressify.css',
+	];
 	const jsFiles = ['main.js'];
 	const pluginFiles = ['README.md'];
 	const themeFiles = [
@@ -104,52 +111,68 @@ module.exports = () => {
 	console.log('\n');
 	console.log(
 		'📦 ',
-		chalk.black.bgYellow(` Downloading 🎈 WordPressify files in: → ${chalk.bgGreen(` ${theDir} `)}\n`),
+		chalk.black.bgYellow(
+			` Downloading 🎈 WordPressify files in: → ${chalk.bgGreen(` ${theDir} `)}\n`
+		),
 		chalk.dim(`\n In the directory: ${theCWD}\n`),
-		chalk.dim('This might take a couple of minutes.\n'),
+		chalk.dim('This might take a couple of minutes.\n')
 	);
 
 	const spinner = ora({ text: '' });
-	spinner.start(`1. Creating 🎈 WordPressify files inside → ${chalk.black.bgWhite(` ${theDir} `)}`);
+	spinner.start(
+		`1. Creating 🎈 WordPressify files inside → ${chalk.black.bgWhite(
+			` ${theDir} `
+		)}`
+	);
 
 	// Download.
-	Promise.all(filesToDownload.map(x => download(x, `${theCWD}`))).then(async () => {
-		if (!fs.existsSync('src')) {
-			await execa('mkdir', [
-				'src',
-				'src/theme',
-				'src/plugins',
-				'src/assets',
-				'src/assets/css',
-				'src/assets/js',
-			]);
+	Promise.all(filesToDownload.map((x) => download(x, `${theCWD}`))).then(
+		async () => {
+			if (!fs.existsSync('src')) {
+				await execa('mkdir', [
+					'src',
+					'src/theme',
+					'src/plugins',
+					'src/assets',
+					'src/assets/css',
+					'src/assets/js',
+				]);
+			}
+
+			dotFiles.map((x) =>
+				fs.rename(`${theCWD}/${x.slice(1)}`, `${theCWD}/${x}`, (err) =>
+					handleError(err)
+				)
+			);
+			cssFiles.map((x) =>
+				fs.rename(`${theCWD}/${x}`, `${theCWD}/src/assets/css/${x}`, (err) =>
+					handleError(err)
+				)
+			);
+			jsFiles.map((x) =>
+				fs.rename(`${theCWD}/${x}`, `${theCWD}/src/assets/js/${x}`, (err) =>
+					handleError(err)
+				)
+			);
+			themeFiles.map((x) =>
+				fs.rename(`${theCWD}/${x}`, `${theCWD}/src/theme/${x}`, (err) =>
+					handleError(err)
+				)
+			);
+			spinner.succeed();
+
+			// The npm install.
+			spinner.start('2. Installing npm packages...');
+			// await execa('npm', ['install', '--silent']);
+			await execa('npm', ['install']);
+			spinner.succeed();
+
+			spinner.start('3. Installing WordPress and building containers...');
+			await execa('npm', ['run', 'env:start']);
+			spinner.succeed();
+
+			// Done.
+			printNextSteps();
 		}
-
-		dotFiles.map(x =>
-			fs.rename(`${theCWD}/${x.slice(1)}`, `${theCWD}/${x}`, err => handleError(err)),
-		);
-		cssFiles.map(x =>
-			fs.rename(`${theCWD}/${x}`, `${theCWD}/src/assets/css/${x}`, err => handleError(err)),
-		);
-		jsFiles.map(x =>
-			fs.rename(`${theCWD}/${x}`, `${theCWD}/src/assets/js/${x}`, err => handleError(err)),
-		);
-		themeFiles.map(x =>
-			fs.rename(`${theCWD}/${x}`, `${theCWD}/src/theme/${x}`, err => handleError(err)),
-		);
-		spinner.succeed();
-
-		// The npm install.
-		spinner.start('2. Installing npm packages...');
-		// await execa('npm', ['install', '--silent']);
-		await execa('npm', ['install']);
-		spinner.succeed();
-
-		spinner.start('3. Installing WordPress and building containers...');
-		await execa('npm', ['run', 'env:start']);
-		spinner.succeed();
-
-		// Done.
-		printNextSteps();
-	});
+	);
 };
