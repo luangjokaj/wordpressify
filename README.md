@@ -8,7 +8,7 @@ http://www.wordpressify.co/
 
 - [Introduction](#introduction)
 	- [Features](#features)
-- [1. Installing Node](#1-installing-node)
+- [1. Installing Node and Docker](#1-installing-node-and-docker)
 - [2. Set Up Project](#2-set-up-project)
 	- [Install WordPressify from NPM](#install-wordpressify-from-npm)
 	- [Install WordPressify from Repository](#install-wordpressify-from-repository)
@@ -24,12 +24,9 @@ http://www.wordpressify.co/
 - [7. Build Backups](#7-build-backups)
 - [8. Code Style Rules](#8-code-style-rules)
 	- [Lint CSS](#lint-css)
-- [9. Database](#9-database)
-	- [MySQL/MariaDB Server](#mysqlmariadb-server)
-	- [Remote Database](#remote-database)
-- [10. Deployment](#10-deployment)
+- [9. Deployment](#9-deployment)
 	- [Automated Deployments](#automated-deployments)
-- [11. Windows Installation](#11-windows-installation)
+- [10. Windows Installation](#10-windows-installation)
 - [Changelog](#changelog)
 - [License](#license)
 
@@ -55,10 +52,16 @@ http://www.wordpressify.co/
 
 WordPressify comes with a development server for PHP running under a proxy with BrowserSync. Watches for all your changes and reloads the webpage in real-time. Style are preprocessors with PostCSS or Sass. Babel compiler for writing next-generation JavaScript. Source maps are supported for both CSS and JavaScript. WordPressify allows easy import of external JavaScript libraries and npm scripts, it has a flexible build and can be easily customized with gulp tasks.
 
-# 1. Installing Node
-WordPressify requires Node v7.5+. This is the only global dependency. You can download Node **[here](https://nodejs.org/)**.
+# 1. Installing Node and Docker
+WordPressify requires Node v7.5+ and Docker Compose.
 
 Node.js is a JavaScript runtime built on Chrome’s V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. Node.js’ package ecosystem, npm, is the largest ecosystem of open source libraries in the world.
+
+You can download Node **[here](https://nodejs.org/)**.
+
+Instructions to download Docker Compose can be found **[here](https://docs.docker.com/compose/install)**.
+
+If you're on Linux **make sure that you can [manage Docker as a non-root user](https://docs.docker.com/engine/install/linux-postinstall/)**.
 
 # 2. Set Up Project
 ## File Structure
@@ -131,6 +134,13 @@ npm run install:wordpress
 
 - It will fetch the latest WordPress version, which is the build we use for the development server.
 
+**START DATABASE**
+
+- Bring up the MariaDB database:
+```
+docker-compose up -d
+```
+
 **START WORKFLOW**
 
 - We are ready to start our development server with the command:
@@ -161,7 +171,7 @@ dist/wordpressify.zip
 ```
 
 **WINDOWS USERS**
-- If you are running Windows, PHP has to be installed and configured. Check the [gulp-connect-php](https://www.npmjs.com/package/gulp-connect-php) documentation. 
+- If you are running Windows, PHP has to be installed and configured. Check the [gulp-connect-php](https://www.npmjs.com/package/gulp-connect-php) documentation.
 
 We prepared a video screencast **demonstrating the installation processs using a Windows** operating system, you can find it here: [How to install WordPressify on Windows?](https://www.wordpressify.co/windows-installation/)
 Or check out this tutorial on [Medium](https://medium.com/@marcus.supernova/how-to-install-wordpressify-on-windows-4b78a801165b).
@@ -359,14 +369,7 @@ Before pushing changes make sure you have clean and consistent CSS. Run [styleli
 npm run lint:css
 ```
 
-# 9. Database
-## MySQL/MariaDB Server
-After installing WordPressify you will still need a database to store WordPress content. The recommended solution is to install either [MySQL](https://dev.mysql.com/downloads/mysql/) ([installation instructions](https://dev.mysql.com/doc/refman/5.7/en/installing.html)) or [MariaDB](https://mariadb.com/downloads/mariadb-tx) ([installation instructions](https://mariadb.com/products/get-started)) on your local machine.
-
-## Remote Database
-You are free to use remote databases. Please note that this will affect the speed depending on the connection.
-
-# 10. Deployment
+# 9. Deployment
 The recommended solution is to go with [WP Pusher](https://wppusher.com/). It is easy and quick to deploy automatically from GitHub or other services. The first step is to download the WordPress plugin from: https://wppusher.com/
 
 Then navigate to your WordPress administration on your live site and install the downloaded plugin: Plugins -> Add New -> Upload Plugin -> Install Now.
@@ -378,7 +381,7 @@ At this point go to your terminal, navigate to your WordPressify project and gen
 npm run prod
 ```
 
-Navigate to your theme distribution files on: 
+Navigate to your theme distribution files on:
 ```
 dist/theme/<themeName>
 ```
@@ -391,11 +394,11 @@ On Repository host we choose GitHub, then click on **Pick from GitHub** and choo
 
 ## Automated Deployments
 **Push-to-Deploy** if you want automatic deployments to happen when you do a push to the distribution repository.
-In this case you have to create a Webhook from your GitHub's repository page. 
+In this case you have to create a Webhook from your GitHub's repository page.
 
-First navigate to the WP Pusher plugin page and click on **Themes**, it will show you the list of the templates you have installed through the plugin itself. Click on **Show Push-to-Deploy URL** to get the Payload URL. 
+First navigate to the WP Pusher plugin page and click on **Themes**, it will show you the list of the templates you have installed through the plugin itself. Click on **Show Push-to-Deploy URL** to get the Payload URL.
 
-Now get back to GitHub and navigate to your distribution repository and click on: Settings -> Webhooks -> Add webhook. Now past the URL and click **Add webhook**. 
+Now get back to GitHub and navigate to your distribution repository and click on: Settings -> Webhooks -> Add webhook. Now past the URL and click **Add webhook**.
 
 This should enable automatic deployment on any push to the chosen GitHub repository.
 
@@ -403,7 +406,7 @@ This should enable automatic deployment on any push to the chosen GitHub reposit
 
 This will **immediately** remove the default styles and leave a minimal viable theme with basic PHP WordPress loops and other useful features.
 
-# 11. Windows Installation
+# 10. Windows Installation
 **[How to install WordPressify on Windows?](https://www.youtube.com/watch?v=J8ZNzKSeTSE)**
 
 Assuming that you are using the latest version of Windows, and you have activated Windows Subsystem for Linux. Follow the instructions:
