@@ -29,7 +29,7 @@ http://www.wordpressify.co/
 - [10. Changing PHP and Docker settings](#10-changing-php-and-docker-settings)
 - [11. Deployment](#11-deployment)
 	- [Automated Deployments](#automated-deployments)
-- [Changelog](CHANGELOGS.md)
+- [Changelog](CHANGELOG.md)
 - [License](#license)
 
 ## Introduction
