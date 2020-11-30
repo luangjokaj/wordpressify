@@ -24,9 +24,12 @@ http://www.wordpressify.co/
 - [7. Build Backups](#7-build-backups)
 - [8. Code Style Rules](#8-code-style-rules)
 	- [Lint CSS](#lint-css)
-- [9. Deployment](#9-deployment)
+- [9. Using Xdebug](#9-using-xdebug)
+	- [Xdebug on Linux](#xdebug-on-linux)
+- [10. Changing PHP and Docker settings](#10-changing-php-and-docker-settings)
+- [11. Deployment](#11-deployment)
 	- [Automated Deployments](#automated-deployments)
-- [10. Windows Installation](#10-windows-installation)
+- [12. Windows Installation](#12-windows-installation)
 - [Changelog](#changelog)
 - [License](#license)
 
@@ -125,20 +128,11 @@ const themeName = 'wordpressify';
 //--------------------------------------------------------------------------------------------------
 ```
 
-**INSTALL WORDPRESS**
+**START UP ENVIRONMENT**
 
-- On the first run we need to install WordPress, we do this once by running the command:
+- We need to install WordPress, and run a local server and database:
 ```
-npm run install:wordpress
-```
-
-- It will fetch the latest WordPress version, which is the build we use for the development server.
-
-**START DATABASE**
-
-- Bring up the MariaDB database:
-```
-docker-compose up -d
+npm run env:start
 ```
 
 **START WORKFLOW**
@@ -148,8 +142,14 @@ docker-compose up -d
 npm run dev
 ```
 
-- If you are running a fresh instance of WordPress, the installation wizard will set up a **wp-config.php** file containing database credentials, site name etc.
 - You are ready to go! Happy coding!
+
+**BRING DOWN ENVIRONMENT**
+
+- Stop WordPressify server:
+```
+npm run env:stop
+```
 
 **WORDPRESS PLUGINS**
 
@@ -171,7 +171,6 @@ dist/wordpressify.zip
 ```
 
 **WINDOWS USERS**
-- If you are running Windows, PHP has to be installed and configured. Check the [gulp-connect-php](https://www.npmjs.com/package/gulp-connect-php) documentation.
 
 We prepared a video screencast **demonstrating the installation processs using a Windows** operating system, you can find it here: [How to install WordPressify on Windows?](https://www.wordpressify.co/windows-installation/)
 Or check out this tutorial on [Medium](https://medium.com/@marcus.supernova/how-to-install-wordpressify-on-windows-4b78a801165b).
@@ -369,7 +368,62 @@ Before pushing changes make sure you have clean and consistent CSS. Run [styleli
 npm run lint:css
 ```
 
-# 9. Deployment
+# 9. Using Xdebug
+
+WordPressify comes with [Xdebug](https://xdebug.org/**) preconfigured, so that you can easily debug, profile, and trace your application. The following is a description of how to setup Xdebug with WordPressify. If you're on Linux, be sure to check the Xdebug on Linux section below.
+
+**INSTALL THE XDEBUG EXTENSION**
+
+Install the Xdebug extension for [Chrome](https://chrome.google.com/webstore/detail/xdebug-helper/eadndfjplgieldjbigjakmdgkmoaaaoc), [FireFox](https://addons.mozilla.org/en-GB/firefox/addon/xdebug-helper-for-firefox/) or [Safari](https://apps.apple.com/app/safari-xdebug-toggle/id1437227804?mt=12).
+
+**PROFILING AND TRACING**
+
+After installing the extension and running WordPressify, you can start profiling and tracing WordPress by simply selecting the proper option in the extension. Profiling information can be display using one of the cachegrind tools as described in [Xdebug documentation](https://xdebug.org/docs/profiler). The profile and trace data will be logged in the `xdebug` folder.
+
+**STEP DEBUGGING**
+
+If you want to do step debugging, you need to setup your IDE accordingly. Make sure to setup your IDE to listen on port 9003 for Xdebug connections. There are plugins for VS Code, PHPStorm, and other IDEs listed [here](https://xdebug.org/docs/step_debug#clients).
+
+After setting up your IDE, select `Debug` in the Xdebug extension and reload the page.
+
+## Xdebug on Linux
+
+Xdebug needs additional configuration for Linux because of some Docker restrictions. Xdebug has to connect to the host machine from within Docker, which means it needs the host's ip. For MacOS and Windows that is resolved using a special DNS name, but that doesn't exist for Linux. You can read more [here](https://github.com/docker/for-linux/issues/264).
+
+Make sure that the containers are running:
+```
+npm run env:start
+```
+
+Find the host ip that docker sees by connecting to the WordPressify website from your web browser, and then inspecting nginx logs:
+```
+docker-compose logs server
+```
+
+The first field will be your host IP address. Copy that host address and paste it inside `config/php.ini` as the value for `xdebug.remote_host`.
+
+Restart PHP:
+```
+npm run env:restart
+```
+
+Xdebug should be working now.
+
+# 10. Changing PHP and Docker settings
+
+You can make changes to PHP and Docker files (the ones that don't have `.in` extension).
+
+Change PHP settings in `config/php.ini` after starting WordPressify. To make your changes active, restart PHP:
+```
+npm run env:restart
+```
+
+If you make changes to `Dockerfile` or `docker-compose.yml`, then you must rebuild containers:
+```
+npm run env:rebuild
+```
+
+# 11. Deployment
 The recommended solution is to go with [WP Pusher](https://wppusher.com/). It is easy and quick to deploy automatically from GitHub or other services. The first step is to download the WordPress plugin from: https://wppusher.com/
 
 Then navigate to your WordPress administration on your live site and install the downloaded plugin: Plugins -> Add New -> Upload Plugin -> Install Now.
@@ -406,7 +460,7 @@ This should enable automatic deployment on any push to the chosen GitHub reposit
 
 This will **immediately** remove the default styles and leave a minimal viable theme with basic PHP WordPress loops and other useful features.
 
-# 10. Windows Installation
+# 12. Windows Installation
 **[How to install WordPressify on Windows?](https://www.youtube.com/watch?v=J8ZNzKSeTSE)**
 
 Assuming that you are using the latest version of Windows, and you have activated Windows Subsystem for Linux. Follow the instructions:
