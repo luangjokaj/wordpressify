@@ -64,6 +64,8 @@
 		"postcss-easy-import": "^3.0.0",
 		"postcss-mixins": "^7.0.1",
 		"postcss-preset-env": "^6.7.0",
-		"stylelint": "^13.8.0"
+		"stylelint": "^13.8.0",
+		"gulp-batch-replace": "^0.0.0",
+		"dotenv": "^8.2.0"
 	}
 }

@@ -30,43 +30,46 @@ module.exports = () => {
 
 	// Files.
 	const filesToDownload = [
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-18/.babelrc',
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-18/.gitignore',
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-18/.stylelintrc',
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-18/LICENSE',
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-18/README.md',
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-18/gulpfile.js',
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-18/installer/package.json',
+		`${upstreamUrl}/.babelrc`,
+		`${upstreamUrl}/.gitignore`,
+		`${upstreamUrl}/.stylelintrc`,
+		`${upstreamUrl}/.env`,
+		`${upstreamUrl}/LICENSE`,
+		`${upstreamUrl}/README.md`,
+		`${upstreamUrl}/gulpfile.js`,
+		`${upstreamUrl}/docker-compose.yml`,
+		`${upstreamUrl}/wp-config.php`,
+		`${upstreamUrl}/installer/package.json`,
 
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-18/src/assets/css/globals.css',
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-18/src/assets/css/mixins.css',
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-18/src/assets/css/style.css',
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-18/src/assets/css/variables.css',
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-18/src/assets/css/wordpressify.css',
+		`${upstreamUrl}/src/assets/css/globals.css`,
+		`${upstreamUrl}/src/assets/css/mixins.css`,
+		`${upstreamUrl}/src/assets/css/style.css`,
+		`${upstreamUrl}/src/assets/css/variables.css`,
+		`${upstreamUrl}/src/assets/css/wordpressify.css`,
 
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-18/src/assets/js/main.js',
+		`${upstreamUrl}/src/assets/js/main.js`,
 
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-18/src/theme/404.php',
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-18/src/theme/archive.php',
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-18/src/theme/comments.php',
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-18/src/theme/content-none.php',
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-18/src/theme/content-page.php',
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-18/src/theme/content-single.php',
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-18/src/theme/content.php',
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-18/src/theme/footer.php',
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-18/src/theme/functions.php',
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-18/src/theme/header.php',
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-18/src/theme/index.php',
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-18/src/theme/page.php',
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-18/src/theme/screenshot.png',
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-18/src/theme/search.php',
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-18/src/theme/searchform.php',
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-18/src/theme/sidebar.php',
-		'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.8-18/src/theme/single.php',
+		`${upstreamUrl}/src/theme/404.php`,
+		`${upstreamUrl}/src/theme/archive.php`,
+		`${upstreamUrl}/src/theme/comments.php`,
+		`${upstreamUrl}/src/theme/content-none.php`,
+		`${upstreamUrl}/src/theme/content-page.php`,
+		`${upstreamUrl}/src/theme/content-single.php`,
+		`${upstreamUrl}/src/theme/content.php`,
+		`${upstreamUrl}/src/theme/footer.php`,
+		`${upstreamUrl}/src/theme/functions.php`,
+		`${upstreamUrl}/src/theme/header.php`,
+		`${upstreamUrl}/src/theme/index.php`,
+		`${upstreamUrl}/src/theme/page.php`,
+		`${upstreamUrl}/src/theme/screenshot.png`,
+		`${upstreamUrl}/src/theme/search.php`,
+		`${upstreamUrl}/src/theme/searchform.php`,
+		`${upstreamUrl}/src/theme/sidebar.php`,
+		`${upstreamUrl}/src/theme/single.php`,
 	];
 
 	// Organise file structure
-	const dotFiles = ['.babelrc', '.gitignore', '.stylelintrc'];
+	const dotFiles = ['.babelrc', '.gitignore', '.stylelintrc', '.env'];
 	const cssFiles = ['globals.css', 'mixins.css', 'style.css', 'variables.css', 'wordpressify.css'];
 	const jsFiles = ['main.js'];
 	const pluginFiles = ['README.md'];
