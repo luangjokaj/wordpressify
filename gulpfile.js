@@ -20,6 +20,12 @@ const path = require('path');
 const { execSync } = require('child_process');
 
 dotenv.config();
+let envStart = series(setupEnvironment, startContainers);
+let containersStopped = true;
+
+// gulp done function for devServer so that the completion can be
+// signaled from event handlers
+let devServerDone;
 
 /* -------------------------------------------------------------------------------------------------
 Theme Name
@@ -106,13 +112,28 @@ function setupEnvironment(done) {
 	done();
 }
 
+function processCleanup(explicitExit) {
+	if (containersStopped) return;
+	stopContainers();
+	if (typeof devServerDone === 'function') {
+		devServerDone();
+	}
+	if (explicitExit) {
+		process.exit(0);
+	}
+}
+
 function startContainers(done) {
 	execSync('docker-compose up -d', { stdio: 'inherit' });
+	containersStopped = false;
+	process.on('exit', processCleanup.bind(undefined, false));
+	process.on('SIGINT', processCleanup.bind(undefined, true));
 	done();
 }
 
 function stopContainers(done) {
 	execSync('docker-compose down', { stdio: 'inherit' });
+	containersStopped = true;
 	if (typeof done === 'function') {
 		done();
 	}
@@ -136,7 +157,7 @@ function restartWordPress(done) {
 	done();
 }
 
-exports['env:start'] = series(setupEnvironment, startContainers);
+exports['env:start'] = envStart;
 exports['env:stop'] = stopContainers;
 exports['env:rebuild'] = series(
 	cleanEnvironment,
@@ -148,7 +169,8 @@ exports['env:restart'] = restartWordPress;
 /* -------------------------------------------------------------------------------------------------
 Development Tasks
 -------------------------------------------------------------------------------------------------- */
-function devServer() {
+function devServer(done) {
+	devServerDone = done;
 	browserSync({
 		logPrefix: '🎈 WordPressify',
 		proxy: `127.0.0.1:${process.env.SERVER_PORT}`,
@@ -233,7 +255,7 @@ function pluginsDev() {
 }
 
 exports.dev = series(
-	startContainers,
+	envStart,
 	copyThemeDev,
 	copyImagesDev,
 	copyFontsDev,

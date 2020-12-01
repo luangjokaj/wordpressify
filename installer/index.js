@@ -23,6 +23,7 @@ const version = require('../package.json').version;
 program
 	.version(version, '-v, --vers', 'output the current version')
 	.option('-y, --non-interactive', 'do not prompt for user input')
+	.option('--keep-running', 'keep containers running after installation')
 	.parse(process.argv);
 
 (async () => {
@@ -65,6 +66,6 @@ program
 		 * Runs all the functions with async/await.
 		 */
 		const run = require('./modules/run');
-		run();
+		run(program);
 	}
 })();
