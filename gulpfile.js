@@ -113,14 +113,17 @@ function setupEnvironment(done) {
 
 function startContainers(done) {
 	execSync('docker-compose up -d', { stdio: 'inherit' });
+	done();
+}
+
+function registerCleanup(done) {
 	process.on('exit', stopContainers);
 	process.on('SIGINT', () => {
-	if (typeof devServerDone === 'function') {
-		devServerDone();
-	}
-	process.exit(0);
+		if (typeof devServerDone === 'function') {
+			devServerDone();
+		}
+		process.exit(0);
 	});
-	done();
 }
 
 function buildContainers(done) {
@@ -253,6 +256,7 @@ function pluginsDev() {
 
 exports.dev = series(
 	envStart,
+	registerCleanup,
 	copyThemeDev,
 	copyImagesDev,
 	copyFontsDev,
