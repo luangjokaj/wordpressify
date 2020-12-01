@@ -14,4 +14,14 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: npm ci --no-audit
-      - run: ./installer/index.js -y
+      - run: |
+          mkdir wpfy_global;
+          cd wpfy_global;
+          npm init -y;
+          npm install ../;
+          mkdir test;
+          cd test;
+          ../node_modules/.bin/wordpressify -y;
+          for container in $( docker-compose ps -q ); do
+          docker exec $container echo "Hi!";
+          done;
