@@ -14,7 +14,7 @@ const handleError = require('./handleError.js');
 const clearConsole = require('./clearConsole.js');
 const printNextSteps = require('./printNextSteps.js');
 
-module.exports = async (program) => {
+module.exports = async () => {
 	// Init.
 	clearConsole();
 
@@ -206,12 +206,7 @@ module.exports = async (program) => {
 			spinner.succeed();
 
 			spinner.start('3. Installing WordPress and building Docker images...');
-			if (program.keepRunning) {
-				await execa('npm', ['run', 'env:start']);
-			} else {
-				await execa('npm', ['run', 'env:build'])
-			}
-
+			await execa('npm', ['run', 'env:build']);
 			spinner.succeed();
 
 			// Done.
