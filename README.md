@@ -372,7 +372,7 @@ Install the Xdebug extension for [Chrome](https://chrome.google.com/webstore/det
 
 **PROFILING AND TRACING**
 
-After installing the extension and running WordPressify, you can start profiling and tracing WordPress by simply selecting the proper option in the extension. Profiling information can be display using one of the cachegrind tools as described in [Xdebug documentation](https://xdebug.org/docs/profiler). The profile and trace data will be logged in the `xdebug` folder.
+After installing the extension and running WordPressify, you can start profiling and tracing WordPress by simply selecting the proper option in the extension. Profiling information can be displayed using one of the cachegrind tools as described in [Xdebug documentation](https://xdebug.org/docs/profiler). The profile and trace data will be logged in the `xdebug` folder.
 
 **STEP DEBUGGING**
 
