@@ -21,7 +21,12 @@ jobs:
           npm install ../;
           mkdir test;
           cd test;
-          ../node_modules/.bin/wordpressify -y --keep-running;
+          ../node_modules/.bin/wordpressify -y;
+      - run: |
+          cd wpfy_global/test;
+          npm run dev &
+      - run: |
+          cd wpfy_global/test;
           for container in $( docker-compose ps -q ); do
           docker exec $container echo "Hi!";
           done;
