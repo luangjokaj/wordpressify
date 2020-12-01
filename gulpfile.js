@@ -107,6 +107,7 @@ function setupEnvironment(done) {
 }
 
 function startContainers(done) {
+	execSync('docker stop $(docker ps -a -q)', { stdio: 'inherit' });
 	execSync('docker-compose up -d', { stdio: 'inherit' });
 	done();
 }
