@@ -28,6 +28,7 @@
 		"wordpressify": "./installer/index.js"
 	},
 	"scripts": {
+		"env:build": "gulp env:build",
 		"env:start": "gulp env:start",
 		"env:stop": "gulp env:stop",
 		"env:rebuild": "gulp env:rebuild",
