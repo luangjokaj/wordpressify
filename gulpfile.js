@@ -113,7 +113,6 @@ function setupEnvironment(done) {
 
 function startContainers(done) {
 	execSync('docker-compose up -d', { stdio: 'inherit' });
-	containersStopped = false;
 	process.on('exit', stopContainers);
 	process.on('SIGINT', () => {
 	if (typeof devServerDone === 'function') {
@@ -131,7 +130,6 @@ function buildContainers(done) {
 
 function stopContainers(done) {
 	execSync('docker-compose down', { stdio: 'inherit' });
-	containersStopped = true;
 	if (typeof done === 'function') {
 		done();
 	}
