@@ -126,6 +126,11 @@ function registerCleanup(done) {
 	});
 }
 
+function buildContainers(done) {
+	execSync('docker-compose build', { stdio: 'inherit' });
+	done();
+}
+
 function stopContainers(done) {
 	execSync('docker-compose down', { stdio: 'inherit' });
 	if (typeof done === 'function') {
@@ -151,6 +156,7 @@ function restartWordPress(done) {
 	done();
 }
 
+exports['env:build'] = buildContainers
 exports['env:start'] = envStart;
 exports['env:stop'] = stopContainers;
 exports['env:rebuild'] = series(

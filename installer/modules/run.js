@@ -26,7 +26,7 @@ module.exports = async (program) => {
 		upstreamUrl = `https://raw.githubusercontent.com/${process.env.WPFY_GH_REPO}/${refname}`;
 	} else {
 		upstreamUrl =
-			'https://raw.githubusercontent.com/luangjokaj/wordpressify/develop';
+			'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.9';
 	}
 
 	// Files.
@@ -206,7 +206,11 @@ module.exports = async (program) => {
 			spinner.succeed();
 
 			spinner.start('3. Installing WordPress and building Docker images...');
-			await execa('npm', ['run', 'env:start']);
+			if (program.keepRunning) {
+				await execa('npm', ['run', 'env:start']);
+			} else {
+				await execa('npm', ['run', 'env:build'])
+			}
 
 			spinner.succeed();
 
