@@ -126,6 +126,7 @@ function startContainers(done) {
 
 function buildContainers(done) {
 	execSync('docker-compose build', { stdio: 'inherit' });
+	done();
 }
 
 function stopContainers(done) {
