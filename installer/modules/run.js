@@ -106,6 +106,20 @@ module.exports = () => {
 		'sidebar.php',
 		'single.php',
 	];
+	const configFiles = [
+		'php.ini.in'
+	];
+	const nginxFiles = [
+		'fastcgi.conf',
+		'mime.types',
+		'nginx.conf',
+	];
+	const sitesEnabledFiles = [
+		'wordpress',
+	];
+	const snippetsFiles = [
+		'fastcgi-php.conf',
+	];
 
 	// Start.
 	console.log('\n');
@@ -136,6 +150,10 @@ module.exports = () => {
 					'src/assets',
 					'src/assets/css',
 					'src/assets/js',
+					'config',
+					'config/nginx',
+					'config/nginx/sites-enabled',
+					'config/nginx/snippets',
 				]);
 			}
 
@@ -156,6 +174,26 @@ module.exports = () => {
 			);
 			themeFiles.map((x) =>
 				fs.rename(`${theCWD}/${x}`, `${theCWD}/src/theme/${x}`, (err) =>
+					handleError(err)
+				)
+			);
+			configFiles.map((x) =>
+				fs.rename(`${theCWD}/${x}`, `${theCWD}/config/${x}`, (err) =>
+					handleError(err)
+				)
+			);
+			nginxFiles.map((x) =>
+				fs.rename(`${theCWD}/${x}`, `${theCWD}/config/nginx/${x}`, (err) =>
+					handleError(err)
+				)
+			);
+			sitesEnabledFiles.map((x) =>
+				fs.rename(`${theCWD}/${x}`, `${theCWD}/config/nginx/sites-enabled/${x}`, (err) =>
+					handleError(err)
+				)
+			);
+			snippetsFiles.map((x) =>
+				fs.rename(`${theCWD}/${x}`, `${theCWD}/config/nginx/snippets/${x}`, (err) =>
 					handleError(err)
 				)
 			);
