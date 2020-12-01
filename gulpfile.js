@@ -21,7 +21,6 @@ const { execSync } = require('child_process');
 
 dotenv.config();
 let envStart = series(setupEnvironment, startContainers);
-let containersStopped = true;
 
 // gulp done function for devServer so that the completion can be
 // signaled from event handlers
@@ -112,22 +111,16 @@ function setupEnvironment(done) {
 	done();
 }
 
-function processCleanup(explicitExit) {
-	if (containersStopped) return;
-	stopContainers();
-	if (typeof devServerDone === 'function') {
-		devServerDone();
-	}
-	if (explicitExit) {
-		process.exit(0);
-	}
-}
-
 function startContainers(done) {
 	execSync('docker-compose up -d', { stdio: 'inherit' });
 	containersStopped = false;
-	process.on('exit', processCleanup.bind(undefined, false));
-	process.on('SIGINT', processCleanup.bind(undefined, true));
+	process.on('exit', stopContainers);
+	process.on('SIGINT', () => {
+	if (typeof devServerDone === 'function') {
+		devServerDone();
+	}
+	process.exit(0);
+	});
 	done();
 }
 
