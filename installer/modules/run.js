@@ -206,7 +206,11 @@ module.exports = async (program) => {
 			spinner.succeed();
 
 			spinner.start('3. Installing WordPress and building Docker images...');
-			await execa('npm', ['run', 'env:start']);
+			if (program.keepRunning) {
+				await execa('npm', ['run', 'env:start']);
+			} else {
+				await execa('npm', ['run', 'env:build'])
+			}
 
 			spinner.succeed();
 

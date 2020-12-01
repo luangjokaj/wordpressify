@@ -113,13 +113,21 @@ function setupEnvironment(done) {
 
 function startContainers(done) {
 	execSync('docker-compose up -d', { stdio: 'inherit' });
+	done();
+}
+
+function registerCleanup(done) {
 	process.on('exit', stopContainers);
 	process.on('SIGINT', () => {
-	if (typeof devServerDone === 'function') {
-		devServerDone();
-	}
-	process.exit(0);
+		if (typeof devServerDone === 'function') {
+			devServerDone();
+		}
+		process.exit(0);
 	});
+}
+
+function buildContainers(done) {
+	execSync('docker-compose build', { stdio: 'inherit' });
 	done();
 }
 
@@ -148,6 +156,7 @@ function restartWordPress(done) {
 	done();
 }
 
+exports['env:build'] = buildContainers
 exports['env:start'] = envStart;
 exports['env:stop'] = stopContainers;
 exports['env:rebuild'] = series(
@@ -247,6 +256,7 @@ function pluginsDev() {
 
 exports.dev = series(
 	envStart,
+	registerCleanup,
 	copyThemeDev,
 	copyImagesDev,
 	copyFontsDev,
