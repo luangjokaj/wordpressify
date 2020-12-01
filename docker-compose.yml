@@ -9,6 +9,8 @@ services:
       - "3306"
     networks:
       - "default-network"
+    volumes:
+      - "persistent_db:/var/lib/mysql"
   wordpress:
     user: "${WPFY_UID}:${WPFY_GID}"
     build: .
@@ -44,3 +46,5 @@ services:
 networks:
   default-network:
     driver: bridge
+volumes:
+  persistent_db:
