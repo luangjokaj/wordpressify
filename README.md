@@ -56,7 +56,7 @@ http://www.wordpressify.co/
 WordPressify comes with a development server for running PHP under a proxy with BrowserSync. The data is stored in a pre-configured MariaDB database that works out of the box. Watches for all your changes and reloads the webpage in real-time. Style are preprocessors with PostCSS or Sass. Babel compiler for writing next-generation JavaScript. Source maps are supported for both CSS and JavaScript. WordPressify allows easy import of external JavaScript libraries and npm scripts, it has a flexible build and can be easily customized with gulp tasks.
 
 # 1. Installing Node and Docker
-WordPressify requires Node v7.5+ and Docker Compose.
+WordPressify requires **Node v7.5+** and **Docker Compose**.
 
 Node.js is a JavaScript runtime built on Chrome’s V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. Node.js’ package ecosystem, npm, is the largest ecosystem of open source libraries in the world.
 
