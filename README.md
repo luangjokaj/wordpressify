@@ -70,6 +70,7 @@ If you're on Linux **make sure that you can [manage Docker as a non-root user](h
 ## File Structure
 ```
     ├── build/                   # Build files
+    ├── config/                  # Nginx & PHP configs
     ├── dist/                    # Distribution files
     ├── src/                     # Source files
     │   ├── assets/              # Assets directory
@@ -80,8 +81,11 @@ If you're on Linux **make sure that you can [manage Docker as a non-root user](h
     │   ├── plugins/             # WordPress plugins
     │   ├── theme/               # PHP Template files
     └── .babelrc                 # Babel configuration
+    └── .env.in                  # Environment variables
     └── .gitignore               # Git ignored files
-    └── .stylelintrc             # Stylelint configuration file
+    └── .stylelintrc             # Stylelint configuration
+    └── docker-compose.yml       # Docker configuration
+    └── Dockerfile.in            # Docker file
     └── gulpfile.js              # Gulp configuration
     └── LICENSE                  # License agreements
     └── package-lock.json        # Packages lock file
