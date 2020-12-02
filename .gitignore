@@ -24,6 +24,7 @@ Desktop.ini
 *.iml
 
 node_modules
+.env
 
 # Debug log from npm
 npm-debug.log
