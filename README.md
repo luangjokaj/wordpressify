@@ -145,6 +145,7 @@ npm run env:start
 ```
 npm run dev
 ```
+Make sure **Docker is running**, otherwise it will fail.
 
 - You are ready to go! Happy coding! 🤓
 ---
