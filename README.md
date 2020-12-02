@@ -36,13 +36,14 @@ http://www.wordpressify.co/
 
 | Information | Discord | Donate |
 |:------------|:---------|:-------|
-| [WordPressify](https://www.wordpressify.co) is a modern workflow for your WordPress development, with an integrated web server and auto-reload. CSS preprocessors and ES6 ready.| [![Discord server](https://svgshare.com/i/Lqc.svg)](https://discord.gg/qE7e93) | [![BuyMeACoffee](https://www.buymeacoffee.com/assets/img/guidelines/logo-mark-1.svg)](https://www.buymeacoffee.com/luangjokaj) |
+| [WordPressify](https://www.wordpressify.co) is a modern workflow for your WordPress development, with an integrated database, web server and auto-reload. CSS preprocessors and ES6 ready.| [![Discord server](https://svgshare.com/i/Lqc.svg)](https://discord.gg/qE7e93) | [![BuyMeACoffee](https://www.buymeacoffee.com/assets/img/guidelines/logo-mark-1.svg)](https://www.buymeacoffee.com/luangjokaj) |
 
 
 ## Features
 |👇|Includes|
 |:-:|:---|
-|📦| Dev Server|
+|📦| Dev Server with Xdebug|
+|💽| MariaDB Database |
 |🔥| Hot Reload & CSS Injection|
 |🎨| PostCSS & Next Generation CSS|
 |⚙| Babel 7 - ES6 JavaScript|
@@ -52,7 +53,7 @@ http://www.wordpressify.co/
 |🤖| External Libraries|
 |🛎| Production ready ZIP theme|
 
-WordPressify comes with a development server for PHP running under a proxy with BrowserSync. Watches for all your changes and reloads the webpage in real-time. Style are preprocessors with PostCSS or Sass. Babel compiler for writing next-generation JavaScript. Source maps are supported for both CSS and JavaScript. WordPressify allows easy import of external JavaScript libraries and npm scripts, it has a flexible build and can be easily customized with gulp tasks.
+WordPressify comes with a development server for running PHP under a proxy with BrowserSync. The data is stored in a pre-configured MariaDB database that works out of the box. Watches for all your changes and reloads the webpage in real-time. Style are preprocessors with PostCSS or Sass. Babel compiler for writing next-generation JavaScript. Source maps are supported for both CSS and JavaScript. WordPressify allows easy import of external JavaScript libraries and npm scripts, it has a flexible build and can be easily customized with gulp tasks.
 
 # 1. Installing Node and Docker
 WordPressify requires Node v7.5+ and Docker Compose.
