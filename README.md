@@ -134,7 +134,7 @@ const themeName = 'wordpressify';
 
 **START UP ENVIRONMENT**
 
-- We need to install WordPress, and run a local server and database:
+- We need to install WordPress, run a local server and a database:
 ```
 npm run env:start
 ```
@@ -146,13 +146,20 @@ npm run env:start
 npm run dev
 ```
 
-- You are ready to go! Happy coding!
-
+- You are ready to go! Happy coding! 🤓
+---
 **BRING DOWN ENVIRONMENT**
 
-- Stop WordPressify server:
+- Stop WordPressify server and database:
 ```
 npm run env:stop
+```
+
+**REBUILD ENVIRONMENT**
+
+- To rebuild your environment run:
+```
+npm run env:rebuild
 ```
 
 **WORDPRESS PLUGINS**
@@ -161,7 +168,7 @@ npm run env:stop
 ```
 src/plugins/
 ```
-
+---
 **PRODUCTION TEMPLATE**
 
 - To generate your distribution files run the command:
