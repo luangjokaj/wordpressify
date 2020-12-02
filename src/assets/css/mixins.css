@@ -195,7 +195,7 @@
 }
 
 @define-mixin unorderedList {
-	@mixin noList;
+	@add-mixin noList;
 	display: block;
 
 	& li {
@@ -229,7 +229,7 @@
 }
 
 @define-mixin orderedList {
-	@mixin noList;
+	@add-mixin noList;
 	display: block;
 
 	& li {
@@ -264,7 +264,7 @@
 }
 
 @define-mixin specialList {
-	@mixin noList;
+	@add-mixin noList;
 	display: block;
 
 	& li {
@@ -347,19 +347,19 @@
 
 :global {
 	& div[data-container] {
-		@mixin container;
+		@add-mixin container;
 	}
 
 	& div[data-fluid="true"] {
-		@mixin containerFluid;
+		@add-mixin containerFluid;
 	}
 
 	& div[data-child="true"] {
-		@mixin containerChild;
+		@add-mixin containerChild;
 	}
 
 	& div[data-row] {
-		@mixin row;
+		@add-mixin row;
 	}
 
 	& div[xs-gaps="none"] {
@@ -615,6 +615,6 @@
 	}
 
 	& div[data-col] {
-		@mixin col;
+		@add-mixin col;
 	}
 }
