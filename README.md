@@ -134,7 +134,7 @@ const themeName = 'wordpressify';
 
 **START UP ENVIRONMENT**
 
-- We need to install WordPress, run a local server and a database:
+- On the first run, WordPressify needs to set up a local server and a database for the new WordPress installation, we do this once by running the command:
 ```
 npm run env:start
 ```
@@ -150,14 +150,14 @@ npm run dev
 ---
 **BRING DOWN ENVIRONMENT**
 
-- Stop WordPressify server and database:
+- To stop the WordPressify server and database for the project run:
 ```
 npm run env:stop
 ```
 
 **REBUILD ENVIRONMENT**
 
-- To rebuild your environment run:
+- To rebuild the WordPressify project environment run:
 ```
 npm run env:rebuild
 ```
@@ -376,7 +376,7 @@ npm run lint:css
 
 # 9. Using Xdebug
 
-WordPressify comes with [Xdebug](https://xdebug.org/**) preconfigured, so that you can easily debug, profile, and trace your application. The following is a description of how to setup Xdebug with WordPressify. If you're on Linux, be sure to check the Xdebug on Linux section below.
+WordPressify comes with [Xdebug](https://xdebug.org/**) preconfigured so that you can easily debug, profile, and trace your application. The following is a description of how to setup Xdebug with WordPressify. If you're on Linux, be sure to check the Xdebug on the Linux section below.
 
 **INSTALL THE XDEBUG EXTENSION**
 
