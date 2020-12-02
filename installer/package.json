@@ -1,6 +1,6 @@
 {
 	"name": "wordpressify",
-	"version": "0.2.8-18",
+	"version": "0.2.9",
 	"description": "A build system designed to automate your WordPress development workflow.",
 	"keywords": [
 		"babel",
@@ -18,7 +18,8 @@
 		"website",
 		"wordpress",
 		"wordpressify",
-		"workflow"
+		"workflow",
+		"docker"
 	],
 	"homepage": "https://www.wordpressify.co",
 	"repository": "https://github.com/luangjokaj/wordpressify",
@@ -27,10 +28,13 @@
 		"wordpressify": "./installer/index.js"
 	},
 	"scripts": {
-		"install:wordpress": "gulp setup && gulp install",
+		"env:build": "gulp env:build",
+		"env:start": "gulp env:start",
+		"env:stop": "gulp env:stop",
+		"env:rebuild": "gulp env:rebuild",
+		"env:restart": "gulp env:restart",
 		"dev": "gulp dev",
 		"prod": "gulp prod",
-		"fresh-start": "gulp fresh",
 		"backup": "gulp backup",
 		"lint:css": "stylelint src/**/*.css"
 	},
@@ -49,12 +53,9 @@
 		"gulp": "^4.0.2",
 		"gulp-babel": "^8.0.0",
 		"gulp-concat": "^2.6.1",
-		"gulp-connect-php": "^1.0.3",
 		"gulp-imagemin": "^7.1.0",
-		"gulp-inject-string": "^1.1.2",
 		"gulp-plumber": "^1.2.1",
 		"gulp-postcss": "^9.0.0",
-		"gulp-remote-src": "^0.4.4",
 		"gulp-sourcemaps": "^3.0.0",
 		"gulp-uglify": "^3.0.2",
 		"gulp-vinyl-zip": "^2.2.1",
@@ -64,6 +65,7 @@
 		"postcss-easy-import": "^3.0.0",
 		"postcss-mixins": "^7.0.1",
 		"postcss-preset-env": "^6.7.0",
-		"stylelint": "^13.8.0"
+		"stylelint": "^13.8.0",
+		"dotenv": "^8.2.0"
 	}
 }

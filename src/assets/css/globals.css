@@ -95,7 +95,7 @@ b {
 }
 
 small {
-	@mixin small;
+	@add-mixin small;
 }
 
 h1,
@@ -104,33 +104,33 @@ h3,
 h4,
 h5,
 h6 {
-	@mixin heading;
+	@add-mixin heading;
 }
 
 h1 {
-	@mixin h1;
+	@add-mixin h1;
 }
 
 h2 {
-	@mixin h2;
+	@add-mixin h2;
 }
 
 h3 {
-	@mixin h3;
+	@add-mixin h3;
 }
 
 h4 {
-	@mixin h4;
+	@add-mixin h4;
 }
 
 h5 {
-	@mixin h5;
+	@add-mixin h5;
 }
 
 h6 {
-	@mixin h6;
+	@add-mixin h6;
 }
 
 p {
-	@mixin text;
+	@add-mixin text;
 }

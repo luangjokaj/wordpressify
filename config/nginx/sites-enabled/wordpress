@@ -1,0 +1,18 @@
+server {
+	listen 80 default_server;
+
+	root /var/www/html;
+
+	index index.php index.html index.htm;
+
+	server_name _;
+
+	location / {
+		try_files $uri $uri/ /index.php$args;
+	}
+
+	location ~ \.php$ {
+		include snippets/fastcgi-php.conf;
+		fastcgi_pass wordpress:9000;
+	}
+}

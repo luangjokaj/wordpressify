@@ -1,6 +1,6 @@
 {
 	"name": "wordpressify",
-	"version": "0.2.8-18",
+	"version": "0.2.9",
 	"description": "A build system designed to automate your WordPress development workflow.",
 	"keywords": [
 		"babel",
@@ -26,13 +26,7 @@
 	"bin": {
 		"wordpressify": "./installer/index.js"
 	},
-	"scripts": {
-		"install:wordpress": "gulp setup && gulp install",
-		"dev": "gulp dev",
-		"prod": "gulp prod",
-		"backup": "gulp backup",
-		"lint:css": "stylelint src/**/*.css"
-	},
+	"scripts": {},
 	"author": "Luan Gjokaj <luan@riangle.com>",
 	"license": "MIT",
 	"dependencies": {

@@ -8,7 +8,7 @@ http://www.wordpressify.co/
 
 - [Introduction](#introduction)
 	- [Features](#features)
-- [1. Installing Node](#1-installing-node)
+- [1. Installing Node and Docker](#1-installing-node-and-docker)
 - [2. Set Up Project](#2-set-up-project)
 	- [Install WordPressify from NPM](#install-wordpressify-from-npm)
 	- [Install WordPressify from Repository](#install-wordpressify-from-repository)
@@ -24,26 +24,26 @@ http://www.wordpressify.co/
 - [7. Build Backups](#7-build-backups)
 - [8. Code Style Rules](#8-code-style-rules)
 	- [Lint CSS](#lint-css)
-- [9. Database](#9-database)
-	- [MySQL/MariaDB Server](#mysqlmariadb-server)
-	- [Remote Database](#remote-database)
-- [10. Deployment](#10-deployment)
+- [9. Using Xdebug](#9-using-xdebug)
+	- [Xdebug on Linux](#xdebug-on-linux)
+- [10. Changing PHP and Docker settings](#10-changing-php-and-docker-settings)
+- [11. Deployment](#11-deployment)
 	- [Automated Deployments](#automated-deployments)
-- [11. Windows Installation](#11-windows-installation)
-- [Changelog](#changelog)
-- [License](#license)
+- [Changelog](CHANGELOG.md)
+- [License](LICENSE)
 
 ## Introduction
 
 | Information | Discord | Donate |
 |:------------|:---------|:-------|
-| [WordPressify](https://www.wordpressify.co) is a modern workflow for your WordPress development, with an integrated web server and auto-reload. CSS preprocessors and ES6 ready.| [![Discord server](https://svgshare.com/i/Lqc.svg)](https://discord.gg/qE7e93) | [![BuyMeACoffee](https://www.buymeacoffee.com/assets/img/guidelines/logo-mark-1.svg)](https://www.buymeacoffee.com/luangjokaj) |
+| [WordPressify](https://www.wordpressify.co) is a modern workflow for your WordPress development, with an integrated database, web server and auto-reload. CSS preprocessors and ES6 ready.| [![Discord server](https://svgshare.com/i/Lqc.svg)](https://discord.gg/qE7e93) | [![BuyMeACoffee](https://www.buymeacoffee.com/assets/img/guidelines/logo-mark-1.svg)](https://www.buymeacoffee.com/luangjokaj) |
 
 
 ## Features
 |👇|Includes|
 |:-:|:---|
-|📦| Dev Server|
+|📦| Dev Server with Xdebug|
+|💽| MariaDB Database |
 |🔥| Hot Reload & CSS Injection|
 |🎨| PostCSS & Next Generation CSS|
 |⚙| Babel 7 - ES6 JavaScript|
@@ -53,17 +53,24 @@ http://www.wordpressify.co/
 |🤖| External Libraries|
 |🛎| Production ready ZIP theme|
 
-WordPressify comes with a development server for PHP running under a proxy with BrowserSync. Watches for all your changes and reloads the webpage in real-time. Style are preprocessors with PostCSS or Sass. Babel compiler for writing next-generation JavaScript. Source maps are supported for both CSS and JavaScript. WordPressify allows easy import of external JavaScript libraries and npm scripts, it has a flexible build and can be easily customized with gulp tasks.
+WordPressify comes with a development server for running PHP under a proxy with BrowserSync. The data is stored in a pre-configured MariaDB database that works out of the box. Watches for all your changes and reloads the webpage in real-time. Style are preprocessors with PostCSS or Sass. Babel compiler for writing next-generation JavaScript. Source maps are supported for both CSS and JavaScript. WordPressify allows easy import of external JavaScript libraries and npm scripts, it has a flexible build and can be easily customized with gulp tasks.
 
-# 1. Installing Node
-WordPressify requires Node v7.5+. This is the only global dependency. You can download Node **[here](https://nodejs.org/)**.
+# 1. Installing Node and Docker
+WordPressify requires **Node v7.5+** and **Docker Compose**.
 
 Node.js is a JavaScript runtime built on Chrome’s V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. Node.js’ package ecosystem, npm, is the largest ecosystem of open source libraries in the world.
+
+You can download Node **[here](https://nodejs.org/)**.
+
+Instructions to download Docker Compose can be found **[here](https://docs.docker.com/compose/install)**.
+
+If you're on Linux **make sure that you can [manage Docker as a non-root user](https://docs.docker.com/engine/install/linux-postinstall/)**.
 
 # 2. Set Up Project
 ## File Structure
 ```
     ├── build/                   # Build files
+    ├── config/                  # Nginx & PHP configs
     ├── dist/                    # Distribution files
     ├── src/                     # Source files
     │   ├── assets/              # Assets directory
@@ -74,8 +81,11 @@ Node.js is a JavaScript runtime built on Chrome’s V8 JavaScript engine. Node.j
     │   ├── plugins/             # WordPress plugins
     │   ├── theme/               # PHP Template files
     └── .babelrc                 # Babel configuration
+    └── .env.in                  # Environment variables
     └── .gitignore               # Git ignored files
-    └── .stylelintrc             # Stylelint configuration file
+    └── .stylelintrc             # Stylelint configuration
+    └── docker-compose.yml       # Docker configuration
+    └── Dockerfile.in            # Docker file
     └── gulpfile.js              # Gulp configuration
     └── LICENSE                  # License agreements
     └── package-lock.json        # Packages lock file
@@ -122,14 +132,12 @@ const themeName = 'wordpressify';
 //--------------------------------------------------------------------------------------------------
 ```
 
-**INSTALL WORDPRESS**
+**START UP ENVIRONMENT**
 
-- On the first run we need to install WordPress, we do this once by running the command:
+- On the first run, WordPressify needs to set up a local server and a database for the new WordPress installation, we do this once by running the command:
 ```
-npm run install:wordpress
+npm run env:start
 ```
-
-- It will fetch the latest WordPress version, which is the build we use for the development server.
 
 **START WORKFLOW**
 
@@ -137,9 +145,23 @@ npm run install:wordpress
 ```
 npm run dev
 ```
+Make sure **Docker is running**, otherwise it will fail.
 
-- If you are running a fresh instance of WordPress, the installation wizard will set up a **wp-config.php** file containing database credentials, site name etc.
-- You are ready to go! Happy coding!
+- You are ready to go! Happy coding! 🤓
+---
+**BRING DOWN ENVIRONMENT**
+
+- To stop the WordPressify server and database for the project run:
+```
+npm run env:stop
+```
+
+**REBUILD ENVIRONMENT**
+
+- To rebuild the WordPressify project environment run:
+```
+npm run env:rebuild
+```
 
 **WORDPRESS PLUGINS**
 
@@ -147,7 +169,7 @@ npm run dev
 ```
 src/plugins/
 ```
-
+---
 **PRODUCTION TEMPLATE**
 
 - To generate your distribution files run the command:
@@ -159,12 +181,6 @@ npm run prod
 ```
 dist/wordpressify.zip
 ```
-
-**WINDOWS USERS**
-- If you are running Windows, PHP has to be installed and configured. Check the [gulp-connect-php](https://www.npmjs.com/package/gulp-connect-php) documentation. 
-
-We prepared a video screencast **demonstrating the installation processs using a Windows** operating system, you can find it here: [How to install WordPressify on Windows?](https://www.wordpressify.co/windows-installation/)
-Or check out this tutorial on [Medium](https://medium.com/@marcus.supernova/how-to-install-wordpressify-on-windows-4b78a801165b).
 
 # 3. CSS, PostCSS and Sass
 ## PostCSS
@@ -359,14 +375,62 @@ Before pushing changes make sure you have clean and consistent CSS. Run [styleli
 npm run lint:css
 ```
 
-# 9. Database
-## MySQL/MariaDB Server
-After installing WordPressify you will still need a database to store WordPress content. The recommended solution is to install either [MySQL](https://dev.mysql.com/downloads/mysql/) ([installation instructions](https://dev.mysql.com/doc/refman/5.7/en/installing.html)) or [MariaDB](https://mariadb.com/downloads/mariadb-tx) ([installation instructions](https://mariadb.com/products/get-started)) on your local machine.
+# 9. Using Xdebug
 
-## Remote Database
-You are free to use remote databases. Please note that this will affect the speed depending on the connection.
+WordPressify comes with [Xdebug](https://xdebug.org/**) preconfigured so that you can easily debug, profile, and trace your application. The following is a description of how to setup Xdebug with WordPressify. If you're on Linux, be sure to check the Xdebug on the Linux section below.
 
-# 10. Deployment
+**INSTALL THE XDEBUG EXTENSION**
+
+Install the Xdebug extension for [Chrome](https://chrome.google.com/webstore/detail/xdebug-helper/eadndfjplgieldjbigjakmdgkmoaaaoc), [FireFox](https://addons.mozilla.org/en-GB/firefox/addon/xdebug-helper-for-firefox/) or [Safari](https://apps.apple.com/app/safari-xdebug-toggle/id1437227804?mt=12).
+
+**PROFILING AND TRACING**
+
+After installing the extension and running WordPressify, you can start profiling and tracing WordPress by simply selecting the proper option in the extension. Profiling information can be displayed using one of the cachegrind tools as described in [Xdebug documentation](https://xdebug.org/docs/profiler). The profile and trace data will be logged in the `xdebug` folder.
+
+**STEP DEBUGGING**
+
+If you want to do step debugging, you need to setup your IDE accordingly. Make sure to setup your IDE to listen on port 9003 for Xdebug connections. There are plugins for VS Code, PHPStorm, and other IDEs listed [here](https://xdebug.org/docs/step_debug#clients).
+
+After setting up your IDE, select `Debug` in the Xdebug extension and reload the page.
+
+## Xdebug on Linux
+
+Xdebug needs additional configuration for Linux because of some Docker restrictions. Xdebug has to connect to the host machine from within Docker, which means it needs the host's ip. For MacOS and Windows that is resolved using a special DNS name, but that doesn't exist for Linux. You can read more [here](https://github.com/docker/for-linux/issues/264).
+
+Make sure that the containers are running:
+```
+npm run env:start
+```
+
+Find the host ip that docker sees by connecting to the WordPressify website from your web browser, and then inspecting nginx logs:
+```
+docker-compose logs server
+```
+
+The first field will be your host IP address. Copy that host address and paste it inside `config/php.ini` as the value for `xdebug.remote_host`.
+
+Restart PHP:
+```
+npm run env:restart
+```
+
+Xdebug should be working now.
+
+# 10. Changing PHP and Docker settings
+
+You can make changes to PHP and Docker files (the ones that don't have `.in` extension).
+
+Change PHP settings in `config/php.ini` after starting WordPressify. To make your changes active, restart PHP:
+```
+npm run env:restart
+```
+
+If you make changes to `Dockerfile` or `docker-compose.yml`, then you must rebuild containers:
+```
+npm run env:rebuild
+```
+
+# 11. Deployment
 The recommended solution is to go with [WP Pusher](https://wppusher.com/). It is easy and quick to deploy automatically from GitHub or other services. The first step is to download the WordPress plugin from: https://wppusher.com/
 
 Then navigate to your WordPress administration on your live site and install the downloaded plugin: Plugins -> Add New -> Upload Plugin -> Install Now.
@@ -378,7 +442,7 @@ At this point go to your terminal, navigate to your WordPressify project and gen
 npm run prod
 ```
 
-Navigate to your theme distribution files on: 
+Navigate to your theme distribution files on:
 ```
 dist/theme/<themeName>
 ```
@@ -391,11 +455,11 @@ On Repository host we choose GitHub, then click on **Pick from GitHub** and choo
 
 ## Automated Deployments
 **Push-to-Deploy** if you want automatic deployments to happen when you do a push to the distribution repository.
-In this case you have to create a Webhook from your GitHub's repository page. 
+In this case you have to create a Webhook from your GitHub's repository page.
 
-First navigate to the WP Pusher plugin page and click on **Themes**, it will show you the list of the templates you have installed through the plugin itself. Click on **Show Push-to-Deploy URL** to get the Payload URL. 
+First navigate to the WP Pusher plugin page and click on **Themes**, it will show you the list of the templates you have installed through the plugin itself. Click on **Show Push-to-Deploy URL** to get the Payload URL.
 
-Now get back to GitHub and navigate to your distribution repository and click on: Settings -> Webhooks -> Add webhook. Now past the URL and click **Add webhook**. 
+Now get back to GitHub and navigate to your distribution repository and click on: Settings -> Webhooks -> Add webhook. Now past the URL and click **Add webhook**.
 
 This should enable automatic deployment on any push to the chosen GitHub repository.
 
@@ -403,161 +467,7 @@ This should enable automatic deployment on any push to the chosen GitHub reposit
 
 This will **immediately** remove the default styles and leave a minimal viable theme with basic PHP WordPress loops and other useful features.
 
-# 11. Windows Installation
-**[How to install WordPressify on Windows?](https://www.youtube.com/watch?v=J8ZNzKSeTSE)**
-
-Assuming that you are using the latest version of Windows, and you have activated Windows Subsystem for Linux. Follow the instructions:
-
-### Install lamp for PHP and MySQL
-First refresh your package index:
-```
-sudo apt-get update
-```
-
-Then install the LAMP stack:
-```
-sudo apt-get install lamp-server^
-```
-
-For more informations check out: https://help.ubuntu.com/community/ApacheMySQLPHP
-
-### Start MySQL
-```
-sudo service mysql start
-```
-
-Now let's connect to the MySQL Server:
-```
-sudo mysql
-```
-
-Change the **root** password to "123456789":
-```
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '123456789';
-```
-
-Reload privileges:
-```
-FLUSH PRIVILEGES;
-```
-
-### Install Node
-```
-curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
-```
-
-```
-sudo apt-get install -y nodejs
-```
-
-That's it. Now just follow the WordPressify installation instructions.
-
-# Changelog
-**0.2.8-11**
-- 🚀 RELEASE: Remove eslintrc.
-
-**v0.2.8**
-- 🚀 RELEASE: Add ESLint with WordPress code standards rules.
-
-**v0.2.7**
-- 🚀 RELEASE: Update version.
-- 🐛 FIX: Readme documentation on install.
-- 🐛 FIX: Cron jobs new formatting.
-
-**v0.2.6**
-- 🚀 RELEASE: Install files from versioned release instead of `master` branch.
-
-**v0.2.5**
-- 👌 IMPROVE: Install only required dependencies.
-- 🚀 RELEASE: Update dependencies.
-
-**v0.2.4**
-- 📖 DOC: Improve documentation.
-
-**v0.2.3**
-- 🚀 RELEASE: Improved installation speed for global dependencies.
-- BREAKING CHANGE: It is required to update WordPressify: `sudo npm install wordpressify -g`.
-
-**v0.2.2**
-- 👌 IMPROVE: Meta.
-
-**v0.2.1**
-- 🚀 RELEASE: Update dependencies.
-
-**v0.2.0**
-- 🐛 FIX: Typo.
-
-**v0.1.9**
-- 🐛 FIX: Dependencies.
-
-**v0.1.8**
-- 📦 NEW: Run WordPressify globally from NPM.
-
-**v0.1.7**
-- 🚀 RELEASE: Remove WordPressify template from main repository.
-- 👌 IMPROVE: Simple & unstyled boilerplate code. Stay fresh!
-
-**v0.1.6**
-- 📦 NEW: Upgrade to Gulp 4.
-- 📦 NEW: Rewrote all tasks into functions.
-- 👌 IMPROVE: Updated file structure.
-
-**v0.1.5**
-- 📦 NEW: Upgrade to Babel 7
-- 🐛 FIX: Removed deprecated `postcss-cssnext` in favor of `postcss-preset-env`.
-
-**v0.1.4**
-- 👌 IMPROVE: Added cleanup command to flush the default theme and have a fresh start.
-
-**v0.1.3**
-- 👌 IMPROVE: Added support for bitmap and SVG minification, in the production build.
-- 📖 DOC: Added documentation for deployment process.
-
-**v0.1.2**
-- 👌 IMPROVE: Converted all variables from 'var' to 'const'.
-- 👌 IMPROVE: Replaced long anonymous function with ES6 arrow syntax.
-- 🐛 FIX: Spelling errors.
-
-**v0.1.1**
-- 📦 NEW: Added support for `src/plugins`.
-
-**v0.1.0**
-- 👌 IMPROVE: Code readability.
-- 👌 IMPROVE: Removed unused packages.
-- 📦 NEW: Build success and error messages.
-- 👌 IMPROVE: Tasks cleanup.
-
-**v0.0.9**
-- 📖 DOC: Update documentation.
-
-**v0.0.8**
-- 👌 IMPROVE: Name change.
-
-**v0.0.7**
-- 🐛 FIX: Fix placemente of `DISABLE_WP_CRON`.
-
-**v0.0.6**
-- 👌 IMPROVE: Theme cleanup.
-- 👌 IMPROVE: Consistent code styles.
-
-**v0.0.5**
-- 🐛 FIX: Activated `DISABLE_WP_CRON` to prevent Node freezing.
-- 🚀 RELEASE: Back up your build files with all `wp-content` uploads.
-
-**v0.0.4**
-- 🐛 FIX: Whitelabel template.
-- 🐛 FIX: Renamed classes.
-- 👌 IMPROVE: Refactored CSS structure.
-- 📦 NEW: Meet WordPressify.
-
-**v.0.0.3**
-- 👌 IMPROVE: Simplified build logic.
-- 👌 IMPROVE: Install WordPress only once with `npm run install:wordpress`.
-- 👌 IMPROVE: Cleaner distribution task.
-
-**v0.0.2**
-- 🐛 FIX: Bugfixes.
-- 📦 NEW: Watch and store new content in `wp-content/uploads`.
-
-# License
-MIT
+---
+- [Changelog](CHANGELOG.md)
+- License: [MIT](LICENSE)
+- WordPressify [Documentation Website](https://www.wordpressify.co/)

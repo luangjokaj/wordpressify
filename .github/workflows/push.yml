@@ -1,0 +1,32 @@
+name: "Install and Start WordPressify"
+
+env:
+  WPFY_GH_REPO: ${{ github.repository }}
+  WPFY_GH_REF: ${{ github.ref }}
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: npm ci --no-audit
+      - run: |
+          mkdir wpfy_global;
+          cd wpfy_global;
+          npm init -y;
+          npm install ../;
+          mkdir test;
+          cd test;
+          ../node_modules/.bin/wordpressify -y;
+      - run: |
+          cd wpfy_global/test;
+          npm run dev &
+      - run: |
+          cd wpfy_global/test;
+          for container in $( docker-compose ps -q ); do
+          docker exec $container echo "Hi!";
+          done;

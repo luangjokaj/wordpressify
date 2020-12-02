@@ -4,7 +4,6 @@ dist
 build
 tmp
 backups
-wp-config.php
 
 # IDE & Editors
 .idea
@@ -25,8 +24,10 @@ Desktop.ini
 *.iml
 
 node_modules
+.env
 
 # Debug log from npm
 npm-debug.log
 
 *.map
+xdebug
