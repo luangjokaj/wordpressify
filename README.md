@@ -105,6 +105,9 @@ sudo npm i wordpressify -g
 ```
 wordpressify
 ```
+Make sure **Docker is running**, otherwise it will fail.
+
+---
 
 ## Install WordPressify from Repository
 To install WordPressify you need to clone the repository from GitHub:
@@ -121,6 +124,16 @@ git clone https://github.com/luangjokaj/wordpressify
 npm install
 ```
 
+**START UP ENVIRONMENT**
+
+- On the first run, WordPressify needs to set up a local server and a database for the new WordPress installation, we do this once by running the command:
+```
+npm run env:start
+```
+Make sure **Docker is running**, otherwise it will fail.
+
+---
+
 **CHANGE TEMPLATE NAME**
 
 - At this point WordPressify is installed and ready to be used for the first time. Before starting, open **gulpfile.js** and edit your template name:
@@ -132,14 +145,7 @@ const themeName = 'wordpressify';
 //--------------------------------------------------------------------------------------------------
 ```
 
-**START UP ENVIRONMENT**
-
-- On the first run, WordPressify needs to set up a local server and a database for the new WordPress installation, we do this once by running the command:
-```
-npm run env:start
-```
-
-**START WORKFLOW**
+## Start workflow
 
 - We are ready to start our development server with the command:
 ```
