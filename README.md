@@ -107,7 +107,7 @@ sudo npm i wordpressify -g
 ```
 wordpressify
 ```
-Make sure **Docker is running**, otherwise it will fail.
+Make sure **Docker is running**, otherwise this ☝ command will fail.
 
 ---
 
@@ -116,7 +116,7 @@ To install WordPressify you need to clone the repository from GitHub:
 ```
 git clone https://github.com/luangjokaj/wordpressify
 ```
-- This will clone the repository on your local machine. Navigate to the newly created folder.
+- This will clone the repository on your local machine. Navigate to the newly created directory.
 
 - Replace the file: `./package.json` with `./installer/package.json` and continue with the dependency installation.
 
@@ -153,9 +153,10 @@ const themeName = 'wordpressify';
 ```
 npm run dev
 ```
-Make sure **Docker is running**, otherwise it will fail.
-
 - You are ready to go! Happy coding! 🤓
+
+Make sure **Docker is running**, otherwise this ☝ command will fail.
+
 ---
 **BRING DOWN ENVIRONMENT**
 
@@ -394,7 +395,7 @@ Install the Xdebug extension for [Chrome](https://chrome.google.com/webstore/det
 
 **PROFILING AND TRACING**
 
-After installing the extension and running WordPressify, you can start profiling and tracing WordPress by simply selecting the proper option in the extension. Profiling information can be displayed using one of the cachegrind tools as described in [Xdebug documentation](https://xdebug.org/docs/profiler). The profile and trace data will be logged in the `xdebug` folder.
+After installing the extension and running WordPressify, you can start profiling and tracing WordPress by simply selecting the proper option in the extension. Profiling information can be displayed using one of the cachegrind tools as described in [Xdebug documentation](https://xdebug.org/docs/profiler). The profile and trace data will be logged in the `xdebug` directory.
 
 **STEP DEBUGGING**
 
