@@ -410,7 +410,7 @@ docker-compose logs server
 
 The first field will be your host IP address. Copy that host address and paste it inside `config/php.ini` as the value for `xdebug.remote_host`.
 
-Restart PHP:
+**RESTART PHP**
 ```
 npm run env:restart
 ```
