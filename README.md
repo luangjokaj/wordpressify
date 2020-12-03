@@ -65,9 +65,13 @@ WordPressify comes with a development server for running PHP under a proxy with 
 # 1. Installing Node.js and Docker
 WordPressify requires **Node.js v12+** and **Docker Compose**.
 
+### Node.js
+
 Node.js is a JavaScript runtime built on Chrome’s V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. Node.js’ package ecosystem, npm, is the largest ecosystem of open source libraries in the world.
 
 You can download Node.js **[here](https://nodejs.org/)**.
+
+### Docker
 
 A Docker container is a standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another.
 
