@@ -9,7 +9,7 @@ http://www.wordpressify.co/
 - [Introduction](#introduction)
 	- [Features](#features)
 	- [What is WordPressify?](#what-is-wordpressify)
-- [1. Installing Node and Docker](#1-installing-node-and-docker)
+- [1. Installing Node.js and Docker](#1-installing-node.js-and-docker)
 - [2. Set Up Project](#2-set-up-project)
 	- [Install WordPressify from NPM](#install-wordpressify-from-npm)
 	- [Install WordPressify from Repository](#install-wordpressify-from-repository)
@@ -62,12 +62,12 @@ WordPressify is a simple tool that helps you build WordPress themes and plugins.
 
 WordPressify comes with a development server for running PHP under a proxy with BrowserSync. The data is stored in a pre-configured MariaDB database that works out of the box. Watches for all your changes and reloads the webpage in real-time. Style are preprocessors with PostCSS or Sass. Babel compiler for writing next-generation JavaScript. Source maps are supported for both CSS and JavaScript. WordPressify allows easy import of external JavaScript libraries and npm scripts, it has a flexible build and can be easily customized with gulp tasks.
 
-# 1. Installing Node and Docker
-WordPressify requires **Node v12+** and **Docker Compose**.
+# 1. Installing Node.js and Docker
+WordPressify requires **Node.js v12+** and **Docker Compose**.
 
 Node.js is a JavaScript runtime built on Chrome’s V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. Node.js’ package ecosystem, npm, is the largest ecosystem of open source libraries in the world.
 
-You can download Node **[here](https://nodejs.org/)**.
+You can download Node.js **[here](https://nodejs.org/)**.
 
 A Docker container is a standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another.
 
@@ -98,7 +98,7 @@ If you're on Linux **make sure that you can [manage Docker as a non-root user](h
     └── gulpfile.js              # Gulp configuration
     └── LICENSE                  # License agreements
     └── package-lock.json        # Packages lock file
-    └── package.json             # Node packages
+    └── package.json             # Node.js packages
     └── README.md                # You are reading this
 ```
 
@@ -470,7 +470,7 @@ This will **immediately** remove the default styles and leave a minimal viable t
 
 # 12. Troubleshooting
 **ERROR: docker-compose: command not found**
-- Docker is not installed. Please [install Docker](#1-installing-node-and-docker), then try again.
+- Docker is not installed. Please [install Docker](#1-installing-node.js-and-docker), then try again.
 
 **ERROR: Failed to execute script docker-compose**
 - Make sure Docker is open and running, then try again.
