@@ -12,6 +12,8 @@ http://www.wordpressify.co/
 - [2. Set Up Project](#2-set-up-project)
 	- [Install WordPressify from NPM](#install-wordpressify-from-npm)
 	- [Install WordPressify from Repository](#install-wordpressify-from-repository)
+	- [Start Workflow](#install-wordpressify-from-repository)
+	- [Production Template](#production-template)
 - [3. CSS, PostCSS and Sass](#3-css-postcss-and-sass)
 	- [PostCSS](#postcss)
 	- [Sass](#sass)
@@ -145,7 +147,7 @@ const themeName = 'wordpressify';
 //--------------------------------------------------------------------------------------------------
 ```
 
-## Start workflow
+## Start Workflow
 
 - We are ready to start our development server with the command:
 ```
@@ -176,7 +178,8 @@ npm run env:rebuild
 src/plugins/
 ```
 ---
-**PRODUCTION TEMPLATE**
+
+## Production Template
 
 - To generate your distribution files run the command:
 ```
