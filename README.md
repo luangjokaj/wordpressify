@@ -9,7 +9,7 @@ http://www.wordpressify.co/
 - [Introduction](#introduction)
 	- [Features](#features)
 	- [What is WordPressify?](#what-is-wordpressify)
-- [1. Installing Node.js and Docker](#1-installing-node.js-and-docker)
+- [1. Installing Node.js and Docker](#1-installing-nodejs-and-docker)
 - [2. Set Up Project](#2-set-up-project)
 	- [Install WordPressify from NPM](#install-wordpressify-from-npm)
 	- [Install WordPressify from Repository](#install-wordpressify-from-repository)
@@ -470,7 +470,7 @@ This will **immediately** remove the default styles and leave a minimal viable t
 
 # 12. Troubleshooting
 **ERROR: docker-compose: command not found**
-- Docker is not installed. Please [install Docker](#1-installing-node.js-and-docker), then try again.
+- Docker is not installed. Please [install Docker](#1-installing-nodejs-and-docker), then try again.
 
 **ERROR: Failed to execute script docker-compose**
 - Make sure Docker is open and running, then try again.
