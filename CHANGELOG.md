@@ -6,6 +6,7 @@
 - 📦 NEW: `.editorconfig` for code style consistency.
 - 📦 NEW: GitHub Actions for simple testing.
 - 💥 BREAKING CHANGE: Docker is a required global dependency.
+- 📖 DOC: Improve documentation and website.
 - A special thank you to [@ribaricplusplus ](https://github.com/ribaricplusplus) for this contribution.
 
 **0.2.8-11**
