@@ -12,7 +12,7 @@ http://www.wordpressify.co/
 - [2. Set Up Project](#2-set-up-project)
 	- [Install WordPressify from NPM](#install-wordpressify-from-npm)
 	- [Install WordPressify from Repository](#install-wordpressify-from-repository)
-	- [Start Workflow](#install-wordpressify-from-repository)
+	- [Start Workflow](#start-workflow)
 	- [Production Template](#production-template)
 - [3. CSS, PostCSS and Sass](#3-css-postcss-and-sass)
 	- [PostCSS](#postcss)
@@ -31,6 +31,7 @@ http://www.wordpressify.co/
 - [10. Changing PHP and Docker settings](#10-changing-php-and-docker-settings)
 - [11. Deployment](#11-deployment)
 	- [Automated Deployments](#automated-deployments)
+- [12. Troubleshooting](#12-troubleshooting)
 - [Changelog](CHANGELOG.md)
 - [License](LICENSE)
 
@@ -64,6 +65,8 @@ Node.js is a JavaScript runtime built on Chrome’s V8 JavaScript engine. Node.j
 
 You can download Node **[here](https://nodejs.org/)**.
 
+A Docker container is a standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another.
+
 Instructions to download Docker Compose can be found **[here](https://docs.docker.com/compose/install)**.
 
 If you're on Linux **make sure that you can [manage Docker as a non-root user](https://docs.docker.com/engine/install/linux-postinstall/)**.
@@ -96,17 +99,14 @@ If you're on Linux **make sure that you can [manage Docker as a non-root user](h
 ```
 
 ## Install WordPressify from NPM
-To install WordPressify from NPM, run the command:
+
+To install WordPressify create a directory for the new WordPress website and from there run the command to generate the file structure:
 ```
-sudo npm i wordpressify -g
+npx wordpressify
 ```
 
-**START WORDPRESSIFY**
+That's it 🍾 easy as that. Now start the development workflow: [Start Workflow](#start-workflow)
 
-- Create a directory for the new WordPress website and from there run WordPressify to generate the file structure:
-```
-wordpressify
-```
 Make sure **Docker is running**, otherwise this ☝ command will fail.
 
 ---
@@ -132,7 +132,7 @@ npm install
 ```
 npm run env:start
 ```
-Make sure **Docker is running**, otherwise it will fail.
+Make sure **Docker is running**, otherwise this ☝ command will fail.
 
 ---
 
@@ -149,7 +149,7 @@ const themeName = 'wordpressify';
 
 ## Start Workflow
 
-- We are ready to start our development server with the command:
+- To start the development server run the command:
 ```
 npm run dev
 ```
@@ -158,21 +158,8 @@ npm run dev
 Make sure **Docker is running**, otherwise this ☝ command will fail.
 
 ---
-**BRING DOWN ENVIRONMENT**
 
-- To stop the WordPressify server and database for the project run:
-```
-npm run env:stop
-```
-
-**REBUILD ENVIRONMENT**
-
-- To rebuild the WordPressify project environment run:
-```
-npm run env:rebuild
-```
-
-**WORDPRESS PLUGINS**
+### WordPress Plugins
 
 - If you want to add or build WordPress plugins, you can do that from the directory:
 ```
@@ -476,6 +463,17 @@ This should enable automatic deployment on any push to the chosen GitHub reposit
 **Note:** WP Pusher if **free** only with **public** repositories.
 
 This will **immediately** remove the default styles and leave a minimal viable theme with basic PHP WordPress loops and other useful features.
+
+# 12. Troubleshooting
+**ERROR: docker-compose: command not found**
+- Docker is not installed. Please [install Docker](#1-installing-node-and-docker), then try again.
+
+**ERROR: Failed to execute script docker-compose**
+- Make sure Docker is open and running, then try again.
+
+**ERROR: Bind for 0.0.0.0:3020 failed: port is already allocated**
+- Make sure there are no other Docker containers running the same port `3020`. You can stop all Docker containers with the command: `docker stop $(docker ps -a -q)` and try again.
+
 
 ---
 - [Changelog](CHANGELOG.md)
