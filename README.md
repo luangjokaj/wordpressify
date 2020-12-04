@@ -134,11 +134,11 @@ git clone https://github.com/luangjokaj/wordpressify
 npm install
 ```
 
-**START UP ENVIRONMENT**
+**BUILD ENVIRONMENT**
 
 - On the first run, WordPressify needs to set up a local server and a database for the new WordPress installation, we do this once by running the command:
 ```
-npm run env:start
+npm run env:build
 ```
 Make sure **Docker is running**, otherwise this ☝ command will fail.
 
