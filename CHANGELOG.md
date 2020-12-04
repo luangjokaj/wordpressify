@@ -1,6 +1,9 @@
 
 # Changelog
 
+**v0.2.9-4**
+- 🐛 FIX: Missing welcome.html
+
 **v0.2.9-3**
 - 📦 NEW: Welcome page while WordPressify initializes.
 - 👌 IMPROVE: Remove unused package and cleanup default styles.

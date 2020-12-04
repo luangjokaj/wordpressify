@@ -26,7 +26,8 @@ module.exports = async () => {
 		upstreamUrl = `https://raw.githubusercontent.com/${process.env.WPFY_GH_REPO}/${refname}`;
 	} else {
 		upstreamUrl =
-			'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.9-3';
+			'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.9-4
+			';
 	}
 
 	// Files.
@@ -43,6 +44,7 @@ module.exports = async () => {
 		`${upstreamUrl}/installer/package.json`,
 
 		`${upstreamUrl}/config/php.ini.in`,
+		`${upstreamUrl}/config/nginx/welcome.html`,
 		`${upstreamUrl}/config/nginx/fastcgi.conf`,
 		`${upstreamUrl}/config/nginx/mime.types`,
 		`${upstreamUrl}/config/nginx/nginx.conf`,
@@ -110,6 +112,7 @@ module.exports = async () => {
 		'php.ini.in'
 	];
 	const nginxFiles = [
+		'welcome.html',
 		'fastcgi.conf',
 		'mime.types',
 		'nginx.conf',
