@@ -167,6 +167,20 @@ Make sure **Docker is running**, otherwise this ☝ command will fail.
 
 ---
 
+**BRING DOWN ENVIRONMENT**
+
+- To stop the WordPressify server and database for the project run:
+```
+npm run env:stop
+```
+
+**REBUILD ENVIRONMENT**
+
+- To rebuild the WordPressify project environment run:
+```
+npm run env:rebuild
+```
+
 ### WordPress Plugins
 
 - If you want to add or build WordPress plugins, you can do that from the directory:
