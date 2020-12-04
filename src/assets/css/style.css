@@ -11,7 +11,6 @@ Tags: responsive, clean, minimal, modern, documentation
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
 
 @import '../../../node_modules/normalize.css/normalize.css';
-@import '../../../node_modules/cherry-grid/dist/css/styles.css';
 @import './globals.css';
 
 @import './wordpressify.css';

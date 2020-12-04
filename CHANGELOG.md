@@ -1,15 +1,20 @@
+
 # Changelog
 
-**0.2.9**
+**v0.2.9-3**
+- 📦 NEW: Welcome page while WordPressify initializes.
+- 👌 IMPROVE: Remove unused package and cleanup default styles.
+- 📖 DOC: Improve documentation and website.
+
+**v0.2.9**
 - 📦 NEW: Development server using Docker with Xdebug support.
 - 📦 NEW: MariaDB database out of the box running in Docker.
 - 📦 NEW: `.editorconfig` for code style consistency.
 - 📦 NEW: GitHub Actions for simple testing.
 - 💥 BREAKING CHANGE: Docker is a required global dependency.
-- 📖 DOC: Improve documentation and website.
 - A special thank you to [@ribaricplusplus ](https://github.com/ribaricplusplus) for this contribution.
 
-**0.2.8-11**
+**v0.2.8-11**
 - 🚀 RELEASE: Remove `eslintrc.`
 
 **v0.2.8**

@@ -10,5 +10,5 @@
 <body <?php body_class(); ?>>
 <header id="header" class="container header">
 	<h1>Header</h1>
+	<?php edit_post_link( 'Edit', '<p class="edit-button">', '</p>' ); ?>
 </header>
-<?php edit_post_link( 'Edit', '<p class="edit-button">', '</p>' ); ?>

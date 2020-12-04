@@ -1,3 +1,15 @@
-.body {
-	clear: both;
+.container {
+	max-width: var(--max-width);
+	margin: auto;
+	padding-right: var(--margin-container-mobile);
+	padding-left: var(--margin-container-mobile);
+
+	@media (--screen-lg) {
+		padding-right: var(--margin-container-desktop);
+		padding-left: var(--margin-container-desktop);
+	}
+
+	@media (--screen-xxxl) {
+		max-width: 1704px;
+	}
 }

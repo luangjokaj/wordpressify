@@ -193,6 +193,12 @@ function Reload(done) {
 	done();
 }
 
+function copyWelcomeIndex() {
+	return src('./config/nginx/welcome.html').pipe(
+		dest('./build/wordpress')
+	);
+}
+
 function copyThemeDev() {
 	if (!fs.existsSync('./build')) {
 		log(buildNotFound);
@@ -258,6 +264,7 @@ function pluginsDev() {
 exports.dev = series(
 	envStart,
 	registerCleanup,
+	copyWelcomeIndex,
 	copyThemeDev,
 	copyImagesDev,
 	copyFontsDev,
