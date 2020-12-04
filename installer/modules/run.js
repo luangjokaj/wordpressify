@@ -26,7 +26,7 @@ module.exports = async () => {
 		upstreamUrl = `https://raw.githubusercontent.com/${process.env.WPFY_GH_REPO}/${refname}`;
 	} else {
 		upstreamUrl =
-			'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.9-2';
+			'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.9-3';
 	}
 
 	// Files.
