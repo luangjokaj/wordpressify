@@ -266,6 +266,10 @@ Tags: responsive, clean, minimal, modern, documentation
 */
 ```
 
+**TAILWIND CSS**
+
+[Tailwind CSS](https://tailwindcss.com/) is a utility-first CSS framework packed with classes like `flex`, `pt-4`, `text-center` and `rotate-90` that can be composed to build any design, directly in your markup. Tailwind comes pre-installed with WordPressify.
+
 ## Sass
 WordPressify is super flexible. You can install Sass and use it as the main CSS preprocessor:
 ```

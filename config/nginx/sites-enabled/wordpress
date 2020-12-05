@@ -1,5 +1,6 @@
 server {
 	listen 80 default_server;
+	expires off;
 
 	error_page 403 500 502 503 504 /welcome.html;
 	root /var/www/html;

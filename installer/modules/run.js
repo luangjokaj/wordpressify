@@ -26,7 +26,7 @@ module.exports = async () => {
 		upstreamUrl = `https://raw.githubusercontent.com/${process.env.WPFY_GH_REPO}/${refname}`;
 	} else {
 		upstreamUrl =
-			'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.9-5';
+			'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.9-6';
 	}
 
 	// Files.
@@ -38,6 +38,7 @@ module.exports = async () => {
 		`${upstreamUrl}/LICENSE`,
 		`${upstreamUrl}/README.md`,
 		`${upstreamUrl}/gulpfile.js`,
+		`${upstreamUrl}/tailwind.config.js`,
 		`${upstreamUrl}/docker-compose.yml`,
 		`${upstreamUrl}/Dockerfile.in`,
 		`${upstreamUrl}/installer/package.json`,
@@ -50,8 +51,6 @@ module.exports = async () => {
 		`${upstreamUrl}/config/nginx/sites-enabled/wordpress`,
 		`${upstreamUrl}/config/nginx/snippets/fastcgi-php.conf`,
 
-		`${upstreamUrl}/src/assets/css/globals.css`,
-		`${upstreamUrl}/src/assets/css/mixins.css`,
 		`${upstreamUrl}/src/assets/css/style.css`,
 		`${upstreamUrl}/src/assets/css/variables.css`,
 		`${upstreamUrl}/src/assets/css/wordpressify.css`,
@@ -80,8 +79,6 @@ module.exports = async () => {
 	// Organise file structure
 	const dotFiles = ['.babelrc', '.gitignore', '.stylelintrc', '.env.in'];
 	const cssFiles = [
-		'globals.css',
-		'mixins.css',
 		'style.css',
 		'variables.css',
 		'wordpressify.css',

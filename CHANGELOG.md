@@ -1,6 +1,10 @@
 
 # Changelog
 
+**v0.2.9-6**
+- 📦 NEW: Add support for Tailwind CSS.
+- 👌 IMPROVE: Disable nginx cache for dev server.
+
 **v0.2.9-4**
 - 🐛 FIX: Missing welcome.html
 

@@ -1,3 +1,4 @@
+
 /*
 Theme Name: WordPressify
 Theme URI: https://www.wordpressify.co
@@ -8,9 +9,9 @@ Version: 1.0
 Tags: responsive, clean, minimal, modern, documentation
 */
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
 
-@import '../../../node_modules/normalize.css/normalize.css';
-@import './globals.css';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
-@import './wordpressify.css';
+@import "./wordpressify";

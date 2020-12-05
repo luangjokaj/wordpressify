@@ -1,3 +1,5 @@
+@import "./variables";
+
 .container {
 	max-width: var(--max-width);
 	margin: auto;
