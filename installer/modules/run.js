@@ -13,6 +13,7 @@ const download = require('download');
 const handleError = require('./handleError.js');
 const clearConsole = require('./clearConsole.js');
 const printNextSteps = require('./printNextSteps.js');
+const version = require('../package.json').version;
 
 module.exports = async () => {
 	// Init.
@@ -26,7 +27,7 @@ module.exports = async () => {
 		upstreamUrl = `https://raw.githubusercontent.com/${process.env.WPFY_GH_REPO}/${refname}`;
 	} else {
 		upstreamUrl =
-			'https://raw.githubusercontent.com/luangjokaj/wordpressify/v0.2.9-6';
+			`https://raw.githubusercontent.com/luangjokaj/wordpressify/v${version}`;
 	}
 
 	// Files.

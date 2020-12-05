@@ -187,7 +187,7 @@ function devServer(done) {
 	watch('./src/assets/js/**', series(footerScriptsDev, Reload));
 	watch('./src/assets/img/**', series(copyImagesDev, Reload));
 	watch('./src/assets/fonts/**', series(copyFontsDev, Reload));
-	watch('./src/theme/**', series(copyThemeDev, Reload));
+	watch('./src/theme/**', series(copyThemeDev, stylesDev, Reload));
 	watch('./src/plugins/**', series(pluginsDev, Reload));
 }
 

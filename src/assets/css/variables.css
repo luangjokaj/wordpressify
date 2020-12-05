@@ -1,17 +1,15 @@
-@import "./variables";
+@custom-media --screen-xs (min-width: 0);
+@custom-media --screen-sm (min-width: 576px);
+@custom-media --screen-md (min-width: 768px);
+@custom-media --screen-lg (min-width: 992px);
+@custom-media --screen-xl (min-width: 1200px);
+@custom-media --screen-xxl (min-width: 1440px);
+@custom-media --screen-xxxl (min-width: 1920px);
 
-.container {
-	max-width: var(--max-width);
-	margin: auto;
-	padding-right: var(--margin-container-mobile);
-	padding-left: var(--margin-container-mobile);
+:root {
 
-	@media (--screen-lg) {
-		padding-right: var(--margin-container-desktop);
-		padding-left: var(--margin-container-desktop);
-	}
-
-	@media (--screen-xxxl) {
-		max-width: 1704px;
-	}
+	/* Sample variables ------------------------------------------- */
+	--max-width: 1440px;
+	--margin-container-mobile: 20px;
+	--margin-container-desktop: 20px;
 }
