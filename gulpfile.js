@@ -180,7 +180,7 @@ function devServer(done) {
 		proxy: `127.0.0.1:${process.env.SERVER_PORT}`,
 		host: '127.0.0.1',
 		port: `${process.env.PROXY_PORT}`,
-		open: 'external',
+		open: 'local',
 	});
 
 	watch('./src/assets/css/**/*.css', stylesDev);

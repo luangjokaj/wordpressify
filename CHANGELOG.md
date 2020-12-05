@@ -1,6 +1,9 @@
 
 # Changelog
 
+**v0.2.9-8**
+- 👌 IMPROVE: Browsersync change open option to local.
+
 **v0.2.9-7**
 - 🐛 FIX: Run `stylesDev` when template files are changes. Solves Tailwind CSS purge.
 
