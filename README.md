@@ -1,10 +1,10 @@
-[![WordPressify Logo](https://i.imgur.com/5dVJS70.png)](http://www.wordpressify.co/)
+[![WordPressify Logo](https://i.imgur.com/5dVJS70.png)](https://www.wordpressify.co/)
 
 ![Version](https://img.shields.io/github/package-json/v/luangjokaj/wordpressify) [![Dependencies](https://david-dm.org/luangjokaj/wordpressify/status.svg)](https://david-dm.org/luangjokaj/wordpressify)
 
 A build system designed to automate your WordPress development workflow.
 
-http://www.wordpressify.co/
+https://www.wordpressify.co/
 
 - [Introduction](#introduction)
 	- [Features](#features)
@@ -61,6 +61,8 @@ http://www.wordpressify.co/
 WordPressify is a simple tool that helps you build WordPress themes and plugins. It takes care of the development experience by providing a web server with a database out of the box, zero-configuration required.
 
 WordPressify comes with a development server for running PHP under a proxy with BrowserSync. The data is stored in a pre-configured MariaDB database that works out of the box. Watches for all your changes and reloads the webpage in real-time. Style are preprocessors with PostCSS or Sass. Babel compiler for writing next-generation JavaScript. Source maps are supported for both CSS and JavaScript. WordPressify allows easy import of external JavaScript libraries and npm scripts, it has a flexible build and can be easily customized with gulp tasks.
+
+[![video](https://i.imgur.com/g06S92G.png)](https://www.youtube.com/watch?v=CddzF6xf78w)
 
 # 1. Installing Node.js and Docker
 WordPressify requires **Node.js v12+** and **Docker Compose**.
@@ -203,7 +205,7 @@ dist/wordpressify.zip
 
 # 3. CSS, PostCSS and Sass
 ## PostCSS
-By default WordPressify supports [PostCSS](http://postcss.org/), a similar preprocessor to Sass, Less and others but with more functionality. On top of that PostCSS is 3x faster than Sass and 4x faster than Less. Features come in the shape of PostCSS plugins. Think of these like using Lego, where each piece is a different feature that can transform your CSS in some way. PostCSS lets you stick these pieces together so that you can build up your own feature set, adding and removing plugins as and when you need them. [postcss-preset-env](https://preset-env.cssdb.org//) is installed by default. Read more about PostCSS [here](https://ashleynolan.co.uk/blog/postcss-a-review).
+By default WordPressify supports [PostCSS](https://postcss.org/), a similar preprocessor to Sass, Less and others but with more functionality. On top of that PostCSS is 3x faster than Sass and 4x faster than Less. Features come in the shape of PostCSS plugins. Think of these like using Lego, where each piece is a different feature that can transform your CSS in some way. PostCSS lets you stick these pieces together so that you can build up your own feature set, adding and removing plugins as and when you need them. [postcss-preset-env](https://preset-env.cssdb.org//) is installed by default. Read more about PostCSS [here](https://ashleynolan.co.uk/blog/postcss-a-review).
 
 **POSTCSS PLUGINS**
 

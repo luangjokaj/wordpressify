@@ -417,7 +417,7 @@ const backupsGenerated =
 	date +
 	'.zip\x1b[0m - ✅';
 const wpFy = '\x1b[42m\x1b[1mWordPressify\x1b[0m';
-const wpFyUrl = '\x1b[2m - http://www.wordpressify.co/\x1b[0m';
+const wpFyUrl = '\x1b[2m - https://www.wordpressify.co/\x1b[0m';
 const thankYou = 'Thank you for using ' + wpFy + wpFyUrl;
 
 /* -------------------------------------------------------------------------------------------------

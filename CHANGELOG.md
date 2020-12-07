@@ -1,6 +1,9 @@
 
 # Changelog
 
+**v0.2.9-10**
+- 📖 DOC: Improve documentation and website.
+
 **v0.2.9-8**
 - 👌 IMPROVE: Browsersync change open option to local.
 
