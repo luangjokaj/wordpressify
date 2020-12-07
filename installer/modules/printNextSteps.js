@@ -47,7 +47,7 @@ module.exports = () => {
 		'\n',
 		'\n',
 		`	${chalk.red(
-			'Thank you for using 🎈 WordPressify →'
+			'Thank you for using 🎈 WordPressify → '
 		)} https://www.wordpressify.co`
 	);
 
