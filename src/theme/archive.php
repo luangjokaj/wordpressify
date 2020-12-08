@@ -1,4 +1,9 @@
-<?php get_header(); ?>
+<?php get_header();
+	$className = '';
+	if (!is_search_has_results()) {
+		$className = 'no-result';
+	}
+?>
 <div class="lg:grid grid-cols-3 gap-4">	
 	<div class="site-content col-span-2 md:border-r md:border-gray-200">
 		<article class="page">
@@ -24,9 +29,7 @@
 				}
 			?>
 			</h1>
-			<div class="inner <?php if (!is_search_has_results()) {
-				echo 'no-result';
-			}?>">
+			<div class="inner inner p-5 lg:p-10 <?php echo $className ?>">
 				<?php
 				while (have_posts()) :
 					the_post();

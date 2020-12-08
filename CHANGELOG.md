@@ -1,6 +1,9 @@
 
 # Changelog
 
+**v0.2.9-17**
+- 👌 IMPROVE: Default theme.
+
 **v0.2.9-16**
 - 🚀 RELEASE: Update dependencies.
 
