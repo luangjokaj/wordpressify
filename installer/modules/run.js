@@ -58,7 +58,7 @@ module.exports = async () => {
 
 		`${upstreamUrl}/src/assets/js/main.js`,
 
-		`${upstreamUrl}/src/assets/img/logo`,
+		`${upstreamUrl}/src/assets/img/logo.svg`,
 
 		`${upstreamUrl}/src/theme/404.php`,
 		`${upstreamUrl}/src/theme/archive.php`,
