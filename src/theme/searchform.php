@@ -1,4 +1,3 @@
-
 <form 
 	class="search-form mb-4"
 	role="search"

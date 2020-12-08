@@ -2,7 +2,6 @@
 	<div class="post-thumbnail">
 		<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'small-thumbnail' ); ?></a>
 	</div>
-
 	<div class="inner-content">
 		<h2 class="item-title text-5xl pb-5 font-bold text-blue-600 transition-all hover:text-red-500">
 			<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
@@ -13,7 +12,6 @@
 			$categories = get_the_category();
 			$separator  = ', ';
 			$output     = '';
-
 			if ( $categories ) : ?>
 				<div class="tags">
 					<?php foreach ( $categories as $category )
@@ -23,7 +21,6 @@
 				</div>
 			<?php endif; ?>
 		</p>
-
 		<?php if ( is_search() or is_archive() ) : ?>
 			<p class="excerpt content">
 				<a href="<?php the_permalink(); ?>" class="button">Read More</a>
