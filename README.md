@@ -1,6 +1,6 @@
 [![WordPressify Logo](https://i.imgur.com/5dVJS70.png)](https://www.wordpressify.co/)
 
-![Version](https://img.shields.io/github/package-json/v/luangjokaj/wordpressify) [![Dependencies](https://david-dm.org/luangjokaj/wordpressify/status.svg)](https://david-dm.org/luangjokaj/wordpressify)
+![Version](https://img.shields.io/github/package-json/v/luangjokaj/wordpressify) ![Dependencies](https://img.shields.io/david/luangjokaj/wordpressify)
 
 A build system designed to automate your WordPress development workflow.
 
@@ -40,8 +40,7 @@ https://www.wordpressify.co/
 
 | Information | Discord | Donate |
 |:------------|:---------|:-------|
-| [WordPressify](https://www.wordpressify.co) is a modern workflow for your WordPress development, with an integrated database, web server and auto-reload. CSS preprocessors and ES6 ready.| [![Discord server](https://svgshare.com/i/Lqc.svg)](https://discord.gg/qE7e93) | [![BuyMeACoffee](https://www.buymeacoffee.com/assets/img/guidelines/logo-mark-1.svg)](https://www.buymeacoffee.com/luangjokaj) |
-
+| [WordPressify](https://www.wordpressify.co) is a modern workflow for your WordPress development, with an integrated database, web server and auto-reload. CSS preprocessors and ES6 ready.| [![Discord server](https://svgshare.com/i/Lqc.svg)](https://discord.gg/uQFdMddMZw) | [![BuyMeACoffee](https://www.buymeacoffee.com/assets/img/guidelines/logo-mark-1.svg)](https://www.buymeacoffee.com/luangjokaj) |
 
 ## Features
 |👇|Includes|
