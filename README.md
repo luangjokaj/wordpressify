@@ -62,7 +62,7 @@ WordPressify is a simple tool that helps you build WordPress themes and plugins.
 
 WordPressify comes with a development server for running PHP under a proxy with BrowserSync. The data is stored in a pre-configured MariaDB database that works out of the box. Watches for all your changes and reloads the webpage in real-time. Style are preprocessors with PostCSS or Sass. Babel compiler for writing next-generation JavaScript. Source maps are supported for both CSS and JavaScript. WordPressify allows easy import of external JavaScript libraries and npm scripts, it has a flexible build and can be easily customized with gulp tasks.
 
-[![video](https://i.imgur.com/g06S92G.png)](https://www.youtube.com/watch?v=kph9qd9hqqQ)
+[![video](https://i.imgur.com/g06S92G.png)](https://www.youtube.com/watch?v=o4MQYidejN4)
 
 # 1. Installing Node.js and Docker
 WordPressify requires **Node.js v12+** and **Docker Compose**.
