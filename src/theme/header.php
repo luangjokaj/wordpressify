@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>" />
+	<meta charset="<?php bloginfo('charset'); ?>" />
 	<meta name="author" content="Luan Gjokaj, and WordPressify contributors" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<?php wp_head(); ?>
@@ -12,5 +12,5 @@
 	<a href="/">
 		<img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" alt="Logo 🌈">
 	</a>
-	<?php edit_post_link( 'Edit', '<p class="edit-button">', '</p>' ); ?>
+	<?php edit_post_link('Edit', '<p class="edit-button">', '</p>'); ?>
 </header>

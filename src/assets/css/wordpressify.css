@@ -5,8 +5,13 @@
 }
 
 #searchsubmit,
-.post-edit-link {
-	@apply appearance-none bg-transparent border-2 rounded-lg py-2 px-5 text-blue-600 font-medium outline-none cursor-pointer transition-all hover:border-gray-300;
+.post-edit-link,
+.button {
+	@apply appearance-none inline-block bg-transparent border-2 rounded-lg py-2 px-5 text-blue-600 font-medium outline-none cursor-pointer transition-all hover:border-gray-300 hover:text-red-500;
+}
+
+.button {
+	@apply my-4;
 }
 
 
@@ -16,4 +21,9 @@
 
 a {
 	@apply text-blue-600 transition-all hover:text-red-500;
+}
+
+.page-title,
+.single-title {
+	@apply text-5xl pb-5 font-bold;
 }

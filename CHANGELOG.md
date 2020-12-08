@@ -1,6 +1,9 @@
 
 # Changelog
 
+**v0.2.9-14**
+- 👌 IMPROVE: Default theme.
+
 **v0.2.9-13**
 - 🐛 FIX: Url.
 
