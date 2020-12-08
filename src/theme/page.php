@@ -1,7 +1,5 @@
 <?php get_header(); ?>
-<!-- container -->
-<div class="container">	
-	<!-- site-content -->
+<div class="p-5 lg:p-10">	
 	<div class="site-content page">
 		<?php
 		if ( have_posts() ) :
@@ -14,7 +12,5 @@
 			endif;
 			?>
 	</div>
-	<!-- /site-content -->
 </div>
-<!-- /container -->
 <?php get_footer(); ?>

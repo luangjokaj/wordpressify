@@ -8,7 +8,9 @@
 </head>
 
 <body <?php body_class(); ?>>
-<header id="header" class="container header">
-	<h1>Header</h1>
+<header id="header" class="header p-5 lg:p-10 border-b border-gray-200">
+	<a href="/">
+		<img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" alt="Logo 🌈">
+	</a>
 	<?php edit_post_link( 'Edit', '<p class="edit-button">', '</p>' ); ?>
 </header>

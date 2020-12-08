@@ -58,6 +58,8 @@ module.exports = async () => {
 
 		`${upstreamUrl}/src/assets/js/main.js`,
 
+		`${upstreamUrl}/src/assets/img/logo`,
+
 		`${upstreamUrl}/src/theme/404.php`,
 		`${upstreamUrl}/src/theme/archive.php`,
 		`${upstreamUrl}/src/theme/comments.php`,
@@ -85,7 +87,7 @@ module.exports = async () => {
 		'wordpressify.css',
 	];
 	const jsFiles = ['main.js'];
-	const pluginFiles = ['README.md'];
+	const imgFiles = ['logo.svg'];
 	const themeFiles = [
 		'404.php',
 		'archive.php',
@@ -150,6 +152,7 @@ module.exports = async () => {
 					'src/assets',
 					'src/assets/css',
 					'src/assets/js',
+					'src/assets/img',
 					'config',
 					'config/nginx',
 					'config/nginx/sites-enabled',
@@ -169,6 +172,11 @@ module.exports = async () => {
 			);
 			jsFiles.map((x) =>
 				fs.rename(`${theCWD}/${x}`, `${theCWD}/src/assets/js/${x}`, (err) =>
+					handleError(err)
+				)
+			);
+			imgFiles.map((x) =>
+				fs.rename(`${theCWD}/${x}`, `${theCWD}/src/assets/img/${x}`, (err) =>
 					handleError(err)
 				)
 			);

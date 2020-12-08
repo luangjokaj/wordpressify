@@ -1,10 +1,7 @@
 <?php get_header(); ?>
-<!-- container -->
-<div class="container">	
-	<!-- site-content -->
-	<div class="site-content">
+<div class="lg:grid grid-cols-3 gap-4">	
+	<div class="site-content col-span-2 md:border-r md:border-gray-200">
 		<article class="page">
-			<!-- main-column -->
 			<div class="inner">
 				<?php
 					if ( have_posts() ) :
@@ -17,15 +14,11 @@
 					endif;
 				?>
 			</div>
-			<!-- /main-column -->
 			<div class="pagination side">
 				<?php echo paginate_links(); ?>
 			</div>
 		</article>
 	</div>
-	<!-- /site-content -->
-
 	<?php get_sidebar(); ?>
 </div>
-<!-- /container -->
 <?php get_footer(); ?>

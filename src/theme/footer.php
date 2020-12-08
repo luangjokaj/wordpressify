@@ -1,10 +1,10 @@
-<footer class="container footer">
+<footer class="p-5 lg:p-10 footer border-t border-gray-200">
 	<div class="footer-inner">
 		<div class="text-row">
-			<p>
+			<p class="font-medium">
 				<?php bloginfo( 'name' ); ?>
 			</p>
-			<p>
+			<p class="text-gray-400">
 				Copyright <?php echo date( 'Y' ); ?> &copy; All rights reserved
 			</p>
 		</div>

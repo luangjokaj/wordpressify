@@ -1,17 +1,19 @@
 @import "./variables";
 
-.container {
-	max-width: var(--max-width);
-	margin: auto;
-	padding-right: var(--margin-container-mobile);
-	padding-left: var(--margin-container-mobile);
+.widget-title {
+	@apply font-bold py-2 rounded;
+}
 
-	@media (--screen-lg) {
-		padding-right: var(--margin-container-desktop);
-		padding-left: var(--margin-container-desktop);
-	}
+#searchsubmit,
+.post-edit-link {
+	@apply appearance-none bg-transparent border-2 rounded-lg py-2 px-5 text-blue-600 font-medium outline-none cursor-pointer transition-all hover:border-gray-300;
+}
 
-	@media (--screen-xxxl) {
-		max-width: 1704px;
-	}
+
+.post-edit-link {
+	@apply fixed bottom-4 right-4;
+}
+
+a {
+	@apply text-blue-600 transition-all hover:text-red-500;
 }

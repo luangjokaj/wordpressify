@@ -1,6 +1,9 @@
 
 # Changelog
 
+**v0.2.9-12**
+- 👌 IMPROVE: Default theme.
+
 **v0.2.9-10**
 - 📖 DOC: Improve documentation and website.
 
