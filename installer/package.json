@@ -1,6 +1,6 @@
 {
 	"name": "wordpressify",
-	"version": "0.2.9-22",
+	"version": "0.2.9-23",
 	"description": "A build system designed to automate your WordPress development workflow.",
 	"keywords": [
 		"babel",
@@ -59,9 +59,9 @@
 		"gulp-uglify": "^3.0.2",
 		"gulp-vinyl-zip": "^2.2.1",
 		"jquery": "^3.5.1",
-		"postcss": "^8.1.14",
+		"postcss": "^8.2.1",
 		"postcss-easy-import": "^3.0.0",
-		"postcss-mixins": "^7.0.1",
+		"postcss-mixins": "^7.0.2",
 		"postcss-preset-env": "^6.7.0",
 		"stylelint": "^13.8.0",
 		"tailwindcss": "^2.0.1"
