@@ -98,6 +98,7 @@ If you're on Linux **make sure that you can [manage Docker as a non-root user](h
     └── .babelrc                 # Babel configuration
     └── .env.in                  # Environment variables
     └── .gitignore               # Git ignored files
+    └── .editorconfig            # Editor code styles
     └── .stylelintrc             # Stylelint configuration
     └── docker-compose.yml       # Docker configuration
     └── Dockerfile.in            # Docker file
