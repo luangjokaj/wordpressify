@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<div class="pt-5 pb-2 px-5 lg:p-10">	
+<div class="pt4 pb-2 px-4 lg:p-10">	
 	<div class="site-content page">
 		<article class="page">
 			<h1 class="page-title text-xl font-medium"><?php _e('Oops! 404', 'wordpressify'); ?></h1>

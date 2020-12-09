@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<div class="p-5 lg:p-10">	
+<div class="p-4 lg:p-10">	
 	<div class="site-content single">
 		<?php
 		if (have_posts()) :

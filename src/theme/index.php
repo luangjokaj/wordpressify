@@ -2,7 +2,7 @@
 <div class="lg:grid grid-cols-3 gap-4">	
 	<div class="site-content col-span-2 md:border-r md:border-gray-200">
 		<article class="page">
-			<div class="inner p-5 lg:p-10">
+			<div class="inner p-4 lg:p-10">
 				<?php
 					if (have_posts()) :
 						while (have_posts()) :

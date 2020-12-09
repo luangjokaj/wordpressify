@@ -8,7 +8,7 @@
 	<div class="site-content col-span-2 md:border-r md:border-gray-200">
 		<article class="page">
 			<?php if (have_posts()) : ?>
-			<h1 class="page-title p-5 md:p-10 text-5xl border-b font-bold border-gray-200">
+			<h1 class="page-title p-4 md:p-10 text-5xl border-b font-bold border-gray-200">
 			<?php
 				if (is_category()) {
 					single_cat_title();
@@ -29,7 +29,7 @@
 				}
 			?>
 			</h1>
-			<div class="inner inner p-5 lg:p-10 <?php echo $className ?>">
+			<div class="inner inner p-4 lg:p-10 <?php echo $className ?>">
 				<?php
 				while (have_posts()) :
 					the_post();

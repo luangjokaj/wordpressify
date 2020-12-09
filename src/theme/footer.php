@@ -1,4 +1,4 @@
-<footer class="p-5 lg:p-10 footer border-t border-gray-200">
+<footer class="p-4 lg:p-10 footer border-t border-gray-200">
 	<div class="footer-inner">
 		<div class="text-row">
 			<p class="font-medium">

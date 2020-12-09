@@ -13,7 +13,7 @@
 			$separator = ', ';
 			$output = '';
 			if ($categories) : ?>
-				<div class="tags pb-5">
+				<div class="tags pb-4">
 					<?php foreach ($categories as $category) {
 				$output .= '<a href="' . get_category_link($category->term_id) . '" class="text-blue-600 transition-all hover:text-red-500">' . $category->cat_name . '</a>' . $separator;
 			}

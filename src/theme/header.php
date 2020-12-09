@@ -8,7 +8,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-<header id="header" class="header p-5 lg:p-10 border-b border-gray-200">
+<header id="header" class="header p-4 lg:p-10 border-b border-gray-200">
 	<a href="/">
 		<img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" alt="Logo 🌈">
 	</a>

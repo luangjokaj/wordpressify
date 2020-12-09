@@ -7,7 +7,7 @@
 >
 	<div class="inner-content flex">
 		<input
-			class="outline-none border-2 rounded-lg py-2 px-5 mr-4 border-gray-200"
+			class="outline-none border-2 rounded-lg py-2 px-4 mr-4 border-gray-200"
 			type="text"
 			value=""
 			name="s"
