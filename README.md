@@ -49,7 +49,7 @@ https://www.wordpressify.co/
 |💽| MariaDB Database |
 |🔥| Hot Reload & CSS Injection|
 |🎨| PostCSS & Next Generation CSS|
-|💨| TailwindCSS|
+|💨| Tailwind CSS|
 |⚙| Babel 7 - ES6 JavaScript|
 |✂️| Source Maps|
 |🎒| Code Minification|
