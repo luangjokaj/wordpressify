@@ -31,19 +31,19 @@ module.exports = () => {
 		'Like WordPressify? Check out our other free and open source repositories: \n'
 	);
 	console.log(
-		`	${chalk.yellow('GoPablo →')} https://bit.ly/2Hgkfpy`,
+		`	${chalk.yellow('GoPablo → ')} https://bit.ly/2Hgkfpy`,
 		'\n',
 		`	${chalk.gray('GoPablo is a static site generator.')}`,
 		'\n',
-		`	${chalk.yellow('FuzzyMail →')} https://bit.ly/2P3Irlr`,
+		`	${chalk.yellow('FuzzyMail → ')} https://bit.ly/2P3Irlr`,
 		'\n',
 		`	${chalk.gray('Email template generator. Making emails fun again.')}`,
 		'\n',
-		`	${chalk.yellow('ReactFondue →')} https://bit.ly/2OXgStR`,
+		`	${chalk.yellow('ReactFondue → ')} https://bit.ly/2OXgStR`,
 		'\n',
 		`	${chalk.gray('SEO optimized React applications with SSR.')}`,
 		'\n',
-		`	${chalk.green('Powered by Riangle →')} https://bit.ly/2P5i26I`,
+		`	${chalk.green('Powered by Riangle → ')} https://bit.ly/2P5i26I`,
 		'\n',
 		'\n',
 		`	${chalk.red(
