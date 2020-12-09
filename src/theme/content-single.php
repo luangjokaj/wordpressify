@@ -1,7 +1,7 @@
 <article class="single">
 	<h1 class="single-title"><?php the_title(); ?></h1>
 	<?php if (!is_single()) : ?>
-		<p class="post-info">
+		<p class="post-info pb-4">
 			<span class="date">
 				<?php the_time('F j, Y g:i a'); ?>
 			</span>

@@ -3,10 +3,10 @@
 		<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('small-thumbnail'); ?></a>
 	</div>
 	<div class="inner-content">
-		<h2 class="item-title text-5xl pb-5 font-bold text-blue-600 transition-all hover:text-red-500">
+		<h2 class="item-title text-5xl pb-4 font-bold text-blue-600 transition-all hover:text-red-500">
 			<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 		</h2>
-		<p class="post-info">
+		<p class="post-info pb-4">
 			<?php echo get_the_excerpt(); ?>
 			<?php
 			$categories = get_the_category();
