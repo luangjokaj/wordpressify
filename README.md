@@ -503,7 +503,6 @@ This will **immediately** remove the default styles and leave a minimal viable t
 **ERROR: Bind for 0.0.0.0:3020 failed: port is already allocated**
 - Make sure there are no other Docker containers running the same port `3020`. You can stop all Docker containers with the command: `docker stop $(docker ps -a -q)` and try again.
 
-
 ---
 - [Changelog](CHANGELOG.md)
 - License: [MIT](LICENSE)
