@@ -1,6 +1,10 @@
 
 # Changelog
 
+**v0.2.9-18**
+- 🐛 FIX: Missing `.editorconfig` from installation.
+- 👌 IMPROVE: Code style consistency.
+
 **v0.2.9-17**
 - 👌 IMPROVE: Default theme.
 

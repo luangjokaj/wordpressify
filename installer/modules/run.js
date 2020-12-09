@@ -26,8 +26,7 @@ module.exports = async () => {
 		refname = refname[refname.length - 1];
 		upstreamUrl = `https://raw.githubusercontent.com/${process.env.WPFY_GH_REPO}/${refname}`;
 	} else {
-		upstreamUrl =
-			`https://raw.githubusercontent.com/luangjokaj/wordpressify/v${version}`;
+		upstreamUrl = `https://raw.githubusercontent.com/luangjokaj/wordpressify/v${version}`;
 	}
 
 	// Files.
@@ -36,6 +35,7 @@ module.exports = async () => {
 		`${upstreamUrl}/.gitignore`,
 		`${upstreamUrl}/.stylelintrc`,
 		`${upstreamUrl}/.env.in`,
+		`${upstreamUrl}/.editorconfig`,
 		`${upstreamUrl}/LICENSE`,
 		`${upstreamUrl}/README.md`,
 		`${upstreamUrl}/gulpfile.js`,
@@ -80,12 +80,14 @@ module.exports = async () => {
 	];
 
 	// Organise file structure
-	const dotFiles = ['.babelrc', '.gitignore', '.stylelintrc', '.env.in'];
-	const cssFiles = [
-		'style.css',
-		'variables.css',
-		'wordpressify.css',
+	const dotFiles = [
+		'.babelrc',
+		'.gitignore',
+		'.stylelintrc',
+		'.env.in',
+		'.editorconfig',
 	];
+	const cssFiles = ['style.css', 'variables.css', 'wordpressify.css'];
 	const jsFiles = ['main.js'];
 	const imgFiles = ['logo.svg'];
 	const themeFiles = [
@@ -107,21 +109,15 @@ module.exports = async () => {
 		'sidebar.php',
 		'single.php',
 	];
-	const configFiles = [
-		'php.ini.in'
-	];
+	const configFiles = ['php.ini.in'];
 	const nginxFiles = [
 		'welcome.html',
 		'fastcgi.conf',
 		'mime.types',
 		'nginx.conf',
 	];
-	const sitesEnabledFiles = [
-		'wordpress',
-	];
-	const snippetsFiles = [
-		'fastcgi-php.conf',
-	];
+	const sitesEnabledFiles = ['wordpress'];
+	const snippetsFiles = ['fastcgi-php.conf'];
 
 	// Start.
 	console.log('\n');
@@ -196,8 +192,10 @@ module.exports = async () => {
 				)
 			);
 			sitesEnabledFiles.map((x) =>
-				fs.rename(`${theCWD}/${x}`, `${theCWD}/config/nginx/sites-enabled/${x}`, (err) =>
-					handleError(err)
+				fs.rename(
+					`${theCWD}/${x}`,
+					`${theCWD}/config/nginx/sites-enabled/${x}`,
+					(err) => handleError(err)
 				)
 			);
 			snippetsFiles.map((x) =>
