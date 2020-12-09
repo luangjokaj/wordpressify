@@ -197,9 +197,7 @@ function Reload(done) {
 }
 
 function copyWelcomeIndex() {
-	return src('./config/nginx/welcome.html').pipe(
-		dest('./build/wordpress')
-	);
+	return src('./config/nginx/welcome.html').pipe(dest('./build/wordpress'));
 }
 
 function copyThemeDev() {
