@@ -13,13 +13,20 @@
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
+<<<<<<< HEAD
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
+=======
+	<meta charset="<?php bloginfo('charset'); ?>" />
+	<meta name="author" content="Luan Gjokaj, and WordPressify contributors" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+>>>>>>> dccefe0cdc4e872e807b1e31ef9207d9996d665f
 	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
+<<<<<<< HEAD
 	<?php wp_body_open(); ?>
 <div id="page" class="site">
 
@@ -82,3 +89,11 @@
 	<div id="content" class="site-content">
 		<div class="container-fluid">
 			<div class="row">
+=======
+<header id="header" class="header p-4 lg:p-10 border-b border-gray-200">
+	<a href="/">
+		<img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" alt="Logo 🌈">
+	</a>
+	<?php edit_post_link('Edit', '<p class="edit-button">', '</p>'); ?>
+</header>
+>>>>>>> dccefe0cdc4e872e807b1e31ef9207d9996d665f

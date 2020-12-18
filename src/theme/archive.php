@@ -1,53 +1,48 @@
-<?php
-/**
- * The template for displaying archive pages
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package a_starting_point
- */
-
-get_header();
+<?php get_header();
+	$className = '';
+	if (!is_search_has_results()) {
+		$className = 'no-result';
+	}
 ?>
-
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
-
-		<?php if ( have_posts() ) : ?>
-
-			<header class="page-header">
-				<?php
-				the_archive_title( '<h1 class="page-title">', '</h1>' );
-				the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
-
+<div class="lg:grid grid-cols-3 gap-4">	
+	<div class="site-content col-span-2 md:border-r md:border-gray-200">
+		<article class="page">
+			<?php if (have_posts()) : ?>
+			<h1 class="page-title p-4 md:p-10 text-5xl border-b font-bold border-gray-200">
 			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
-
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
-
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
-		?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
-<?php
-get_sidebar();
-get_footer();
+				if (is_category()) {
+					single_cat_title();
+				} elseif (is_tag()) {
+					single_tag_title();
+				} elseif (is_author()) {
+					the_post();
+					echo 'Author Archives: ' . get_the_author();
+					rewind_posts();
+				} elseif (is_day()) {
+					echo 'Daily Archives: ' . get_the_date();
+				} elseif (is_month()) {
+					echo 'Monthly Archives: ' . get_the_date('F Y');
+				} elseif (is_year()) {
+					echo 'Yearly Archives: ' . get_the_date('Y');
+				} else {
+					echo 'Archives:';
+				}
+			?>
+			</h1>
+			<div class="inner inner p-4 lg:p-10 <?php echo $className ?>">
+				<?php
+				while (have_posts()) :
+					the_post();
+					get_template_part('content', get_post_format());
+					endwhile;
+				else : get_template_part('content', 'none'); endif;
+				?>
+			</div>
+			<div class="pagination side">
+				<?php echo paginate_links(); ?>
+			</div>
+		</article>
+	</div>
+	<?php get_sidebar(); ?>
+</div>
+<?php get_footer(); ?>

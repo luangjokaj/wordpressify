@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 /**
  * The sidebar containing the main widget area
@@ -17,3 +18,10 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 		<?php dynamic_sidebar( 'sidebar-1' ); ?>
 	</div>
 </aside><!-- #secondary -->
+=======
+<div class="side-column px-4 pb-4 lg:p-10">
+	<?php if (is_active_sidebar('sidebar1')) : ?>
+		<?php dynamic_sidebar('sidebar1'); ?>
+	<?php endif; ?>
+</div>
+>>>>>>> dccefe0cdc4e872e807b1e31ef9207d9996d665f

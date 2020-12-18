@@ -26,6 +26,11 @@ Yes, this theme supports the following plugins:
 
 == Changelog ==
 
+= 1.7.2 =
+
+* add css class to the header image tag for easier targeting
+* avoid using the make-col-ready function so that widgets can make use of grid utility classes
+
 = 1.7.1 =
 
 * Update bootstrap and its dependecies (popper.js)

@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 /**
  * A Starting Point functions and definitions
  *
@@ -138,9 +139,17 @@ function a_starting_point_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+=======
+function wordpressify_resources()
+{
+	wp_enqueue_style('style', get_stylesheet_uri());
+	wp_enqueue_script('header_js', get_template_directory_uri() . '/js/header-bundle.js', null, 1.0, false);
+	wp_enqueue_script('footer_js', get_template_directory_uri() . '/js/footer-bundle.js', null, 1.0, true);
+>>>>>>> dccefe0cdc4e872e807b1e31ef9207d9996d665f
 }
 add_action( 'widgets_init', 'a_starting_point_widgets_init' );
 
+<<<<<<< HEAD
 /**
  * Enqueue scripts and styles.
  */
@@ -227,16 +236,60 @@ add_filter( 'wp_nav_menu_args', 'a_starting_point_add_bs_nav_class_to_menus' );
 function a_starting_point_add_bs_link_item_class_to_list_items($classes, $item, $args) {
   $classes[] = 'nav-item';
   return $classes;
+=======
+add_action('wp_enqueue_scripts', 'wordpressify_resources');
+
+function custom_excerpt_length()
+{
+	return 22;
+}
+
+add_filter('excerpt_length', 'custom_excerpt_length');
+
+function wordpressify_setup()
+{
+	add_theme_support('title-tag');
+
+	add_theme_support('post-thumbnails');
+	add_image_size('small-thumbnail', 720, 720, true);
+	add_image_size('square-thumbnail', 80, 80, true);
+	add_image_size('banner-image', 1024, 1024, true);
+}
+
+add_action('after_setup_theme', 'wordpressify_setup');
+
+show_admin_bar(false);
+
+function is_search_has_results()
+{
+	return 0 != $GLOBALS['wp_query']->found_posts;
+>>>>>>> dccefe0cdc4e872e807b1e31ef9207d9996d665f
 }
 add_filter('nav_menu_css_class', 'a_starting_point_add_bs_link_item_class_to_list_items', 1, 3);
 
+<<<<<<< HEAD
 // add the BS nav-link class to all menu links
 function a_starting_point_add_bs_nav_link_class_to_menu_links($atts) {
   $atts['class'] = "nav-link";
   return $atts;
+=======
+function wordpressify_widgets()
+{
+	register_sidebar(
+		[
+			'name' => 'Sidebar',
+			'id' => 'sidebar1',
+			'before_widget' => '<div class="widget-item">',
+			'after_widget' => '</div>',
+			'before_title' => '<h2 class="widget-title">',
+			'after_title' => '</h2>',
+		]
+	);
+>>>>>>> dccefe0cdc4e872e807b1e31ef9207d9996d665f
 }
 add_filter( 'nav_menu_link_attributes', 'a_starting_point_add_bs_nav_link_class_to_menu_links');
 
+<<<<<<< HEAD
 if ( ! function_exists( 'wp_body_open' ) ) :
 	/**
 	 * Fire the wp_body_open action.
@@ -252,3 +305,6 @@ if ( ! function_exists( 'wp_body_open' ) ) :
 		do_action( 'wp_body_open' );
 	}
 endif;
+=======
+add_action('widgets_init', 'wordpressify_widgets');
+>>>>>>> dccefe0cdc4e872e807b1e31ef9207d9996d665f
