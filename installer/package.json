@@ -41,8 +41,8 @@
 	"author": "Luan Gjokaj <luan@riangle.com>",
 	"license": "MIT",
 	"dependencies": {
-		"@babel/core": "^7.12.9",
-		"@babel/preset-env": "^7.12.7",
+		"@babel/core": "^7.12.10",
+		"@babel/preset-env": "^7.12.11",
 		"beeper": "^2.0.0",
 		"browser-sync": "^2.26.13",
 		"cssnano": "^4.1.10",
@@ -64,6 +64,6 @@
 		"postcss-mixins": "^7.0.2",
 		"postcss-preset-env": "^6.7.0",
 		"stylelint": "^13.8.0",
-		"tailwindcss": "^2.0.1"
+		"tailwindcss": "^2.0.2"
 	}
 }
