@@ -12,7 +12,6 @@ const plumber = require('gulp-plumber');
 const postcss = require('gulp-postcss');
 const postCSSMixins = require('postcss-mixins');
 const postcssPresetEnv = require('postcss-preset-env');
-const tailwindcss = require('tailwindcss');
 const sourcemaps = require('gulp-sourcemaps');
 const uglify = require('gulp-uglify');
 const zip = require('gulp-vinyl-zip');
@@ -50,7 +49,6 @@ const pluginsListDev = [
 
 const pluginsListProd = [
 	partialimport,
-	postCSSMixins,
 	postcssPresetEnv({
 		stage: 0,
 		features: {
@@ -59,7 +57,7 @@ const pluginsListProd = [
 			'custom-media': true,
 		},
 	}),
-	tailwindcss,
+	postCSSMixins,
 	require('cssnano')({
 		preset: [
 			'default',
