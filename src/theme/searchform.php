@@ -1,19 +1,19 @@
 <form 
-	class="search-form mb-4"
+	class="search-form"
 	role="search"
 	method="get"
 	id="searchform"
 	action="<?php echo home_url('/'); ?>"
 >
-	<div class="inner-content flex">
+	<div class="flex">
 		<input
-			class="outline-none border-2 rounded-lg py-2 px-4 mr-4 border-gray-200"
 			type="text"
 			value=""
 			name="s"
 			id="s"
 			placeholder="Search"
 		/>
-		<input type="submit" id="searchsubmit" value="Search" />
+		<span class="space size-24 horizontal"></span>
+		<input type="submit" id="searchsubmit" value="Search" class="button secondary" />
 	</div>
 </form>

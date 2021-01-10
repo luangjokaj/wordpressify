@@ -39,7 +39,6 @@ module.exports = async () => {
 		`${upstreamUrl}/LICENSE`,
 		`${upstreamUrl}/README.md`,
 		`${upstreamUrl}/gulpfile.js`,
-		`${upstreamUrl}/tailwind.config.js`,
 		`${upstreamUrl}/docker-compose.yml`,
 		`${upstreamUrl}/Dockerfile.in`,
 		`${upstreamUrl}/installer/package.json`,

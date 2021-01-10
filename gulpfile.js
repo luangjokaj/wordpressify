@@ -37,7 +37,6 @@ PostCSS Plugins
 -------------------------------------------------------------------------------------------------- */
 const pluginsListDev = [
 	partialimport,
-	postCSSMixins,
 	postcssPresetEnv({
 		stage: 0,
 		features: {
@@ -46,7 +45,7 @@ const pluginsListDev = [
 			'custom-media': true,
 		},
 	}),
-	tailwindcss,
+	postCSSMixins,
 ];
 
 const pluginsListProd = [

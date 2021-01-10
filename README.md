@@ -49,7 +49,7 @@ https://www.wordpressify.co/
 |💽| MariaDB Database |
 |🔥| Hot Reload & CSS Injection|
 |🎨| PostCSS & Next Generation CSS|
-|💨| Tailwind CSS|
+|🍒| [Cherry Design System](https://cherry.design)|
 |⚙| Babel 7 - ES6 JavaScript|
 |✂️| Source Maps|
 |🎒| Code Minification|
@@ -269,9 +269,9 @@ Tags: responsive, clean, minimal, modern, documentation
 */
 ```
 
-**TAILWIND CSS**
+**CHERRY DESIGN SYSTEM**
 
-[Tailwind CSS](https://tailwindcss.com/) is a utility-first CSS framework packed with classes like `flex`, `pt-4`, `text-center` and `rotate-90` that can be composed to build any design, directly in your markup. Tailwind comes pre-installed with WordPressify.
+[Cherry](https://cherry.design/) is a minimal CSS framework that helps you organize your work from design to implementation.
 
 ## Sass
 WordPressify is super flexible. You can install Sass and use it as the main CSS preprocessor:

@@ -8,10 +8,7 @@ Description: WordPressify default theme.
 Version: 1.0
 Tags: responsive, clean, minimal, modern, wordpressify
 */
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
 
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import "cherry-postcss/src/cherry.css";
 
-@import './wordpressify';
+@import "./wordpressify";

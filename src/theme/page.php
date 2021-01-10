@@ -1,5 +1,4 @@
 <?php get_header(); ?>
-<div class="p-4 lg:p-10">	
 	<div class="site-content page">
 		<?php
 		if (have_posts()) :
@@ -12,5 +11,4 @@
 			endif;
 			?>
 	</div>
-</div>
 <?php get_footer(); ?>

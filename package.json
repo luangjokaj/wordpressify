@@ -1,6 +1,6 @@
 {
 	"name": "wordpressify",
-	"version": "0.2.9-23",
+	"version": "0.2.9-24",
 	"description": "A build system designed to automate your WordPress development workflow.",
 	"keywords": [
 		"babel",
@@ -34,7 +34,7 @@
 		"commander": "^6.2.1",
 		"download": "^8.0.0",
 		"execa": "^5.0.0",
-		"ora": "^5.1.0",
+		"ora": "^5.2.0",
 		"prompts": "^2.4.0"
 	}
 }
