@@ -1,5 +1,8 @@
 # Changelog
 
+**v0.2.9-26**
+- 🐛 FIX: Remove un-used file.
+
 **v0.2.9-25**
 - 🐛 FIX: Remove un-used import.
 

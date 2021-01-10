@@ -52,7 +52,6 @@ module.exports = async () => {
 		`${upstreamUrl}/config/nginx/snippets/fastcgi-php.conf`,
 
 		`${upstreamUrl}/src/assets/css/style.css`,
-		`${upstreamUrl}/src/assets/css/variables.css`,
 		`${upstreamUrl}/src/assets/css/wordpressify.css`,
 
 		`${upstreamUrl}/src/assets/js/main.js`,
