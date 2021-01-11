@@ -85,7 +85,7 @@ module.exports = async () => {
 		'.env.in',
 		'.editorconfig',
 	];
-	const cssFiles = ['style.css', 'variables.css', 'wordpressify.css'];
+	const cssFiles = ['style.css', 'wordpressify.css'];
 	const jsFiles = ['main.js'];
 	const imgFiles = ['logo.svg'];
 	const themeFiles = [
