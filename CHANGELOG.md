@@ -1,5 +1,8 @@
 # Changelog
 
+**v0.2.9-27**
+- 🐛 FIX: Add back autoprefixer.
+
 **v0.2.9-26**
 - 🐛 FIX: Remove un-used file.
 

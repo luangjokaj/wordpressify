@@ -11,6 +11,7 @@ const partialimport = require('postcss-easy-import');
 const plumber = require('gulp-plumber');
 const postcss = require('gulp-postcss');
 const postCSSMixins = require('postcss-mixins');
+const autoprefixer = require('autoprefixer');
 const postcssPresetEnv = require('postcss-preset-env');
 const sourcemaps = require('gulp-sourcemaps');
 const uglify = require('gulp-uglify');
@@ -45,6 +46,7 @@ const pluginsListDev = [
 		},
 	}),
 	postCSSMixins,
+	autoprefixer,
 ];
 
 const pluginsListProd = [
@@ -58,6 +60,7 @@ const pluginsListProd = [
 		},
 	}),
 	postCSSMixins,
+	autoprefixer,
 	require('cssnano')({
 		preset: [
 			'default',
