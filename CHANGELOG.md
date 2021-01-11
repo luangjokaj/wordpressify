@@ -1,5 +1,8 @@
 # Changelog
 
+**v0.2.9-29**
+- 🐛 FIX: Nginx config for wp query parameters.
+
 **v0.2.9-28**
 - 🐛 FIX: Remove variable.css from download files.
 
