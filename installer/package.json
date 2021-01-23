@@ -43,7 +43,7 @@
 	"dependencies": {
 		"@babel/core": "^7.12.10",
 		"@babel/preset-env": "^7.12.11",
-		"autoprefixer": "^10.2.1",
+		"autoprefixer": "^10.2.3",
 		"beeper": "^2.1.0",
 		"browser-sync": "^2.26.13",
 		"cherry-postcss": "^0.0.1-9",
@@ -65,6 +65,6 @@
 		"postcss-easy-import": "^3.0.0",
 		"postcss-mixins": "^7.0.2",
 		"postcss-preset-env": "^6.7.0",
-		"stylelint": "^13.8.0"
+		"stylelint": "^13.9.0"
 	}
 }

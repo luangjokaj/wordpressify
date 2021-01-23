@@ -31,10 +31,10 @@
 	"license": "MIT",
 	"dependencies": {
 		"chalk": "^4.1.0",
-		"commander": "^6.2.1",
+		"commander": "^7.0.0",
 		"download": "^8.0.0",
 		"execa": "^5.0.0",
-		"ora": "^5.2.0",
+		"ora": "^5.3.0",
 		"prompts": "^2.4.0"
 	}
 }
