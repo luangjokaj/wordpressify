@@ -32,3 +32,10 @@ npm-debug.log
 *.map
 *.log
 xdebug
+
+# Generated for specific a environment. These files are generated from
+# corresponding "*.in" files and they are specific for every machine, so they
+# should not be committed to the repository.
+Dockerfile
+.env
+config/php.ini
