@@ -1,5 +1,8 @@
 # Changelog
 
+**v0.2.9-30**
+- 👌 IMPROVE: Show wp errors in xdebug folder and update .gitignore.
+
 **v0.2.9-29**
 - 🐛 FIX: Nginx config for wp query parameters.
 
