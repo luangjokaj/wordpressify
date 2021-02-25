@@ -22,7 +22,9 @@ services:
       WORDPRESS_DB_PASSWORD: "${DB_PASSWORD}"
       WORDPRESS_DB_NAME: "${DB_NAME}"
       WORDPRESS_DEBUG: 1
-      WORDPRESS_CONFIG_EXTRA: "define( 'DISABLE_WP_CRON', true );"
+      WORDPRESS_CONFIG_EXTRA: |
+        define( 'DISABLE_WP_CRON', true );
+        define( 'WP_DEBUG_LOG', '/var/xdebug/wp-errors.log' );
     networks:
       - "default-network"
     volumes:
