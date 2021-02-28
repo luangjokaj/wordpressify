@@ -25,6 +25,7 @@ services:
       WORDPRESS_CONFIG_EXTRA: |
         define( 'DISABLE_WP_CRON', true );
         define( 'WP_DEBUG_LOG', '/var/xdebug/wp-errors.log' );
+        define( 'FS_DIRECT', true );
     networks:
       - "default-network"
     volumes:
