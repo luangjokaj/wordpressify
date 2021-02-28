@@ -1,6 +1,6 @@
 {
 	"name": "wordpressify",
-	"version": "0.2.9-30",
+	"version": "0.2.9-31",
 	"description": "A build system designed to automate your WordPress development workflow.",
 	"keywords": [
 		"babel",
@@ -41,8 +41,8 @@
 	"author": "Luan Gjokaj <luan@riangle.com>",
 	"license": "MIT",
 	"dependencies": {
-		"@babel/core": "^7.13.1",
-		"@babel/preset-env": "^7.13.5",
+		"@babel/core": "^7.13.8",
+		"@babel/preset-env": "^7.13.8",
 		"autoprefixer": "^10.2.4",
 		"beeper": "^2.1.0",
 		"browser-sync": "^2.26.14",
