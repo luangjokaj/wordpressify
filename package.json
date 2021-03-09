@@ -29,13 +29,27 @@
 	"scripts": {},
 	"author": "Luan Gjokaj <luan@riangle.com>",
 	"license": "MIT",
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	},
+	"lint-staged": {
+		"*.{js,ts,tsx}": [
+			"wp-scripts format-js"
+		]
+	},
 	"dependencies": {
-		"@wordpress/scripts": "^13.0.3",
 		"chalk": "^4.1.0",
 		"commander": "^7.1.0",
 		"download": "^8.0.0",
 		"execa": "^5.0.0",
 		"ora": "^5.3.0",
 		"prompts": "^2.4.0"
+	},
+	"devDependencies": {
+		"@wordpress/scripts": "^13.0.3",
+		"husky": "^4.3.8",
+		"lint-staged": "^10.5.4"
 	}
 }
