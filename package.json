@@ -30,6 +30,7 @@
 	"author": "Luan Gjokaj <luan@riangle.com>",
 	"license": "MIT",
 	"dependencies": {
+		"@wordpress/scripts": "^13.0.3",
 		"chalk": "^4.1.0",
 		"commander": "^7.1.0",
 		"download": "^8.0.0",
