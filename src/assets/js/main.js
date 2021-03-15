@@ -1,3 +1,3 @@
-$(window).on('load', () => {
-	console.log('Loaded!');
-});
+$( window ).on( 'load', () => {
+	console.log( 'Loaded!' );
+} );
