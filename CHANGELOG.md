@@ -1,5 +1,11 @@
 # Changelog
 
+**v0.2.9-32**
+- 📦 NEW: Add formatting to WordPressify.
+
+**v0.2.9-31**
+- 👌 IMPROVE: Use latest version of WordPress and set FS_DIRECT to true.
+
 **v0.2.9-30**
 - 👌 IMPROVE: Show wp errors in xdebug folder and update .gitignore.
 
