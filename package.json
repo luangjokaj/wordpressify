@@ -26,7 +26,9 @@
 	"bin": {
 		"wordpressify": "./installer/index.js"
 	},
-	"scripts": {},
+	"scripts": {
+		"format": "wp-scripts format-js"
+	},
 	"author": "Luan Gjokaj <luan@riangle.com>",
 	"license": "MIT",
 	"husky": {
