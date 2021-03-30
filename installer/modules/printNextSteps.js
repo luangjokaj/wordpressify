@@ -1,10 +1,3 @@
-/**
- * Prints next steps.
- *
- * @param {string} blockName The block name.
- * @param  {string} blockDir The block directory.
- */
-
 const chalk = require( 'chalk' );
 
 module.exports = () => {
@@ -17,7 +10,7 @@ module.exports = () => {
 		'\nInside this directory, you can run this command:'
 	);
 
-	// Scripts.
+	// Scripts
 	console.log(
 		'\n👉 ',
 		' Type',
@@ -28,25 +21,31 @@ module.exports = () => {
 		'	Watches for any changes and reports back any errors in your code.'
 	);
 
-	// Support.
+	// Support
 	console.log( '\n✊ ', chalk.black.bgYellow( ' Support WordPressify \n' ) );
 	console.log(
 		'Like WordPressify? Check out our other free and open source repositories: \n'
 	);
 	console.log(
-		`	${ chalk.yellow( 'GoPablo → ' ) } https://bit.ly/2Hgkfpy`,
+		`	${ chalk.yellow( 'Cherry → ' ) } https://bit.ly/3sEr75P`,
 		'\n',
-		`	${ chalk.gray( 'GoPablo is a static site generator.' ) }`,
+		`	${ chalk.gray( '• A design system to build the web.' ) }`,
+		'\n',
+		`	${ chalk.yellow( 'GoPablo → ' ) } http://bit.ly/2Hgkfpy`,
+		'\n',
+		`	${ chalk.gray( '• Create optimized static websites.' ) }`,
+		'\n',
+		`	${ chalk.yellow( 'WordPressify → ' ) } https://bit.ly/2KTqyQX`,
+		'\n',
+		`	${ chalk.gray( '• Automate your WordPress development workflow.' ) }`,
+		'\n',
+		`	${ chalk.yellow( 'Nextify → ' ) } https://bit.ly/3m4lVWm`,
+		'\n',
+		`	${ chalk.gray( '• React apps using Next.js and Emotion.' ) }`,
 		'\n',
 		`	${ chalk.yellow( 'FuzzyMail → ' ) } https://bit.ly/2P3Irlr`,
 		'\n',
-		`	${ chalk.gray(
-			'Email template generator. Making emails fun again.'
-		) }`,
-		'\n',
-		`	${ chalk.yellow( 'ReactFondue → ' ) } https://bit.ly/2OXgStR`,
-		'\n',
-		`	${ chalk.gray( 'SEO optimized React applications with SSR.' ) }`,
+		`	${ chalk.gray( '• Responsive email template generator.' ) }`,
 		'\n',
 		`	${ chalk.green( 'Powered by Riangle → ' ) } https://bit.ly/2P5i26I`,
 		'\n',
@@ -56,7 +55,7 @@ module.exports = () => {
 		) } https://www.wordpressify.co`
 	);
 
-	// Get started.
+	// Get started
 	console.log( '\n\n🎯 ', chalk.black.bgGreen( ' Get Started → \n' ) );
 	console.log( ' You can start: \n' );
 	console.log(

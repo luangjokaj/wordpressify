@@ -16,7 +16,7 @@ const printNextSteps = require( './printNextSteps.js' );
 const version = require( '../package.json' ).version;
 
 module.exports = async () => {
-	// Init.
+	// Init
 	clearConsole();
 
 	let upstreamUrl = '';
@@ -29,7 +29,7 @@ module.exports = async () => {
 		upstreamUrl = `https://raw.githubusercontent.com/luangjokaj/wordpressify/v${ version }`;
 	}
 
-	// Files.
+	// Files
 	const filesToDownload = [
 		`${ upstreamUrl }/.babelrc`,
 		`${ upstreamUrl }/.gitignore`,
@@ -117,7 +117,7 @@ module.exports = async () => {
 	const sitesEnabledFiles = [ 'wordpress' ];
 	const snippetsFiles = [ 'fastcgi-php.conf' ];
 
-	// Start.
+	// Start
 	console.log( '\n' );
 	console.log(
 		'📦 ',
@@ -137,7 +137,7 @@ module.exports = async () => {
 		) }`
 	);
 
-	// Download.
+	// Download
 	Promise.all(
 		filesToDownload.map( ( x ) => download( x, `${ theCWD }` ) )
 	).then( async () => {
@@ -222,9 +222,8 @@ module.exports = async () => {
 		);
 		spinner.succeed();
 
-		// The npm install.
+		// The npm install
 		spinner.start( '2. Installing npm packages...' );
-		// await execa('npm', ['install', '--silent']);
 		await execa( 'npm', [ 'install' ] );
 		spinner.succeed();
 
@@ -234,7 +233,7 @@ module.exports = async () => {
 		await execa( 'npm', [ 'run', 'env:build' ] );
 		spinner.succeed();
 
-		// Done.
+		// Done
 		printNextSteps();
 	} );
 };
