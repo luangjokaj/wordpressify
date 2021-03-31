@@ -1,7 +1,3 @@
-/**
- * Installation
- */
-
 const fs = require( 'fs' );
 const theCWD = process.cwd();
 const theCWDArray = theCWD.split( '/' );
