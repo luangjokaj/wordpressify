@@ -1,3 +1,13 @@
+#!/usr/bin/env node
+/**
+ * Main Installer for WordPressify
+ * Check the node version if above 8 then run the app.
+ *
+ * Credits:
+ * Ahmad Awais - https://twitter.com/MrAhmadAwais/
+ * Luan Gjokaj - https://twitter.com/luangjokaj/
+ */
+
 'use strict';
 
 const currentNodeVersion = process.versions.node;
