@@ -19,3 +19,26 @@ For help, discussion about best practices, or any other conversation that would 
 For casual chit-chat with others using WordPressify:
 
 [Join the Discord Server](https://discord.com/invite/uQFdMddMZw)
+
+# Core Team
+
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top">
+        <a href="https://github.com/luangjokaj">
+            <img width="150" height="150" src="https://github.com/luangjokaj.png?s=1150">
+        </a>
+        <br>
+        <a href="https://github.com/luangjokaj">Luan Gjokaj</a><br />
+      </td>
+      <td align="center" valign="top">
+        <a href="https://github.com/ribaricplusplus">
+            <img width="150" height="150" src="https://github.com/ribaricplusplus.png?s=1150">
+        </a>
+        <br>
+        <a href="https://github.com/ribaricplusplus">Bruno Ribarić</a>
+      </td>
+     </tr>
+  </tbody>
+</table>
