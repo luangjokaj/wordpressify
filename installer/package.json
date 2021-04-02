@@ -24,10 +24,6 @@
 	],
 	"homepage": "https://www.wordpressify.co",
 	"repository": "https://github.com/luangjokaj/wordpressify",
-	"main": "./installer/index.js",
-	"bin": {
-		"wordpressify": "./installer/index.js"
-	},
 	"scripts": {
 		"env:build": "gulp env:build",
 		"env:start": "gulp env:start",
