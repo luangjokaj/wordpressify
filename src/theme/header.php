@@ -3,7 +3,7 @@
 <head>
 	<meta charset="<?php bloginfo('charset'); ?>" />
 	<meta name="author" content="Luan Gjokaj, and WordPressify contributors" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 	<?php wp_head(); ?>
 </head>
 
