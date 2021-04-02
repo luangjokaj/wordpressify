@@ -2,6 +2,7 @@
 
 **v0.3.0**
 - 📖 DOC: Improve documentation and website.
+- 👌 IMPROVE: Default header viewport meta tag.
 
 **v0.2.9-32**
 - 📦 NEW: Add formatting to WordPressify.
