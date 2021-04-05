@@ -15,19 +15,33 @@
 	}
 }
 
-.site-content,
-.page {
+.page-wrapper,
+.site-content {
 	padding: 20px 0;
 }
 
-.page {
+.page-wrapper {
 	& .item:not(:last-of-type) {
 		padding-bottom: 20px;
 	}
 }
 
+.page-title,
+.single-title {
+	margin: 0 0 20px 0;
+}
+
+.post-info {
+	margin: 10px 0 0 0;
+}
+
+.tags {
+	margin: 0;
+}
+
 .excerpt {
-	padding-top: 20px;
+	padding: 16px 0 0 0;
+	margin: 0;
 }
 
 ul {
@@ -64,7 +78,7 @@ p:empty {
 	margin: 20px 0;
 
 	&:first-of-type {
-		margin-top: 10px;
+		margin-top: 0;
 
 		@media (--screen-lg) {
 			margin: 30px 0;
@@ -80,6 +94,10 @@ p:empty {
 	position: fixed;
 	bottom: 20px;
 	right: 20px;
+}
+
+input[type="text"] {
+	min-width: 0;
 }
 
 .footer {

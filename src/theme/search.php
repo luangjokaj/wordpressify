@@ -7,11 +7,10 @@
 <div class="container">
 	<div class="row gutter-medium">
 		<div class="col-xs-12 col-lg-9 main-content">
-			<div class="page">
+			<div class="page-wrapper">
 				<h2 class="page-title">
 					Results
 				</h2>
-				<br />
 				<div class="inner <?php echo $className ?>">
 					<?php
 						if (have_posts()) :

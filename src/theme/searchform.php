@@ -13,7 +13,7 @@
 			id="s"
 			placeholder="Search"
 		/>
-		<span class="space size-24 horizontal"></span>
+		<span class="space size-16 horizontal"></span>
 		<input type="submit" id="searchsubmit" value="Search" class="button secondary" />
 	</div>
 </form>

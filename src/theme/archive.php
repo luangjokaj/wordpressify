@@ -7,7 +7,7 @@
 <div class="container">
 	<div class="row gutter-medium">
 		<div class="col-xs-12 col-lg-9 main-content">
-			<article class="page">
+			<article class="page-wrapper">
 				<?php if (have_posts()) : ?>
 				<h1 class="page-title">
 				<?php
