@@ -93,8 +93,12 @@ function setupEnvironment( done ) {
 		let contents = fs.readFileSync( './Dockerfile.in', {
 			encoding: 'utf8',
 		} );
-		contents = contents.replace( /\{\{UID\}\}/g, process.getuid() );
-		contents = contents.replace( /\{\{GID\}\}/g, process.getgid() );
+		contents = process.platform === 'win32'
+			? contents.replace( /\{\{UID\}\}/g, execSync('id -u').toString().trim() )
+			: contents.replace( /\{\{UID\}\}/g, process.getuid() );
+		contents = process.platform === 'win32'
+			? contents.replace( /\{\{GID\}\}/g, execSync('id -g').toString().trim() )
+			: contents.replace( /\{\{GID\}\}/g, process.getgid() );
 		fs.writeFileSync( './Dockerfile', contents );
 	}
 	if ( ! fs.existsSync( './config/php.ini' ) ) {
@@ -114,8 +118,12 @@ function setupEnvironment( done ) {
 	}
 	if ( ! fs.existsSync( './.env' ) ) {
 		let contents = fs.readFileSync( './.env.in', { encoding: 'utf8' } );
-		contents = contents.replace( /\{\{WPFY_UID\}\}/g, process.getuid() );
-		contents = contents.replace( /\{\{WPFY_GID\}\}/g, process.getgid() );
+		contents = process.platform === 'win32'
+			? contents.replace( /\{\{WPFY_UID\}\}/g, execSync('id -u').toString().trim() )
+			: contents.replace( /\{\{WPFY_UID\}\}/g, process.getuid() );
+		contents = process.platform === 'win32'
+			? contents.replace( /\{\{WPFY_GID\}\}/g, execSync('id -g').toString().trim() )
+			: contents.replace( /\{\{WPFY_GID\}\}/g, process.getgid() );
 		fs.writeFileSync( './.env', contents );
 	}
 	done();
