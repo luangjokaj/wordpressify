@@ -58,7 +58,7 @@
 		"gulp-uglify": "^3.0.2",
 		"gulp-vinyl-zip": "^2.2.1",
 		"jquery": "^3.6.0",
-		"postcss": "^8.2.9",
+		"postcss": "^8.2.10",
 		"postcss-easy-import": "^3.0.0",
 		"postcss-mixins": "^7.0.3",
 		"postcss-preset-env": "^6.7.0",
