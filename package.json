@@ -47,13 +47,13 @@
 		"chalk": "^4.1.1",
 		"commander": "^7.2.0",
 		"download": "^8.0.0",
-		"execa": "^5.0.0",
-		"ora": "^5.4.0",
+		"execa": "^5.1.1",
+		"ora": "^5.4.1",
 		"prompts": "^2.4.1"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^15.0.1",
+		"@wordpress/scripts": "^16.1.2",
 		"husky": "^6.0.0",
-		"lint-staged": "^10.5.4"
+		"lint-staged": "^11.0.0"
 	}
 }
