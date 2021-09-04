@@ -1,6 +1,6 @@
 {
 	"name": "wordpressify",
-	"version": "0.3.0-1",
+	"version": "0.3.0-2",
 	"description": "Automate your WordPress development workflow.",
 	"keywords": [
 		"babel",
@@ -25,11 +25,13 @@
 	"homepage": "https://www.wordpressify.co",
 	"repository": "https://github.com/luangjokaj/wordpressify",
 	"main": "./installer/index.js",
+	"type": "module",
+	"node": "^12.20.0 || ^14.13.1 || >=16.0.0",
 	"bin": {
 		"wordpressify": "./installer/index.js"
 	},
 	"scripts": {
-		"format": "wp-scripts format-js"
+		"format": "wp-scripts format"
 	},
 	"author": "Luan Gjokaj <luan@riangle.com>",
 	"license": "MIT",
@@ -40,20 +42,20 @@
 	},
 	"lint-staged": {
 		"*.{js,ts,tsx}": [
-			"wp-scripts format-js"
+			"wp-scripts format"
 		]
 	},
 	"dependencies": {
-		"chalk": "^4.1.1",
-		"commander": "^7.2.0",
+		"chalk": "^4.1.2",
+		"commander": "^8.1.0",
 		"download": "^8.0.0",
 		"execa": "^5.1.1",
-		"ora": "^5.4.1",
+		"ora": "^6.0.0",
 		"prompts": "^2.4.1"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^16.1.2",
-		"husky": "^6.0.0",
-		"lint-staged": "^11.0.0"
+		"@wordpress/scripts": "^18.0.0",
+		"husky": "^7.0.2",
+		"lint-staged": "^11.1.2"
 	}
 }
