@@ -24,7 +24,7 @@
 	],
 	"homepage": "https://www.wordpressify.co",
 	"repository": "https://github.com/luangjokaj/wordpressify",
-	"main": "./installer/index.js",
+	"exports": "./installer/index.js",
 	"type": "module",
 	"node": "^12.20.0 || ^14.13.1 || >=16.0.0",
 	"bin": {
