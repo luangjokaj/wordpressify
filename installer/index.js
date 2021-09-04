@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Main Installer for WordPressify
- * Check the node version if above 8 then run the app.
+ * Check the node version if above 12 then run the app.
  *
  * Credits:
  * Ahmad Awais - https://twitter.com/MrAhmadAwais/
