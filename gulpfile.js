@@ -1,27 +1,31 @@
-const { gulp, series, parallel, dest, src, watch } = require('gulp');
-const babel = require('gulp-babel');
-const beeper = require('beeper');
-const browserSync = require('browser-sync');
-const concat = require('gulp-concat');
-const del = require('del');
-const log = require('fancy-log');
-const fs = require('fs');
-const imagemin = require('gulp-imagemin');
-const partialimport = require('postcss-easy-import');
-const plumber = require('gulp-plumber');
-const postcss = require('gulp-postcss');
-const postCSSMixins = require('postcss-mixins');
-const autoprefixer = require('autoprefixer');
-const postcssPresetEnv = require('postcss-preset-env');
-const sourcemaps = require('gulp-sourcemaps');
-const uglify = require('gulp-uglify');
-const zip = require('gulp-vinyl-zip');
-const dotenv = require('dotenv');
-const path = require('path');
-const { execSync } = require('child_process');
+import pkg from 'gulp';
+import babel from 'gulp-babel';
+import beeper from 'beeper';
+import browserSync from 'browser-sync';
+import concat from 'gulp-concat';
+import del from 'del';
+import log from 'fancy-log';
+import fs from 'fs';
+import imagemin from 'gulp-imagemin';
+import partialimport from 'postcss-easy-import';
+import plumber from 'gulp-plumber';
+import postcss from 'gulp-postcss';
+import postCSSMixins from 'postcss-mixins';
+import autoprefixer from 'autoprefixer';
+import postcssPresetEnv from 'postcss-preset-env';
+import sourcemaps from 'gulp-sourcemaps';
+import uglify from 'gulp-uglify';
+import zip from 'gulp-vinyl-zip';
+import dotenv from 'dotenv';
+import path from 'path';
+import { execSync } from 'child_process';
+import cssnano from 'cssnano';
+
+const { gulp, series, parallel, dest, src, watch } = pkg;
 
 dotenv.config();
 let envStart = series(setupEnvironment, startContainers);
+envStart.displayName = 'env:start';
 
 // gulp done function for devServer so that the completion can be
 // signaled from event handlers
@@ -61,7 +65,7 @@ const pluginsListProd = [
 	}),
 	postCSSMixins,
 	autoprefixer,
-	require('cssnano')({
+	cssnano({
 		preset: [
 			'default',
 			{
@@ -170,6 +174,9 @@ function stopContainers(done) {
 	}
 }
 
+stopContainers.displayName = 'env:stop';
+export { stopContainers };
+
 async function cleanEnvironment(done) {
 	execSync('docker-compose down', { stdio: 'inherit' });
 	await del(['build', 'Dockerfile', 'xdebug', 'config/php.ini', '.env']);
@@ -187,16 +194,20 @@ function restartWordPress(done) {
 	execSync('docker-compose restart wordpress');
 	done();
 }
+restartWordPress.displayName = 'env:restart';
+export { restartWordPress };
 
-exports['env:build'] = series(setupEnvironment, buildContainers);
-exports['env:start'] = envStart;
-exports['env:stop'] = stopContainers;
-exports['env:rebuild'] = series(
+const envBuild = series(setupEnvironment, buildContainers);
+envBuild.displayName = 'env:build';
+export { envBuild };
+
+const envRebuild = series(
 	cleanEnvironment,
 	setupEnvironment,
 	rebuildContainers
 );
-exports['env:restart'] = restartWordPress;
+envRebuild.displayName = 'env:rebuild';
+export { envRebuild };
 
 /* -------------------------------------------------------------------------------------------------
 Development Tasks
@@ -290,7 +301,7 @@ function pluginsDev() {
 	);
 }
 
-exports.dev = series(
+const dev = series(
 	envStart,
 	registerCleanup,
 	copyWelcomeIndex,
@@ -303,6 +314,9 @@ exports.dev = series(
 	pluginsDev,
 	devServer
 );
+dev.displayName = 'dev';
+
+export { dev };
 
 /* -------------------------------------------------------------------------------------------------
 Production Tasks
@@ -360,11 +374,7 @@ function pluginsProd() {
 function processImages() {
 	return src('./src/assets/img/**')
 		.pipe(plumber({ errorHandler: onError }))
-		.pipe(
-			imagemin([imagemin.svgo({ plugins: [{ removeViewBox: true }] })], {
-				verbose: true,
-			})
-		)
+		.pipe(imagemin())
 		.pipe(dest('./dist/themes/' + themeName + '/img'));
 }
 
@@ -379,7 +389,7 @@ function zipProd() {
 		});
 }
 
-exports.prod = series(
+const prod = series(
 	cleanProd,
 	copyThemeProd,
 	copyFontsProd,
@@ -390,6 +400,8 @@ exports.prod = series(
 	processImages,
 	zipProd
 );
+prod.displayName = 'prod';
+export { prod };
 
 /* -------------------------------------------------------------------------------------------------
 Utility Tasks
@@ -415,7 +427,8 @@ function Backup() {
 	}
 }
 
-exports.backup = Backup;
+Backup.displayName = 'backup';
+export { Backup };
 
 /* -------------------------------------------------------------------------------------------------
 Messages
@@ -430,17 +443,13 @@ const buildNotFound =
 	' ⚠️　- You need to build the project first. Run the command: $ \x1b[1mnpm run env:start\x1b[0m';
 const filesGenerated =
 	'Your ZIP template file was generated in: \x1b[1m' +
-	__dirname +
 	'/dist/' +
 	themeName +
 	'.zip\x1b[0m - ✅';
 const pluginsGenerated =
-	'Plugins are generated in: \x1b[1m' +
-	__dirname +
-	'/dist/plugins/\x1b[0m - ✅';
+	'Plugins are generated in: \x1b[1m' + '/dist/plugins/\x1b[0m - ✅';
 const backupsGenerated =
 	'Your backup was generated in: \x1b[1m' +
-	__dirname +
 	'/backups/' +
 	date +
 	'.zip\x1b[0m - ✅';
