@@ -45,8 +45,8 @@ const pluginsListDev = [
 		stage: 0,
 		features: {
 			'nesting-rules': true,
-			'color-mod-function': true,
-			'custom-media': true,
+			'color-function': true,
+			'custom-media-queries': true,
 		},
 	}),
 	postCSSMixins,
@@ -59,8 +59,8 @@ const pluginsListProd = [
 		stage: 0,
 		features: {
 			'nesting-rules': true,
-			'color-mod-function': true,
-			'custom-media': true,
+			'color-function': true,
+			'custom-media-queries': true,
 		},
 	}),
 	postCSSMixins,
