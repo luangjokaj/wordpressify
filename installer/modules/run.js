@@ -4,9 +4,9 @@
 
 import fs from 'fs';
 import ora from 'ora';
-import execa from 'execa';
 import chalk from 'chalk';
 import download from 'download';
+import { execa } from 'execa';
 import { createRequire } from 'module';
 import { handleError } from './handleError.js';
 import { clearConsole } from './clearConsole.js';

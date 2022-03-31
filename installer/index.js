@@ -10,7 +10,7 @@
 
 import prompts from 'prompts';
 import chalk from 'chalk';
-import program from 'commander';
+import { program } from 'commander';
 import { createRequire } from 'module';
 import { run } from './modules/run.js';
 

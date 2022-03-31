@@ -1,6 +1,6 @@
 {
 	"name": "wordpressify",
-	"version": "0.3.0-5",
+	"version": "0.3.0-6",
 	"description": "Automate your WordPress development workflow.",
 	"keywords": [
 		"babel",
@@ -46,16 +46,16 @@
 		]
 	},
 	"dependencies": {
-		"chalk": "^4.1.2",
-		"commander": "^8.2.0",
+		"chalk": "^5.0.1",
+		"commander": "^9.1.0",
 		"download": "^8.0.0",
-		"execa": "^5.1.1",
-		"ora": "^6.0.0",
-		"prompts": "^2.4.1"
+		"execa": "^6.1.0",
+		"ora": "^6.1.0",
+		"prompts": "^2.4.2"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^18.0.1",
-		"husky": "^7.0.2",
-		"lint-staged": "^11.1.2"
+		"@wordpress/scripts": "^22.3.0",
+		"husky": "^7.0.4",
+		"lint-staged": "^12.3.7"
 	}
 }
