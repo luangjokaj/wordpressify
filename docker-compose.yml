@@ -11,6 +11,8 @@ services:
             - 'default-network'
         volumes:
             - 'persistent_db:/var/lib/mysql'
+        ports:
+            '3306:3306'
     wordpress:
         user: '${WPFY_UID}:${WPFY_GID}'
         build: .
