@@ -49,8 +49,9 @@ services:
             - .env
         volumes:
             - './src:/usr/src/app/src'
-            - './build:/usr/src/app/build'
             - './dist:/usr/src/app/dist'
+            - './build:/usr/src/app/build'
+            - './backups:/usr/src/app/backups'
         depends_on:
             - 'webserver'
         command: npm run dev

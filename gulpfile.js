@@ -84,13 +84,6 @@ function registerCleanup(done) {
 	done();
 }
 
-async function envRebuild(done) {
-	await del(['build', 'xdebug', 'config/php.ini', '.env']);
-	done();
-}
-envRebuild.displayName = 'env:rebuild';
-export { envRebuild };
-
 /* -------------------------------------------------------------------------------------------------
 Development Tasks
 -------------------------------------------------------------------------------------------------- */
@@ -121,10 +114,6 @@ function devServer() {
 function Reload(done) {
 	browserSync.reload();
 	done();
-}
-
-function copyWelcomeIndex() {
-	return src('./installer/welcome.html').pipe(dest('./build/wordpress'));
 }
 
 function copyThemeDev() {
@@ -191,7 +180,6 @@ function pluginsDev() {
 
 const dev = series(
 	registerCleanup,
-	copyWelcomeIndex,
 	copyThemeDev,
 	copyImagesDev,
 	copyFontsDev,
@@ -209,7 +197,7 @@ export { dev };
 Production Tasks
 -------------------------------------------------------------------------------------------------- */
 async function cleanProd() {
-	await del(['./dist']);
+	await del(['./dist/*/']);
 }
 
 function copyThemeProd() {
@@ -296,7 +284,6 @@ Utility Tasks
 const onError = (err) => {
 	beeper();
 	log(wpFy + ' - ' + errorMsg + ' ' + err.toString());
-	this.emit('end');
 };
 
 function Backup() {
