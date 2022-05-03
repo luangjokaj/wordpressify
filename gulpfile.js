@@ -17,19 +17,11 @@ import sourcemaps from 'gulp-sourcemaps';
 import uglify from 'gulp-uglify';
 import zip from 'gulp-vinyl-zip';
 import dotenv from 'dotenv';
-import path from 'path';
-import { execSync } from 'child_process';
 import cssnano from 'cssnano';
 
-const { gulp, series, parallel, dest, src, watch } = pkg;
+const { series, dest, src, watch } = pkg;
 
 dotenv.config();
-let envStart = series(setupEnvironment, startContainers);
-envStart.displayName = 'env:start';
-
-// gulp done function for devServer so that the completion can be
-// signaled from event handlers
-let devServerDone;
 
 /* -------------------------------------------------------------------------------------------------
 Theme Name
@@ -79,147 +71,43 @@ const pluginsListProd = [
 Header & Footer JavaScript Boundles
 -------------------------------------------------------------------------------------------------- */
 const headerJS = ['./node_modules/jquery/dist/jquery.js'];
-
 const footerJS = ['./src/assets/js/**'];
 
 /* -------------------------------------------------------------------------------------------------
 Environment Tasks
 -------------------------------------------------------------------------------------------------- */
-function setupEnvironment(done) {
-	if (!fs.existsSync('./build')) {
-		fs.mkdirSync('./build');
-		fs.mkdirSync('./build/wordpress');
-	}
-	if (!fs.existsSync('./xdebug')) {
-		fs.mkdirSync('./xdebug');
-	}
-	if (!fs.existsSync('./Dockerfile')) {
-		let contents = fs.readFileSync('./Dockerfile.in', {
-			encoding: 'utf8',
-		});
-		contents =
-			process.platform === 'win32'
-				? contents.replace(
-						/\{\{UID\}\}/g,
-						execSync('id -u').toString().trim()
-				  )
-				: contents.replace(/\{\{UID\}\}/g, process.getuid());
-		contents =
-			process.platform === 'win32'
-				? contents.replace(
-						/\{\{GID\}\}/g,
-						execSync('id -g').toString().trim()
-				  )
-				: contents.replace(/\{\{GID\}\}/g, process.getgid());
-		fs.writeFileSync('./Dockerfile', contents);
-	}
-	if (!fs.existsSync('./config/php.ini')) {
-		let contents = fs.readFileSync('./config/php.ini.in', {
-			encoding: 'utf8',
-		});
-		// If you're on Linux, you might have to modify the IP address 172.29.0.1 - See README
-		let replacement =
-			process.platform === 'win32' || process.platform === 'darwin'
-				? 'host.docker.internal'
-				: '172.29.0.1';
-		contents = contents.replace(/\{\{XDEBUG_CLIENT_HOST\}\}/g, replacement);
-		fs.writeFileSync('./config/php.ini', contents);
-	}
-	if (!fs.existsSync('./.env')) {
-		let contents = fs.readFileSync('./.env.in', { encoding: 'utf8' });
-		contents =
-			process.platform === 'win32'
-				? contents.replace(
-						/\{\{WPFY_UID\}\}/g,
-						execSync('id -u').toString().trim()
-				  )
-				: contents.replace(/\{\{WPFY_UID\}\}/g, process.getuid());
-		contents =
-			process.platform === 'win32'
-				? contents.replace(
-						/\{\{WPFY_GID\}\}/g,
-						execSync('id -g').toString().trim()
-				  )
-				: contents.replace(/\{\{WPFY_GID\}\}/g, process.getgid());
-		fs.writeFileSync('./.env', contents);
-	}
-	done();
-}
-
-function startContainers(done) {
-	execSync('docker-compose up -d', { stdio: 'inherit' });
-	done();
-}
 
 function registerCleanup(done) {
-	process.on('exit', stopContainers);
 	process.on('SIGINT', () => {
-		if (typeof devServerDone === 'function') {
-			devServerDone();
-		}
 		process.exit(0);
 	});
 	done();
 }
 
-function buildContainers(done) {
-	execSync('docker-compose up --build --no-start', { stdio: 'inherit' });
+async function envRebuild(done) {
+	await del(['build', 'xdebug', 'config/php.ini', '.env']);
 	done();
 }
-
-function stopContainers(done) {
-	execSync('docker-compose down', { stdio: 'inherit' });
-	if (typeof done === 'function') {
-		done();
-	}
-}
-
-stopContainers.displayName = 'env:stop';
-export { stopContainers };
-
-async function cleanEnvironment(done) {
-	execSync('docker-compose down', { stdio: 'inherit' });
-	await del(['build', 'Dockerfile', 'xdebug', 'config/php.ini', '.env']);
-	done();
-}
-
-function rebuildContainers(done) {
-	execSync('docker-compose up -d --build --force-recreate', {
-		stdio: 'inherit',
-	});
-	done();
-}
-
-function restartWordPress(done) {
-	execSync('docker-compose restart wordpress');
-	done();
-}
-restartWordPress.displayName = 'env:restart';
-export { restartWordPress };
-
-const envBuild = series(setupEnvironment, buildContainers);
-envBuild.displayName = 'env:build';
-export { envBuild };
-
-const envRebuild = series(
-	cleanEnvironment,
-	setupEnvironment,
-	rebuildContainers
-);
 envRebuild.displayName = 'env:rebuild';
 export { envRebuild };
 
 /* -------------------------------------------------------------------------------------------------
 Development Tasks
 -------------------------------------------------------------------------------------------------- */
-function devServer(done) {
-	devServerDone = done;
+function devServer() {
 	browserSync({
-		logPrefix: '🎈 WordPressify',
-		proxy: `127.0.0.1:${process.env.SERVER_PORT}`,
-		host: '127.0.0.1',
-		port: `${process.env.PROXY_PORT}`,
-		open: 'local',
+		logPrefix: '🐳 WordPressify',
+		proxy: {
+			target: `webserver:8080`,
+		},
+		host: 'localhost',
+		port: parseInt(process.env.PROXY_PORT),
+		notify: false,
+		open: false,
+		logConnections: true,
+		socket: {
+			domain: `localhost:${parseInt(process.env.PROXY_PORT)}`,
+		}
 	});
 
 	watch('./src/assets/css/**/*.css', stylesDev);
@@ -236,7 +124,7 @@ function Reload(done) {
 }
 
 function copyWelcomeIndex() {
-	return src('./config/nginx/welcome.html').pipe(dest('./build/wordpress'));
+	return src('./installer/welcome.html').pipe(dest('./build/wordpress'));
 }
 
 function copyThemeDev() {
@@ -302,7 +190,6 @@ function pluginsDev() {
 }
 
 const dev = series(
-	envStart,
 	registerCleanup,
 	copyWelcomeIndex,
 	copyThemeDev,

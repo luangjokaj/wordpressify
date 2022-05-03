@@ -1,6 +1,6 @@
 {
 	"name": "wordpressify",
-	"version": "0.3.0-6",
+	"version": "0.4.0",
 	"description": "Automate your WordPress development workflow.",
 	"keywords": [
 		"babel",
@@ -22,7 +22,7 @@
 		"docker",
 		"cherry"
 	],
-	"homepage": "https://www.wordpressify.co",
+	"homepage": "https://www.wordpressify.co/",
 	"repository": "https://github.com/luangjokaj/wordpressify",
 	"exports": "./installer/index.js",
 	"type": "module",
@@ -34,6 +34,21 @@
 		"format": "wp-scripts format"
 	},
 	"author": "Luan Gjokaj <luan@riangle.com>",
+	"contributors": [
+		{
+			"name": "Luan Gjokaj",
+			"email": "luan@riangle.com",
+			"url": "https://www.riangle.com/"
+		},
+		{
+			"name": "Bruno Ribarić",
+			"url": "https://github.com/ribaricplusplus"
+		},
+		{
+			"name": "Mountain/\\Ash",
+			"url": "https://github.com/mountainash"
+		}
+	],
 	"license": "MIT",
 	"husky": {
 		"hooks": {

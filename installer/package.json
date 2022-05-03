@@ -1,6 +1,6 @@
 {
 	"name": "wordpressify",
-	"version": "0.3.0-6",
+	"version": "0.4.0",
 	"description": "Automate your WordPress development workflow.",
 	"keywords": [
 		"babel",
@@ -28,17 +28,23 @@
 	"type": "module",
 	"node": "^12.20.0 || ^14.13.1 || >=16.0.0",
 	"scripts": {
-		"env:build": "gulp env:build",
-		"env:start": "gulp env:start",
-		"env:stop": "gulp env:stop",
-		"env:rebuild": "gulp env:rebuild",
-		"env:restart": "gulp env:restart",
 		"dev": "gulp dev",
 		"prod": "gulp prod",
 		"backup": "gulp backup",
 		"lint:css": "stylelint src/**/*.css"
 	},
 	"author": "Luan Gjokaj <luan@riangle.com>",
+	"contributors": [
+		{
+			"name": "Luan Gjokaj",
+			"email": "luan@riangle.com",
+			"url": "https://www.riangle.com/"
+		},
+		{
+			"name": "Bruno Ribarić",
+			"url": "https://github.com/ribaricplusplus"
+		}
+	],
 	"license": "MIT",
 	"dependencies": {
 		"@babel/core": "^7.17.8",
