@@ -12,6 +12,7 @@
 		"gulp",
 		"javascript",
 		"node",
+		"nodejs",
 		"postcss",
 		"sass",
 		"web",
@@ -20,18 +21,17 @@
 		"wordpressify",
 		"workflow",
 		"docker",
-		"cherry"
+		"docker compose"
 	],
-	"homepage": "https://www.wordpressify.co/",
+	"homepage": "https://www.wordpressify.co",
 	"repository": "https://github.com/luangjokaj/wordpressify",
-	"exports": "./installer/index.js",
 	"type": "module",
 	"node": "^12.20.0 || ^14.13.1 || >=16.0.0",
-	"bin": {
-		"wordpressify": "./installer/index.js"
-	},
 	"scripts": {
-		"format": "wp-scripts format"
+		"dev": "gulp dev",
+		"prod": "gulp prod",
+		"backup": "gulp backup",
+		"lint:css": "stylelint src/**/*.css"
 	},
 	"author": "Luan Gjokaj <luan@riangle.com>",
 	"contributors": [
@@ -50,27 +50,31 @@
 		}
 	],
 	"license": "MIT",
-	"husky": {
-		"hooks": {
-			"pre-commit": "lint-staged"
-		}
-	},
-	"lint-staged": {
-		"*.{js,ts,tsx}": [
-			"wp-scripts format"
-		]
-	},
 	"dependencies": {
-		"chalk": "^5.0.1",
-		"commander": "^9.1.0",
-		"download": "^8.0.0",
-		"execa": "^6.1.0",
-		"ora": "^6.1.0",
-		"prompts": "^2.4.2"
-	},
-	"devDependencies": {
-		"@wordpress/scripts": "^22.3.0",
-		"husky": "^7.0.4",
-		"lint-staged": "^12.3.7"
+		"@babel/core": "^7.17.8",
+		"@babel/preset-env": "^7.16.11",
+		"autoprefixer": "^10.4.4",
+		"beeper": "^3.0.0",
+		"browser-sync": "^2.27.9",
+		"cherry-postcss": "^0.0.2-13",
+		"cssnano": "^5.1.5",
+		"del": "^6.0.0",
+		"dotenv": "^16.0.0",
+		"fancy-log": "^2.0.0",
+		"gulp": "^4.0.2",
+		"gulp-babel": "^8.0.0",
+		"gulp-concat": "^2.6.1",
+		"gulp-imagemin": "^8.0.0",
+		"gulp-plumber": "^1.2.1",
+		"gulp-postcss": "^9.0.1",
+		"gulp-sourcemaps": "^3.0.0",
+		"gulp-uglify": "^3.0.2",
+		"gulp-vinyl-zip": "^2.5.0",
+		"jquery": "^3.6.0",
+		"postcss": "^8.4.12",
+		"postcss-easy-import": "^4.0.0",
+		"postcss-mixins": "^9.0.2",
+		"postcss-preset-env": "^7.4.3",
+		"stylelint": "^14.6.1"
 	}
 }
