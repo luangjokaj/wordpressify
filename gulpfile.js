@@ -68,7 +68,7 @@ const pluginsListProd = [
 ];
 
 /* -------------------------------------------------------------------------------------------------
-Header & Footer JavaScript Boundles
+Header & Footer JavaScript Bundles
 -------------------------------------------------------------------------------------------------- */
 const headerJS = ['./node_modules/jquery/dist/jquery.js'];
 const footerJS = ['./src/assets/js/**'];
@@ -197,7 +197,7 @@ export { dev };
 Production Tasks
 -------------------------------------------------------------------------------------------------- */
 async function cleanProd() {
-	await del(['./dist/*/']);
+	await del(['./dist/*']);
 }
 
 function copyThemeProd() {
@@ -309,19 +309,17 @@ Messages
 -------------------------------------------------------------------------------------------------- */
 const date = new Date().toLocaleDateString('en-GB').replace(/\//g, '.');
 const errorMsg = '\x1b[41mError\x1b[0m';
-const warning = '\x1b[43mWarning\x1b[0m';
-const devServerReady =
-	'Your development server is ready, start the workflow with the command: $ \x1b[1mnpm run dev\x1b[0m';
 const buildNotFound =
 	errorMsg +
-	' ⚠️　- You need to build the project first. Run the command: $ \x1b[1mnpm run env:start\x1b[0m';
+	' ⚠️　- You need to build the project first. Run the command: $ \x1b[1mdocker compose build\x1b[0m';
 const filesGenerated =
 	'Your ZIP template file was generated in: \x1b[1m' +
 	'/dist/' +
 	themeName +
 	'.zip\x1b[0m - ✅';
 const pluginsGenerated =
-	'Plugins are generated in: \x1b[1m' + '/dist/plugins/\x1b[0m - ✅';
+	'Plugins are generated in: \x1b[1m' +
+	'/dist/plugins/\x1b[0m - ✅';
 const backupsGenerated =
 	'Your backup was generated in: \x1b[1m' +
 	'/backups/' +
