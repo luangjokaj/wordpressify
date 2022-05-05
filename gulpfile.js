@@ -88,13 +88,15 @@ function registerCleanup(done) {
 Development Tasks
 -------------------------------------------------------------------------------------------------- */
 function devServer() {
+	const portnumber = parseInt(process.env.PROXY_PORT) || 3010;
+
 	browserSync({
 		logPrefix: '🐳 WordPressify',
 		proxy: {
 			target: `webserver:8080`,
 		},
 		host: 'localhost',
-		port: parseInt(process.env.PROXY_PORT),
+		port: portnumber,
 		notify: false,
 		open: false,
 		logConnections: true,

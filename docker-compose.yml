@@ -34,8 +34,8 @@ services:
             - db
     webserver:
         image: nginx:alpine
-        ports:
-            - '${SERVER_PORT}:8080'
+        expose:
+            - '8080'
         volumes:
             - ./config/nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf:ro
             - './build/wordpress:/var/www/html'
@@ -46,9 +46,9 @@ services:
             dockerfile: ./Dockerfile-nodejs
         ports:
             - '3001:3001' # Default port for browserSync UI (for debugging)
-            - '${PROXY_PORT}:${PROXY_PORT}'
-        env_file:
-            - .env
+            - '${PROXY_PORT:-3010}:${PROXY_PORT:-3010}'
+        environment:
+            - PROXY_PORT=${PROXY_PORT:-3010}
         volumes:
             - './src:/usr/src/app/src'
             - './dist:/usr/src/app/dist'
