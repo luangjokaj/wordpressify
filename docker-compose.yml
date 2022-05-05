@@ -33,7 +33,7 @@ services:
         depends_on:
             - db
     webserver:
-        image: nginx:latest
+        image: nginx:alpine
         ports:
             - '${SERVER_PORT}:8080'
         volumes:
