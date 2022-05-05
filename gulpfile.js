@@ -98,9 +98,6 @@ function devServer() {
 		notify: false,
 		open: false,
 		logConnections: true,
-		socket: {
-			domain: `localhost:${parseInt(process.env.PROXY_PORT)}`,
-		}
 	});
 
 	watch('./src/assets/css/**/*.css', stylesDev);
