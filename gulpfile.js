@@ -163,9 +163,8 @@ function devServer() {
 	});
 }
 
-function Reload(done) {
+function Reload() {
 	browserSync.reload();
-	done();
 }
 
 function copyThemeDev() {
