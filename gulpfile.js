@@ -1,6 +1,5 @@
 import pkg from 'gulp';
 import babel from 'gulp-babel';
-import beeper from 'beeper';
 import browserSync from 'browser-sync';
 import concat from 'gulp-concat';
 import del from 'del';
@@ -16,12 +15,9 @@ import postcssPresetEnv from 'postcss-preset-env';
 import sourcemaps from 'gulp-sourcemaps';
 import uglify from 'gulp-uglify';
 import zip from 'gulp-vinyl-zip';
-import dotenv from 'dotenv';
 import cssnano from 'cssnano';
 
 const { series, dest, src, watch } = pkg;
-
-dotenv.config();
 
 /* -------------------------------------------------------------------------------------------------
 Theme Name
@@ -37,7 +33,6 @@ const pluginsListDev = [
 		stage: 0,
 		features: {
 			'nesting-rules': true,
-			'color-function': true,
 			'custom-media-queries': true,
 		},
 	}),
@@ -51,7 +46,6 @@ const pluginsListProd = [
 		stage: 0,
 		features: {
 			'nesting-rules': true,
-			'color-function': true,
 			'custom-media-queries': true,
 		},
 	}),
@@ -308,7 +302,6 @@ function zipProd() {
 	return src('./dist/themes/' + themeName + '/**/*')
 		.pipe(zip.dest('./dist/' + themeName + '.zip'))
 		.on('end', () => {
-			beeper();
 			log(pluginsGenerated);
 			log(filesGenerated);
 			log(thankYou);
@@ -333,7 +326,6 @@ export { prod };
 Utility Tasks
 -------------------------------------------------------------------------------------------------- */
 const onError = (err) => {
-	beeper();
 	log(wpFy + ' - ' + errorMsg + ' ' + err.toString());
 };
 
@@ -345,7 +337,6 @@ function Backup() {
 		return src('./build/**/*')
 			.pipe(zip.dest('./backups/' + date + '.zip'))
 			.on('end', () => {
-				beeper();
 				log(backupsGenerated);
 				log(thankYou);
 			});
