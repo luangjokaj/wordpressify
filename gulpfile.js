@@ -5,7 +5,6 @@ import concat from 'gulp-concat';
 import del from 'del';
 import log from 'fancy-log';
 import fs from 'fs';
-import imagemin from 'gulp-imagemin';
 import partialimport from 'postcss-easy-import';
 import plumber from 'gulp-plumber';
 import postcss from 'gulp-postcss';
@@ -294,7 +293,6 @@ function pluginsProd() {
 function processImages() {
 	return src('./src/assets/img/**')
 		.pipe(plumber({ errorHandler: onError }))
-		.pipe(imagemin())
 		.pipe(dest('./dist/themes/' + themeName + '/img'));
 }
 
