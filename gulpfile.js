@@ -5,7 +5,6 @@ import concat from 'gulp-concat';
 import del from 'del';
 import log from 'fancy-log';
 import fs from 'fs';
-import imagemin from 'gulp-imagemin';
 import partialimport from 'postcss-easy-import';
 import plumber from 'gulp-plumber';
 import postcss from 'gulp-postcss';
@@ -96,17 +95,69 @@ function devServer() {
 		logConnections: true,
 	});
 
-	watch('./src/assets/css/**/*.css', stylesDev);
-	watch('./src/assets/js/**', series(footerScriptsDev, Reload));
-	watch('./src/assets/img/**', series(copyImagesDev, Reload));
-	watch('./src/assets/fonts/**', series(copyFontsDev, Reload));
-	watch('./src/theme/**', series(copyThemeDev, stylesDev, Reload));
-	watch('./src/plugins/**', series(pluginsDev, Reload));
+	const watcherCSS = watch(['./src/assets/css/**/*.css'], {
+		interval: 1000,
+		usePolling: true,
+	});
+	const watcherJs = watch(['./src/assets/js/**'], {
+		interval: 1000,
+		usePolling: true,
+	});
+	const watcherImg = watch(['./src/assets/img/**'], {
+		interval: 1000,
+		usePolling: true,
+	});
+	const watcherFonts = watch(['./src/assets/fonts/**'], {
+		interval: 1000,
+		usePolling: true,
+	});
+	const watcherTheme = watch(['./src/theme/**'], {
+		interval: 1000,
+		usePolling: true,
+	});
+	const watcherPlugins = watch(['./src/plugins/**'], {
+		interval: 1000,
+		usePolling: true,
+	});
+
+	watcherCSS.on('change', function (path, stats) {
+		console.log(`File ${path} was changed`);
+		stylesDev();
+	});
+
+	watcherJs.on('change', function (path, stats) {
+		console.log(`File ${path} was changed`);
+		footerScriptsDev();
+		Reload();
+	});
+
+	watcherImg.on('change', function (path, stats) {
+		console.log(`File ${path} was changed`);
+		copyImagesDev();
+		Reload();
+	});
+
+	watcherFonts.on('change', function (path, stats) {
+		console.log(`File ${path} was changed`);
+		copyFontsDev();
+		Reload();
+	});
+	watcherTheme.on('change', function (path, stats) {
+		console.log(`File ${path} was changed`);
+		copyThemeDev();
+		stylesDev();
+		Reload();
+	});
+
+	watcherPlugins.on('change', function (path, stats) {
+		console.log(`File ${path} was changed`);
+		pluginsDev();
+		Reload();
+	});
 }
 
-function Reload(done) {
+function Reload() {
 	browserSync.reload();
-	done();
 }
 
 function copyThemeDev() {
@@ -242,7 +293,6 @@ function pluginsProd() {
 function processImages() {
 	return src('./src/assets/img/**')
 		.pipe(plumber({ errorHandler: onError }))
-		.pipe(imagemin())
 		.pipe(dest('./dist/themes/' + themeName + '/img'));
 }
 
@@ -308,8 +358,7 @@ const filesGenerated =
 	themeName +
 	'.zip\x1b[0m - ✅';
 const pluginsGenerated =
-	'Plugins are generated in: \x1b[1m' +
-	'/dist/plugins/\x1b[0m - ✅';
+	'Plugins are generated in: \x1b[1m' + '/dist/plugins/\x1b[0m - ✅';
 const backupsGenerated =
 	'Your backup was generated in: \x1b[1m' +
 	'/backups/' +

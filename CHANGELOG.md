@@ -1,5 +1,15 @@
 # Changelog
 
+**v0.4.0**
+
+In this version, we move NodeJS and all its dependencies into a container to keep your local development environment cleaner and to simplify Wordpressify even more. However, if you have NodeJS installed locally you can still use the npm commands as shortcuts. Otherwise, you only need Docker as the main dependency.
+
+- 📦 NEW: `npm run dev` replaced with `npm run  start` or `docker compose up`
+- 📦 NEW:`npm run env:rebuild` replaced with `npm run rebuild` or `docker compose down -v`, then `docker compose build`
+- 📦 NEW:`npm run prod` replaced with `npm run export` or `docker compose run --rm nodejs npm run prod`
+- 📦 NEW:`npm run backup` replaced with `npm run export:backup` or `docker compose run --rm nodejs npm run backup`
+- 📦 NEW:`npm run lint:css` replaced with `npm run lintcss` or `docker compose run --rm nodejs npm run lint:css`
+
 **v0.3.0**
 - 📖 DOC: Improve documentation and website.
 - 👌 IMPROVE: Default header viewport meta tag.

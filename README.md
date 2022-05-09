@@ -12,13 +12,13 @@ For full documentation, visit https://www.wordpressify.co.
 
 ### v0.4.0 Changes
 
-v0.4.0 moves NodeJS and all its dependencies into a container to keep your local development environment cleaner and to simplify Wordpressify even more.
+In this version, we move NodeJS and all its dependencies into a container to keep your local development environment cleaner and to simplify Wordpressify even more. However, if you have NodeJS installed locally you can still use the npm commands as shortcuts. Otherwise, you only need Docker as the main dependency.
 
-1. `npm run dev` replaced with `docker compose up`
-1. `npm run env:rebuild` replaced with `docker compose down -v`, then `docker compose build`
-1. `npm run prod` replaced with `docker compose run --rm nodejs npm run prod`
-1. `npm run backup` replaced with `docker compose run --rm nodejs npm run backup`
-1. `npm run lint:css` replaced with `docker compose run --rm nodejs npm run lint:css`
+1. `npm run dev` replaced with `npm run  start` or `docker compose up`
+1. `npm run env:rebuild` replaced with `npm run rebuild` or `docker compose down -v`, then `docker compose build`
+1. `npm run prod` replaced with `npm run export` or `docker compose run --rm nodejs npm run prod`
+1. `npm run backup` replaced with `npm run export:backup` or `docker compose run --rm nodejs npm run backup`
+1. `npm run lint:css` replaced with `npm run lintcss` or `docker compose run --rm nodejs npm run lint:css`
 
 ## Community
 
@@ -37,17 +37,24 @@ For casual chit-chat with others using WordPressify:
     <tr>
       <td align="center" valign="top">
         <a href="https://github.com/luangjokaj">
-            <img width="150" height="150" src="https://github.com/luangjokaj.png?s=1150">
+            <img width="150" height="150" src="https://github.com/luangjokaj.png">
         </a>
         <br>
         <a href="https://github.com/luangjokaj">Luan Gjokaj</a><br />
       </td>
       <td align="center" valign="top">
         <a href="https://github.com/ribaricplusplus">
-            <img width="150" height="150" src="https://github.com/ribaricplusplus.png?s=1150">
+            <img width="150" height="150" src="https://github.com/ribaricplusplus.png">
         </a>
         <br>
         <a href="https://github.com/ribaricplusplus">Bruno Ribarić</a>
+      </td>
+      <td align="center" valign="top">
+        <a href="https://github.com/mountainash">
+            <img width="150" height="150" src="https://github.com/mountainash.png">
+        </a>
+        <br>
+        <a href="https://github.com/mountainash">Mountain/\Ash</a>
       </td>
      </tr>
   </tbody>

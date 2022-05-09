@@ -7,6 +7,7 @@
 		"boilerplate",
 		"build",
 		"css",
+		"cherry",
 		"es6",
 		"front-end",
 		"gulp",
@@ -27,11 +28,9 @@
 	"repository": "https://github.com/luangjokaj/wordpressify",
 	"type": "module",
 	"node": "^12.20.0 || ^14.13.1 || >=16.0.0",
-	"scripts": {
-		"dev": "gulp dev",
-		"prod": "gulp prod",
-		"backup": "gulp backup",
-		"lint:css": "stylelint src/**/*.css"
+	"exports": "./installer/index.js",
+	"bin": {
+		"wordpressify": "./installer/index.js"
 	},
 	"author": "Luan Gjokaj <luan@riangle.com>",
 	"contributors": [
@@ -51,28 +50,11 @@
 	],
 	"license": "MIT",
 	"dependencies": {
-		"@babel/core": "^7.17.8",
-		"@babel/preset-env": "^7.16.11",
-		"autoprefixer": "^10.4.4",
-		"browser-sync": "^2.27.9",
-		"cherry-postcss": "^0.0.2-13",
-		"cssnano": "^5.1.5",
-		"del": "^6.0.0",
-		"fancy-log": "^2.0.0",
-		"gulp": "^4.0.2",
-		"gulp-babel": "^8.0.0",
-		"gulp-concat": "^2.6.1",
-		"gulp-imagemin": "^8.0.0",
-		"gulp-plumber": "^1.2.1",
-		"gulp-postcss": "^9.0.1",
-		"gulp-sourcemaps": "^3.0.0",
-		"gulp-uglify": "^3.0.2",
-		"gulp-vinyl-zip": "^2.5.0",
-		"jquery": "^3.6.0",
-		"postcss": "^8.4.12",
-		"postcss-easy-import": "^4.0.0",
-		"postcss-mixins": "^9.0.2",
-		"postcss-preset-env": "^7.4.3",
-		"stylelint": "^14.6.1"
+		"chalk": "^5.0.1",
+		"commander": "^9.2.0",
+		"download": "^8.0.0",
+		"execa": "^6.1.0",
+		"ora": "^6.1.0",
+		"prompts": "^2.4.2"
 	}
 }
