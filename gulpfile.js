@@ -34,7 +34,6 @@ const pluginsListDev = [
 		stage: 0,
 		features: {
 			'nesting-rules': true,
-			'color-function': true,
 			'custom-media-queries': true,
 		},
 	}),
@@ -48,7 +47,6 @@ const pluginsListProd = [
 		stage: 0,
 		features: {
 			'nesting-rules': true,
-			'color-function': true,
 			'custom-media-queries': true,
 		},
 	}),
