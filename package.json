@@ -59,7 +59,6 @@
 		"cherry-postcss": "^0.0.2-13",
 		"cssnano": "^5.1.5",
 		"del": "^6.0.0",
-		"dotenv": "^16.0.0",
 		"fancy-log": "^2.0.0",
 		"gulp": "^4.0.2",
 		"gulp-babel": "^8.0.0",
