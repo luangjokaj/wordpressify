@@ -34,6 +34,8 @@
 		"backup": "gulp backup",
 		"lint:css": "stylelint src/**/*.css",
 		"start": "docker compose up",
+		"build": "docker compose build",
+		"delete": "docker compose down -v",
 		"rebuild": "docker compose down -v && docker compose build",
 		"export": "docker compose run --rm nodejs npm run prod",
 		"export:backup": "docker compose run --rm nodejs npm run backup",
