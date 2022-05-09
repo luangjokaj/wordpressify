@@ -139,8 +139,6 @@ const run = () => {
 					'src/assets/img',
 					'config',
 					'config/nginx',
-					'config/nginx/sites-enabled',
-					'config/nginx/snippets',
 				]);
 			}
 
