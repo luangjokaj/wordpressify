@@ -21,7 +21,7 @@ const run = () => {
 	// Init
 	clearConsole();
 
-	let upstreamUrl = `https://raw.githubusercontent.com/luangjokaj/wordpressify/mountainash-master`;
+	let upstreamUrl = `https://raw.githubusercontent.com/luangjokaj/wordpressify/v${version}`;
 
 	// Files
 	const filesToDownload = [
