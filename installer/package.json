@@ -1,0 +1,83 @@
+{
+	"name": "wordpressify",
+	"version": "0.4.0",
+	"description": "Automate your WordPress development workflow.",
+	"keywords": [
+		"babel",
+		"boilerplate",
+		"build",
+		"css",
+		"cherry",
+		"es6",
+		"front-end",
+		"gulp",
+		"javascript",
+		"node",
+		"nodejs",
+		"postcss",
+		"sass",
+		"web",
+		"website",
+		"wordpress",
+		"wordpressify",
+		"workflow",
+		"docker",
+		"docker compose"
+	],
+	"homepage": "https://www.wordpressify.co",
+	"repository": "https://github.com/luangjokaj/wordpressify",
+	"type": "module",
+	"node": "^12.20.0 || ^14.13.1 || >=16.0.0",
+	"scripts": {
+		"dev": "gulp dev",
+		"prod": "gulp prod",
+		"backup": "gulp backup",
+		"lint:css": "stylelint src/**/*.css",
+		"start": "docker compose up",
+		"rebuild": "docker compose down -v && docker compose build",
+		"export": "docker compose run --rm nodejs npm run prod",
+		"export:backup": "docker compose run --rm nodejs npm run backup",
+		"lintcss": "docker compose run --rm nodejs npm run lint:css"
+	},
+	"author": "Luan Gjokaj <luan@riangle.com>",
+	"contributors": [
+		{
+			"name": "Luan Gjokaj",
+			"email": "luan@riangle.com",
+			"url": "https://www.riangle.com/"
+		},
+		{
+			"name": "Bruno Ribarić",
+			"url": "https://github.com/ribaricplusplus"
+		},
+		{
+			"name": "Mountain/\\Ash",
+			"url": "https://github.com/mountainash"
+		}
+	],
+	"license": "MIT",
+	"dependencies": {
+		"@babel/core": "^7.17.10",
+		"@babel/preset-env": "^7.17.10",
+		"autoprefixer": "^10.4.7",
+		"browser-sync": "^2.27.9",
+		"cherry-postcss": "^0.0.2-17",
+		"cssnano": "^5.1.7",
+		"del": "^6.0.0",
+		"fancy-log": "^2.0.0",
+		"gulp": "^4.0.2",
+		"gulp-babel": "^8.0.0",
+		"gulp-concat": "^2.6.1",
+		"gulp-plumber": "^1.2.1",
+		"gulp-postcss": "^9.0.1",
+		"gulp-sourcemaps": "^3.0.0",
+		"gulp-uglify": "^3.0.2",
+		"gulp-vinyl-zip": "^2.5.0",
+		"jquery": "^3.6.0",
+		"postcss": "^8.4.13",
+		"postcss-easy-import": "^4.0.0",
+		"postcss-mixins": "^9.0.2",
+		"postcss-preset-env": "^7.5.0",
+		"stylelint": "^14.8.2"
+	}
+}
