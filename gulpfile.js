@@ -102,36 +102,65 @@ function devServer() {
 		logConnections: true,
 	});
 
-	watch(
-		'./src/assets/css/**/*.css',
-		{ interval: 1000, usePolling: true },
-		stylesDev
-	);
-	watch(
-		'./src/assets/js/**',
-		{ interval: 1000, usePolling: true },
-		series(footerScriptsDev, Reload)
-	);
-	watch(
-		'./src/assets/img/**',
-		{ interval: 1000, usePolling: true },
-		series(copyImagesDev, Reload)
-	);
-	watch(
-		'./src/assets/fonts/**',
-		{ interval: 1000, usePolling: true },
-		series(copyFontsDev, Reload)
-	);
-	watch(
-		'./src/theme/**',
-		{ interval: 1000, usePolling: true },
-		series(copyThemeDev, stylesDev, Reload)
-	);
-	watch(
-		'./src/plugins/**',
-		{ interval: 1000, usePolling: true },
-		series(pluginsDev, Reload)
-	);
+	const watcherCSS = watch(['./src/assets/css/**/*.css'], {
+		interval: 1000,
+		usePolling: true,
+	});
+	const watcherJs = watch(['./src/assets/js/**'], {
+		interval: 1000,
+		usePolling: true,
+	});
+	const watcherImg = watch(['./src/assets/img/**'], {
+		interval: 1000,
+		usePolling: true,
+	});
+	const watcherFonts = watch(['./src/assets/fonts/**'], {
+		interval: 1000,
+		usePolling: true,
+	});
+	const watcherTheme = watch(['./src/theme/**'], {
+		interval: 1000,
+		usePolling: true,
+	});
+	const watcherPlugins = watch(['./src/plugins/**'], {
+		interval: 1000,
+		usePolling: true,
+	});
+
+	watcherCSS.on('change', function (path, stats) {
+		console.log(`File ${path} was changed`);
+		stylesDev();
+	});
+
+	watcherJs.on('change', function (path, stats) {
+		console.log(`File ${path} was changed`);
+		footerScriptsDev();
+		Reload();
+	});
+
+	watcherImg.on('change', function (path, stats) {
+		console.log(`File ${path} was changed`);
+		copyImagesDev();
+		Reload();
+	});
+
+	watcherFonts.on('change', function (path, stats) {
+		console.log(`File ${path} was changed`);
+		copyFontsDev();
+		Reload();
+	});
+	watcherTheme.on('change', function (path, stats) {
+		console.log(`File ${path} was changed`);
+		copyThemeDev();
+		stylesDev();
+		Reload();
+	});
+
+	watcherPlugins.on('change', function (path, stats) {
+		console.log(`File ${path} was changed`);
+		pluginsDev();
+		Reload();
+	});
 }
 
 function Reload(done) {
