@@ -102,12 +102,36 @@ function devServer() {
 		logConnections: true,
 	});
 
-	watch('./src/assets/css/**/*.css', stylesDev);
-	watch('./src/assets/js/**', series(footerScriptsDev, Reload));
-	watch('./src/assets/img/**', series(copyImagesDev, Reload));
-	watch('./src/assets/fonts/**', series(copyFontsDev, Reload));
-	watch('./src/theme/**', series(copyThemeDev, stylesDev, Reload));
-	watch('./src/plugins/**', series(pluginsDev, Reload));
+	watch(
+		'./src/assets/css/**/*.css',
+		{ interval: 1000, usePolling: true },
+		stylesDev
+	);
+	watch(
+		'./src/assets/js/**',
+		{ interval: 1000, usePolling: true },
+		series(footerScriptsDev, Reload)
+	);
+	watch(
+		'./src/assets/img/**',
+		{ interval: 1000, usePolling: true },
+		series(copyImagesDev, Reload)
+	);
+	watch(
+		'./src/assets/fonts/**',
+		{ interval: 1000, usePolling: true },
+		series(copyFontsDev, Reload)
+	);
+	watch(
+		'./src/theme/**',
+		{ interval: 1000, usePolling: true },
+		series(copyThemeDev, stylesDev, Reload)
+	);
+	watch(
+		'./src/plugins/**',
+		{ interval: 1000, usePolling: true },
+		series(pluginsDev, Reload)
+	);
 }
 
 function Reload(done) {
@@ -317,8 +341,7 @@ const filesGenerated =
 	themeName +
 	'.zip\x1b[0m - ✅';
 const pluginsGenerated =
-	'Plugins are generated in: \x1b[1m' +
-	'/dist/plugins/\x1b[0m - ✅';
+	'Plugins are generated in: \x1b[1m' + '/dist/plugins/\x1b[0m - ✅';
 const backupsGenerated =
 	'Your backup was generated in: \x1b[1m' +
 	'/backups/' +
