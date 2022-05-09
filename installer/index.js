@@ -1,8 +1,10 @@
 import prompts from 'prompts';
 import chalk from 'chalk';
-import { program } from 'commander';
+import { Command } from 'commander';
 import { createRequire } from 'module';
 import { run } from './modules/run.js';
+
+const program = new Command();
 
 const require = createRequire(import.meta.url);
 const packageData = require('./package.json');
