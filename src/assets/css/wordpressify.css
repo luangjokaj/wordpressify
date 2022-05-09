@@ -1,3 +1,13 @@
+body {
+	padding: 0;
+}
+
+.edit-button {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+}
+
 .header {
 	border-bottom: solid 1px var(--color-gray-light);
 	display: flex;
@@ -44,7 +54,8 @@
 	margin: 0;
 }
 
-ul {
+ul, 
+ol {
 	@mixin reset-list;
 }
 
