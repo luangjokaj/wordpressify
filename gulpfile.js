@@ -1,6 +1,5 @@
 import pkg from 'gulp';
 import babel from 'gulp-babel';
-import beeper from 'beeper';
 import browserSync from 'browser-sync';
 import concat from 'gulp-concat';
 import del from 'del';
@@ -251,7 +250,6 @@ function zipProd() {
 	return src('./dist/themes/' + themeName + '/**/*')
 		.pipe(zip.dest('./dist/' + themeName + '.zip'))
 		.on('end', () => {
-			beeper();
 			log(pluginsGenerated);
 			log(filesGenerated);
 			log(thankYou);
@@ -276,7 +274,6 @@ export { prod };
 Utility Tasks
 -------------------------------------------------------------------------------------------------- */
 const onError = (err) => {
-	beeper();
 	log(wpFy + ' - ' + errorMsg + ' ' + err.toString());
 };
 
@@ -288,7 +285,6 @@ function Backup() {
 		return src('./build/**/*')
 			.pipe(zip.dest('./backups/' + date + '.zip'))
 			.on('end', () => {
-				beeper();
 				log(backupsGenerated);
 				log(thankYou);
 			});
