@@ -21,7 +21,7 @@ const run = () => {
 	// Init
 	clearConsole();
 
-	let upstreamUrl = `https://raw.githubusercontent.com/luangjokaj/wordpressify/v${version}`;
+	let upstreamUrl = `https://raw.githubusercontent.com/luangjokaj/wordpressify/mountainash-master`;
 
 	// Files
 	const filesToDownload = [
@@ -64,6 +64,9 @@ const run = () => {
 		`${upstreamUrl}/src/theme/searchform.php`,
 		`${upstreamUrl}/src/theme/sidebar.php`,
 		`${upstreamUrl}/src/theme/single.php`,
+
+		`${upstreamUrl}/config/php.ini`,
+		`${upstreamUrl}/config/nginx/nginx.conf`,
 	];
 
 	// Organise file structure
@@ -96,6 +99,10 @@ const run = () => {
 		'searchform.php',
 		'sidebar.php',
 		'single.php',
+	];
+	const configFiles = ['php.ini'];
+	const nginxFiles = [
+		'nginx.conf',
 	];
 
 	// Start
@@ -166,6 +173,18 @@ const run = () => {
 			themeFiles.map((x) =>
 				fs.rename(`${theCWD}/${x}`, `${theCWD}/src/theme/${x}`, (err) =>
 					handleError(err)
+				)
+			);
+			configFiles.map((x) =>
+				fs.rename(`${theCWD}/${x}`, `${theCWD}/config/${x}`, (err) =>
+					handleError(err)
+				)
+			);
+			nginxFiles.map((x) =>
+				fs.rename(
+					`${theCWD}/${x}`,
+					`${theCWD}/config/nginx/${x}`,
+					(err) => handleError(err)
 				)
 			);
 			spinner.succeed();
