@@ -9,6 +9,10 @@ In this version, we move NodeJS and all its dependencies into a container to kee
 - 📦 NEW:`npm run prod` replaced with `npm run export` or `docker compose run --rm nodejs npm run prod`
 - 📦 NEW:`npm run backup` replaced with `npm run export:backup` or `docker compose run --rm nodejs npm run backup`
 - 📦 NEW:`npm run lint:css` replaced with `npm run lintcss` or `docker compose run --rm nodejs npm run lint:css`
+- 📖 DOC: Update documentation and website.
+- 🐛 FIX: Windows build.
+
+- A special thank you to [@mountainash ](https://github.com/mountainash) for this contribution.
 
 **v0.3.0**
 - 📖 DOC: Improve documentation and website.
