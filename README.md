@@ -10,6 +10,16 @@ Automate your WordPress development workflow.
 
 For full documentation, visit https://www.wordpressify.co.
 
+### v0.4.0 Changes
+
+v0.4.0 moves NodeJS and all its dependencies into a container to keep your local development environment cleaner and to simplify Wordpressify even more.
+
+1. `npm run dev` replaced with `docker compose up`
+1. `npm run env:rebuild` replaced with `docker compose down -v`, then `docker compose build`
+1. `npm run prod` replaced with `docker compose run --rm nodejs npm run prod`
+1. `npm run backup` replaced with `docker compose run --rm nodejs npm run backup`
+1. `npm run lint:css` replaced with `docker compose run --rm nodejs npm run lint:css`
+
 ## Community
 
 For help, discussion about best practices, or any other conversation that would benefit from being searchable:

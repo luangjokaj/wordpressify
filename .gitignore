@@ -23,9 +23,6 @@ Desktop.ini
 
 *.iml
 
-node_modules
-.env
-
 # Debug log from npm
 npm-debug.log
 
@@ -33,9 +30,4 @@ npm-debug.log
 *.log
 xdebug
 
-# Generated for a specific environment. These files are generated from
-# corresponding "*.in" files and they are specific for every machine, so they
-# should not be committed to the repository.
-Dockerfile
 .env
-config/php.ini

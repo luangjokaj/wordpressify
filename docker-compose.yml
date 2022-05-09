@@ -1,55 +1,61 @@
-version: '3.8'
+version: '3.4'
 services:
     db:
         image: mariadb
         environment:
-            MYSQL_ROOT_PASSWORD: '${DB_PASSWORD}'
-            MYSQL_DATABASE: '${DB_NAME}'
-        expose:
-            - '3306'
-        networks:
-            - 'default-network'
+            MYSQL_ROOT_PASSWORD: 'root'
+            MYSQL_DATABASE: 'wordpress'
         volumes:
             - 'persistent_db:/var/lib/mysql'
         ports:
             - '3306:3306'
     wordpress:
-        user: '${WPFY_UID}:${WPFY_GID}'
-        build: .
+        build:
+            dockerfile: ./Dockerfile-wordpress
         expose:
             - '9000'
         environment:
-            WORDPRESS_DB_HOST: '${DB_HOST}:${DB_PORT}'
-            WORDPRESS_DB_USER: '${DB_USER}'
-            WORDPRESS_DB_PASSWORD: '${DB_PASSWORD}'
-            WORDPRESS_DB_NAME: '${DB_NAME}'
+            WORDPRESS_DB_HOST: 'db'
+            WORDPRESS_DB_USER: 'root'
+            WORDPRESS_DB_PASSWORD: 'root'
+            WORDPRESS_DB_NAME: 'wordpress'
             WORDPRESS_DEBUG: 1
             WORDPRESS_CONFIG_EXTRA: |
                 define( 'DISABLE_WP_CRON', true );
                 define( 'WP_DEBUG_LOG', '/var/xdebug/wp-errors.log' );
                 define( 'FS_DIRECT', true );
-        networks:
-            - 'default-network'
+                define( 'WP_SITEURL', 'http://webserver:8080' );
+                define( 'WP_HOME', 'http://webserver:8080' );
         volumes:
             - './build/wordpress:/var/www/html'
             - './xdebug:/var/xdebug'
             - './config/php.ini:/usr/local/etc/php/conf.d/overrides.ini'
         depends_on:
             - db
-    server:
-        image: nginx:latest
-        networks:
-            - 'default-network'
-        ports:
-            - '${SERVER_PORT}:80'
+    webserver:
+        image: nginx:alpine
+        expose:
+            - '8080'
         volumes:
+            - ./config/nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf:ro
             - './build/wordpress:/var/www/html'
-            - './config/nginx:/etc/nginx'
         depends_on:
             - 'wordpress'
-            - 'db'
-networks:
-    default-network:
-        driver: bridge
+    nodejs:
+        build:
+            dockerfile: ./Dockerfile-nodejs
+        ports:
+            - '3001:3001' # Default port for browserSync UI (for debugging)
+            - '${PROXY_PORT:-3010}:${PROXY_PORT:-3010}'
+        environment:
+            - PROXY_PORT=${PROXY_PORT:-3010}
+        volumes:
+            - './src:/usr/src/app/src'
+            - './dist:/usr/src/app/dist'
+            - './build:/usr/src/app/build'
+            - './backups:/usr/src/app/backups'
+        depends_on:
+            - 'webserver'
+        command: npm run dev
 volumes:
     persistent_db:

@@ -36,5 +36,5 @@
 			<img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" alt="Logo 🌈">
 		</a>
 	</div>
-	<?php edit_post_link('Edit', '<p class="edit-button">', '</p>'); ?>
+	<?php edit_post_link('Edit', '<p>', '</p>', null, 'edit-button button'); ?>
 </header>

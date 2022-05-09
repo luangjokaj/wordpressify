@@ -32,7 +32,7 @@
 				]
 			}
 		],
-		"unit-whitelist": [
+		"unit-allowed-list": [
 			"px",
 			"em",
 			"rem",
