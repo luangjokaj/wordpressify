@@ -2,7 +2,7 @@
 
 **v0.4.0**
 
-In this version we moves NodeJS and all its dependencies into a container to keep your local development environment cleaner and to simplify Wordpressify even more. However if you have NodeJS installed locally you can still use the npm commands as shortcuts. Otherwise you only need Docker as a main dependency.
+In this version, we move NodeJS and all its dependencies into a container to keep your local development environment cleaner and to simplify Wordpressify even more. However, if you have NodeJS installed locally you can still use the npm commands as shortcuts. Otherwise, you only need Docker as the main dependency.
 
 - 📦 NEW: `npm run dev` replaced with `npm run  start` or `docker compose up`
 - 📦 NEW:`npm run env:rebuild` replaced with `npm run rebuild` or `docker compose down -v`, then `docker compose build`
