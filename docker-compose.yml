@@ -24,8 +24,8 @@ services:
                 define( 'DISABLE_WP_CRON', true );
                 define( 'WP_DEBUG_LOG', '/var/xdebug/wp-errors.log' );
                 define( 'FS_DIRECT', true );
-                define( 'WP_SITEURL', 'http://webserver:8080' );
-                define( 'WP_HOME', 'http://webserver:8080' );
+                define( 'WP_SITEURL', 'http://localhost:8080' );
+                define( 'WP_HOME', 'http://localhost:8080' );
         volumes:
             - './build/wordpress:/var/www/html'
             - './xdebug:/var/xdebug'
@@ -36,6 +36,8 @@ services:
         image: nginx:alpine
         expose:
             - '8080'
+        ports:
+        - '8080:8080'
         volumes:
             - ./config/nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf:ro
             - './build/wordpress:/var/www/html'
