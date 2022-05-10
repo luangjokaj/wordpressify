@@ -1,6 +1,6 @@
 {
 	"name": "wordpressify",
-	"version": "0.4.0-1",
+	"version": "0.4.0-2",
 	"description": "Automate your WordPress development workflow.",
 	"keywords": [
 		"babel",
@@ -26,9 +26,9 @@
 	],
 	"homepage": "https://www.wordpressify.co",
 	"repository": "https://github.com/luangjokaj/wordpressify",
+	"exports": "./installer/index.js",
 	"type": "module",
 	"node": "^12.20.0 || ^14.13.1 || >=16.0.0",
-	"exports": "./installer/index.js",
 	"bin": {
 		"wordpressify": "./installer/index.js"
 	},
