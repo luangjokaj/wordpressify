@@ -143,43 +143,43 @@ const run = () => {
 			}
 
 			dotFiles.map((x) =>
-				fs.rename(`${theCWD}/${x.slice(1)}`, `${theCWD}/${x}`, (err) =>
+				fs.renameSync(`${theCWD}/${x.slice(1)}`, `${theCWD}/${x}`, (err) =>
 					handleError(err)
 				)
 			);
 			cssFiles.map((x) =>
-				fs.rename(
+				fs.renameSync(
 					`${theCWD}/${x}`,
 					`${theCWD}/src/assets/css/${x}`,
 					(err) => handleError(err)
 				)
 			);
 			jsFiles.map((x) =>
-				fs.rename(
+				fs.renameSync(
 					`${theCWD}/${x}`,
 					`${theCWD}/src/assets/js/${x}`,
 					(err) => handleError(err)
 				)
 			);
 			imgFiles.map((x) =>
-				fs.rename(
+				fs.renameSync(
 					`${theCWD}/${x}`,
 					`${theCWD}/src/assets/img/${x}`,
 					(err) => handleError(err)
 				)
 			);
 			themeFiles.map((x) =>
-				fs.rename(`${theCWD}/${x}`, `${theCWD}/src/theme/${x}`, (err) =>
+				fs.renameSync(`${theCWD}/${x}`, `${theCWD}/src/theme/${x}`, (err) =>
 					handleError(err)
 				)
 			);
 			configFiles.map((x) =>
-				fs.rename(`${theCWD}/${x}`, `${theCWD}/config/${x}`, (err) =>
+				fs.renameSync(`${theCWD}/${x}`, `${theCWD}/config/${x}`, (err) =>
 					handleError(err)
 				)
 			);
 			nginxFiles.map((x) =>
-				fs.rename(
+				fs.renameSync(
 					`${theCWD}/${x}`,
 					`${theCWD}/config/nginx/${x}`,
 					(err) => handleError(err)
