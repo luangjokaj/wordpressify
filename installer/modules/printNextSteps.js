@@ -56,17 +56,23 @@ const printNextSteps = () => {
 	console.log('\n\n🎯 ', chalk.black.bgGreen(' Get Started → \n'));
 	console.log(' You can start: \n');
 	console.log(
-		` ${chalk.dim('1.')} Editing the configuration: ${chalk.green(
-			`${process.cwd()}/gulpfile.js`
+		` ${chalk.dim('1.')} Rename: ${chalk.green('.env_example')} to ${chalk.green(
+			'.env'
 		)}`
 	);
 	console.log(
-		`	${chalk.dim('Set your new theme name:')} ${chalk.green(
-			'const themeName = "'
-		)}${chalk.red('wordpressify')}${chalk.green('";')} `
+		`	${chalk.dim('Set your new theme directory name:')} ${chalk.green(
+			'THEME_NAME='
+		)}${chalk.red('wordpressify')} `
 	);
 	console.log(
-		` ${chalk.dim('2.')} Running: ${chalk.green('npm')} run start`,
+		` ${chalk.dim('2.')} Run: ${chalk.green('npm')} run start`,
+		'\n',
+		`	${chalk.dim('Make sure')} ${chalk.red(
+			'Docker'
+		)} ${chalk.green(
+			'is running'
+		)}`,
 		'\n\n'
 	);
 	process.exit();

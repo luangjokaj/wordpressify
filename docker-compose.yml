@@ -24,8 +24,6 @@ services:
                 define( 'DISABLE_WP_CRON', true );
                 define( 'WP_DEBUG_LOG', '/var/xdebug/wp-errors.log' );
                 define( 'FS_DIRECT', true );
-                define( 'WP_SITEURL', 'http://localhost:8080' );
-                define( 'WP_HOME', 'http://localhost:8080' );
         volumes:
             - './build/wordpress:/var/www/html'
             - './xdebug:/var/xdebug'
@@ -49,6 +47,7 @@ services:
             - '${PROXY_PORT:-3010}:${PROXY_PORT:-3010}'
         environment:
             - PROXY_PORT=${PROXY_PORT:-3010}
+            - THEME_NAME=${THEME_NAME}
         volumes:
             - './src:/usr/src/app/src'
             - './dist:/usr/src/app/dist'

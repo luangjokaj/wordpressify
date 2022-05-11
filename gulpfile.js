@@ -21,7 +21,7 @@ const { series, dest, src, watch } = pkg;
 /* -------------------------------------------------------------------------------------------------
 Theme Name
 -------------------------------------------------------------------------------------------------- */
-const themeName = 'wordpressify';
+const themeName = process.env.THEME_NAME || 'wordpressify';
 
 /* -------------------------------------------------------------------------------------------------
 PostCSS Plugins
@@ -86,7 +86,12 @@ function devServer() {
 	browserSync({
 		logPrefix: '🐳 WordPressify',
 		proxy: {
-			target: `webserver:8080`,
+			target: 'webserver:8080',
+			proxyReq: [
+				function (proxyReq, req, res) {
+					proxyReq.setHeader('Host', req.headers.host);
+				},
+			],
 		},
 		host: 'localhost',
 		port: portnumber,
