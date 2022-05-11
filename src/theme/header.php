@@ -27,6 +27,7 @@
 			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
 		/>
 	</noscript>
+	<script async="" src="/browser-sync/browser-sync-client.js"></script>
 </head>
 
 <body <?php body_class(); ?>>
