@@ -9,9 +9,11 @@ services:
             - 'persistent_db:/var/lib/mysql'
         ports:
             - '3306:3306'
+
     wordpress:
         build:
             dockerfile: ./Dockerfile-wordpress
+            context: .
         expose:
             - '9000'
         environment:
@@ -30,6 +32,21 @@ services:
             - './config/php.ini:/usr/local/etc/php/conf.d/overrides.ini'
         depends_on:
             - db
+
+    wordpress-chmod:
+        image: wordpress:5-php7.4-fpm
+        restart: on-failure
+        depends_on:
+            - wordpress
+        volumes:
+            - './build/wordpress:/var/www/html'
+        entrypoint: >
+          /bin/sh -c "
+          chmod -R 777 wp-content/themes;
+          chmod -R 777 wp-content/plugins;
+          exit 0;
+          "
+
     webserver:
         image: nginx:alpine
         ports:
@@ -38,10 +55,12 @@ services:
             - ./config/nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf:ro
             - './build/wordpress:/var/www/html'
         depends_on:
-            - 'wordpress'
+            - wordpress-chmod
+
     nodejs:
         build:
             dockerfile: ./Dockerfile-nodejs
+            context: .
         ports:
             - '3001:3001' # Default port for browserSync UI (for debugging)
             - '${PROXY_PORT:-3010}:${PROXY_PORT:-3010}'
