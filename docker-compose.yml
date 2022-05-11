@@ -34,10 +34,8 @@ services:
             - db
     webserver:
         image: nginx:alpine
-        expose:
-            - '8080'
         ports:
-        - '8080:8080'
+            - '8080:8080'
         volumes:
             - ./config/nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf:ro
             - './build/wordpress:/var/www/html'
