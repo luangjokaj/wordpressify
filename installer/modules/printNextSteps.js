@@ -63,14 +63,15 @@ const printNextSteps = () => {
 	console.log(
 		`	${chalk.dim('Set your new theme directory name:')} ${chalk.green(
 			'THEME_NAME='
-		)}${chalk.red('wordpressify')} `
+		)}${chalk.red('wordpressify')} `,
+		'\n'
 	);
 	console.log(
-		` ${chalk.dim('2.')} Run: ${chalk.green('npm')} run start`,
+		` ${chalk.dim('2.')} Run: ${chalk.green('npm')} run start  ${chalk.dim(
+			'or'
+		)}  ${chalk.green('docker')} compose up`,
 		'\n',
-		`	${chalk.dim('Make sure')} ${chalk.red(
-			'Docker'
-		)} ${chalk.green(
+		`	${chalk.dim('Make sure')} ${chalk.red('Docker')} ${chalk.green(
 			'is running'
 		)}`,
 		'\n\n'
