@@ -2,7 +2,7 @@ import pkg from 'gulp';
 import babel from 'gulp-babel';
 import browserSync from 'browser-sync';
 import concat from 'gulp-concat';
-import del from 'del';
+import { deleteAsync } from 'del';
 import log from 'fancy-log';
 import fs from 'fs';
 import partialimport from 'postcss-easy-import';
@@ -246,7 +246,7 @@ export { dev };
 Production Tasks
 -------------------------------------------------------------------------------------------------- */
 async function cleanProd() {
-	await del(['./dist/*']);
+	await deleteAsync(['./dist/*']);
 }
 
 function copyThemeProd() {
