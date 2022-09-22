@@ -59,13 +59,13 @@
 	],
 	"license": "MIT",
 	"dependencies": {
-		"@babel/core": "^7.17.10",
-		"@babel/preset-env": "^7.17.10",
-		"autoprefixer": "^10.4.7",
-		"browser-sync": "^2.27.9",
-		"cherry-postcss": "^0.0.2-17",
-		"cssnano": "^5.1.7",
-		"del": "^6.0.0",
+		"@babel/core": "^7.19.1",
+		"@babel/preset-env": "^7.19.1",
+		"autoprefixer": "^10.4.12",
+		"browser-sync": "^2.27.10",
+		"cherry-postcss": "^0.0.2-18",
+		"cssnano": "^5.1.13",
+		"del": "^7.0.0",
 		"fancy-log": "^2.0.0",
 		"gulp": "^4.0.2",
 		"gulp-babel": "^8.0.0",
@@ -75,11 +75,11 @@
 		"gulp-sourcemaps": "^3.0.0",
 		"gulp-uglify": "^3.0.2",
 		"gulp-vinyl-zip": "^2.5.0",
-		"jquery": "^3.6.0",
-		"postcss": "^8.4.13",
+		"jquery": "^3.6.1",
+		"postcss": "^8.4.16",
 		"postcss-easy-import": "^4.0.0",
-		"postcss-mixins": "^9.0.2",
-		"postcss-preset-env": "^7.5.0",
-		"stylelint": "^14.8.2"
+		"postcss-mixins": "^9.0.4",
+		"postcss-preset-env": "^7.8.2",
+		"stylelint": "^14.12.1"
 	}
 }
