@@ -38,7 +38,6 @@ const run = () => {
 		`${upstreamUrl}/LICENSE`,
 		`${upstreamUrl}/README.md`,
 		`${upstreamUrl}/installer/package.json`,
-		`${upstreamUrl}/installer/package-lock.json`,
 
 		`${upstreamUrl}/src/assets/css/style.css`,
 		`${upstreamUrl}/src/assets/css/wordpressify.css`,
