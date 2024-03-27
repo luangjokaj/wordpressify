@@ -63,7 +63,6 @@
 		"@babel/preset-env": "^7.23.3",
 		"autoprefixer": "^10.4.16",
 		"browser-sync": "^2.29.3",
-		"cherry-postcss": "^0.0.2-18",
 		"cssnano": "^6.0.1",
 		"del": "^7.1.0",
 		"fancy-log": "^2.0.0",
