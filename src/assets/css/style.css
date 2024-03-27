@@ -9,6 +9,4 @@ Version: 1.0
 Tags: responsive, clean, minimal, modern, wordpressify
 */
 
-@import "cherry-postcss/src/cherry.css";
-
 @import "./wordpressify";
