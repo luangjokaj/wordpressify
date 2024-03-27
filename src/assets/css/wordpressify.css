@@ -54,11 +54,6 @@ body {
 	margin: 0;
 }
 
-ul, 
-ol {
-	@mixin reset-list;
-}
-
 p a,
 a {
 	color: var(--color-secondary);
