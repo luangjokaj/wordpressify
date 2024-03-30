@@ -3,6 +3,8 @@
 [![Version](https://img.shields.io/github/package-json/v/luangjokaj/wordpressify)](https://www.wordpressify.co/)
 
 Automate your WordPress development workflow.
+- Requires [Docker](https://www.docker.com/).
+- Compatible with macOS, Windows, and Linux.
 
 ---
 
@@ -23,33 +25,3 @@ For help, discussion about best practices, or any other conversation that would 
 For casual chit-chat with others using WordPressify:
 
 [Join the Discord Server](https://discord.com/invite/uQFdMddMZw)
-
-# Core Team
-
-<table>
-  <tbody>
-    <tr>
-      <td align="center" valign="top">
-        <a href="https://github.com/luangjokaj">
-            <img width="100" height="auto" src="https://github.com/luangjokaj.png">
-        </a>
-        <br>
-        <a href="https://github.com/luangjokaj">Luan Gjokaj</a><br />
-      </td>
-      <td align="center" valign="top">
-        <a href="https://github.com/ribaricplusplus">
-            <img width="100" height="auto" src="https://github.com/ribaricplusplus.png">
-        </a>
-        <br>
-        <a href="https://github.com/ribaricplusplus">Bruno Ribarić</a>
-      </td>
-      <td align="center" valign="top">
-        <a href="https://github.com/mountainash">
-            <img width="100" height="auto" src="https://github.com/mountainash.png">
-        </a>
-        <br>
-        <a href="https://github.com/mountainash">Mountain Ash</a>
-      </td>
-     </tr>
-  </tbody>
-</table>

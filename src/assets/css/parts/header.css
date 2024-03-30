@@ -1,0 +1,8 @@
+.header {
+	border-bottom: solid 1px var(--color-gray-light);
+
+	& figure {
+		display: flex;
+	}
+}
+

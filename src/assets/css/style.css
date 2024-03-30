@@ -1,4 +1,3 @@
-
 /*
 Theme Name: WordPressify
 Theme URI: https://www.wordpressify.co
@@ -10,3 +9,7 @@ Tags: responsive, clean, minimal, modern, wordpressify
 */
 
 @import "./wordpressify";
+@import "./parts/header";
+@import "./parts/footer";
+@import "./patterns/sample";
+

@@ -88,7 +88,7 @@ function devServer() {
 		proxy: {
 			target: 'webserver:8080',
 			proxyReq: [
-				function (proxyReq, req, res) {
+				function(proxyReq, req) {
 					proxyReq.setHeader('Host', req.headers.host);
 				},
 			],
@@ -100,65 +100,108 @@ function devServer() {
 		logConnections: true,
 	});
 
-	const watcherCSS = watch(['./src/assets/css/**/*.css'], {
+	const watcherCSS = watch(['./src/assets/css/**/*.css', '!./**/.DS_Store'], {
 		interval: 1000,
 		usePolling: true,
 	});
-	const watcherJs = watch(['./src/assets/js/**'], {
+	const watcherJs = watch(['./src/assets/js/**', '!./**/.DS_Store'], {
 		interval: 1000,
 		usePolling: true,
 	});
-	const watcherImg = watch(['./src/assets/img/**'], {
+	const watcherImg = watch(['./src/assets/img/**', '!./**/.DS_Store'], {
 		interval: 1000,
 		usePolling: true,
 	});
-	const watcherFonts = watch(['./src/assets/fonts/**'], {
+	const watcherFonts = watch(['./src/assets/fonts/**', '!./**/.DS_Store'], {
 		interval: 1000,
 		usePolling: true,
 	});
-	const watcherTheme = watch(['./src/theme/**'], {
+	const watcherTheme = watch(['./src/theme/**', '!./**/.DS_Store'], {
 		interval: 1000,
 		usePolling: true,
 	});
-	const watcherPlugins = watch(['./src/plugins/**'], {
+	const watcherPlugins = watch(['./src/plugins/**', '!./**/.DS_Store'], {
 		interval: 1000,
 		usePolling: true,
 	});
 
-	watcherCSS.on('change', function (path, stats) {
-		console.log(`File ${path} was changed`);
+	watcherCSS.on('all', function(event, path) {
+		console.log(
+			`${wpFy} - CSS Watcher Event "${event}" triggered for file "${path}" ⚙️`,
+		);
 		stylesDev();
 	});
 
-	watcherJs.on('change', function (path, stats) {
-		console.log(`File ${path} was changed`);
+	watcherJs.on('all', function(event, path) {
+		console.log(
+			`${wpFy} - JS Watcher Event "${event}" triggered for file "${path}" ⚙️`,
+		);
 		footerScriptsDev();
 		Reload();
 	});
 
-	watcherImg.on('change', function (path, stats) {
-		console.log(`File ${path} was changed`);
+	watcherImg.on('all', function(event, path) {
+		console.log(
+			`${wpFy} - IMG Watcher Event "${event}" triggered for file "${path}" ⚙️`,
+		);
 		copyImagesDev();
 		Reload();
 	});
 
-	watcherFonts.on('change', function (path, stats) {
-		console.log(`File ${path} was changed`);
+	watcherImg.on('unlink', async function(path) {
+		await deleteFiles(path, 'isAssets');
+	});
+
+	watcherFonts.on('all', function(event, path) {
+		console.log(
+			`${wpFy} - Fonts Watcher Event "${event}" triggered for file "${path}" ⚙️`,
+		);
 		copyFontsDev();
 		Reload();
 	});
-	watcherTheme.on('change', function (path, stats) {
-		console.log(`File ${path} was changed`);
+
+	watcherFonts.on('unlink', async function(path) {
+		await deleteFiles(path, 'isAssets');
+	});
+
+	watcherTheme.on('all', function(event, path) {
+		console.log(
+			`${wpFy} - Theme Watcher Event "${event}" triggered for file "${path}" ⚙️`,
+		);
 		copyThemeDev();
 		stylesDev();
 		Reload();
 	});
 
-	watcherPlugins.on('change', function (path, stats) {
-		console.log(`File ${path} was changed`);
+	watcherTheme.on('unlink', async function(path) {
+		await deleteFiles(path);
+	});
+
+	watcherPlugins.on('all', async function(event, path) {
+		console.log(
+			`${wpFy} - Plugins Watcher Event "${event}" triggered for file "${path}" ⚙️`,
+		);
 		pluginsDev();
 		Reload();
 	});
+}
+
+async function deleteFiles(path, isAassets) {
+	console.log(`${wpFy} - File ${path} was removed!`);
+	let pathName;
+	if (isAassets) {
+		pathName = path.replace('src/assets/', '');
+	} else {
+		pathName = path.replace('src/theme/', '');
+	}
+	console.log('Deleting: ' + pathName + ' 🚫');
+	await deleteAsync(
+		'./build/wordpress/wp-content/themes/' + themeName + '/' + pathName,
+	);
+}
+
+async function cleanTheme() {
+	await deleteAsync('./build/wordpress/wp-content/themes/' + themeName);
 }
 
 function Reload() {
@@ -170,21 +213,21 @@ function copyThemeDev() {
 		log(buildNotFound);
 		process.exit(1);
 	} else {
-		return src('./src/theme/**').pipe(
-			dest('./build/wordpress/wp-content/themes/' + themeName)
+		return src('./src/theme/**', { encoding: false }).pipe(
+			dest('./build/wordpress/wp-content/themes/' + themeName),
 		);
 	}
 }
 
 function copyImagesDev() {
-	return src('./src/assets/img/**').pipe(
-		dest('./build/wordpress/wp-content/themes/' + themeName + '/img')
+	return src('./src/assets/img/**', { encoding: false }).pipe(
+		dest('./build/wordpress/wp-content/themes/' + themeName + '/img'),
 	);
 }
 
 function copyFontsDev() {
-	return src('./src/assets/fonts/**').pipe(
-		dest('./build/wordpress/wp-content/themes/' + themeName + '/fonts')
+	return src('./src/assets/fonts/**', { encoding: false }).pipe(
+		dest('./build/wordpress/wp-content/themes/' + themeName + '/fonts'),
 	);
 }
 
@@ -214,7 +257,7 @@ function footerScriptsDev() {
 		.pipe(
 			babel({
 				presets: ['@babel/preset-env'],
-			})
+			}),
 		)
 		.pipe(concat('footer-bundle.js'))
 		.pipe(sourcemaps.write('.'))
@@ -222,13 +265,14 @@ function footerScriptsDev() {
 }
 
 function pluginsDev() {
-	return src(['./src/plugins/**', '!./src/plugins/README.md']).pipe(
-		dest('./build/wordpress/wp-content/plugins')
-	);
+	return src(['./src/plugins/**', '!./src/plugins/README.md'], {
+		encoding: false,
+	}).pipe(dest('./build/wordpress/wp-content/plugins'));
 }
 
 const dev = series(
 	registerCleanup,
+	cleanTheme,
 	copyThemeDev,
 	copyImagesDev,
 	copyFontsDev,
@@ -236,7 +280,7 @@ const dev = series(
 	headerScriptsDev,
 	footerScriptsDev,
 	pluginsDev,
-	devServer
+	devServer,
 );
 dev.displayName = 'dev';
 
@@ -250,14 +294,14 @@ async function cleanProd() {
 }
 
 function copyThemeProd() {
-	return src(['./src/theme/**', '!./src/theme/**/node_modules/**']).pipe(
-		dest('./dist/themes/' + themeName)
-	);
+	return src(['./src/theme/**', '!./src/theme/**/node_modules/**'], {
+		encoding: false,
+	}).pipe(dest('./dist/themes/' + themeName));
 }
 
 function copyFontsProd() {
-	return src('./src/assets/fonts/**').pipe(
-		dest('./dist/themes/' + themeName + '/fonts')
+	return src('./src/assets/fonts/**', { encoding: false }).pipe(
+		dest('./dist/themes/' + themeName + '/fonts'),
 	);
 }
 
@@ -282,7 +326,7 @@ function footerScriptsProd() {
 		.pipe(
 			babel({
 				presets: ['@babel/preset-env'],
-			})
+			}),
 		)
 		.pipe(concat('footer-bundle.js'))
 		.pipe(uglify())
@@ -290,13 +334,13 @@ function footerScriptsProd() {
 }
 
 function pluginsProd() {
-	return src(['./src/plugins/**', '!./src/plugins/**/*.md']).pipe(
-		dest('./dist/plugins')
-	);
+	return src(['./src/plugins/**', '!./src/plugins/**/*.md'], {
+		encoding: false,
+	}).pipe(dest('./dist/plugins'));
 }
 
 function processImages() {
-	return src('./src/assets/img/**')
+	return src('./src/assets/img/**', { encoding: false })
 		.pipe(plumber({ errorHandler: onError }))
 		.pipe(dest('./dist/themes/' + themeName + '/img'));
 }
@@ -320,7 +364,7 @@ const prod = series(
 	footerScriptsProd,
 	pluginsProd,
 	processImages,
-	zipProd
+	zipProd,
 );
 prod.displayName = 'prod';
 export { prod };

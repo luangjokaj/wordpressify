@@ -1,5 +1,10 @@
 # Changelog
 
+**v0.5.0**
+
+- 📦 NEW: Updated default theme, removed php in favor of HTML templates with block markup, using modern block [themes](https://developer.wordpress.org/block-editor/explanations/architecture/key-concepts/).
+- 🐛 FIX: Watch tasks, now they work as expected. Deleted files will be automatically removed from the build folder as expected. Also fixed an issue where the watch task would not work for new images or	fonts.
+
 **v0.4.0**
 
 🎁 A new major release simplifies WordPressify even further. Removes NodeJS as a global dependency, leaving Docker as the only main dependency. This allows WordPressify to run cross-platform without changing anything.
@@ -16,7 +21,7 @@
 
 - A special thank you to [@mountainash ](https://github.com/mountainash) for this contribution.
 ### Special thank you 🎉
-- [@mountainash ](https://github.com/mountainash) - For making this release possible. 
+- [@mountainash ](https://github.com/mountainash) - For making this release possible.
 - [@vandr0iy](https://github.com/vandr0iy) - For fixing Linux Docker permissions.
 
 **[Release Notes](https://github.com/luangjokaj/wordpressify/discussions/126)**
