@@ -4,7 +4,7 @@ const printNextSteps = () => {
 	console.log('\n\n✅ ', chalk.black.bgGreen(' All done! Happy coding. \n'));
 	console.log(
 		'Installer has added 🎈 WordPressify files to the current directory.  ',
-		'\nInside this directory, you can run this command:'
+		'\nInside this directory, you can run this command:',
 	);
 
 	// Scripts
@@ -15,41 +15,25 @@ const printNextSteps = () => {
 		'\n\n',
 		'	Use to compile and run your files.',
 		'\n',
-		'	Watches for any changes and reports back any errors in your code.'
+		'	Watches for any changes and reports back any errors in your code.',
 	);
 
 	// Support
 	console.log('\n✊ ', chalk.black.bgYellow(' Support WordPressify \n'));
 	console.log(
-		'Like WordPressify? Check out our other free and open source repositories: \n'
+		'Like WordPressify? Check out our other free and open source repositories: \n',
 	);
 	console.log(
 		`	${chalk.yellow('Cherry → ')} https://bit.ly/3sEr75P`,
 		'\n',
 		`	${chalk.gray('• A design system to build the web.')}`,
 		'\n',
-		`	${chalk.yellow('GoPablo → ')} http://bit.ly/2Hgkfpy`,
-		'\n',
-		`	${chalk.gray('• Create optimized static websites.')}`,
-		'\n',
-		`	${chalk.yellow('WordPressify → ')} https://bit.ly/2KTqyQX`,
-		'\n',
-		`	${chalk.gray('• Automate your WordPress development workflow.')}`,
-		'\n',
-		`	${chalk.yellow('Nextify → ')} https://bit.ly/3m4lVWm`,
-		'\n',
-		`	${chalk.gray('• React apps using Next.js and Emotion.')}`,
-		'\n',
-		`	${chalk.yellow('FuzzyMail → ')} https://bit.ly/2P3Irlr`,
-		'\n',
-		`	${chalk.gray('• Responsive email template generator.')}`,
-		'\n',
 		`	${chalk.green('Powered by Riangle → ')} https://bit.ly/2P5i26I`,
 		'\n',
 		'\n',
 		`	${chalk.red(
-			'Thank you for using 🎈 WordPressify → '
-		)} https://www.wordpressify.co`
+			'Thank you for using 🎈 WordPressify → ',
+		)} https://www.wordpressify.co`,
 	);
 
 	// Get started
@@ -57,24 +41,24 @@ const printNextSteps = () => {
 	console.log(' You can start: \n');
 	console.log(
 		` ${chalk.dim('1.')} Rename: ${chalk.green('.env_example')} to ${chalk.green(
-			'.env'
-		)}`
+			'.env',
+		)}`,
 	);
 	console.log(
 		`	${chalk.dim('Set your new theme directory name:')} ${chalk.green(
-			'THEME_NAME='
+			'THEME_NAME=',
 		)}${chalk.red('wordpressify')} `,
-		'\n'
+		'\n',
 	);
 	console.log(
 		` ${chalk.dim('2.')} Run: ${chalk.green('npm')} run start  ${chalk.dim(
-			'or'
+			'or',
 		)}  ${chalk.green('docker')} compose up`,
 		'\n',
 		`	${chalk.dim('Make sure')} ${chalk.red('Docker')} ${chalk.green(
-			'is running'
+			'is running',
 		)}`,
-		'\n\n'
+		'\n\n',
 	);
 	process.exit();
 };

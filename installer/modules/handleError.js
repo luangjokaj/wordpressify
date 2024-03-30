@@ -1,6 +1,6 @@
 /**
- * Error handler
- */
+	* Error handler
+	*/
 
 const handleError = (err) => {
 	if (err) {

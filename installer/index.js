@@ -27,7 +27,7 @@ program
 			type: 'confirm',
 			name: 'value',
 			message: `Do you want to install ${chalk.white.bgGreen(
-				'🎈 WordPressify'
+				'🎈 WordPressify',
 			)} in the current directory?\n${chalk.red(process.cwd())}`,
 		});
 	}
@@ -41,8 +41,8 @@ program
 						currentNodeVersion +
 						'.\n' +
 						'Install WordPressify requires Node 12 or higher. \n' +
-						'Kindly, update your version of Node.'
-				)
+						'Kindly, update your version of Node.',
+				),
 			);
 			process.exit(1);
 		}

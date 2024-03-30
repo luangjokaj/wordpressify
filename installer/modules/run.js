@@ -74,6 +74,7 @@ const run = () => {
 		`${upstreamUrl}/src/theme/templates/single.html`,
 
 		`${upstreamUrl}/src/theme/functions.php`,
+		`${upstreamUrl}/src/theme/index.php`,
 		`${upstreamUrl}/src/theme/screenshot.png`,
 		`${upstreamUrl}/src/theme/theme.json`,
 
@@ -96,7 +97,12 @@ const run = () => {
 	const fontFiles = ['Inter-VariableFont_slnt,wght.woff2', 'LICENSE.txt'];
 	const imgFiles = ['logo.svg'];
 	const jsFiles = ['main.js'];
-	const themeFiles = ['functions.php', 'screenshot.png', 'theme.json'];
+	const themeFiles = [
+		'functions.php',
+		'index.php',
+		'screenshot.png',
+		'theme.json',
+	];
 	const partsFiles = ['footer.html', 'header.html'];
 	const patternsFiles = ['footer.php', 'header.php', 'sample.php'];
 	const templatesFiles = [

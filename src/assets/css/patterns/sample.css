@@ -1,8 +1,9 @@
 .wordpressify-sample {
-	max-width: calc(100% - 40px);
+	max-width: calc(100% - 64px);
 	border: dashed 1px var(--color-info);
-	margin: 20px auto;
+	margin: 40px auto;
 	border-radius: 12px;
+	box-shadow: 0 0 0 12px rgba(6, 182, 212, 0.1);
 
 	@media (--screen-lg) {
 		max-width: 620px;
