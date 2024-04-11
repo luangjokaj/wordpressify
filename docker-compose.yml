@@ -1,79 +1,80 @@
-version: '3.4'
+version: "3.4"
 services:
-    db:
-        image: mariadb
-        environment:
-            MYSQL_ROOT_PASSWORD: 'root'
-            MYSQL_DATABASE: 'wordpress'
-        volumes:
-            - 'persistent_db:/var/lib/mysql'
-        ports:
-            - '3306:3306'
+  db:
+    image: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: "root"
+      MYSQL_DATABASE: "wordpress"
+    volumes:
+      - "persistent_db:/var/lib/mysql"
+    ports:
+      - "3306:3306"
 
-    wordpress:
-        build:
-            dockerfile: ./Dockerfile-wordpress
-            context: .
-        expose:
-            - '9000'
-        environment:
-            WORDPRESS_DB_HOST: 'db'
-            WORDPRESS_DB_USER: 'root'
-            WORDPRESS_DB_PASSWORD: 'root'
-            WORDPRESS_DB_NAME: 'wordpress'
-            WORDPRESS_DEBUG: 1
-            WORDPRESS_CONFIG_EXTRA: |
-                define( 'DISABLE_WP_CRON', true );
-                define( 'WP_DEBUG_LOG', '/var/xdebug/wp-errors.log' );
-                define( 'FS_DIRECT', true );
-        volumes:
-            - './build/wordpress:/var/www/html'
-            - './xdebug:/var/xdebug'
-            - './config/php.ini:/usr/local/etc/php/conf.d/overrides.ini'
-        depends_on:
-            - db
+  wordpress:
+    build:
+      dockerfile: ./Dockerfile-wordpress
+      context: .
+    expose:
+      - "9000"
+    environment:
+      WORDPRESS_DB_HOST: "db"
+      WORDPRESS_DB_USER: "root"
+      WORDPRESS_DB_PASSWORD: "root"
+      WORDPRESS_DB_NAME: "wordpress"
+      WORDPRESS_DEBUG: 1
+      WORDPRESS_CONFIG_EXTRA: |
+        define( 'DISABLE_WP_CRON', true );
+        define( 'WP_DEBUG_LOG', '/var/xdebug/wp-errors.log' );
+        define( 'FS_DIRECT', true );
+    volumes:
+      - "./build/wordpress:/var/www/html"
+      - "./xdebug:/var/xdebug"
+      - "./config/php.ini:/usr/local/etc/php/conf.d/overrides.ini"
+    depends_on:
+      - db
 
-    wordpress-chmod:
-        image: wordpress:5-php7.4-fpm
-        restart: on-failure
-        depends_on:
-            - wordpress
-        volumes:
-            - './build/wordpress:/var/www/html'
-        entrypoint: >
-          /bin/sh -c "
-          chmod -R 777 wp-content/themes;
-          chmod -R 777 wp-content/plugins;
-          exit 0;
-          "
+  wordpress-chmod:
+    image: wordpress:5-php7.4-fpm
+    restart: on-failure
+    depends_on:
+      - wordpress
+    volumes:
+      - "./build/wordpress:/var/www/html"
+    entrypoint: >
+      /bin/sh -c "
+      chmod -R 777 wp-content/themes;
+      chmod -R 777 wp-content/plugins;
+      exit 0;
+      "
 
-    webserver:
-        image: nginx:alpine
-        ports:
-            - '8080:8080'
-        volumes:
-            - ./config/nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf:ro
-            - './build/wordpress:/var/www/html'
-        depends_on:
-            - wordpress-chmod
+  webserver:
+    image: nginx:alpine
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./config/nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf:ro
+      - "./build/wordpress:/var/www/html"
+    depends_on:
+      - wordpress-chmod
 
-    nodejs:
-        build:
-            dockerfile: ./Dockerfile-nodejs
-            context: .
-        ports:
-            - '3001:3001' # Default port for browserSync UI (for debugging)
-            - '${PROXY_PORT:-3010}:${PROXY_PORT:-3010}'
-        environment:
-            - PROXY_PORT=${PROXY_PORT:-3010}
-            - THEME_NAME=${THEME_NAME}
-        volumes:
-            - './src:/usr/src/app/src'
-            - './dist:/usr/src/app/dist'
-            - './build:/usr/src/app/build'
-            - './backups:/usr/src/app/backups'
-        depends_on:
-            - 'webserver'
-        command: npm run dev
+  nodejs:
+    build:
+      dockerfile: ./Dockerfile-nodejs
+      context: .
+    ports:
+      - "3001:3001" # Default port for browserSync UI (for debugging)
+      - "${PROXY_PORT:-3010}:${PROXY_PORT:-3010}"
+    environment:
+      - PROXY_PORT=${PROXY_PORT:-3010}
+      - THEME_NAME=${THEME_NAME}
+    volumes:
+      - "./src:/usr/src/app/src"
+      - "./dist:/usr/src/app/dist"
+      - "./build:/usr/src/app/build"
+      - "./backups:/usr/src/app/backups"
+    depends_on:
+      - "webserver"
+    command: npm run dev
 volumes:
-    persistent_db:
+  persistent_db:
+

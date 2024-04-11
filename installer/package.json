@@ -1,84 +1,85 @@
 {
-	"name": "wordpressify",
-	"version": "0.5.0-2",
-	"description": "Automate your WordPress development workflow.",
-	"keywords": [
-		"babel",
-		"boilerplate",
-		"build",
-		"css",
-		"cherry",
-		"es6",
-		"front-end",
-		"gulp",
-		"javascript",
-		"node",
-		"nodejs",
-		"postcss",
-		"sass",
-		"web",
-		"website",
-		"wordpress",
-		"wordpressify",
-		"workflow",
-		"docker",
-		"docker compose"
-	],
-	"homepage": "https://www.wordpressify.co",
-	"repository": "https://github.com/luangjokaj/wordpressify",
-	"type": "module",
-	"node": "^12.20.0 || ^14.13.1 || >=16.0.0",
-	"scripts": {
-		"dev": "gulp dev",
-		"prod": "gulp prod",
-		"backup": "gulp backup",
-		"lint:css": "stylelint src/**/*.css",
-		"start": "docker compose up",
-		"build": "docker compose build",
-		"delete": "docker compose down -v",
-		"rebuild": "docker compose down -v && docker compose build",
-		"export": "docker compose run --rm nodejs npm run prod",
-		"export:backup": "docker compose run --rm nodejs npm run backup",
-		"lintcss": "docker compose run --rm nodejs npm run lint:css"
-	},
-	"author": "Luan Gjokaj <luan@riangle.com>",
-	"contributors": [
-		{
-			"name": "Luan Gjokaj",
-			"email": "luan@riangle.com",
-			"url": "https://www.riangle.com/"
-		},
-		{
-			"name": "Bruno Ribarić",
-			"url": "https://github.com/ribaricplusplus"
-		},
-		{
-			"name": "Mountain/\\Ash",
-			"url": "https://github.com/mountainash"
-		}
-	],
-	"license": "MIT",
-	"dependencies": {
-		"@babel/core": "^7.24.3",
-		"@babel/preset-env": "^7.24.3",
-		"autoprefixer": "^10.4.19",
-		"browser-sync": "^3.0.2",
-		"cssnano": "^6.1.2",
-		"del": "^7.1.0",
-		"fancy-log": "^2.0.0",
-		"gulp": "^5.0.0",
-		"gulp-babel": "^8.0.0",
-		"gulp-concat": "^2.6.1",
-		"gulp-plumber": "^1.2.1",
-		"gulp-postcss": "^10.0.0",
-		"gulp-sourcemaps": "^3.0.0",
-		"gulp-uglify": "^3.0.2",
-		"gulp-vinyl-zip": "^2.5.0",
-		"jquery": "^3.7.1",
-		"postcss": "^8.4.38",
-		"postcss-easy-import": "^4.0.0",
-		"postcss-mixins": "^10.0.0",
-		"postcss-preset-env": "^9.5.2",
-		"stylelint": "^16.3.1"
-	}
+  "name": "wordpressify",
+  "version": "0.5.0-3",
+  "description": "Automate your WordPress development workflow.",
+  "keywords": [
+    "babel",
+    "boilerplate",
+    "build",
+    "css",
+    "cherry",
+    "es6",
+    "front-end",
+    "gulp",
+    "javascript",
+    "node",
+    "nodejs",
+    "postcss",
+    "sass",
+    "web",
+    "website",
+    "wordpress",
+    "wordpressify",
+    "workflow",
+    "docker",
+    "docker compose"
+  ],
+  "homepage": "https://www.wordpressify.co",
+  "repository": "https://github.com/luangjokaj/wordpressify",
+  "type": "module",
+  "node": "^12.20.0 || ^14.13.1 || >=16.0.0",
+  "scripts": {
+    "dev": "gulp dev",
+    "prod": "gulp prod",
+    "backup": "gulp backup",
+    "lint:css": "stylelint src/**/*.css",
+    "start": "docker compose up",
+    "build": "docker compose build",
+    "delete": "docker compose down -v",
+    "rebuild": "docker compose down -v && docker compose build",
+    "export": "docker compose run --rm nodejs npm run prod",
+    "export:backup": "docker compose run --rm nodejs npm run backup",
+    "lintcss": "docker compose run --rm nodejs npm run lint:css"
+  },
+  "author": "Luan Gjokaj <luan@riangle.com>",
+  "contributors": [
+    {
+      "name": "Luan Gjokaj",
+      "email": "luan@riangle.com",
+      "url": "https://www.riangle.com/"
+    },
+    {
+      "name": "Bruno Ribarić",
+      "url": "https://github.com/ribaricplusplus"
+    },
+    {
+      "name": "Mountain/\\Ash",
+      "url": "https://github.com/mountainash"
+    }
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@babel/core": "^7.24.4",
+    "@babel/preset-env": "^7.24.4",
+    "autoprefixer": "^10.4.19",
+    "browser-sync": "^3.0.2",
+    "cssnano": "^6.1.2",
+    "del": "^7.1.0",
+    "fancy-log": "^2.0.0",
+    "gulp": "^5.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^10.0.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-vinyl-zip": "^2.5.0",
+    "jquery": "^3.7.1",
+    "postcss": "^8.4.38",
+    "postcss-easy-import": "^4.0.0",
+    "postcss-mixins": "^10.0.0",
+    "postcss-preset-env": "^9.5.4",
+    "stylelint": "^16.3.1"
+  }
 }
+

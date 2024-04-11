@@ -1,60 +1,61 @@
 {
-	"name": "wordpressify",
-	"version": "0.5.0-2",
-	"description": "Automate your WordPress development workflow.",
-	"keywords": [
-		"babel",
-		"boilerplate",
-		"build",
-		"css",
-		"cherry",
-		"es6",
-		"front-end",
-		"gulp",
-		"javascript",
-		"node",
-		"nodejs",
-		"postcss",
-		"sass",
-		"web",
-		"website",
-		"wordpress",
-		"wordpressify",
-		"workflow",
-		"docker",
-		"docker compose"
-	],
-	"homepage": "https://www.wordpressify.co",
-	"repository": "https://github.com/luangjokaj/wordpressify",
-	"exports": "./installer/index.js",
-	"type": "module",
-	"node": "^12.20.0 || ^14.13.1 || >=16.0.0",
-	"bin": {
-		"wordpressify": "./installer/index.js"
-	},
-	"author": "Luan Gjokaj <luan@riangle.com>",
-	"contributors": [
-		{
-			"name": "Luan Gjokaj",
-			"email": "luan@riangle.com",
-			"url": "https://www.riangle.com/"
-		},
-		{
-			"name": "Bruno Ribarić",
-			"url": "https://github.com/ribaricplusplus"
-		},
-		{
-			"name": "Mountain/\\Ash",
-			"url": "https://github.com/mountainash"
-		}
-	],
-	"license": "MIT",
-	"dependencies": {
-		"chalk": "^5.3.0",
-		"commander": "^12.0.0",
-		"download": "^8.0.0",
-		"execa": "^8.0.1",
-		"ora": "^8.0.1",
-		"prompts": "^2.4.2"
-	}
+  "name": "wordpressify",
+  "version": "0.5.0-3",
+  "description": "Automate your WordPress development workflow.",
+  "keywords": [
+    "babel",
+    "boilerplate",
+    "build",
+    "css",
+    "cherry",
+    "es6",
+    "front-end",
+    "gulp",
+    "javascript",
+    "node",
+    "nodejs",
+    "postcss",
+    "sass",
+    "web",
+    "website",
+    "wordpress",
+    "wordpressify",
+    "workflow",
+    "docker",
+    "docker compose"
+  ],
+  "homepage": "https://www.wordpressify.co",
+  "repository": "https://github.com/luangjokaj/wordpressify",
+  "exports": "./installer/index.js",
+  "type": "module",
+  "node": "^12.20.0 || ^14.13.1 || >=16.0.0",
+  "bin": {
+    "wordpressify": "./installer/index.js"
+  },
+  "author": "Luan Gjokaj <luan@riangle.com>",
+  "contributors": [
+    {
+      "name": "Luan Gjokaj",
+      "email": "luan@riangle.com",
+      "url": "https://www.riangle.com/"
+    },
+    {
+      "name": "Bruno Ribarić",
+      "url": "https://github.com/ribaricplusplus"
+    },
+    {
+      "name": "Mountain/\\Ash",
+      "url": "https://github.com/mountainash"
+    }
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^12.0.0",
+    "download": "^8.0.0",
+    "execa": "^8.0.1",
+    "ora": "^8.0.1",
+    "prompts": "^2.4.2"
+  }
 }
+

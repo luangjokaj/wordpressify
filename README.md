@@ -3,6 +3,7 @@
 [![Version](https://img.shields.io/github/package-json/v/luangjokaj/wordpressify)](https://www.wordpressify.co/)
 
 Automate your WordPress development workflow.
+
 - Requires [Docker](https://www.docker.com/).
 - Compatible with macOS, Windows, and Linux.
 
@@ -25,3 +26,4 @@ For help, discussion about best practices, or any other conversation that would 
 For casual chit-chat with others using WordPressify:
 
 [Join the Discord Server](https://discord.com/invite/uQFdMddMZw)
+

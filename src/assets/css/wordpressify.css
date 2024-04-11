@@ -7,41 +7,41 @@
 @custom-media --screen-xxxl (min-width: 1920px);
 
 :root {
- --color-primary: #859A00;
-	--color-gray-light: #E5E7EB;
-	--color-gray: #9CA3AF;
-	--color-gray-dark: #4B5563;
-	--color-light: #ffffff;
-	--color-dark: #000000;
-	--color-info: #06B6D4;
+  --color-primary: #859a00;
+  --color-gray-light: #e5e7eb;
+  --color-gray: #9ca3af;
+  --color-gray-dark: #4b5563;
+  --color-light: #ffffff;
+  --color-dark: #000000;
+  --color-info: #06b6d4;
 }
 
 html,
 body {
-	margin: 0;
-	padding: 0;
-	min-height: 100%;
-	scroll-behavior: smooth;
-	background-color: var(--color-light);
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  scroll-behavior: smooth;
+  background-color: var(--color-light);
 }
 
 body {
-	font-family: 'Inter', sans-serif;
-	-moz-osx-font-smoothing: grayscale;
-	-webkit-text-size-adjust: 100%;
-	-webkit-font-smoothing: antialiased;
+  font-family: "Inter", sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
 }
 
 * {
-	box-sizing: border-box;
-	min-width: 0;
+  box-sizing: border-box;
+  min-width: 0;
 }
 
 pre,
 code,
 kbd,
 samp {
-	font-family: monospace, monospace;
+  font-family: monospace, monospace;
 }
 
 pre,
@@ -59,29 +59,29 @@ h5,
 h6,
 ul li,
 ol li {
-	margin: 0;
-	padding: 0;
-	color: var(--color-dark);
+  margin: 0;
+  padding: 0;
+  color: var(--color-dark);
 }
 
 a {
-	color: var(--color-primary);
+  color: var(--color-primary);
 }
 
 ol,
 ul {
-	list-style: none;
-	margin: 0;
-	padding: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 figure {
-	margin: 0;
+  margin: 0;
 }
 
 fieldset {
-	appearance: none;
-	border: none;
+  appearance: none;
+  border: none;
 }
 
 button,
@@ -90,22 +90,22 @@ a,
 img,
 svg,
 svg * {
-	transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 strong,
 b {
-	font-weight: 700;
+  font-weight: 700;
 }
 
 .wp-block-group {
-	&.is-layout-constrained {
-		max-width: var(--wp--style--global--wide-size);
-		margin: auto;
-	}
+  &.is-layout-constrained {
+    max-width: var(--wp--style--global--wide-size);
+    margin: auto;
+  }
 }
 
 .wp-block-group {
-	padding: 20px;
+  padding: 20px;
 }
 

@@ -33,3 +33,6 @@ npm-debug.log
 xdebug
 
 .env
+
+.php-cs-fixer.cache
+
