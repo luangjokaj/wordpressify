@@ -30,7 +30,7 @@ const run = () => {
     `${upstreamUrl}/.editorconfig`,
     `${upstreamUrl}/.env_example`,
     `${upstreamUrl}/.gitignore`,
-    `${upstreamUrl}/.php-cs-fixter.php`,
+    `${upstreamUrl}/.php-cs-fixer.php`,
     `${upstreamUrl}/.prettierrc`,
     `${upstreamUrl}/.stylelintrc`,
     `${upstreamUrl}/docker-compose.yml`,
@@ -91,7 +91,7 @@ const run = () => {
     ".editorconfig",
     ".env_example",
     ".gitignore",
-    ".php-cs-fixter.php",
+    ".php-cs-fixer.php",
     ".prettierrc",
     ".stylelintrc",
   ];
