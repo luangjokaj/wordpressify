@@ -1,6 +1,6 @@
 {
   "name": "wordpressify",
-  "version": "0.5.0-4",
+  "version": "0.5.0-5",
   "description": "Automate your WordPress development workflow.",
   "keywords": [
     "babel",
@@ -29,7 +29,7 @@
   "type": "module",
   "node": "^12.20.0 || ^14.13.1 || >=16.0.0",
   "scripts": {
-    "dev": "gulp dev",
+    "dev": "gulp dev --stack-size=81920",
     "prod": "gulp prod",
     "backup": "gulp backup",
     "lint:css": "stylelint src/**/*.css",
@@ -59,11 +59,11 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@babel/core": "^7.24.4",
-    "@babel/preset-env": "^7.24.4",
+    "@babel/core": "^7.24.9",
+    "@babel/preset-env": "^7.24.8",
     "autoprefixer": "^10.4.19",
     "browser-sync": "^3.0.2",
-    "cssnano": "^6.1.2",
+    "cssnano": "^7.0.4",
     "del": "^7.1.0",
     "fancy-log": "^2.0.0",
     "gulp": "^5.0.0",
@@ -75,11 +75,10 @@
     "gulp-uglify": "^3.0.2",
     "gulp-vinyl-zip": "^2.5.0",
     "jquery": "^3.7.1",
-    "postcss": "^8.4.38",
+    "postcss": "^8.4.39",
     "postcss-easy-import": "^4.0.0",
-    "postcss-mixins": "^10.0.0",
-    "postcss-preset-env": "^9.5.4",
-    "stylelint": "^16.3.1"
+    "postcss-mixins": "^10.0.1",
+    "postcss-preset-env": "^9.6.0",
+    "stylelint": "^16.7.0"
   }
 }
-
