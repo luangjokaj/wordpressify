@@ -30,8 +30,8 @@
   "node": "^12.20.0 || ^14.13.1 || >=16.0.0",
   "scripts": {
     "dev": "gulp dev --stack-size=81920",
-    "prod": "gulp prod",
-    "backup": "gulp backup",
+    "prod": "gulp prod --stack-size=81920",
+    "backup": "gulp backup --stack-size=81920",
     "lint:css": "stylelint src/**/*.css",
     "start": "docker compose up",
     "build": "docker compose build",
