@@ -92,30 +92,12 @@ function devServer() {
     logConnections: true,
   });
 
-  const watcherCSS = watch(["./src/assets/css/**/*.css", "!./**/.DS_Store"], {
-    interval: 1000,
-    usePolling: true,
-  });
-  const watcherJs = watch(["./src/assets/js/**", "!./**/.DS_Store"], {
-    interval: 1000,
-    usePolling: true,
-  });
-  const watcherImg = watch(["./src/assets/img/**", "!./**/.DS_Store"], {
-    interval: 1000,
-    usePolling: true,
-  });
-  const watcherFonts = watch(["./src/assets/fonts/**", "!./**/.DS_Store"], {
-    interval: 1000,
-    usePolling: true,
-  });
-  const watcherTheme = watch(["./src/theme/**", "!./**/.DS_Store"], {
-    interval: 1000,
-    usePolling: true,
-  });
-  const watcherPlugins = watch(["./src/plugins/**", "!./**/.DS_Store"], {
-    interval: 1000,
-    usePolling: true,
-  });
+  const watcherCSS = watch(["./src/assets/css/**/*.css", "!./**/.DS_Store"]);
+  const watcherJs = watch(["./src/assets/js/**", "!./**/.DS_Store"]);
+  const watcherImg = watch(["./src/assets/img/**", "!./**/.DS_Store"]);
+  const watcherFonts = watch(["./src/assets/fonts/**", "!./**/.DS_Store"]);
+  const watcherTheme = watch(["./src/theme/**", "!./**/.DS_Store"]);
+  const watcherPlugins = watch(["./src/plugins/**", "!./**/.DS_Store"]);
 
   watcherCSS.on("all", function (event, path) {
     console.log(`${wpFy} - CSS Watcher Event "${event}" triggered for file "${path}" ⚙️`);
@@ -148,10 +130,13 @@ function devServer() {
     await deleteFiles(path, "isAssets");
   });
 
+  watcherTheme.on("ready", function () {
+    console.log(`${wpFy} - Theme Watcher ready ⚙️`);
+  });
+
   watcherTheme.on("all", function (event, path) {
     console.log(`${wpFy} - Theme Watcher Event "${event}" triggered for file "${path}" ⚙️`);
     copyThemeDev();
-    stylesDev();
     Reload();
   });
 
@@ -159,7 +144,7 @@ function devServer() {
     await deleteFiles(path);
   });
 
-  watcherPlugins.on("all", async function (event, path) {
+  watcherPlugins.on("all", function (event, path) {
     console.log(`${wpFy} - Plugins Watcher Event "${event}" triggered for file "${path}" ⚙️`);
     pluginsDev();
     Reload();
