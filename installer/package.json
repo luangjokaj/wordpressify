@@ -1,6 +1,6 @@
 {
   "name": "wordpressify",
-  "version": "0.5.0-5",
+  "version": "0.5.0-6",
   "description": "Automate your WordPress development workflow.",
   "keywords": [
     "babel",
@@ -59,15 +59,16 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@babel/core": "^7.25.7",
-    "@babel/preset-env": "^7.25.7",
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
     "autoprefixer": "^10.4.20",
     "browser-sync": "^3.0.3",
     "cssnano": "^7.0.6",
-    "del": "^7.1.0",
+    "del": "^8.0.0",
     "fancy-log": "^2.0.0",
     "gulp": "^5.0.0",
     "gulp-babel": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
     "gulp-concat": "^2.6.1",
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^10.0.0",
@@ -78,7 +79,7 @@
     "postcss": "^8.4.47",
     "postcss-easy-import": "^4.0.0",
     "postcss-mixins": "^11.0.3",
-    "postcss-preset-env": "^10.0.5",
-    "stylelint": "^16.9.0"
+    "postcss-preset-env": "^10.0.9",
+    "stylelint": "^16.10.0"
   }
 }

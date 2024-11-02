@@ -5,6 +5,7 @@
 - 📦 NEW: Updated default theme, removed php in favor of HTML templates with block markup, using modern block [themes](https://developer.wordpress.org/block-editor/explanations/architecture/key-concepts/).
 - 📦 NEW: Added code formatters. PHP CS Fixer for PHP code style consistency. Prettier for HTML, JavaScript and CSS.
 - 🐛 FIX: Watch tasks, now they work as expected. Deleted files will be automatically removed from the build folder as expected. Also fixed an issue where the watch task would not work for new images or fonts.
+- 🐛 FIX: Replace `cssnano` with `gulp-clean-css`.
 
 **v0.4.0**
 
@@ -402,4 +403,3 @@
 
 - 🐛 FIX: Bugfixes.
 - 📦 NEW: Watch and store new content in `wp-content/uploads`.
-

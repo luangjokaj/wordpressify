@@ -14,7 +14,7 @@ import postcssPresetEnv from "postcss-preset-env";
 import sourcemaps from "gulp-sourcemaps";
 import uglify from "gulp-uglify";
 import zip from "gulp-vinyl-zip";
-import cssnano from "cssnano";
+import cleanCSS from "gulp-clean-css";
 
 const { series, dest, src, watch } = pkg;
 
@@ -50,14 +50,6 @@ const pluginsListProd = [
   }),
   postCSSMixins,
   autoprefixer,
-  cssnano({
-    preset: [
-      "default",
-      {
-        discardComments: false,
-      },
-    ],
-  }),
 ];
 
 /* -------------------------------------------------------------------------------------------------
@@ -295,6 +287,7 @@ function stylesProd() {
   return src("./src/assets/css/style.css")
     .pipe(plumber({ errorHandler: onError }))
     .pipe(postcss(pluginsListProd))
+    .pipe(cleanCSS())
     .pipe(dest("./dist/themes/" + themeName));
 }
 
@@ -399,4 +392,3 @@ const thankYou = "Thank you for using " + wpFy + wpFyUrl;
 /* -------------------------------------------------------------------------------------------------
 End of all Tasks
 -------------------------------------------------------------------------------------------------- */
-
