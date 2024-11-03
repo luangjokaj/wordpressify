@@ -6,6 +6,7 @@
 - 📦 NEW: Added code formatters. PHP CS Fixer for PHP code style consistency. Prettier for HTML, JavaScript and CSS.
 - 🐛 FIX: Watch tasks, now they work as expected. Deleted files will be automatically removed from the build folder as expected. Also fixed an issue where the watch task would not work for new images or fonts.
 - 🐛 FIX: Replace `cssnano` with `gulp-clean-css`.
+- 📦 NEW: Added `USE_POLLING` environment variable to enable file watcher polling.
 
 **v0.4.0**
 
