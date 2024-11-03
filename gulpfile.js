@@ -92,12 +92,19 @@ function devServer() {
     logConnections: true,
   });
 
-  const watcherCSS = watch(["./src/assets/css/**/*.css", "!./**/.DS_Store"]);
-  const watcherJs = watch(["./src/assets/js/**", "!./**/.DS_Store"]);
-  const watcherImg = watch(["./src/assets/img/**", "!./**/.DS_Store"]);
-  const watcherFonts = watch(["./src/assets/fonts/**", "!./**/.DS_Store"]);
-  const watcherTheme = watch(["./src/theme/**", "!./**/.DS_Store"]);
-  const watcherPlugins = watch(["./src/plugins/**", "!./**/.DS_Store"]);
+  const getWatchOptions = () => {
+    return {
+      usePolling: true,
+      interval: 1000,
+    };
+  };
+
+  const watcherCSS = watch(["./src/assets/css/**/*.css", "!./**/.DS_Store"], getWatchOptions);
+  const watcherJs = watch(["./src/assets/js/**", "!./**/.DS_Store"], getWatchOptions);
+  const watcherImg = watch(["./src/assets/img/**", "!./**/.DS_Store"], getWatchOptions);
+  const watcherFonts = watch(["./src/assets/fonts/**", "!./**/.DS_Store"], getWatchOptions);
+  const watcherTheme = watch(["./src/theme/**", "!./**/.DS_Store"], getWatchOptions);
+  const watcherPlugins = watch(["./src/plugins/**", "!./**/.DS_Store"], getWatchOptions);
 
   watcherCSS.on("all", function (event, path) {
     console.log(`${wpFy} - CSS Watcher Event "${event}" triggered for file "${path}" ⚙️`);
