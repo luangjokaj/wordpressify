@@ -26,4 +26,3 @@
     "unit-allowed-list": ["px", "em", "rem", "vw", "vh", "deg", "ms", "%", "s", "dpi", "pt", "fr"]
   }
 }
-
