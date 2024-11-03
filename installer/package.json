@@ -1,6 +1,6 @@
 {
   "name": "wordpressify",
-  "version": "0.5.0-9",
+  "version": "0.5.0-10",
   "description": "Automate your WordPress development workflow.",
   "keywords": [
     "babel",
@@ -63,6 +63,7 @@
     "@babel/preset-env": "^7.26.0",
     "autoprefixer": "^10.4.20",
     "browser-sync": "^3.0.3",
+    "chokidar": "^4.0.1",
     "cssnano": "^7.0.6",
     "del": "^8.0.0",
     "fancy-log": "^2.0.0",

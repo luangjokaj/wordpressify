@@ -67,6 +67,7 @@ services:
     environment:
       - PROXY_PORT=${PROXY_PORT:-3010}
       - THEME_NAME=${THEME_NAME}
+      - USE_POLLING=${USE_POLLING:-false}
     volumes:
       - "./src:/usr/src/app/src"
       - "./dist:/usr/src/app/dist"
@@ -77,4 +78,3 @@ services:
     command: npm run dev
 volumes:
   persistent_db:
-
