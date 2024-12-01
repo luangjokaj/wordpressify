@@ -311,7 +311,7 @@ function processImages() {
 }
 
 function zipProd() {
-  return src("./dist/themes/" + themeName + "/**/*")
+  return src("./dist/themes/" + themeName + "/**/*", { encoding: false })
     .pipe(zip.dest("./dist/" + themeName + ".zip"))
     .on("end", () => {
       log(pluginsGenerated);
