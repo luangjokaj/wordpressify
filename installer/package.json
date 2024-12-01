@@ -77,10 +77,10 @@
     "gulp-uglify": "^3.0.2",
     "gulp-vinyl-zip": "^2.5.0",
     "jquery": "^3.7.1",
-    "postcss": "^8.4.47",
+    "postcss": "^8.4.49",
     "postcss-easy-import": "^4.0.0",
     "postcss-mixins": "^11.0.3",
-    "postcss-preset-env": "^10.0.9",
-    "stylelint": "^16.10.0"
+    "postcss-preset-env": "^10.1.1",
+    "stylelint": "^16.11.0"
   }
 }
