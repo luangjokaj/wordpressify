@@ -29,4 +29,4 @@ For casual chit-chat with others using WordPressify:
 
 # WordPress Hosting
 
-Are you searching for WordPress hosting? [Hostbox](https://www.hostbox.me/) provides blazing fast WordPress hosting services - you can learn more at [www.hostbox.me](https://wwwhostbox.me/).
+Are you searching for WordPress hosting? [Hostbox](https://www.hostbox.me/) provides blazing fast WordPress hosting services - you can learn more at [www.hostbox.me](https://www.hostbox.me/).
