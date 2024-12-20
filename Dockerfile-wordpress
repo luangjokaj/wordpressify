@@ -1,2 +1,6 @@
-FROM wordpress:5-php7.4-fpm
-RUN pecl install xdebug-2.9.8 && docker-php-ext-enable xdebug
+FROM wordpress:php8.3-fpm-alpine
+
+RUN apk add --no-cache $PHPIZE_DEPS linux-headers \
+    && pecl install xdebug \
+    && docker-php-ext-enable xdebug \
+    && apk del $PHPIZE_DEPS linux-headers
