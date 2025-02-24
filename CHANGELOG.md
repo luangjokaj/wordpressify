@@ -8,6 +8,7 @@
 - 🐛 FIX: Enhanced build tasks so deleted files are automatically removed. Also resolved an issue where new images or fonts weren’t being detected by the watch task.
 - 🐛 FIX: Replaced `cssnano` with `gulp-clean-css` for improved CSS optimization.
 - 📦 NEW: Update php 8.3
+- 📦 NEW: Update default theme.
 
 **v0.4.0**
 
