@@ -92,7 +92,7 @@ function devServer() {
     logConnections: true,
   });
 
-  const watchOptions = process.env.USE_POLLING === "true" && {
+  const watchOptions = {
     usePolling: true,
     interval: 1000,
   };
