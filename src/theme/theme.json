@@ -163,7 +163,7 @@
           "fontFamily": "\"Fira Code\", monospace",
           "fontFace": [
             {
-              "src": ["file:./assets/fonts/fira-code/FiraCode-VariableFont_wght.woff2"],
+              "src": ["file:./fonts/fira-code/FiraCode-VariableFont_wght.woff2"],
               "fontWeight": "300 700",
               "fontStyle": "normal",
               "fontFamily": "\"Fira Code\""
@@ -187,7 +187,7 @@
       }
     },
     "typography": {
-      "fontFamily": "var:preset|font-family|manrope",
+      "fontFamily": "var:preset|font-family|inter",
       "fontSize": "var:preset|font-size|large",
       "fontWeight": "300",
       "letterSpacing": "-0.1px",
@@ -322,6 +322,8 @@
             }
           }
         },
+
+
         "typography": {
           "fontSize": "var:preset|font-size|small"
         }
