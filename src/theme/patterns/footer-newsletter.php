@@ -37,7 +37,7 @@
 			<p class="has-small-font-size"><?php esc_html_e('Twenty Twenty-Five', 'creativeblocks'); ?></p>
 			<!-- /wp:paragraph -->
 			<!-- wp:paragraph {"fontSize":"small"} -->
-			<p class="has-small-font-size">
+			<p class="has-link-color has-small-font-size">
 		 <?php printf(esc_html__('Designed with %s', 'creativeblocks'), '<a href="' . esc_url(__('https://wordpressify.co', 'creativeblocks')) . '" rel="nofollow">WordPressify</a>');?>
 			</p>
 			<!-- /wp:paragraph -->

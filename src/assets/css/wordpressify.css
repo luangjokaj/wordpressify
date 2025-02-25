@@ -56,10 +56,6 @@ ol li {
   padding: 0;
 }
 
-a {
-  color: var(--color-primary);
-}
-
 ol,
 ul {
   list-style: none;
