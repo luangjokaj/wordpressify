@@ -182,6 +182,7 @@ const run = () => {
         "src/assets/css/patterns",
         "src/assets/fonts",
         "src/assets/fonts/inter",
+        "src/assets/fonts/fira-code",
         "src/assets/img",
         "src/assets/js",
         "src/plugins",
