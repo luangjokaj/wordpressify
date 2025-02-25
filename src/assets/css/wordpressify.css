@@ -7,13 +7,7 @@
 @custom-media --screen-xxxl (min-width: 1920px);
 
 :root {
-  --color-primary: #859a00;
-  --color-gray-light: #e5e7eb;
-  --color-gray: #9ca3af;
-  --color-gray-dark: #4b5563;
-  --color-light: #ffffff;
-  --color-dark: #000000;
-  --color-info: #06b6d4;
+  --color-primary: var(--wp--preset--color--accent-1);
 }
 
 html,
@@ -22,7 +16,6 @@ body {
   padding: 0;
   min-height: 100%;
   scroll-behavior: smooth;
-  background-color: var(--color-light);
 }
 
 body {
@@ -61,11 +54,6 @@ ul li,
 ol li {
   margin: 0;
   padding: 0;
-  color: var(--color-dark);
-}
-
-a {
-  color: var(--color-primary);
 }
 
 ol,
@@ -96,15 +84,4 @@ svg * {
 strong,
 b {
   font-weight: 700;
-}
-
-.wp-block-group {
-  &.is-layout-constrained {
-    max-width: var(--wp--style--global--wide-size);
-    margin: auto;
-  }
-}
-
-.wp-block-group {
-  padding: 20px;
 }

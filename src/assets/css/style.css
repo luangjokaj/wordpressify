@@ -9,6 +9,3 @@ Tags: responsive, clean, minimal, modern, wordpressify
 */
 
 @import "./wordpressify";
-@import "./parts/header";
-@import "./parts/footer";
-@import "./patterns/sample";
