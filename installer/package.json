@@ -59,9 +59,9 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@babel/core": "^7.26.9",
+    "@babel/core": "^7.26.10",
     "@babel/preset-env": "^7.26.9",
-    "autoprefixer": "^10.4.20",
+    "autoprefixer": "^10.4.21",
     "browser-sync": "^3.0.3",
     "chokidar": "^4.0.3",
     "cssnano": "^7.0.6",
@@ -81,6 +81,6 @@
     "postcss-easy-import": "^4.0.0",
     "postcss-mixins": "^11.0.3",
     "postcss-preset-env": "^10.1.5",
-    "stylelint": "^16.14.1"
+    "stylelint": "^16.16.0"
   }
 }
