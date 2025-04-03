@@ -62,7 +62,7 @@
     "@babel/core": "^7.26.10",
     "@babel/preset-env": "^7.26.9",
     "autoprefixer": "^10.4.21",
-    "browser-sync": "^3.0.3",
+    "browser-sync": "^3.0.4",
     "chokidar": "^4.0.3",
     "cssnano": "^7.0.6",
     "del": "^8.0.0",
