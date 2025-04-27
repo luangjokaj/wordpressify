@@ -80,7 +80,7 @@
     "postcss": "^8.5.3",
     "postcss-easy-import": "^4.0.0",
     "postcss-mixins": "^11.0.3",
-    "postcss-preset-env": "^10.1.5",
-    "stylelint": "^16.18.0"
+    "postcss-preset-env": "^10.1.6",
+    "stylelint": "^16.19.1"
   }
 }
