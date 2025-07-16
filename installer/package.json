@@ -64,7 +64,7 @@
     "autoprefixer": "^10.4.21",
     "browser-sync": "^3.0.4",
     "chokidar": "^4.0.3",
-    "cssnano": "^7.0.7",
+    "cssnano": "^7.1.0",
     "del": "^8.0.0",
     "fancy-log": "^2.0.0",
     "gulp": "^5.0.1",
@@ -81,6 +81,6 @@
     "postcss-easy-import": "^4.0.0",
     "postcss-mixins": "^12.0.0",
     "postcss-preset-env": "^10.2.4",
-    "stylelint": "^16.21.1"
+    "stylelint": "^16.22.0"
   }
 }
