@@ -34,7 +34,7 @@ services:
       - db
 
   wordpress-chmod:
-    image: wordpress:5-php7.4-fpm
+    image: wordpress:6.8-php8.4-fpm
     restart: on-failure
     depends_on:
       - wordpress
