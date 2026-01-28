@@ -18,10 +18,10 @@ importers:
         specifier: ^8.0.0
         version: 8.0.0
       execa:
-        specifier: ^9.6.0
+        specifier: ^9.6.1
         version: 9.6.1
       ora:
-        specifier: ^9.0.0
+        specifier: ^9.1.0
         version: 9.1.0
       prompts:
         specifier: ^2.4.2
