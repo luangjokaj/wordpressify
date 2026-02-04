@@ -21,8 +21,8 @@ importers:
         specifier: ^9.6.1
         version: 9.6.1
       ora:
-        specifier: ^9.1.0
-        version: 9.1.0
+        specifier: ^9.2.0
+        version: 9.2.0
       prompts:
         specifier: ^2.4.2
         version: 2.4.2
@@ -449,8 +449,8 @@ packages:
     resolution: {integrity: sha512-VXJjc87FScF88uafS3JllDgvAm+c/Slfz06lorj2uAY34rlUu0Nt+v8wreiImcrgAjjIHp1rXpTDlLOGw29WwQ==}
     engines: {node: '>=18'}
 
-  ora@9.1.0:
-    resolution: {integrity: sha512-53uuLsXHOAJl5zLrUrzY9/kE+uIFEx7iaH4g2BIJQK4LZjY4LpCCYZVKDWIkL+F01wAaCg93duQ1whnK/AmY1A==}
+  ora@9.2.0:
+    resolution: {integrity: sha512-4sGT6oNDbqIuciDfD2aCkoPgHLmOe+g+xpFK2WDO0aQuD/bNHNwfdFosWP+DXmcxRyXeF8vnki6kXnOOHTuRSA==}
     engines: {node: '>=20'}
 
   p-cancelable@0.4.1:
@@ -589,8 +589,8 @@ packages:
     resolution: {integrity: sha512-/dPCrG1s3ePpWm6yBbxZq5Be1dXGLyLn9Z791chDC3NFrpkVbWGzkBwPN1knaciexFXgRJ7hzdnwZ4stHSDmjg==}
     engines: {node: '>=4'}
 
-  stdin-discarder@0.2.2:
-    resolution: {integrity: sha512-UhDfHmA92YAlNnCfhmq0VeNL5bDbiZGg7sZ2IvPsXubGkiNa9EC+tUTsjBRsYUAz87btI6/1wf4XoVvQ3uRnmQ==}
+  stdin-discarder@0.3.1:
+    resolution: {integrity: sha512-reExS1kSGoElkextOcPkel4NE99S0BWxjUHQeDFnR8S993JxpPX7KU4MNmO19NXhlJp+8dmdCbKQVNgLJh2teA==}
     engines: {node: '>=18'}
 
   strict-uri-encode@1.1.0:
@@ -1128,7 +1128,7 @@ snapshots:
     dependencies:
       mimic-function: 5.0.1
 
-  ora@9.1.0:
+  ora@9.2.0:
     dependencies:
       chalk: 5.6.2
       cli-cursor: 5.0.0
@@ -1136,7 +1136,7 @@ snapshots:
       is-interactive: 2.0.0
       is-unicode-supported: 2.1.0
       log-symbols: 7.0.1
-      stdin-discarder: 0.2.2
+      stdin-discarder: 0.3.1
       string-width: 8.1.0
 
   p-cancelable@0.4.1: {}
@@ -1259,7 +1259,7 @@ snapshots:
     dependencies:
       is-plain-obj: 1.1.0
 
-  stdin-discarder@0.2.2: {}
+  stdin-discarder@0.3.1: {}
 
   strict-uri-encode@1.1.0: {}
 
