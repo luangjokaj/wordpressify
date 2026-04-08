@@ -3,9 +3,8 @@ import readline from "readline";
 import { Command } from "commander";
 import { createRequire } from "module";
 import { run } from "./modules/run.js";
-import { red, green, bgGreen } from "./modules/colors.js";
-
-const program = new Command();
+import { update } from "./modules/update.js";
+import { red, bgGreen } from "./modules/colors.js";
 
 const require = createRequire(import.meta.url);
 const packageData = require("./package.json");
@@ -15,10 +14,23 @@ const currentNodeVersion = process.versions.node;
 const semver = currentNodeVersion.split(".");
 const major = semver[0];
 
-program
-  .version(version, "-v, --vers", "output the current version")
-  .option("-y, --non-interactive", "do not prompt for user input")
-  .parse(process.argv);
+// If below Node 12
+if (12 > major) {
+  console.error(
+    red(
+      "You are running Node " +
+        currentNodeVersion +
+        ".\n" +
+        "WordPressify requires Node 12 or higher. \n" +
+        "Kindly, update your version of Node.",
+    ),
+  );
+  process.exit(1);
+}
+
+process.on("unhandledRejection", (err) => {
+  throw err;
+});
 
 const confirm = (message) =>
   new Promise((resolve) => {
@@ -32,43 +44,49 @@ const confirm = (message) =>
     });
   });
 
-(async () => {
-  let confirmed = false;
-  if (program.opts().nonInteractive) {
-    confirmed = true;
-  } else {
-    confirmed = await confirm(
-      `Do you want to install ${bgGreen(" WordPressify ")} in the current directory?\n${red(process.cwd())}`,
-    );
-  }
+const program = new Command();
 
-  if (confirmed) {
-    // If below Node 12
-    if (12 > major) {
-      console.error(
-        red(
-          "You are running Node " +
-            currentNodeVersion +
-            ".\n" +
-            "Install WordPressify requires Node 12 or higher. \n" +
-            "Kindly, update your version of Node.",
-        ),
+program
+  .version(version, "-v, --vers", "output the current version")
+  .enablePositionalOptions()
+  .passThroughOptions();
+
+program
+  .command("install", { isDefault: true })
+  .description("Install WordPressify in the current directory")
+  .option("-y, --non-interactive", "do not prompt for user input")
+  .action(async (options) => {
+    let confirmed = false;
+    if (options.nonInteractive) {
+      confirmed = true;
+    } else {
+      confirmed = await confirm(
+        `Do you want to install ${bgGreen(" WordPressify ")} in the current directory?\n${red(process.cwd())}`,
       );
-      process.exit(1);
     }
 
-    // Makes the script crash on unhandled rejections instead of silently
-    // ignoring them. In the future, promise rejections that are not handled will
-    // terminate the Node.js process with a non-zero exit code
-    process.on("unhandledRejection", (err) => {
-      throw err;
-    });
+    if (confirmed) {
+      run();
+    }
+  });
 
-    /**
-     * Run the entire program
-     *
-     * Runs all the functions with async/await
-     */
-    run();
-  }
-})();
+program
+  .command("update")
+  .description("Update core WordPressify files (Docker, build, configs)")
+  .option("-y, --non-interactive", "do not prompt for user input")
+  .action(async (options) => {
+    let confirmed = false;
+    if (options.nonInteractive) {
+      confirmed = true;
+    } else {
+      confirmed = await confirm(
+        `Do you want to update ${bgGreen(" WordPressify ")} core files in the current directory?\n${red(process.cwd())}`,
+      );
+    }
+
+    if (confirmed) {
+      update();
+    }
+  });
+
+program.parse(process.argv);
