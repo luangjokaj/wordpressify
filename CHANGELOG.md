@@ -1,8 +1,14 @@
 # Changelog
 
+**v0.6.2**
+
+- fix: store `.gitignore` as `gitignore_template` since npm never includes `.gitignore` in published packages.
+
+---
+
 **v0.6.1**
 
-- fix: add `.npmignore` so npm includes `.gitignore` and other dot files in the published package.
+- fix: add `.npmignore` so npm includes dot files in the published package.
 - refactor: simplify installer to copy files directly to final paths, removing all flat-copy-then-rename logic.
 
 ---

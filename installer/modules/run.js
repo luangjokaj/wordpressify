@@ -22,7 +22,6 @@ const run = () => {
     ".dockerignore",
     ".editorconfig",
     ".env_example",
-    ".gitignore",
     ".php-cs-fixer.php",
     ".prettierrc",
     ".stylelintrc",
@@ -91,7 +90,11 @@ const run = () => {
   ];
 
   // installer/package.json is copied as the project's package.json
-  const specialFiles = [{ from: "installer/package.json", to: "package.json" }];
+  // Files that need different source and destination paths
+  const specialFiles = [
+    { from: "installer/package.json", to: "package.json" },
+    { from: "gitignore_template", to: ".gitignore" },
+  ];
 
   // Start
   console.log("\n");
