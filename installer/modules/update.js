@@ -32,7 +32,7 @@ const coreFiles = [
   ".editorconfig",
   ".dockerignore",
   // Scripts
-  "scripts/check-docker.js",
+  "check-docker.js",
 ];
 
 const update = () => {

@@ -33,7 +33,7 @@
     "prod": "gulp prod --stack-size=81920",
     "backup": "gulp backup --stack-size=81920",
     "lint:css": "stylelint src/**/*.css",
-    "docker:check": "node scripts/check-docker.js",
+    "docker:check": "node check-docker.js",
     "start": "npm run docker:check && docker compose up",
     "build": "npm run docker:check && docker compose build",
     "delete": "docker compose down -v",

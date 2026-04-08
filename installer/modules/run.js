@@ -86,7 +86,7 @@ const run = () => {
     "config/php.ini",
     "config/nginx/nginx.conf",
 
-    "scripts/check-docker.js",
+    "check-docker.js",
   ];
 
   // installer/package.json is copied as the project's package.json
