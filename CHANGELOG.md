@@ -1,11 +1,18 @@
 # Changelog
 
-**vNext** (unpublished)
+**v0.6.0**
 
 - chore: update WordPress to 6.9, PHP to 8.5, and Xdebug to 3.5.1.
 - chore: update dependencies.
+- refactor: replace GitHub downloads with local file copies in installer, removing `download` and `execa` dependencies.
+- refactor: replace `chalk` and `prompts` with native ANSI codes and Node's `readline`, reducing installer dependencies from 100+ to 18 packages.
 - fix: export and export:backup scripts now auto-stop Docker containers when the stack was not already running, while preserving the correct exit code.
-- docs: add Doccupine section to README.
+- fix: resolve wordpress-chmod race condition by adding a healthcheck to the WordPress service.
+- fix: nginx 400 Bad Request error by increasing `large_client_header_buffers`.
+- fix: remove obsolete `version` key from docker-compose.yml and add default for `THEME_NAME`.
+- fix: remove missing `package-lock.json` from Dockerfile-nodejs COPY.
+- feat: add Docker availability check with colored error message before running Docker commands.
+- feat: add Doccupine to installer output and README with referral links.
 - docs: add CLAUDE.md for Claude Code guidance.
 - docs: reformat CHANGELOG to follow Conventional Commits.
 
@@ -417,3 +424,9 @@ A new major release simplifies WordPressify even further. Removes NodeJS as a gl
 
 - fix: bugfixes.
 - feat: watch and store new content in `wp-content/uploads`.
+
+---
+
+**v0.0.1**
+
+- feat: initial release of WordPressify.
