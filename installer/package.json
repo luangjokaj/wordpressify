@@ -37,8 +37,8 @@
     "build": "docker compose build",
     "delete": "docker compose down -v",
     "rebuild": "docker compose down -v && docker compose build",
-    "export": "docker compose run --rm nodejs npm run prod",
-    "export:backup": "docker compose run --rm nodejs npm run backup",
+    "export": "running=$(docker compose ps -q 2>/dev/null); docker compose run --rm nodejs npm run prod; rc=$?; [ -z \"$running\" ] && docker compose down; exit $rc",
+    "export:backup": "running=$(docker compose ps -q 2>/dev/null); docker compose run --rm nodejs npm run backup; rc=$?; [ -z \"$running\" ] && docker compose down; exit $rc",
     "lintcss": "docker compose run --rm nodejs npm run lint:css"
   },
   "author": "Luan Gjokaj <luan@riangle.com>",
@@ -59,13 +59,13 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@babel/core": "^7.28.0",
-    "@babel/preset-env": "^7.28.0",
-    "autoprefixer": "^10.4.21",
+    "@babel/core": "^7.29.0",
+    "@babel/preset-env": "^7.29.2",
+    "autoprefixer": "^10.4.27",
     "browser-sync": "^3.0.4",
-    "chokidar": "^4.0.3",
-    "cssnano": "^7.1.0",
-    "del": "^8.0.0",
+    "chokidar": "^5.0.0",
+    "cssnano": "^7.1.4",
+    "del": "^8.0.1",
     "fancy-log": "^2.0.0",
     "gulp": "^5.0.1",
     "gulp-babel": "^8.0.0",
@@ -76,11 +76,11 @@
     "gulp-sourcemaps": "^3.0.0",
     "gulp-uglify": "^3.0.2",
     "gulp-vinyl-zip": "^2.5.0",
-    "jquery": "^3.7.1",
-    "postcss": "^8.5.6",
+    "jquery": "^4.0.0",
+    "postcss": "^8.5.9",
     "postcss-easy-import": "^4.0.0",
     "postcss-mixins": "^12.1.2",
-    "postcss-preset-env": "^10.2.4",
-    "stylelint": "^16.23.1"
+    "postcss-preset-env": "^11.2.0",
+    "stylelint": "^17.6.0"
   }
 }

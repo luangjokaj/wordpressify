@@ -27,6 +27,6 @@ For casual chit-chat with others using WordPressify:
 
 [Join the Discord Server](https://discord.com/invite/uQFdMddMZw)
 
-# WordPress Hosting
+# Supported by Doccupine
 
-Are you searching for WordPress hosting? [Hostbox](https://www.hostbox.me/) provides blazing fast WordPress hosting services - you can learn more at [www.hostbox.me](https://www.hostbox.me/).
+The documentation for WordPressify is powered by [Doccupine](https://www.doccupine.com/) - a documentation platform that turns MDX files into beautiful, production-ready documentation websites with AI-powered search, automatic navigation, and built-in components. Learn more in the [Doccupine docs](https://docs.doccupine.com/).

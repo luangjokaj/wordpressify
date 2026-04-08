@@ -23,6 +23,19 @@
         "ignore": ["after-comment"]
       }
     ],
-    "unit-allowed-list": ["px", "em", "rem", "vw", "vh", "deg", "ms", "%", "s", "dpi", "pt", "fr"]
+    "unit-allowed-list": [
+      "px",
+      "em",
+      "rem",
+      "vw",
+      "vh",
+      "deg",
+      "ms",
+      "%",
+      "s",
+      "dpi",
+      "pt",
+      "fr"
+    ]
   }
 }
