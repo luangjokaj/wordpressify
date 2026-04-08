@@ -97,26 +97,50 @@ function devServer() {
     interval: 1000,
   };
 
-  const watcherCSS = watch(["./src/assets/css/**/*.css", "!./**/.DS_Store"], watchOptions);
-  const watcherJs = watch(["./src/assets/js/**", "!./**/.DS_Store"], watchOptions);
-  const watcherImg = watch(["./src/assets/img/**", "!./**/.DS_Store"], watchOptions);
-  const watcherFonts = watch(["./src/assets/fonts/**", "!./**/.DS_Store"], watchOptions);
-  const watcherTheme = watch(["./src/theme/**", "!./**/.DS_Store"], watchOptions);
-  const watcherPlugins = watch(["./src/plugins/**", "!./**/.DS_Store"], watchOptions);
+  const watcherCSS = watch(
+    ["./src/assets/css/**/*.css", "!./**/.DS_Store"],
+    watchOptions,
+  );
+  const watcherJs = watch(
+    ["./src/assets/js/**", "!./**/.DS_Store"],
+    watchOptions,
+  );
+  const watcherImg = watch(
+    ["./src/assets/img/**", "!./**/.DS_Store"],
+    watchOptions,
+  );
+  const watcherFonts = watch(
+    ["./src/assets/fonts/**", "!./**/.DS_Store"],
+    watchOptions,
+  );
+  const watcherTheme = watch(
+    ["./src/theme/**", "!./**/.DS_Store"],
+    watchOptions,
+  );
+  const watcherPlugins = watch(
+    ["./src/plugins/**", "!./**/.DS_Store"],
+    watchOptions,
+  );
 
   watcherCSS.on("all", function (event, path) {
-    console.log(`${wpFy} - CSS Watcher Event "${event}" triggered for file "${path}" ⚙️`);
+    console.log(
+      `${wpFy} - CSS Watcher Event "${event}" triggered for file "${path}" ⚙️`,
+    );
     stylesDev();
   });
 
   watcherJs.on("all", function (event, path) {
-    console.log(`${wpFy} - JS Watcher Event "${event}" triggered for file "${path}" ⚙️`);
+    console.log(
+      `${wpFy} - JS Watcher Event "${event}" triggered for file "${path}" ⚙️`,
+    );
     footerScriptsDev();
     Reload();
   });
 
   watcherImg.on("all", function (event, path) {
-    console.log(`${wpFy} - IMG Watcher Event "${event}" triggered for file "${path}" ⚙️`);
+    console.log(
+      `${wpFy} - IMG Watcher Event "${event}" triggered for file "${path}" ⚙️`,
+    );
     copyImagesDev();
     Reload();
   });
@@ -126,7 +150,9 @@ function devServer() {
   });
 
   watcherFonts.on("all", function (event, path) {
-    console.log(`${wpFy} - Fonts Watcher Event "${event}" triggered for file "${path}" ⚙️`);
+    console.log(
+      `${wpFy} - Fonts Watcher Event "${event}" triggered for file "${path}" ⚙️`,
+    );
     copyFontsDev();
     Reload();
   });
@@ -136,7 +162,9 @@ function devServer() {
   });
 
   watcherTheme.on("all", function (event, path) {
-    console.log(`${wpFy} - Theme Watcher Event "${event}" triggered for file "${path}" ⚙️`);
+    console.log(
+      `${wpFy} - Theme Watcher Event "${event}" triggered for file "${path}" ⚙️`,
+    );
     copyThemeDev();
     Reload();
   });
@@ -146,7 +174,9 @@ function devServer() {
   });
 
   watcherPlugins.on("all", function (event, path) {
-    console.log(`${wpFy} - Plugins Watcher Event "${event}" triggered for file "${path}" ⚙️`);
+    console.log(
+      `${wpFy} - Plugins Watcher Event "${event}" triggered for file "${path}" ⚙️`,
+    );
     pluginsDev();
     Reload();
   });
@@ -161,7 +191,9 @@ async function deleteFiles(path, isAassets) {
     pathName = path.replace("src/theme/", "");
   }
   console.log("Deleting: " + pathName + " 🚫");
-  await deleteAsync("./build/wordpress/wp-content/themes/" + themeName + "/" + pathName);
+  await deleteAsync(
+    "./build/wordpress/wp-content/themes/" + themeName + "/" + pathName,
+  );
 }
 
 async function cleanTheme() {
@@ -367,12 +399,19 @@ const buildNotFound =
   errorMsg +
   " ⚠️　- You need to build the project first. Run the command: $ \x1b[1mdocker compose build\x1b[0m";
 const filesGenerated =
-  "Your ZIP template file was generated in: \x1b[1m" + "/dist/" + themeName + ".zip\x1b[0m - ✅";
-const pluginsGenerated = "Plugins are generated in: \x1b[1m" + "/dist/plugins/\x1b[0m - ✅";
+  "Your ZIP template file was generated in: \x1b[1m" +
+  "/dist/" +
+  themeName +
+  ".zip\x1b[0m - ✅";
+const pluginsGenerated =
+  "Plugins are generated in: \x1b[1m" + "/dist/plugins/\x1b[0m - ✅";
 const backupsGenerated =
-  "Your backup was generated in: \x1b[1m" + "/backups/" + date + ".zip\x1b[0m - ✅";
+  "Your backup was generated in: \x1b[1m" +
+  "/backups/" +
+  date +
+  ".zip\x1b[0m - ✅";
 const wpFy = "\x1b[42m\x1b[1mWordPressify\x1b[0m";
-const wpFyUrl = "\x1b[2m - https://www.wordpressify.co/\x1b[0m";
+const wpFyUrl = "\x1b[2m - https://wordpressify.co/\x1b[0m";
 const thankYou = "Thank you for using " + wpFy + wpFyUrl;
 
 /* -------------------------------------------------------------------------------------------------
