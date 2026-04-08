@@ -1,5 +1,12 @@
 # Changelog
 
+**v0.6.1**
+
+- fix: add `.npmignore` so npm includes `.gitignore` and other dot files in the published package.
+- refactor: simplify installer to copy files directly to final paths, removing all flat-copy-then-rename logic.
+
+---
+
 **v0.6.0**
 
 - chore: update WordPress to 6.9, PHP to 8.5, and Xdebug to 3.5.1.

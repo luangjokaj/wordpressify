@@ -3,7 +3,6 @@ import path from "path";
 import { fileURLToPath } from "url";
 import ora from "ora";
 import { dim, bgGreen, bgYellow, bgWhite } from "./colors.js";
-import { handleError } from "./handleError.js";
 import { clearConsole } from "./clearConsole.js";
 import { printNextSteps } from "./printNextSteps.js";
 
@@ -17,7 +16,7 @@ const run = () => {
   // Init
   clearConsole();
 
-  // Files to copy from the package
+  // Files to copy from the package (source path -> destination path)
   const filesToCopy = [
     ".babelrc",
     ".dockerignore",
@@ -33,7 +32,6 @@ const run = () => {
     "gulpfile.js",
     "LICENSE",
     "README.md",
-    "installer/package.json",
 
     "src/assets/css/style.css",
     "src/assets/css/wordpressify.css",
@@ -92,64 +90,8 @@ const run = () => {
     "scripts/check-docker.js",
   ];
 
-  // Organise file structure
-  const dotFiles = [
-    ".babelrc",
-    ".dockerignore",
-    ".editorconfig",
-    ".env_example",
-    ".gitignore",
-    ".php-cs-fixer.php",
-    ".prettierrc",
-    ".stylelintrc",
-  ];
-  const cssFiles = ["style.css", "wordpressify.css"];
-  const interFiles = ["Inter-VariableFont_slnt,wght.woff2"];
-  const firaCodeFiles = ["FiraCode-VariableFont_wght.woff2"];
-  const imgFiles = ["logo.svg", "404-image.webp"];
-  const jsFiles = ["main.js"];
-  const themeFiles = ["functions.php", "index.php", "screenshot.png", "theme.json"];
-  const partsFiles = [
-    "footer-columns.html",
-    "footer-newsletter.html",
-    "footer.html",
-    "header.html",
-    "sidebar.html",
-    "vertical-header.html",
-  ];
-  const patternsFiles = [
-    "comments.php",
-    "footer-centered.php",
-    "footer-columns.php",
-    "footer-newsletter.php",
-    "footer-social.php",
-    "footer.php",
-    "header-centered.php",
-    "header-columns.php",
-    "header-large-title.php",
-    "header.php",
-    "hidden-404.php",
-    "hidden-blog-heading.php",
-    "hidden-search.php",
-    "hidden-sidebar.php",
-    "hidden-written-by.php",
-    "more-posts.php",
-    "post-navigation.php",
-    "template-query-loop.php",
-  ];
-  const templatesFiles = [
-    "404.html",
-    "archive.html",
-    "home.html",
-    "index.html",
-    "page-no-title.html",
-    "page.html",
-    "search.html",
-    "single.html",
-  ];
-  const configFiles = ["php.ini"];
-  const nginxFiles = ["nginx.conf"];
-  const scriptsFiles = ["check-docker.js"];
+  // installer/package.json is copied as the project's package.json
+  const specialFiles = [{ from: "installer/package.json", to: "package.json" }];
 
   // Start
   console.log("\n");
@@ -162,99 +104,39 @@ const run = () => {
   const spinner = ora({ text: "" });
   spinner.start(`1. Creating WordPressify files inside → ${bgWhite(` ${theDir} `)}`);
 
-  // Copy files from package
-  const copyFiles = () => {
+  // Create directories and copy files directly to final paths
+  try {
+    // Create empty directories that have no files
+    fs.mkdirSync(path.join(theCWD, "src/assets/css/parts"), { recursive: true });
+    fs.mkdirSync(path.join(theCWD, "src/assets/css/patterns"), { recursive: true });
+    fs.mkdirSync(path.join(theCWD, "src/plugins"), { recursive: true });
+
+    // Copy each file directly to its final destination
     for (const relativePath of filesToCopy) {
       const source = path.join(repoRoot, relativePath);
-      let basename = path.basename(relativePath);
-      // Strip leading dot to match the rename logic that adds it back
-      if (basename.startsWith(".")) {
-        basename = basename.slice(1);
-      }
-      fs.copyFileSync(source, path.join(theCWD, basename));
+      const dest = path.join(theCWD, relativePath);
+      fs.mkdirSync(path.dirname(dest), { recursive: true });
+      fs.copyFileSync(source, dest);
     }
-  };
 
-  try {
-    copyFiles();
+    // Copy files that need renaming
+    for (const { from, to } of specialFiles) {
+      const source = path.join(repoRoot, from);
+      const dest = path.join(theCWD, to);
+      fs.copyFileSync(source, dest);
+    }
   } catch (err) {
-    handleError(err);
+    console.error(err);
+    process.exit(1);
   }
 
-  (async () => {
-    if (!fs.existsSync("src")) {
-      const dirs = [
-        "scripts",
-        "config/nginx",
-        "src/assets/css/parts",
-        "src/assets/css/patterns",
-        "src/assets/fonts/inter",
-        "src/assets/fonts/fira-code",
-        "src/assets/img",
-        "src/assets/js",
-        "src/plugins",
-        "src/theme/parts",
-        "src/theme/patterns",
-        "src/theme/templates",
-      ];
-      dirs.forEach((dir) => fs.mkdirSync(dir, { recursive: true }));
-    }
+  spinner.succeed();
 
-    dotFiles.map((x) =>
-      fs.renameSync(`${theCWD}/${x.slice(1)}`, `${theCWD}/${x}`, (err) => handleError(err)),
-    );
-    cssFiles.map((x) =>
-      fs.renameSync(`${theCWD}/${x}`, `${theCWD}/src/assets/css/${x}`, (err) => handleError(err)),
-    );
-    interFiles.map((x) =>
-      fs.renameSync(`${theCWD}/${x}`, `${theCWD}/src/assets/fonts/inter/${x}`, (err) =>
-        handleError(err),
-      ),
-    );
-    firaCodeFiles.map((x) =>
-      fs.renameSync(`${theCWD}/${x}`, `${theCWD}/src/assets/fonts/fira-code/${x}`, (err) =>
-        handleError(err),
-      ),
-    );
-    imgFiles.map((x) =>
-      fs.renameSync(`${theCWD}/${x}`, `${theCWD}/src/assets/img/${x}`, (err) => handleError(err)),
-    );
-    jsFiles.map((x) =>
-      fs.renameSync(`${theCWD}/${x}`, `${theCWD}/src/assets/js/${x}`, (err) => handleError(err)),
-    );
-    themeFiles.map((x) =>
-      fs.renameSync(`${theCWD}/${x}`, `${theCWD}/src/theme/${x}`, (err) => handleError(err)),
-    );
-    partsFiles.map((x) =>
-      fs.renameSync(`${theCWD}/${x}`, `${theCWD}/src/theme/parts/${x}`, (err) => handleError(err)),
-    );
-    patternsFiles.map((x) =>
-      fs.renameSync(`${theCWD}/${x}`, `${theCWD}/src/theme/patterns/${x}`, (err) =>
-        handleError(err),
-      ),
-    );
-    templatesFiles.map((x) =>
-      fs.renameSync(`${theCWD}/${x}`, `${theCWD}/src/theme/templates/${x}`, (err) =>
-        handleError(err),
-      ),
-    );
-    configFiles.map((x) =>
-      fs.renameSync(`${theCWD}/${x}`, `${theCWD}/config/${x}`, (err) => handleError(err)),
-    );
-    nginxFiles.map((x) =>
-      fs.renameSync(`${theCWD}/${x}`, `${theCWD}/config/nginx/${x}`, (err) => handleError(err)),
-    );
-    scriptsFiles.map((x) =>
-      fs.renameSync(`${theCWD}/${x}`, `${theCWD}/scripts/${x}`, (err) => handleError(err)),
-    );
-    spinner.succeed();
+  spinner.start("2. WordPressify is ready to go ⚡");
+  spinner.succeed();
 
-    spinner.start("2. WordPressify is ready to go ⚡");
-    spinner.succeed();
-
-    // Done
-    printNextSteps();
-  })();
+  // Done
+  printNextSteps();
 };
 
 export { run };

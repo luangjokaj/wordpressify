@@ -1,0 +1,13 @@
+dist
+build
+tmp
+backups
+xdebug
+.idea
+.vscode
+*.DS_Store
+*.map
+*.log
+node_modules
+npm-debug.log
+.php-cs-fixer.cache
