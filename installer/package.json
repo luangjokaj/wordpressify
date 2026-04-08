@@ -33,13 +33,14 @@
     "prod": "gulp prod --stack-size=81920",
     "backup": "gulp backup --stack-size=81920",
     "lint:css": "stylelint src/**/*.css",
-    "start": "docker compose up",
-    "build": "docker compose build",
+    "docker:check": "node scripts/check-docker.js",
+    "start": "npm run docker:check && docker compose up",
+    "build": "npm run docker:check && docker compose build",
     "delete": "docker compose down -v",
-    "rebuild": "docker compose down -v && docker compose build",
-    "export": "running=$(docker compose ps -q 2>/dev/null); docker compose run --rm nodejs npm run prod; rc=$?; [ -z \"$running\" ] && docker compose down; exit $rc",
-    "export:backup": "running=$(docker compose ps -q 2>/dev/null); docker compose run --rm nodejs npm run backup; rc=$?; [ -z \"$running\" ] && docker compose down; exit $rc",
-    "lintcss": "docker compose run --rm nodejs npm run lint:css"
+    "rebuild": "docker compose down -v && npm run build",
+    "export": "npm run docker:check && running=$(docker compose ps -q 2>/dev/null); docker compose run --rm nodejs npm run prod; rc=$?; [ -z \"$running\" ] && docker compose down; exit $rc",
+    "export:backup": "npm run docker:check && running=$(docker compose ps -q 2>/dev/null); docker compose run --rm nodejs npm run backup; rc=$?; [ -z \"$running\" ] && docker compose down; exit $rc",
+    "lintcss": "npm run docker:check && docker compose run --rm nodejs npm run lint:css"
   },
   "author": "Luan Gjokaj <luan@riangle.com>",
   "contributors": [

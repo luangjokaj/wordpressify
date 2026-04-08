@@ -1,17 +1,13 @@
 import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
 import ora from "ora";
-import chalk from "chalk";
-import download from "download";
-import { execa } from "execa";
-import { createRequire } from "module";
+import { dim, bgGreen, bgYellow, bgWhite } from "./colors.js";
 import { handleError } from "./handleError.js";
 import { clearConsole } from "./clearConsole.js";
 import { printNextSteps } from "./printNextSteps.js";
 
-const require = createRequire(import.meta.url);
-const packageData = require("../package.json");
-
-const version = packageData.version;
+const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 
 const theCWD = process.cwd();
 const theCWDArray = theCWD.split("/");
@@ -21,80 +17,79 @@ const run = () => {
   // Init
   clearConsole();
 
-  let upstreamUrl = `https://raw.githubusercontent.com/luangjokaj/wordpressify/v${version}`;
+  // Files to copy from the package
+  const filesToCopy = [
+    ".babelrc",
+    ".dockerignore",
+    ".editorconfig",
+    ".env_example",
+    ".gitignore",
+    ".php-cs-fixer.php",
+    ".prettierrc",
+    ".stylelintrc",
+    "docker-compose.yml",
+    "Dockerfile-nodejs",
+    "Dockerfile-wordpress",
+    "gulpfile.js",
+    "LICENSE",
+    "README.md",
+    "installer/package.json",
 
-  // Files
-  const filesToDownload = [
-    `${upstreamUrl}/.babelrc`,
-    `${upstreamUrl}/.dockerignore`,
-    `${upstreamUrl}/.editorconfig`,
-    `${upstreamUrl}/.env_example`,
-    `${upstreamUrl}/.gitignore`,
-    `${upstreamUrl}/.php-cs-fixer.php`,
-    `${upstreamUrl}/.prettierrc`,
-    `${upstreamUrl}/.stylelintrc`,
-    `${upstreamUrl}/docker-compose.yml`,
-    `${upstreamUrl}/Dockerfile-nodejs`,
-    `${upstreamUrl}/Dockerfile-wordpress`,
-    `${upstreamUrl}/gulpfile.js`,
-    `${upstreamUrl}/LICENSE`,
-    `${upstreamUrl}/README.md`,
-    `${upstreamUrl}/installer/package.json`,
-    `${upstreamUrl}/installer/package-lock.json`,
+    "src/assets/css/style.css",
+    "src/assets/css/wordpressify.css",
 
-    `${upstreamUrl}/src/assets/css/style.css`,
-    `${upstreamUrl}/src/assets/css/wordpressify.css`,
+    "src/assets/fonts/inter/Inter-VariableFont_slnt,wght.woff2",
+    "src/assets/fonts/fira-code/FiraCode-VariableFont_wght.woff2",
 
-    `${upstreamUrl}/src/assets/fonts/inter/Inter-VariableFont_slnt,wght.woff2`,
-    `${upstreamUrl}/src/assets/fonts/fira-code/FiraCode-VariableFont_wght.woff2`,
+    "src/assets/img/logo.svg",
+    "src/assets/img/404-image.webp",
 
-    `${upstreamUrl}/src/assets/img/logo.svg`,
-    `${upstreamUrl}/src/assets/img/404-image.webp`,
+    "src/assets/js/main.js",
 
-    `${upstreamUrl}/src/assets/js/main.js`,
+    "src/theme/parts/footer-columns.html",
+    "src/theme/parts/footer-newsletter.html",
+    "src/theme/parts/footer.html",
+    "src/theme/parts/header.html",
+    "src/theme/parts/sidebar.html",
+    "src/theme/parts/vertical-header.html",
 
-    `${upstreamUrl}/src/theme/parts/footer-columns.html`,
-    `${upstreamUrl}/src/theme/parts/footer-newsletter.html`,
-    `${upstreamUrl}/src/theme/parts/footer.html`,
-    `${upstreamUrl}/src/theme/parts/header.html`,
-    `${upstreamUrl}/src/theme/parts/sidebar.html`,
-    `${upstreamUrl}/src/theme/parts/vertical-header.html`,
+    "src/theme/patterns/comments.php",
+    "src/theme/patterns/footer-centered.php",
+    "src/theme/patterns/footer-columns.php",
+    "src/theme/patterns/footer-newsletter.php",
+    "src/theme/patterns/footer-social.php",
+    "src/theme/patterns/footer.php",
+    "src/theme/patterns/header-centered.php",
+    "src/theme/patterns/header-columns.php",
+    "src/theme/patterns/header-large-title.php",
+    "src/theme/patterns/header.php",
+    "src/theme/patterns/hidden-404.php",
+    "src/theme/patterns/hidden-blog-heading.php",
+    "src/theme/patterns/hidden-search.php",
+    "src/theme/patterns/hidden-sidebar.php",
+    "src/theme/patterns/hidden-written-by.php",
+    "src/theme/patterns/more-posts.php",
+    "src/theme/patterns/post-navigation.php",
+    "src/theme/patterns/template-query-loop.php",
 
-    `${upstreamUrl}/src/theme/patterns/comments.php`,
-    `${upstreamUrl}/src/theme/patterns/footer-centered.php`,
-    `${upstreamUrl}/src/theme/patterns/footer-columns.php`,
-    `${upstreamUrl}/src/theme/patterns/footer-newsletter.php`,
-    `${upstreamUrl}/src/theme/patterns/footer-social.php`,
-    `${upstreamUrl}/src/theme/patterns/footer.php`,
-    `${upstreamUrl}/src/theme/patterns/header-centered.php`,
-    `${upstreamUrl}/src/theme/patterns/header-columns.php`,
-    `${upstreamUrl}/src/theme/patterns/header-large-title.php`,
-    `${upstreamUrl}/src/theme/patterns/header.php`,
-    `${upstreamUrl}/src/theme/patterns/hidden-404.php`,
-    `${upstreamUrl}/src/theme/patterns/hidden-blog-heading.php`,
-    `${upstreamUrl}/src/theme/patterns/hidden-search.php`,
-    `${upstreamUrl}/src/theme/patterns/hidden-sidebar.php`,
-    `${upstreamUrl}/src/theme/patterns/hidden-written-by.php`,
-    `${upstreamUrl}/src/theme/patterns/more-posts.php`,
-    `${upstreamUrl}/src/theme/patterns/post-navigation.php`,
-    `${upstreamUrl}/src/theme/patterns/template-query-loop.php`,
+    "src/theme/templates/404.html",
+    "src/theme/templates/archive.html",
+    "src/theme/templates/home.html",
+    "src/theme/templates/index.html",
+    "src/theme/templates/page-no-title.html",
+    "src/theme/templates/page.html",
+    "src/theme/templates/search.html",
+    "src/theme/templates/single.html",
 
-    `${upstreamUrl}/src/theme/templates/404.html`,
-    `${upstreamUrl}/src/theme/templates/archive.html`,
-    `${upstreamUrl}/src/theme/templates/home.html`,
-    `${upstreamUrl}/src/theme/templates/index.html`,
-    `${upstreamUrl}/src/theme/templates/page-no-title.html`,
-    `${upstreamUrl}/src/theme/templates/page.html`,
-    `${upstreamUrl}/src/theme/templates/search.html`,
-    `${upstreamUrl}/src/theme/templates/single.html`,
+    "src/theme/functions.php",
+    "src/theme/index.php",
+    "src/theme/screenshot.png",
+    "src/theme/theme.json",
 
-    `${upstreamUrl}/src/theme/functions.php`,
-    `${upstreamUrl}/src/theme/index.php`,
-    `${upstreamUrl}/src/theme/screenshot.png`,
-    `${upstreamUrl}/src/theme/theme.json`,
+    "config/php.ini",
+    "config/nginx/nginx.conf",
 
-    `${upstreamUrl}/config/php.ini`,
-    `${upstreamUrl}/config/nginx/nginx.conf`,
+    "scripts/check-docker.js",
   ];
 
   // Organise file structure
@@ -154,43 +149,55 @@ const run = () => {
   ];
   const configFiles = ["php.ini"];
   const nginxFiles = ["nginx.conf"];
+  const scriptsFiles = ["check-docker.js"];
 
   // Start
   console.log("\n");
   console.log(
     "📦 ",
-    chalk.black.bgYellow(
-      ` Downloading 🎈 WordPressify files in: → ${chalk.bgGreen(` ${theDir} `)}\n`,
-    ),
-    chalk.dim(`\n In the directory: ${theCWD}\n`),
-    chalk.dim("This might take a couple of minutes.\n"),
+    bgYellow(` Installing WordPressify files in: → ${bgGreen(` ${theDir} `)}\n`),
+    dim(`\n In the directory: ${theCWD}\n`),
   );
 
   const spinner = ora({ text: "" });
-  spinner.start(`1. Creating 🎈 WordPressify files inside → ${chalk.black.bgWhite(` ${theDir} `)}`);
+  spinner.start(`1. Creating WordPressify files inside → ${bgWhite(` ${theDir} `)}`);
 
-  // Download
-  Promise.all(filesToDownload.map((x) => download(x, `${theCWD}`))).then(async () => {
+  // Copy files from package
+  const copyFiles = () => {
+    for (const relativePath of filesToCopy) {
+      const source = path.join(repoRoot, relativePath);
+      let basename = path.basename(relativePath);
+      // Strip leading dot to match the rename logic that adds it back
+      if (basename.startsWith(".")) {
+        basename = basename.slice(1);
+      }
+      fs.copyFileSync(source, path.join(theCWD, basename));
+    }
+  };
+
+  try {
+    copyFiles();
+  } catch (err) {
+    handleError(err);
+  }
+
+  (async () => {
     if (!fs.existsSync("src")) {
-      await execa("mkdir", [
-        "config",
+      const dirs = [
+        "scripts",
         "config/nginx",
-        "src",
-        "src/assets",
-        "src/assets/css",
         "src/assets/css/parts",
         "src/assets/css/patterns",
-        "src/assets/fonts",
         "src/assets/fonts/inter",
         "src/assets/fonts/fira-code",
         "src/assets/img",
         "src/assets/js",
         "src/plugins",
-        "src/theme",
         "src/theme/parts",
         "src/theme/patterns",
         "src/theme/templates",
-      ]);
+      ];
+      dirs.forEach((dir) => fs.mkdirSync(dir, { recursive: true }));
     }
 
     dotFiles.map((x) =>
@@ -237,6 +244,9 @@ const run = () => {
     nginxFiles.map((x) =>
       fs.renameSync(`${theCWD}/${x}`, `${theCWD}/config/nginx/${x}`, (err) => handleError(err)),
     );
+    scriptsFiles.map((x) =>
+      fs.renameSync(`${theCWD}/${x}`, `${theCWD}/scripts/${x}`, (err) => handleError(err)),
+    );
     spinner.succeed();
 
     spinner.start("2. WordPressify is ready to go ⚡");
@@ -244,7 +254,7 @@ const run = () => {
 
     // Done
     printNextSteps();
-  });
+  })();
 };
 
 export { run };

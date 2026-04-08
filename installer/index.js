@@ -1,9 +1,9 @@
 #!/usr/bin/env node
-import prompts from "prompts";
-import chalk from "chalk";
+import readline from "readline";
 import { Command } from "commander";
 import { createRequire } from "module";
 import { run } from "./modules/run.js";
+import { red, green, bgGreen } from "./modules/colors.js";
 
 const program = new Command();
 
@@ -20,23 +20,33 @@ program
   .option("-y, --non-interactive", "do not prompt for user input")
   .parse(process.argv);
 
-(async () => {
-  let response = {};
-  if (!program.nonInteractive) {
-    response = await prompts({
-      type: "confirm",
-      name: "value",
-      message: `Do you want to install ${chalk.white.bgGreen(
-        "🎈 WordPressify",
-      )} in the current directory?\n${chalk.red(process.cwd())}`,
+const confirm = (message) =>
+  new Promise((resolve) => {
+    const rl = readline.createInterface({
+      input: process.stdin,
+      output: process.stdout,
     });
+    rl.question(`${message} (y/N) `, (answer) => {
+      rl.close();
+      resolve(answer.toLowerCase() === "y");
+    });
+  });
+
+(async () => {
+  let confirmed = false;
+  if (program.opts().nonInteractive) {
+    confirmed = true;
+  } else {
+    confirmed = await confirm(
+      `Do you want to install ${bgGreen(" WordPressify ")} in the current directory?\n${red(process.cwd())}`,
+    );
   }
 
-  if (program.nonInteractive || response.value) {
+  if (confirmed) {
     // If below Node 12
     if (12 > major) {
       console.error(
-        chalk.red(
+        red(
           "You are running Node " +
             currentNodeVersion +
             ".\n" +
@@ -62,4 +72,3 @@ program
     run();
   }
 })();
-

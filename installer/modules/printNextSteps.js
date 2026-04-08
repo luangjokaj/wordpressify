@@ -1,9 +1,9 @@
-import chalk from "chalk";
+import { dim, red, green, yellow, cyan, gray, bgGreen, bgYellow, bgWhite } from "./colors.js";
 
 const printNextSteps = () => {
-  console.log("\n\n✅ ", chalk.black.bgGreen(" All done! Happy coding. \n"));
+  console.log("\n\n✅ ", bgGreen(" All done! Happy coding. \n"));
   console.log(
-    "Installer has added 🎈 WordPressify files to the current directory.  ",
+    "Installer has added WordPressify files to the current directory.  ",
     "\nInside this directory, you can run this command:",
   );
 
@@ -11,7 +11,7 @@ const printNextSteps = () => {
   console.log(
     "\n👉 ",
     " Type",
-    chalk.black.bgWhite(" npm run dev "),
+    bgWhite(" npm run dev "),
     "\n\n",
     "	Use to compile and run your files.",
     "\n",
@@ -19,41 +19,44 @@ const printNextSteps = () => {
   );
 
   // Support
-  console.log("\n✊ ", chalk.black.bgYellow(" Support WordPressify \n"));
+  console.log("\n✊ ", bgYellow(" Support WordPressify \n"));
   console.log("Like WordPressify? Check out our other free and open source repositories: \n");
   console.log(
-    `	${chalk.yellow("Cherry → ")} https://bit.ly/3sEr75P`,
+    `	${yellow("Cherry → ")} https://cherry.design/?ref=wordpressify-cli`,
     "\n",
-    `	${chalk.gray("• A design system to build the web.")}`,
+    `	${gray("• A design system to build the web.")}`,
     "\n",
-    `	${chalk.green("Powered by Riangle → ")} https://bit.ly/2P5i26I`,
+    `	${cyan("Doccupine → ")} https://doccupine.com/?ref=wordpressify-cli`,
+    "\n",
+    `	${gray("• Beautiful documentation websites from MDX.")}`,
+    "\n",
+    `	${green("Powered by Riangle → ")} https://riangle.com/?ref=wordpressify-cli`,
     "\n",
     "\n",
-    `	${chalk.red("Thank you for using 🎈 WordPressify → ")} https://www.wordpressify.co`,
+    `	${red("Thank you for using WordPressify → ")} https://wordpressify.co`,
   );
 
   // Get started
-  console.log("\n\n🎯 ", chalk.black.bgGreen(" Get Started → \n"));
+  console.log("\n\n🎯 ", bgGreen(" Get Started → \n"));
   console.log(" You can start: \n");
   console.log(
-    ` ${chalk.dim("1.")} Rename: ${chalk.green(".env_example")} to ${chalk.green(".env")}`,
+    ` ${dim("1.")} Rename: ${green(".env_example")} to ${green(".env")}`,
   );
   console.log(
-    `	${chalk.dim("Set your new theme directory name:")} ${chalk.green(
+    `	${dim("Set your new theme directory name:")} ${green(
       "THEME_NAME=",
-    )}${chalk.red("wordpressify")} `,
+    )}${red("wordpressify")} `,
     "\n",
   );
   console.log(
-    ` ${chalk.dim("2.")} Run: ${chalk.green("npm")} run start  ${chalk.dim(
+    ` ${dim("2.")} Run: ${green("npm")} run start  ${dim(
       "or",
-    )}  ${chalk.green("docker")} compose up`,
+    )}  ${green("docker")} compose up`,
     "\n",
-    `	${chalk.dim("Make sure")} ${chalk.red("Docker")} ${chalk.green("is running")}`,
+    `	${dim("Make sure")} ${red("Docker")} ${green("is running")}`,
     "\n\n",
   );
   process.exit();
 };
 
 export { printNextSteps };
-
