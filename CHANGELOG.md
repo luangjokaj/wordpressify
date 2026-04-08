@@ -1,5 +1,18 @@
 # Changelog
 
+**v0.6.3**
+
+- feat(installer): add `update` subcommand for upgrading existing projects without overwriting theme source files.
+- refactor(theme): rebrand text domain from "creativeblocks" to "wordpressify" and modernize block theme metadata.
+- refactor(theme): improve accessibility with `prefers-reduced-motion` media queries and narrower CSS transitions.
+- refactor(theme): remove aggressive CSS global resets that conflict with WordPress block editor defaults.
+- refactor: move `check-docker` script to project root.
+- style: format gulpfile and fix project URL.
+- style(theme): update screenshot.
+- docs: add contributing guidelines.
+
+---
+
 **v0.6.2**
 
 - fix: store `.gitignore` as `gitignore_template` since npm never includes `.gitignore` in published packages.
