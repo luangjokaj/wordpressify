@@ -4,8 +4,14 @@ Theme URI: https://www.wordpressify.co
 Author: Luan Gjokaj
 Author URI: https://www.riangle.com
 Description: WordPressify default theme.
+Requires at least: 6.7
+Tested up to: 6.8
+Requires PHP: 8.0
 Version: 1.0
-Tags: responsive, clean, minimal, modern, wordpressify
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: wordpressify
+Tags: full-site-editing, block-patterns, custom-colors, wide-blocks, block-styles
 */
 
 @import "./wordpressify";

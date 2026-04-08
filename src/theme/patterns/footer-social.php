@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Centered footer with social links
- * Slug: creativeblocks/footer-social
+ * Slug: wordpressify/footer-social
  * Categories: footer
  * Block Types: core/template-part/footer
  * Description: Footer with centered site title and social links.
@@ -12,10 +12,10 @@
 	<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|10"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
 	<div class="wp-block-group">
 		<!-- wp:site-title {"level":2,"textAlign":"center","style":{"typography":{"textTransform":"uppercase","fontStyle":"normal","fontWeight":"400"}},"fontSize":"x-large"} /-->
-		<!-- wp:navigation {"overlayMenu":"never","style":{"typography":{"textTransform":"uppercase","fontStyle":"normal","fontWeight":"400"},"spacing":{"blockGap":"var:preset|spacing|20"}},"fontSize":"x-large","layout":{"type":"flex","justifyContent":"center"},"ariaLabel":"<?php esc_attr_e('Social media', 'creativeblocks'); ?>"} -->
-		<!-- wp:navigation-link {"label":"<?php esc_html_e('Facebook', 'creativeblocks'); ?>","url":"#"} /-->
-		<!-- wp:navigation-link {"label":"<?php esc_html_e('Instagram', 'creativeblocks'); ?>","url":"#"} /-->
-		<!-- wp:navigation-link {"label":"<?php echo esc_html_x('X', 'Refers to the social media platform formerly known as Twitter.', 'creativeblocks'); ?>","url":"#"} /-->
+		<!-- wp:navigation {"overlayMenu":"never","style":{"typography":{"textTransform":"uppercase","fontStyle":"normal","fontWeight":"400"},"spacing":{"blockGap":"var:preset|spacing|20"}},"fontSize":"x-large","layout":{"type":"flex","justifyContent":"center"},"ariaLabel":"<?php esc_attr_e('Social media', 'wordpressify'); ?>"} -->
+		<!-- wp:navigation-link {"label":"<?php esc_html_e('Facebook', 'wordpressify'); ?>","url":"#"} /-->
+		<!-- wp:navigation-link {"label":"<?php esc_html_e('Instagram', 'wordpressify'); ?>","url":"#"} /-->
+		<!-- wp:navigation-link {"label":"<?php echo esc_html_x('X', 'Refers to the social media platform formerly known as Twitter.', 'wordpressify'); ?>","url":"#"} /-->
 		<!-- /wp:navigation -->
 	</div>
 	<!-- /wp:group -->
@@ -24,7 +24,7 @@
 	<!-- /wp:spacer -->
  <!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|accent-1"}}}},"fontSize":"small"} -->
 	<p class="has-link-color has-text-align-center has-small-font-size">
-	<?php printf(esc_html__('Designed with %s', 'creativeblocks'), '<a href="' . esc_url(__('https://wordpressify.co', 'creativeblocks')) . '" rel="nofollow">WordPressify</a>');?>
+	<?php printf(esc_html__('Designed with %s', 'wordpressify'), '<a href="' . esc_url(__('https://wordpressify.co', 'wordpressify')) . '" rel="nofollow">WordPressify</a>');?>
 		</p>
 	<!-- /wp:paragraph -->
 </div>

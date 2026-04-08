@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Header with columns
- * Slug: creativeblocks/header-columns
+ * Slug: wordpressify/header-columns
  * Categories: header
  * Block Types: core/template-part/header
  * Description: Header with site title and navigation in columns.
@@ -19,7 +19,7 @@
 		<!-- /wp:group -->
 		<!-- wp:group {"layout":{"type":"constrained","justifyContent":"left"}} -->
 		<div class="wp-block-group">
-			<!-- wp:navigation {"overlayBackgroundColor":"base","overlayTextColor":"contrast","layout":{"type":"flex","orientation":"vertical"}} /-->
+			<!-- wp:navigation {"overlayBackgroundColor":"light","overlayTextColor":"dark","layout":{"type":"flex","orientation":"vertical"}} /-->
 		</div>
 		<!-- /wp:group -->
 		<!-- wp:site-logo /-->

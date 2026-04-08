@@ -10,19 +10,10 @@
   --color-primary: var(--wp--preset--color--accent-1);
 }
 
-html,
-body {
-  margin: 0;
-  padding: 0;
-  min-height: 100%;
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: "Inter", sans-serif;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-  -webkit-font-smoothing: antialiased;
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 * {
@@ -30,58 +21,15 @@ body {
   min-width: 0;
 }
 
-pre,
-code,
-kbd,
-samp {
-  font-family: monospace, monospace;
-}
-
-pre,
-code,
-kbd,
-samp,
-blockquote,
-p,
-a,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-ul li,
-ol li {
-  margin: 0;
-  padding: 0;
-}
-
-ol,
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-figure {
-  margin: 0;
-}
-
 fieldset {
   appearance: none;
   border: none;
 }
 
-button,
-input,
-a,
-img,
-svg,
-svg * {
-  transition: all 0.3s ease;
-}
-
-strong,
-b {
-  font-weight: 700;
+@media (prefers-reduced-motion: no-preference) {
+  button,
+  input,
+  a {
+    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, opacity 0.3s ease;
+  }
 }

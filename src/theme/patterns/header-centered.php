@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Centered header
- * Slug: creativeblocks/header-centered
+ * Slug: wordpressify/header-centered
  * Categories: header
  * Block Types: core/template-part/header
  * Description: Header with centered site title and navigation.
@@ -14,7 +14,7 @@
 		<!-- wp:site-title {"level":0,"textAlign":"center","align":"wide","fontSize":"x-large"} /-->
 		<!-- wp:group {"align":"wide","layout":{"type":"constrained"}} -->
 		<div class="wp-block-group alignwide">
-			<!-- wp:navigation {"overlayBackgroundColor":"base","overlayTextColor":"contrast","layout":{"type":"flex","justifyContent":"center"}} /-->
+			<!-- wp:navigation {"overlayBackgroundColor":"light","overlayTextColor":"dark","layout":{"type":"flex","justifyContent":"center"}} /-->
 		</div>
 		<!-- /wp:group -->
 	</div>

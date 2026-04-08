@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Centered footer
- * Slug: creativeblocks/footer-centered
+ * Slug: wordpressify/footer-centered
  * Categories: footer
  * Block Types: core/template-part/footer
  * Description: Footer with centered site title and tagline.
@@ -22,7 +22,7 @@
 
  <!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|accent-1"}}}},"fontSize":"small"} -->
 	<p class="has-link-color has-text-align-center has-small-font-size">
-	<?php printf(esc_html__('Designed with %s', 'creativeblocks'), '<a href="' . esc_url(__('https://wordpressify.co', 'creativeblocks')) . '" rel="nofollow">WordPressify</a>');?>
+	<?php printf(esc_html__('Designed with %s', 'wordpressify'), '<a href="' . esc_url(__('https://wordpressify.co', 'wordpressify')) . '" rel="nofollow">WordPressify</a>');?>
 	</p>
 	<!-- /wp:paragraph -->
 </div>
