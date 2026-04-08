@@ -1,4 +1,3 @@
-version: "3.4"
 services:
   db:
     image: mariadb
@@ -32,19 +31,23 @@ services:
       - "./config/php.ini:/usr/local/etc/php/conf.d/overrides.ini"
     depends_on:
       - db
+    healthcheck:
+      test: ["CMD", "test", "-f", "/var/www/html/wp-includes/version.php"]
+      interval: 5s
+      timeout: 3s
+      retries: 30
 
   wordpress-chmod:
-    image: wordpress:6.8-php8.4-fpm
-    restart: on-failure
+    image: wordpress:6.9-php8.5-fpm
     depends_on:
-      - wordpress
+      wordpress:
+        condition: service_healthy
     volumes:
       - "./build/wordpress:/var/www/html"
     entrypoint: >
       /bin/sh -c "
-      chmod -R 777 wp-content/themes;
-      chmod -R 777 wp-content/plugins;
-      exit 0;
+      chmod -R 777 wp-content/themes &&
+      chmod -R 777 wp-content/plugins
       "
 
   webserver:
@@ -66,7 +69,7 @@ services:
       - "${PROXY_PORT:-3010}:${PROXY_PORT:-3010}"
     environment:
       - PROXY_PORT=${PROXY_PORT:-3010}
-      - THEME_NAME=${THEME_NAME}
+      - THEME_NAME=${THEME_NAME:-wordpressify}
     volumes:
       - "./src:/usr/src/app/src"
       - "./dist:/usr/src/app/dist"
