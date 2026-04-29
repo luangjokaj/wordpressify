@@ -51,6 +51,6 @@
   "license": "MIT",
   "dependencies": {
     "commander": "^14.0.3",
-    "ora": "^9.3.0"
+    "ora": "^9.4.0"
   }
 }
