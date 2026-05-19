@@ -14,7 +14,7 @@ import postcssPresetEnv from "postcss-preset-env";
 import sourcemaps from "gulp-sourcemaps";
 import uglify from "gulp-uglify";
 import zip from "gulp-vinyl-zip";
-import cleanCSS from "gulp-clean-css";
+import cssnano from "cssnano";
 
 const { series, dest, src, watch } = pkg;
 
@@ -50,6 +50,7 @@ const pluginsListProd = [
   }),
   postCSSMixins,
   autoprefixer,
+  cssnano(),
 ];
 
 /* -------------------------------------------------------------------------------------------------
@@ -305,7 +306,6 @@ function stylesProd() {
   return src("./src/assets/css/style.css")
     .pipe(plumber({ errorHandler: onError }))
     .pipe(postcss(pluginsListProd))
-    .pipe(cleanCSS())
     .pipe(dest("./dist/themes/" + themeName));
 }
 

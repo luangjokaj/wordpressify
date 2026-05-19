@@ -70,7 +70,6 @@
     "fancy-log": "^2.0.0",
     "gulp": "^5.0.1",
     "gulp-babel": "^8.0.0",
-    "gulp-clean-css": "^4.3.0",
     "gulp-concat": "^2.6.1",
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^10.0.0",
